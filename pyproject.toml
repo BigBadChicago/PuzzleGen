@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "puzzlegen"
+version = "0.1.0"
+description = "A daily puzzle engine over a governed, shared knowledge graph."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "hypothesis>=6.98"]
+# Snapshot building pulls heavy semantic dependencies. The engine itself must
+# never require them: vectors and frequency scores are baked into snapshots.
+snapshot = ["wn>=0.9", "wordfreq>=3.0", "sentence-transformers>=2.5", "numpy>=1.26"]
+
+[project.scripts]
+puzzlegen = "puzzlegen.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["puzzlegen*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error"]

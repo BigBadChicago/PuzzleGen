@@ -1,0 +1,81 @@
+{
+  "curated_schema": 1,
+  "version": "2026.09.1",
+  "updated": "2026-09-20",
+  "categories": [
+    {"key": "c.animal", "name": "animal", "gloss": "A living organism that feeds on organic matter."},
+    {"key": "c.mammal", "name": "mammal", "parents": ["c.animal"], "gloss": "A warm-blooded vertebrate that nurses its young."},
+    {"key": "c.bird", "name": "bird", "parents": ["c.animal"], "gloss": "A warm-blooded egg-laying vertebrate with feathers."},
+    {"key": "c.feline", "name": "feline", "parents": ["c.mammal"], "gloss": "A member of the cat family."},
+    {"key": "c.canine", "name": "canine", "parents": ["c.mammal"], "gloss": "A member of the dog family."},
+    {"key": "c.cetacean", "name": "cetacean", "parents": ["c.mammal"], "gloss": "An aquatic mammal of the whale order."},
+    {"key": "c.raptor", "name": "raptor", "parents": ["c.bird"], "gloss": "A bird of prey."},
+    {"key": "c.seabird", "name": "seabird", "parents": ["c.bird"], "gloss": "A bird that lives mainly on or near the sea."}
+  ],
+  "entities": [
+    {"key": "e.tiger", "name": "tiger", "aliases": ["Panthera tigris"], "definition": "A large striped Asian cat.", "categories": ["c.feline"], "confidence": 0.98},
+    {"key": "e.lion", "name": "lion", "aliases": ["Panthera leo"], "definition": "A large African cat that lives in prides.", "categories": ["c.feline"], "confidence": 0.98},
+    {"key": "e.leopard", "name": "leopard", "aliases": ["Panthera pardus"], "definition": "A spotted big cat of Africa and Asia.", "categories": ["c.feline"], "confidence": 0.97},
+    {"key": "e.jaguar", "name": "jaguar", "aliases": ["Panthera onca"], "definition": "A powerful spotted cat of the Americas.", "categories": ["c.feline"], "confidence": 0.97},
+    {"key": "e.cheetah", "name": "cheetah", "definition": "The fastest running land animal.", "categories": ["c.feline"], "confidence": 0.97},
+    {"key": "e.lynx", "name": "lynx", "definition": "A medium-sized wild cat with tufted ears.", "categories": ["c.feline"], "confidence": 0.94},
+
+    {"key": "e.wolf", "name": "wolf", "aliases": ["Canis lupus"], "definition": "A large wild member of the dog family.", "categories": ["c.canine"], "confidence": 0.98},
+    {"key": "e.coyote", "name": "coyote", "definition": "A small wolflike canine of North America.", "categories": ["c.canine"], "confidence": 0.96},
+    {"key": "e.jackal", "name": "jackal", "definition": "A small wild dog of Africa and Asia.", "categories": ["c.canine"], "confidence": 0.95},
+    {"key": "e.dingo", "name": "dingo", "definition": "A wild dog of Australia.", "categories": ["c.canine"], "confidence": 0.94},
+    {"key": "e.fox", "name": "fox", "definition": "A small canine with a bushy tail.", "categories": ["c.canine"], "confidence": 0.97},
+
+    {"key": "e.dolphin", "name": "dolphin", "definition": "A small toothed whale known for intelligence.", "categories": ["c.cetacean"], "confidence": 0.97},
+    {"key": "e.porpoise", "name": "porpoise", "definition": "A small cetacean with a blunt snout.", "categories": ["c.cetacean"], "confidence": 0.93},
+    {"key": "e.narwhal", "name": "narwhal", "definition": "An Arctic whale with a long spiral tusk.", "categories": ["c.cetacean"], "confidence": 0.93},
+    {"key": "e.orca", "name": "orca", "aliases": ["killer whale"], "definition": "A large black and white toothed whale.", "categories": ["c.cetacean"], "confidence": 0.95},
+
+    {"key": "e.eagle", "name": "eagle", "definition": "A large bird of prey with keen eyesight.", "categories": ["c.raptor"], "confidence": 0.98},
+    {"key": "e.falcon", "name": "falcon", "definition": "A fast-flying bird of prey.", "categories": ["c.raptor"], "confidence": 0.96},
+    {"key": "e.hawk", "name": "hawk", "definition": "A broad-winged bird of prey.", "categories": ["c.raptor"], "confidence": 0.97},
+    {"key": "e.osprey", "name": "osprey", "definition": "A fish-eating bird of prey.", "categories": ["c.raptor"], "confidence": 0.93},
+
+    {"key": "e.albatross", "name": "albatross", "definition": "A very large seabird with long narrow wings.", "categories": ["c.seabird"], "confidence": 0.94},
+    {"key": "e.puffin", "name": "puffin", "definition": "A small seabird with a brightly coloured bill.", "categories": ["c.seabird"], "confidence": 0.93},
+    {"key": "e.gannet", "name": "gannet", "definition": "A large seabird that dives for fish.", "categories": ["c.seabird"], "confidence": 0.91},
+    {"key": "e.petrel", "name": "petrel", "definition": "A seabird that flies far from land.", "categories": ["c.seabird"], "confidence": 0.90}
+  ],
+  "facts": [
+    {"subject": "e.tiger", "predicate": "conservation_status", "value": "endangered", "freshness": "PERIODIC", "confidence": 0.95, "asserted": "2025-11-01"},
+    {"subject": "e.lion", "predicate": "conservation_status", "value": "vulnerable", "freshness": "PERIODIC", "confidence": 0.94, "asserted": "2025-11-01"},
+    {"subject": "e.leopard", "predicate": "conservation_status", "value": "vulnerable", "freshness": "PERIODIC", "confidence": 0.93, "asserted": "2025-11-01"},
+    {"subject": "e.cheetah", "predicate": "conservation_status", "value": "vulnerable", "freshness": "PERIODIC", "confidence": 0.93, "asserted": "2025-11-01"},
+    {"subject": "e.orca", "predicate": "conservation_status", "value": "data deficient", "freshness": "PERIODIC", "confidence": 0.88, "asserted": "2025-11-01"},
+
+    {"subject": "e.tiger", "predicate": "habitat", "value": "forest", "confidence": 0.95},
+    {"subject": "e.lion", "predicate": "habitat", "value": "grassland", "confidence": 0.96},
+    {"subject": "e.wolf", "predicate": "habitat", "value": "forest", "confidence": 0.95},
+    {"subject": "e.dingo", "predicate": "habitat", "value": "desert", "confidence": 0.92},
+    {"subject": "e.dolphin", "predicate": "habitat", "value": "ocean", "confidence": 0.97},
+    {"subject": "e.narwhal", "predicate": "habitat", "value": "arctic ocean", "confidence": 0.95},
+    {"subject": "e.albatross", "predicate": "habitat", "value": "open ocean", "confidence": 0.94},
+    {"subject": "e.eagle", "predicate": "habitat", "value": "mountain", "confidence": 0.90},
+
+    {"subject": "e.cheetah", "predicate": "top_speed_kph", "value": 112, "unit": "kph", "confidence": 0.94},
+    {"subject": "e.falcon", "predicate": "top_speed_kph", "value": 389, "unit": "kph", "confidence": 0.92},
+    {"subject": "e.lion", "predicate": "top_speed_kph", "value": 80, "unit": "kph", "confidence": 0.90},
+    {"subject": "e.wolf", "predicate": "top_speed_kph", "value": 60, "unit": "kph", "confidence": 0.90},
+    {"subject": "e.dolphin", "predicate": "top_speed_kph", "value": 60, "unit": "kph", "confidence": 0.88},
+
+    {"subject": "e.tiger", "predicate": "is_apex_predator", "value": true, "confidence": 0.95},
+    {"subject": "e.orca", "predicate": "is_apex_predator", "value": true, "confidence": 0.96},
+    {"subject": "e.puffin", "predicate": "is_apex_predator", "value": false, "confidence": 0.93},
+
+    {"subject": "e.lynx", "predicate": "cultural_prominence", "value": "low", "provenance": "JUDGED", "reviewer": "curator:seed", "confidence": 0.7},
+    {"subject": "e.petrel", "predicate": "cultural_prominence", "value": "low", "provenance": "JUDGED", "reviewer": "curator:seed", "confidence": 0.7}
+  ],
+  "relationships": [
+    {"subject": "e.orca", "predicate": "preys_on", "object": "e.porpoise", "confidence": 0.9},
+    {"subject": "e.wolf", "predicate": "preys_on", "object": "e.fox", "confidence": 0.75},
+    {"subject": "e.eagle", "predicate": "preys_on", "object": "e.puffin", "confidence": 0.8},
+    {"subject": "e.tiger", "predicate": "shares_range_with", "object": "e.leopard", "symmetric": true, "confidence": 0.88},
+    {"subject": "e.lion", "predicate": "shares_range_with", "object": "e.cheetah", "symmetric": true, "confidence": 0.9},
+    {"subject": "e.coyote", "predicate": "shares_range_with", "object": "e.fox", "symmetric": true, "confidence": 0.85}
+  ]
+}
