@@ -31,6 +31,12 @@ SESSION: Final = "session"
 DEPENDENCY: Final = "dep"
 REVIEW: Final = "review"
 GENERATION: Final = "gen"
+PLAYER: Final = "player"
+KEY: Final = "key"
+LINK: Final = "link"
+SCORE: Final = "score"
+STREAK: Final = "streak"
+SHARE: Final = "share"
 
 _KINDS: Final = frozenset(
     {
@@ -46,6 +52,12 @@ _KINDS: Final = frozenset(
         DEPENDENCY,
         REVIEW,
         GENERATION,
+        PLAYER,
+        KEY,
+        LINK,
+        SCORE,
+        STREAK,
+        SHARE,
     }
 )
 
@@ -154,3 +166,39 @@ def for_dependency(manifest_id: str, ref_kind: str, ref_id: str) -> str:
 
 def for_review(subject_ref: str, opened_at: str) -> str:
     return mint(REVIEW, subject_ref, opened_at)
+
+
+def for_player(mint_token: str) -> str:
+    """Derive a player id from a freshly minted random token.
+
+    Two parts are always passed so ``mint`` takes its hashing branch: a token
+    that happened to slugify cleanly would otherwise become a readable id
+    carrying the token's own characters, and the token is secret material.
+    """
+    return mint(PLAYER, "player", mint_token)
+
+
+def for_return_key(fingerprint: str) -> str:
+    return mint(KEY, "key", fingerprint)
+
+
+def for_identity_link(provider: str, subject: str) -> str:
+    """One id per provider subject, which is what makes double linking a
+    primary-key conflict rather than something a query has to notice."""
+    return mint(LINK, provider, subject)
+
+
+def for_session(player_id: str, manifest_id: str, kind: str) -> str:
+    return mint(SESSION, player_id, manifest_id, kind)
+
+
+def for_score(session_id: str) -> str:
+    return mint(SCORE, session_id)
+
+
+def for_streak(player_id: str, game_id: str) -> str:
+    return mint(STREAK, player_id, game_id)
+
+
+def for_share(session_id: str, share_format_version: int) -> str:
+    return mint(SHARE, session_id, str(share_format_version))

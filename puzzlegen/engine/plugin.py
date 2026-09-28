@@ -31,6 +31,30 @@ from ..core.versions import PLUGIN_PROTOCOL_VERSION
 
 
 @dataclass(frozen=True, slots=True)
+class StateSymbol:
+    """One visual state, carried by a shape and a word as well as a colour.
+
+    Declared per game because only the game knows its states. Validated for
+    distinctness on both the symbol and the label: two states sharing either
+    one are indistinguishable to somebody reading shapes or hearing text,
+    which is the failure this type exists to make impossible to ship.
+    """
+
+    #: Machine name of the state, e.g. "correct", "locked".
+    name: str
+    #: Glyph shown alongside or instead of colour.
+    symbol: str
+    #: What a screen reader says.
+    label: str
+    #: Optional colour hint for clients that use one. Never the only channel.
+    colour: str = ""
+
+    def __post_init__(self) -> None:
+        if not self.name or not self.symbol or not self.label:
+            raise ValueError("a state symbol needs a name, a symbol and a label")
+
+
+@dataclass(frozen=True, slots=True)
 class AccessibilityDeclaration:
     """What a game promises about how its puzzle can be operated.
 
@@ -52,6 +76,26 @@ class AccessibilityDeclaration:
     #: True when the puzzle is fully operable without pointer input.
     keyboard_complete: bool = True
     minimum_target_px: int = 44
+    #: Every visual state this game shows. Empty is permitted here and
+    #: refused by the session layer's accessibility gate, so a phase 4 game
+    #: still describes itself while an unplayable promise stays unplayable.
+    state_symbols: tuple[StateSymbol, ...] = ()
+
+    def __post_init__(self) -> None:
+        names = [s.name for s in self.state_symbols]
+        symbols = [s.symbol for s in self.state_symbols]
+        labels = [s.label.strip().lower() for s in self.state_symbols]
+        for field_name, values in (
+            ("name", names),
+            ("symbol", symbols),
+            ("label", labels),
+        ):
+            if len(set(values)) != len(values):
+                raise ValueError(
+                    f"state symbols must have a distinct {field_name}; two "
+                    "states sharing one are indistinguishable to somebody "
+                    "reading shapes or hearing text"
+                )
 
     def is_complete(self) -> tuple[bool, str]:
         if not self.element_kinds:
@@ -109,6 +153,29 @@ class DifficultyThresholds:
 
 
 @dataclass(frozen=True, slots=True)
+class ShareTokenSpec:
+    """One abstract result token and its three renderings.
+
+    A game emits token names; the engine turns them into characters. Three
+    renderings are required rather than one: the glyph for the paste, the
+    plain character for clients and readers that cannot handle the glyph, and
+    the label for anything spoken. A share with only a glyph is a share that
+    some players cannot read at all.
+    """
+
+    name: str
+    glyph: str
+    plain: str
+    label: str
+
+    def __post_init__(self) -> None:
+        if not self.name or not self.glyph or not self.plain or not self.label:
+            raise ValueError("a share token needs a name, glyph, plain and label")
+        if len(self.plain) != 1 or not self.plain.isascii():
+            raise ValueError("the plain rendering must be one ASCII character")
+
+
+@dataclass(frozen=True, slots=True)
 class GameDescriptor:
     """A game's static identity and contract."""
 
@@ -139,6 +206,10 @@ class GameDescriptor:
     difficulty_thresholds: DifficultyThresholds = field(
         default_factory=DifficultyThresholds
     )
+    #: The complete vocabulary this game's share artifacts may use. A token
+    #: outside it is a protocol error, not a content rejection, which is what
+    #: lets the engine hold a codepoint allowlist for share text.
+    share_tokens: tuple[ShareTokenSpec, ...] = ()
     description: str = ""
 
     def __post_init__(self) -> None:
@@ -173,6 +244,22 @@ class GameDescriptor:
                 "supported_bands must ascend in difficulty, since the "
                 "thresholds are read positionally against them"
             )
+        for field_name, values in (
+            ("name", [t.name for t in self.share_tokens]),
+            ("glyph", [t.glyph for t in self.share_tokens]),
+            ("plain", [t.plain for t in self.share_tokens]),
+        ):
+            if len(set(values)) != len(values):
+                raise ValueError(
+                    f"share tokens must have a distinct {field_name}; a "
+                    "repeated one makes two outcomes look identical"
+                )
+
+    def share_token(self, name: str) -> ShareTokenSpec | None:
+        for token in self.share_tokens:
+            if token.name == name:
+                return token
+        return None
 
     def band_for(self, score: float) -> DifficultyBand:
         return self.difficulty_thresholds.band_for(score, self.supported_bands)
@@ -376,6 +463,59 @@ class ShareArtifact:
 
 
 @dataclass(frozen=True, slots=True)
+class MoveJudgement:
+    """A game's ruling on one submitted move.
+
+    Grading lives with the game because only the game knows what a partially
+    correct answer is: a grouping puzzle's "three of four right" is not a
+    comparison the engine could make against a solution hash. It runs engine
+    side, never in the client, because the client is never given the solution.
+
+    ``state`` is opaque game state after this move. The engine stores none of
+    it: state is rebuilt by replaying the ledger, so a session stays a pure
+    function of its moves and a cached state can never drift from them.
+    """
+
+    correct: bool
+    #: True when this move finishes the puzzle, successfully or not.
+    complete: bool = False
+    #: True only when the puzzle was finished correctly.
+    solved: bool = False
+    state: Mapping[str, Any] = field(default_factory=dict)
+    #: Shown to the player. Must not name an unrevealed part of the answer.
+    note: str = ""
+
+    def __post_init__(self) -> None:
+        if self.solved and not self.complete:
+            raise ValueError("a solved puzzle is a complete one")
+        if self.solved and not self.correct:
+            raise ValueError("the move that solves a puzzle is a correct move")
+
+
+@dataclass(frozen=True, slots=True)
+class Hint:
+    """One step of help, supplied by the game and counted by the engine.
+
+    ``cost`` is declared by the game and applied by the game's own scoring
+    function; the engine only counts hints, because a hint's worth is part of
+    a game's scoring model rather than a platform-wide constant.
+    """
+
+    text: str
+    #: Element ids this hint reveals, so the shell can highlight them.
+    reveals: tuple[str, ...] = ()
+    cost: int = 0
+    #: True when the game has no further hint to give.
+    exhausted: bool = False
+
+    def __post_init__(self) -> None:
+        if not self.text:
+            raise ValueError("a hint must say something")
+        if self.cost < 0:
+            raise ValueError("hint cost must not be negative")
+
+
+@dataclass(frozen=True, slots=True)
 class PresentationModel:
     """A data description of the puzzle's interface, never markup."""
 
@@ -387,7 +527,7 @@ class PresentationModel:
 
 @runtime_checkable
 class GamePlugin(Protocol):
-    """The nine methods a game implements. Nothing else is called."""
+    """The eleven methods a game implements. Nothing else is called."""
 
     def describe(self) -> GameDescriptor: ...
 
@@ -412,6 +552,16 @@ class GamePlugin(Protocol):
     ) -> DifficultyMeasurement: ...
 
     def score(self, puzzle: Puzzle, telemetry: SessionTelemetry) -> Score: ...
+
+    def grade_move(
+        self, puzzle: Puzzle, payload: Mapping[str, Any], state: Mapping[str, Any]
+    ) -> MoveJudgement:
+        """Rule on one submitted move, given the state the ledger replayed to."""
+
+    def get_hint(
+        self, puzzle: Puzzle, state: Mapping[str, Any], hints_used: int
+    ) -> Hint:
+        """Offer the next hint. ``hints_used`` is counted by the engine."""
 
     def render(
         self, puzzle: Puzzle, state: Mapping[str, Any], locale: str
