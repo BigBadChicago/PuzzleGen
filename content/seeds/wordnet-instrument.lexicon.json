@@ -1,0 +1,2929 @@
+{
+  "exported": "2026-09-28",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-03806455-n",
+  "senses": [
+    {
+      "definition": "a portable box-shaped free-reed instrument; the reeds are made to vibrate by air from the bellows controlled by the player",
+      "forms": [],
+      "id": "oewn-accordion__1.06.00..",
+      "lang": "en",
+      "lemma": "accordion",
+      "synset": "oewn-02675461-n"
+    },
+    {
+      "definition": "a portable box-shaped free-reed instrument; the reeds are made to vibrate by air from the bellows controlled by the player",
+      "forms": [],
+      "id": "oewn-squeeze_box__1.06.00..",
+      "lang": "en",
+      "lemma": "squeeze box",
+      "synset": "oewn-02675461-n"
+    },
+    {
+      "definition": "sound is not amplified by electrical means",
+      "forms": [],
+      "id": "oewn-acoustic_guitar__1.06.00..",
+      "lang": "en",
+      "lemma": "acoustic guitar",
+      "synset": "oewn-02679420-n"
+    },
+    {
+      "definition": "a free-reed instrument in which air is drawn in through reeds by suction bellows",
+      "forms": [],
+      "id": "oewn-american_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "American organ",
+      "synset": "oewn-02704589-n"
+    },
+    {
+      "definition": "a tubular wind instrument; the player blows air into a bag and squeezes it out through the drone",
+      "forms": [],
+      "id": "oewn-bagpipe__1.06.00..",
+      "lang": "en",
+      "lemma": "bagpipe",
+      "synset": "oewn-02778488-n"
+    },
+    {
+      "definition": "a stringed instrument that has a triangular body and three strings",
+      "forms": [],
+      "id": "oewn-balalaika__1.06.00..",
+      "lang": "en",
+      "lemma": "balalaika",
+      "synset": "oewn-02779983-n"
+    },
+    {
+      "definition": "a stringed instrument of the guitar family that has long neck and circular body",
+      "forms": [
+        "banjoes"
+      ],
+      "id": "oewn-banjo__1.06.00..",
+      "lang": "en",
+      "lemma": "banjo",
+      "synset": "oewn-02790645-n"
+    },
+    {
+      "definition": "the second lowest brass wind instrument",
+      "forms": [],
+      "id": "oewn-baritone__1.06.00..",
+      "lang": "en",
+      "lemma": "baritone",
+      "synset": "oewn-02796112-n"
+    },
+    {
+      "definition": "the second lowest brass wind instrument",
+      "forms": [],
+      "id": "oewn-baritone_horn__1.06.00..",
+      "lang": "en",
+      "lemma": "baritone horn",
+      "synset": "oewn-02796112-n"
+    },
+    {
+      "definition": "a musical instrument that makes music by rotation of a cylinder studded with pegs",
+      "forms": [],
+      "id": "oewn-barrel_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "barrel organ",
+      "synset": "oewn-02799001-n"
+    },
+    {
+      "definition": "a musical instrument that makes music by rotation of a cylinder studded with pegs",
+      "forms": [],
+      "id": "oewn-grind_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "grind organ",
+      "synset": "oewn-02799001-n"
+    },
+    {
+      "definition": "a musical instrument that makes music by rotation of a cylinder studded with pegs",
+      "forms": [],
+      "id": "oewn-hand_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "hand organ",
+      "synset": "oewn-02799001-n"
+    },
+    {
+      "definition": "a stringed instrument that produces sounds by means of a wheel that rubs against the strings",
+      "forms": [],
+      "id": "oewn-hurdy_gurdy__1.06.00..",
+      "lang": "en",
+      "lemma": "hurdy gurdy",
+      "synset": "oewn-02799187-n"
+    },
+    {
+      "definition": "a stringed instrument that produces sounds by means of a wheel that rubs against the strings",
+      "forms": [],
+      "id": "oewn-hurdy-gurdy__1.06.00..",
+      "lang": "en",
+      "lemma": "hurdy-gurdy",
+      "synset": "oewn-02799187-n"
+    },
+    {
+      "definition": "a stringed instrument that produces sounds by means of a wheel that rubs against the strings",
+      "forms": [],
+      "id": "oewn-wheel_fiddle__1.06.00..",
+      "lang": "en",
+      "lemma": "wheel fiddle",
+      "synset": "oewn-02799187-n"
+    },
+    {
+      "definition": "the member with the lowest range of a family of musical instruments",
+      "forms": [],
+      "id": "oewn-bass__1.06.02..",
+      "lang": "en",
+      "lemma": "bass",
+      "synset": "oewn-02806515-n"
+    },
+    {
+      "definition": "a large drum with two heads; makes a sound of indefinite but very low pitch",
+      "forms": [],
+      "id": "oewn-bass_drum__1.06.00..",
+      "lang": "en",
+      "lemma": "bass drum",
+      "synset": "oewn-02806832-n"
+    },
+    {
+      "definition": "a large drum with two heads; makes a sound of indefinite but very low pitch",
+      "forms": [],
+      "id": "oewn-gran_casa__1.06.00..",
+      "lang": "en",
+      "lemma": "gran casa",
+      "synset": "oewn-02806832-n"
+    },
+    {
+      "definition": "largest and lowest member of the violin family",
+      "forms": [],
+      "id": "oewn-bass_fiddle__1.06.00..",
+      "lang": "en",
+      "lemma": "bass fiddle",
+      "synset": "oewn-02807100-n"
+    },
+    {
+      "definition": "largest and lowest member of the violin family",
+      "forms": [],
+      "id": "oewn-bass_viol__1.06.01..",
+      "lang": "en",
+      "lemma": "bass viol",
+      "synset": "oewn-02807100-n"
+    },
+    {
+      "definition": "largest and lowest member of the violin family",
+      "forms": [],
+      "id": "oewn-bull_fiddle__1.06.00..",
+      "lang": "en",
+      "lemma": "bull fiddle",
+      "synset": "oewn-02807100-n"
+    },
+    {
+      "definition": "largest and lowest member of the violin family",
+      "forms": [],
+      "id": "oewn-double_bass__1.06.00..",
+      "lang": "en",
+      "lemma": "double bass",
+      "synset": "oewn-02807100-n"
+    },
+    {
+      "definition": "largest and lowest member of the violin family",
+      "forms": [],
+      "id": "oewn-contrabass__1.06.00..",
+      "lang": "en",
+      "lemma": "contrabass",
+      "synset": "oewn-02807100-n"
+    },
+    {
+      "definition": "largest and lowest member of the violin family",
+      "forms": [],
+      "id": "oewn-string_bass__1.06.00..",
+      "lang": "en",
+      "lemma": "string bass",
+      "synset": "oewn-02807100-n"
+    },
+    {
+      "definition": "the guitar with six strings that has the lowest pitch",
+      "forms": [],
+      "id": "oewn-bass_guitar__1.06.00..",
+      "lang": "en",
+      "lemma": "bass guitar",
+      "synset": "oewn-02807289-n"
+    },
+    {
+      "definition": "the lowest brass wind instrument",
+      "forms": [],
+      "id": "oewn-bass_horn__1.06.00..",
+      "lang": "en",
+      "lemma": "bass horn",
+      "synset": "oewn-02807418-n"
+    },
+    {
+      "definition": "the lowest brass wind instrument",
+      "forms": [],
+      "id": "oewn-sousaphone__1.06.00..",
+      "lang": "en",
+      "lemma": "sousaphone",
+      "synset": "oewn-02807418-n"
+    },
+    {
+      "definition": "the lowest brass wind instrument",
+      "forms": [
+        "tubae"
+      ],
+      "id": "oewn-tuba__1.06.00..",
+      "lang": "en",
+      "lemma": "tuba",
+      "synset": "oewn-02807418-n"
+    },
+    {
+      "definition": "a musical instrument that sounds by means of a vibrating reed",
+      "forms": [],
+      "id": "oewn-beating-reed_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "beating-reed instrument",
+      "synset": "oewn-02820934-n"
+    },
+    {
+      "definition": "a musical instrument that sounds by means of a vibrating reed",
+      "forms": [],
+      "id": "oewn-reed_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "reed instrument",
+      "synset": "oewn-02820934-n"
+    },
+    {
+      "definition": "a musical instrument that sounds by means of a vibrating reed",
+      "forms": [],
+      "id": "oewn-reed__1.06.00..",
+      "lang": "en",
+      "lemma": "reed",
+      "synset": "oewn-02820934-n"
+    },
+    {
+      "definition": "a large shawm; the bass member of the shawm family",
+      "forms": [],
+      "id": "oewn-bombardon__1.06.00..",
+      "lang": "en",
+      "lemma": "bombardon",
+      "synset": "oewn-02870607-n"
+    },
+    {
+      "definition": "a large shawm; the bass member of the shawm family",
+      "forms": [],
+      "id": "oewn-bombard__1.06.00..",
+      "lang": "en",
+      "lemma": "bombard",
+      "synset": "oewn-02870607-n"
+    },
+    {
+      "definition": "(used in the plural) a percussion instrument consisting of a pair of hollow pieces of wood or bone (usually held between the thumb and fingers) that are made to click together (as by Spanish dancers) in rhythm with the dance",
+      "forms": [],
+      "id": "oewn-bones__1.06.00..",
+      "lang": "en",
+      "lemma": "bones",
+      "synset": "oewn-02872589-n"
+    },
+    {
+      "definition": "(used in the plural) a percussion instrument consisting of a pair of hollow pieces of wood or bone (usually held between the thumb and fingers) that are made to click together (as by Spanish dancers) in rhythm with the dance",
+      "forms": [],
+      "id": "oewn-castanets__1.06.00..",
+      "lang": "en",
+      "lemma": "castanets",
+      "synset": "oewn-02872589-n"
+    },
+    {
+      "definition": "(used in the plural) a percussion instrument consisting of a pair of hollow pieces of wood or bone (usually held between the thumb and fingers) that are made to click together (as by Spanish dancers) in rhythm with the dance",
+      "forms": [],
+      "id": "oewn-clappers__1.06.00..",
+      "lang": "en",
+      "lemma": "clappers",
+      "synset": "oewn-02872589-n"
+    },
+    {
+      "definition": "(used in the plural) a percussion instrument consisting of a pair of hollow pieces of wood or bone (usually held between the thumb and fingers) that are made to click together (as by Spanish dancers) in rhythm with the dance",
+      "forms": [],
+      "id": "oewn-finger_cymbals__1.06.00..",
+      "lang": "en",
+      "lemma": "finger cymbals",
+      "synset": "oewn-02872589-n"
+    },
+    {
+      "definition": "a small drum; played with the hands",
+      "forms": [
+        "bongoes"
+      ],
+      "id": "oewn-bongo__1.06.00..",
+      "lang": "en",
+      "lemma": "bongo",
+      "synset": "oewn-02873098-n"
+    },
+    {
+      "definition": "a small drum; played with the hands",
+      "forms": [],
+      "id": "oewn-bongo_drum__1.06.00..",
+      "lang": "en",
+      "lemma": "bongo drum",
+      "synset": "oewn-02873098-n"
+    },
+    {
+      "definition": "stringed instruments that are played with a bow",
+      "forms": [],
+      "id": "oewn-bowed_stringed_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "bowed stringed instrument",
+      "synset": "oewn-02883788-n"
+    },
+    {
+      "definition": "stringed instruments that are played with a bow",
+      "forms": [],
+      "id": "oewn-string__1.06.05..",
+      "lang": "en",
+      "lemma": "string",
+      "synset": "oewn-02883788-n"
+    },
+    {
+      "definition": "a wind instrument that consists of a brass tube (usually of variable length) that is blown by means of a cup-shaped or funnel-shaped mouthpiece",
+      "forms": [],
+      "id": "oewn-brass__1.06.00..",
+      "lang": "en",
+      "lemma": "brass",
+      "synset": "oewn-02895029-n"
+    },
+    {
+      "definition": "a wind instrument that consists of a brass tube (usually of variable length) that is blown by means of a cup-shaped or funnel-shaped mouthpiece",
+      "forms": [],
+      "id": "oewn-brass_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "brass instrument",
+      "synset": "oewn-02895029-n"
+    },
+    {
+      "definition": "a brass instrument without valves; used for military calls and fanfares",
+      "forms": [],
+      "id": "oewn-bugle__1.06.00..",
+      "lang": "en",
+      "lemma": "bugle",
+      "synset": "oewn-02916240-n"
+    },
+    {
+      "definition": "a musical instrument consisting of a series of steam whistles played from a keyboard",
+      "forms": [],
+      "id": "oewn-calliope__1.06.00..",
+      "lang": "en",
+      "lemma": "calliope",
+      "synset": "oewn-02944161-n"
+    },
+    {
+      "definition": "a musical instrument consisting of a series of steam whistles played from a keyboard",
+      "forms": [],
+      "id": "oewn-steam_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "steam organ",
+      "synset": "oewn-02944161-n"
+    },
+    {
+      "definition": "set of bells hung in a bell tower",
+      "forms": [],
+      "id": "oewn-carillon__1.06.00..",
+      "lang": "en",
+      "lemma": "carillon",
+      "synset": "oewn-02968981-n"
+    },
+    {
+      "definition": "a musical instrument consisting of graduated steel plates that are struck by hammers activated by a keyboard",
+      "forms": [],
+      "id": "oewn-celesta__1.06.00..",
+      "lang": "en",
+      "lemma": "celesta",
+      "synset": "oewn-02994213-n"
+    },
+    {
+      "definition": "a large stringed instrument; seated player holds it upright while playing",
+      "forms": [],
+      "id": "oewn-cello__1.06.00..",
+      "lang": "en",
+      "lemma": "cello",
+      "synset": "oewn-02995666-n"
+    },
+    {
+      "definition": "a large stringed instrument; seated player holds it upright while playing",
+      "forms": [],
+      "id": "oewn-violoncello__1.06.00..",
+      "lang": "en",
+      "lemma": "violoncello",
+      "synset": "oewn-02995666-n"
+    },
+    {
+      "definition": "reed pipe with finger holes on which the melody is played",
+      "forms": [],
+      "id": "oewn-chanter__1.06.00..",
+      "lang": "en",
+      "lemma": "chanter",
+      "synset": "oewn-03010230-n"
+    },
+    {
+      "definition": "reed pipe with finger holes on which the melody is played",
+      "forms": [],
+      "id": "oewn-melody_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "melody pipe",
+      "synset": "oewn-03010230-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a set of tuned bells that are struck with a hammer; used as an orchestral instrument",
+      "forms": [],
+      "id": "oewn-chime__1.06.00..",
+      "lang": "en",
+      "lemma": "chime",
+      "synset": "oewn-03020822-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a set of tuned bells that are struck with a hammer; used as an orchestral instrument",
+      "forms": [],
+      "id": "oewn-bell__1.06.04..",
+      "lang": "en",
+      "lemma": "bell",
+      "synset": "oewn-03020822-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a set of tuned bells that are struck with a hammer; used as an orchestral instrument",
+      "forms": [],
+      "id": "oewn-gong__1.06.01..",
+      "lang": "en",
+      "lemma": "gong",
+      "synset": "oewn-03020822-n"
+    },
+    {
+      "definition": "a stringed instrument of the group including harps, lutes, lyres, and zithers",
+      "forms": [],
+      "id": "oewn-chordophone__1.06.00..",
+      "lang": "en",
+      "lemma": "chordophone",
+      "synset": "oewn-03029569-n"
+    },
+    {
+      "definition": "a 16th century musical instrument resembling a guitar with a pear-shaped soundbox and wire strings",
+      "forms": [],
+      "id": "oewn-cittern__1.06.00..",
+      "lang": "en",
+      "lemma": "cittern",
+      "synset": "oewn-03039817-n"
+    },
+    {
+      "definition": "a 16th century musical instrument resembling a guitar with a pear-shaped soundbox and wire strings",
+      "forms": [],
+      "id": "oewn-cithern__1.06.00..",
+      "lang": "en",
+      "lemma": "cithern",
+      "synset": "oewn-03039817-n"
+    },
+    {
+      "definition": "a 16th century musical instrument resembling a guitar with a pear-shaped soundbox and wire strings",
+      "forms": [],
+      "id": "oewn-cither__1.06.01..",
+      "lang": "en",
+      "lemma": "cither",
+      "synset": "oewn-03039817-n"
+    },
+    {
+      "definition": "a 16th century musical instrument resembling a guitar with a pear-shaped soundbox and wire strings",
+      "forms": [],
+      "id": "oewn-citole__1.06.00..",
+      "lang": "en",
+      "lemma": "citole",
+      "synset": "oewn-03039817-n"
+    },
+    {
+      "definition": "a 16th century musical instrument resembling a guitar with a pear-shaped soundbox and wire strings",
+      "forms": [],
+      "id": "oewn-gittern__1.06.00..",
+      "lang": "en",
+      "lemma": "gittern",
+      "synset": "oewn-03039817-n"
+    },
+    {
+      "definition": "a medieval brass instrument with a clear shrill tone",
+      "forms": [],
+      "id": "oewn-clarion__1.06.00..",
+      "lang": "en",
+      "lemma": "clarion",
+      "synset": "oewn-03041884-n"
+    },
+    {
+      "definition": "an early stringed instrument like a piano but with more delicate sound",
+      "forms": [],
+      "id": "oewn-clavichord__1.06.00..",
+      "lang": "en",
+      "lemma": "clavichord",
+      "synset": "oewn-03042855-n"
+    },
+    {
+      "definition": "a stringed instrument that has a keyboard",
+      "forms": [],
+      "id": "oewn-clavier__1.06.01..",
+      "lang": "en",
+      "lemma": "clavier",
+      "synset": "oewn-03043000-n"
+    },
+    {
+      "definition": "a stringed instrument that has a keyboard",
+      "forms": [],
+      "id": "oewn-klavier__1.06.00..",
+      "lang": "en",
+      "lemma": "Klavier",
+      "synset": "oewn-03043000-n"
+    },
+    {
+      "definition": "free-reed instrument played like an accordion by pushing its ends together to force air through the reeds",
+      "forms": [],
+      "id": "oewn-concertina__1.06.00..",
+      "lang": "en",
+      "lemma": "concertina",
+      "synset": "oewn-03090712-n"
+    },
+    {
+      "definition": "a brass musical instrument with a brilliant tone; has a narrow tube and a flared bell and is played by means of valves",
+      "forms": [],
+      "id": "oewn-cornet__1.06.00..",
+      "lang": "en",
+      "lemma": "cornet",
+      "synset": "oewn-03115320-n"
+    },
+    {
+      "definition": "a brass musical instrument with a brilliant tone; has a narrow tube and a flared bell and is played by means of valves",
+      "forms": [],
+      "id": "oewn-horn__1.06.01..",
+      "lang": "en",
+      "lemma": "horn",
+      "synset": "oewn-03115320-n"
+    },
+    {
+      "definition": "a brass musical instrument with a brilliant tone; has a narrow tube and a flared bell and is played by means of valves",
+      "forms": [],
+      "id": "oewn-trumpet__1.06.00..",
+      "lang": "en",
+      "lemma": "trumpet",
+      "synset": "oewn-03115320-n"
+    },
+    {
+      "definition": "a brass musical instrument with a brilliant tone; has a narrow tube and a flared bell and is played by means of valves",
+      "forms": [],
+      "id": "oewn-trump__1.06.01..",
+      "lang": "en",
+      "lemma": "trump",
+      "synset": "oewn-03115320-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a concave brass disk; makes a loud crashing sound when hit with a drumstick or when two are struck together",
+      "forms": [],
+      "id": "oewn-cymbal__1.06.00..",
+      "lang": "en",
+      "lemma": "cymbal",
+      "synset": "oewn-03162014-n"
+    },
+    {
+      "definition": "a pipe of the bagpipe that is tuned to produce a single continuous tone",
+      "forms": [],
+      "id": "oewn-drone__1.06.00..",
+      "lang": "en",
+      "lemma": "drone",
+      "synset": "oewn-03250427-n"
+    },
+    {
+      "definition": "a pipe of the bagpipe that is tuned to produce a single continuous tone",
+      "forms": [],
+      "id": "oewn-drone_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "drone pipe",
+      "synset": "oewn-03250427-n"
+    },
+    {
+      "definition": "a pipe of the bagpipe that is tuned to produce a single continuous tone",
+      "forms": [],
+      "id": "oewn-bourdon__1.06.00..",
+      "lang": "en",
+      "lemma": "bourdon",
+      "synset": "oewn-03250427-n"
+    },
+    {
+      "definition": "a musical percussion instrument; usually consists of a hollow cylinder with a membrane stretched across each end",
+      "forms": [],
+      "id": "oewn-drum__1.06.00..",
+      "lang": "en",
+      "lemma": "drum",
+      "synset": "oewn-03254272-n"
+    },
+    {
+      "definition": "a musical percussion instrument; usually consists of a hollow cylinder with a membrane stretched across each end",
+      "forms": [],
+      "id": "oewn-membranophone__1.06.00..",
+      "lang": "en",
+      "lemma": "membranophone",
+      "synset": "oewn-03254272-n"
+    },
+    {
+      "definition": "a musical percussion instrument; usually consists of a hollow cylinder with a membrane stretched across each end",
+      "forms": [],
+      "id": "oewn-tympan__1.06.00..",
+      "lang": "en",
+      "lemma": "tympan",
+      "synset": "oewn-03254272-n"
+    },
+    {
+      "definition": "a trapezoidal zither whose metal strings are struck with light hammers",
+      "forms": [],
+      "id": "oewn-dulcimer__1.06.00..",
+      "lang": "en",
+      "lemma": "dulcimer",
+      "synset": "oewn-03259440-n"
+    },
+    {
+      "definition": "a stringed instrument used in American folk music; an elliptical body and a fretted fingerboard and three strings",
+      "forms": [],
+      "id": "oewn-dulcimer__1.06.01..",
+      "lang": "en",
+      "lemma": "dulcimer",
+      "synset": "oewn-03259565-n"
+    },
+    {
+      "definition": "a guitar whose sound is amplified by electrical means",
+      "forms": [],
+      "id": "oewn-electric_guitar__1.06.00..",
+      "lang": "en",
+      "lemma": "electric guitar",
+      "synset": "oewn-03276921-n"
+    },
+    {
+      "definition": "(music) an electronic simulation of a pipe organ",
+      "forms": [],
+      "id": "oewn-electric_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "electric organ",
+      "synset": "oewn-03278462-n"
+    },
+    {
+      "definition": "(music) an electronic simulation of a pipe organ",
+      "forms": [],
+      "id": "oewn-electronic_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "electronic organ",
+      "synset": "oewn-03278462-n"
+    },
+    {
+      "definition": "(music) an electronic simulation of a pipe organ",
+      "forms": [],
+      "id": "oewn-hammond_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "Hammond organ",
+      "synset": "oewn-03278462-n"
+    },
+    {
+      "definition": "(music) an electronic simulation of a pipe organ",
+      "forms": [],
+      "id": "oewn-organ__1.06.01..",
+      "lang": "en",
+      "lemma": "organ",
+      "synset": "oewn-03278462-n"
+    },
+    {
+      "definition": "a musical instrument that generates sounds electronically",
+      "forms": [],
+      "id": "oewn-electronic_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "electronic instrument",
+      "synset": "oewn-03284064-n"
+    },
+    {
+      "definition": "a musical instrument that generates sounds electronically",
+      "forms": [],
+      "id": "oewn-electronic_musical_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "electronic musical instrument",
+      "synset": "oewn-03284064-n"
+    },
+    {
+      "definition": "a tubular wind instrument with 8 finger holes and a fipple mouthpiece",
+      "forms": [],
+      "id": "oewn-fipple_flute__1.06.00..",
+      "lang": "en",
+      "lemma": "fipple flute",
+      "synset": "oewn-03348200-n"
+    },
+    {
+      "definition": "a tubular wind instrument with 8 finger holes and a fipple mouthpiece",
+      "forms": [],
+      "id": "oewn-fipple_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "fipple pipe",
+      "synset": "oewn-03348200-n"
+    },
+    {
+      "definition": "a tubular wind instrument with 8 finger holes and a fipple mouthpiece",
+      "forms": [],
+      "id": "oewn-recorder__1.06.00..",
+      "lang": "en",
+      "lemma": "recorder",
+      "synset": "oewn-03348200-n"
+    },
+    {
+      "definition": "a tubular wind instrument with 8 finger holes and a fipple mouthpiece",
+      "forms": [],
+      "id": "oewn-vertical_flute__1.06.00..",
+      "lang": "en",
+      "lemma": "vertical flute",
+      "synset": "oewn-03348200-n"
+    },
+    {
+      "definition": "organ pipe whose tone is produced by air passing across the sharp edge of a fissure or lip",
+      "forms": [],
+      "id": "oewn-flue_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "flue pipe",
+      "synset": "oewn-03373857-n"
+    },
+    {
+      "definition": "organ pipe whose tone is produced by air passing across the sharp edge of a fissure or lip",
+      "forms": [],
+      "id": "oewn-flue__1.06.01..",
+      "lang": "en",
+      "lemma": "flue",
+      "synset": "oewn-03373857-n"
+    },
+    {
+      "definition": "organ pipe whose tone is produced by air passing across the sharp edge of a fissure or lip",
+      "forms": [],
+      "id": "oewn-labial_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "labial pipe",
+      "synset": "oewn-03373857-n"
+    },
+    {
+      "definition": "a brass instrument resembling a cornet but with a wider bore",
+      "forms": [],
+      "id": "oewn-flugelhorn__1.06.00..",
+      "lang": "en",
+      "lemma": "flugelhorn",
+      "synset": "oewn-03374122-n"
+    },
+    {
+      "definition": "a brass instrument resembling a cornet but with a wider bore",
+      "forms": [],
+      "id": "oewn-fluegelhorn__1.06.00..",
+      "lang": "en",
+      "lemma": "fluegelhorn",
+      "synset": "oewn-03374122-n"
+    },
+    {
+      "definition": "a high-pitched woodwind instrument; a slender tube closed at one end with finger holes on one end and an opening near the closed end across which the breath is blown",
+      "forms": [],
+      "id": "oewn-flute__1.06.00..",
+      "lang": "en",
+      "lemma": "flute",
+      "synset": "oewn-03376875-n"
+    },
+    {
+      "definition": "a high-pitched woodwind instrument; a slender tube closed at one end with finger holes on one end and an opening near the closed end across which the breath is blown",
+      "forms": [],
+      "id": "oewn-transverse_flute__1.06.00..",
+      "lang": "en",
+      "lemma": "transverse flute",
+      "synset": "oewn-03376875-n"
+    },
+    {
+      "definition": "a wind instrument with a free reed",
+      "forms": [],
+      "id": "oewn-free-reed_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "free-reed instrument",
+      "synset": "oewn-03398178-n"
+    },
+    {
+      "definition": "a brass musical instrument consisting of a conical tube that is coiled into a spiral and played by means of valves",
+      "forms": [],
+      "id": "oewn-french_horn__1.06.00..",
+      "lang": "en",
+      "lemma": "French horn",
+      "synset": "oewn-03399752-n"
+    },
+    {
+      "definition": "a brass musical instrument consisting of a conical tube that is coiled into a spiral and played by means of valves",
+      "forms": [],
+      "id": "oewn-horn__1.06.00..",
+      "lang": "en",
+      "lemma": "horn",
+      "synset": "oewn-03399752-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a set of graduated metal bars mounted on a frame and played with small hammers",
+      "forms": [],
+      "id": "oewn-glockenspiel__1.06.00..",
+      "lang": "en",
+      "lemma": "glockenspiel",
+      "synset": "oewn-03445606-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a set of graduated metal bars mounted on a frame and played with small hammers",
+      "forms": [],
+      "id": "oewn-orchestral_bells__1.06.00..",
+      "lang": "en",
+      "lemma": "orchestral bells",
+      "synset": "oewn-03445606-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a metal plate that is struck with a softheaded drumstick",
+      "forms": [],
+      "id": "oewn-gong__1.06.00..",
+      "lang": "en",
+      "lemma": "gong",
+      "synset": "oewn-03452665-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a metal plate that is struck with a softheaded drumstick",
+      "forms": [],
+      "id": "oewn-tam-tam__1.06.00..",
+      "lang": "en",
+      "lemma": "tam-tam",
+      "synset": "oewn-03452665-n"
+    },
+    {
+      "definition": "a piano with the strings on a horizontal harp-shaped frame; usually supported by three legs",
+      "forms": [],
+      "id": "oewn-grand_piano__1.06.00..",
+      "lang": "en",
+      "lemma": "grand piano",
+      "synset": "oewn-03457685-n"
+    },
+    {
+      "definition": "a piano with the strings on a horizontal harp-shaped frame; usually supported by three legs",
+      "forms": [],
+      "id": "oewn-grand__1.06.00..",
+      "lang": "en",
+      "lemma": "grand",
+      "synset": "oewn-03457685-n"
+    },
+    {
+      "definition": "a stringed instrument usually having six strings; played by strumming or plucking",
+      "forms": [],
+      "id": "oewn-guitar__1.06.00..",
+      "lang": "en",
+      "lemma": "guitar",
+      "synset": "oewn-03472449-n"
+    },
+    {
+      "definition": "a bell that is held in the hand",
+      "forms": [],
+      "id": "oewn-handbell__1.06.00..",
+      "lang": "en",
+      "lemma": "handbell",
+      "synset": "oewn-03488313-n"
+    },
+    {
+      "definition": "a small rectangular free-reed instrument having a row of free reeds set back in air holes and played by blowing into the desired hole",
+      "forms": [],
+      "id": "oewn-harmonica__1.06.00..",
+      "lang": "en",
+      "lemma": "harmonica",
+      "synset": "oewn-03499379-n"
+    },
+    {
+      "definition": "a small rectangular free-reed instrument having a row of free reeds set back in air holes and played by blowing into the desired hole",
+      "forms": [],
+      "id": "oewn-mouth_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "mouth organ",
+      "synset": "oewn-03499379-n"
+    },
+    {
+      "definition": "a small rectangular free-reed instrument having a row of free reeds set back in air holes and played by blowing into the desired hole",
+      "forms": [],
+      "id": "oewn-harp__1.06.02..",
+      "lang": "en",
+      "lemma": "harp",
+      "synset": "oewn-03499379-n"
+    },
+    {
+      "definition": "a small rectangular free-reed instrument having a row of free reeds set back in air holes and played by blowing into the desired hole",
+      "forms": [],
+      "id": "oewn-mouth_harp__1.06.00..",
+      "lang": "en",
+      "lemma": "mouth harp",
+      "synset": "oewn-03499379-n"
+    },
+    {
+      "definition": "a chordophone that has a triangular frame consisting of a sounding board and a pillar and a curved neck; the strings stretched between the neck and the soundbox are plucked with the fingers",
+      "forms": [],
+      "id": "oewn-harp__1.06.00..",
+      "lang": "en",
+      "lemma": "harp",
+      "synset": "oewn-03500383-n"
+    },
+    {
+      "definition": "a clavier with strings that are plucked by plectra mounted on pivots",
+      "forms": [],
+      "id": "oewn-harpsichord__1.06.00..",
+      "lang": "en",
+      "lemma": "harpsichord",
+      "synset": "oewn-03501421-n"
+    },
+    {
+      "definition": "a clavier with strings that are plucked by plectra mounted on pivots",
+      "forms": [
+        "cembali"
+      ],
+      "id": "oewn-cembalo__1.06.00..",
+      "lang": "en",
+      "lemma": "cembalo",
+      "synset": "oewn-03501421-n"
+    },
+    {
+      "definition": "guitar whose steel strings are twanged while being pressed with a movable steel bar for a glissando effect",
+      "forms": [],
+      "id": "oewn-hawaiian_guitar__1.06.00..",
+      "lang": "en",
+      "lemma": "Hawaiian guitar",
+      "synset": "oewn-03505051-n"
+    },
+    {
+      "definition": "guitar whose steel strings are twanged while being pressed with a movable steel bar for a glissando effect",
+      "forms": [],
+      "id": "oewn-steel_guitar__1.06.00..",
+      "lang": "en",
+      "lemma": "steel guitar",
+      "synset": "oewn-03505051-n"
+    },
+    {
+      "definition": "cymbals that are operated by a foot pedal",
+      "forms": [],
+      "id": "oewn-high-hat_cymbal__1.06.00..",
+      "lang": "en",
+      "lemma": "high-hat cymbal",
+      "synset": "oewn-03523992-n"
+    },
+    {
+      "definition": "cymbals that are operated by a foot pedal",
+      "forms": [],
+      "id": "oewn-high_hat__1.06.01..",
+      "lang": "en",
+      "lemma": "high hat",
+      "synset": "oewn-03523992-n"
+    },
+    {
+      "definition": "a small lyre-shaped musical instrument that is placed between the teeth and played by twanging a wire tongue while changing the shape of the mouth cavity",
+      "forms": [],
+      "id": "oewn-jew-ap-s_harp__1.06.00..",
+      "lang": "en",
+      "lemma": "jew's harp",
+      "synset": "oewn-03603109-n"
+    },
+    {
+      "definition": "a small lyre-shaped musical instrument that is placed between the teeth and played by twanging a wire tongue while changing the shape of the mouth cavity",
+      "forms": [],
+      "id": "oewn-jews-ap-_harp__1.06.00..",
+      "lang": "en",
+      "lemma": "jews' harp",
+      "synset": "oewn-03603109-n"
+    },
+    {
+      "definition": "a small lyre-shaped musical instrument that is placed between the teeth and played by twanging a wire tongue while changing the shape of the mouth cavity",
+      "forms": [],
+      "id": "oewn-mouth_bow__1.06.00..",
+      "lang": "en",
+      "lemma": "mouth bow",
+      "synset": "oewn-03603109-n"
+    },
+    {
+      "definition": "a toy wind instrument that has a membrane that makes a sound when you hum into the mouthpiece",
+      "forms": [],
+      "id": "oewn-kazoo__1.06.00..",
+      "lang": "en",
+      "lemma": "kazoo",
+      "synset": "oewn-03614610-n"
+    },
+    {
+      "definition": "a large hemispherical brass or copper percussion instrument with a drumhead that can be tuned by adjusting the tension on it",
+      "forms": [],
+      "id": "oewn-kettle__1.06.01..",
+      "lang": "en",
+      "lemma": "kettle",
+      "synset": "oewn-03618174-n"
+    },
+    {
+      "definition": "a large hemispherical brass or copper percussion instrument with a drumhead that can be tuned by adjusting the tension on it",
+      "forms": [],
+      "id": "oewn-kettledrum__1.06.00..",
+      "lang": "en",
+      "lemma": "kettledrum",
+      "synset": "oewn-03618174-n"
+    },
+    {
+      "definition": "a large hemispherical brass or copper percussion instrument with a drumhead that can be tuned by adjusting the tension on it",
+      "forms": [
+        "tympana"
+      ],
+      "id": "oewn-tympanum__1.06.00..",
+      "lang": "en",
+      "lemma": "tympanum",
+      "synset": "oewn-03618174-n"
+    },
+    {
+      "definition": "a large hemispherical brass or copper percussion instrument with a drumhead that can be tuned by adjusting the tension on it",
+      "forms": [],
+      "id": "oewn-tympani__1.06.00..",
+      "lang": "en",
+      "lemma": "tympani",
+      "synset": "oewn-03618174-n"
+    },
+    {
+      "definition": "a large hemispherical brass or copper percussion instrument with a drumhead that can be tuned by adjusting the tension on it",
+      "forms": [],
+      "id": "oewn-timpani__1.06.00..",
+      "lang": "en",
+      "lemma": "timpani",
+      "synset": "oewn-03618174-n"
+    },
+    {
+      "definition": "a musical instrument that is played by means of a keyboard",
+      "forms": [],
+      "id": "oewn-keyboard_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "keyboard instrument",
+      "synset": "oewn-03619741-n"
+    },
+    {
+      "definition": "Japanese stringed instrument that resembles a zither; has a rectangular wooden sounding board and usually 13 silk strings that are plucked with the fingers",
+      "forms": [],
+      "id": "oewn-koto__1.06.00..",
+      "lang": "en",
+      "lemma": "koto",
+      "synset": "oewn-03633506-n"
+    },
+    {
+      "definition": "an Australian percussion instrument used for playing bush music; a long stick with bottle caps nailed loosely to it; played by hitting it with a stick or banging it on the ground",
+      "forms": [],
+      "id": "oewn-lagerphone__1.06.00..",
+      "lang": "en",
+      "lemma": "lagerphone",
+      "synset": "oewn-03638923-n"
+    },
+    {
+      "definition": "chordophone consisting of a plucked instrument having a pear-shaped body, a usually bent neck, and a fretted fingerboard",
+      "forms": [],
+      "id": "oewn-lute__1.06.00..",
+      "lang": "en",
+      "lemma": "lute",
+      "synset": "oewn-03703694-n"
+    },
+    {
+      "definition": "a stringed instrument related to the lute, usually played with a plectrum",
+      "forms": [],
+      "id": "oewn-mandolin__1.06.00..",
+      "lang": "en",
+      "lemma": "mandolin",
+      "synset": "oewn-03722505-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a hollow gourd containing pebbles or beans; often played in pairs",
+      "forms": [],
+      "id": "oewn-maraca__1.06.00..",
+      "lang": "en",
+      "lemma": "maraca",
+      "synset": "oewn-03726382-n"
+    },
+    {
+      "definition": "a percussion instrument with wooden bars tuned to produce a chromatic scale and with resonators; played with small mallets",
+      "forms": [],
+      "id": "oewn-marimba__1.06.00..",
+      "lang": "en",
+      "lemma": "marimba",
+      "synset": "oewn-03726875-n"
+    },
+    {
+      "definition": "a percussion instrument with wooden bars tuned to produce a chromatic scale and with resonators; played with small mallets",
+      "forms": [],
+      "id": "oewn-xylophone__1.06.00..",
+      "lang": "en",
+      "lemma": "xylophone",
+      "synset": "oewn-03726875-n"
+    },
+    {
+      "definition": "a mechanically operated piano that uses a roll of perforated paper to activate the keys",
+      "forms": [],
+      "id": "oewn-mechanical_piano__1.06.00..",
+      "lang": "en",
+      "lemma": "mechanical piano",
+      "synset": "oewn-03743557-n"
+    },
+    {
+      "definition": "a mechanically operated piano that uses a roll of perforated paper to activate the keys",
+      "forms": [],
+      "id": "oewn-pianola__1.06.00..",
+      "lang": "en",
+      "lemma": "Pianola",
+      "synset": "oewn-03743557-n"
+    },
+    {
+      "definition": "a mechanically operated piano that uses a roll of perforated paper to activate the keys",
+      "forms": [],
+      "id": "oewn-player_piano__1.06.00..",
+      "lang": "en",
+      "lemma": "player piano",
+      "synset": "oewn-03743557-n"
+    },
+    {
+      "definition": "any of various devices or contrivances that can be used to produce musical tones or sounds",
+      "forms": [],
+      "id": "oewn-musical_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "musical instrument",
+      "synset": "oewn-03806455-n"
+    },
+    {
+      "definition": "any of various devices or contrivances that can be used to produce musical tones or sounds",
+      "forms": [],
+      "id": "oewn-instrument__1.06.01..",
+      "lang": "en",
+      "lemma": "instrument",
+      "synset": "oewn-03806455-n"
+    },
+    {
+      "definition": "produces music by means of pins on a revolving cylinder that strike the tuned teeth of a comb-like metal plate",
+      "forms": [],
+      "id": "oewn-music_box__1.06.00..",
+      "lang": "en",
+      "lemma": "music box",
+      "synset": "oewn-03806893-n"
+    },
+    {
+      "definition": "produces music by means of pins on a revolving cylinder that strike the tuned teeth of a comb-like metal plate",
+      "forms": [],
+      "id": "oewn-musical_box__1.06.00..",
+      "lang": "en",
+      "lemma": "musical box",
+      "synset": "oewn-03806893-n"
+    },
+    {
+      "definition": "egg-shaped terracotta wind instrument with a mouthpiece and finger holes",
+      "forms": [],
+      "id": "oewn-ocarina__1.06.00..",
+      "lang": "en",
+      "lemma": "ocarina",
+      "synset": "oewn-03846201-n"
+    },
+    {
+      "definition": "egg-shaped terracotta wind instrument with a mouthpiece and finger holes",
+      "forms": [],
+      "id": "oewn-sweet_potato__1.06.00..",
+      "lang": "en",
+      "lemma": "sweet potato",
+      "synset": "oewn-03846201-n"
+    },
+    {
+      "definition": "wind instrument whose sound is produced by means of pipes arranged in sets supplied with air from a bellows and controlled from a large complex musical keyboard",
+      "forms": [],
+      "id": "oewn-organ__1.06.00..",
+      "lang": "en",
+      "lemma": "organ",
+      "synset": "oewn-03859585-n"
+    },
+    {
+      "definition": "wind instrument whose sound is produced by means of pipes arranged in sets supplied with air from a bellows and controlled from a large complex musical keyboard",
+      "forms": [],
+      "id": "oewn-pipe_organ__1.06.00..",
+      "lang": "en",
+      "lemma": "pipe organ",
+      "synset": "oewn-03859585-n"
+    },
+    {
+      "definition": "the flues and stops on a pipe organ",
+      "forms": [],
+      "id": "oewn-organ_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "organ pipe",
+      "synset": "oewn-03860335-n"
+    },
+    {
+      "definition": "the flues and stops on a pipe organ",
+      "forms": [],
+      "id": "oewn-pipe__1.06.03..",
+      "lang": "en",
+      "lemma": "pipe",
+      "synset": "oewn-03860335-n"
+    },
+    {
+      "definition": "the flues and stops on a pipe organ",
+      "forms": [],
+      "id": "oewn-pipework__1.06.00..",
+      "lang": "en",
+      "lemma": "pipework",
+      "synset": "oewn-03860335-n"
+    },
+    {
+      "definition": "a graduated set of organ pipes of like tone quality",
+      "forms": [],
+      "id": "oewn-organ_stop__1.06.00..",
+      "lang": "en",
+      "lemma": "organ stop",
+      "synset": "oewn-03860518-n"
+    },
+    {
+      "definition": "a primitive wind instrument consisting of several parallel pipes bound together",
+      "forms": [],
+      "id": "oewn-panpipe__1.06.00..",
+      "lang": "en",
+      "lemma": "panpipe",
+      "synset": "oewn-03890094-n"
+    },
+    {
+      "definition": "a primitive wind instrument consisting of several parallel pipes bound together",
+      "forms": [],
+      "id": "oewn-pandean_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "pandean pipe",
+      "synset": "oewn-03890094-n"
+    },
+    {
+      "definition": "a primitive wind instrument consisting of several parallel pipes bound together",
+      "forms": [
+        "syringes"
+      ],
+      "id": "oewn-syrinx__1.06.00..",
+      "lang": "en",
+      "lemma": "syrinx",
+      "synset": "oewn-03890094-n"
+    },
+    {
+      "definition": "a musical instrument in which the sound is produced by one object striking another",
+      "forms": [],
+      "id": "oewn-percussion_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "percussion instrument",
+      "synset": "oewn-03921556-n"
+    },
+    {
+      "definition": "a musical instrument in which the sound is produced by one object striking another",
+      "forms": [],
+      "id": "oewn-percussive_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "percussive instrument",
+      "synset": "oewn-03921556-n"
+    },
+    {
+      "definition": "a keyboard instrument that is played by depressing keys that cause hammers to strike tuned strings and produce sounds",
+      "forms": [],
+      "id": "oewn-piano__1.06.00..",
+      "lang": "en",
+      "lemma": "piano",
+      "synset": "oewn-03934354-n"
+    },
+    {
+      "definition": "a keyboard instrument that is played by depressing keys that cause hammers to strike tuned strings and produce sounds",
+      "forms": [],
+      "id": "oewn-pianoforte__1.06.00..",
+      "lang": "en",
+      "lemma": "pianoforte",
+      "synset": "oewn-03934354-n"
+    },
+    {
+      "definition": "a keyboard instrument that is played by depressing keys that cause hammers to strike tuned strings and produce sounds",
+      "forms": [],
+      "id": "oewn-forte-piano__1.06.00..",
+      "lang": "en",
+      "lemma": "forte-piano",
+      "synset": "oewn-03934354-n"
+    },
+    {
+      "definition": "a tubular wind instrument",
+      "forms": [],
+      "id": "oewn-pipe__1.06.04..",
+      "lang": "en",
+      "lemma": "pipe",
+      "synset": "oewn-03951891-n"
+    },
+    {
+      "definition": "a small pipe sounding a tone of standard frequency; used to establish the starting pitch for unaccompanied singing",
+      "forms": [],
+      "id": "oewn-pitch_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "pitch pipe",
+      "synset": "oewn-03956923-n"
+    },
+    {
+      "definition": "wind instrument used by postilions of the 18th and 19th centuries",
+      "forms": [],
+      "id": "oewn-post_horn__1.06.00..",
+      "lang": "en",
+      "lemma": "post horn",
+      "synset": "oewn-03996135-n"
+    },
+    {
+      "definition": "an ancient stringed instrument similar to the lyre or zither but having a trapezoidal sounding board under the strings",
+      "forms": [],
+      "id": "oewn-psaltery__1.06.00..",
+      "lang": "en",
+      "lemma": "psaltery",
+      "synset": "oewn-04023240-n"
+    },
+    {
+      "definition": "a percussion instrument that is made from a dried cactus branch that is hollowed out and filled with small pebbles and capped at both ends; makes the sound of falling rain when tilted; origin was in Chile where tribesmen used it in ceremonies to bring rain",
+      "forms": [],
+      "id": "oewn-rain_stick__1.06.00..",
+      "lang": "en",
+      "lemma": "rain stick",
+      "synset": "oewn-04056865-n"
+    },
+    {
+      "definition": "organ pipe with a vibrating reed",
+      "forms": [],
+      "id": "oewn-reed_pipe__1.06.00..",
+      "lang": "en",
+      "lemma": "reed pipe",
+      "synset": "oewn-04074255-n"
+    },
+    {
+      "definition": "a Japanese stringed instrument resembling a banjo with a long neck and three strings and a fretless fingerboard and a rectangular soundbox; played with a plectrum",
+      "forms": [],
+      "id": "oewn-samisen__1.06.00..",
+      "lang": "en",
+      "lemma": "samisen",
+      "synset": "oewn-04139686-n"
+    },
+    {
+      "definition": "a Japanese stringed instrument resembling a banjo with a long neck and three strings and a fretless fingerboard and a rectangular soundbox; played with a plectrum",
+      "forms": [],
+      "id": "oewn-shamisen__1.06.00..",
+      "lang": "en",
+      "lemma": "shamisen",
+      "synset": "oewn-04139686-n"
+    },
+    {
+      "definition": "any of a family of brass wind instruments that resemble a bugle with valves",
+      "forms": [],
+      "id": "oewn-saxhorn__1.06.00..",
+      "lang": "en",
+      "lemma": "saxhorn",
+      "synset": "oewn-04148263-n"
+    },
+    {
+      "definition": "a stringed instrument of India; has a long neck and movable frets; has 6 or 7 metal strings for playing and usually 13 resonating strings",
+      "forms": [],
+      "id": "oewn-sitar__1.06.00..",
+      "lang": "en",
+      "lemma": "sitar",
+      "synset": "oewn-04231904-n"
+    },
+    {
+      "definition": "a small drum with two heads and a snare stretched across the lower head",
+      "forms": [],
+      "id": "oewn-snare_drum__1.06.00..",
+      "lang": "en",
+      "lemma": "snare drum",
+      "synset": "oewn-04256525-n"
+    },
+    {
+      "definition": "a small drum with two heads and a snare stretched across the lower head",
+      "forms": [],
+      "id": "oewn-snare__1.06.02..",
+      "lang": "en",
+      "lemma": "snare",
+      "synset": "oewn-04256525-n"
+    },
+    {
+      "definition": "a small drum with two heads and a snare stretched across the lower head",
+      "forms": [],
+      "id": "oewn-side_drum__1.06.00..",
+      "lang": "en",
+      "lemma": "side drum",
+      "synset": "oewn-04256525-n"
+    },
+    {
+      "definition": "a concave percussion instrument made from the metal top of an oil drum; has an array of flattened areas that produce different tones when struck (of Caribbean origin)",
+      "forms": [],
+      "id": "oewn-steel_drum__1.06.00..",
+      "lang": "en",
+      "lemma": "steel drum",
+      "synset": "oewn-04318312-n"
+    },
+    {
+      "definition": "a musical instrument in which taut strings provide the source of sound",
+      "forms": [],
+      "id": "oewn-stringed_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "stringed instrument",
+      "synset": "oewn-04345614-n"
+    },
+    {
+      "definition": "(music) an electronic instrument (usually played with a keyboard) that generates and modifies sounds electronically and can imitate a variety of other musical instruments",
+      "forms": [],
+      "id": "oewn-synthesizer__1.06.00..",
+      "lang": "en",
+      "lemma": "synthesizer",
+      "synset": "oewn-04383487-n"
+    },
+    {
+      "definition": "(music) an electronic instrument (usually played with a keyboard) that generates and modifies sounds electronically and can imitate a variety of other musical instruments",
+      "forms": [],
+      "id": "oewn-synthesiser__1.06.00..",
+      "lang": "en",
+      "lemma": "synthesiser",
+      "synset": "oewn-04383487-n"
+    },
+    {
+      "definition": "a small drum with one head of soft calfskin",
+      "forms": [],
+      "id": "oewn-tabor__1.06.00..",
+      "lang": "en",
+      "lemma": "tabor",
+      "synset": "oewn-04389421-n"
+    },
+    {
+      "definition": "a small drum with one head of soft calfskin",
+      "forms": [],
+      "id": "oewn-tabour__1.06.00..",
+      "lang": "en",
+      "lemma": "tabour",
+      "synset": "oewn-04389421-n"
+    },
+    {
+      "definition": "a drum",
+      "forms": [],
+      "id": "oewn-tambour__1.06.00..",
+      "lang": "en",
+      "lemma": "tambour",
+      "synset": "oewn-04394288-n"
+    },
+    {
+      "definition": "a shallow drum with a single drumhead and with metallic disks in the sides",
+      "forms": [],
+      "id": "oewn-tambourine__1.06.00..",
+      "lang": "en",
+      "lemma": "tambourine",
+      "synset": "oewn-04394487-n"
+    },
+    {
+      "definition": "any of various drums with small heads",
+      "forms": [],
+      "id": "oewn-tenor_drum__1.06.00..",
+      "lang": "en",
+      "lemma": "tenor drum",
+      "synset": "oewn-04417221-n"
+    },
+    {
+      "definition": "any of various drums with small heads",
+      "forms": [],
+      "id": "oewn-tom-tom__1.06.00..",
+      "lang": "en",
+      "lemma": "tom-tom",
+      "synset": "oewn-04417221-n"
+    },
+    {
+      "definition": "an electronic musical instrument; melodies can be played by moving the right hand between two rods that serve as antennas to control pitch; the left hand controls phrasing",
+      "forms": [],
+      "id": "oewn-theremin__1.06.00..",
+      "lang": "en",
+      "lemma": "theremin",
+      "synset": "oewn-04426777-n"
+    },
+    {
+      "definition": "small hand drum similar to a tambourine; formerly carried by itinerant jugglers",
+      "forms": [],
+      "id": "oewn-timbrel__1.06.00..",
+      "lang": "en",
+      "lemma": "timbrel",
+      "synset": "oewn-04443676-n"
+    },
+    {
+      "definition": "a percussion instrument consisting of a metal bar bent in the shape of an open triangle",
+      "forms": [],
+      "id": "oewn-triangle__1.06.00..",
+      "lang": "en",
+      "lemma": "triangle",
+      "synset": "oewn-04488109-n"
+    },
+    {
+      "definition": "a brass instrument consisting of a long tube whose length can be varied by a U-shaped slide",
+      "forms": [],
+      "id": "oewn-trombone__1.06.00..",
+      "lang": "en",
+      "lemma": "trombone",
+      "synset": "oewn-04494650-n"
+    },
+    {
+      "definition": "a small guitar having four strings",
+      "forms": [],
+      "id": "oewn-uke__1.06.00..",
+      "lang": "en",
+      "lemma": "uke",
+      "synset": "oewn-04513584-n"
+    },
+    {
+      "definition": "a small guitar having four strings",
+      "forms": [],
+      "id": "oewn-ukulele__1.06.00..",
+      "lang": "en",
+      "lemma": "ukulele",
+      "synset": "oewn-04513584-n"
+    },
+    {
+      "definition": "a piano with a vertical sounding board",
+      "forms": [],
+      "id": "oewn-upright__1.06.00..",
+      "lang": "en",
+      "lemma": "upright",
+      "synset": "oewn-04522298-n"
+    },
+    {
+      "definition": "a piano with a vertical sounding board",
+      "forms": [],
+      "id": "oewn-upright_piano__1.06.00..",
+      "lang": "en",
+      "lemma": "upright piano",
+      "synset": "oewn-04522298-n"
+    },
+    {
+      "definition": "a percussion instrument similar to a xylophone but having metal bars and rotating disks in the resonators that produce a vibrato sound",
+      "forms": [],
+      "id": "oewn-vibraphone__1.06.00..",
+      "lang": "en",
+      "lemma": "vibraphone",
+      "synset": "oewn-04540126-n"
+    },
+    {
+      "definition": "a percussion instrument similar to a xylophone but having metal bars and rotating disks in the resonators that produce a vibrato sound",
+      "forms": [],
+      "id": "oewn-vibraharp__1.06.00..",
+      "lang": "en",
+      "lemma": "vibraharp",
+      "synset": "oewn-04540126-n"
+    },
+    {
+      "definition": "a percussion instrument similar to a xylophone but having metal bars and rotating disks in the resonators that produce a vibrato sound",
+      "forms": [],
+      "id": "oewn-vibes__1.06.00..",
+      "lang": "en",
+      "lemma": "vibes",
+      "synset": "oewn-04540126-n"
+    },
+    {
+      "definition": "any of a family of bowed stringed instruments that preceded the violin family",
+      "forms": [],
+      "id": "oewn-viol__1.06.00..",
+      "lang": "en",
+      "lemma": "viol",
+      "synset": "oewn-04543448-n"
+    },
+    {
+      "definition": "a bowed stringed instrument slightly larger than a violin, tuned a fifth lower",
+      "forms": [],
+      "id": "oewn-viola__1.06.00..",
+      "lang": "en",
+      "lemma": "viola",
+      "synset": "oewn-04543630-n"
+    },
+    {
+      "definition": "bowed stringed instrument that is the highest member of the violin family; this instrument has four strings and a hollow body and an unfretted fingerboard and is played with a bow",
+      "forms": [],
+      "id": "oewn-violin__1.06.00..",
+      "lang": "en",
+      "lemma": "violin",
+      "synset": "oewn-04544161-n"
+    },
+    {
+      "definition": "bowed stringed instrument that is the highest member of the violin family; this instrument has four strings and a hollow body and an unfretted fingerboard and is played with a bow",
+      "forms": [],
+      "id": "oewn-fiddle__1.06.00..",
+      "lang": "en",
+      "lemma": "fiddle",
+      "synset": "oewn-04544161-n"
+    },
+    {
+      "definition": "a small wind instrument that produces a whistling sound by blowing into it",
+      "forms": [],
+      "id": "oewn-whistle__1.06.02..",
+      "lang": "en",
+      "lemma": "whistle",
+      "synset": "oewn-04586953-n"
+    },
+    {
+      "definition": "a musical instrument in which the sound is produced by an enclosed column of air that is moved by bellows or the human breath",
+      "forms": [],
+      "id": "oewn-wind_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "wind instrument",
+      "synset": "oewn-04594218-n"
+    },
+    {
+      "definition": "a musical instrument in which the sound is produced by an enclosed column of air that is moved by bellows or the human breath",
+      "forms": [],
+      "id": "oewn-wind__1.06.00..",
+      "lang": "en",
+      "lemma": "wind",
+      "synset": "oewn-04594218-n"
+    },
+    {
+      "definition": "any wind instrument other than the brass instruments",
+      "forms": [],
+      "id": "oewn-woodwind__1.06.00..",
+      "lang": "en",
+      "lemma": "woodwind",
+      "synset": "oewn-04605909-n"
+    },
+    {
+      "definition": "any wind instrument other than the brass instruments",
+      "forms": [],
+      "id": "oewn-woodwind_instrument__1.06.00..",
+      "lang": "en",
+      "lemma": "woodwind instrument",
+      "synset": "oewn-04605909-n"
+    },
+    {
+      "definition": "any wind instrument other than the brass instruments",
+      "forms": [],
+      "id": "oewn-wood__1.06.01..",
+      "lang": "en",
+      "lemma": "wood",
+      "synset": "oewn-04605909-n"
+    },
+    {
+      "definition": "one of a pair of small metallic cymbals worn on the thumb and middle finger; used in belly dancing in rhythm with the dance",
+      "forms": [],
+      "id": "oewn-zill__1.06.00..",
+      "lang": "en",
+      "lemma": "zill",
+      "synset": "oewn-04622201-n"
+    },
+    {
+      "definition": "a musical stringed instrument with strings stretched over a flat sounding board; it is laid flat and played with a plectrum and with fingers",
+      "forms": [],
+      "id": "oewn-zither__1.06.00..",
+      "lang": "en",
+      "lemma": "zither",
+      "synset": "oewn-04622583-n"
+    },
+    {
+      "definition": "a musical stringed instrument with strings stretched over a flat sounding board; it is laid flat and played with a plectrum and with fingers",
+      "forms": [],
+      "id": "oewn-cither__1.06.00..",
+      "lang": "en",
+      "lemma": "cither",
+      "synset": "oewn-04622583-n"
+    },
+    {
+      "definition": "a musical stringed instrument with strings stretched over a flat sounding board; it is laid flat and played with a plectrum and with fingers",
+      "forms": [],
+      "id": "oewn-zithern__1.06.00..",
+      "lang": "en",
+      "lemma": "zithern",
+      "synset": "oewn-04622583-n"
+    },
+    {
+      "definition": "A set of electronic drums which are electrical devices struck by a drummer, played in real time (using either hands, sticks, brushes or other implements) to produce a selection of sounds, instruments and effects, from either samples or modeled sounds contained in a processor or drum module.",
+      "forms": [],
+      "id": "oewn-electronic_drum_kit__1.06.01..",
+      "lang": "en",
+      "lemma": "electronic drum kit",
+      "synset": "oewn-92460343-n"
+    },
+    {
+      "definition": "A set of electronic drums which are electrical devices struck by a drummer, played in real time (using either hands, sticks, brushes or other implements) to produce a selection of sounds, instruments and effects, from either samples or modeled sounds contained in a processor or drum module.",
+      "forms": [],
+      "id": "oewn-electronic_drum_set__1.06.01..",
+      "lang": "en",
+      "lemma": "electronic drum set",
+      "synset": "oewn-92460343-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a portable box-shaped free-reed instrument; the reeds are made to vibrate by air from the bellows controlled by the player",
+      "hypernyms": [
+        "oewn-03398178-n",
+        "oewn-03619741-n"
+      ],
+      "id": "oewn-02675461-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "accordion"
+    },
+    {
+      "definition": "sound is not amplified by electrical means",
+      "hypernyms": [
+        "oewn-03472449-n"
+      ],
+      "id": "oewn-02679420-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "acoustic guitar"
+    },
+    {
+      "definition": "a free-reed instrument in which air is drawn in through reeds by suction bellows",
+      "hypernyms": [
+        "oewn-03398178-n"
+      ],
+      "id": "oewn-02704589-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "American organ"
+    },
+    {
+      "definition": "a tubular wind instrument; the player blows air into a bag and squeezes it out through the drone",
+      "hypernyms": [
+        "oewn-03951891-n"
+      ],
+      "id": "oewn-02778488-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bagpipe"
+    },
+    {
+      "definition": "a stringed instrument that has a triangular body and three strings",
+      "hypernyms": [
+        "oewn-03029569-n"
+      ],
+      "id": "oewn-02779983-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "balalaika"
+    },
+    {
+      "definition": "a stringed instrument of the guitar family that has long neck and circular body",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-02790645-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "banjo"
+    },
+    {
+      "definition": "the second lowest brass wind instrument",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-02796112-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "baritone"
+    },
+    {
+      "definition": "a musical instrument that makes music by rotation of a cylinder studded with pegs",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-02799001-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "barrel organ"
+    },
+    {
+      "definition": "a stringed instrument that produces sounds by means of a wheel that rubs against the strings",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-02799187-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "hurdy gurdy"
+    },
+    {
+      "definition": "the member with the lowest range of a family of musical instruments",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-02806515-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bass"
+    },
+    {
+      "definition": "a large drum with two heads; makes a sound of indefinite but very low pitch",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-02806832-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bass drum"
+    },
+    {
+      "definition": "largest and lowest member of the violin family",
+      "hypernyms": [
+        "oewn-02806515-n",
+        "oewn-02883788-n"
+      ],
+      "id": "oewn-02807100-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bass fiddle"
+    },
+    {
+      "definition": "the guitar with six strings that has the lowest pitch",
+      "hypernyms": [
+        "oewn-02806515-n",
+        "oewn-03472449-n"
+      ],
+      "id": "oewn-02807289-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bass guitar"
+    },
+    {
+      "definition": "the lowest brass wind instrument",
+      "hypernyms": [
+        "oewn-02806515-n",
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-02807418-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bass horn"
+    },
+    {
+      "definition": "a musical instrument that sounds by means of a vibrating reed",
+      "hypernyms": [
+        "oewn-04605909-n"
+      ],
+      "id": "oewn-02820934-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "beating-reed instrument"
+    },
+    {
+      "definition": "a large shawm; the bass member of the shawm family",
+      "hypernyms": [
+        "oewn-02806515-n",
+        "oewn-04193667-n"
+      ],
+      "id": "oewn-02870607-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 9,
+      "name": "bombardon"
+    },
+    {
+      "definition": "(used in the plural) a percussion instrument consisting of a pair of hollow pieces of wood or bone (usually held between the thumb and fingers) that are made to click together (as by Spanish dancers) in rhythm with the dance",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-02872589-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bones"
+    },
+    {
+      "definition": "a small drum; played with the hands",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-02873098-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bongo"
+    },
+    {
+      "definition": "stringed instruments that are played with a bow",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-02883788-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bowed stringed instrument"
+    },
+    {
+      "definition": "a wind instrument that consists of a brass tube (usually of variable length) that is blown by means of a cup-shaped or funnel-shaped mouthpiece",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-02895029-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "brass"
+    },
+    {
+      "definition": "a brass instrument without valves; used for military calls and fanfares",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-02916240-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bugle"
+    },
+    {
+      "definition": "a musical instrument consisting of a series of steam whistles played from a keyboard",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-02944161-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "calliope"
+    },
+    {
+      "definition": "set of bells hung in a bell tower",
+      "hypernyms": [
+        "oewn-03020822-n"
+      ],
+      "id": "oewn-02968981-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "carillon"
+    },
+    {
+      "definition": "a musical instrument consisting of graduated steel plates that are struck by hammers activated by a keyboard",
+      "hypernyms": [
+        "oewn-03619741-n"
+      ],
+      "id": "oewn-02994213-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "celesta"
+    },
+    {
+      "definition": "a large stringed instrument; seated player holds it upright while playing",
+      "hypernyms": [
+        "oewn-02883788-n"
+      ],
+      "id": "oewn-02995666-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cello"
+    },
+    {
+      "definition": "reed pipe with finger holes on which the melody is played",
+      "hypernyms": [
+        "oewn-03951891-n"
+      ],
+      "id": "oewn-03010230-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "chanter"
+    },
+    {
+      "definition": "a percussion instrument consisting of a set of tuned bells that are struck with a hammer; used as an orchestral instrument",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03020822-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "chime"
+    },
+    {
+      "definition": "a stringed instrument of the group including harps, lutes, lyres, and zithers",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-03029569-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "chordophone"
+    },
+    {
+      "definition": "a 16th century musical instrument resembling a guitar with a pear-shaped soundbox and wire strings",
+      "hypernyms": [
+        "oewn-03472449-n"
+      ],
+      "id": "oewn-03039817-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cittern"
+    },
+    {
+      "definition": "a medieval brass instrument with a clear shrill tone",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-03041884-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "clarion"
+    },
+    {
+      "definition": "an early stringed instrument like a piano but with more delicate sound",
+      "hypernyms": [
+        "oewn-03619741-n",
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-03042855-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "clavichord"
+    },
+    {
+      "definition": "a stringed instrument that has a keyboard",
+      "hypernyms": [
+        "oewn-03619741-n",
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-03043000-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "clavier"
+    },
+    {
+      "definition": "free-reed instrument played like an accordion by pushing its ends together to force air through the reeds",
+      "hypernyms": [
+        "oewn-03398178-n"
+      ],
+      "id": "oewn-03090712-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "concertina"
+    },
+    {
+      "definition": "a brass musical instrument with a brilliant tone; has a narrow tube and a flared bell and is played by means of valves",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-03115320-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cornet"
+    },
+    {
+      "definition": "a percussion instrument consisting of a concave brass disk; makes a loud crashing sound when hit with a drumstick or when two are struck together",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03162014-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cymbal"
+    },
+    {
+      "definition": "a pipe of the bagpipe that is tuned to produce a single continuous tone",
+      "hypernyms": [
+        "oewn-03951891-n"
+      ],
+      "id": "oewn-03250427-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "drone"
+    },
+    {
+      "definition": "a musical percussion instrument; usually consists of a hollow cylinder with a membrane stretched across each end",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03254272-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "drum"
+    },
+    {
+      "definition": "a trapezoidal zither whose metal strings are struck with light hammers",
+      "hypernyms": [
+        "oewn-04622583-n"
+      ],
+      "id": "oewn-03259440-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "dulcimer"
+    },
+    {
+      "definition": "a stringed instrument used in American folk music; an elliptical body and a fretted fingerboard and three strings",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-03259565-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "dulcimer"
+    },
+    {
+      "definition": "a guitar whose sound is amplified by electrical means",
+      "hypernyms": [
+        "oewn-03472449-n"
+      ],
+      "id": "oewn-03276921-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "electric guitar"
+    },
+    {
+      "definition": "(music) an electronic simulation of a pipe organ",
+      "hypernyms": [
+        "oewn-03284064-n"
+      ],
+      "id": "oewn-03278462-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "electric organ"
+    },
+    {
+      "definition": "a musical instrument that generates sounds electronically",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-03284064-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "electronic instrument"
+    },
+    {
+      "definition": "a tubular wind instrument with 8 finger holes and a fipple mouthpiece",
+      "hypernyms": [
+        "oewn-03951891-n"
+      ],
+      "id": "oewn-03348200-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "fipple flute"
+    },
+    {
+      "definition": "organ pipe whose tone is produced by air passing across the sharp edge of a fissure or lip",
+      "hypernyms": [
+        "oewn-03860335-n"
+      ],
+      "id": "oewn-03373857-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "flue pipe"
+    },
+    {
+      "definition": "a brass instrument resembling a cornet but with a wider bore",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-03374122-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "flugelhorn"
+    },
+    {
+      "definition": "a high-pitched woodwind instrument; a slender tube closed at one end with finger holes on one end and an opening near the closed end across which the breath is blown",
+      "hypernyms": [
+        "oewn-04605909-n"
+      ],
+      "id": "oewn-03376875-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "flute"
+    },
+    {
+      "definition": "a wind instrument with a free reed",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-03398178-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "free-reed instrument"
+    },
+    {
+      "definition": "a brass musical instrument consisting of a conical tube that is coiled into a spiral and played by means of valves",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-03399752-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "French horn"
+    },
+    {
+      "definition": "a percussion instrument consisting of a set of graduated metal bars mounted on a frame and played with small hammers",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03445606-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "glockenspiel"
+    },
+    {
+      "definition": "a percussion instrument consisting of a metal plate that is struck with a softheaded drumstick",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03452665-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "gong"
+    },
+    {
+      "definition": "a piano with the strings on a horizontal harp-shaped frame; usually supported by three legs",
+      "hypernyms": [
+        "oewn-03934354-n"
+      ],
+      "id": "oewn-03457685-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "grand piano"
+    },
+    {
+      "definition": "a stringed instrument usually having six strings; played by strumming or plucking",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-03472449-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "guitar"
+    },
+    {
+      "definition": "a bell that is held in the hand",
+      "hypernyms": [
+        "oewn-03020822-n"
+      ],
+      "id": "oewn-03488313-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "handbell"
+    },
+    {
+      "definition": "a small rectangular free-reed instrument having a row of free reeds set back in air holes and played by blowing into the desired hole",
+      "hypernyms": [
+        "oewn-03398178-n"
+      ],
+      "id": "oewn-03499379-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "harmonica"
+    },
+    {
+      "definition": "a chordophone that has a triangular frame consisting of a sounding board and a pillar and a curved neck; the strings stretched between the neck and the soundbox are plucked with the fingers",
+      "hypernyms": [
+        "oewn-03029569-n"
+      ],
+      "id": "oewn-03500383-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "harp"
+    },
+    {
+      "definition": "a clavier with strings that are plucked by plectra mounted on pivots",
+      "hypernyms": [
+        "oewn-03043000-n"
+      ],
+      "id": "oewn-03501421-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "harpsichord"
+    },
+    {
+      "definition": "guitar whose steel strings are twanged while being pressed with a movable steel bar for a glissando effect",
+      "hypernyms": [
+        "oewn-03472449-n"
+      ],
+      "id": "oewn-03505051-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "Hawaiian guitar"
+    },
+    {
+      "definition": "cymbals that are operated by a foot pedal",
+      "hypernyms": [
+        "oewn-03162014-n"
+      ],
+      "id": "oewn-03523992-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "high-hat cymbal"
+    },
+    {
+      "definition": "a small lyre-shaped musical instrument that is placed between the teeth and played by twanging a wire tongue while changing the shape of the mouth cavity",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-03603109-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "jew's harp"
+    },
+    {
+      "definition": "a toy wind instrument that has a membrane that makes a sound when you hum into the mouthpiece",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-03614610-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "kazoo"
+    },
+    {
+      "definition": "a large hemispherical brass or copper percussion instrument with a drumhead that can be tuned by adjusting the tension on it",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03618174-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "kettle"
+    },
+    {
+      "definition": "a musical instrument that is played by means of a keyboard",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-03619741-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "keyboard instrument"
+    },
+    {
+      "definition": "Japanese stringed instrument that resembles a zither; has a rectangular wooden sounding board and usually 13 silk strings that are plucked with the fingers",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-03633506-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "koto"
+    },
+    {
+      "definition": "an Australian percussion instrument used for playing bush music; a long stick with bottle caps nailed loosely to it; played by hitting it with a stick or banging it on the ground",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03638923-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "lagerphone"
+    },
+    {
+      "definition": "chordophone consisting of a plucked instrument having a pear-shaped body, a usually bent neck, and a fretted fingerboard",
+      "hypernyms": [
+        "oewn-03029569-n"
+      ],
+      "id": "oewn-03703694-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "lute"
+    },
+    {
+      "definition": "a stringed instrument related to the lute, usually played with a plectrum",
+      "hypernyms": [
+        "oewn-03029569-n"
+      ],
+      "id": "oewn-03722505-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "mandolin"
+    },
+    {
+      "definition": "a percussion instrument consisting of a hollow gourd containing pebbles or beans; often played in pairs",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03726382-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "maraca"
+    },
+    {
+      "definition": "a percussion instrument with wooden bars tuned to produce a chromatic scale and with resonators; played with small mallets",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-03726875-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "marimba"
+    },
+    {
+      "definition": "a mechanically operated piano that uses a roll of perforated paper to activate the keys",
+      "hypernyms": [
+        "oewn-03934354-n"
+      ],
+      "id": "oewn-03743557-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "mechanical piano"
+    },
+    {
+      "definition": "any of various devices or contrivances that can be used to produce musical tones or sounds",
+      "hypernyms": [
+        "oewn-03187746-n"
+      ],
+      "id": "oewn-03806455-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "musical instrument"
+    },
+    {
+      "definition": "produces music by means of pins on a revolving cylinder that strike the tuned teeth of a comb-like metal plate",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-03806893-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "music box"
+    },
+    {
+      "definition": "egg-shaped terracotta wind instrument with a mouthpiece and finger holes",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-03846201-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "ocarina"
+    },
+    {
+      "definition": "wind instrument whose sound is produced by means of pipes arranged in sets supplied with air from a bellows and controlled from a large complex musical keyboard",
+      "hypernyms": [
+        "oewn-03619741-n",
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-03859585-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "organ"
+    },
+    {
+      "definition": "the flues and stops on a pipe organ",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-03860335-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "organ pipe"
+    },
+    {
+      "definition": "a graduated set of organ pipes of like tone quality",
+      "hypernyms": [
+        "oewn-03860335-n"
+      ],
+      "id": "oewn-03860518-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "organ stop"
+    },
+    {
+      "definition": "a primitive wind instrument consisting of several parallel pipes bound together",
+      "hypernyms": [
+        "oewn-03951891-n"
+      ],
+      "id": "oewn-03890094-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "panpipe"
+    },
+    {
+      "definition": "a musical instrument in which the sound is produced by one object striking another",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-03921556-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "percussion instrument"
+    },
+    {
+      "definition": "a keyboard instrument that is played by depressing keys that cause hammers to strike tuned strings and produce sounds",
+      "hypernyms": [
+        "oewn-03619741-n",
+        "oewn-03921556-n",
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-03934354-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "piano"
+    },
+    {
+      "definition": "a tubular wind instrument",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-03951891-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "pipe"
+    },
+    {
+      "definition": "a small pipe sounding a tone of standard frequency; used to establish the starting pitch for unaccompanied singing",
+      "hypernyms": [
+        "oewn-03951891-n"
+      ],
+      "id": "oewn-03956923-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "pitch pipe"
+    },
+    {
+      "definition": "wind instrument used by postilions of the 18th and 19th centuries",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-03996135-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "post horn"
+    },
+    {
+      "definition": "an ancient stringed instrument similar to the lyre or zither but having a trapezoidal sounding board under the strings",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-04023240-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "psaltery"
+    },
+    {
+      "definition": "a percussion instrument that is made from a dried cactus branch that is hollowed out and filled with small pebbles and capped at both ends; makes the sound of falling rain when tilted; origin was in Chile where tribesmen used it in ceremonies to bring rain",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-04056865-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "rain stick"
+    },
+    {
+      "definition": "organ pipe with a vibrating reed",
+      "hypernyms": [
+        "oewn-03860335-n"
+      ],
+      "id": "oewn-04074255-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "reed pipe"
+    },
+    {
+      "definition": "a Japanese stringed instrument resembling a banjo with a long neck and three strings and a fretless fingerboard and a rectangular soundbox; played with a plectrum",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-04139686-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "samisen"
+    },
+    {
+      "definition": "any of a family of brass wind instruments that resemble a bugle with valves",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-04148263-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "saxhorn"
+    },
+    {
+      "definition": "a stringed instrument of India; has a long neck and movable frets; has 6 or 7 metal strings for playing and usually 13 resonating strings",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-04231904-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "sitar"
+    },
+    {
+      "definition": "a small drum with two heads and a snare stretched across the lower head",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-04256525-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "snare drum"
+    },
+    {
+      "definition": "a concave percussion instrument made from the metal top of an oil drum; has an array of flattened areas that produce different tones when struck (of Caribbean origin)",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-04318312-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "steel drum"
+    },
+    {
+      "definition": "a musical instrument in which taut strings provide the source of sound",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-04345614-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "stringed instrument"
+    },
+    {
+      "definition": "(music) an electronic instrument (usually played with a keyboard) that generates and modifies sounds electronically and can imitate a variety of other musical instruments",
+      "hypernyms": [
+        "oewn-03284064-n",
+        "oewn-03619741-n"
+      ],
+      "id": "oewn-04383487-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "synthesizer"
+    },
+    {
+      "definition": "a small drum with one head of soft calfskin",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-04389421-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tabor"
+    },
+    {
+      "definition": "a drum",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-04394288-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tambour"
+    },
+    {
+      "definition": "a shallow drum with a single drumhead and with metallic disks in the sides",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-04394487-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tambourine"
+    },
+    {
+      "definition": "any of various drums with small heads",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-04417221-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tenor drum"
+    },
+    {
+      "definition": "an electronic musical instrument; melodies can be played by moving the right hand between two rods that serve as antennas to control pitch; the left hand controls phrasing",
+      "hypernyms": [
+        "oewn-03284064-n"
+      ],
+      "id": "oewn-04426777-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "theremin"
+    },
+    {
+      "definition": "small hand drum similar to a tambourine; formerly carried by itinerant jugglers",
+      "hypernyms": [
+        "oewn-03254272-n"
+      ],
+      "id": "oewn-04443676-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "timbrel"
+    },
+    {
+      "definition": "a percussion instrument consisting of a metal bar bent in the shape of an open triangle",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-04488109-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "triangle"
+    },
+    {
+      "definition": "a brass instrument consisting of a long tube whose length can be varied by a U-shaped slide",
+      "hypernyms": [
+        "oewn-02895029-n"
+      ],
+      "id": "oewn-04494650-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "trombone"
+    },
+    {
+      "definition": "a small guitar having four strings",
+      "hypernyms": [
+        "oewn-03472449-n"
+      ],
+      "id": "oewn-04513584-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "uke"
+    },
+    {
+      "definition": "a piano with a vertical sounding board",
+      "hypernyms": [
+        "oewn-03934354-n"
+      ],
+      "id": "oewn-04522298-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "upright"
+    },
+    {
+      "definition": "a percussion instrument similar to a xylophone but having metal bars and rotating disks in the resonators that produce a vibrato sound",
+      "hypernyms": [
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-04540126-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "vibraphone"
+    },
+    {
+      "definition": "any of a family of bowed stringed instruments that preceded the violin family",
+      "hypernyms": [
+        "oewn-02883788-n"
+      ],
+      "id": "oewn-04543448-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "viol"
+    },
+    {
+      "definition": "a bowed stringed instrument slightly larger than a violin, tuned a fifth lower",
+      "hypernyms": [
+        "oewn-02883788-n"
+      ],
+      "id": "oewn-04543630-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "viola"
+    },
+    {
+      "definition": "bowed stringed instrument that is the highest member of the violin family; this instrument has four strings and a hollow body and an unfretted fingerboard and is played with a bow",
+      "hypernyms": [
+        "oewn-02883788-n"
+      ],
+      "id": "oewn-04544161-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "violin"
+    },
+    {
+      "definition": "a small wind instrument that produces a whistling sound by blowing into it",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-04586953-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "whistle"
+    },
+    {
+      "definition": "a musical instrument in which the sound is produced by an enclosed column of air that is moved by bellows or the human breath",
+      "hypernyms": [
+        "oewn-03806455-n"
+      ],
+      "id": "oewn-04594218-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "wind instrument"
+    },
+    {
+      "definition": "any wind instrument other than the brass instruments",
+      "hypernyms": [
+        "oewn-04594218-n"
+      ],
+      "id": "oewn-04605909-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "woodwind"
+    },
+    {
+      "definition": "one of a pair of small metallic cymbals worn on the thumb and middle finger; used in belly dancing in rhythm with the dance",
+      "hypernyms": [
+        "oewn-03162014-n"
+      ],
+      "id": "oewn-04622201-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "zill"
+    },
+    {
+      "definition": "a musical stringed instrument with strings stretched over a flat sounding board; it is laid flat and played with a plectrum and with fingers",
+      "hypernyms": [
+        "oewn-04345614-n"
+      ],
+      "id": "oewn-04622583-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "zither"
+    },
+    {
+      "definition": "A set of electronic drums which are electrical devices struck by a drummer, played in real time (using either hands, sticks, brushes or other implements) to produce a selection of sounds, instruments and effects, from either samples or modeled sounds contained in a processor or drum module.",
+      "hypernyms": [
+        "oewn-03284064-n",
+        "oewn-03921556-n"
+      ],
+      "id": "oewn-92460343-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "electronic drum kit"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

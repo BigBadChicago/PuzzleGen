@@ -1,0 +1,4133 @@
+{
+  "exported": "2026-09-28",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-04531608-n",
+  "senses": [
+    {
+      "definition": "a vehicle that can fly",
+      "forms": [],
+      "id": "oewn-aircraft__1.06.00..",
+      "lang": "en",
+      "lemma": "aircraft",
+      "synset": "oewn-02689427-n"
+    },
+    {
+      "definition": "a large warship that carries planes and has a long flat deck for takeoffs and landings",
+      "forms": [],
+      "id": "oewn-aircraft_carrier__1.06.00..",
+      "lang": "en",
+      "lemma": "aircraft carrier",
+      "synset": "oewn-02690031-n"
+    },
+    {
+      "definition": "a large warship that carries planes and has a long flat deck for takeoffs and landings",
+      "forms": [],
+      "id": "oewn-carrier__1.06.01..",
+      "lang": "en",
+      "lemma": "carrier",
+      "synset": "oewn-02690031-n"
+    },
+    {
+      "definition": "a large warship that carries planes and has a long flat deck for takeoffs and landings",
+      "forms": [],
+      "id": "oewn-flattop__1.06.00..",
+      "lang": "en",
+      "lemma": "flattop",
+      "synset": "oewn-02690031-n"
+    },
+    {
+      "definition": "a large warship that carries planes and has a long flat deck for takeoffs and landings",
+      "forms": [],
+      "id": "oewn-attack_aircraft_carrier__1.06.00..",
+      "lang": "en",
+      "lemma": "attack aircraft carrier",
+      "synset": "oewn-02690031-n"
+    },
+    {
+      "definition": "a missile designed to be launched from one airplane at another",
+      "forms": [],
+      "id": "oewn-air-to-air_missile__1.06.00..",
+      "lang": "en",
+      "lemma": "air-to-air missile",
+      "synset": "oewn-02696272-n"
+    },
+    {
+      "definition": "a missile designed to be launched from an airplane at a target on the ground",
+      "forms": [],
+      "id": "oewn-air-to-ground_missile__1.06.00..",
+      "lang": "en",
+      "lemma": "air-to-ground missile",
+      "synset": "oewn-02696399-n"
+    },
+    {
+      "definition": "a missile designed to be launched from an airplane at a target on the ground",
+      "forms": [],
+      "id": "oewn-air-to-surface_missile__1.06.00..",
+      "lang": "en",
+      "lemma": "air-to-surface missile",
+      "synset": "oewn-02696399-n"
+    },
+    {
+      "definition": "a handcart from which apples and other fruit are sold in the street",
+      "forms": [],
+      "id": "oewn-applecart__1.06.00..",
+      "lang": "en",
+      "lemma": "applecart",
+      "synset": "oewn-02732166-n"
+    },
+    {
+      "definition": "a vehicle that is protected by armor plate",
+      "forms": [],
+      "id": "oewn-armored_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "armored vehicle",
+      "synset": "oewn-02743538-n"
+    },
+    {
+      "definition": "a vehicle that is protected by armor plate",
+      "forms": [],
+      "id": "oewn-armoured_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "armoured vehicle",
+      "synset": "oewn-02743538-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-baby_buggy__1.06.00..",
+      "lang": "en",
+      "lemma": "baby buggy",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-baby_carriage__1.06.00..",
+      "lang": "en",
+      "lemma": "baby carriage",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-carriage__1.06.03..",
+      "lang": "en",
+      "lemma": "carriage",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-perambulator__1.06.00..",
+      "lang": "en",
+      "lemma": "perambulator",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-pram__1.06.00..",
+      "lang": "en",
+      "lemma": "pram",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-stroller__1.06.00..",
+      "lang": "en",
+      "lemma": "stroller",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-go-cart__1.06.00..",
+      "lang": "en",
+      "lemma": "go-cart",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-pushchair__1.06.00..",
+      "lang": "en",
+      "lemma": "pushchair",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "forms": [],
+      "id": "oewn-pusher__1.06.00..",
+      "lang": "en",
+      "lemma": "pusher",
+      "synset": "oewn-02769539-n"
+    },
+    {
+      "definition": "a railway car where passengers' bags are carried",
+      "forms": [],
+      "id": "oewn-baggage_car__1.06.00..",
+      "lang": "en",
+      "lemma": "baggage car",
+      "synset": "oewn-02778044-n"
+    },
+    {
+      "definition": "a railway car where passengers' bags are carried",
+      "forms": [],
+      "id": "oewn-luggage_van__1.06.00..",
+      "lang": "en",
+      "lemma": "luggage van",
+      "synset": "oewn-02778044-n"
+    },
+    {
+      "definition": "a missile that is guided in the first part of its flight but falls freely as it approaches target",
+      "forms": [],
+      "id": "oewn-ballistic_missile__1.06.00..",
+      "lang": "en",
+      "lemma": "ballistic missile",
+      "synset": "oewn-02784361-n"
+    },
+    {
+      "definition": "a large ornate wagon for carrying a musical band",
+      "forms": [],
+      "id": "oewn-bandwagon__1.06.00..",
+      "lang": "en",
+      "lemma": "bandwagon",
+      "synset": "oewn-02790143-n"
+    },
+    {
+      "definition": "a vessel (such as a yacht) that can be chartered without a captain or crew or provisions",
+      "forms": [],
+      "id": "oewn-bareboat__1.06.00..",
+      "lang": "en",
+      "lemma": "bareboat",
+      "synset": "oewn-02795432-n"
+    },
+    {
+      "definition": "a cart for carrying small loads; has handles and one or more wheels",
+      "forms": [],
+      "id": "oewn-barrow__1.06.01..",
+      "lang": "en",
+      "lemma": "barrow",
+      "synset": "oewn-02800454-n"
+    },
+    {
+      "definition": "a cart for carrying small loads; has handles and one or more wheels",
+      "forms": [],
+      "id": "oewn-garden_cart__1.06.00..",
+      "lang": "en",
+      "lemma": "garden cart",
+      "synset": "oewn-02800454-n"
+    },
+    {
+      "definition": "a cart for carrying small loads; has handles and one or more wheels",
+      "forms": [],
+      "id": "oewn-lawn_cart__1.06.00..",
+      "lang": "en",
+      "lemma": "lawn cart",
+      "synset": "oewn-02800454-n"
+    },
+    {
+      "definition": "a cart for carrying small loads; has handles and one or more wheels",
+      "forms": [],
+      "id": "oewn-wheelbarrow__1.06.00..",
+      "lang": "en",
+      "lemma": "wheelbarrow",
+      "synset": "oewn-02800454-n"
+    },
+    {
+      "definition": "a perambulator that resembles a bassinet",
+      "forms": [],
+      "id": "oewn-bassinet__1.06.01..",
+      "lang": "en",
+      "lemma": "bassinet",
+      "synset": "oewn-02807681-n"
+    },
+    {
+      "definition": "large and heavily armoured warship",
+      "forms": [],
+      "id": "oewn-battleship__1.06.00..",
+      "lang": "en",
+      "lemma": "battleship",
+      "synset": "oewn-02815336-n"
+    },
+    {
+      "definition": "large and heavily armoured warship",
+      "forms": [],
+      "id": "oewn-battlewagon__1.06.00..",
+      "lang": "en",
+      "lemma": "battlewagon",
+      "synset": "oewn-02815336-n"
+    },
+    {
+      "definition": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "forms": [],
+      "id": "oewn-bicycle__1.06.00..",
+      "lang": "en",
+      "lemma": "bicycle",
+      "synset": "oewn-02837983-n"
+    },
+    {
+      "definition": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "forms": [],
+      "id": "oewn-bike__1.06.00..",
+      "lang": "en",
+      "lemma": "bike",
+      "synset": "oewn-02837983-n"
+    },
+    {
+      "definition": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "forms": [],
+      "id": "oewn-wheel__1.06.06..",
+      "lang": "en",
+      "lemma": "wheel",
+      "synset": "oewn-02837983-n"
+    },
+    {
+      "definition": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "forms": [],
+      "id": "oewn-cycle__1.06.00..",
+      "lang": "en",
+      "lemma": "cycle",
+      "synset": "oewn-02837983-n"
+    },
+    {
+      "definition": "a bicycle with two sets of pedals and two seats",
+      "forms": [],
+      "id": "oewn-bicycle-built-for-two__1.06.00..",
+      "lang": "en",
+      "lemma": "bicycle-built-for-two",
+      "synset": "oewn-02838476-n"
+    },
+    {
+      "definition": "a bicycle with two sets of pedals and two seats",
+      "forms": [],
+      "id": "oewn-tandem_bicycle__1.06.00..",
+      "lang": "en",
+      "lemma": "tandem bicycle",
+      "synset": "oewn-02838476-n"
+    },
+    {
+      "definition": "a bicycle with two sets of pedals and two seats",
+      "forms": [],
+      "id": "oewn-tandem__1.06.00..",
+      "lang": "en",
+      "lemma": "tandem",
+      "synset": "oewn-02838476-n"
+    },
+    {
+      "definition": "a small vessel for travel on water",
+      "forms": [],
+      "id": "oewn-boat__1.06.00..",
+      "lang": "en",
+      "lemma": "boat",
+      "synset": "oewn-02861626-n"
+    },
+    {
+      "definition": "a long racing sled (for 2 or more people) with a steering mechanism",
+      "forms": [],
+      "id": "oewn-bobsled__1.06.00..",
+      "lang": "en",
+      "lemma": "bobsled",
+      "synset": "oewn-02864187-n"
+    },
+    {
+      "definition": "a long racing sled (for 2 or more people) with a steering mechanism",
+      "forms": [],
+      "id": "oewn-bobsleigh__1.06.00..",
+      "lang": "en",
+      "lemma": "bobsleigh",
+      "synset": "oewn-02864187-n"
+    },
+    {
+      "definition": "a long racing sled (for 2 or more people) with a steering mechanism",
+      "forms": [],
+      "id": "oewn-bob__1.06.02..",
+      "lang": "en",
+      "lemma": "bob",
+      "synset": "oewn-02864187-n"
+    },
+    {
+      "definition": "formerly two short sleds coupled together",
+      "forms": [],
+      "id": "oewn-bobsled__1.06.01..",
+      "lang": "en",
+      "lemma": "bobsled",
+      "synset": "oewn-02864362-n"
+    },
+    {
+      "definition": "formerly two short sleds coupled together",
+      "forms": [],
+      "id": "oewn-bobsleigh__1.06.01..",
+      "lang": "en",
+      "lemma": "bobsleigh",
+      "synset": "oewn-02864362-n"
+    },
+    {
+      "definition": "an unidentified (and possibly enemy) aircraft",
+      "forms": [],
+      "id": "oewn-bogy__1.06.00..",
+      "lang": "en",
+      "lemma": "bogy",
+      "synset": "oewn-02866978-n"
+    },
+    {
+      "definition": "an unidentified (and possibly enemy) aircraft",
+      "forms": [],
+      "id": "oewn-bogie__1.06.00..",
+      "lang": "en",
+      "lemma": "bogie",
+      "synset": "oewn-02866978-n"
+    },
+    {
+      "definition": "an unidentified (and possibly enemy) aircraft",
+      "forms": [],
+      "id": "oewn-bogey__1.06.00..",
+      "lang": "en",
+      "lemma": "bogey",
+      "synset": "oewn-02866978-n"
+    },
+    {
+      "definition": "a military aircraft that drops bombs during flight",
+      "forms": [],
+      "id": "oewn-bomber__1.06.00..",
+      "lang": "en",
+      "lemma": "bomber",
+      "synset": "oewn-02871055-n"
+    },
+    {
+      "definition": "any wheeled vehicle that is dilapidated and uncomfortable",
+      "forms": [],
+      "id": "oewn-boneshaker__1.06.00..",
+      "lang": "en",
+      "lemma": "boneshaker",
+      "synset": "oewn-02872924-n"
+    },
+    {
+      "definition": "a small low-powered electrically powered vehicle driven on a special platform where there are many others to be dodged",
+      "forms": [],
+      "id": "oewn-bumper_car__1.06.00..",
+      "lang": "en",
+      "lemma": "bumper car",
+      "synset": "oewn-02922348-n"
+    },
+    {
+      "definition": "a small low-powered electrically powered vehicle driven on a special platform where there are many others to be dodged",
+      "forms": [],
+      "id": "oewn-dodgem__1.06.00..",
+      "lang": "en",
+      "lemma": "Dodgem",
+      "synset": "oewn-02922348-n"
+    },
+    {
+      "definition": "a car on a freight train for use of the train crew; usually the last car on the train",
+      "forms": [],
+      "id": "oewn-cabin_car__1.06.00..",
+      "lang": "en",
+      "lemma": "cabin car",
+      "synset": "oewn-02935907-n"
+    },
+    {
+      "definition": "a car on a freight train for use of the train crew; usually the last car on the train",
+      "forms": [],
+      "id": "oewn-caboose__1.06.00..",
+      "lang": "en",
+      "lemma": "caboose",
+      "synset": "oewn-02935907-n"
+    },
+    {
+      "definition": "a two-wheeled military vehicle carrying artillery ammunition",
+      "forms": [],
+      "id": "oewn-caisson__1.06.03..",
+      "lang": "en",
+      "lemma": "caisson",
+      "synset": "oewn-02940720-n"
+    },
+    {
+      "definition": "a trailer equipped for occupancy (especially for holiday trips)",
+      "forms": [],
+      "id": "oewn-camper_trailer__1.06.00..",
+      "lang": "en",
+      "lemma": "camper trailer",
+      "synset": "oewn-02949964-n"
+    },
+    {
+      "definition": "a warship of the first rank in size and armament",
+      "forms": [],
+      "id": "oewn-capital_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "capital ship",
+      "synset": "oewn-02959829-n"
+    },
+    {
+      "definition": "a wheeled vehicle adapted to the rails of railroad",
+      "forms": [],
+      "id": "oewn-car__1.06.01..",
+      "lang": "en",
+      "lemma": "car",
+      "synset": "oewn-02963378-n"
+    },
+    {
+      "definition": "a wheeled vehicle adapted to the rails of railroad",
+      "forms": [],
+      "id": "oewn-railcar__1.06.00..",
+      "lang": "en",
+      "lemma": "railcar",
+      "synset": "oewn-02963378-n"
+    },
+    {
+      "definition": "a wheeled vehicle adapted to the rails of railroad",
+      "forms": [],
+      "id": "oewn-railway_car__1.06.00..",
+      "lang": "en",
+      "lemma": "railway car",
+      "synset": "oewn-02963378-n"
+    },
+    {
+      "definition": "a wheeled vehicle adapted to the rails of railroad",
+      "forms": [],
+      "id": "oewn-railroad_car__1.06.00..",
+      "lang": "en",
+      "lemma": "railroad car",
+      "synset": "oewn-02963378-n"
+    },
+    {
+      "definition": "a vehicle with wheels drawn by one or more horses",
+      "forms": [],
+      "id": "oewn-carriage__1.06.00..",
+      "lang": "en",
+      "lemma": "carriage",
+      "synset": "oewn-02971932-n"
+    },
+    {
+      "definition": "a vehicle with wheels drawn by one or more horses",
+      "forms": [],
+      "id": "oewn-equipage__1.06.00..",
+      "lang": "en",
+      "lemma": "equipage",
+      "synset": "oewn-02971932-n"
+    },
+    {
+      "definition": "a vehicle with wheels drawn by one or more horses",
+      "forms": [],
+      "id": "oewn-rig__1.06.03..",
+      "lang": "en",
+      "lemma": "rig",
+      "synset": "oewn-02971932-n"
+    },
+    {
+      "definition": "a self-propelled wheeled vehicle designed specifically to carry something",
+      "forms": [],
+      "id": "oewn-carrier__1.06.03..",
+      "lang": "en",
+      "lemma": "carrier",
+      "synset": "oewn-02973559-n"
+    },
+    {
+      "definition": "a heavy open wagon usually having two wheels and drawn by an animal",
+      "forms": [],
+      "id": "oewn-cart__1.06.00..",
+      "lang": "en",
+      "lemma": "cart",
+      "synset": "oewn-02974308-n"
+    },
+    {
+      "definition": "a two-wheeled horse-drawn battle vehicle; used in war and races in ancient Egypt and Greece and Rome",
+      "forms": [],
+      "id": "oewn-chariot__1.06.01..",
+      "lang": "en",
+      "lemma": "chariot",
+      "synset": "oewn-03012923-n"
+    },
+    {
+      "definition": "a wagon equipped with a cookstove and provisions (for cowboys)",
+      "forms": [],
+      "id": "oewn-chuck_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "chuck wagon",
+      "synset": "oewn-03031188-n"
+    },
+    {
+      "definition": "railroad car having a bar and tables and lounge chairs",
+      "forms": [],
+      "id": "oewn-club_car__1.06.00..",
+      "lang": "en",
+      "lemma": "club car",
+      "synset": "oewn-03057961-n"
+    },
+    {
+      "definition": "railroad car having a bar and tables and lounge chairs",
+      "forms": [],
+      "id": "oewn-lounge_car__1.06.00..",
+      "lang": "en",
+      "lemma": "lounge car",
+      "synset": "oewn-03057961-n"
+    },
+    {
+      "definition": "a highly maneuverable escort warship; smaller than a destroyer",
+      "forms": [],
+      "id": "oewn-corvette__1.06.00..",
+      "lang": "en",
+      "lemma": "corvette",
+      "synset": "oewn-03117686-n"
+    },
+    {
+      "definition": "a large wagon with broad wheels and an arched canvas top; used by the United States pioneers to cross the prairies in the 19th century",
+      "forms": [],
+      "id": "oewn-covered_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "covered wagon",
+      "synset": "oewn-03126946-n"
+    },
+    {
+      "definition": "a large wagon with broad wheels and an arched canvas top; used by the United States pioneers to cross the prairies in the 19th century",
+      "forms": [],
+      "id": "oewn-conestoga_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "Conestoga wagon",
+      "synset": "oewn-03126946-n"
+    },
+    {
+      "definition": "a large wagon with broad wheels and an arched canvas top; used by the United States pioneers to cross the prairies in the 19th century",
+      "forms": [],
+      "id": "oewn-conestoga__1.06.00..",
+      "lang": "en",
+      "lemma": "Conestoga",
+      "synset": "oewn-03126946-n"
+    },
+    {
+      "definition": "a large wagon with broad wheels and an arched canvas top; used by the United States pioneers to cross the prairies in the 19th century",
+      "forms": [],
+      "id": "oewn-prairie_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "prairie wagon",
+      "synset": "oewn-03126946-n"
+    },
+    {
+      "definition": "a large wagon with broad wheels and an arched canvas top; used by the United States pioneers to cross the prairies in the 19th century",
+      "forms": [],
+      "id": "oewn-prairie_schooner__1.06.00..",
+      "lang": "en",
+      "lemma": "prairie schooner",
+      "synset": "oewn-03126946-n"
+    },
+    {
+      "definition": "a vehicle designed for navigation in or on water or air or through outer space",
+      "forms": [],
+      "id": "oewn-craft__1.06.00..",
+      "lang": "en",
+      "lemma": "craft",
+      "synset": "oewn-03130521-n"
+    },
+    {
+      "definition": "an unmanned aircraft that is a self-contained bomb",
+      "forms": [],
+      "id": "oewn-cruise_missile__1.06.00..",
+      "lang": "en",
+      "lemma": "cruise missile",
+      "synset": "oewn-03145422-n"
+    },
+    {
+      "definition": "a large fast warship; smaller than a battleship and larger than a destroyer",
+      "forms": [],
+      "id": "oewn-cruiser__1.06.00..",
+      "lang": "en",
+      "lemma": "cruiser",
+      "synset": "oewn-03145551-n"
+    },
+    {
+      "definition": "a small fast lightly armored but heavily armed warship",
+      "forms": [],
+      "id": "oewn-destroyer__1.06.00..",
+      "lang": "en",
+      "lemma": "destroyer",
+      "synset": "oewn-03185170-n"
+    },
+    {
+      "definition": "a small fast lightly armored but heavily armed warship",
+      "forms": [],
+      "id": "oewn-guided_missile_destroyer__1.06.00..",
+      "lang": "en",
+      "lemma": "guided missile destroyer",
+      "synset": "oewn-03185170-n"
+    },
+    {
+      "definition": "warship smaller than a destroyer; designed to escort fleets or convoys",
+      "forms": [],
+      "id": "oewn-destroyer_escort__1.06.00..",
+      "lang": "en",
+      "lemma": "destroyer escort",
+      "synset": "oewn-03185398-n"
+    },
+    {
+      "definition": "a sled pulled by dogs",
+      "forms": [],
+      "id": "oewn-dogsled__1.06.00..",
+      "lang": "en",
+      "lemma": "dogsled",
+      "synset": "oewn-03222901-n"
+    },
+    {
+      "definition": "a sled pulled by dogs",
+      "forms": [],
+      "id": "oewn-dog_sled__1.06.00..",
+      "lang": "en",
+      "lemma": "dog sled",
+      "synset": "oewn-03222901-n"
+    },
+    {
+      "definition": "a sled pulled by dogs",
+      "forms": [],
+      "id": "oewn-dog_sleigh__1.06.00..",
+      "lang": "en",
+      "lemma": "dog sleigh",
+      "synset": "oewn-03222901-n"
+    },
+    {
+      "definition": "a high-speed military or naval airplane designed to destroy enemy aircraft in the air",
+      "forms": [],
+      "id": "oewn-fighter__1.06.00..",
+      "lang": "en",
+      "lemma": "fighter",
+      "synset": "oewn-03339975-n"
+    },
+    {
+      "definition": "a high-speed military or naval airplane designed to destroy enemy aircraft in the air",
+      "forms": [],
+      "id": "oewn-fighter_aircraft__1.06.00..",
+      "lang": "en",
+      "lemma": "fighter aircraft",
+      "synset": "oewn-03339975-n"
+    },
+    {
+      "definition": "a high-speed military or naval airplane designed to destroy enemy aircraft in the air",
+      "forms": [],
+      "id": "oewn-attack_aircraft__1.06.00..",
+      "lang": "en",
+      "lemma": "attack aircraft",
+      "synset": "oewn-03339975-n"
+    },
+    {
+      "definition": "a vessel for fishing; often has a well to keep the catch alive",
+      "forms": [],
+      "id": "oewn-fishing_boat__1.06.00..",
+      "lang": "en",
+      "lemma": "fishing boat",
+      "synset": "oewn-03356108-n"
+    },
+    {
+      "definition": "a vessel for fishing; often has a well to keep the catch alive",
+      "forms": [],
+      "id": "oewn-fishing_smack__1.06.00..",
+      "lang": "en",
+      "lemma": "fishing smack",
+      "synset": "oewn-03356108-n"
+    },
+    {
+      "definition": "a vessel for fishing; often has a well to keep the catch alive",
+      "forms": [],
+      "id": "oewn-fishing_vessel__1.06.00..",
+      "lang": "en",
+      "lemma": "fishing vessel",
+      "synset": "oewn-03356108-n"
+    },
+    {
+      "definition": "a small industrial vehicle with a power operated forked platform in front that can be inserted under loads to lift and move them",
+      "forms": [],
+      "id": "oewn-forklift__1.06.00..",
+      "lang": "en",
+      "lemma": "forklift",
+      "synset": "oewn-03389198-n"
+    },
+    {
+      "definition": "a railway car that carries freight",
+      "forms": [],
+      "id": "oewn-freight_car__1.06.00..",
+      "lang": "en",
+      "lemma": "freight car",
+      "synset": "oewn-03398748-n"
+    },
+    {
+      "definition": "a United States warship larger than a destroyer and smaller than a cruiser",
+      "forms": [],
+      "id": "oewn-frigate__1.06.00..",
+      "lang": "en",
+      "lemma": "frigate",
+      "synset": "oewn-03402102-n"
+    },
+    {
+      "definition": "a medium size square-rigged warship of the 18th and 19th centuries",
+      "forms": [],
+      "id": "oewn-frigate__1.06.01..",
+      "lang": "en",
+      "lemma": "frigate",
+      "synset": "oewn-03402248-n"
+    },
+    {
+      "definition": "(classical antiquity) a crescent-shaped seagoing vessel propelled by oars",
+      "forms": [],
+      "id": "oewn-galley__1.06.02..",
+      "lang": "en",
+      "lemma": "galley",
+      "synset": "oewn-03417421-n"
+    },
+    {
+      "definition": "a large medieval vessel with a single deck propelled by sails and oars with guns at stern and prow; a complement of 1,000 men; used mainly in the Mediterranean for war and trading",
+      "forms": [],
+      "id": "oewn-galley__1.06.03..",
+      "lang": "en",
+      "lemma": "galley",
+      "synset": "oewn-03417584-n"
+    },
+    {
+      "definition": "a warship (at anchor or under way) required to maintain a higher degree of readiness than others in its squadron",
+      "forms": [],
+      "id": "oewn-guard_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "guard ship",
+      "synset": "oewn-03470083-n"
+    },
+    {
+      "definition": "the car on a train that is occupied by the guard",
+      "forms": [],
+      "id": "oewn-guard-ap-s_van__1.06.00..",
+      "lang": "en",
+      "lemma": "guard's van",
+      "synset": "oewn-03470252-n"
+    },
+    {
+      "definition": "a rocket-propelled missile whose path can be controlled during flight either by radio signals or by internal homing devices",
+      "forms": [],
+      "id": "oewn-guided_missile__1.06.00..",
+      "lang": "en",
+      "lemma": "guided missile",
+      "synset": "oewn-03471094-n"
+    },
+    {
+      "definition": "a motor vehicle propelled by half tracks; frequently used by the military",
+      "forms": [],
+      "id": "oewn-half_track__1.06.01..",
+      "lang": "en",
+      "lemma": "half track",
+      "synset": "oewn-03483672-n"
+    },
+    {
+      "definition": "a small railroad car propelled by hand or by a small motor",
+      "forms": [],
+      "id": "oewn-handcar__1.06.00..",
+      "lang": "en",
+      "lemma": "handcar",
+      "synset": "oewn-03489054-n"
+    },
+    {
+      "definition": "wheeled vehicle that can be pushed by a person; may have one or two or four wheels",
+      "forms": [],
+      "id": "oewn-handcart__1.06.00..",
+      "lang": "en",
+      "lemma": "handcart",
+      "synset": "oewn-03489166-n"
+    },
+    {
+      "definition": "wheeled vehicle that can be pushed by a person; may have one or two or four wheels",
+      "forms": [],
+      "id": "oewn-pushcart__1.06.00..",
+      "lang": "en",
+      "lemma": "pushcart",
+      "synset": "oewn-03489166-n"
+    },
+    {
+      "definition": "wheeled vehicle that can be pushed by a person; may have one or two or four wheels",
+      "forms": [],
+      "id": "oewn-cart__1.06.01..",
+      "lang": "en",
+      "lemma": "cart",
+      "synset": "oewn-03489166-n"
+    },
+    {
+      "definition": "wheeled vehicle that can be pushed by a person; may have one or two or four wheels",
+      "forms": [],
+      "id": "oewn-go-cart__1.06.02..",
+      "lang": "en",
+      "lemma": "go-cart",
+      "synset": "oewn-03489166-n"
+    },
+    {
+      "definition": "a handcart that has a frame with two low wheels and a ledge at the bottom and handles at the top; used to move crates or other heavy objects",
+      "forms": [],
+      "id": "oewn-hand_truck__1.06.00..",
+      "lang": "en",
+      "lemma": "hand truck",
+      "synset": "oewn-03495220-n"
+    },
+    {
+      "definition": "a handcart that has a frame with two low wheels and a ledge at the bottom and handles at the top; used to move crates or other heavy objects",
+      "forms": [],
+      "id": "oewn-truck__1.06.01..",
+      "lang": "en",
+      "lemma": "truck",
+      "synset": "oewn-03495220-n"
+    },
+    {
+      "definition": "a missile with a guidance system that directs it toward targets emitting infrared radiation (as the emissions of a jet engine)",
+      "forms": [],
+      "id": "oewn-heat-seeking_missile__1.06.00..",
+      "lang": "en",
+      "lemma": "heat-seeking missile",
+      "synset": "oewn-03514987-n"
+    },
+    {
+      "definition": "a non-buoyant aircraft that requires a source of power to hold it aloft and to propel it",
+      "forms": [],
+      "id": "oewn-heavier-than-air_craft__1.06.00..",
+      "lang": "en",
+      "lemma": "heavier-than-air craft",
+      "synset": "oewn-03515727-n"
+    },
+    {
+      "definition": "a wheeled vehicle drawn by one or more horses",
+      "forms": [],
+      "id": "oewn-horse-drawn_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "horse-drawn vehicle",
+      "synset": "oewn-03543814-n"
+    },
+    {
+      "definition": "a craft capable of moving over water or land on a cushion of air created by jet engines",
+      "forms": [],
+      "id": "oewn-hovercraft__1.06.00..",
+      "lang": "en",
+      "lemma": "hovercraft",
+      "synset": "oewn-03552409-n"
+    },
+    {
+      "definition": "a craft capable of moving over water or land on a cushion of air created by jet engines",
+      "forms": [],
+      "id": "oewn-ground-effect_machine__1.06.00..",
+      "lang": "en",
+      "lemma": "ground-effect machine",
+      "synset": "oewn-03552409-n"
+    },
+    {
+      "definition": "a high mobility, multipurpose, military vehicle with four-wheel drive",
+      "forms": [],
+      "id": "oewn-humvee__1.06.00..",
+      "lang": "en",
+      "lemma": "Humvee",
+      "synset": "oewn-03554379-n"
+    },
+    {
+      "definition": "a high mobility, multipurpose, military vehicle with four-wheel drive",
+      "forms": [],
+      "id": "oewn-hum-vee__1.06.00..",
+      "lang": "en",
+      "lemma": "Hum-Vee",
+      "synset": "oewn-03554379-n"
+    },
+    {
+      "definition": "a sailing vessel with runners and a cross-shaped frame; suitable for traveling over ice",
+      "forms": [],
+      "id": "oewn-iceboat__1.06.01..",
+      "lang": "en",
+      "lemma": "iceboat",
+      "synset": "oewn-03561991-n"
+    },
+    {
+      "definition": "a sailing vessel with runners and a cross-shaped frame; suitable for traveling over ice",
+      "forms": [],
+      "id": "oewn-ice_yacht__1.06.00..",
+      "lang": "en",
+      "lemma": "ice yacht",
+      "synset": "oewn-03561991-n"
+    },
+    {
+      "definition": "a sailing vessel with runners and a cross-shaped frame; suitable for traveling over ice",
+      "forms": [],
+      "id": "oewn-scooter__1.06.02..",
+      "lang": "en",
+      "lemma": "scooter",
+      "synset": "oewn-03561991-n"
+    },
+    {
+      "definition": "(formerly) a horse-drawn wagon that delivered ice door to door",
+      "forms": [],
+      "id": "oewn-ice_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "ice wagon",
+      "synset": "oewn-03564021-n"
+    },
+    {
+      "definition": "(formerly) a horse-drawn wagon that delivered ice door to door",
+      "forms": [],
+      "id": "oewn-ice-wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "ice-wagon",
+      "synset": "oewn-03564021-n"
+    },
+    {
+      "definition": "a wooden warship of the 19th century that is plated with iron or steel armor",
+      "forms": [],
+      "id": "oewn-ironclad__1.06.00..",
+      "lang": "en",
+      "lemma": "ironclad",
+      "synset": "oewn-03590720-n"
+    },
+    {
+      "definition": "a space vehicle that is designed to land on the moon or another planet",
+      "forms": [],
+      "id": "oewn-lander__1.06.00..",
+      "lang": "en",
+      "lemma": "lander",
+      "synset": "oewn-03643494-n"
+    },
+    {
+      "definition": "naval craft designed for putting ashore troops and equipment",
+      "forms": [],
+      "id": "oewn-landing_craft__1.06.00..",
+      "lang": "en",
+      "lemma": "landing craft",
+      "synset": "oewn-03643937-n"
+    },
+    {
+      "definition": "handcart for moving a load of laundry",
+      "forms": [],
+      "id": "oewn-laundry_cart__1.06.00..",
+      "lang": "en",
+      "lemma": "laundry cart",
+      "synset": "oewn-03653745-n"
+    },
+    {
+      "definition": "aircraft supported by its own buoyancy",
+      "forms": [],
+      "id": "oewn-lighter-than-air_craft__1.06.00..",
+      "lang": "en",
+      "lemma": "lighter-than-air craft",
+      "synset": "oewn-03672243-n"
+    },
+    {
+      "definition": "a two-wheeled horse-drawn vehicle used to pull a field gun or caisson",
+      "forms": [],
+      "id": "oewn-limber__1.06.00..",
+      "lang": "en",
+      "lemma": "limber",
+      "synset": "oewn-03674571-n"
+    },
+    {
+      "definition": "a wheeled vehicle consisting of a self-propelled engine that is used to draw trains along railway tracks",
+      "forms": [],
+      "id": "oewn-locomotive__1.06.00..",
+      "lang": "en",
+      "lemma": "locomotive",
+      "synset": "oewn-03690149-n"
+    },
+    {
+      "definition": "a wheeled vehicle consisting of a self-propelled engine that is used to draw trains along railway tracks",
+      "forms": [],
+      "id": "oewn-engine__1.06.01..",
+      "lang": "en",
+      "lemma": "engine",
+      "synset": "oewn-03690149-n"
+    },
+    {
+      "definition": "a wheeled vehicle consisting of a self-propelled engine that is used to draw trains along railway tracks",
+      "forms": [],
+      "id": "oewn-locomotive_engine__1.06.00..",
+      "lang": "en",
+      "lemma": "locomotive engine",
+      "synset": "oewn-03690149-n"
+    },
+    {
+      "definition": "a wheeled vehicle consisting of a self-propelled engine that is used to draw trains along railway tracks",
+      "forms": [],
+      "id": "oewn-railway_locomotive__1.06.00..",
+      "lang": "en",
+      "lemma": "railway locomotive",
+      "synset": "oewn-03690149-n"
+    },
+    {
+      "definition": "a large low horse-drawn wagon without sides",
+      "forms": [],
+      "id": "oewn-lorry__1.06.01..",
+      "lang": "en",
+      "lemma": "lorry",
+      "synset": "oewn-03695926-n"
+    },
+    {
+      "definition": "a racing sled for one or two people",
+      "forms": [],
+      "id": "oewn-luge__1.06.00..",
+      "lang": "en",
+      "lemma": "luge",
+      "synset": "oewn-03701079-n"
+    },
+    {
+      "definition": "a spacecraft that carries astronauts from the command module to the surface of the moon and back",
+      "forms": [],
+      "id": "oewn-lunar_excursion_module__1.06.00..",
+      "lang": "en",
+      "lemma": "lunar excursion module",
+      "synset": "oewn-03702700-n"
+    },
+    {
+      "definition": "a spacecraft that carries astronauts from the command module to the surface of the moon and back",
+      "forms": [],
+      "id": "oewn-lunar_module__1.06.00..",
+      "lang": "en",
+      "lemma": "lunar module",
+      "synset": "oewn-03702700-n"
+    },
+    {
+      "definition": "a spacecraft that carries astronauts from the command module to the surface of the moon and back",
+      "forms": [],
+      "id": "oewn-lem__1.06.00..",
+      "lang": "en",
+      "lemma": "LEM",
+      "synset": "oewn-03702700-n"
+    },
+    {
+      "definition": "a railway car in which mail is transported and sorted",
+      "forms": [],
+      "id": "oewn-mail_car__1.06.00..",
+      "lang": "en",
+      "lemma": "mail car",
+      "synset": "oewn-03715833-n"
+    },
+    {
+      "definition": "a warship intended for combat",
+      "forms": [
+        "men-o'-war",
+        "men-of-war"
+      ],
+      "id": "oewn-man-of-war__1.06.00..",
+      "lang": "en",
+      "lemma": "man-of-war",
+      "synset": "oewn-03723751-n"
+    },
+    {
+      "definition": "a warship intended for combat",
+      "forms": [],
+      "id": "oewn-ship_of_the_line__1.06.00..",
+      "lang": "en",
+      "lemma": "ship of the line",
+      "synset": "oewn-03723751-n"
+    },
+    {
+      "definition": "an ironclad vessel built by the Confederate forces in the hope of breaking the blockade imposed by the North",
+      "forms": [],
+      "id": "oewn-uss_merrimack__1.06.01..",
+      "lang": "en",
+      "lemma": "USS Merrimack",
+      "synset": "oewn-03756239-n"
+    },
+    {
+      "definition": "an ironclad vessel built by the Confederate forces in the hope of breaking the blockade imposed by the North",
+      "forms": [],
+      "id": "oewn-merrimac__1.06.00..",
+      "lang": "en",
+      "lemma": "Merrimac",
+      "synset": "oewn-03756239-n"
+    },
+    {
+      "definition": "vehicle used by the armed forces",
+      "forms": [],
+      "id": "oewn-military_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "military vehicle",
+      "synset": "oewn-03769811-n"
+    },
+    {
+      "definition": "wagon for delivering milk",
+      "forms": [],
+      "id": "oewn-milk_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "milk wagon",
+      "synset": "oewn-03771002-n"
+    },
+    {
+      "definition": "wagon for delivering milk",
+      "forms": [],
+      "id": "oewn-milkwagon__1.06.00..",
+      "lang": "en",
+      "lemma": "milkwagon",
+      "synset": "oewn-03771002-n"
+    },
+    {
+      "definition": "a rocket carrying a warhead of conventional or nuclear explosives; may be ballistic or directed by remote control",
+      "forms": [],
+      "id": "oewn-missile__1.06.01..",
+      "lang": "en",
+      "lemma": "missile",
+      "synset": "oewn-03779037-n"
+    },
+    {
+      "definition": "a large house trailer that can be connected to utilities and can be parked in one place and used as permanent housing",
+      "forms": [],
+      "id": "oewn-mobile_home__1.06.00..",
+      "lang": "en",
+      "lemma": "mobile home",
+      "synset": "oewn-03781993-n"
+    },
+    {
+      "definition": "a large house trailer that can be connected to utilities and can be parked in one place and used as permanent housing",
+      "forms": [],
+      "id": "oewn-manufactured_home__1.06.00..",
+      "lang": "en",
+      "lemma": "manufactured home",
+      "synset": "oewn-03781993-n"
+    },
+    {
+      "definition": "an ironclad vessel built by Federal forces to do battle with the Merrimac",
+      "forms": [],
+      "id": "oewn-uss_monitor__1.06.01..",
+      "lang": "en",
+      "lemma": "USS Monitor",
+      "synset": "oewn-03787963-n"
+    },
+    {
+      "definition": "an ironclad vessel built by Federal forces to do battle with the Merrimac",
+      "forms": [],
+      "id": "oewn-monitor__1.06.03..",
+      "lang": "en",
+      "lemma": "Monitor",
+      "synset": "oewn-03787963-n"
+    },
+    {
+      "definition": "a wheeled vehicle with small wheels and a low-powered gasoline engine geared to the rear wheel",
+      "forms": [],
+      "id": "oewn-motor_scooter__1.06.00..",
+      "lang": "en",
+      "lemma": "motor scooter",
+      "synset": "oewn-03796586-n"
+    },
+    {
+      "definition": "a wheeled vehicle with small wheels and a low-powered gasoline engine geared to the rear wheel",
+      "forms": [],
+      "id": "oewn-scooter__1.06.01..",
+      "lang": "en",
+      "lemma": "scooter",
+      "synset": "oewn-03796586-n"
+    },
+    {
+      "definition": "a self-propelled wheeled vehicle that does not run on rails",
+      "forms": [],
+      "id": "oewn-motor_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "motor vehicle",
+      "synset": "oewn-03796768-n"
+    },
+    {
+      "definition": "a self-propelled wheeled vehicle that does not run on rails",
+      "forms": [],
+      "id": "oewn-automotive_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "automotive vehicle",
+      "synset": "oewn-03796768-n"
+    },
+    {
+      "definition": "a bicycle with a sturdy frame and fat tires; originally designed for riding in mountainous country",
+      "forms": [],
+      "id": "oewn-mountain_bike__1.06.00..",
+      "lang": "en",
+      "lemma": "mountain bike",
+      "synset": "oewn-03798315-n"
+    },
+    {
+      "definition": "a bicycle with a sturdy frame and fat tires; originally designed for riding in mountainous country",
+      "forms": [],
+      "id": "oewn-all-terrain_bike__1.06.00..",
+      "lang": "en",
+      "lemma": "all-terrain bike",
+      "synset": "oewn-03798315-n"
+    },
+    {
+      "definition": "a bicycle with a sturdy frame and fat tires; originally designed for riding in mountainous country",
+      "forms": [],
+      "id": "oewn-off-roader__1.06.00..",
+      "lang": "en",
+      "lemma": "off-roader",
+      "synset": "oewn-03798315-n"
+    },
+    {
+      "definition": "a rocket having two or more rocket engines (each with its own fuel) that are fired in succession and jettisoned when the fuel is exhausted",
+      "forms": [],
+      "id": "oewn-multistage_rocket__1.06.00..",
+      "lang": "en",
+      "lemma": "multistage rocket",
+      "synset": "oewn-03804897-n"
+    },
+    {
+      "definition": "a rocket having two or more rocket engines (each with its own fuel) that are fired in succession and jettisoned when the fuel is exhausted",
+      "forms": [],
+      "id": "oewn-step_rocket__1.06.00..",
+      "lang": "en",
+      "lemma": "step rocket",
+      "synset": "oewn-03804897-n"
+    },
+    {
+      "definition": "an early bicycle with a very large front wheel and small back wheel",
+      "forms": [],
+      "id": "oewn-ordinary__1.06.01..",
+      "lang": "en",
+      "lemma": "ordinary",
+      "synset": "oewn-03859444-n"
+    },
+    {
+      "definition": "an early bicycle with a very large front wheel and small back wheel",
+      "forms": [],
+      "id": "oewn-ordinary_bicycle__1.06.00..",
+      "lang": "en",
+      "lemma": "ordinary bicycle",
+      "synset": "oewn-03859444-n"
+    },
+    {
+      "definition": "an armored vehicle or tank",
+      "forms": [],
+      "id": "oewn-panzer__1.06.00..",
+      "lang": "en",
+      "lemma": "panzer",
+      "synset": "oewn-03891750-n"
+    },
+    {
+      "definition": "a railcar where passengers ride",
+      "forms": [],
+      "id": "oewn-passenger_car__1.06.00..",
+      "lang": "en",
+      "lemma": "passenger car",
+      "synset": "oewn-03901563-n"
+    },
+    {
+      "definition": "a railcar where passengers ride",
+      "forms": [],
+      "id": "oewn-coach__1.06.01..",
+      "lang": "en",
+      "lemma": "coach",
+      "synset": "oewn-03901563-n"
+    },
+    {
+      "definition": "a railcar where passengers ride",
+      "forms": [],
+      "id": "oewn-carriage__1.06.01..",
+      "lang": "en",
+      "lemma": "carriage",
+      "synset": "oewn-03901563-n"
+    },
+    {
+      "definition": "a vessel assigned to patrol an area",
+      "forms": [],
+      "id": "oewn-patrol_boat__1.06.00..",
+      "lang": "en",
+      "lemma": "patrol boat",
+      "synset": "oewn-03906272-n"
+    },
+    {
+      "definition": "a vessel assigned to patrol an area",
+      "forms": [],
+      "id": "oewn-patrol_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "patrol ship",
+      "synset": "oewn-03906272-n"
+    },
+    {
+      "definition": "a tricycle (usually propelled by pedalling); used in the Orient for transporting passengers for hire",
+      "forms": [],
+      "id": "oewn-pedicab__1.06.00..",
+      "lang": "en",
+      "lemma": "pedicab",
+      "synset": "oewn-03910552-n"
+    },
+    {
+      "definition": "a tricycle (usually propelled by pedalling); used in the Orient for transporting passengers for hire",
+      "forms": [],
+      "id": "oewn-cycle_rickshaw__1.06.00..",
+      "lang": "en",
+      "lemma": "cycle rickshaw",
+      "synset": "oewn-03910552-n"
+    },
+    {
+      "definition": "a military vehicle (usually armored) for transporting military personnel and their equipment",
+      "forms": [],
+      "id": "oewn-personnel_carrier__1.06.00..",
+      "lang": "en",
+      "lemma": "personnel carrier",
+      "synset": "oewn-03925218-n"
+    },
+    {
+      "definition": "a vehicle performing sentinel duty",
+      "forms": [],
+      "id": "oewn-picket__1.06.01..",
+      "lang": "en",
+      "lemma": "picket",
+      "synset": "oewn-03936325-n"
+    },
+    {
+      "definition": "a boat serving as a picket",
+      "forms": [],
+      "id": "oewn-picket_boat__1.06.00..",
+      "lang": "en",
+      "lemma": "picket boat",
+      "synset": "oewn-03936467-n"
+    },
+    {
+      "definition": "a ship serving as a picket",
+      "forms": [],
+      "id": "oewn-picket_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "picket ship",
+      "synset": "oewn-03936669-n"
+    },
+    {
+      "definition": "a privately owned warship commissioned to prey on the commercial shipping or warships of an enemy nation",
+      "forms": [],
+      "id": "oewn-privateer__1.06.00..",
+      "lang": "en",
+      "lemma": "privateer",
+      "synset": "oewn-04012443-n"
+    },
+    {
+      "definition": "a one-horse sleigh consisting of a box on runners",
+      "forms": [],
+      "id": "oewn-pung__1.06.00..",
+      "lang": "en",
+      "lemma": "pung",
+      "synset": "oewn-04030970-n"
+    },
+    {
+      "definition": "a bicycle that must be pedaled",
+      "forms": [],
+      "id": "oewn-push-bike__1.06.00..",
+      "lang": "en",
+      "lemma": "push-bike",
+      "synset": "oewn-04033289-n"
+    },
+    {
+      "definition": "a military airplane used to gain information about an enemy",
+      "forms": [],
+      "id": "oewn-reconnaissance_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "reconnaissance plane",
+      "synset": "oewn-04069756-n"
+    },
+    {
+      "definition": "fast armored military vehicle with four-wheel drive and open top",
+      "forms": [],
+      "id": "oewn-reconnaissance_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "reconnaissance vehicle",
+      "synset": "oewn-04069919-n"
+    },
+    {
+      "definition": "fast armored military vehicle with four-wheel drive and open top",
+      "forms": [],
+      "id": "oewn-scout_car__1.06.00..",
+      "lang": "en",
+      "lemma": "scout car",
+      "synset": "oewn-04069919-n"
+    },
+    {
+      "definition": "a motorized wheeled vehicle used for camping or other recreational activities",
+      "forms": [],
+      "id": "oewn-recreational_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "recreational vehicle",
+      "synset": "oewn-04072384-n"
+    },
+    {
+      "definition": "a motorized wheeled vehicle used for camping or other recreational activities",
+      "forms": [],
+      "id": "oewn-rv__1.06.00..",
+      "lang": "en",
+      "lemma": "RV",
+      "synset": "oewn-04072384-n"
+    },
+    {
+      "definition": "a motorized wheeled vehicle used for camping or other recreational activities",
+      "forms": [],
+      "id": "oewn-r.v.__1.06.00..",
+      "lang": "en",
+      "lemma": "R.V.",
+      "synset": "oewn-04072384-n"
+    },
+    {
+      "definition": "any vehicle self-propelled by a rocket engine",
+      "forms": [],
+      "id": "oewn-rocket__1.06.01..",
+      "lang": "en",
+      "lemma": "rocket",
+      "synset": "oewn-04106523-n"
+    },
+    {
+      "definition": "any vehicle self-propelled by a rocket engine",
+      "forms": [],
+      "id": "oewn-projectile__1.06.01..",
+      "lang": "en",
+      "lemma": "projectile",
+      "synset": "oewn-04106523-n"
+    },
+    {
+      "definition": "collection of wheeled vehicles owned by a railroad or motor carrier",
+      "forms": [],
+      "id": "oewn-rolling_stock__1.06.00..",
+      "lang": "en",
+      "lemma": "rolling stock",
+      "synset": "oewn-04110458-n"
+    },
+    {
+      "definition": "bicycle that has two wheels of equal size; pedals are connected to the rear wheel by a multiplying gear",
+      "forms": [],
+      "id": "oewn-safety_bicycle__1.06.00..",
+      "lang": "en",
+      "lemma": "safety bicycle",
+      "synset": "oewn-04133167-n"
+    },
+    {
+      "definition": "bicycle that has two wheels of equal size; pedals are connected to the rear wheel by a multiplying gear",
+      "forms": [],
+      "id": "oewn-safety_bike__1.06.00..",
+      "lang": "en",
+      "lemma": "safety bike",
+      "synset": "oewn-04133167-n"
+    },
+    {
+      "definition": "a vessel that is powered by the wind; often having several masts",
+      "forms": [],
+      "id": "oewn-sailing_vessel__1.06.00..",
+      "lang": "en",
+      "lemma": "sailing vessel",
+      "synset": "oewn-04135920-n"
+    },
+    {
+      "definition": "a vessel that is powered by the wind; often having several masts",
+      "forms": [],
+      "id": "oewn-sailing_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "sailing ship",
+      "synset": "oewn-04135920-n"
+    },
+    {
+      "definition": "child's two-wheeled vehicle operated by foot",
+      "forms": [],
+      "id": "oewn-scooter__1.06.00..",
+      "lang": "en",
+      "lemma": "scooter",
+      "synset": "oewn-04156439-n"
+    },
+    {
+      "definition": "a wheeled vehicle that carries in itself a means of propulsion",
+      "forms": [],
+      "id": "oewn-self-propelled_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "self-propelled vehicle",
+      "synset": "oewn-04177098-n"
+    },
+    {
+      "definition": "a handcart for serving food",
+      "forms": [],
+      "id": "oewn-serving_cart__1.06.00..",
+      "lang": "en",
+      "lemma": "serving cart",
+      "synset": "oewn-04183129-n"
+    },
+    {
+      "definition": "a vessel that carries passengers or freight",
+      "forms": [],
+      "id": "oewn-ship__1.06.00..",
+      "lang": "en",
+      "lemma": "ship",
+      "synset": "oewn-04201332-n"
+    },
+    {
+      "definition": "a handcart that holds groceries or other goods while shopping",
+      "forms": [],
+      "id": "oewn-shopping_cart__1.06.00..",
+      "lang": "en",
+      "lemma": "shopping cart",
+      "synset": "oewn-04211393-n"
+    },
+    {
+      "definition": "a vessel engaged in shrimping",
+      "forms": [],
+      "id": "oewn-shrimper__1.06.00..",
+      "lang": "en",
+      "lemma": "shrimper",
+      "synset": "oewn-04217355-n"
+    },
+    {
+      "definition": "air-to-air missile with infrared homing device",
+      "forms": [],
+      "id": "oewn-sidewinder__1.06.00..",
+      "lang": "en",
+      "lemma": "sidewinder",
+      "synset": "oewn-04222977-n"
+    },
+    {
+      "definition": "a board with wheels that is ridden in a standing or crouching position and propelled by foot",
+      "forms": [],
+      "id": "oewn-skateboard__1.06.00..",
+      "lang": "en",
+      "lemma": "skateboard",
+      "synset": "oewn-04233049-n"
+    },
+    {
+      "definition": "a vehicle resembling a bicycle but having skis instead of wheels; the rider wears short skis for balancing",
+      "forms": [],
+      "id": "oewn-skibob__1.06.00..",
+      "lang": "en",
+      "lemma": "skibob",
+      "synset": "oewn-04235484-n"
+    },
+    {
+      "definition": "a vehicle mounted on runners and pulled by horses or dogs; for transportation over snow",
+      "forms": [],
+      "id": "oewn-sled__1.06.00..",
+      "lang": "en",
+      "lemma": "sled",
+      "synset": "oewn-04242397-n"
+    },
+    {
+      "definition": "a vehicle mounted on runners and pulled by horses or dogs; for transportation over snow",
+      "forms": [],
+      "id": "oewn-sledge__1.06.01..",
+      "lang": "en",
+      "lemma": "sledge",
+      "synset": "oewn-04242397-n"
+    },
+    {
+      "definition": "a vehicle mounted on runners and pulled by horses or dogs; for transportation over snow",
+      "forms": [],
+      "id": "oewn-sleigh__1.06.00..",
+      "lang": "en",
+      "lemma": "sleigh",
+      "synset": "oewn-04242397-n"
+    },
+    {
+      "definition": "a railway car at the end of the train; it can be detached without stopping the train",
+      "forms": [],
+      "id": "oewn-slip_coach__1.06.00..",
+      "lang": "en",
+      "lemma": "slip coach",
+      "synset": "oewn-04247704-n"
+    },
+    {
+      "definition": "a railway car at the end of the train; it can be detached without stopping the train",
+      "forms": [],
+      "id": "oewn-slip_carriage__1.06.00..",
+      "lang": "en",
+      "lemma": "slip carriage",
+      "synset": "oewn-04247704-n"
+    },
+    {
+      "definition": "a sailing or steam warship having cannons on only one deck",
+      "forms": [],
+      "id": "oewn-sloop_of_war__1.06.00..",
+      "lang": "en",
+      "lemma": "sloop of war",
+      "synset": "oewn-04249715-n"
+    },
+    {
+      "definition": "a research rocket used to obtain information about the atmosphere at various altitudes",
+      "forms": [],
+      "id": "oewn-sounding_rocket__1.06.00..",
+      "lang": "en",
+      "lemma": "sounding rocket",
+      "synset": "oewn-04269640-n"
+    },
+    {
+      "definition": "a spacecraft designed to transport people and support human life in outer space",
+      "forms": [],
+      "id": "oewn-space_capsule__1.06.00..",
+      "lang": "en",
+      "lemma": "space capsule",
+      "synset": "oewn-04271875-n"
+    },
+    {
+      "definition": "a spacecraft designed to transport people and support human life in outer space",
+      "forms": [],
+      "id": "oewn-capsule__1.06.01..",
+      "lang": "en",
+      "lemma": "capsule",
+      "synset": "oewn-04271875-n"
+    },
+    {
+      "definition": "a craft capable of traveling in outer space; technically, a satellite around the sun",
+      "forms": [],
+      "id": "oewn-spacecraft__1.06.00..",
+      "lang": "en",
+      "lemma": "spacecraft",
+      "synset": "oewn-04272024-n"
+    },
+    {
+      "definition": "a craft capable of traveling in outer space; technically, a satellite around the sun",
+      "forms": [],
+      "id": "oewn-ballistic_capsule__1.06.00..",
+      "lang": "en",
+      "lemma": "ballistic capsule",
+      "synset": "oewn-04272024-n"
+    },
+    {
+      "definition": "a craft capable of traveling in outer space; technically, a satellite around the sun",
+      "forms": [],
+      "id": "oewn-space_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "space vehicle",
+      "synset": "oewn-04272024-n"
+    },
+    {
+      "definition": "a reusable spacecraft with wings for a controlled descent through the Earth's atmosphere",
+      "forms": [],
+      "id": "oewn-space_shuttle__1.06.00..",
+      "lang": "en",
+      "lemma": "space shuttle",
+      "synset": "oewn-04273124-n"
+    },
+    {
+      "definition": "a spacecraft designed to carry a crew into interstellar space (especially in science fiction)",
+      "forms": [],
+      "id": "oewn-starship__1.06.00..",
+      "lang": "en",
+      "lemma": "starship",
+      "synset": "oewn-04311353-n"
+    },
+    {
+      "definition": "a spacecraft designed to carry a crew into interstellar space (especially in science fiction)",
+      "forms": [],
+      "id": "oewn-spaceship__1.06.00..",
+      "lang": "en",
+      "lemma": "spaceship",
+      "synset": "oewn-04311353-n"
+    },
+    {
+      "definition": "an aircraft designed in accordance with technology that makes detection by radar difficult",
+      "forms": [],
+      "id": "oewn-stealth_aircraft__1.06.00..",
+      "lang": "en",
+      "lemma": "stealth aircraft",
+      "synset": "oewn-04315222-n"
+    },
+    {
+      "definition": "vehicle equipped with heavy wide smooth rollers for compacting roads and pavements",
+      "forms": [],
+      "id": "oewn-steamroller__1.06.00..",
+      "lang": "en",
+      "lemma": "steamroller",
+      "synset": "oewn-04317295-n"
+    },
+    {
+      "definition": "vehicle equipped with heavy wide smooth rollers for compacting roads and pavements",
+      "forms": [],
+      "id": "oewn-road_roller__1.06.00..",
+      "lang": "en",
+      "lemma": "road roller",
+      "synset": "oewn-04317295-n"
+    },
+    {
+      "definition": "a wheeled vehicle that runs on rails and is propelled by electricity",
+      "forms": [],
+      "id": "oewn-streetcar__1.06.00..",
+      "lang": "en",
+      "lemma": "streetcar",
+      "synset": "oewn-04342573-n"
+    },
+    {
+      "definition": "a wheeled vehicle that runs on rails and is propelled by electricity",
+      "forms": [],
+      "id": "oewn-tram__1.06.01..",
+      "lang": "en",
+      "lemma": "tram",
+      "synset": "oewn-04342573-n"
+    },
+    {
+      "definition": "a wheeled vehicle that runs on rails and is propelled by electricity",
+      "forms": [],
+      "id": "oewn-tramcar__1.06.01..",
+      "lang": "en",
+      "lemma": "tramcar",
+      "synset": "oewn-04342573-n"
+    },
+    {
+      "definition": "a wheeled vehicle that runs on rails and is propelled by electricity",
+      "forms": [],
+      "id": "oewn-trolley__1.06.00..",
+      "lang": "en",
+      "lemma": "trolley",
+      "synset": "oewn-04342573-n"
+    },
+    {
+      "definition": "a wheeled vehicle that runs on rails and is propelled by electricity",
+      "forms": [],
+      "id": "oewn-trolley_car__1.06.00..",
+      "lang": "en",
+      "lemma": "trolley car",
+      "synset": "oewn-04342573-n"
+    },
+    {
+      "definition": "a warship designed to operate under water",
+      "forms": [],
+      "id": "oewn-submersible__1.06.00..",
+      "lang": "en",
+      "lemma": "submersible",
+      "synset": "oewn-04355262-n"
+    },
+    {
+      "definition": "a warship designed to operate under water",
+      "forms": [],
+      "id": "oewn-submersible_warship__1.06.00..",
+      "lang": "en",
+      "lemma": "submersible warship",
+      "synset": "oewn-04355262-n"
+    },
+    {
+      "definition": "a light two-wheeled vehicle for one person; drawn by one horse",
+      "forms": [],
+      "id": "oewn-sulky__1.06.00..",
+      "lang": "en",
+      "lemma": "sulky",
+      "synset": "oewn-04360651-n"
+    },
+    {
+      "definition": "a warship that operates on the surface of the water",
+      "forms": [],
+      "id": "oewn-surface_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "surface ship",
+      "synset": "oewn-04370169-n"
+    },
+    {
+      "definition": "an enclosed armored military vehicle; has a cannon and moves on caterpillar treads",
+      "forms": [],
+      "id": "oewn-tank__1.06.01..",
+      "lang": "en",
+      "lemma": "tank",
+      "synset": "oewn-04396120-n"
+    },
+    {
+      "definition": "an enclosed armored military vehicle; has a cannon and moves on caterpillar treads",
+      "forms": [],
+      "id": "oewn-army_tank__1.06.00..",
+      "lang": "en",
+      "lemma": "army tank",
+      "synset": "oewn-04396120-n"
+    },
+    {
+      "definition": "an enclosed armored military vehicle; has a cannon and moves on caterpillar treads",
+      "forms": [],
+      "id": "oewn-armored_combat_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "armored combat vehicle",
+      "synset": "oewn-04396120-n"
+    },
+    {
+      "definition": "an enclosed armored military vehicle; has a cannon and moves on caterpillar treads",
+      "forms": [],
+      "id": "oewn-armoured_combat_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "armoured combat vehicle",
+      "synset": "oewn-04396120-n"
+    },
+    {
+      "definition": "a pickup truck with a gun mounted on it",
+      "forms": [],
+      "id": "oewn-technical__1.06.00..",
+      "lang": "en",
+      "lemma": "technical",
+      "synset": "oewn-04406404-n"
+    },
+    {
+      "definition": "car attached to a locomotive to carry fuel and water",
+      "forms": [],
+      "id": "oewn-tender__1.06.02..",
+      "lang": "en",
+      "lemma": "tender",
+      "synset": "oewn-04416414-n"
+    },
+    {
+      "definition": "a rocket fired for test purposes",
+      "forms": [],
+      "id": "oewn-test_rocket__1.06.00..",
+      "lang": "en",
+      "lemma": "test rocket",
+      "synset": "oewn-04422798-n"
+    },
+    {
+      "definition": "a rocket fired for test purposes",
+      "forms": [],
+      "id": "oewn-research_rocket__1.06.00..",
+      "lang": "en",
+      "lemma": "research rocket",
+      "synset": "oewn-04422798-n"
+    },
+    {
+      "definition": "a rocket fired for test purposes",
+      "forms": [],
+      "id": "oewn-test_instrument_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "test instrument vehicle",
+      "synset": "oewn-04422798-n"
+    },
+    {
+      "definition": "a warship carrying guns on three decks",
+      "forms": [],
+      "id": "oewn-three-decker__1.06.00..",
+      "lang": "en",
+      "lemma": "three-decker",
+      "synset": "oewn-04434511-n"
+    },
+    {
+      "definition": "a long narrow sled without runners; boards curve upward in front",
+      "forms": [],
+      "id": "oewn-toboggan__1.06.00..",
+      "lang": "en",
+      "lemma": "toboggan",
+      "synset": "oewn-04450567-n"
+    },
+    {
+      "definition": "small high-speed warship designed for torpedo attacks in coastal waters",
+      "forms": [],
+      "id": "oewn-torpedo_boat__1.06.00..",
+      "lang": "en",
+      "lemma": "torpedo boat",
+      "synset": "oewn-04464561-n"
+    },
+    {
+      "definition": "a self-propelled vehicle that moves on tracks",
+      "forms": [],
+      "id": "oewn-tracked_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "tracked vehicle",
+      "synset": "oewn-04472087-n"
+    },
+    {
+      "definition": "a wheeled vehicle with large wheels; used in farming and other applications",
+      "forms": [],
+      "id": "oewn-tractor__1.06.00..",
+      "lang": "en",
+      "lemma": "tractor",
+      "synset": "oewn-04472736-n"
+    },
+    {
+      "definition": "a wheeled vehicle that can be pulled by a car or truck and is equipped for occupancy",
+      "forms": [],
+      "id": "oewn-trailer__1.06.00..",
+      "lang": "en",
+      "lemma": "trailer",
+      "synset": "oewn-04474334-n"
+    },
+    {
+      "definition": "a wheeled vehicle that can be pulled by a car or truck and is equipped for occupancy",
+      "forms": [],
+      "id": "oewn-house_trailer__1.06.00..",
+      "lang": "en",
+      "lemma": "house trailer",
+      "synset": "oewn-04474334-n"
+    },
+    {
+      "definition": "a four-wheeled wagon that runs on tracks in a mine",
+      "forms": [],
+      "id": "oewn-tramcar__1.06.00..",
+      "lang": "en",
+      "lemma": "tramcar",
+      "synset": "oewn-04476082-n"
+    },
+    {
+      "definition": "a four-wheeled wagon that runs on tracks in a mine",
+      "forms": [],
+      "id": "oewn-tram__1.06.00..",
+      "lang": "en",
+      "lemma": "tram",
+      "synset": "oewn-04476082-n"
+    },
+    {
+      "definition": "a vehicle with three wheels that is moved by foot pedals",
+      "forms": [],
+      "id": "oewn-tricycle__1.06.00..",
+      "lang": "en",
+      "lemma": "tricycle",
+      "synset": "oewn-04489649-n"
+    },
+    {
+      "definition": "a vehicle with three wheels that is moved by foot pedals",
+      "forms": [],
+      "id": "oewn-trike__1.06.00..",
+      "lang": "en",
+      "lemma": "trike",
+      "synset": "oewn-04489649-n"
+    },
+    {
+      "definition": "a vehicle with three wheels that is moved by foot pedals",
+      "forms": [],
+      "id": "oewn-velocipede__1.06.01..",
+      "lang": "en",
+      "lemma": "velocipede",
+      "synset": "oewn-04489649-n"
+    },
+    {
+      "definition": "any land or sea or air vehicle designed to carry troops",
+      "forms": [],
+      "id": "oewn-troop_carrier__1.06.00..",
+      "lang": "en",
+      "lemma": "troop carrier",
+      "synset": "oewn-04494980-n"
+    },
+    {
+      "definition": "any land or sea or air vehicle designed to carry troops",
+      "forms": [],
+      "id": "oewn-troop_transport__1.06.00..",
+      "lang": "en",
+      "lemma": "troop transport",
+      "synset": "oewn-04494980-n"
+    },
+    {
+      "definition": "ship for transporting troops",
+      "forms": [],
+      "id": "oewn-troopship__1.06.00..",
+      "lang": "en",
+      "lemma": "troopship",
+      "synset": "oewn-04495150-n"
+    },
+    {
+      "definition": "a vehicle with a single wheel that is driven by pedals",
+      "forms": [],
+      "id": "oewn-unicycle__1.06.00..",
+      "lang": "en",
+      "lemma": "unicycle",
+      "synset": "oewn-04516712-n"
+    },
+    {
+      "definition": "a vehicle with a single wheel that is driven by pedals",
+      "forms": [],
+      "id": "oewn-monocycle__1.06.00..",
+      "lang": "en",
+      "lemma": "monocycle",
+      "synset": "oewn-04516712-n"
+    },
+    {
+      "definition": "(Great Britain) a closed railroad car that carries baggage or freight",
+      "forms": [],
+      "id": "oewn-van__1.06.02..",
+      "lang": "en",
+      "lemma": "van",
+      "synset": "oewn-04527775-n"
+    },
+    {
+      "definition": "a conveyance that transports people or objects",
+      "forms": [],
+      "id": "oewn-vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "vehicle",
+      "synset": "oewn-04531608-n"
+    },
+    {
+      "definition": "any of several early bicycles with pedals on the front wheel",
+      "forms": [],
+      "id": "oewn-velocipede__1.06.02..",
+      "lang": "en",
+      "lemma": "velocipede",
+      "synset": "oewn-04532011-n"
+    },
+    {
+      "definition": "a craft designed for water transportation",
+      "forms": [],
+      "id": "oewn-vessel__1.06.00..",
+      "lang": "en",
+      "lemma": "vessel",
+      "synset": "oewn-04537861-n"
+    },
+    {
+      "definition": "a craft designed for water transportation",
+      "forms": [],
+      "id": "oewn-watercraft__1.06.00..",
+      "lang": "en",
+      "lemma": "watercraft",
+      "synset": "oewn-04537861-n"
+    },
+    {
+      "definition": "any of various kinds of wheeled vehicles drawn by an animal or a tractor",
+      "forms": [],
+      "id": "oewn-wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "wagon",
+      "synset": "oewn-04550444-n"
+    },
+    {
+      "definition": "any of various kinds of wheeled vehicles drawn by an animal or a tractor",
+      "forms": [],
+      "id": "oewn-waggon__1.06.00..",
+      "lang": "en",
+      "lemma": "waggon",
+      "synset": "oewn-04550444-n"
+    },
+    {
+      "definition": "a child's four-wheeled toy cart sometimes used for coasting",
+      "forms": [],
+      "id": "oewn-wagon__1.06.04..",
+      "lang": "en",
+      "lemma": "wagon",
+      "synset": "oewn-04550795-n"
+    },
+    {
+      "definition": "a child's four-wheeled toy cart sometimes used for coasting",
+      "forms": [],
+      "id": "oewn-coaster_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "coaster wagon",
+      "synset": "oewn-04550795-n"
+    },
+    {
+      "definition": "large open farm wagon",
+      "forms": [],
+      "id": "oewn-wain__1.06.00..",
+      "lang": "en",
+      "lemma": "wain",
+      "synset": "oewn-04551210-n"
+    },
+    {
+      "definition": "an aircraft designed and used for combat",
+      "forms": [],
+      "id": "oewn-warplane__1.06.00..",
+      "lang": "en",
+      "lemma": "warplane",
+      "synset": "oewn-04559634-n"
+    },
+    {
+      "definition": "an aircraft designed and used for combat",
+      "forms": [],
+      "id": "oewn-military_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "military plane",
+      "synset": "oewn-04559634-n"
+    },
+    {
+      "definition": "a government ship that is available for waging war",
+      "forms": [],
+      "id": "oewn-warship__1.06.00..",
+      "lang": "en",
+      "lemma": "warship",
+      "synset": "oewn-04559982-n"
+    },
+    {
+      "definition": "a government ship that is available for waging war",
+      "forms": [],
+      "id": "oewn-war_vessel__1.06.00..",
+      "lang": "en",
+      "lemma": "war vessel",
+      "synset": "oewn-04559982-n"
+    },
+    {
+      "definition": "a government ship that is available for waging war",
+      "forms": [],
+      "id": "oewn-combat_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "combat ship",
+      "synset": "oewn-04559982-n"
+    },
+    {
+      "definition": "a wagon that carries water (as for troops or work gangs or to sprinkle down dusty dirt roads in the summertime)",
+      "forms": [],
+      "id": "oewn-water_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "water wagon",
+      "synset": "oewn-04570306-n"
+    },
+    {
+      "definition": "a wagon that carries water (as for troops or work gangs or to sprinkle down dusty dirt roads in the summertime)",
+      "forms": [],
+      "id": "oewn-water_waggon__1.06.00..",
+      "lang": "en",
+      "lemma": "water waggon",
+      "synset": "oewn-04570306-n"
+    },
+    {
+      "definition": "military vehicle that is a light truck designed to carry mortars or machine guns and their crews",
+      "forms": [],
+      "id": "oewn-weapons_carrier__1.06.00..",
+      "lang": "en",
+      "lemma": "weapons carrier",
+      "synset": "oewn-04573847-n"
+    },
+    {
+      "definition": "an oceangoing vessel equipped to make meteorological observations",
+      "forms": [],
+      "id": "oewn-weather_ship__1.06.00..",
+      "lang": "en",
+      "lemma": "weather ship",
+      "synset": "oewn-04575032-n"
+    },
+    {
+      "definition": "a wheeled vehicle carrying information and gifts from local merchants for new residents in an area",
+      "forms": [],
+      "id": "oewn-welcome_wagon__1.06.00..",
+      "lang": "en",
+      "lemma": "welcome wagon",
+      "synset": "oewn-04579086-n"
+    },
+    {
+      "definition": "a vehicle that moves on wheels and usually has a container for transporting things or people",
+      "forms": [],
+      "id": "oewn-wheeled_vehicle__1.06.00..",
+      "lang": "en",
+      "lemma": "wheeled vehicle",
+      "synset": "oewn-04583497-n"
+    },
+    {
+      "definition": "an expensive vessel propelled by sail or power and used for cruising or racing",
+      "forms": [],
+      "id": "oewn-yacht__1.06.00..",
+      "lang": "en",
+      "lemma": "yacht",
+      "synset": "oewn-04617370-n"
+    },
+    {
+      "definition": "an expensive vessel propelled by sail or power and used for cruising or racing",
+      "forms": [],
+      "id": "oewn-racing_yacht__1.06.00..",
+      "lang": "en",
+      "lemma": "racing yacht",
+      "synset": "oewn-04617370-n"
+    },
+    {
+      "definition": "a bicycle built with a motor to aid the cyclist to turn the pedals",
+      "forms": [],
+      "id": "oewn-pedelec__1.06.01..",
+      "lang": "en",
+      "lemma": "pedelec",
+      "synset": "oewn-81142070-n"
+    },
+    {
+      "definition": "a bicycle that is built with a motor, the bicycle can be powered by the motor or pedalling of the cyclist",
+      "forms": [],
+      "id": "oewn-electronic_bicycle__1.06.01..",
+      "lang": "en",
+      "lemma": "electronic bicycle",
+      "synset": "oewn-84345709-n"
+    },
+    {
+      "definition": "a bicycle that is built with a motor, the bicycle can be powered by the motor or pedalling of the cyclist",
+      "forms": [],
+      "id": "oewn-electronic_bike__1.06.01..",
+      "lang": "en",
+      "lemma": "electronic bike",
+      "synset": "oewn-84345709-n"
+    },
+    {
+      "definition": "a bicycle that is built with a motor, the bicycle can be powered by the motor or pedalling of the cyclist",
+      "forms": [],
+      "id": "oewn-e-bike__1.06.01..",
+      "lang": "en",
+      "lemma": "E-bike",
+      "synset": "oewn-84345709-n"
+    },
+    {
+      "definition": "a spacecraft designed for combat in outer space",
+      "forms": [],
+      "id": "oewn-starfighter__1.06.00..",
+      "lang": "en",
+      "lemma": "starfighter",
+      "synset": "oewn-87039364-n"
+    },
+    {
+      "definition": "A device resembling a skateboard without wheels that can hover above the ground",
+      "forms": [],
+      "id": "oewn-hoverboard__1.06.01..",
+      "lang": "en",
+      "lemma": "hoverboard",
+      "synset": "oewn-91000411-n"
+    },
+    {
+      "definition": "a type of rail car that has two levels of passenger accommodation, as opposed to one, increasing passenger capacity.",
+      "forms": [],
+      "id": "oewn-bilevel_car__1.06.01..",
+      "lang": "en",
+      "lemma": "bilevel car",
+      "synset": "oewn-92460744-n"
+    },
+    {
+      "definition": "a type of rail car that has two levels of passenger accommodation, as opposed to one, increasing passenger capacity.",
+      "forms": [],
+      "id": "oewn-double-deck_carriage__1.06.01..",
+      "lang": "en",
+      "lemma": "double-deck carriage",
+      "synset": "oewn-92460744-n"
+    },
+    {
+      "definition": "a type of rail car that has two levels of passenger accommodation, as opposed to one, increasing passenger capacity.",
+      "forms": [],
+      "id": "oewn-bilevel_railcar__1.06.01..",
+      "lang": "en",
+      "lemma": "bilevel railcar",
+      "synset": "oewn-92460744-n"
+    },
+    {
+      "definition": "a type of rail car that has two levels of passenger accommodation, as opposed to one, increasing passenger capacity.",
+      "forms": [],
+      "id": "oewn-bilevel_rail_car__1.06.01..",
+      "lang": "en",
+      "lemma": "bilevel rail car",
+      "synset": "oewn-92460744-n"
+    },
+    {
+      "definition": "a type of rail car that has two levels of passenger accommodation, as opposed to one, increasing passenger capacity.",
+      "forms": [],
+      "id": "oewn-double-deck_railcar__1.06.01..",
+      "lang": "en",
+      "lemma": "double-deck railcar",
+      "synset": "oewn-92460744-n"
+    },
+    {
+      "definition": "a type of rail car that has two levels of passenger accommodation, as opposed to one, increasing passenger capacity.",
+      "forms": [],
+      "id": "oewn-double-deck_rail_car__1.06.01..",
+      "lang": "en",
+      "lemma": "double-deck rail car",
+      "synset": "oewn-92460744-n"
+    },
+    {
+      "definition": "a small wheeled carriage attached under the front end of a plow beam.",
+      "forms": [],
+      "id": "oewn-forecarriage__1.06.01..",
+      "lang": "en",
+      "lemma": "forecarriage",
+      "synset": "oewn-92466295-n"
+    },
+    {
+      "definition": "a small wheeled carriage attached under the front end of a plow beam.",
+      "forms": [],
+      "id": "oewn-fore_carriage__1.06.01..",
+      "lang": "en",
+      "lemma": "fore carriage",
+      "synset": "oewn-92466295-n"
+    },
+    {
+      "definition": "a small wheeled carriage attached under the front end of a plow beam.",
+      "forms": [],
+      "id": "oewn-wheeled_forecarriage__1.06.01..",
+      "lang": "en",
+      "lemma": "wheeled forecarriage",
+      "synset": "oewn-92466295-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a vehicle that can fly",
+      "hypernyms": [
+        "oewn-03130521-n"
+      ],
+      "id": "oewn-02689427-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "aircraft"
+    },
+    {
+      "definition": "a large warship that carries planes and has a long flat deck for takeoffs and landings",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-02690031-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "aircraft carrier"
+    },
+    {
+      "definition": "a missile designed to be launched from one airplane at another",
+      "hypernyms": [
+        "oewn-03779037-n"
+      ],
+      "id": "oewn-02696272-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "air-to-air missile"
+    },
+    {
+      "definition": "a missile designed to be launched from an airplane at a target on the ground",
+      "hypernyms": [
+        "oewn-03779037-n"
+      ],
+      "id": "oewn-02696399-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "air-to-ground missile"
+    },
+    {
+      "definition": "a handcart from which apples and other fruit are sold in the street",
+      "hypernyms": [
+        "oewn-03489166-n"
+      ],
+      "id": "oewn-02732166-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "applecart"
+    },
+    {
+      "definition": "a vehicle that is protected by armor plate",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-02743538-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "armored vehicle"
+    },
+    {
+      "definition": "a small vehicle with four wheels in which a baby or child is pushed around",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-02769539-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "baby buggy"
+    },
+    {
+      "definition": "a railway car where passengers' bags are carried",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-02778044-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "baggage car"
+    },
+    {
+      "definition": "a missile that is guided in the first part of its flight but falls freely as it approaches target",
+      "hypernyms": [
+        "oewn-03779037-n"
+      ],
+      "id": "oewn-02784361-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "ballistic missile"
+    },
+    {
+      "definition": "a large ornate wagon for carrying a musical band",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-02790143-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bandwagon"
+    },
+    {
+      "definition": "a vessel (such as a yacht) that can be chartered without a captain or crew or provisions",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-02795432-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bareboat"
+    },
+    {
+      "definition": "a cart for carrying small loads; has handles and one or more wheels",
+      "hypernyms": [
+        "oewn-03489166-n"
+      ],
+      "id": "oewn-02800454-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "barrow"
+    },
+    {
+      "definition": "a perambulator that resembles a bassinet",
+      "hypernyms": [
+        "oewn-02769539-n"
+      ],
+      "id": "oewn-02807681-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bassinet"
+    },
+    {
+      "definition": "large and heavily armoured warship",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-02815336-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "battleship"
+    },
+    {
+      "definition": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-02837983-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bicycle"
+    },
+    {
+      "definition": "a bicycle with two sets of pedals and two seats",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-02838476-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bicycle-built-for-two"
+    },
+    {
+      "definition": "a small vessel for travel on water",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-02861626-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "boat"
+    },
+    {
+      "definition": "a long racing sled (for 2 or more people) with a steering mechanism",
+      "hypernyms": [
+        "oewn-04242397-n"
+      ],
+      "id": "oewn-02864187-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bobsled"
+    },
+    {
+      "definition": "formerly two short sleds coupled together",
+      "hypernyms": [
+        "oewn-04242397-n"
+      ],
+      "id": "oewn-02864362-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bobsled"
+    },
+    {
+      "definition": "an unidentified (and possibly enemy) aircraft",
+      "hypernyms": [
+        "oewn-02689427-n"
+      ],
+      "id": "oewn-02866978-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bogy"
+    },
+    {
+      "definition": "a military aircraft that drops bombs during flight",
+      "hypernyms": [
+        "oewn-02694015-n",
+        "oewn-04559634-n"
+      ],
+      "id": "oewn-02871055-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "bomber"
+    },
+    {
+      "definition": "any wheeled vehicle that is dilapidated and uncomfortable",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-02872924-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "boneshaker"
+    },
+    {
+      "definition": "a small low-powered electrically powered vehicle driven on a special platform where there are many others to be dodged",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-02922348-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bumper car"
+    },
+    {
+      "definition": "a car on a freight train for use of the train crew; usually the last car on the train",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-02935907-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cabin car"
+    },
+    {
+      "definition": "a two-wheeled military vehicle carrying artillery ammunition",
+      "hypernyms": [
+        "oewn-03769811-n"
+      ],
+      "id": "oewn-02940720-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "caisson"
+    },
+    {
+      "definition": "a trailer equipped for occupancy (especially for holiday trips)",
+      "hypernyms": [
+        "oewn-04474334-n"
+      ],
+      "id": "oewn-02949964-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "camper trailer"
+    },
+    {
+      "definition": "a warship of the first rank in size and armament",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-02959829-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "capital ship"
+    },
+    {
+      "definition": "a wheeled vehicle adapted to the rails of railroad",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-02963378-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "car"
+    },
+    {
+      "definition": "a vehicle with wheels drawn by one or more horses",
+      "hypernyms": [
+        "oewn-03543814-n"
+      ],
+      "id": "oewn-02971932-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "carriage"
+    },
+    {
+      "definition": "a self-propelled wheeled vehicle designed specifically to carry something",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-02973559-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "carrier"
+    },
+    {
+      "definition": "a heavy open wagon usually having two wheels and drawn by an animal",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-02974308-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cart"
+    },
+    {
+      "definition": "a two-wheeled horse-drawn battle vehicle; used in war and races in ancient Egypt and Greece and Rome",
+      "hypernyms": [
+        "oewn-03543814-n"
+      ],
+      "id": "oewn-03012923-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "chariot"
+    },
+    {
+      "definition": "a wagon equipped with a cookstove and provisions (for cowboys)",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-03031188-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "chuck wagon"
+    },
+    {
+      "definition": "railroad car having a bar and tables and lounge chairs",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-03057961-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "club car"
+    },
+    {
+      "definition": "a highly maneuverable escort warship; smaller than a destroyer",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03117686-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "corvette"
+    },
+    {
+      "definition": "a large wagon with broad wheels and an arched canvas top; used by the United States pioneers to cross the prairies in the 19th century",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-03126946-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "covered wagon"
+    },
+    {
+      "definition": "a vehicle designed for navigation in or on water or air or through outer space",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-03130521-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "craft"
+    },
+    {
+      "definition": "an unmanned aircraft that is a self-contained bomb",
+      "hypernyms": [
+        "oewn-02689427-n",
+        "oewn-02869918-n"
+      ],
+      "id": "oewn-03145422-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "cruise missile"
+    },
+    {
+      "definition": "a large fast warship; smaller than a battleship and larger than a destroyer",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03145551-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "cruiser"
+    },
+    {
+      "definition": "a small fast lightly armored but heavily armed warship",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03185170-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "destroyer"
+    },
+    {
+      "definition": "warship smaller than a destroyer; designed to escort fleets or convoys",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03185398-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "destroyer escort"
+    },
+    {
+      "definition": "a sled pulled by dogs",
+      "hypernyms": [
+        "oewn-04242397-n"
+      ],
+      "id": "oewn-03222901-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "dogsled"
+    },
+    {
+      "definition": "a high-speed military or naval airplane designed to destroy enemy aircraft in the air",
+      "hypernyms": [
+        "oewn-02694015-n",
+        "oewn-04559634-n"
+      ],
+      "id": "oewn-03339975-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "fighter"
+    },
+    {
+      "definition": "a vessel for fishing; often has a well to keep the catch alive",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-03356108-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "fishing boat"
+    },
+    {
+      "definition": "a small industrial vehicle with a power operated forked platform in front that can be inserted under loads to lift and move them",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-03389198-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "forklift"
+    },
+    {
+      "definition": "a railway car that carries freight",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-03398748-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "freight car"
+    },
+    {
+      "definition": "a United States warship larger than a destroyer and smaller than a cruiser",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03402102-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "frigate"
+    },
+    {
+      "definition": "a medium size square-rigged warship of the 18th and 19th centuries",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03402248-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "frigate"
+    },
+    {
+      "definition": "(classical antiquity) a crescent-shaped seagoing vessel propelled by oars",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-03417421-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "galley"
+    },
+    {
+      "definition": "a large medieval vessel with a single deck propelled by sails and oars with guns at stern and prow; a complement of 1,000 men; used mainly in the Mediterranean for war and trading",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-03417584-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "galley"
+    },
+    {
+      "definition": "a warship (at anchor or under way) required to maintain a higher degree of readiness than others in its squadron",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03470083-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "guard ship"
+    },
+    {
+      "definition": "the car on a train that is occupied by the guard",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-03470252-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "guard's van"
+    },
+    {
+      "definition": "a rocket-propelled missile whose path can be controlled during flight either by radio signals or by internal homing devices",
+      "hypernyms": [
+        "oewn-03779037-n"
+      ],
+      "id": "oewn-03471094-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "guided missile"
+    },
+    {
+      "definition": "a motor vehicle propelled by half tracks; frequently used by the military",
+      "hypernyms": [
+        "oewn-03769811-n",
+        "oewn-04472087-n"
+      ],
+      "id": "oewn-03483672-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "half track"
+    },
+    {
+      "definition": "a small railroad car propelled by hand or by a small motor",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-03489054-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "handcar"
+    },
+    {
+      "definition": "wheeled vehicle that can be pushed by a person; may have one or two or four wheels",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-03489166-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "handcart"
+    },
+    {
+      "definition": "a handcart that has a frame with two low wheels and a ledge at the bottom and handles at the top; used to move crates or other heavy objects",
+      "hypernyms": [
+        "oewn-03489166-n"
+      ],
+      "id": "oewn-03495220-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "hand truck"
+    },
+    {
+      "definition": "a missile with a guidance system that directs it toward targets emitting infrared radiation (as the emissions of a jet engine)",
+      "hypernyms": [
+        "oewn-03779037-n"
+      ],
+      "id": "oewn-03514987-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "heat-seeking missile"
+    },
+    {
+      "definition": "a non-buoyant aircraft that requires a source of power to hold it aloft and to propel it",
+      "hypernyms": [
+        "oewn-02689427-n"
+      ],
+      "id": "oewn-03515727-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "heavier-than-air craft"
+    },
+    {
+      "definition": "a wheeled vehicle drawn by one or more horses",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-03543814-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "horse-drawn vehicle"
+    },
+    {
+      "definition": "a craft capable of moving over water or land on a cushion of air created by jet engines",
+      "hypernyms": [
+        "oewn-03130521-n"
+      ],
+      "id": "oewn-03552409-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "hovercraft"
+    },
+    {
+      "definition": "a high mobility, multipurpose, military vehicle with four-wheel drive",
+      "hypernyms": [
+        "oewn-03769811-n"
+      ],
+      "id": "oewn-03554379-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "Humvee"
+    },
+    {
+      "definition": "a sailing vessel with runners and a cross-shaped frame; suitable for traveling over ice",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-03561991-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "iceboat"
+    },
+    {
+      "definition": "(formerly) a horse-drawn wagon that delivered ice door to door",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-03564021-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "ice wagon"
+    },
+    {
+      "definition": "a wooden warship of the 19th century that is plated with iron or steel armor",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03590720-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "ironclad"
+    },
+    {
+      "definition": "a space vehicle that is designed to land on the moon or another planet",
+      "hypernyms": [
+        "oewn-04272024-n"
+      ],
+      "id": "oewn-03643494-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lander"
+    },
+    {
+      "definition": "naval craft designed for putting ashore troops and equipment",
+      "hypernyms": [
+        "oewn-03130521-n"
+      ],
+      "id": "oewn-03643937-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "landing craft"
+    },
+    {
+      "definition": "handcart for moving a load of laundry",
+      "hypernyms": [
+        "oewn-03489166-n"
+      ],
+      "id": "oewn-03653745-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "laundry cart"
+    },
+    {
+      "definition": "aircraft supported by its own buoyancy",
+      "hypernyms": [
+        "oewn-02689427-n"
+      ],
+      "id": "oewn-03672243-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "lighter-than-air craft"
+    },
+    {
+      "definition": "a two-wheeled horse-drawn vehicle used to pull a field gun or caisson",
+      "hypernyms": [
+        "oewn-03543814-n"
+      ],
+      "id": "oewn-03674571-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "limber"
+    },
+    {
+      "definition": "a wheeled vehicle consisting of a self-propelled engine that is used to draw trains along railway tracks",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-03690149-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "locomotive"
+    },
+    {
+      "definition": "a large low horse-drawn wagon without sides",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-03695926-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "lorry"
+    },
+    {
+      "definition": "a racing sled for one or two people",
+      "hypernyms": [
+        "oewn-04242397-n"
+      ],
+      "id": "oewn-03701079-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "luge"
+    },
+    {
+      "definition": "a spacecraft that carries astronauts from the command module to the surface of the moon and back",
+      "hypernyms": [
+        "oewn-04272024-n"
+      ],
+      "id": "oewn-03702700-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lunar excursion module"
+    },
+    {
+      "definition": "a railway car in which mail is transported and sorted",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-03715833-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "mail car"
+    },
+    {
+      "definition": "a warship intended for combat",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-03723751-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "man-of-war"
+    },
+    {
+      "definition": "an ironclad vessel built by the Confederate forces in the hope of breaking the blockade imposed by the North",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-03756239-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "USS Merrimack"
+    },
+    {
+      "definition": "vehicle used by the armed forces",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-03769811-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "military vehicle"
+    },
+    {
+      "definition": "wagon for delivering milk",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-03771002-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "milk wagon"
+    },
+    {
+      "definition": "a rocket carrying a warhead of conventional or nuclear explosives; may be ballistic or directed by remote control",
+      "hypernyms": [
+        "oewn-04106523-n",
+        "oewn-04572661-n"
+      ],
+      "id": "oewn-03779037-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "missile"
+    },
+    {
+      "definition": "a large house trailer that can be connected to utilities and can be parked in one place and used as permanent housing",
+      "hypernyms": [
+        "oewn-03551520-n",
+        "oewn-04474334-n"
+      ],
+      "id": "oewn-03781993-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "mobile home"
+    },
+    {
+      "definition": "an ironclad vessel built by Federal forces to do battle with the Merrimac",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-03787963-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "USS Monitor"
+    },
+    {
+      "definition": "a wheeled vehicle with small wheels and a low-powered gasoline engine geared to the rear wheel",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-03796586-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "motor scooter"
+    },
+    {
+      "definition": "a self-propelled wheeled vehicle that does not run on rails",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-03796768-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "motor vehicle"
+    },
+    {
+      "definition": "a bicycle with a sturdy frame and fat tires; originally designed for riding in mountainous country",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-03798315-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "mountain bike"
+    },
+    {
+      "definition": "a rocket having two or more rocket engines (each with its own fuel) that are fired in succession and jettisoned when the fuel is exhausted",
+      "hypernyms": [
+        "oewn-04106523-n"
+      ],
+      "id": "oewn-03804897-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "multistage rocket"
+    },
+    {
+      "definition": "an early bicycle with a very large front wheel and small back wheel",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-03859444-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "ordinary"
+    },
+    {
+      "definition": "an armored vehicle or tank",
+      "hypernyms": [
+        "oewn-04396120-n"
+      ],
+      "id": "oewn-03891750-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "panzer"
+    },
+    {
+      "definition": "a railcar where passengers ride",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-03901563-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "passenger car"
+    },
+    {
+      "definition": "a vessel assigned to patrol an area",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-03906272-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "patrol boat"
+    },
+    {
+      "definition": "a tricycle (usually propelled by pedalling); used in the Orient for transporting passengers for hire",
+      "hypernyms": [
+        "oewn-04489649-n"
+      ],
+      "id": "oewn-03910552-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "pedicab"
+    },
+    {
+      "definition": "a military vehicle (usually armored) for transporting military personnel and their equipment",
+      "hypernyms": [
+        "oewn-03769811-n",
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-03925218-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "personnel carrier"
+    },
+    {
+      "definition": "a vehicle performing sentinel duty",
+      "hypernyms": [
+        "oewn-03769811-n"
+      ],
+      "id": "oewn-03936325-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "picket"
+    },
+    {
+      "definition": "a boat serving as a picket",
+      "hypernyms": [
+        "oewn-03936325-n"
+      ],
+      "id": "oewn-03936467-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "picket boat"
+    },
+    {
+      "definition": "a ship serving as a picket",
+      "hypernyms": [
+        "oewn-03936325-n"
+      ],
+      "id": "oewn-03936669-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "picket ship"
+    },
+    {
+      "definition": "a privately owned warship commissioned to prey on the commercial shipping or warships of an enemy nation",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-04012443-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "privateer"
+    },
+    {
+      "definition": "a one-horse sleigh consisting of a box on runners",
+      "hypernyms": [
+        "oewn-04242397-n"
+      ],
+      "id": "oewn-04030970-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "pung"
+    },
+    {
+      "definition": "a bicycle that must be pedaled",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-04033289-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "push-bike"
+    },
+    {
+      "definition": "a military airplane used to gain information about an enemy",
+      "hypernyms": [
+        "oewn-02694015-n",
+        "oewn-04559634-n"
+      ],
+      "id": "oewn-04069756-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "reconnaissance plane"
+    },
+    {
+      "definition": "fast armored military vehicle with four-wheel drive and open top",
+      "hypernyms": [
+        "oewn-03769811-n",
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-04069919-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "reconnaissance vehicle"
+    },
+    {
+      "definition": "a motorized wheeled vehicle used for camping or other recreational activities",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-04072384-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "recreational vehicle"
+    },
+    {
+      "definition": "any vehicle self-propelled by a rocket engine",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-04106523-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "rocket"
+    },
+    {
+      "definition": "collection of wheeled vehicles owned by a railroad or motor carrier",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04110458-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "rolling stock"
+    },
+    {
+      "definition": "bicycle that has two wheels of equal size; pedals are connected to the rear wheel by a multiplying gear",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-04133167-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "safety bicycle"
+    },
+    {
+      "definition": "a vessel that is powered by the wind; often having several masts",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-04135920-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "sailing vessel"
+    },
+    {
+      "definition": "child's two-wheeled vehicle operated by foot",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04156439-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "scooter"
+    },
+    {
+      "definition": "a wheeled vehicle that carries in itself a means of propulsion",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04177098-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "self-propelled vehicle"
+    },
+    {
+      "definition": "a handcart for serving food",
+      "hypernyms": [
+        "oewn-03489166-n"
+      ],
+      "id": "oewn-04183129-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "serving cart"
+    },
+    {
+      "definition": "a vessel that carries passengers or freight",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-04201332-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "ship"
+    },
+    {
+      "definition": "a handcart that holds groceries or other goods while shopping",
+      "hypernyms": [
+        "oewn-03489166-n"
+      ],
+      "id": "oewn-04211393-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "shopping cart"
+    },
+    {
+      "definition": "a vessel engaged in shrimping",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-04217355-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "shrimper"
+    },
+    {
+      "definition": "air-to-air missile with infrared homing device",
+      "hypernyms": [
+        "oewn-03779037-n"
+      ],
+      "id": "oewn-04222977-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "sidewinder"
+    },
+    {
+      "definition": "a board with wheels that is ridden in a standing or crouching position and propelled by foot",
+      "hypernyms": [
+        "oewn-02859743-n",
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04233049-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "skateboard"
+    },
+    {
+      "definition": "a vehicle resembling a bicycle but having skis instead of wheels; the rider wears short skis for balancing",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-04235484-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "skibob"
+    },
+    {
+      "definition": "a vehicle mounted on runners and pulled by horses or dogs; for transportation over snow",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-04242397-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "sled"
+    },
+    {
+      "definition": "a railway car at the end of the train; it can be detached without stopping the train",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-04247704-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "slip coach"
+    },
+    {
+      "definition": "a sailing or steam warship having cannons on only one deck",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-04249715-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "sloop of war"
+    },
+    {
+      "definition": "a research rocket used to obtain information about the atmosphere at various altitudes",
+      "hypernyms": [
+        "oewn-04422798-n"
+      ],
+      "id": "oewn-04269640-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "sounding rocket"
+    },
+    {
+      "definition": "a spacecraft designed to transport people and support human life in outer space",
+      "hypernyms": [
+        "oewn-04272024-n"
+      ],
+      "id": "oewn-04271875-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "space capsule"
+    },
+    {
+      "definition": "a craft capable of traveling in outer space; technically, a satellite around the sun",
+      "hypernyms": [
+        "oewn-03130521-n",
+        "oewn-04144527-n"
+      ],
+      "id": "oewn-04272024-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "spacecraft"
+    },
+    {
+      "definition": "a reusable spacecraft with wings for a controlled descent through the Earth's atmosphere",
+      "hypernyms": [
+        "oewn-04272024-n"
+      ],
+      "id": "oewn-04273124-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "space shuttle"
+    },
+    {
+      "definition": "a spacecraft designed to carry a crew into interstellar space (especially in science fiction)",
+      "hypernyms": [
+        "oewn-04272024-n"
+      ],
+      "id": "oewn-04311353-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "starship"
+    },
+    {
+      "definition": "an aircraft designed in accordance with technology that makes detection by radar difficult",
+      "hypernyms": [
+        "oewn-02689427-n"
+      ],
+      "id": "oewn-04315222-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "stealth aircraft"
+    },
+    {
+      "definition": "vehicle equipped with heavy wide smooth rollers for compacting roads and pavements",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-04317295-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "steamroller"
+    },
+    {
+      "definition": "a wheeled vehicle that runs on rails and is propelled by electricity",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-04342573-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "streetcar"
+    },
+    {
+      "definition": "a warship designed to operate under water",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-04355262-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "submersible"
+    },
+    {
+      "definition": "a light two-wheeled vehicle for one person; drawn by one horse",
+      "hypernyms": [
+        "oewn-03543814-n"
+      ],
+      "id": "oewn-04360651-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "sulky"
+    },
+    {
+      "definition": "a warship that operates on the surface of the water",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-04370169-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "surface ship"
+    },
+    {
+      "definition": "an enclosed armored military vehicle; has a cannon and moves on caterpillar treads",
+      "hypernyms": [
+        "oewn-02743538-n",
+        "oewn-03769811-n",
+        "oewn-04472087-n"
+      ],
+      "id": "oewn-04396120-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tank"
+    },
+    {
+      "definition": "a pickup truck with a gun mounted on it",
+      "hypernyms": [
+        "oewn-03769811-n",
+        "oewn-03936868-n"
+      ],
+      "id": "oewn-04406404-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 9,
+      "name": "technical"
+    },
+    {
+      "definition": "car attached to a locomotive to carry fuel and water",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-04416414-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tender"
+    },
+    {
+      "definition": "a rocket fired for test purposes",
+      "hypernyms": [
+        "oewn-04106523-n"
+      ],
+      "id": "oewn-04422798-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "test rocket"
+    },
+    {
+      "definition": "a warship carrying guns on three decks",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-04434511-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "three-decker"
+    },
+    {
+      "definition": "a long narrow sled without runners; boards curve upward in front",
+      "hypernyms": [
+        "oewn-04242397-n"
+      ],
+      "id": "oewn-04450567-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "toboggan"
+    },
+    {
+      "definition": "small high-speed warship designed for torpedo attacks in coastal waters",
+      "hypernyms": [
+        "oewn-04559982-n"
+      ],
+      "id": "oewn-04464561-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "torpedo boat"
+    },
+    {
+      "definition": "a self-propelled vehicle that moves on tracks",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-04472087-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tracked vehicle"
+    },
+    {
+      "definition": "a wheeled vehicle with large wheels; used in farming and other applications",
+      "hypernyms": [
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-04472736-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tractor"
+    },
+    {
+      "definition": "a wheeled vehicle that can be pulled by a car or truck and is equipped for occupancy",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04474334-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "trailer"
+    },
+    {
+      "definition": "a four-wheeled wagon that runs on tracks in a mine",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-04476082-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tramcar"
+    },
+    {
+      "definition": "a vehicle with three wheels that is moved by foot pedals",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04489649-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "tricycle"
+    },
+    {
+      "definition": "any land or sea or air vehicle designed to carry troops",
+      "hypernyms": [
+        "oewn-03769811-n"
+      ],
+      "id": "oewn-04494980-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "troop carrier"
+    },
+    {
+      "definition": "ship for transporting troops",
+      "hypernyms": [
+        "oewn-04201332-n",
+        "oewn-04494980-n"
+      ],
+      "id": "oewn-04495150-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "troopship"
+    },
+    {
+      "definition": "a vehicle with a single wheel that is driven by pedals",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04516712-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "unicycle"
+    },
+    {
+      "definition": "(Great Britain) a closed railroad car that carries baggage or freight",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-04527775-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "van"
+    },
+    {
+      "definition": "a conveyance that transports people or objects",
+      "hypernyms": [
+        "oewn-03105141-n"
+      ],
+      "id": "oewn-04531608-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "vehicle"
+    },
+    {
+      "definition": "any of several early bicycles with pedals on the front wheel",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-04532011-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "velocipede"
+    },
+    {
+      "definition": "a craft designed for water transportation",
+      "hypernyms": [
+        "oewn-03130521-n"
+      ],
+      "id": "oewn-04537861-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "vessel"
+    },
+    {
+      "definition": "any of various kinds of wheeled vehicles drawn by an animal or a tractor",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04550444-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "wagon"
+    },
+    {
+      "definition": "a child's four-wheeled toy cart sometimes used for coasting",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04550795-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "wagon"
+    },
+    {
+      "definition": "large open farm wagon",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-04551210-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "wain"
+    },
+    {
+      "definition": "an aircraft designed and used for combat",
+      "hypernyms": [
+        "oewn-03515727-n",
+        "oewn-03769811-n"
+      ],
+      "id": "oewn-04559634-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "warplane"
+    },
+    {
+      "definition": "a government ship that is available for waging war",
+      "hypernyms": [
+        "oewn-03769811-n",
+        "oewn-04201332-n"
+      ],
+      "id": "oewn-04559982-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "warship"
+    },
+    {
+      "definition": "a wagon that carries water (as for troops or work gangs or to sprinkle down dusty dirt roads in the summertime)",
+      "hypernyms": [
+        "oewn-04550444-n"
+      ],
+      "id": "oewn-04570306-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "water wagon"
+    },
+    {
+      "definition": "military vehicle that is a light truck designed to carry mortars or machine guns and their crews",
+      "hypernyms": [
+        "oewn-03769811-n",
+        "oewn-04177098-n"
+      ],
+      "id": "oewn-04573847-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "weapons carrier"
+    },
+    {
+      "definition": "an oceangoing vessel equipped to make meteorological observations",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-04575032-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "weather ship"
+    },
+    {
+      "definition": "a wheeled vehicle carrying information and gifts from local merchants for new residents in an area",
+      "hypernyms": [
+        "oewn-04583497-n"
+      ],
+      "id": "oewn-04579086-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "welcome wagon"
+    },
+    {
+      "definition": "a vehicle that moves on wheels and usually has a container for transporting things or people",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-04583497-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "wheeled vehicle"
+    },
+    {
+      "definition": "an expensive vessel propelled by sail or power and used for cruising or racing",
+      "hypernyms": [
+        "oewn-04537861-n"
+      ],
+      "id": "oewn-04617370-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "yacht"
+    },
+    {
+      "definition": "a bicycle built with a motor to aid the cyclist to turn the pedals",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-81142070-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "pedelec"
+    },
+    {
+      "definition": "a bicycle that is built with a motor, the bicycle can be powered by the motor or pedalling of the cyclist",
+      "hypernyms": [
+        "oewn-02837983-n"
+      ],
+      "id": "oewn-84345709-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "electronic bicycle"
+    },
+    {
+      "definition": "a spacecraft designed for combat in outer space",
+      "hypernyms": [
+        "oewn-04272024-n"
+      ],
+      "id": "oewn-87039364-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "starfighter"
+    },
+    {
+      "definition": "A device resembling a skateboard without wheels that can hover above the ground",
+      "hypernyms": [
+        "oewn-04531608-n"
+      ],
+      "id": "oewn-91000411-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "hoverboard"
+    },
+    {
+      "definition": "a type of rail car that has two levels of passenger accommodation, as opposed to one, increasing passenger capacity.",
+      "hypernyms": [
+        "oewn-02963378-n"
+      ],
+      "id": "oewn-92460744-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bilevel car"
+    },
+    {
+      "definition": "a small wheeled carriage attached under the front end of a plow beam.",
+      "hypernyms": [
+        "oewn-03489166-n"
+      ],
+      "id": "oewn-92466295-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "forecarriage"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}
