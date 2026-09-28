@@ -19,16 +19,21 @@ import sys
 from pathlib import Path
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--terms", required=True, type=Path)
     parser.add_argument("--lang", default="en")
     parser.add_argument("--out", required=True, type=Path)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     try:
-        from wordfreq import __version__ as wordfreq_version
+        from importlib.metadata import version
+
         from wordfreq import zipf_frequency
+
+        # The package exposes no __version__ attribute, so importing one fails
+        # with an ImportError that reads exactly like a missing install.
+        wordfreq_version = version("wordfreq")
     except ImportError:
         print(
             "the wordfreq package is required: pip install 'puzzlegen[snapshot]'",

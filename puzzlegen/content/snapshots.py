@@ -140,7 +140,13 @@ class SnapshotBuilder:
         normalized = normalizer.normalize(bundle)
 
         if report is not None:
-            report.provider_counts[descriptor.name] = normalized.counts()
+            # Summed, not assigned. Several exports share one provider name
+            # (five WordNet roots are all "wordnet:oewn"), so assignment kept
+            # only the last file's counts and the report understated the build
+            # by four fifths while every record was in fact written.
+            seen = report.provider_counts.setdefault(descriptor.name, {})
+            for key, value in normalized.counts().items():
+                seen[key] = seen.get(key, 0) + value
             report.warnings.extend(normalized.warnings)
             if not freshness.healthy:
                 report.warnings.append(

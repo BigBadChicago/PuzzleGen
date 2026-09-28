@@ -1,52 +1,70 @@
 # Building the first real snapshot
 
-Everything before this point has run against test fixtures, an 8-synset lexicon
-and a 23-entity curated file. This is the procedure that produces a snapshot
-made of real content.
+Everything before this point ran against test fixtures: an 8 synset lexicon and
+a 23 entity curated file. This is the procedure that produces a snapshot made
+of real content.
 
-Run it on a machine where `wn` and `wordfreq` can be installed. The engine
-never imports either; these commands run offline and the resulting JSON is
-committed, which is what keeps the runtime install small and what makes two
-machines importing the same file produce the same graph.
+The figures below were measured by running every step against the Open English
+WordNet 2024 edition (the same 12,912,118 byte file that `python -m wn download
+oewn:2024` fetches). One step could not be run where the figures were measured,
+command 7, because it downloads an embedding model. Everything else printed
+exactly what is shown.
 
-```
-pip install 'puzzlegen[snapshot]'
-```
-
-## Step 0 — choose the roots
-
-Five lexical roots, one export each. Five rather than four because the grouping
-board shows four visible groups per day and drawing four from a pool of four
-means every board has the same domains in it. Depth 3 keeps each export in the
-low thousands of synsets; deeper exports reach terms no player recognises and
-inflate verification cost for nothing.
-
-| Root | Why |
-|---|---|
-| `animal.n.01` | Dense, familiar, deeply nested. The reliable group source. |
-| `plant.n.02` | Familiar nouns, shallow taxonomy, many overlay collisions (sage, plum, rust). |
-| `tool.n.01` | Concrete artifacts; the source of most `thing with teeth` members. |
-| `vehicle.n.01` | Small and clean, good for a visible group that is unambiguous. |
-| `musical_instrument.n.01` | Distinct vocabulary, low overlap with the other four. |
-
-## The seven commands
-
-Five exports, then frequency, then embeddings.
+## Step 0: prerequisites
 
 ```bash
-# 1-5: the lexical exports
+pip install -e ".[dev]"
+pip install torch --index-url https://download.pytorch.org/whl/cpu   # no GPU
+pip install -e ".[snapshot]"
+python -m wn download oewn:2024
+```
+
+The engine never imports `wn`, `wordfreq` or `sentence-transformers`. These
+commands run offline and the resulting JSON is committed, which keeps the
+runtime install small and makes two machines importing the same file produce
+the same graph.
+
+## Step 1: choose the roots
+
+A root is one synset, and the export takes everything within three hyponym
+levels below it. Name it as `lemma.pos.NN`: the lemma, its part of speech, and
+its position among that lemma's senses of that part of speech. The tool prints
+the synset it resolved and its definition before it writes anything, because
+sense numbers come from the lexicon and differ between lexicons and editions.
+Read that line. `plant.n.01` is a factory and `plant.n.02` is the organism.
+
+To see what a lemma could mean before choosing:
+
+```bash
+python tools/export_wordnet.py --root plant --pos n --list
+```
+
+| Root | Resolves to | Why |
+|---|---|---|
+| `animal.n.01` | `oewn-00015568-n`, a living organism characterized by voluntary movement | Dense, familiar, deeply nested. The reliable group source. |
+| `plant.n.02` | `oewn-00017402-n`, (botany) a living organism lacking the power of locomotion | Familiar nouns, several overlay collisions (sage, mint). |
+| `tool.n.01` | `oewn-04459089-n`, an implement used in the practice of a vocation | Concrete artifacts. |
+| `vehicle.n.01` | `oewn-04531608-n`, a conveyance that transports people or objects | Small and clean, low polysemy. |
+| `musical_instrument.n.01` | `oewn-03806455-n`, any of various devices that can be used to produce musical tones | Distinct vocabulary, little overlap with the others. |
+
+Five roots rather than four, because four visible groups drawn from a pool of
+four gives every board the same domains.
+
+## Step 2: the seven commands
+
+Five exports, then frequency, then embeddings, with a prepare step between the
+exports and the last two that is not one of the seven.
+
+```bash
+# 1 to 5: the lexical exports
 python tools/export_wordnet.py --root animal.n.01 --depth 3 \
     --out content/seeds/wordnet-animal.lexicon.json
-
 python tools/export_wordnet.py --root plant.n.02 --depth 3 \
     --out content/seeds/wordnet-plant.lexicon.json
-
 python tools/export_wordnet.py --root tool.n.01 --depth 3 \
     --out content/seeds/wordnet-tool.lexicon.json
-
 python tools/export_wordnet.py --root vehicle.n.01 --depth 3 \
     --out content/seeds/wordnet-vehicle.lexicon.json
-
 python tools/export_wordnet.py --root musical_instrument.n.01 --depth 3 \
     --out content/seeds/wordnet-instrument.lexicon.json
 
@@ -67,15 +85,28 @@ python tools/export_embeddings.py --texts build/texts.txt \
     --out content/seeds/embeddings.json
 ```
 
-The prepare step writes two files because the two commands want different
-things. Frequency is scored per lemma; embeddings are computed over the text a
-game would actually show, which includes the gloss, because two entities named
-identically are told apart by their definition and not by their label. Feeding
-one list to both produces an embedding table whose keys never match what
-`attach_embeddings` asks for, and the build fails at the last step with a
-`KeyError` listing five words.
+### What each one printed
 
-## Before building: read the collision report
+| Command | Printed |
+|---|---|
+| 1 animal | `root: oewn-00015568-n  a living organism characterized by voluntary movement` then `wrote 282 synsets and 449 senses` |
+| 2 plant | `root: oewn-00017402-n  (botany) a living organism lacking the power of locomotion` then `wrote 749 synsets and 1854 senses` |
+| 3 tool | `root: oewn-04459089-n  an implement used in the practice of a vocation` then `wrote 259 synsets and 407 senses` |
+| 4 vehicle | `root: oewn-04531608-n  a conveyance that transports people or objects` then `wrote 164 synsets and 287 senses` |
+| 5 instrument | `root: oewn-03806455-n  any of various devices or contrivances that can be used to produce musical tones or sounds` then `wrote 111 synsets and 209 senses` |
+| prepare | `wrote build/terms.txt` and `wrote build/texts.txt`, 3236 lines each |
+| 6 frequency | `wrote 2386 scores to content/seeds/frequency.json`, 74 percent of the terms |
+| 7 embeddings | `wrote 3236 vectors`, which must equal the line count of `texts.txt` |
+
+A first line that names a different synset than the table means the root
+resolved to the wrong sense. Stop and use `--list`.
+
+Command 7 is the slowest and needs network access the first time, to fetch the
+90 MB `sentence-transformers/all-MiniLM-L6-v2` model. It was not run where
+these figures were measured, so its count is what the arithmetic says it must
+be, not what was observed.
+
+## Step 3: read the collision report
 
 ```bash
 python tools/report_lemma_collisions.py \
@@ -87,25 +118,57 @@ python tools/report_lemma_collisions.py \
     --out build/lemma-collisions.json
 ```
 
-Three sections matter, in this order:
+Measured: 3102 lemmas, 97 with more than one sense (90 with two, 7 with
+three), and 6 that appear under two roots (`borer`, `bugle`, `embryo`,
+`rocket`, `sledge`, `viola`). Nothing in this report blocks a build. It is read
+by a person.
 
-1. **`overlay members the lexicon does not supply`.** Each one becomes an
-   entity with no definition, no frequency band and no taxonomic parent, so it
-   can only ever be a hidden-group member and never a visible-group one. A
-   handful is fine. Tens means the overlay and the lexicon have drifted, and
-   the fix is to change the overlay word, not to widen the export.
-2. **`overlay members with more than one sense`.** These are the dangerous
-   ones. Under lemma identity the senses merge, so `crane` carries the bird's
-   parents and the machine's parents at once, and a board can legitimately
-   place it in two visible groups. Read each one and decide: keep it because
-   the collision is the point (`rust` as a color and as corrosion is a good
-   puzzle), or replace it because the collision is noise.
-3. **`lemmas exported under more than one root`.** Usually a sign two roots
-   overlap more than intended. Harmless in small numbers.
+### The finding that matters: the overlay barely meets the lexicon
 
-Nothing in this report blocks a build. It is read by a person.
+Of the 144 overlay members, **only 10 appear in these five exports**: `chime`,
+`comb`, `drum`, `engine`, `file`, `mint`, `rake`, `sage`, `saw` and `tap`. The
+other 134 are absent, across every one of the fifteen categories. All 134 do
+exist in WordNet as nouns; they live in parts of the hierarchy these five roots
+do not reach (colors, weather, sounds, abstractions, acts, geological
+formations).
 
-## Build
+What that means for the build:
+
+- Those 134 become entities with no definition and no taxonomic parent. Their
+  embeddings are computed over the bare word, not a gloss.
+- They can act as hidden group members. They cannot also belong to a visible
+  group, because they have no category in the lexical taxonomy.
+- The design's central move, one word belonging to a visible group and to a
+  hidden one, is available for only those 10 words.
+
+This is not a build failure and the report does not treat it as one. It is a
+content decision, and it is made before batch 2 sizes the game's content
+requirements.
+
+Adding roots to reach the missing words does not scale. Measured against the
+real lexicon at depth 3, each extra root covers only a few of the 134:
+
+| Extra root | Synsets exported | Overlay words it reaches |
+|---|---|---|
+| `artifact.n.01` | 2136 | 29 |
+| `abstraction.n.06` | 1366 | 17 |
+| `communication.n.02` | 830 | 15 |
+| `attribute.n.02` | 1727 | 15 |
+| `act.n.02` | 1394 | 11 |
+| `event.n.01` | 671 | 11 |
+| `geological_formation.n.01` | 232 | 8 |
+| `substance.n.01` | 749 | 7 |
+
+The best four together (`artifact`, `abstraction`, `substance`,
+`geological_formation`, about 4,500 synsets, roughly three times the current
+snapshot) reach 55 of the 134. The other 79 include nearly all of the color,
+sound, scent and cold weather words, which sit deeper than three levels or
+under roots not listed here.
+
+`saw` is the only overlay member with more than one sense in these exports.
+Both senses are tools, a hand tool and a power tool, so the merge is harmless.
+
+## Step 4: build
 
 ```bash
 python tools/build_snapshot.py \
@@ -130,19 +193,38 @@ The overlay seed is imported automatically, last, after every lexicon. It is
 not a flag: without it there is no second axis, and a grouping game with no
 second axis is four piles.
 
+### What it printed (with development embeddings)
+
+```
+records:
+  categories       1541
+  entities         3229
+  embeddings       3229
+  frequencies      2379
+  relationships    3308
+per provider:
+  overlay-seed     categories=15, entities=144, relationships=150
+  wordnet:oewn     categories=1565, entities=3206, relationships=3206
+frequency : scored 2379, missing 850
+activated : 8078
+```
+
+`wordnet:oewn` sums the five lexicons, and its category count equals the sum of
+the five exports' synsets (282 + 749 + 259 + 164 + 111 = 1565). The graph holds
+fewer categories than that plus the overlay's fifteen because synsets shared
+between roots merge.
+
+A real build passes `--embeddings content/seeds/embeddings.json` in place of
+`--dev-embeddings`, and must not print the development embeddings warning.
+
 ## What a good build looks like
 
-- `categories` in the hundreds to low thousands, `entities` in the thousands.
-- `frequency: missing` small relative to `scored`. A large missing count means
-  the term list and the lexicon disagree, usually because the exports were
-  re-run after the prepare step.
-- `embeddings` equal to the entity count. Anything less is a table that does
-  not cover the graph, and `attach_embeddings` would have raised rather than
-  written a short one.
-- No warning mentioning development embeddings. That warning means
-  `--dev-embeddings` was used and the snapshot carries no semantic signal; it
-  is a local convenience, never a published artifact.
+- `entities` in the low thousands and `embeddings` exactly equal to it.
+- `frequency: missing` well under `scored`. It is 850 against 2379 here,
+  because rare species names and multiword terms have no corpus score.
+- `activated` a few thousand.
 - Fifteen active overlay categories, each with ten active members.
+- No warning mentioning development embeddings.
 
 ## Afterwards
 

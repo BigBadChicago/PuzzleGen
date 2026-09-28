@@ -20,12 +20,12 @@ from pathlib import Path
 DEFAULT_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--texts", required=True, type=Path)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--out", required=True, type=Path)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     try:
         from sentence_transformers import SentenceTransformer
