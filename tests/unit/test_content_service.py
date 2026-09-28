@@ -275,6 +275,109 @@ class TestNormalizer:
         assert ailurid.has_forked_ancestry
 
 
+class TestCategoriesThatMergeByName:
+    """Two source nodes with one name are one category, parents included.
+
+    Open English WordNet has two distinct `galley` synsets, a ship's kitchen
+    and a rowed ship, and both are hypernyms of `monoreme`. Category identity
+    is the canonical name, so both parents resolve to one id. The model
+    rejected the duplicate and a depth 6 export could not be imported at all.
+    """
+
+    def galley_bundle(self, *, child_parents: tuple[str, ...]) -> ProviderBundle:
+        return ProviderBundle(
+            descriptor=descriptor(),
+            categories=(
+                RawCategory(key="c.kitchen", name="galley", gloss="a ship's kitchen"),
+                RawCategory(key="c.ship", name="galley", gloss="a ship propelled by oars"),
+                RawCategory(key="c.monoreme", name="monoreme", parent_keys=child_parents),
+            ),
+            entities=(
+                RawEntity(key="e.trireme", name="trireme", category_keys=("c.monoreme",)),
+            ),
+        )
+
+    def test_two_parents_that_merge_become_one_parent(self):
+        result = Normalizer(now=NOW).normalize(
+            self.galley_bundle(child_parents=("c.kitchen", "c.ship"))
+        )
+        child = next(c for c in result.categories if c.canonical_name == "monoreme")
+        assert len(child.parent_ids) == 1
+
+    def test_the_surviving_parent_is_the_merged_category(self):
+        result = Normalizer(now=NOW).normalize(
+            self.galley_bundle(child_parents=("c.kitchen", "c.ship"))
+        )
+        child = next(c for c in result.categories if c.canonical_name == "monoreme")
+        galley = next(c for c in result.categories if c.canonical_name == "galley")
+        assert child.parent_ids == (galley.id,)
+
+    def test_the_two_source_nodes_produce_one_category(self):
+        result = Normalizer(now=NOW).normalize(
+            self.galley_bundle(child_parents=("c.kitchen", "c.ship"))
+        )
+        assert sum(1 for c in result.categories if c.canonical_name == "galley") == 1
+
+    def test_first_seen_order_decides_which_gloss_survives(self):
+        """Deduplication keeps the first, so the order the provider emitted
+        is the order the merge respects, not an arbitrary one."""
+        result = Normalizer(now=NOW).normalize(
+            self.galley_bundle(child_parents=("c.kitchen", "c.ship"))
+        )
+        galley = next(c for c in result.categories if c.canonical_name == "galley")
+        assert galley.gloss == "a ship's kitchen"
+
+    def test_distinct_parents_are_all_kept(self):
+        bundle = ProviderBundle(
+            descriptor=descriptor(),
+            categories=(
+                RawCategory(key="c.vessel", name="vessel"),
+                RawCategory(key="c.kitchen", name="kitchen"),
+                RawCategory(
+                    key="c.galley", name="galley", parent_keys=("c.vessel", "c.kitchen")
+                ),
+            ),
+            entities=(RawEntity(key="e.x", name="x", category_keys=("c.galley",)),),
+        )
+        result = Normalizer(now=NOW).normalize(bundle)
+        child = next(c for c in result.categories if c.canonical_name == "galley")
+        assert len(child.parent_ids) == 2
+
+    def test_a_single_parent_is_unaffected(self):
+        result = Normalizer(now=NOW).normalize(
+            self.galley_bundle(child_parents=("c.ship",))
+        )
+        child = next(c for c in result.categories if c.canonical_name == "monoreme")
+        assert len(child.parent_ids) == 1
+
+    def test_three_parents_collapsing_to_one_still_import(self):
+        bundle = ProviderBundle(
+            descriptor=descriptor(),
+            categories=(
+                RawCategory(key="c.a", name="galley"),
+                RawCategory(key="c.b", name="galley"),
+                RawCategory(key="c.c", name="galley"),
+                RawCategory(
+                    key="c.child", name="monoreme", parent_keys=("c.a", "c.b", "c.c")
+                ),
+            ),
+            entities=(RawEntity(key="e.x", name="x", category_keys=("c.child",)),),
+        )
+        result = Normalizer(now=NOW).normalize(bundle)
+        child = next(c for c in result.categories if c.canonical_name == "monoreme")
+        assert len(child.parent_ids) == 1
+
+    def test_the_child_is_still_reachable_from_the_merged_parent(self):
+        """The edge survives the merge; only its duplicate is dropped."""
+        result = Normalizer(now=NOW).normalize(
+            self.galley_bundle(child_parents=("c.kitchen", "c.ship"))
+        )
+        galley = next(c for c in result.categories if c.canonical_name == "galley")
+        child = next(c for c in result.categories if c.canonical_name == "monoreme")
+        assert galley.id in child.parent_ids
+        assert child.depth == galley.depth + 1
+
+
 class TestMerging:
     def test_provenance_accumulates_across_providers(self):
         a = Normalizer(now=NOW).normalize(simple_bundle("alpha"))

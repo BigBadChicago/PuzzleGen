@@ -123,10 +123,22 @@ class Normalizer:
         out = NormalizedBundle(source=source, warnings=list(bundle.warnings))
 
         built: dict[ProviderKey, Category] = {}
+        # Several provider keys can resolve to one category, because identity
+        # here is the canonical name: Open English WordNet has two distinct
+        # "galley" synsets and both are hypernyms of "monoreme". Each key still
+        # maps to the merged category, so references from either resolve, but
+        # the bundle carries one record per id. Emitting two would put the same
+        # id twice and let write order decide which gloss survived.
+        emitted: dict[str, Category] = {}
         for raw in order_categories(bundle.categories):
             category = self._category(raw, source, descriptor, built)
+            first = emitted.get(category.id)
+            if first is None:
+                emitted[category.id] = category
+                out.categories.append(category)
+            else:
+                category = first
             built[raw.key] = category
-            out.categories.append(category)
             out.key_map[raw.key] = category.id
 
         for raw in sorted(bundle.entities, key=lambda e: e.key):
@@ -227,7 +239,17 @@ class Normalizer:
         descriptor: ProviderDescriptor,
         built: dict[ProviderKey, Category],
     ) -> Category:
-        parents = tuple(built[key] for key in raw.parent_keys)
+        # Deduplicated by id, in first-seen order. A category is identified by
+        # its name, so two source nodes whose first lemma is the same are one
+        # category here by construction: Open English WordNet has two distinct
+        # "galley" synsets, and both are hypernyms of "monoreme". Rejecting
+        # that would be rejecting the identity rule's own consequence, and
+        # keeping the duplicate would claim an edge twice.
+        seen: dict[str, Category] = {}
+        for key in raw.parent_keys:
+            candidate = built[key]
+            seen.setdefault(candidate.id, candidate)
+        parents = tuple(seen.values())
         freshness = FreshnessClass.SLOW_CHANGING
         return Category.build(
             id=ids.for_category(raw.name, raw.lang, self._taxonomy),
