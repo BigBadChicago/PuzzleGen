@@ -94,12 +94,18 @@ python tools/export_embeddings.py --texts build/texts.txt \
 | 3 tool | `root: oewn-04459089-n  an implement used in the practice of a vocation` then `wrote 259 synsets and 407 senses` |
 | 4 vehicle | `root: oewn-04531608-n  a conveyance that transports people or objects` then `wrote 164 synsets and 287 senses` |
 | 5 instrument | `root: oewn-03806455-n  any of various devices or contrivances that can be used to produce musical tones or sounds` then `wrote 111 synsets and 209 senses` |
-| prepare | `wrote build/terms.txt` and `wrote build/texts.txt`, 3236 lines each |
-| 6 frequency | `wrote 2386 scores to content/seeds/frequency.json`, 74 percent of the terms |
-| 7 embeddings | `wrote 3236 vectors`, which must equal the line count of `texts.txt` |
+| prepare | `wrote build/terms.txt` and `wrote build/texts.txt`, 3229 lines each |
+| 6 frequency | `wrote 2379 scores to content/seeds/frequency.json`, 74 percent of the terms |
+| 7 embeddings | `wrote 3229 vectors`, which must equal the line count of `texts.txt` |
 
 A first line that names a different synset than the table means the root
 resolved to the wrong sense. Stop and use `--list`.
+
+The prepare step imports the exports into a throwaway in-memory graph and reads
+the entities back, so `texts.txt` holds exactly the strings the build will
+later look up in the embedding table. Re-run it after changing any lexicon: a
+`texts.txt` from an older set of exports produces a table the build rejects at
+its last step, with a `KeyError` naming five words.
 
 Command 7 is the slowest and needs network access the first time, to fetch the
 90 MB `sentence-transformers/all-MiniLM-L6-v2` model. It was not run where

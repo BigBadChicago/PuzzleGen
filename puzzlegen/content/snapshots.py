@@ -107,6 +107,23 @@ class ImportReport:
         return sum(self.activated.values())
 
 
+def embedding_text(entity) -> str:
+    """The text an entity is embedded as.
+
+    Embed what a game would actually show, not the internal id, and include the
+    definition when present: two entities named identically are distinguished
+    by their gloss, not their label.
+
+    Exported because the build tool has to write the export command's input
+    list, and any second implementation of this string drifts from this one the
+    first time a merge picks a different sense's gloss. The embedding table is
+    keyed by exactly this text.
+    """
+    if entity.definition:
+        return f"{entity.canonical_name}: {entity.definition}"
+    return entity.canonical_name
+
+
 class SnapshotBuilder:
     """Builds one snapshot from a set of providers."""
 
@@ -260,13 +277,7 @@ class SnapshotBuilder:
         if not entities:
             return 0
 
-        # Embed the text a game would actually show, not the internal id, and
-        # include the definition when present: two entities named identically
-        # are distinguished by their gloss, not their label.
-        texts = [
-            f"{e.canonical_name}: {e.definition}" if e.definition else e.canonical_name
-            for e in entities
-        ]
+        texts = [embedding_text(e) for e in entities]
         vectors = provider.embed(texts)
         if len(vectors) != len(entities):
             raise ContentError("embedding provider returned the wrong number of vectors")

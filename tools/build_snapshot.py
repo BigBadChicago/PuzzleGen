@@ -33,8 +33,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from puzzlegen.content.snapshots import ActivationPolicy, ImportReport, SnapshotBuilder
-from puzzlegen.graph import GraphRepositories, SqliteDocumentStore
+from puzzlegen.content.snapshots import (
+    ActivationPolicy,
+    ImportReport,
+    SnapshotBuilder,
+    embedding_text,
+)
+from puzzlegen.graph import GraphRepositories, InMemoryDocumentStore, SqliteDocumentStore
 from puzzlegen.providers.curated import CuratedJSONProvider
 from puzzlegen.providers.embeddings import DevHashEmbeddingProvider, TableEmbeddingProvider
 from puzzlegen.providers.frequency import TableFrequencyProvider
@@ -47,45 +52,41 @@ LEXICAL_TAXONOMY = "wordnet"
 OVERLAY_TAXONOMY = "overlay"
 
 
-def input_lists(lexicons: list[Path], overlay: Path) -> tuple[list[str], list[str]]:
+def input_lists(
+    lexicons: list[Path], overlay: Path, now: dt.datetime
+) -> tuple[list[str], list[str]]:
     """The two lists the export commands consume.
 
-    They differ, and the difference matters. Frequency is scored per lemma;
-    embeddings are computed over the text a game would actually show, which
+    Built by importing into a throwaway in-memory graph and reading back the
+    entities, rather than by re-reading the export files. The merge decides
+    which sense's gloss an entity ends up with, and only the merge knows: a
+    lemma exported under two roots keeps one definition, and guessing it from
+    the file order picks the wrong one about one time in a hundred. Those are
+    exactly the texts ``attach_embeddings`` later asks the table for, and a
+    miss there aborts the build at its last step.
+
+    The two lists differ, and the difference matters. Frequency is scored per
+    lemma; embeddings are computed over the text a game would show, which
     includes the gloss, because two entities named identically are told apart
-    by their definition and not by their label. Feeding one list to both
-    commands produces an embedding table whose keys never match what
-    ``attach_embeddings`` asks for, and the build fails at the last step with a
-    ``KeyError`` listing five words.
+    by their definition and not by their label.
     """
-    terms: dict[str, None] = {}
-    definitions: dict[str, str] = {}
-
-    for path in lexicons:
-        document = json.loads(path.read_text(encoding="utf-8"))
-        glosses = {s["id"]: s.get("definition", "") for s in document.get("synsets", ())}
-        for sense in document.get("senses", ()):
-            lemma = sense["lemma"]
-            terms.setdefault(lemma, None)
-            gloss = sense.get("definition") or glosses.get(sense["synset"], "")
-            if gloss and lemma not in definitions:
-                definitions[lemma] = gloss
-
-    if overlay.exists():
-        seed = json.loads(overlay.read_text(encoding="utf-8"))
-        for entity in seed.get("entities", ()):
-            terms.setdefault(entity["name"], None)
-
-    ordered = sorted(terms)
-    texts = [
-        f"{term}: {definitions[term]}" if term in definitions else term
-        for term in ordered
-    ]
-    return ordered, texts
+    repos = GraphRepositories(InMemoryDocumentStore())
+    try:
+        builder = SnapshotBuilder(repos, now=now)
+        for provider, options in providers(lexicons, overlay, now):
+            builder.import_provider(provider, **options)
+        entities = sorted(repos.entities.iter_all(), key=lambda e: e.canonical_name)
+        terms = [e.canonical_name for e in entities]
+        texts = [embedding_text(e) for e in entities]
+    finally:
+        repos.close()
+    return terms, texts
 
 
-def write_inputs(directory: Path, lexicons: list[Path], overlay: Path) -> tuple[Path, Path]:
-    terms, texts = input_lists(lexicons, overlay)
+def write_inputs(
+    directory: Path, lexicons: list[Path], overlay: Path, now: dt.datetime
+) -> tuple[Path, Path]:
+    terms, texts = input_lists(lexicons, overlay, now)
     directory.mkdir(parents=True, exist_ok=True)
     terms_path = directory / "terms.txt"
     texts_path = directory / "texts.txt"
@@ -182,7 +183,10 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.write_inputs is not None:
         terms_path, texts_path = write_inputs(
-            args.write_inputs, args.lexicon, args.overlay
+            args.write_inputs,
+            args.lexicon,
+            args.overlay,
+            dt.datetime.fromisoformat(args.now) if args.now else dt.datetime.now(dt.timezone.utc),
         )
         print(f"wrote {terms_path}\nwrote {texts_path}")
         return 0

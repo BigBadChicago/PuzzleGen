@@ -15,8 +15,10 @@ import sys
 from pathlib import Path
 
 import pytest
+from conftest import NOW
 
 from puzzlegen.core.types import ReviewStatus
+from puzzlegen.content.snapshots import SnapshotBuilder
 from puzzlegen.graph import GraphRepositories, SqliteDocumentStore
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -262,9 +264,9 @@ class TestInputLists:
         path = write_lexicon(
             tmp_path / "a.lexicon.json", [sense("otter", "s.otter", "a river mammal")]
         )
-        terms, texts = build_snapshot.input_lists([path], tmp_path / "absent.json")
-        assert terms == ["otter"]
-        assert texts == ["otter: a river mammal"]
+        terms, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
+        assert "otter" in terms
+        assert "otter: a river mammal" in texts
 
     def test_a_lemma_without_a_gloss_embeds_as_its_bare_name(self, tmp_path):
         path = write_lexicon(
@@ -272,12 +274,13 @@ class TestInputLists:
             [sense("otter", "s.otter")],
             synsets=[{"id": "s.otter", "name": "otter", "definition": "", "hypernyms": []}],
         )
-        _, texts = build_snapshot.input_lists([path], tmp_path / "absent.json")
-        assert texts == ["otter"]
+        _, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
+        assert "otter" in texts
+        assert not any(x.startswith("otter:") for x in texts)
 
     def test_overlay_members_join_the_term_list(self, tmp_path):
         path = write_lexicon(tmp_path / "a.lexicon.json", [sense("otter", "s.otter")])
-        terms, _ = build_snapshot.input_lists([path], OVERLAY)
+        terms, _ = build_snapshot.input_lists([path], OVERLAY, NOW)
         assert "burlap" in terms and "otter" in terms
 
     def test_the_two_lists_stay_aligned(self, tmp_path):
@@ -285,7 +288,7 @@ class TestInputLists:
             tmp_path / "a.lexicon.json",
             [sense("otter", "s.otter", "a river mammal"), sense("badger", "s.badger")],
         )
-        terms, texts = build_snapshot.input_lists([path], OVERLAY)
+        terms, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
         assert len(terms) == len(texts)
         assert all(text.startswith(term) for term, text in zip(terms, texts))
 
@@ -294,13 +297,13 @@ class TestInputLists:
             tmp_path / "a.lexicon.json",
             [sense("otter", "s.otter"), sense("badger", "s.badger")],
         )
-        terms, _ = build_snapshot.input_lists([path], tmp_path / "absent.json")
+        terms, _ = build_snapshot.input_lists([path], OVERLAY, NOW)
         assert terms == sorted(terms)
 
     def test_write_inputs_writes_both_files(self, tmp_path):
         path = write_lexicon(tmp_path / "a.lexicon.json", [sense("otter", "s.otter")])
         terms_path, texts_path = build_snapshot.write_inputs(
-            tmp_path / "build", [path], OVERLAY
+            tmp_path / "build", [path], OVERLAY, NOW
         )
         assert terms_path.read_text().splitlines()
         assert texts_path.read_text().splitlines()
@@ -462,3 +465,109 @@ class TestBuildCommandLine:
         )
         assert code == 2
         assert "timezone-aware" in capsys.readouterr().err
+
+
+class TestTheInputListsMatchTheBuild:
+    """The list the export commands consume must be the list the build asks for.
+
+    ``attach_embeddings`` looks the table up by ``name: definition``, and the
+    merge decides which sense's gloss an entity keeps. A prepare step that
+    guessed the gloss from file order produced 31 texts the build never asked
+    for and omitted 31 it did, and the build died at its last step with a
+    KeyError naming five plant names.
+    """
+
+    def two_senses(self, tmp_path) -> Path:
+        """One lemma, two synsets, two glosses: the case that broke."""
+        return write_lexicon(
+            tmp_path / "a.lexicon.json",
+            [
+                sense("carriage", "s.horse", "a vehicle drawn by horses"),
+                sense("carriage", "s.pram", "a small vehicle for a baby"),
+                sense("otter", "s.otter", "a river mammal"),
+            ],
+        )
+
+    def requested_texts(self, repos) -> set[str]:
+        from puzzlegen.content.snapshots import embedding_text
+
+        return {embedding_text(e) for e in repos.entities.iter_all()}
+
+    def test_every_text_the_build_asks_for_was_written(self, tmp_path, repos):
+        path = self.two_senses(tmp_path)
+        _, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
+
+        builder = SnapshotBuilder(repos, now=NOW)
+        for provider, options in build_snapshot.providers([path], OVERLAY, NOW):
+            builder.import_provider(provider, **options)
+
+        assert self.requested_texts(repos) - set(texts) == set()
+
+    def test_no_text_was_written_that_the_build_never_asks_for(self, tmp_path, repos):
+        path = self.two_senses(tmp_path)
+        _, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
+
+        builder = SnapshotBuilder(repos, now=NOW)
+        for provider, options in build_snapshot.providers([path], OVERLAY, NOW):
+            builder.import_provider(provider, **options)
+
+        assert set(texts) - self.requested_texts(repos) == set()
+
+    def test_a_merged_lemma_keeps_one_text_not_two(self, tmp_path):
+        path = self.two_senses(tmp_path)
+        terms, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
+        assert terms.count("carriage") == 1
+        assert sum(1 for x in texts if x.startswith("carriage")) == 1
+
+    def test_the_overlay_members_are_present_without_a_gloss(self, tmp_path):
+        path = self.two_senses(tmp_path)
+        _, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
+        assert "burlap" in texts
+
+    def test_a_table_built_from_the_list_satisfies_the_build(self, tmp_path):
+        """End to end: prepare, fake command 7, build. No KeyError."""
+        path = self.two_senses(tmp_path)
+        _, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
+        table = tmp_path / "embeddings.json"
+        table.write_text(
+            json.dumps(
+                {
+                    "model_name": "stand-in",
+                    "model_version": "0",
+                    "similarity_metric": "cosine",
+                    "computed_at": "2026-09-28T12:00:00+00:00",
+                    "vectors": {text: [0.1, 0.2, 0.3] for text in texts},
+                }
+            ),
+            encoding="utf-8",
+        )
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(path),
+                "--db",
+                str(tmp_path / "graph.sqlite"),
+                "--label",
+                "end-to-end",
+                "--now",
+                "2026-09-28T12:00:00+00:00",
+                "--embeddings",
+                str(table),
+            ]
+        )
+        assert code == 0
+
+    def test_the_prepare_step_leaves_no_store_open(self, tmp_path):
+        """It builds a throwaway graph, which still has to be closed."""
+        import sqlite3
+
+        before = sqlite3.connect
+        opened = []
+        try:
+            sqlite3.connect = lambda *a, **k: opened.append(1) or before(*a, **k)
+            build_snapshot.input_lists(
+                [self.two_senses(tmp_path)], OVERLAY, NOW
+            )
+        finally:
+            sqlite3.connect = before
+        assert opened == []
