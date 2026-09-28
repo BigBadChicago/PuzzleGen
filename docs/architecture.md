@@ -417,18 +417,430 @@ tests/invariants/     architectural boundary enforcement (AST-based)
 tests/support/        test-only game fixtures, never shipped
 docs/                 this file, the handoff document, and (from phase 9)
                       new-game.md and content-lifecycle.md
+
+Within puzzlegen/engine/, the session layer added in phase 6 is: sessions.py
+(records, Clock and DayWindow), session_storage.py (six repositories),
+identity.py, scoring.py, session_service.py, sharing.py, accessibility.py.
 ```
 
-## Open items carried into phase 6
+## Phase 6: Sessions, scoring, sharing and accessibility
 
-- Session engine, scoring interface, share artifact system, accessibility
-  infrastructure: not yet built.
-- Session identity: decided above, not yet implemented.
-- Third-party subprocess RPC transport: deferred to phase 9 by decision. In
-  phases 6 to 8, in-tree games run in-process.
-- Game 1 (grouping of twenty, hidden fifth group, mid-puzzle axis switch) and
-  game 2 (relationship chain with branch points and a minimum-length budget):
-  designed in conversation, not yet built. Scheduled for phases 7 and 8.
-- `find_intersecting_groups`, `UNIQUE_UP_TO_TOLERANCE`, and
-  `UNIQUE_MINIMAL_PATH` exist in the engine specifically for games 1 and 2 and
-  are otherwise unexercised by real content.
+Phases 1 to 5 end at a published manifest. Phase 6 starts there and ends at a
+shareable result, and the seam is deliberately thin: the session layer reads
+`PuzzleRecord` and `PuzzleManifest` and writes nothing back to either. A
+published day stays exactly as published however many people play it. No
+module under `graph/`, `providers/` or `content/` changed in this phase, which
+is the first evidence the layering held: adding play required no change to how
+knowledge is stored, governed or queried.
+
+**Everything lands under `puzzlegen/engine/`.** A new top-level layer would
+mean editing `LAYERS` in the invariant test, and a session record is engine
+output exactly like a puzzle, a manifest or a trace. Seven new modules:
+`sessions.py` (records and injected policies), `session_storage.py` (six
+repositories), `identity.py`, `scoring.py`, `session_service.py`, `sharing.py`
+and `accessibility.py`.
+
+### Identity
+
+**The tier 1 id and the tier 2 key are two different strings.** `player_id` is
+the primary key on every session, score and streak record, safe to log and to
+place in a record. `return_key` is a bearer credential the client holds.
+Collapsing them, which the shorthand "the client presents its id" invites,
+would make every debug dump an account takeover.
+
+**Return keys are stored only as `hmac_sha256(pepper, key)`.** A dump of the
+store cannot impersonate anybody. The pepper arrives in an injected
+`SessionSecrets`; no module in the package reads process environment.
+
+**`DeterministicRng` is never used for identity.** Reproducibility is its
+entire purpose and is precisely the property a credential must not have.
+Identity material comes from an injected `SecretSource`, and an invariant test
+asserts `identity.py` imports no `rng` module.
+
+**A player holds several live return keys, one per device**, each labelled,
+capped at ten, revoked rather than deleted. No rotate-on-use: it would strand
+the second device and any client whose reply was lost. A deleted key also
+leaves no evidence a device was ever trusted, and the question after a
+suspected leak is which devices existed.
+
+**One provider subject belongs to one player forever.** Relinking a subject
+already bound elsewhere raises `MergeRequired` rather than repointing, because
+the common cause is one person who played anonymously on two devices and both
+histories are real. Merge is a product decision nobody has made; picking a
+winner silently discards somebody's play.
+
+**The engine never sees a token.** `VerifiedProviderAssertion` is named for
+what the caller is promising, carries provider, subject, audience and
+verification time, and nothing else. An invariant test asserts no
+credential-shaped name (`access_token`, `client_secret`, `password` and the
+rest) appears anywhere in `puzzlegen/`.
+
+**`forget_player` exists now rather than later.** A store of play history needs
+a real erasure path; building one after two games ship means discovering the
+collection that was missed by finding a stray record. Published manifests are
+untouched: they belong to the day, not to any player.
+
+### Sessions
+
+**One session per player per manifest per kind**, with the id minted from
+those three parts, so a client retrying `start` after a dropped reply resumes
+rather than opening a second history.
+
+**Kind is decided by the engine, never requested.** A manifest for today is
+`LIVE`; any other day is `PRACTICE`. A client that could choose would
+eventually choose wrong, and `LIVE` is the flag that admits a score into a
+ranking. Practice sessions are recorded in full and enter no score, no streak
+and no share; `SessionRepository.completed_days` is the one filter that has to
+be right, because every streak answer is built on it. A practice window runs
+one day-length from when it starts, since the day it belongs to is long past.
+
+**Moves are an append-only ledger stored inline on the session document.** A
+move and the counters derived from it can never be half written. The 500 move
+cap is what keeps the document bounded.
+
+**A repeated sequence is idempotent when its payload matches and a conflict
+when it does not; a gap is refused.** That is what makes a retry safe on a bad
+connection while leaving a replayed or forged move detectable.
+
+**Game state is rebuilt by replaying the ledger, never cached.** A stored state
+and a stored ledger can disagree and there is no way to tell which is right.
+Replay also doubles as a purity check: a regrade that flips a recorded outcome
+raises `DeterminismError`, which catches a grader reading the clock or a
+random source. The cost is O(moves) per submission, bounded by the cap.
+
+**Grading belongs to the game and runs on the server.** Only the game knows
+what a partially correct answer is, so `grade_move` was added to the plugin
+protocol; the client is never given the solution, so it cannot grade. Plugin
+exceptions fail the move, never the process, mirroring phase 4's rule about
+one game's bug not taking down the day.
+
+**Telemetry is derived, never submitted.** Every number a scoring function
+reads is computed from the ledger and from timestamps the engine wrote. Client
+timestamps are stored on the move as advisory and feed nothing that ranks.
+`elapsed_ms` is start to last activity, not start to now, or an abandoned tab
+accumulates hours of play that a share would then publish.
+
+**`last_activity_at` may not precede the last move.** Found by test: a session
+whose activity clock disagrees with its own ledger reports a shorter elapsed
+time than the play actually took, while passing every other check.
+
+**Hints occupy a sequence number like any other move**, so a client cannot
+under-report its hint count by declining to mention it. Giving up is its own
+move kind rather than a plain abandon: "stopped playing" and "asked to see the
+answer" are different facts and only one is a decision the player made.
+
+**Day boundaries come from an injected `DayWindow`.** `UtcDayWindow` takes a
+grace period; `OffsetDayWindow` uses a fixed offset rather than a named zone,
+because a named zone moves the boundary twice a year and would produce a
+23 or 25 hour day, which breaks the consecutive-day streak rule. Expiry is
+applied lazily on read, because the engine owns no scheduler and a session
+nobody looks at again never needed the write. An expired session settles like
+any other ending: a zero score is still a fact about the day.
+
+**`Clock` is injected everywhere.** `SystemClock` is the single sanctioned
+reader of the real clock, exempted in the invariant test by class name rather
+than by file, so a second reader added beside it is still caught.
+
+### Scoring
+
+**A score is a pure function of the puzzle and the ordered moves.** The stored
+`ScoreRecord` is a cache of that function and carries the hash of the ledger
+that produced it. `recompute` rebuilds it; a disagreement raises rather than
+writes, because the stored number is what a player already saw.
+
+**A score is written once and frozen**, enforced in `ScoreRepository.put`.
+
+**Ranking is within one game.** Points, then elapsed, mistakes, hints and
+attempts as an explicit tiebreaker tuple, ordered by how directly each reflects
+play. No cross-game normalisation, for the reason phase 5 gave about
+difficulty: one scale across games would be comparable and wrong. Rank is
+computed on read, never stored, because a rank is a fact about a set that
+changes all day.
+
+**Efficiency is measured only when a game declares `optimal_attempts` in its
+presentation**, and is 1.0 otherwise. An invented optimum would quietly
+penalise every player of that game.
+
+**Move payloads never reach a scoring or share function.** `move_events`
+exposes sequence, kind, outcome and an offset in milliseconds; a guess names
+parts of the answer, and a share grid only ever needs the shape of the attempt.
+
+**Streaks have no quiet exceptions.** A completed live session on the day after
+the last advances; anything else resets. No freezes and no grace days, because
+a rule that quietly forgives a gap cannot be tightened later without rewriting
+history. A back-dated completion triggers a full rebuild from
+`completed_days`, since the session history is the authority and the streak
+record is a cache like a score is. `streak_is_live` answers the display
+question before any reset is written.
+
+### Sharing
+
+**The engine renders all share text from the game's semantic tokens.** A game
+emits token names and never characters, as `ShareArtifact`'s own phase 4
+docstring already promised.
+
+**A game declares its vocabulary in `GameDescriptor.share_tokens`**, each token
+carrying a glyph, one ASCII character and a spoken label. An undeclared token
+is a protocol error (`share.undeclared_token`), matching phase 5's treatment of
+self-contradictory verifier output as a bug rather than a content rejection.
+
+**Three renderings are mandatory.** `text`, `text_plain` and `alt_text`;
+construction fails without all three. A share with only glyphs excludes the
+players who most need the alternative, and a reader announcing emoji by their
+Unicode names is not an alternative.
+
+**Everything a player posts is written by the engine.** The game's `headline`
+is dropped: it is free text on a public surface with no way to check intent.
+The counts line comes from the ledger, so a game cannot publish a flattering
+attempt count beside a real score.
+
+**`ShareRedactor` checks the finished text rather than the intent behind it**:
+a codepoint allowlist built from the declaration, no record id, no long hex
+run, no session, player, manifest or puzzle id, and caps on length, lines and
+tokens per row. This is `public_view()` applied to a public surface, and it
+exists because phase 4's leak was found by test rather than by inspection.
+
+**The spoiler check runs over game-supplied text only.** The header, counts
+line and alt sentence are engine-written from a vocabulary the engine controls,
+so checking them against the puzzle's own words produces only false positives:
+a puzzle whose prompt used "tries" would make the counts line unwritable. What
+does get checked is the display name and the outcome string, against every
+word of four or more characters in the payload and solution, minus a stopword
+list.
+
+**Practice sessions produce no share.** A share says "here is how I did on
+today's puzzle", and a replay of a past day is not that.
+
+### Accessibility
+
+**Accessibility is a data contract, not styling.** The engine renders nothing;
+it holds the declaration, checks it, and reports data the shell interprets.
+
+**`AccessibilityDeclaration.is_complete()` is unchanged from phase 4** and
+remains the game's own self-description. The stronger gate is
+`accessibility.validate_game`, called at session start: the keyboard model must
+be one the shell installs, targets must meet the 44px minimum, announcement
+templates must resolve against the placeholders the engine actually supplies,
+and a game claiming colour independence must back it with state symbols. That
+declaration had existed since phase 4 and was enforced nowhere.
+
+**State symbols are validated for distinct name, symbol and label.** Two states
+sharing a symbol are identical to a player reading shapes; two sharing a label
+are identical to one hearing text. `state_symbols` defaults to empty so a
+phase 4 game still describes itself and still generates, and is refused at
+session start so an unplayable promise stays unplayable.
+
+**The symbol channel is never stripped for sighted players.** A game rendered
+one way for some players and another way for others is a game whose accessible
+path is the one nobody tests.
+
+**Announcements are rendered engine side** from the game's templates, with
+counters filled from the ledger so an announcement cannot tell a player
+something different from what the score will. Politeness is decided by the
+engine from a short assertive set, because a reader that interrupts constantly
+gets turned off.
+
+**The player's profile is stored against the player, not the device**, so it
+follows them, and is copied onto each session at start, so an old rendering
+stays reproducible after a later settings change.
+
+### Plugin protocol 1.1.0
+
+`grade_move` and `get_hint` were added, with `MoveJudgement` and `Hint` as
+boundary types, both plain frozen dataclasses of JSON-representable values like
+everything else that will cross the phase 9 wire. The bump is additive: a 1.0
+game still registers and still generates, and what it cannot do is have a
+session started against it, which `SessionService` reports by name rather than
+as an attribute error mid-play.
+
+### New architecture invariants
+
+Five, each protecting something that fails silently: identity imports no
+reproducible generator; no session module reads the clock except `SystemClock`;
+no session module reads the environment; no credential-shaped name appears in
+the package; no layer above the engine, and no game, holds a session
+repository. Four further tests plant each violation and assert the checker
+catches it, so the new rules are proved non-vacuous the way phase 3's were.
+
+## Content, review and proposal (decided ahead of phase 7, for phase 7 to implement)
+
+Game 1 is the first game generated against real content rather than test
+fixtures, so the content questions had to be settled before any game code
+could be written.
+
+### The snapshot game 1 generates against
+
+**A WordNet backbone plus a curated overlay, imported in lemma mode.** The
+taxonomy comes from seven `tools/export_wordnet.py` runs, one per domain; the
+second axis the game needs comes from a hand-authored and then tool-extended
+overlay. WordNet alone cannot supply the hidden group, because the hidden
+group is a property that cuts across the hypernym hierarchy rather than
+sitting inside it.
+
+**Seven tight domains rather than one broad export.** A deep slice of
+`animal.n.01` produces hundreds of entries no player has heard of, and four
+groups drawn from three domains produce two groups a player will reasonably
+merge. The roots: `carnivore.n.01` and `bird.n.01` at depth 3,
+`edible_fruit.n.01` at depth 2, `musical_instrument.n.01`, `vehicle.n.01` at
+depth 3, `garment.n.01` and `hand_tool.n.01` at depth 2.
+
+**Lemma identity, not sense.** An entity id minted from the canonical name is
+what lets the curated overlay merge onto the WordNet backbone instead of
+sitting beside it; sense identity would force the overlay to name exported
+sense keys and to be re-authored on every export. The known cost is
+polysemy collapse, and it is real: `kiwi` appears in both the bird and the
+fruit export. `tools/report_lemma_collisions.py` lists every lemma appearing
+in more than one export so colliding entries are excluded deliberately rather
+than merged silently.
+
+**Frequency runs before the game, not after.** Without the band table every
+candidate is unscored, the frequency gate passes everything, and the first
+real board is full of words nobody knows. Embeddings may stay on
+`DevHashEmbeddingProvider` through phase 7, which labels itself in snapshot
+metadata and raises an import warning, so a development snapshot cannot be
+mistaken for a publishable one.
+
+**`tools/build_snapshot.py` drives import, activate and seal.**
+`SnapshotBuilder` has existed since phase 2 and nothing outside tests has ever
+driven it.
+
+### The overlay and its proposer
+
+**The overlay is the design-critical artifact and it is small.** It carries
+only the second axis: categories that cut across every domain, with their
+`is_a` relationships. Each overlay category needs at least as many members as
+the day's group size, drawn from different taxonomic groups, or the hidden
+group is not hidden, it is a fifth pile.
+
+**Overlay membership is proposed by tooling and can never self-activate.**
+"Salmon is also a colour" is an interpretation, not something a source said,
+so it is JUDGED, and the phase 2 rule holds without exception: the normalizer
+routes JUDGED to `PENDING_REVIEW` regardless of confidence and the default
+activation policy excludes the class. A proposer may suggest as freely as it
+likes precisely because nothing it writes can reach a puzzle on its own.
+
+**The proposer lives in `tools/`, not in the engine.** Proposing membership
+means reading names, definitions, aliases and embeddings across the whole
+graph and writing candidate records, which is content-layer work with the
+heavy dependencies attached. A proposer inside the engine would violate the
+layer rule the invariant tests enforce.
+
+**It judges on both string and embedding signals, and records which fired.**
+String and gloss matching alone misses anything needing world knowledge;
+embeddings alone produce proposals a curator cannot see the reason for.
+Recording the firing signal is what lets a curator triage a long queue by
+method rather than reading forty unsorted rows.
+
+**The overlay grows, and growth is what creates future groupings.** Candidate
+generation queries overlay categories by active member count, so a category
+with four active members is invisible to the generator and the same category
+with nine is a usable hidden group. Nothing special happens at the crossing
+point; the query already expresses it.
+
+### Review
+
+**A review decision is an append-only record, never a status edit.**
+`ReviewDecision(subject_ref, reviewer, decision, proposal_batch, at, note)` in
+a `ReviewRepository`, filling the `ReviewRepositoryProtocol` declared and
+unimplemented since phase 1. Status is derived by counting the ledger, as
+activation is derived from `ActivationEvent`. "Which items had I approved on
+the 3rd" must give the same answer a year later.
+
+**The threshold maps onto the existing lifecycle with no new statuses.** A
+record sits at `PENDING_REVIEW` until it has ten credited accepts, at which
+point it derives to `APPROVED`. `APPROVED` is still not usable: only
+`SnapshotBuilder.activate()` moves anything to `ACTIVE`, and `USABLE_STATUS`
+is `{ACTIVE}` alone. Overlay membership therefore passes two independent
+gates, repeated acceptance and explicit activation, and neither substitutes
+for the other.
+
+**An accept is credited only when it is both a new proposal batch and a later
+day than the last credited one.** With a single curator, ten accepts cannot
+mean ten people, so what makes two accepts distinct has to be stated: the item
+must survive being re-proposed against regenerated evidence, and it must be
+read on a separate occasion. Repeated clicks in one sitting credit once.
+
+**Rejection is asymmetric and immediate.** One reject moves the record to
+`REJECTED` with no threshold. The threshold protects against a hasty yes,
+which puts wrong content into a published puzzle; a hasty no costs only a
+re-proposal, and requiring ten rejections to kill an obviously bad suggestion
+would make review tedious enough to stop happening. A rejected subject may be
+re-proposed, and the ledger keeps the rejection so the proposer can show it,
+or the same bad suggestion arrives every week unrecognised.
+
+**The reviewer is recorded, not authenticated.** The engine cannot verify who
+anybody is, and pretending otherwise would be security theatre inside a
+library. What enforces single-curator control is that the review tool runs on
+the curator's machine against their repository and each decision is a
+committed file. What the code contributes is that every decision names its
+reviewer, and `Provenance` already refuses to let a JUDGED record go ACTIVE
+without one, so an unattributed approval cannot exist even by accident.
+
+**Nothing automatic may write `APPROVED` or `ACTIVE`.** A new invariant test
+asserts that no module under `tools/`, and no module outside the review
+service and `SnapshotBuilder`, assigns either status.
+
+**The seed overlay bootstraps around the threshold, deliberately.** Ten
+credited accepts means at least ten days from proposal to playable, so a
+freshly seeded overlay would leave game 1 with nothing to draw on for its
+first fortnight. The hand-authored seed file is `CURATED_INTERNAL` rather than
+JUDGED and activates on the normal path; only proposer-generated additions
+take the ten-accept route. This is the distinction the lifecycle already
+draws, between what a person asserted and what a machine inferred, and not a
+special case for getting started.
+
+### Game 1 board shape
+
+**Group size is drawn per day by the deterministic RNG, from 5 to 9
+inclusive**, across four visible groups, so a board is 20 to 36 tiles. The
+hidden fifth group is an overlay category with exactly as many members as the
+day's group size, drawn one from each visible group where possible.
+
+Two consequences carry into implementation. Verification cost is driven by
+group size, since `enumerate_partitions` over 36 items into groups of 9 is a
+far larger search than 20 into groups of 5, so the budget must be sized for
+the worst case rather than the average. And difficulty is now partly a
+function of board size, so the per-game thresholds must normalise for it or
+every 9-item day lands in the hardest band for a reason unrelated to the
+puzzle.
+
+**The axis switch is derived, not scheduled.** It fires when the remaining
+tiles can no longer be partitioned taxonomically, which is a better puzzle
+than a fixed trigger and costs a feasibility check inside `grade_move`. Two
+constraints follow: the check is existence-only, reusing `enumerate_partitions`
+with a first-solution exit and a budget sized for the negative answer, which
+is the expensive direction and the one that fires the switch; and it must stay
+a pure function of the puzzle and the moves before it, because the session
+layer replays the whole ledger on every submission and raises
+`DeterminismError` on any disagreement. Memoising within one replay pass is
+fine; memoising across calls is not.
+
+## Open items carried into phase 7
+
+- Game 1 (four groups of 5 to 9, hidden overlay group, derived axis switch):
+  designed in conversation and scoped above, not yet built. Scheduled for
+  phase 7. It is the first real exercise of `find_intersecting_groups`,
+  `UNIQUE_UP_TO_TOLERANCE` and `enumerate_partitions`, and the first game to
+  implement plugin protocol 1.1 for real rather than as a test fixture.
+- Content, review and proposal tooling, all scoped above and none of it built:
+  `tools/propose_overlay.py`, `tools/review.py`,
+  `tools/report_lemma_collisions.py`, `tools/build_snapshot.py`,
+  `puzzlegen/content/review.py` with `ReviewRepository`, and
+  `content/seeds/overlay.curated.json`.
+- Five deliberately broken game fixtures, to prove the engine catches what it
+  claims to: a verifier omitting `collapsed_solutions`, a verifier claiming
+  complete enumeration having examined zero states, an impure `grade_move`, a
+  `grade_move` marking a wrong answer correct, and a share builder emitting an
+  undeclared token. They ship in phase 7 as failing-by-design fixtures and are
+  fixed against real content in phase 8.
+- Game 2 (relationship chain with branch points and a minimum-length budget):
+  phase 8. First real use of `UNIQUE_MINIMAL_PATH` and `enumerate_paths`.
+- Third-party subprocess RPC transport: phase 9 by decision. In phases 7 and 8,
+  in-tree games run in-process.
+- Account merge across two anonymous histories: deliberately unbuilt.
+  `MergeRequired` names the situation and refuses; nothing resolves it yet.
+- Hint pricing beyond a game-declared cost, and any ranking wider than one day
+  of one game: deliberately unbuilt.
+- `ops` and `cli` layers: still empty. The HTTP or serverless surface that
+  calls `SessionService` is out of scope until one exists, by the decision
+  taken at the start of phase 6.

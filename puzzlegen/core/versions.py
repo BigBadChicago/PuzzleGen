@@ -28,7 +28,12 @@ SHARE_FORMAT_VERSION = 1
 #: Wire protocol spoken between the engine and a sandboxed game plugin.
 #: Plugins declare the protocol version they implement; the engine refuses to
 #: load a plugin whose major version differs.
-PLUGIN_PROTOCOL_VERSION = "1.0.0"
+#:
+#: 1.1.0 added ``grade_move`` and ``get_hint``. Both are additive within the
+#: major version, so a 1.0 plugin still loads and still generates; what it
+#: cannot do is have a session started against it, which the session service
+#: reports by name rather than by an attribute error mid-play.
+PLUGIN_PROTOCOL_VERSION = "1.1.0"
 
 
 @dataclass(frozen=True, slots=True)

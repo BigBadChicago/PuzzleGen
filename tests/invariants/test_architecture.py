@@ -366,3 +366,214 @@ class TestTheCheckerItself:
         modules = imported_modules(planted)
         parts = next(iter(modules)).split(".")
         assert parts[1] == "engine" and LAYERS.index("engine") > LAYERS.index("core")
+
+
+#: Modules that make up the session layer. Each has a rule above and beyond
+#: the layer direction, and each rule protects something that fails silently.
+SESSION_MODULES = (
+    "sessions.py",
+    "session_storage.py",
+    "session_service.py",
+    "scoring.py",
+    "sharing.py",
+    "accessibility.py",
+    "identity.py",
+)
+
+#: Names that would mean a credential crossed into the engine. The design says
+#: OAuth verification happens in front of the engine; this is what keeps that
+#: from being a sentence in a document only.
+CREDENTIAL_NAMES = (
+    "access_token",
+    "id_token",
+    "refresh_token",
+    "client_secret",
+    "authorization_code",
+    "password",
+)
+
+
+def session_module_paths() -> list[pathlib.Path]:
+    return [PACKAGE / "engine" / name for name in SESSION_MODULES]
+
+
+def attribute_calls(path: pathlib.Path) -> set[str]:
+    """Every ``a.b()`` call in a file, as a dotted string."""
+    tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+    found: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
+            parts = [node.func.attr]
+            inner = node.func.value
+            while isinstance(inner, ast.Attribute):
+                parts.append(inner.attr)
+                inner = inner.value
+            if isinstance(inner, ast.Name):
+                parts.append(inner.id)
+            found.add(".".join(reversed(parts)))
+    return found
+
+
+def clock_calls_inside(path: pathlib.Path, class_name: str) -> set[str]:
+    """Attribute calls made within one class body, so a single sanctioned
+    reader of the real clock can be exempted by name rather than by file."""
+    tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ClassDef) and node.name == class_name:
+            found: set[str] = set()
+            for inner in ast.walk(node):
+                if isinstance(inner, ast.Call) and isinstance(inner.func, ast.Attribute):
+                    parts = [inner.func.attr]
+                    target = inner.func.value
+                    while isinstance(target, ast.Attribute):
+                        parts.append(target.attr)
+                        target = target.value
+                    if isinstance(target, ast.Name):
+                        parts.append(target.id)
+                    found.add(".".join(reversed(parts)))
+            return found
+    return set()
+
+
+class TestSessionLayer:
+    """Rules the session layer adds on top of the layer direction."""
+
+    def test_every_session_module_exists_where_it_is_expected(self):
+        for path in session_module_paths():
+            assert path.exists(), f"{path.name} is not in puzzlegen/engine"
+
+    def test_identity_never_imports_the_deterministic_generator(self):
+        """A credential minted from a reproducible stream is not a credential.
+
+        ``DeterministicRng`` exists so a puzzle can be regenerated years
+        later, which is exactly the property that would let somebody
+        regenerate another player's return key.
+        """
+        modules = imported_modules(PACKAGE / "engine" / "identity.py")
+        assert "puzzlegen.core.rng" not in modules
+        assert not any(module.endswith(".rng") for module in modules)
+
+    def test_no_session_module_reads_the_clock_directly(self):
+        """Time is injected. A module calling ``datetime.now`` would make its
+        own behaviour untestable and its sessions unreproducible.
+
+        One exemption, and it is the reason the rule works: ``SystemClock`` is
+        the single place the real clock is read, which is what leaves every
+        other module injectable.
+        """
+        offenders = {}
+        for path in session_module_paths():
+            calls = attribute_calls(path) - clock_calls_inside(path, "SystemClock")
+            direct = {
+                call
+                for call in calls
+                if call.endswith("datetime.now")
+                or call.endswith("dt.datetime.now")
+                or call == "time.time"
+            }
+            if direct:
+                offenders[path.name] = sorted(direct)
+        assert not offenders, f"clock read directly in {offenders}"
+
+    def test_no_session_module_reads_the_environment(self):
+        forbidden = {"os", "os.path", "dotenv"}
+        for path in session_module_paths():
+            modules = imported_modules(path)
+            caught = [m for m in modules if is_forbidden(m, forbidden)]
+            assert not caught, f"{path.name} imports {caught}"
+
+    def test_no_credential_name_appears_in_the_package(self):
+        offenders = {}
+        for path in python_files(PACKAGE):
+            text = path.read_text(encoding="utf-8").lower()
+            hits = [name for name in CREDENTIAL_NAMES if name in text]
+            if hits:
+                offenders[str(path.relative_to(PACKAGE))] = hits
+        assert not offenders, f"credential-shaped names found: {offenders}"
+
+    def test_only_the_session_layer_holds_session_repositories(self):
+        """Session storage is engine-owned, like puzzle storage.
+
+        The rule that matters is the same one phase 3 established for graph
+        records: no layer above the one that owns a record may hold a
+        repository over it.
+        """
+        for path in python_files(PACKAGE):
+            layer = layer_of(path)
+            if layer in (None, "engine"):
+                continue
+            modules = imported_modules(path)
+            assert "puzzlegen.engine.session_storage" not in modules, (
+                f"{path.relative_to(PACKAGE)} reaches into session storage"
+            )
+
+    def test_games_cannot_import_the_session_layer(self):
+        """A game grades a move and scores telemetry. It never sees a player.
+
+        Reaching the session layer would let a game read who is playing, which
+        is precisely the identity the anonymous id exists to withhold.
+        """
+        forbidden = {
+            "puzzlegen.engine.identity",
+            "puzzlegen.engine.sessions",
+            "puzzlegen.engine.session_storage",
+            "puzzlegen.engine.session_service",
+        }
+        for path in python_files(PACKAGE / "games"):
+            modules = imported_modules(path)
+            caught = [m for m in modules if is_forbidden(m, forbidden)]
+            assert not caught, f"{path.relative_to(PACKAGE)} imports {caught}"
+
+    def test_the_share_layer_holds_a_redactor(self):
+        """The share path must pass through redaction, not merely intend to."""
+        text = (PACKAGE / "engine" / "sharing.py").read_text(encoding="utf-8")
+        assert "class ShareRedactor" in text
+        assert "_redactor.check(" in text
+
+
+class TestSessionCheckerItself:
+    """The session rules above, proved non-vacuous."""
+
+    def test_a_planted_rng_import_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_identity.py"
+        planted.write_text(
+            "from puzzlegen.core.rng import DeterministicRng\n", encoding="utf-8"
+        )
+        modules = imported_modules(planted)
+        assert any(module.endswith(".rng") for module in modules)
+
+    def test_the_exemption_covers_one_class_only(self):
+        """The sanctioned reader is exempted by name, so a second reader added
+        to the same file is still caught."""
+        path = PACKAGE / "engine" / "sessions.py"
+        exempt = clock_calls_inside(path, "SystemClock")
+        assert any(call.endswith("datetime.now") for call in exempt)
+        # Any other class in the same file is outside the exemption, so a
+        # second clock reader added beside it would still be caught.
+        others = clock_calls_inside(path, "UtcDayWindow")
+        assert not any(call.endswith("datetime.now") for call in others)
+
+    def test_a_planted_clock_read_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_clock.py"
+        planted.write_text(
+            "import datetime as dt\nnow = dt.datetime.now()\n", encoding="utf-8"
+        )
+        calls = attribute_calls(planted)
+        assert any(call.endswith("datetime.now") for call in calls)
+
+    def test_a_planted_credential_name_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_identity.py"
+        planted.write_text("access_token = 'abc'\n", encoding="utf-8")
+        text = planted.read_text(encoding="utf-8").lower()
+        assert any(name in text for name in CREDENTIAL_NAMES)
+
+    def test_a_planted_session_storage_import_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_game.py"
+        planted.write_text(
+            "from puzzlegen.engine.session_storage import SessionRepositories\n",
+            encoding="utf-8",
+        )
+        modules = imported_modules(planted)
+        assert is_forbidden(
+            next(iter(modules)), {"puzzlegen.engine.session_storage"}
+        )

@@ -28,12 +28,16 @@ from puzzlegen.engine.plugin import (
     DifficultyThresholds,
     GameDescriptor,
     GenerationContext,
+    Hint,
+    MoveJudgement,
     PresentationModel,
     Puzzle,
     PuzzleCandidate,
     Score,
     SessionTelemetry,
     ShareArtifact,
+    ShareTokenSpec,
+    StateSymbol,
     VerificationResult,
 )
 
@@ -65,7 +69,30 @@ class OddOneOutGame:
             accessibility=AccessibilityDeclaration(
                 element_kinds=("option",),
                 keyboard_model="list",
-                announcements={"selected": "{label} selected"},
+                announcements={
+                    "selected": "{label} selected",
+                    "incorrect": "Not it. {attempts} tries so far",
+                    "complete": "Solved in {attempts} tries",
+                },
+                state_symbols=(
+                    StateSymbol(
+                        name="idle", symbol="\u25cb", label="not chosen"
+                    ),
+                    StateSymbol(
+                        name="chosen", symbol="\u25c9", label="chosen", colour="#3b6"
+                    ),
+                    StateSymbol(
+                        name="wrong", symbol="\u2715", label="wrong", colour="#c33"
+                    ),
+                ),
+            ),
+            share_tokens=(
+                ShareTokenSpec(
+                    name="correct", glyph="\U0001f7e9", plain="#", label="correct"
+                ),
+                ShareTokenSpec(
+                    name="missed", glyph="\u2b1c", plain=".", label="missed"
+                ),
             ),
             description="Four entities share a category; one does not.",
         )
@@ -180,6 +207,51 @@ class OddOneOutGame:
         return Score(
             points=base - penalty,
             breakdown={"base": base, "penalty": -penalty},
+        )
+
+    def grade_move(
+        self, puzzle: Puzzle, payload: Mapping[str, Any], state: Mapping[str, Any]
+    ) -> MoveJudgement:
+        answer = puzzle.solution["answer"]
+        chosen = payload.get("choice")
+        if chosen not in puzzle.payload["options"]:
+            return MoveJudgement(
+                correct=False,
+                state=dict(state),
+                note="that option is not on the board",
+            )
+        tried = [*state.get("tried", []), chosen]
+        correct = chosen == answer
+        # Every wrong option tried means the only one left is the answer, so
+        # the puzzle is over: continuing would be a guess with no choice in it.
+        wrong_options = {
+            option for option in puzzle.payload["options"] if option != answer
+        }
+        exhausted = wrong_options.issubset(set(tried))
+        return MoveJudgement(
+            correct=correct,
+            complete=correct or exhausted,
+            solved=correct,
+            state={"tried": tried, "selected": chosen},
+            note="" if correct else "shares the category",
+        )
+
+    def get_hint(
+        self, puzzle: Puzzle, state: Mapping[str, Any], hints_used: int
+    ) -> Hint:
+        options = list(puzzle.payload["options"])
+        answer = puzzle.solution["answer"]
+        wrong = [option for option in options if option != answer]
+        if hints_used >= len(wrong):
+            return Hint(
+                text="no hints left", cost=0, exhausted=True
+            )
+        eliminated = wrong[hints_used]
+        return Hint(
+            text="one of the four belongs with the rest",
+            reveals=(eliminated,),
+            cost=10,
+            exhausted=hints_used + 1 >= len(wrong),
         )
 
     def render(
