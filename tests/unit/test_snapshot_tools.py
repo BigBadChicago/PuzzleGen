@@ -125,11 +125,11 @@ class TestCollecting:
 class TestOverlayMembers:
     def test_members_are_read_with_their_category_names(self):
         members = collisions.overlay_members(OVERLAY)
-        assert members["salmon"] == ["color"]
+        assert members["turtle"] == ["thing with a shell"]
 
     def test_a_member_in_two_categories_lists_both(self):
         members = collisions.overlay_members(OVERLAY)
-        assert len(members["watch"]) == 2
+        assert len(members["salmon"]) == 2
 
     def test_every_seed_member_is_present(self):
         assert len(collisions.overlay_members(OVERLAY)) == 144
@@ -281,7 +281,7 @@ class TestInputLists:
     def test_overlay_members_join_the_term_list(self, tmp_path):
         path = write_lexicon(tmp_path / "a.lexicon.json", [sense("otter", "s.otter")])
         terms, _ = build_snapshot.input_lists([path], OVERLAY, NOW)
-        assert "burlap" in terms and "otter" in terms
+        assert "turtle" in terms and "otter" in terms
 
     def test_the_two_lists_stay_aligned(self, tmp_path):
         path = write_lexicon(
@@ -522,7 +522,7 @@ class TestTheInputListsMatchTheBuild:
     def test_the_overlay_members_are_present_without_a_gloss(self, tmp_path):
         path = self.two_senses(tmp_path)
         _, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
-        assert "burlap" in texts
+        assert "turtle" in texts
 
     def test_a_table_built_from_the_list_satisfies_the_build(self, tmp_path):
         """End to end: prepare, fake command 7, build. No KeyError."""
@@ -571,3 +571,119 @@ class TestTheInputListsMatchTheBuild:
         finally:
             sqlite3.connect = before
         assert opened == []
+
+
+class TestMergedCategories:
+    """Synsets that become one category, reported before a build rather than
+    discovered during one.
+
+    Two distinct `galley` synsets are both hypernyms of `monoreme` in Open
+    English WordNet. The import merges them by name, which is the identity rule
+    working, but the duplicate parent edge aborted a depth 6 build before the
+    normalizer learned to deduplicate.
+    """
+
+    def galley(self, tmp_path) -> Path:
+        return write_lexicon(
+            tmp_path / "vehicle.lexicon.json",
+            [
+                sense("galley", "s.kitchen"),
+                sense("galley", "s.ship"),
+                sense("monoreme", "s.monoreme"),
+            ],
+            synsets=[
+                {
+                    "id": "s.kitchen",
+                    "name": "galley",
+                    "definition": "a ship's kitchen",
+                    "hypernyms": [],
+                },
+                {
+                    "id": "s.ship",
+                    "name": "galley",
+                    "definition": "a ship propelled by oars",
+                    "hypernyms": [],
+                },
+                {
+                    "id": "s.monoreme",
+                    "name": "monoreme",
+                    "definition": "a galley with one bank of oars",
+                    "hypernyms": ["s.kitchen", "s.ship"],
+                },
+            ],
+        )
+
+    def test_two_synsets_sharing_a_name_are_reported(self, tmp_path):
+        found = collisions.category_collisions([self.galley(tmp_path)])
+        assert [row["name"] for row in found] == ["galley"]
+        assert len(found[0]["synsets"]) == 2
+
+    def test_both_definitions_are_shown_so_a_person_can_judge(self, tmp_path):
+        found = collisions.category_collisions([self.galley(tmp_path)])
+        glosses = [s["definition"] for s in found[0]["synsets"]]
+        assert "a ship's kitchen" in glosses
+        assert "a ship propelled by oars" in glosses
+
+    def test_a_child_inheriting_the_merge_twice_is_named(self, tmp_path):
+        found = collisions.category_collisions([self.galley(tmp_path)])
+        assert found[0]["children_inheriting_it_twice"] == ["monoreme"]
+
+    def test_a_child_inheriting_it_once_is_not_named(self, tmp_path):
+        path = write_lexicon(
+            tmp_path / "a.lexicon.json",
+            [sense("galley", "s.kitchen"), sense("galley", "s.ship"), sense("skiff", "s.skiff")],
+            synsets=[
+                {"id": "s.kitchen", "name": "galley", "definition": "k", "hypernyms": []},
+                {"id": "s.ship", "name": "galley", "definition": "s", "hypernyms": []},
+                {"id": "s.skiff", "name": "skiff", "definition": "a small boat", "hypernyms": ["s.ship"]},
+            ],
+        )
+        found = collisions.category_collisions([path])
+        assert found[0]["children_inheriting_it_twice"] == []
+
+    def test_distinct_names_are_not_reported(self, tmp_path):
+        path = write_lexicon(
+            tmp_path / "a.lexicon.json",
+            [sense("otter", "s.otter"), sense("badger", "s.badger")],
+        )
+        assert collisions.category_collisions([path]) == []
+
+    def test_a_name_shared_across_two_files_is_reported(self, tmp_path):
+        one = write_lexicon(tmp_path / "one.lexicon.json", [sense("bugle", "s.horn")])
+        two = write_lexicon(tmp_path / "two.lexicon.json", [sense("bugle", "s.plant")])
+        found = collisions.category_collisions([one, two])
+        assert [row["name"] for row in found] == ["bugle"]
+        assert {s["file"] for s in found[0]["synsets"]} == {
+            "one.lexicon.json",
+            "two.lexicon.json",
+        }
+
+    def test_the_counts_reach_the_report(self, tmp_path):
+        path = self.galley(tmp_path)
+        report = collisions.build_report(
+            collisions.collect([path]), {}, categories=collisions.category_collisions([path])
+        )
+        assert report["counts"]["merged_categories"] == 1
+        assert report["counts"]["merged_categories_with_double_inheritance"] == 1
+
+    def test_the_section_renders(self, tmp_path):
+        path = self.galley(tmp_path)
+        report = collisions.build_report(
+            collisions.collect([path]), {}, categories=collisions.category_collisions([path])
+        )
+        text = collisions.render(report)
+        assert "become one category" in text
+        assert "inherited twice by: monoreme" in text
+
+    def test_a_report_without_the_section_still_renders(self, tmp_path):
+        path = write_lexicon(tmp_path / "a.lexicon.json", [sense("otter", "s.otter")])
+        text = collisions.render(collisions.build_report(collisions.collect([path]), {}))
+        assert "become one category" not in text
+
+    def test_the_command_line_includes_the_section(self, tmp_path, capsys):
+        collisions.main(
+            ["--lexicon", str(self.galley(tmp_path)), "--overlay", str(tmp_path / "none.json")]
+        )
+        out = capsys.readouterr().out
+        assert "merged categories" in out
+        assert "monoreme" in out

@@ -88,6 +88,50 @@ def collect(paths: list[Path]) -> dict[str, LemmaUse]:
     return uses
 
 
+def category_collisions(paths: list[Path]) -> list[dict]:
+    """Synsets that become one category because they share a first lemma.
+
+    A category is identified by its canonical name, which is the synset's first
+    lemma, so two synsets named alike are one category on import. Open English
+    WordNet has two distinct "galley" synsets, a ship's kitchen and a rowed
+    ship, and both are hypernyms of "monoreme". The import merges them, which
+    is the identity rule working as designed, but it also means a child can
+    inherit one parent twice and a category can carry a gloss from a sense
+    nobody meant. Worth seeing before a build rather than during one.
+    """
+    by_name: dict[str, dict[str, dict]] = {}
+    for path in paths:
+        document = read_lexicon(path)
+        for synset in document.get("synsets", ()):
+            name = (synset.get("name") or "").lower()
+            if not name:
+                continue
+            by_name.setdefault(name, {})[synset["id"]] = {
+                "id": synset["id"],
+                "definition": synset.get("definition", ""),
+                "file": path.name,
+            }
+
+    merged = []
+    for name, group in sorted(by_name.items()):
+        if len(group) < 2:
+            continue
+        ids = set(group)
+        children = []
+        for path in paths:
+            for synset in read_lexicon(path).get("synsets", ()):
+                if len(ids & set(synset.get("hypernyms", ()))) > 1:
+                    children.append(synset.get("name") or synset["id"])
+        merged.append(
+            {
+                "name": name,
+                "synsets": [group[k] for k in sorted(group)],
+                "children_inheriting_it_twice": sorted(set(children)),
+            }
+        )
+    return merged
+
+
 def overlay_members(path: Path) -> dict[str, list[str]]:
     document = json.loads(path.read_text(encoding="utf-8"))
     names = {c["key"]: c["name"] for c in document.get("categories", ())}
@@ -104,6 +148,7 @@ def build_report(
     members: dict[str, list[str]],
     *,
     limit: int | None = None,
+    categories: list[dict] | None = None,
 ) -> dict:
     polysemous = sorted(
         (u for u in uses.values() if u.senses > 1),
@@ -140,12 +185,17 @@ def build_report(
             "overlay_members": len(members),
             "overlay_ambiguous": len(ambiguous_overlay),
             "overlay_missing": len(missing_overlay),
+            "merged_categories": len(categories or ()),
+            "merged_categories_with_double_inheritance": sum(
+                1 for c in (categories or ()) if c["children_inheriting_it_twice"]
+            ),
         },
         "sense_histogram": {str(k): histogram[k] for k in sorted(histogram)},
         "polysemous": cut([u.as_json() for u in polysemous]),
         "cross_file": cut([u.as_json() for u in cross_file]),
         "overlay_ambiguous": cut(ambiguous_overlay),
         "overlay_missing": cut(missing_overlay),
+        "merged_categories": cut(list(categories or ())),
     }
 
 
@@ -158,6 +208,8 @@ def render(report: dict) -> str:
         f"overlay members       : {counts['overlay_members']}",
         f"  ambiguous in lexicon: {counts['overlay_ambiguous']}",
         f"  absent from lexicon : {counts['overlay_missing']}",
+        f"merged categories     : {counts['merged_categories']}"
+        f" ({counts['merged_categories_with_double_inheritance']} inherited twice)",
         "",
         "senses per lemma: "
         + ", ".join(f"{k}={v}" for k, v in report["sense_histogram"].items()),
@@ -178,6 +230,18 @@ def render(report: dict) -> str:
                 f"  {row['lemma']:<16} overlay: "
                 f"{', '.join(row['overlay_categories'])}"
             )
+    if report.get("merged_categories"):
+        lines.append("")
+        lines.append("synsets that become one category (same first lemma):")
+        for row in report["merged_categories"]:
+            lines.append(f"  {row['name']}")
+            for synset in row["synsets"]:
+                lines.append(f"    {synset['id']}  {synset['definition'][:70]}")
+            if row["children_inheriting_it_twice"]:
+                lines.append(
+                    "    inherited twice by: "
+                    + ", ".join(row["children_inheriting_it_twice"])
+                )
     if report["cross_file"]:
         lines.append("")
         lines.append("lemmas exported under more than one root:")
@@ -201,7 +265,12 @@ def main(argv: list[str] | None = None) -> int:
 
     uses = collect(args.lexicon)
     members = overlay_members(args.overlay) if args.overlay.exists() else {}
-    report = build_report(uses, members, limit=args.limit)
+    report = build_report(
+        uses,
+        members,
+        limit=args.limit,
+        categories=category_collisions(args.lexicon),
+    )
 
     print(render(report))
     if args.out is not None:

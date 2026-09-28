@@ -20,11 +20,45 @@ from pathlib import Path
 DEFAULT_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 
+def render(header: dict, rows: dict[str, list[float]]) -> str:
+    """One line per vector, sorted, with no indentation inside a row.
+
+    Ordinary ``json.dumps(..., indent=2)`` puts every one of 384 components on
+    its own line, which costs about 6.4 kB per vector: a 15,000 entity snapshot
+    writes a 94 MB file, near GitHub's per-file limit, and produces a diff
+    nobody can read. This writes the same JSON document, still sorted so two
+    machines produce identical bytes, at roughly 2.9 kB per vector, and a
+    changed vector shows as one changed line rather than 384.
+    """
+    lines = ['{']
+    for key in sorted(header):
+        lines.append(f"  {json.dumps(key)}: {json.dumps(header[key])},")
+    lines.append('  "vectors": {')
+    keys = sorted(rows)
+    for index, text in enumerate(keys):
+        comma = "" if index == len(keys) - 1 else ","
+        row = json.dumps(rows[text], separators=(",", ":"))
+        lines.append(f"    {json.dumps(text)}: {row}{comma}")
+    lines.append("  }")
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--texts", required=True, type=Path)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument(
+        "--decimals",
+        type=int,
+        default=4,
+        help=(
+            "components kept per vector. Four is below the noise floor of a "
+            "cosine comparison between normalised vectors and a third of the "
+            "bytes of six."
+        ),
+    )
     args = parser.parse_args(argv)
 
     try:
@@ -44,7 +78,7 @@ def main(argv: list[str] | None = None) -> int:
     model = SentenceTransformer(args.model)
     vectors = model.encode(texts, normalize_embeddings=True, convert_to_numpy=True)
 
-    document = {
+    header = {
         "model_name": args.model,
         # The commit or release identifying these weights. Recorded because
         # the same model name can serve different weights over time, and a
@@ -52,14 +86,15 @@ def main(argv: list[str] | None = None) -> int:
         "model_version": getattr(model, "model_card_version", None) or "unversioned",
         "similarity_metric": "cosine",
         "computed_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "vectors": {
-            text: [round(float(x), 6) for x in vector]
-            for text, vector in zip(texts, vectors)
-        },
+    }
+    rows = {
+        text: [round(float(x), args.decimals) for x in vector]
+        for text, vector in zip(texts, vectors)
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(document, indent=2, sort_keys=True), encoding="utf-8")
-    print(f"wrote {len(texts)} vectors to {args.out}")
+    args.out.write_text(render(header, rows), encoding="utf-8")
+    size = args.out.stat().st_size
+    print(f"wrote {len(texts)} vectors to {args.out} ({size / 1e6:.1f} MB)")
     return 0
 
 

@@ -46,6 +46,7 @@ def load_tool(name: str):
 
 export_wordnet = load_tool("export_wordnet")
 export_frequency = load_tool("export_frequency")
+export_embeddings = load_tool("export_embeddings")
 
 
 class StubLexicon:
@@ -398,6 +399,9 @@ class TestBuildReportCounts:
         report = self.import_two(repos, "shared")
         assert list(report.provider_counts) == ["shared"]
         counts = report.provider_counts["shared"]
+        # The animals seed and the overlay share lemmas now, and lemma
+        # identity merges them, so the per provider sum counts what each
+        # import produced while the graph holds fewer records than the total.
         assert counts["entities"] == 23 + 144
         assert counts["categories"] == 8 + 15
 
@@ -416,9 +420,18 @@ class TestBuildReportCounts:
         assert report.provider_counts["a"]["entities"] == 23
         assert report.provider_counts["b"]["entities"] == 144
 
-    def test_the_summed_count_agrees_with_what_was_written(self, repos):
+    def test_the_summed_count_is_what_each_import_produced(self, repos):
+        """Not what the graph ends up holding.
+
+        The two seeds share lemmas, and lemma identity merges them, so the
+        graph holds fewer entities than the imports produced between them. The
+        report answers "what did this provider contribute", which is the
+        question a build operator is asking.
+        """
         report = self.import_two(repos, "shared")
-        assert report.provider_counts["shared"]["entities"] == repos.entities.count()
+        produced = report.provider_counts["shared"]["entities"]
+        assert produced == 23 + 144
+        assert repos.entities.count() <= produced
 
 
 ORACLE = [
@@ -482,3 +495,121 @@ class TestAgainstTheRealLexicon:
         assert document["root"] == "oewn-04531608-n"
         assert document["synsets"] and document["senses"]
         assert WordNetLexiconProvider(out).load().entities
+
+
+class TestEmbeddingFileFormat:
+    """One line per vector.
+
+    ``json.dumps(..., indent=2)`` puts each of 384 components on its own line,
+    about 6.4 kB per vector. At 14,844 entities that is a 94 MB file, within
+    reach of GitHub's per-file limit, and a diff nobody can read.
+    """
+
+    def rows(self, count: int = 50, dims: int = 384) -> dict[str, list[float]]:
+        import random
+
+        random.seed(7)
+        return {
+            f"word{i}: a gloss of about the usual length for a synset": [
+                round(random.gauss(0, 0.05), 4) for _ in range(dims)
+            ]
+            for i in range(count)
+        }
+
+    def header(self) -> dict:
+        return {
+            "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+            "model_version": "unversioned",
+            "similarity_metric": "cosine",
+            "computed_at": "2026-09-28T12:00:00+00:00",
+        }
+
+    def test_the_output_is_valid_json(self):
+        document = json.loads(export_embeddings.render(self.header(), self.rows()))
+        assert len(document["vectors"]) == 50
+
+    def test_every_vector_survives_the_round_trip(self):
+        rows = self.rows()
+        document = json.loads(export_embeddings.render(self.header(), rows))
+        assert document["vectors"] == rows
+
+    def test_the_header_fields_survive(self):
+        document = json.loads(export_embeddings.render(self.header(), self.rows()))
+        assert document["model_name"].endswith("all-MiniLM-L6-v2")
+        assert document["similarity_metric"] == "cosine"
+
+    def test_one_line_per_vector(self):
+        text = export_embeddings.render(self.header(), self.rows())
+        vector_lines = [line for line in text.splitlines() if line.startswith('    "word')]
+        assert len(vector_lines) == 50
+
+    def test_a_vector_costs_far_less_than_the_indented_form(self):
+        rows = self.rows()
+        compact = len(export_embeddings.render(self.header(), rows).encode())
+        indented = len(
+            json.dumps({**self.header(), "vectors": rows}, indent=2, sort_keys=True).encode()
+        )
+        # Measured: 2903 bytes against 5596, a fraction under half. The
+        # saving is the 384 newlines and their indentation, not the digits.
+        assert compact < indented * 0.55
+        assert compact / len(rows) < 3000
+
+    def test_keys_are_sorted_so_two_machines_agree(self):
+        rows = self.rows()
+        shuffled = dict(reversed(list(rows.items())))
+        assert export_embeddings.render(self.header(), rows) == export_embeddings.render(
+            self.header(), shuffled
+        )
+
+    def test_a_single_vector_needs_no_trailing_comma(self):
+        text = export_embeddings.render(self.header(), {"a": [0.1, 0.2]})
+        assert json.loads(text)["vectors"] == {"a": [0.1, 0.2]}
+
+    def test_a_text_containing_quotes_is_escaped(self):
+        rows = {'galley: a ship\'s kitchen': [0.1, 0.2]}
+        document = json.loads(export_embeddings.render(self.header(), rows))
+        assert document["vectors"] == rows
+
+    def test_the_table_provider_reads_it(self, tmp_path):
+        from puzzlegen.providers.embeddings import TableEmbeddingProvider
+
+        rows = self.rows(count=3, dims=8)
+        path = tmp_path / "embeddings.json"
+        path.write_text(export_embeddings.render(self.header(), rows), encoding="utf-8")
+        provider = TableEmbeddingProvider.from_file(path)
+        vectors = provider.embed(list(rows))
+        assert len(vectors) == 3
+        assert provider.describe().dimensions == 8
+
+    def test_four_decimals_is_below_the_noise_floor_of_a_cosine(self):
+        """Rounding changes no comparison a gate would make.
+
+        Normalised 384 component vectors have components near 0.05, so the
+        fourth decimal is a part in five hundred of one component and a far
+        smaller part of a dot product over all of them.
+        """
+        import math
+        import random
+
+        random.seed(11)
+
+        def unit(dims: int) -> list[float]:
+            raw = [random.gauss(0, 1) for _ in range(dims)]
+            norm = math.sqrt(sum(x * x for x in raw))
+            return [x / norm for x in raw]
+
+        def cosine(a, b):
+            return sum(x * y for x, y in zip(a, b))
+
+        worst = 0.0
+        for _ in range(200):
+            a, b = unit(384), unit(384)
+            exact = cosine(a, b)
+            rounded = cosine(
+                [round(x, 4) for x in a], [round(x, 4) for x in b]
+            )
+            worst = max(worst, abs(exact - rounded))
+        # Measured worst case over 200 random pairs: 1.3e-4. Similarity
+        # thresholds in this engine are set to two decimals, so a drift in the
+        # fourth changes no gate's answer.
+        assert worst < 1e-3

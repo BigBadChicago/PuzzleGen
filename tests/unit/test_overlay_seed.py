@@ -112,14 +112,38 @@ class TestTheFile:
         shared = [e for e in document["entities"] if len(e["categories"]) > 1]
         assert shared
 
-    def test_it_mixes_perceptual_and_abstract_axes(self, document):
+    def test_it_mixes_shared_part_and_shared_word_axes(self, document):
+        """Two kinds of second axis, because they fail differently.
+
+        A shared part (teeth, wings) is a fact about the thing. A shared word
+        form (a color, a name) is a fact about the label. A board built only
+        from one kind reads the same every day.
+        """
         names = {c["name"] for c in document["categories"]}
-        assert {"color", "sound", "texture", "shape"} <= names
+        assert {"thing with teeth", "thing with wings", "thing with a blade"} <= names
         assert {
-            "thing that can be broken",
-            "thing that can run",
-            "thing with teeth",
+            "word that is also a color",
+            "word that is also a verb",
+            "word that is also a person's name",
         } <= names
+
+    def test_most_categories_draw_on_more_than_one_lexical_domain(self, document):
+        """The point of the overlay is a group the taxonomy cannot make.
+
+        A category whose members all come from one branch of WordNet is a
+        visible group wearing a second name. Eleven of fifteen here cross two
+        or more of animal, plant, tool, vehicle and instrument; the four that
+        do not (wheels, floats, names, blown) are kept because their word play
+        carries them.
+        """
+        single_domain = {
+            "thing with wheels",
+            "thing that floats",
+            "word that is also a person's name",
+            "thing that is blown",
+        }
+        names = {c["name"] for c in document["categories"]}
+        assert len(names - single_domain) >= 11
 
     def test_it_declares_no_definitions(self, document):
         """Definitions belong to the lexical import.
@@ -204,7 +228,7 @@ class TestWhatItImports:
             assert repo.by_status(ReviewStatus.PENDING_REVIEW) == []
 
     def test_the_overlay_is_immediately_usable(self, imported):
-        color = imported.categories.by_name("color")[0]
+        color = imported.categories.by_name("word that is also a color")[0]
         members = [
             r
             for r in imported.relationships.by_object(color.id, MEMBERSHIP_PREDICATE)
@@ -264,3 +288,75 @@ class TestItIsTheProposersInputFormat:
 
         reviews = imported.attach(ReviewRepository)
         assert module.propose(imported, reviews) == []
+
+
+#: The five real exports the runbook produces. Named rather than globbed,
+#: because ``wordnet-mini.lexicon.json`` is an 8 synset test fixture and a glob
+#: would quietly run these tests against it and fail for the wrong reason.
+LEXICON_ROOTS = ("animal", "plant", "tool", "vehicle", "instrument")
+LEXICONS = [
+    SEED.parent / f"wordnet-{root}.lexicon.json" for root in LEXICON_ROOTS
+]
+
+
+@pytest.fixture(scope="module")
+def lexicon_senses() -> dict[str, str]:
+    """Every lemma the five real exports supply, with the gloss it would get.
+
+    Read from the files rather than imported. A full import of 6,800 synsets
+    takes 105 seconds, which is not a price worth paying on every run to
+    re-prove a property that the files already settle: a lemma present as a
+    sense becomes an entity with that synset's definition and that synset's
+    category, and the import path for exactly that is already covered by
+    ``TestWhatItImports`` and by the content service tests.
+    """
+    absent = [path.name for path in LEXICONS if not path.exists()]
+    if absent:
+        pytest.skip(f"lexical exports not committed: {', '.join(absent)}")
+
+    senses: dict[str, str] = {}
+    for path in LEXICONS:
+        document = json.loads(path.read_text(encoding="utf-8"))
+        glosses = {s["id"]: s.get("definition", "") for s in document["synsets"]}
+        for sense in document["senses"]:
+            senses.setdefault(
+                sense["lemma"], sense.get("definition") or glosses.get(sense["synset"], "")
+            )
+    return senses
+
+
+class TestTheSeedMeetsTheLexicon:
+    """The property the whole re-authoring was for.
+
+    A member the lexicon does not supply becomes an entity with no definition
+    and no taxonomic parent, so it can only ever be a hidden group member. A
+    member the lexicon does supply can sit in a visible group and be regrouped
+    by the second axis, which is the mechanic the engine exists for. The first
+    seed managed this for 10 of its 144 words, because it was written before
+    the lexicon existed. Every member of this one was chosen from the lexicon.
+    """
+
+    def test_every_member_is_supplied_by_the_lexicon(self, document, lexicon_senses):
+        absent = [
+            entity["name"]
+            for entity in document["entities"]
+            if entity["name"] not in lexicon_senses
+        ]
+        assert absent == []
+
+    def test_every_member_gets_a_definition(self, document, lexicon_senses):
+        """Which is what the embedding is computed over."""
+        for entity in document["entities"]:
+            assert lexicon_senses[entity["name"]].strip()
+
+    def test_the_members_are_single_words(self, document):
+        """Multiword members would be rendered on a tile and read as two."""
+        for entity in document["entities"]:
+            assert " " not in entity["name"]
+            assert "-" not in entity["name"]
+
+    def test_no_member_is_a_lemma_the_lexicon_only_has_as_a_phrase(
+        self, document, lexicon_senses
+    ):
+        for entity in document["entities"]:
+            assert lexicon_senses[entity["name"]] is not None
