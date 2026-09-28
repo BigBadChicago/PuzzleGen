@@ -414,28 +414,33 @@ def main(argv: list[str] | None = None) -> int:
 
     now = dt.datetime.now(dt.timezone.utc)
     repos = GraphRepositories(SqliteDocumentStore(args.db))
-    reviews = repos.attach(ReviewRepository)
+    try:
+        reviews = repos.attach(ReviewRepository)
 
-    parameters = {
-        "min_similarity": args.min_similarity,
-        "min_members": args.min_members,
-        "min_confidence": args.min_confidence,
-        "pool_limit": args.pool_limit,
-        "include_rejected": args.include_rejected,
-    }
-    candidates = propose(
-        repos,
-        reviews,
-        min_similarity=args.min_similarity,
-        min_members=args.min_members,
-        min_confidence=args.min_confidence,
-        pool_limit=args.pool_limit,
-        include_rejected=args.include_rejected,
-    )
+        parameters = {
+            "min_similarity": args.min_similarity,
+            "min_members": args.min_members,
+            "min_confidence": args.min_confidence,
+            "pool_limit": args.pool_limit,
+            "include_rejected": args.include_rejected,
+        }
+        candidates = propose(
+            repos,
+            reviews,
+            min_similarity=args.min_similarity,
+            min_members=args.min_members,
+            min_confidence=args.min_confidence,
+            pool_limit=args.pool_limit,
+            include_rejected=args.include_rejected,
+        )
 
-    written = 0
-    if not args.dry_run:
-        written = write_candidates(repos, candidates, batch=args.batch, now=now)
+        written = 0
+        if not args.dry_run:
+            written = write_candidates(repos, candidates, batch=args.batch, now=now)
+    finally:
+        # The sqlite connection outlives the command otherwise, and Python 3.13
+        # and later report it as a ResourceWarning at collection time.
+        repos.close()
 
     if args.manifest is not None:
         document = manifest_document(

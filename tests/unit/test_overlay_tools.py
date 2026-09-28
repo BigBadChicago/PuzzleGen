@@ -6,6 +6,7 @@ package and deliberately is not one: nothing in the engine may import it.
 
 from __future__ import annotations
 
+import contextlib
 import datetime as dt
 import importlib.util
 import json
@@ -48,6 +49,21 @@ def load_tool(name: str):
 
 propose_overlay = load_tool("propose_overlay")
 review_tool = load_tool("review")
+
+@contextlib.contextmanager
+def opened(path):
+    """A store over ``path``, closed on exit.
+
+    Python 3.13 and later warn about an sqlite connection collected unclosed,
+    and the repository turns warnings into errors, so a leaked connection fails
+    whichever unrelated test the collector happens to interrupt.
+    """
+    repos = GraphRepositories(SqliteDocumentStore(path))
+    try:
+        yield repos
+    finally:
+        repos.close()
+
 
 MODEL = ("test-model", "v1")
 
@@ -428,30 +444,30 @@ class TestManifest:
 def db(tmp_path, curated_source) -> Path:
     """A real sqlite file, seeded the way the world fixture seeds memory."""
     path = tmp_path / "graph.sqlite"
-    repos = GraphRepositories(SqliteDocumentStore(path))
-    repos.sources.put(curated_source)
-    colour = overlay_category("colour", curated_source)
-    repos.categories.put(colour)
-    for index, name in enumerate(("crimson", "azure", "amber")):
-        entity = defined_entity(name, curated_source, definition=f"a {name} colour")
-        repos.entities.put(entity)
-        repos.embeddings.put(embed(entity.id, (1.0, 0.1 * index, 0.0)))
-        repos.relationships.put(membership(entity.id, colour.id, curated_source))
-    salmon = defined_entity(
-        "salmon", curated_source, definition="a fish, and a pale pinkish colour"
-    )
-    repos.entities.put(salmon)
-    repos.embeddings.put(embed(salmon.id, (0.2, 0.1, 0.9)))
-    return path
+    with opened(path) as repos:
+        repos.sources.put(curated_source)
+        colour = overlay_category("colour", curated_source)
+        repos.categories.put(colour)
+        for index, name in enumerate(("crimson", "azure", "amber")):
+            entity = defined_entity(name, curated_source, definition=f"a {name} colour")
+            repos.entities.put(entity)
+            repos.embeddings.put(embed(entity.id, (1.0, 0.1 * index, 0.0)))
+            repos.relationships.put(membership(entity.id, colour.id, curated_source))
+        salmon = defined_entity(
+            "salmon", curated_source, definition="a fish, and a pale pinkish colour"
+        )
+        repos.entities.put(salmon)
+        repos.embeddings.put(embed(salmon.id, (0.2, 0.1, 0.9)))
+        return path
 
 
 def salmon_ref(db: Path) -> str:
-    repos = GraphRepositories(SqliteDocumentStore(db))
-    salmon = repos.entities.by_name("salmon")[0]
-    colour = repos.categories.by_name("colour")[0]
-    return ids.for_relationship(
-        salmon.id, propose_overlay.MEMBERSHIP_PREDICATE, colour.id
-    )
+    with opened(db) as repos:
+        salmon = repos.entities.by_name("salmon")[0]
+        colour = repos.categories.by_name("colour")[0]
+        return ids.for_relationship(
+            salmon.id, propose_overlay.MEMBERSHIP_PREDICATE, colour.id
+        )
 
 
 class TestProposerCommandLine:
@@ -462,9 +478,9 @@ class TestProposerCommandLine:
         )
         assert code == 0
         assert manifest.exists()
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        assert repos.relationships.get(salmon_ref(db)) is not None
-        assert "candidates" in capsys.readouterr().out
+        with opened(db) as repos:
+            assert repos.relationships.get(salmon_ref(db)) is not None
+            assert "candidates" in capsys.readouterr().out
 
     def test_a_dry_run_writes_the_manifest_and_nothing_else(self, db, tmp_path):
         manifest = tmp_path / "b1.json"
@@ -480,8 +496,8 @@ class TestProposerCommandLine:
             ]
         )
         assert json.loads(manifest.read_text())["candidates"]
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        assert repos.relationships.get(salmon_ref(db)) is None
+        with opened(db) as repos:
+            assert repos.relationships.get(salmon_ref(db)) is None
 
 
 class TestReviewCommandLine:
@@ -557,8 +573,8 @@ class TestReviewCommandLine:
         review_tool.main(
             ["--db", str(db), "--threshold", "1", *self.accept_args(db, ref)[2:]]
         )
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        assert repos.relationships.require(ref).status is ReviewStatus.APPROVED
+        with opened(db) as repos:
+            assert repos.relationships.require(ref).status is ReviewStatus.APPROVED
 
     def test_the_batch_can_come_from_the_manifest(self, db, tmp_path, capsys):
         ref = self.seed_candidate(db, tmp_path)
@@ -679,10 +695,10 @@ class TestToolsCannotPromote:
                     f"b{day}",
                 ]
             )
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        stored = repos.relationships.require(ref)
-        assert stored.status is ReviewStatus.PENDING_REVIEW
-        assert not stored.is_usable()
+        with opened(db) as repos:
+            stored = repos.relationships.require(ref)
+            assert stored.status is ReviewStatus.PENDING_REVIEW
+            assert not stored.is_usable()
 
     def test_repeated_accepts_in_one_day_never_cross_the_threshold(
         self, db, tmp_path
@@ -706,5 +722,5 @@ class TestToolsCannotPromote:
                     f"batch-{index}",
                 ]
             )
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        assert repos.relationships.require(ref).status is ReviewStatus.PENDING_REVIEW
+        with opened(db) as repos:
+            assert repos.relationships.require(ref).status is ReviewStatus.PENDING_REVIEW

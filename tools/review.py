@@ -22,10 +22,12 @@ row.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import datetime as dt
 import json
 import os
 import sys
+from collections.abc import Iterator
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -49,11 +51,27 @@ class SystemClock:
         return dt.datetime.now(dt.timezone.utc)
 
 
-def open_service(db: Path, *, threshold: int = ACCEPT_THRESHOLD) -> ReviewService:
+@contextlib.contextmanager
+def open_service(
+    db: Path, *, threshold: int = ACCEPT_THRESHOLD
+) -> Iterator[ReviewService]:
+    """A service over the store at ``db``, closed when the command ends.
+
+    A context manager because the store holds an open sqlite connection.
+    Python 3.13 and later warn when one is garbage collected unclosed, and the
+    warning surfaces in whichever unrelated test the collector happens to
+    interrupt, which is much harder to trace than the leak itself.
+    """
     repos = GraphRepositories(SqliteDocumentStore(db))
-    return ReviewService(
-        repos, repos.attach(ReviewRepository), threshold=threshold, clock=SystemClock()
-    )
+    try:
+        yield ReviewService(
+            repos,
+            repos.attach(ReviewRepository),
+            threshold=threshold,
+            clock=SystemClock(),
+        )
+    finally:
+        repos.close()
 
 
 def load_manifest(path: Path | None) -> dict:
@@ -104,33 +122,34 @@ def describe(service: ReviewService, subject_ref: str, evidence: dict) -> str:
 
 
 def cmd_queue(args: argparse.Namespace) -> int:
-    service = open_service(args.db, threshold=args.threshold)
     evidence = load_manifest(args.manifest)
-    refs = service.queue(args.limit)
-    if not refs:
-        print("queue is empty")
-        return 0
-    for ref in refs:
-        print(describe(service, ref, evidence))
-        print()
-    print(f"{len(refs)} open items")
+    with open_service(args.db, threshold=args.threshold) as service:
+        refs = service.queue(args.limit)
+        if not refs:
+            print("queue is empty")
+            return 0
+        for ref in refs:
+            print(describe(service, ref, evidence))
+            print()
+        print(f"{len(refs)} open items")
     return 0
 
 
 def cmd_show(args: argparse.Namespace) -> int:
-    service = open_service(args.db, threshold=args.threshold)
-    print(describe(service, args.subject_ref, load_manifest(args.manifest)))
+    evidence = load_manifest(args.manifest)
+    with open_service(args.db, threshold=args.threshold) as service:
+        print(describe(service, args.subject_ref, evidence))
     return 0
 
 
 def cmd_history(args: argparse.Namespace) -> int:
-    service = open_service(args.db, threshold=args.threshold)
-    decisions = service.ledger(args.subject_ref)
+    with open_service(args.db, threshold=args.threshold) as service:
+        decisions = service.ledger(args.subject_ref)
     if not decisions:
         print("no decisions recorded")
         return 0
     for decision in decisions:
-        note = f" — {decision.note}" if decision.note else ""
+        note = f" | {decision.note}" if decision.note else ""
         print(
             f"{decision.at.isoformat()}  {decision.decision:<6}  "
             f"{decision.reviewer:<20} {decision.proposal_batch}{note}"
@@ -168,30 +187,30 @@ def _decide(args: argparse.Namespace, decision: ReviewDecisionKind) -> int:
         print("a proposal batch is required: pass --batch", file=sys.stderr)
         return 2
 
-    service = open_service(args.db, threshold=args.threshold)
     failures = 0
-    for subject_ref in args.subject_refs:
-        credited_before = service.outcome_for(subject_ref).credited_accepts
-        try:
-            ids.require(subject_ref, ids.kind_of(subject_ref))
-            outcome = service.record(
-                subject_ref,
-                reviewer=reviewer,
-                decision=decision,
-                proposal_batch=batch,
-                note=args.note,
-            )
-        except ConflictError:
-            print(
-                f"{subject_ref}: already decided by {reviewer} in batch {batch}",
-                file=sys.stderr,
-            )
-            failures += 1
-        except (ContentError, ValueError) as error:
-            print(f"{subject_ref}: {error}", file=sys.stderr)
-            failures += 1
-        else:
-            _report(outcome, credited_before=credited_before)
+    with open_service(args.db, threshold=args.threshold) as service:
+        for subject_ref in args.subject_refs:
+            credited_before = service.outcome_for(subject_ref).credited_accepts
+            try:
+                ids.require(subject_ref, ids.kind_of(subject_ref))
+                outcome = service.record(
+                    subject_ref,
+                    reviewer=reviewer,
+                    decision=decision,
+                    proposal_batch=batch,
+                    note=args.note,
+                )
+            except ConflictError:
+                print(
+                    f"{subject_ref}: already decided by {reviewer} in batch {batch}",
+                    file=sys.stderr,
+                )
+                failures += 1
+            except (ContentError, ValueError) as error:
+                print(f"{subject_ref}: {error}", file=sys.stderr)
+                failures += 1
+            else:
+                _report(outcome, credited_before=credited_before)
     return 1 if failures else 0
 
 

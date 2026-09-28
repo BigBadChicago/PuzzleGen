@@ -8,6 +8,7 @@ written against.
 
 from __future__ import annotations
 
+import contextlib
 import importlib.util
 import json
 import sys
@@ -31,6 +32,21 @@ def load_tool(name: str):
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
     return module
+
+
+@contextlib.contextmanager
+def opened(path):
+    """A store over ``path``, closed on exit.
+
+    Python 3.13 and later warn about an sqlite connection collected unclosed,
+    and the repository turns warnings into errors, so a leaked connection fails
+    whichever unrelated test the collector happens to interrupt.
+    """
+    repos = GraphRepositories(SqliteDocumentStore(path))
+    try:
+        yield repos
+    finally:
+        repos.close()
 
 
 collisions = load_tool("report_lemma_collisions")
@@ -359,10 +375,10 @@ class TestBuildCommandLine:
         out = capsys.readouterr().out
         assert "snapshot" in out and "2026.09.1" in out
 
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        meta = repos.snapshots.by_label("2026.09.1")
-        assert meta is not None and meta.sealed
-        assert meta.content_hash
+        with opened(db) as repos:
+            meta = repos.snapshots.by_label("2026.09.1")
+            assert meta is not None and meta.sealed
+            assert meta.content_hash
 
     def test_a_full_build_activates_the_overlay(self, tmp_path):
         db = tmp_path / "graph.sqlite"
@@ -377,10 +393,10 @@ class TestBuildCommandLine:
                 "--dev-embeddings",
             ]
         )
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        overlay = repos.categories.live(build_snapshot.OVERLAY_TAXONOMY)
-        assert len(overlay) == 15
-        assert all(c.status is ReviewStatus.ACTIVE for c in overlay)
+        with opened(db) as repos:
+            overlay = repos.categories.live(build_snapshot.OVERLAY_TAXONOMY)
+            assert len(overlay) == 15
+            assert all(c.status is ReviewStatus.ACTIVE for c in overlay)
 
     def test_a_dev_embedding_build_warns_that_it_is_not_publishable(
         self, tmp_path, capsys
@@ -412,8 +428,8 @@ class TestBuildCommandLine:
                 *extra,
             ]
         )
-        repos = GraphRepositories(SqliteDocumentStore(db))
-        return repos.snapshots.by_label("2026.09.1").content_hash
+        with opened(db) as repos:
+            return repos.snapshots.by_label("2026.09.1").content_hash
 
     def test_two_builds_at_a_pinned_time_agree_on_the_content_hash(self, tmp_path):
         """The property the whole snapshot design exists for."""

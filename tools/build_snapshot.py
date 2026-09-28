@@ -207,14 +207,17 @@ def main(argv: list[str] | None = None) -> int:
     else:
         embeddings = None
 
-    builder = SnapshotBuilder(GraphRepositories(SqliteDocumentStore(args.db)), now=now)
-    meta, report = builder.build(
-        args.label,
-        providers(args.lexicon, args.overlay, now),
-        frequency=frequency,
-        embeddings=embeddings,
-        policy=ActivationPolicy(minimum_confidence=args.minimum_confidence),
-    )
+    repos = GraphRepositories(SqliteDocumentStore(args.db))
+    try:
+        meta, report = SnapshotBuilder(repos, now=now).build(
+            args.label,
+            providers(args.lexicon, args.overlay, now),
+            frequency=frequency,
+            embeddings=embeddings,
+            policy=ActivationPolicy(minimum_confidence=args.minimum_confidence),
+        )
+    finally:
+        repos.close()
     print(render(report, meta))
     return 0
 
