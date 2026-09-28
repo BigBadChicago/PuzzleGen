@@ -32,6 +32,7 @@ FORBIDDEN_FOR_GAMES = {
     "puzzlegen.content.snapshots",
     "puzzlegen.content.normalizer",
     "puzzlegen.content.policy",
+    "puzzlegen.content.review",
     "puzzlegen.ops",
     "sqlite3",
     "requests",
@@ -577,3 +578,240 @@ class TestSessionCheckerItself:
         assert is_forbidden(
             next(iter(modules)), {"puzzlegen.engine.session_storage"}
         )
+
+
+# -- review authority --------------------------------------------------------
+#
+# Two gates protect published content: repeated acceptance, and explicit
+# activation. They only count as two if two different modules own them, so the
+# rules below are about which file is allowed to write which status.
+
+TOOLS = ROOT / "tools"
+
+#: Statuses no module may assign except the one that owns the gate.
+GUARDED_STATUS = {"APPROVED", "ACTIVE"}
+
+#: The owner of each gate, by path relative to the package.
+STATUS_OWNER = {
+    "APPROVED": pathlib.Path("content/review.py"),
+    "ACTIVE": pathlib.Path("content/snapshots.py"),
+}
+
+
+def _guarded_status_attribute(node: ast.AST) -> str | None:
+    """``ReviewStatus.APPROVED`` or ``ReviewStatus.ACTIVE``, exactly.
+
+    Exactly, and not wrapped in anything: ``str(ReviewStatus.ACTIVE)`` inside a
+    query filter is a read, and flagging reads would make the rule so noisy it
+    would be suppressed rather than obeyed.
+    """
+    if (
+        isinstance(node, ast.Attribute)
+        and isinstance(node.value, ast.Name)
+        and node.value.id == "ReviewStatus"
+        and node.attr in GUARDED_STATUS
+    ):
+        return node.attr
+    return None
+
+
+def _targets_status(target: ast.AST) -> bool:
+    if isinstance(target, ast.Name):
+        return target.id == "status"
+    if isinstance(target, ast.Attribute):
+        return target.attr == "status"
+    if isinstance(target, ast.Subscript):
+        return isinstance(target.slice, ast.Constant) and target.slice.value == "status"
+    return False
+
+
+def status_writes(path: pathlib.Path) -> set[str]:
+    """Every guarded status this file assigns to a status field.
+
+    Three forms are writes: a ``status=`` keyword argument, a ``"status"`` key
+    in a dict literal (which is how ``model_copy(update=...)`` writes one), and
+    an assignment whose target is named ``status``. Everything else is a
+    comparison, a set membership test or an ordering table.
+    """
+    tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+    found: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.keyword) and node.arg == "status":
+            name = _guarded_status_attribute(node.value)
+            if name:
+                found.add(name)
+        elif isinstance(node, ast.Dict):
+            for key, value in zip(node.keys, node.values):
+                if isinstance(key, ast.Constant) and key.value == "status":
+                    name = _guarded_status_attribute(value)
+                    if name:
+                        found.add(name)
+        elif isinstance(node, ast.Assign):
+            if any(_targets_status(t) for t in node.targets):
+                name = _guarded_status_attribute(node.value)
+                if name:
+                    found.add(name)
+        elif isinstance(node, ast.AnnAssign) and node.value is not None:
+            if _targets_status(node.target):
+                name = _guarded_status_attribute(node.value)
+                if name:
+                    found.add(name)
+    return found
+
+
+class TestReviewAuthority:
+    """Who may write APPROVED, who may write ACTIVE, and who may write neither."""
+
+    def test_only_the_review_service_writes_approved(self):
+        offenders = {}
+        for path in python_files(PACKAGE):
+            relative = path.relative_to(PACKAGE)
+            if relative == STATUS_OWNER["APPROVED"]:
+                continue
+            if "APPROVED" in status_writes(path):
+                offenders[str(relative)] = "APPROVED"
+        assert not offenders, f"APPROVED assigned outside the review service: {offenders}"
+
+    def test_only_the_snapshot_builder_writes_active(self):
+        offenders = {}
+        for path in python_files(PACKAGE):
+            relative = path.relative_to(PACKAGE)
+            if relative == STATUS_OWNER["ACTIVE"]:
+                continue
+            if "ACTIVE" in status_writes(path):
+                offenders[str(relative)] = "ACTIVE"
+        assert not offenders, f"ACTIVE assigned outside SnapshotBuilder: {offenders}"
+
+    def test_the_review_service_never_writes_active(self):
+        """Passing review makes a record eligible, not usable. The whole point
+        of two gates is that the first cannot reach through the second."""
+        assert "ACTIVE" not in status_writes(PACKAGE / "content" / "review.py")
+
+    def test_the_snapshot_builder_never_writes_approved(self):
+        assert "APPROVED" not in status_writes(PACKAGE / "content" / "snapshots.py")
+
+    def test_no_tool_writes_either_status(self):
+        """A proposer writes JUDGED candidates and nothing else.
+
+        This is the rule that makes a permissive proposer safe: it may suggest
+        as freely as it likes because nothing it writes can reach a puzzle on
+        its own.
+        """
+        offenders = {}
+        for path in python_files(TOOLS):
+            written = status_writes(path)
+            if written:
+                offenders[path.name] = sorted(written)
+        assert not offenders, f"tools assign a guarded status: {offenders}"
+
+    def test_the_owners_actually_write_what_they_own(self):
+        """A rule that no file writes APPROVED would pass trivially if nothing
+        wrote it at all. These two assertions are what make the two above
+        mean 'exactly one writer' rather than 'at most one'."""
+        assert "APPROVED" in status_writes(PACKAGE / "content" / "review.py")
+        assert "ACTIVE" in status_writes(PACKAGE / "content" / "snapshots.py")
+
+    def test_games_cannot_import_the_review_module(self):
+        forbidden = {"puzzlegen.content.review"}
+        for path in python_files(PACKAGE / "games"):
+            modules = imported_modules(path)
+            caught = [m for m in modules if is_forbidden(m, forbidden)]
+            assert not caught, f"{path.relative_to(PACKAGE)} imports {caught}"
+        assert "puzzlegen.content.review" in FORBIDDEN_FOR_GAMES
+
+    def test_only_the_review_tool_drives_the_review_service(self):
+        """Reading the ledger is fine; deciding is not.
+
+        The proposer legitimately reads the ledger, to avoid offering a
+        curator the same rejected suggestion every week. What it must not do is
+        hold the service that records decisions, because a proposer that can
+        record an accept is a proposer that can approve its own work.
+        """
+        offenders = []
+        for path in python_files(TOOLS):
+            if path.name == "review.py":
+                continue
+            tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Name) and node.id == "ReviewService":
+                    offenders.append(path.name)
+                elif isinstance(node, ast.Attribute) and node.attr == "ReviewService":
+                    offenders.append(path.name)
+                elif isinstance(node, ast.ImportFrom):
+                    if any(alias.name == "ReviewService" for alias in node.names):
+                        offenders.append(path.name)
+        assert not offenders, f"{sorted(set(offenders))} hold the review service"
+
+    def test_the_review_module_holds_no_store(self):
+        """The ledger reaches storage through ``GraphRepositories.attach``.
+
+        Importing a store directly would give the content layer the raw
+        backend that phase 1 spent a module boundary keeping away from it.
+        """
+        modules = imported_modules(PACKAGE / "content" / "review.py")
+        for banned in (
+            "puzzlegen.graph.store",
+            "puzzlegen.graph.memory_store",
+            "puzzlegen.graph.sqlite_store",
+            "sqlite3",
+        ):
+            assert banned not in modules, f"review.py imports {banned}"
+
+
+class TestReviewCheckerItself:
+    """The review rules above, proved non-vacuous."""
+
+    def test_a_planted_keyword_write_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_keyword.py"
+        planted.write_text(
+            "record = Thing(status=ReviewStatus.APPROVED)\n", encoding="utf-8"
+        )
+        assert status_writes(planted) == {"APPROVED"}
+
+    def test_a_planted_model_copy_write_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_copy.py"
+        planted.write_text(
+            'x = r.model_copy(update={"status": ReviewStatus.ACTIVE})\n',
+            encoding="utf-8",
+        )
+        assert status_writes(planted) == {"ACTIVE"}
+
+    def test_a_planted_attribute_assignment_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_assign.py"
+        planted.write_text(
+            "draft.status = ReviewStatus.APPROVED\n", encoding="utf-8"
+        )
+        assert status_writes(planted) == {"APPROVED"}
+
+    def test_a_planted_subscript_assignment_would_be_caught(self, tmp_path):
+        planted = tmp_path / "rogue_subscript.py"
+        planted.write_text(
+            'updates["status"] = ReviewStatus.ACTIVE\n', encoding="utf-8"
+        )
+        assert status_writes(planted) == {"ACTIVE"}
+
+    def test_a_read_is_not_a_write(self, tmp_path):
+        """The forms the package already uses, none of which is a write."""
+        planted = tmp_path / "reads.py"
+        planted.write_text(
+            "\n".join(
+                [
+                    "rows = repo.find(status=str(ReviewStatus.ACTIVE))",
+                    'filters["status"] = str(ReviewStatus.ACTIVE)',
+                    "USABLE = frozenset({ReviewStatus.ACTIVE})",
+                    "order = [ReviewStatus.APPROVED, ReviewStatus.ACTIVE]",
+                    "if record.status is ReviewStatus.ACTIVE:",
+                    "    pass",
+                ]
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        assert status_writes(planted) == set()
+
+    def test_an_unguarded_status_is_not_flagged(self, tmp_path):
+        planted = tmp_path / "pending.py"
+        planted.write_text(
+            "record = Thing(status=ReviewStatus.PENDING_REVIEW)\n", encoding="utf-8"
+        )
+        assert status_writes(planted) == set()

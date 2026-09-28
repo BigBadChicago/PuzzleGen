@@ -37,6 +37,7 @@ from .models import (
 from .store import DocumentStore, Query
 
 T = TypeVar("T", bound=BaseModel)
+R = TypeVar("R", bound="DocumentRepository[Any]")
 
 
 class DocumentRepository(Generic[T]):
@@ -594,6 +595,18 @@ class GraphRepositories:
         self.embeddings = EmbeddingRepository(store)
         self.snapshots = SnapshotRepository(store)
         self.dependencies = DependencyRepository(store)
+
+    def attach(self, repository_cls: type[R]) -> R:
+        """Bind a repository owned by a higher layer to this store.
+
+        The content layer owns the review ledger, but the rule that nothing
+        above this module holds a :class:`DocumentStore` still has to hold, or
+        the content service acquires a route to raw SQL. This is the single
+        sanctioned way across: the caller names a class, the store stays
+        private, and the dependency direction is unchanged because the graph
+        layer never learns which class it was handed.
+        """
+        return repository_cls(self._store)
 
     def transaction(self):
         return self._store.transaction()

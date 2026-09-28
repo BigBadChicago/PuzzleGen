@@ -56,6 +56,11 @@ class ActivationPolicy:
     #: Providers whose content always waits for review regardless of class.
     manual_review_sources: frozenset[str] = frozenset()
     require_frequency_for_entities: bool = False
+    #: Whether a record the review ledger has already carried to APPROVED may
+    #: activate despite its provenance class. Without this the two gates would
+    #: not be two gates: JUDGED content could gather any number of credited
+    #: accepts and still never reach a puzzle.
+    admit_approved: bool = True
 
     def permits(self, record) -> tuple[bool, str]:
         if not record.provenance:
@@ -65,13 +70,20 @@ class ActivationPolicy:
                 f"confidence {record.confidence:.2f} below "
                 f"{self.minimum_confidence:.2f}"
             )
+        sources = {p.source_id for p in record.provenance}
+        if sources & self.manual_review_sources:
+            return False, "source requires manual review"
+        if record.status is ReviewStatus.APPROVED and self.admit_approved:
+            # The class check asks whether a human has judged the
+            # interpretation. Ten credited accepts are that human, recorded in
+            # a ledger, so asking again here would be asking twice and
+            # answering no. The confidence floor and the manual-review source
+            # list above still apply.
+            return True, "approved by review"
         classes = record.provenance_classes()
         blocked = classes - self.auto_approve_classes
         if blocked:
             return False, f"provenance class requires review: {sorted(blocked)}"
-        sources = {p.source_id for p in record.provenance}
-        if sources & self.manual_review_sources:
-            return False, "source requires manual review"
         return True, "auto-approved"
 
 
