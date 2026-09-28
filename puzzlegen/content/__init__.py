@@ -22,6 +22,17 @@ from .query import (
     RelationshipView,
     resolve_queries,
 )
+from .review import (
+    ACCEPT_THRESHOLD,
+    DECIDABLE_STATUS,
+    ReviewDecision,
+    ReviewDecisionKind,
+    ReviewOutcome,
+    ReviewRepository,
+    ReviewService,
+    credited_accepts,
+    derive_status,
+)
 from .service import ContentService
 from .similarity import (
     DEFAULT_STRATEGY,
@@ -44,6 +55,7 @@ from .snapshots import (
 )
 
 __all__ = [
+    "ACCEPT_THRESHOLD",
     "ActivationPolicy",
     "ContentPolicy",
     "ContentPort",
@@ -51,6 +63,7 @@ __all__ = [
     "ContentRequirement",
     "ContentResult",
     "ContentService",
+    "DECIDABLE_STATUS",
     "DEFAULT_PLATFORM_POLICY",
     "DEFAULT_STRATEGY",
     "EligibilityVerdict",
@@ -72,6 +85,11 @@ __all__ = [
     "REVIEW_INTERVAL_DAYS",
     "RelationshipView",
     "ResnikSimilarity",
+    "ReviewDecision",
+    "ReviewDecisionKind",
+    "ReviewOutcome",
+    "ReviewRepository",
+    "ReviewService",
     "SimilarityStrategy",
     "SnapshotBuilder",
     "TaxonomyIndex",
@@ -79,6 +97,8 @@ __all__ = [
     "build_strategy",
     "centroid_distances",
     "compute_content_hash",
+    "credited_accepts",
+    "derive_status",
     "evaluate",
     "group_similarity",
     "merge_governed",
