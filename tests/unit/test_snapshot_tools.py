@@ -687,3 +687,238 @@ class TestMergedCategories:
         out = capsys.readouterr().out
         assert "merged categories" in out
         assert "monoreme" in out
+
+
+class TestStaleInputs:
+    """A frequency or embedding file older than a lexicon it was derived from.
+
+    Re-export a lexicon and forget the other two commands, and the old build
+    imported everything, ran for minutes, and died at its last step with a
+    KeyError naming five plant names. Nothing in that message says which
+    command to re-run.
+    """
+
+    def pair(self, tmp_path, *, derived_first: bool) -> tuple[Path, Path]:
+        import time
+
+        lexicon = tmp_path / "a.lexicon.json"
+        derived = tmp_path / "frequency.json"
+        first, second = (derived, lexicon) if derived_first else (lexicon, derived)
+        first.write_text("{}", encoding="utf-8")
+        time.sleep(0.01)
+        second.write_text("{}", encoding="utf-8")
+        return lexicon, derived
+
+    def test_a_derived_file_older_than_its_source_is_stale(self, tmp_path):
+        lexicon, derived = self.pair(tmp_path, derived_first=True)
+        assert build_snapshot.stale_inputs([derived], [lexicon]) == [(derived, lexicon)]
+
+    def test_a_derived_file_newer_than_its_source_is_not(self, tmp_path):
+        lexicon, derived = self.pair(tmp_path, derived_first=False)
+        assert build_snapshot.stale_inputs([derived], [lexicon]) == []
+
+    def test_one_stale_source_among_several_is_enough(self, tmp_path):
+        import time
+
+        fresh = tmp_path / "fresh.lexicon.json"
+        fresh.write_text("{}", encoding="utf-8")
+        time.sleep(0.01)
+        derived = tmp_path / "frequency.json"
+        derived.write_text("{}", encoding="utf-8")
+        time.sleep(0.01)
+        stale_source = tmp_path / "stale.lexicon.json"
+        stale_source.write_text("{}", encoding="utf-8")
+        found = build_snapshot.stale_inputs([derived], [fresh, stale_source])
+        assert found == [(derived, stale_source)]
+
+    def test_a_derived_file_that_does_not_exist_is_not_stale(self, tmp_path):
+        lexicon = tmp_path / "a.lexicon.json"
+        lexicon.write_text("{}", encoding="utf-8")
+        assert build_snapshot.stale_inputs([tmp_path / "absent.json"], [lexicon]) == []
+
+    def test_the_build_refuses_and_names_the_command_to_run(self, tmp_path, capsys):
+        import time
+
+        frequency = tmp_path / "frequency.json"
+        frequency.write_text("{}", encoding="utf-8")
+        time.sleep(0.01)
+        lexicon = tmp_path / "a.lexicon.json"
+        lexicon.write_text(MINI_LEXICON.read_text(), encoding="utf-8")
+
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(lexicon),
+                "--db",
+                str(tmp_path / "graph.sqlite"),
+                "--label",
+                "stale",
+                "--frequency",
+                str(frequency),
+            ]
+        )
+        assert code == 2
+        err = capsys.readouterr().err
+        assert "is older than" in err
+        assert "--write-inputs" in err
+        assert not (tmp_path / "graph.sqlite").exists()
+
+    def test_ignore_stale_builds_anyway(self, tmp_path, capsys):
+        """An override, because a lexicon touched by a checkout is not a
+        changed lexicon and a person can see that when the tool cannot."""
+        import time
+
+        frequency = tmp_path / "frequency.json"
+        frequency.write_text(
+            json.dumps(
+                {
+                    "name": "wordfreq",
+                    "version": "1",
+                    "retrieved_at": "2026-09-28T12:00:00+00:00",
+                    "lang": "en",
+                    "scores": {},
+                }
+            ),
+            encoding="utf-8",
+        )
+        time.sleep(0.01)
+        lexicon = tmp_path / "a.lexicon.json"
+        lexicon.write_text(MINI_LEXICON.read_text(), encoding="utf-8")
+
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(lexicon),
+                "--db",
+                str(tmp_path / "graph.sqlite"),
+                "--label",
+                "stale",
+                "--frequency",
+                str(frequency),
+                "--dev-embeddings",
+                "--ignore-stale",
+            ]
+        )
+        assert code == 0
+
+    def test_a_fresh_build_is_not_blocked(self, tmp_path):
+        import time
+
+        lexicon = tmp_path / "a.lexicon.json"
+        lexicon.write_text(MINI_LEXICON.read_text(), encoding="utf-8")
+        time.sleep(0.01)
+        frequency = tmp_path / "frequency.json"
+        frequency.write_text(
+            json.dumps(
+                {
+                    "name": "wordfreq",
+                    "version": "1",
+                    "retrieved_at": "2026-09-28T12:00:00+00:00",
+                    "lang": "en",
+                    "scores": {},
+                }
+            ),
+            encoding="utf-8",
+        )
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(lexicon),
+                "--db",
+                str(tmp_path / "graph.sqlite"),
+                "--label",
+                "fresh",
+                "--frequency",
+                str(frequency),
+                "--dev-embeddings",
+            ]
+        )
+        assert code == 0
+
+
+class TestBuildingIntoAPopulatedDatabase:
+    """A build merges into whatever the store already holds.
+
+    This is the failure that cost two round trips. The depth 3 snapshot was
+    still in ``content/graph.sqlite`` when the depth 6 build ran, so for a
+    lemma with several senses the old database's definition won over the one
+    the export files produce. The prepare step computed the texts from the
+    files, the embedding table was keyed on those, and the build died at its
+    last step with a KeyError naming five plant names.
+    """
+
+    def build_once(self, db: Path, label: str = "first", *extra: str) -> int:
+        return build_snapshot.main(
+            [
+                "--lexicon",
+                str(MINI_LEXICON),
+                "--db",
+                str(db),
+                "--label",
+                label,
+                "--now",
+                "2026-09-28T12:00:00+00:00",
+                "--dev-embeddings",
+                *extra,
+            ]
+        )
+
+    def test_a_first_build_into_a_fresh_file_succeeds(self, tmp_path):
+        assert self.build_once(tmp_path / "graph.sqlite") == 0
+
+    def test_a_second_build_is_refused(self, tmp_path, capsys):
+        db = tmp_path / "graph.sqlite"
+        assert self.build_once(db) == 0
+        capsys.readouterr()
+        assert self.build_once(db, "second") == 2
+
+    def test_the_refusal_says_what_is_there_and_what_to_do(self, tmp_path, capsys):
+        db = tmp_path / "graph.sqlite"
+        self.build_once(db)
+        capsys.readouterr()
+        self.build_once(db, "second")
+        err = capsys.readouterr().err
+        assert "already holds content" in err
+        assert "entities=" in err
+        assert "--reuse-db" in err
+        assert "Delete the file" in err
+
+    def test_the_refused_build_changes_nothing(self, tmp_path, capsys):
+        db = tmp_path / "graph.sqlite"
+        self.build_once(db)
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        before = repos.entities.count()
+        repos.close()
+
+        self.build_once(db, "second")
+        with opened(db) as repos:
+            assert repos.entities.count() == before
+            assert repos.snapshots.by_label("second") is None
+
+    def test_reuse_db_merges_deliberately(self, tmp_path):
+        db = tmp_path / "graph.sqlite"
+        self.build_once(db)
+        assert self.build_once(db, "second", "--reuse-db") == 0
+        with opened(db) as repos:
+            assert repos.snapshots.by_label("second") is not None
+
+    def test_an_empty_file_is_not_treated_as_populated(self, tmp_path):
+        """Opening a store creates the file and its tables, so existence alone
+        must not count as content."""
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        repos.close()
+        assert db.exists()
+        assert self.build_once(db) == 0
+
+    def test_existing_content_reports_nothing_for_an_empty_store(self, tmp_path):
+        with opened(tmp_path / "graph.sqlite") as repos:
+            assert build_snapshot.existing_content(repos) == {}
+
+    def test_existing_content_counts_each_collection_it_finds(self, tmp_path):
+        db = tmp_path / "graph.sqlite"
+        self.build_once(db)
+        with opened(db) as repos:
+            held = build_snapshot.existing_content(repos)
+        assert set(held) == {"snapshots", "entities", "categories", "relationships"}
+        assert all(count > 0 for count in held.values())

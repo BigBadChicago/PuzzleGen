@@ -149,6 +149,56 @@ def render(report: ImportReport, meta) -> str:
     return "\n".join(lines)
 
 
+def stale_inputs(
+    derived: list[Path], sources: list[Path]
+) -> list[tuple[Path, Path]]:
+    """Derived files older than something they were derived from.
+
+    ``frequency.json`` and ``embeddings.json`` are computed from a term list
+    that is itself computed from the lexicons. Re-export a lexicon and forget
+    the other two, and the build imports everything, runs for minutes, and dies
+    at its last step with a ``KeyError`` naming five plant names, which says
+    nothing about which command to re-run. Modification times are crude but
+    they catch exactly this, which is the mistake people actually make.
+    """
+    stale: list[tuple[Path, Path]] = []
+    for path in derived:
+        if not path.exists():
+            continue
+        for source in sources:
+            if source.exists() and source.stat().st_mtime > path.stat().st_mtime:
+                stale.append((path, source))
+                break
+    return stale
+
+
+def existing_content(repos) -> dict[str, int]:
+    """What a build target already holds.
+
+    A build imports into whatever store it is pointed at, and the merge
+    resolves each shared lemma against the record already there. So building
+    new lexicons into the database from a previous build does not rebuild it:
+    it merges the new content into the old, and for a lemma with several senses
+    the old database's definition can win over the one the export files would
+    have produced. Every text the embedding table was keyed on then misses, and
+    the build dies at its last step naming five plant names.
+
+    Rebuilding into a fresh file is almost always what was meant, so the
+    default is to refuse.
+    """
+    counts: dict[str, int] = {}
+    for name, repo in (
+        ("snapshots", repos.snapshots),
+        ("entities", repos.entities),
+        ("categories", repos.categories),
+        ("relationships", repos.relationships),
+    ):
+        found = repo.count()
+        if found:
+            counts[name] = found
+    return counts
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--lexicon", action="append", required=True, type=Path)
@@ -165,6 +215,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--minimum-confidence", type=float, default=0.75)
     parser.add_argument(
+        "--reuse-db",
+        action="store_true",
+        help="import into a database that already holds content, merging into it",
+    )
+    parser.add_argument(
+        "--ignore-stale",
+        action="store_true",
+        help="build even though a frequency or embedding file predates a lexicon",
+    )
+    parser.add_argument(
         "--now",
         default=None,
         help=(
@@ -179,6 +239,18 @@ def main(argv: list[str] | None = None) -> int:
     missing = [p for p in (*args.lexicon, args.overlay) if not p.exists()]
     if missing:
         print(f"input not found: {missing[0]}", file=sys.stderr)
+        return 2
+
+    derived = [p for p in (args.frequency, args.embeddings) if p is not None]
+    stale = stale_inputs(derived, [*args.lexicon, args.overlay])
+    if stale and not args.ignore_stale:
+        for path, source in stale:
+            print(f"{path} is older than {source}", file=sys.stderr)
+        print(
+            "re-run --write-inputs, then export_frequency.py and "
+            "export_embeddings.py, before building. --ignore-stale overrides.",
+            file=sys.stderr,
+        )
         return 2
 
     if args.write_inputs is not None:
@@ -213,6 +285,18 @@ def main(argv: list[str] | None = None) -> int:
 
     repos = GraphRepositories(SqliteDocumentStore(args.db))
     try:
+        held = existing_content(repos)
+        if held and not args.reuse_db:
+            summary = ", ".join(f"{k}={v}" for k, v in sorted(held.items()))
+            print(f"{args.db} already holds content: {summary}", file=sys.stderr)
+            print(
+                "a build merges into what is there, so an older sense can win "
+                "over the one the export files produce. Delete the file to "
+                "rebuild, or pass --reuse-db to merge deliberately.",
+                file=sys.stderr,
+            )
+            return 2
+
         meta, report = SnapshotBuilder(repos, now=now).build(
             args.label,
             providers(args.lexicon, args.overlay, now),
