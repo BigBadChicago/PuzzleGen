@@ -78,6 +78,25 @@ class ContentQuery:
     #: must also share. This is what makes a deliberate overlap constructible.
     secondary_category: str | None = None
     secondary_predicate: str | None = None
+    #: Require a group to contain members that also belong to some category in
+    #: this taxonomy, whichever one.
+    #:
+    #: The difference between hoping two axes meet and asking for the places
+    #: they already do. An overlay of 144 entities inside a 14,720 entity graph
+    #: is touched by 157 lexical categories out of 6,511, so groups sampled
+    #: from the lexicon almost never contain overlay members: the first real
+    #: day covered its best hidden group one member in five. Naming the
+    #: taxonomy rather than a category keeps the question the game is actually
+    #: asking, which is "words that carry a second meaning", not "words that
+    #: carry this particular one".
+    intersects_taxonomy: str | None = None
+    #: How many of a group's members must carry that second meaning. One by
+    #: default, because requiring all of them is a different and much stronger
+    #: claim: measured on the real snapshot, no lexical category contains even
+    #: three overlay words, so "every member" makes a group impossible while
+    #: "at least one" is exactly what a board needs, since each visible group
+    #: gives up one tile to the hidden group.
+    minimum_intersecting_members: int = 1
 
     group_size: int | None = None
     group_count: int | None = None

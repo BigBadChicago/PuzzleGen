@@ -74,6 +74,15 @@ class RejectionReason(StrEnum):
 
     # Content quality gates
     SEMANTIC_DISTANCE_TOO_HIGH = "SEMANTIC_DISTANCE_TOO_HIGH"
+    #: The members share no category in the queried taxonomy at all.
+    #: Distinct from a distance rejection because the two need opposite
+    #: fixes: one wants a looser threshold, the other wants different
+    #: content, and one code for both sent a reader looking at the wrong
+    #: knob for an afternoon.
+    NO_SHARED_CATEGORY = "NO_SHARED_CATEGORY"
+    #: The entity belongs to no category in a taxonomy the query
+    #: required it to intersect.
+    NOT_IN_REQUIRED_TAXONOMY = "NOT_IN_REQUIRED_TAXONOMY"
     SEMANTIC_DISTANCE_TOO_LOW = "SEMANTIC_DISTANCE_TOO_LOW"
     SEMANTIC_SPREAD_TOO_WIDE = "SEMANTIC_SPREAD_TOO_WIDE"
     EMBEDDING_OUTLIER = "EMBEDDING_OUTLIER"

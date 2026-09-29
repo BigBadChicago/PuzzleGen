@@ -84,6 +84,7 @@ class ContentService:
         self._snapshot = snapshot
         self._now = now or dt.datetime.now(dt.timezone.utc)
         self._taxonomies: dict[str, TaxonomyIndex] = {}
+        self._memberships_cache: dict[str, tuple[str, ...]] | None = None
         self._policy = policy or PolicyService(taxonomy=self.taxonomy())
         if policy is not None and getattr(policy, "_taxonomy", None) is None:
             # A policy built before the index exists still needs subtree
@@ -180,14 +181,33 @@ class ContentService:
     # -- entity assembly --------------------------------------------------
 
     def _membership_ids(self, entity_id: str) -> tuple[str, ...]:
-        edges = self._repos.relationships.by_subject(entity_id, MEMBERSHIP_PREDICATE)
-        return tuple(
-            sorted(
-                edge.object_id
-                for edge in edges
-                if edge.status is ReviewStatus.ACTIVE
-            )
-        )
+        return self._all_memberships().get(entity_id, ())
+
+    def _all_memberships(self) -> dict[str, tuple[str, ...]]:
+        """Every active membership edge, read once.
+
+        One indexed lookup per entity costs about 7 ms, which is nothing until
+        a pool is 14,720 entities and the same query spends 104 seconds asking
+        the same question 14,720 times. One scan of the membership edges
+        answers all of them.
+
+        Cached on the service instance, which is the unit the engine already
+        treats as one query's view of the graph: a service is constructed per
+        request and a snapshot is sealed, so the edges cannot change under a
+        cache that does not outlive the request.
+        """
+        if self._memberships_cache is None:
+            found: dict[str, list[str]] = {}
+            for edge in self._repos.relationships.find(
+                predicate=MEMBERSHIP_PREDICATE
+            ):
+                if edge.status is ReviewStatus.ACTIVE:
+                    found.setdefault(edge.subject_id, []).append(edge.object_id)
+            self._memberships_cache = {
+                entity_id: tuple(sorted(categories))
+                for entity_id, categories in found.items()
+            }
+        return self._memberships_cache
 
     def _facts_of(
         self, entity_id: str, query: ContentQuery, game_id: str | None
@@ -510,7 +530,7 @@ class ContentService:
 
         groups: list[GroupView] = []
         examined = 0
-        for combination in itertools.combinations(pool, size):
+        for combination in self._candidate_groups(pool, memberships, index, size):
             examined += 1
             if examined > MAX_COMBINATIONS_EXAMINED:
                 rejected["COMBINATION_BUDGET_EXHAUSTED"] = 1
@@ -531,6 +551,73 @@ class ContentService:
             satisfied=bool(groups),
         )
 
+    def _candidate_groups(
+        self,
+        pool: Sequence[Entity],
+        memberships: dict[str, tuple[str, ...]],
+        index: TaxonomyIndex,
+        size: int,
+    ):
+        """Combinations that could be a group, category by category.
+
+        Enumerating every combination of the pool and asking each whether its
+        members share a category is the wrong way round. A 144 entity overlay
+        in 15 categories has 480 million combinations of five and 3,780 that
+        share anything, so a budget of 20,000 examines a millionth of the
+        space, finds none of the answers, and reports the emptiness as though
+        it were a property of the content.
+
+        Grouping by category first makes the enumeration proportional to the
+        answers rather than to the pool. The members of a category are the
+        only place a group of that category can come from, so nothing is lost
+        and the wasted work disappears.
+
+        Categories are visited most specific first, because a deep category
+        makes a more particular group than a shallow one and the shallow ones
+        would otherwise fill the limit with vague groups.
+        """
+        by_category: dict[str, list[Entity]] = {}
+        for entity in pool:
+            for category_id in memberships.get(entity.id, ()):
+                if category_id in index:
+                    by_category.setdefault(category_id, []).append(entity)
+
+        ordered = sorted(
+            (cid for cid, members in by_category.items() if len(members) >= size),
+            key=lambda cid: (-index.depth(cid), cid),
+        )
+        # Round robin across categories rather than draining each in turn.
+        # A caller asking for forty groups wants forty different groups: a
+        # category of ten members has 252 combinations of five, so draining it
+        # first returns forty variations on one category, and every four of
+        # them overlap. A game that needs four disjoint groups then has
+        # nothing to work with, which is exactly what happened on the first
+        # real day: 120 combinations offered, 120 refused for overlap.
+        streams = {
+            category_id: itertools.combinations(
+                sorted(by_category[category_id], key=lambda e: e.id), size
+            )
+            for category_id in ordered
+        }
+        seen: set[frozenset[str]] = set()
+        while streams:
+            for category_id in list(ordered):
+                stream = streams.get(category_id)
+                if stream is None:
+                    continue
+                combination = next(stream, None)
+                if combination is None:
+                    del streams[category_id]
+                    continue
+                key = frozenset(e.id for e in combination)
+                if key in seen:
+                    # The same members can share several categories. Assessing
+                    # them once is enough: the assessor picks the most
+                    # specific shared category itself.
+                    continue
+                seen.add(key)
+                yield combination
+
     def _assess_group(
         self,
         members: Sequence[Entity],
@@ -547,12 +634,23 @@ class ContentService:
 
         member_ids = [e.id for e in members]
 
+        if query.intersects_taxonomy is not None:
+            other = self.taxonomy(query.intersects_taxonomy)
+            carrying = sum(
+                1
+                for eid in member_ids
+                if any(cid in other for cid in memberships[eid])
+            )
+            if carrying < query.minimum_intersecting_members:
+                refuse(RejectionReason.NOT_IN_REQUIRED_TAXONOMY)
+                return None
+
         shared = set(memberships[member_ids[0]])
         for entity_id in member_ids[1:]:
             shared &= set(memberships[entity_id])
         shared &= set(index._by_id)  # noqa: SLF001
         if not shared:
-            refuse(RejectionReason.SEMANTIC_DISTANCE_TOO_HIGH)
+            refuse(RejectionReason.NO_SHARED_CATEGORY)
             return None
         # The most specific shared category is what the group is "about".
         shared_id = max(sorted(shared), key=lambda cid: index.depth(cid))

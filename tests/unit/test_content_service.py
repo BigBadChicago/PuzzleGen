@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import json
 
 import pytest
 
@@ -21,6 +22,8 @@ from puzzlegen.content.snapshots import (
     compute_content_hash,
     verify_snapshot,
 )
+from puzzlegen.content.query import ContentQuery, Operation
+from puzzlegen.content.service import ContentService
 from puzzlegen.core.errors import ContentError
 from puzzlegen.core.types import (
     FreshnessClass,
@@ -676,3 +679,202 @@ class TestFullBuild:
         )
         with pytest.raises(ConflictError):
             repos.categories.put(orphan)
+
+
+class TestGroupEnumerationScales:
+    """Groups are found category by category, not by sifting the whole pool.
+
+    Measured on the real 14,720 entity snapshot: one overlay query took 215
+    seconds and returned nothing, because 480 million combinations of five
+    contain 3,780 that share a category and a 20,000 budget reaches none of
+    them. After this change the same query examines five combinations.
+    """
+
+    def seeded(
+        self, repos, tmp_path, *, categories: int, per: int
+    ) -> ContentService:
+        """Many small categories in one pool, written through the real import
+        path rather than hand-assembled records."""
+        document = {
+            "curated_schema": 1,
+            "version": "1",
+            "updated": "2026-09-28",
+            "categories": [
+                {"key": f"c{index}", "name": f"cat{index}"}
+                for index in range(categories)
+            ],
+            "entities": [
+                {
+                    "key": f"e{index}_{n}",
+                    "name": f"e{index}_{n}",
+                    "categories": [f"c{index}"],
+                    "confidence": 0.95,
+                }
+                for index in range(categories)
+                for n in range(per)
+            ],
+        }
+        path = tmp_path / "seed.curated.json"
+        path.write_text(json.dumps(document), encoding="utf-8")
+        builder = SnapshotBuilder(repos, now=NOW)
+        builder.import_provider(CuratedJSONProvider(path, now=NOW))
+        builder.activate(ActivationPolicy())
+        return ContentService(repos)
+
+    def test_a_sparse_pool_still_finds_its_groups(self, repos, tmp_path):
+        """The case that returned nothing: many small categories in a big pool."""
+        service = self.seeded(repos, tmp_path, categories=12, per=6)
+        result = service.execute(
+            ContentQuery(operation=Operation.FIND_GROUPS, group_size=5, limit=5)
+        )
+        assert len(result.groups) == 5
+
+    def test_it_examines_far_fewer_combinations_than_the_pool_has(
+        self, repos, tmp_path
+    ):
+        service = self.seeded(repos, tmp_path, categories=12, per=6)
+        result = service.execute(
+            ContentQuery(operation=Operation.FIND_GROUPS, group_size=5, limit=5)
+        )
+        assert result.examined <= 10
+
+    def test_members_of_one_group_share_a_category(self, repos, tmp_path):
+        service = self.seeded(repos, tmp_path, categories=4, per=6)
+        result = service.execute(
+            ContentQuery(operation=Operation.FIND_GROUPS, group_size=5, limit=3)
+        )
+        assert result.groups
+        for group in result.groups:
+            assert group.shared_category_id
+
+    def test_a_category_too_small_to_fill_a_group_is_skipped(self, repos, tmp_path):
+        service = self.seeded(repos, tmp_path, categories=3, per=4)
+        result = service.execute(
+            ContentQuery(operation=Operation.FIND_GROUPS, group_size=5, limit=3)
+        )
+        assert result.groups == ()
+
+    def test_memberships_are_read_once_for_the_whole_pool(self, repos, tmp_path):
+        """One indexed lookup per entity is nothing until the pool is 14,720
+        and the same query asks the same question 14,720 times."""
+        service = self.seeded(repos, tmp_path, categories=4, per=6)
+        first = service._all_memberships()
+        assert first is service._all_memberships()
+        assert len(first) == 24
+
+    def test_a_group_with_no_shared_category_is_named_as_such(self):
+        """Distinct from a distance rejection: the two need opposite fixes."""
+        from puzzlegen.core.errors import RejectionReason
+
+        assert RejectionReason.NO_SHARED_CATEGORY.value == "NO_SHARED_CATEGORY"
+        assert (
+            RejectionReason.NO_SHARED_CATEGORY
+            is not RejectionReason.SEMANTIC_DISTANCE_TOO_HIGH
+        )
+
+
+class TestIntersectingTaxonomies:
+    """Groups required to carry a second meaning.
+
+    Measured on the real snapshot: an overlay of 144 entities inside a 14,720
+    entity graph is touched by 157 lexical categories out of 6,511, so groups
+    sampled from the lexicon almost never contain overlay members. The first
+    real day covered its best hidden group one member in five.
+    """
+
+    def seeded(self, repos, tmp_path) -> ContentService:
+        """Six lexical groups; two of their members also carry an overlay
+        meaning."""
+        lexical = {
+            "curated_schema": 1,
+            "version": "1",
+            "updated": "2026-09-28",
+            "categories": [{"key": f"c{i}", "name": f"cat{i}"} for i in range(3)],
+            "entities": [
+                {
+                    "key": f"e{i}_{n}",
+                    "name": f"e{i}_{n}",
+                    "categories": [f"c{i}"],
+                    "confidence": 0.95,
+                }
+                for i in range(3)
+                for n in range(6)
+            ],
+        }
+        overlay = {
+            "curated_schema": 1,
+            "version": "1",
+            "updated": "2026-09-28",
+            "categories": [{"key": "o0", "name": "second meaning"}],
+            "entities": [
+                {"key": f"e0_{n}", "name": f"e0_{n}", "categories": ["o0"],
+                 "confidence": 0.95}
+                for n in range(2)
+            ],
+        }
+        lex_path = tmp_path / "lex.curated.json"
+        ov_path = tmp_path / "ov.curated.json"
+        lex_path.write_text(json.dumps(lexical), encoding="utf-8")
+        ov_path.write_text(json.dumps(overlay), encoding="utf-8")
+
+        builder = SnapshotBuilder(repos, now=NOW)
+        builder.import_provider(CuratedJSONProvider(lex_path, name="lex", now=NOW))
+        builder.import_provider(
+            CuratedJSONProvider(ov_path, name="ov", now=NOW),
+            taxonomy="overlay",
+            entity_identity="lemma",
+        )
+        builder.activate(ActivationPolicy())
+        return ContentService(repos)
+
+    def query(self, **changes) -> ContentQuery:
+        base = {
+            "operation": Operation.FIND_GROUPS,
+            "group_size": 5,
+            "limit": 10,
+        }
+        base.update(changes)
+        return ContentQuery(**base)
+
+    def test_without_the_constraint_groups_come_from_every_category(
+        self, repos, tmp_path
+    ):
+        """Six members give six combinations of five per category, so the
+        limit fills before the categories run out."""
+        service = self.seeded(repos, tmp_path)
+        groups = service.execute(self.query()).groups
+        assert {g.shared_category for g in groups} == {"cat0", "cat1", "cat2"}
+
+    def test_with_it_only_groups_carrying_the_second_meaning_are(
+        self, repos, tmp_path
+    ):
+        service = self.seeded(repos, tmp_path)
+        result = service.execute(self.query(intersects_taxonomy="overlay"))
+        assert result.groups
+        assert {g.shared_category for g in result.groups} == {"cat0"}
+
+    def test_the_rejection_is_named(self, repos, tmp_path):
+        service = self.seeded(repos, tmp_path)
+        result = service.execute(self.query(intersects_taxonomy="overlay"))
+        assert result.rejected.get("NOT_IN_REQUIRED_TAXONOMY")
+
+    def test_one_member_is_enough_by_default(self, repos, tmp_path):
+        """Which is what a board needs: each visible group gives up one tile
+        to the hidden group, not all five."""
+        service = self.seeded(repos, tmp_path)
+        assert self.query().minimum_intersecting_members == 1
+        assert service.execute(self.query(intersects_taxonomy="overlay")).groups
+
+    def test_demanding_more_than_exist_finds_nothing(self, repos, tmp_path):
+        """Requiring every member is a much stronger claim: no lexical
+        category in the real snapshot contains even three overlay words."""
+        service = self.seeded(repos, tmp_path)
+        result = service.execute(
+            self.query(intersects_taxonomy="overlay", minimum_intersecting_members=5)
+        )
+        assert result.groups == ()
+
+    def test_an_unknown_taxonomy_excludes_everything(self, repos, tmp_path):
+        service = self.seeded(repos, tmp_path)
+        result = service.execute(self.query(intersects_taxonomy="nowhere"))
+        assert result.groups == ()

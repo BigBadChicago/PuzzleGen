@@ -58,6 +58,10 @@ ANNOUNCEMENT_EVENTS = frozenset(
         "complete",
         "failed",
         "expired",
+        # A board that changes what it is asking has to say so. Without this
+        # event the change is visible only to a player watching the tiles, and
+        # the one who most needs telling is the one who cannot see them.
+        "axis_switch",
     }
 )
 

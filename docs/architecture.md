@@ -179,7 +179,59 @@ rarest component; a phrase with any unscored word gets no score at all.
 written after publication; including them would change the snapshot hash
 every time a puzzle was published against it.
 
+**The content hash covers every record's timestamps, so a byte-identical
+rebuild requires a pinned build time** (`tools/build_snapshot.py --now`);
+without it two builds of identical inputs agree on content but not on hash.
+
 ## Phase 3: Query, similarity, policy, and the plugin boundary
+
+**The primary-plus-crosscutting storage pattern is a data model, not a game.**
+An entity can belong to categories in more than one taxonomy at once: a
+primary taxonomy that organizes it (an animal, a plant, a tool) and any number
+of secondary taxonomies whose categories cut across the primary one without
+moving the entity off its primary shelf. Nothing about this requires a
+"puzzle," a "hidden group," or words at all. It is storage: a category is a
+row, a membership is an edge, and an entity can have edges into more than one
+taxonomy's categories simultaneously. `intersects_taxonomy` on `ContentQuery`
+is the query-side expression of this: "find groups in taxonomy A whose members
+also touch taxonomy B," with no assumption about what A or B contain.
+
+Concretely, for a number game with no words or wordplay anywhere in it: the
+primary taxonomy could be `parity` (`even`, `odd`) or `size` (`single_digit`,
+`double_digit`), and a secondary taxonomy `notable_years` could tag `1984`,
+`2001`, and `1969` as also belonging to `is_a_year`. A group query against
+`parity` with `intersects_taxonomy="notable_years"` returns groups of numbers
+that share their parity and also include at least one number somebody would
+recognize as a year, the same query shape game 1 uses for words, run against
+numbers instead. The storage and the query never change; only what is loaded
+into the taxonomies does.
+
+Game 1 (the word grouping game) is the first thing built that reads this
+pattern, and it reads it as "four visible piles, plus one hidden pile made of
+one borrowed member from each visible pile." That read, the borrowing rule,
+the "hidden" framing, the difficulty scoring, all of it, belongs to game 1's
+plugin code (`puzzlegen/games/grouping/`). None of it lives in the storage
+layer, and no future game is expected to reuse game 1's specific mechanic
+merely because it also uses `intersects_taxonomy`.
+
+**Group search enumerates within categories, not across the pool.** Asking
+every combination of the pool whether its members share a category is the
+wrong way round: a 144 entity overlay in 15 categories has 480 million
+combinations of five and 3,780 that share anything, so a 20,000 combination
+budget reached none of them, returned empty, and reported the emptiness as a
+property of the content. Grouping by category first makes the work
+proportional to the answers.
+
+**Membership edges are read once per service, not once per entity.** One
+indexed lookup costs about 7 ms, which is nothing until a pool is 14,720
+entities and the same query asks 14,720 times. A snapshot is sealed and a
+service is per request, so the cache cannot go stale under itself.
+
+**`NO_SHARED_CATEGORY` is a separate rejection reason from
+`SEMANTIC_DISTANCE_TOO_HIGH`.** The two need opposite fixes, one a looser
+threshold and the other different content, and sharing a code sent a reader
+to the wrong knob.
+
 
 **One `ContentQuery` type for every semantic operation**, not one type per
 operation. The constraints overlap heavily; splitting them would multiply the
@@ -844,3 +896,55 @@ fine; memoising across calls is not.
 - `ops` and `cli` layers: still empty. The HTTP or serverless surface that
   calls `SessionService` is out of scope until one exists, by the decision
   taken at the start of phase 6.
+
+
+## Phase 7: Game one
+
+**The overlay seed is authored from the lexicon, not against it.** The first
+seed was written before the snapshot existed and 134 of its 144 words were
+absent from it, so they could only ever be hidden group members and the
+two-axis mechanic worked for ten words. Every member of the second seed was
+chosen from the depth 6 exports, and all 144 sit in both a lexical and an
+overlay category.
+
+**Exports run at depth 6, not depth 3.** Depth 3 holds taxonomic
+abstractions rather than the familiar nouns a word game needs: 194
+recognisable single words against 424 at depth 6, with no turtle, no axe and
+no motorcycle. Depth is the fix, not more roots.
+
+**The board's group size is derived from the day key, not from the
+generation RNG.** Content requirements are resolved before the engine builds
+a generation context, so the size has to come from public inputs alone.
+
+**Game 1 declares `SOUND_INCOMPLETE` with a bound rather than `COMPLETE`.**
+The widest boards can legitimately exhaust the enumerator, and a game that
+declared COMPLETE and returned a partial search would be committing a
+protocol violation. A day that overruns is refused publication, which is the
+correct outcome.
+
+**The tolerance rule collapses tiles with identical distinguishing
+signatures.** Two tiles carrying exactly the same categories are
+indistinguishable, so partitions differing only by exchanging them are the
+same puzzle. A swap between tiles that differ by even one category survives
+as a real second solution and fails the contract.
+
+**The verifier reports the intended grouping as the puzzle's own solution
+object.** The engine hashes the whole solution and looks for that hash among
+the verifier's, so an equivalent rebuilt from the search hashes differently
+and a correct game is rejected.
+
+**Tile category memberships travel in the solution, never the payload.** The
+verifier needs them to enumerate the groupings a player could defend; a
+client holding them could rank tiles by shared category and read the groups
+straight off.
+
+**The axis switch is derived, not scheduled.** After every correct move the
+game asks whether the tiles still on the board can be partitioned
+taxonomically at all, and switches when they cannot. A budget overrun counts
+as "no partition found", because answering "one probably exists" on the
+strength of not having looked would switch the axis on some replays and not
+others.
+
+**There is no "one away" share token, though there is a state symbol.** A
+share is built from the move ledger with payloads stripped, so it can see
+that an attempt was wrong but never how wrong.
