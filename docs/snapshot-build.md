@@ -234,6 +234,15 @@ A real build passes `--embeddings content/seeds/embeddings.json` in place of
 
 ## Afterwards
 
-Commit the five lexicon files, `frequency.json` and `embeddings.json`. Do not
-commit `build/` or the sqlite file; they are derived and regenerable from what
-is committed.
+Commit the five lexicon files, `frequency.json`, `embeddings.json` **and**
+`content/graph.sqlite`. Do not commit `build/`.
+
+The sqlite file was previously listed here as derived and regenerable, and
+that stopped being true the moment review began. Two things live in that file
+that no rebuild can reproduce: the `ReviewDecision` ledger, which is a record
+of what a curator decided on which day and is the sole evidence behind every
+credited accept, and the pinned build time a byte-identical rebuild needs.
+Losing the file loses the ten-day accept history outright, and the review
+system's whole anti-abuse property is that those ten days cannot be
+manufactured. Regenerating the graph is cheap; regenerating ten days of
+curation is impossible.

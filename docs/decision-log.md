@@ -83,6 +83,15 @@ was about 1.3 in 10,000, and every similarity threshold in this engine is set
 to two decimal places, so the rounding changes no comparison's outcome. Result
 was about 43 MB for the real snapshot, roughly half the indented size.
 
+**Correction, re-measured against the committed file:** `embeddings.json` is
+20.7 MB, not 43 MB. The 43 MB figure was carried forward inside the session
+that produced this entry and never checked against what reached git. The
+decision itself is unaffected (one line per vector at four decimals is still
+the chosen format, and the drift measurement behind four decimals still
+stands); only the reported size was wrong. Recorded here rather than
+overwritten, because a number stated as measured and then silently replaced
+teaches the next reader nothing about why to re-check the others.
+
 ### A separate rejection reason for "no shared category" versus "too far apart"
 
 **Decision:** whether a group search that finds no shared category among its

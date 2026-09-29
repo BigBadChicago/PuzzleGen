@@ -17,9 +17,6 @@ dev = ["pytest>=8.0", "hypothesis>=6.98"]
 # never require them: vectors and frequency scores are baked into snapshots.
 snapshot = ["wn>=0.9", "wordfreq>=3.0", "sentence-transformers>=2.5", "numpy>=1.26"]
 
-[project.scripts]
-puzzlegen = "puzzlegen.cli.main:main"
-
 [tool.setuptools.packages.find]
 include = ["puzzlegen*"]
 

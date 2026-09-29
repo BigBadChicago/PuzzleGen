@@ -1,0 +1,19 @@
+{
+  "batch": "overlay-2026-09-29",
+  "candidates": [],
+  "counts": {
+    "both_signals": 0,
+    "by_signal": {},
+    "candidates": 0,
+    "previously_rejected": 0
+  },
+  "generated_at": "2026-09-29T14:10:50.404763+00:00",
+  "parameters": {
+    "include_rejected": false,
+    "min_confidence": 0.6,
+    "min_members": 3,
+    "min_similarity": 0.55,
+    "pool_limit": null
+  },
+  "proposer_version": "1.0.0"
+}

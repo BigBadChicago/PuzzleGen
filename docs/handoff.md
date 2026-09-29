@@ -173,11 +173,12 @@ of them. Do not guess which was intended.
   unrelated," but no longer urgent: the 20,000 rejections that originally
   motivated this were mislabelled (they were `NO_SHARED_CATEGORY`, now its own
   reason code, not a similarity gate).
-- **The embeddings file is 43 MB.** Compact format at four decimals already
-  halved it from indented JSON. A larger snapshot (from game 2's content, or
-  from growing the overlay) will need splitting or a binary format before it
-  reaches GitHub's 100 MB limit. Worth checking after the overlay-growth task
-  above adds entities.
+- **The embeddings file is 20.7 MB**, measured against the committed file, not
+  the 43 MB this document previously claimed. Compact format at four decimals
+  already halved it from indented JSON. A larger snapshot (from game 2's
+  content, or from growing the overlay) will need splitting or a binary format
+  before it reaches GitHub's 100 MB limit, but the headroom is roughly five
+  times what this entry assumed, so it is not near-term.
 - **`[project.scripts]` in `pyproject.toml` points at a module that does not
   exist.** `pip install -e .` puts a `puzzlegen` command on the path that
   fails on invocation. Remove the two lines or build the CLI.

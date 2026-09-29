@@ -29,6 +29,10 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from overlay_coverage import Snapshot, gain_of
+from overlay_coverage import load as load_coverage
 
 from puzzlegen.content.review import ReviewRepository, derive_status
 from puzzlegen.core import ids
@@ -67,6 +71,16 @@ DEFAULT_MIN_MEMBERS = 3
 DEFAULT_MIN_SIMILARITY = 0.55
 DEFAULT_MIN_CONFIDENCE = 0.6
 
+#: Candidates the exact feasibility check runs against, best-first by the
+#: cheap score. The check is a search per candidate; running it on every row
+#: of a several-thousand-row queue would cost more than the queue is worth,
+#: and the rows it would change the order of are all near the top anyway.
+DEFAULT_COVERAGE_CHECK_LIMIT = 200
+
+RANK_BY_CONFIDENCE = "confidence"
+RANK_BY_COVERAGE = "coverage"
+RANK_CHOICES = (RANK_BY_CONFIDENCE, RANK_BY_COVERAGE)
+
 _WORD = re.compile(r"[a-z0-9]+")
 
 
@@ -86,6 +100,16 @@ class Candidate:
     category_name: str
     confidence: float
     signals: list[Signal] = field(default_factory=list)
+    #: Usable lexical categories this overlay category would newly reach if
+    #: this candidate were accepted. Confidence says the word plausibly
+    #: belongs; this says whether accepting it moves the thing that is
+    #: actually blocking a board.
+    new_homes: list[str] = field(default_factory=list)
+    #: Group sizes whose feasibility flips. Only populated for candidates the
+    #: exact check ran against, which is why ``coverage_checked`` is separate:
+    #: an unchecked empty list and a checked empty list mean opposite things.
+    unblocks: list[int] = field(default_factory=list)
+    coverage_checked: bool = False
     previously_rejected: bool = False
     rejected_by: str | None = None
     rejected_at: str | None = None
@@ -235,6 +259,55 @@ def already_proposed(repos: GraphRepositories, category_id: str) -> set[str]:
     }
 
 
+def rank_candidates(
+    candidates: list[Candidate],
+    coverage: Snapshot | None,
+    *,
+    rank_by: str = RANK_BY_CONFIDENCE,
+    check_limit: int = DEFAULT_COVERAGE_CHECK_LIMIT,
+) -> list[Candidate]:
+    """Annotate every candidate with what it would buy, then order the queue.
+
+    Ordering is the whole intervention. Nothing here decides anything: the
+    records are still JUDGED, still PENDING_REVIEW, still ten credited accepts
+    on ten separate days, still a curator accepting one at a time. What
+    changes is which rows that curator reads first, because a confidence sort
+    ranks by "does this word plausibly belong" and the thing blocking a board
+    is "does this word sit where the board needs one". The seed overlay was
+    authored on plausibility alone and that is precisely why its 144 words
+    scatter across near-leaf categories.
+    """
+    if coverage is None:
+        return sorted(candidates, key=lambda c: (-c.confidence, c.subject_ref))
+
+    for candidate in candidates:
+        gain = gain_of(coverage, candidate.entity_id, candidate.category_id)
+        candidate.new_homes = list(gain.new_homes)
+
+    cheap_first = sorted(
+        candidates,
+        key=lambda c: (-len(c.new_homes), -c.confidence, c.subject_ref),
+    )
+    for candidate in cheap_first[: max(0, check_limit)]:
+        exact = gain_of(
+            coverage, candidate.entity_id, candidate.category_id, exact=True
+        )
+        candidate.unblocks = list(exact.unblocks)
+        candidate.coverage_checked = True
+
+    if rank_by == RANK_BY_COVERAGE:
+        return sorted(
+            candidates,
+            key=lambda c: (
+                -len(c.unblocks),
+                -len(c.new_homes),
+                -c.confidence,
+                c.subject_ref,
+            ),
+        )
+    return sorted(candidates, key=lambda c: (-c.confidence, c.subject_ref))
+
+
 def propose(
     repos: GraphRepositories,
     reviews: ReviewRepository,
@@ -244,6 +317,9 @@ def propose(
     min_confidence: float = DEFAULT_MIN_CONFIDENCE,
     pool_limit: int | None = None,
     include_rejected: bool = False,
+    coverage: Snapshot | None = None,
+    rank_by: str = RANK_BY_CONFIDENCE,
+    coverage_check_limit: int = DEFAULT_COVERAGE_CHECK_LIMIT,
 ) -> list[Candidate]:
     """Score every active entity against every live overlay category."""
     categories = [
@@ -314,8 +390,12 @@ def propose(
                 )
             )
 
-    candidates.sort(key=lambda c: (-c.confidence, c.subject_ref))
-    return candidates
+    return rank_candidates(
+        candidates,
+        coverage,
+        rank_by=rank_by,
+        check_limit=coverage_check_limit,
+    )
 
 
 def proposer_source(now: dt.datetime) -> Source:
@@ -390,6 +470,9 @@ def manifest_document(
             "by_signal": by_signal,
             "both_signals": sum(1 for c in candidates if len(c.signals) > 1),
             "previously_rejected": sum(1 for c in candidates if c.previously_rejected),
+            "coverage_checked": sum(1 for c in candidates if c.coverage_checked),
+            "would_unblock_a_board": sum(1 for c in candidates if c.unblocks),
+            "adds_a_new_home": sum(1 for c in candidates if c.new_homes),
         },
         "candidates": [c.as_json() for c in candidates],
     }
@@ -405,6 +488,26 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--min-confidence", type=float, default=DEFAULT_MIN_CONFIDENCE)
     parser.add_argument("--pool-limit", type=int, default=None)
     parser.add_argument("--include-rejected", action="store_true")
+    parser.add_argument(
+        "--rank-by",
+        choices=RANK_CHOICES,
+        default=RANK_BY_CONFIDENCE,
+        help=(
+            "queue order. 'coverage' puts candidates that would unblock a "
+            "board first; 'confidence' is the plausibility order."
+        ),
+    )
+    parser.add_argument(
+        "--coverage-check-limit",
+        type=int,
+        default=DEFAULT_COVERAGE_CHECK_LIMIT,
+        help="candidates the exact feasibility check runs against",
+    )
+    parser.add_argument(
+        "--no-coverage",
+        action="store_true",
+        help="skip coverage annotation entirely",
+    )
     parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -423,7 +526,11 @@ def main(argv: list[str] | None = None) -> int:
             "min_confidence": args.min_confidence,
             "pool_limit": args.pool_limit,
             "include_rejected": args.include_rejected,
+            "rank_by": args.rank_by,
+            "coverage_check_limit": args.coverage_check_limit,
+            "coverage": not args.no_coverage,
         }
+        coverage = None if args.no_coverage else load_coverage(repos)
         candidates = propose(
             repos,
             reviews,
@@ -432,6 +539,9 @@ def main(argv: list[str] | None = None) -> int:
             min_confidence=args.min_confidence,
             pool_limit=args.pool_limit,
             include_rejected=args.include_rejected,
+            coverage=coverage,
+            rank_by=args.rank_by,
+            coverage_check_limit=args.coverage_check_limit,
         )
 
         written = 0
@@ -453,6 +563,13 @@ def main(argv: list[str] | None = None) -> int:
 
     verb = "would write" if args.dry_run else "wrote"
     print(f"{len(candidates)} candidates, {verb} {written} pending relationships")
+    if not args.no_coverage:
+        unblocking = sum(1 for c in candidates if c.unblocks)
+        homes = sum(1 for c in candidates if c.new_homes)
+        print(
+            f"{unblocking} would unblock a board, {homes} reach a lexical "
+            f"category the hidden group does not, ranked by {args.rank_by}"
+        )
     if args.manifest is not None:
         print(f"manifest: {args.manifest}")
     return 0

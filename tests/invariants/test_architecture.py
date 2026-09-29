@@ -728,8 +728,13 @@ class TestReviewAuthority:
         record an accept is a proposer that can approve its own work.
         """
         offenders = []
+        review_tool = (TOOLS / "review.py").resolve()
         for path in python_files(TOOLS):
-            if path.name == "review.py":
+            # By path, not by name. A copy of any module that happens to be
+            # called review.py, dropped anywhere under tools/, walked straight
+            # past a name check, and three separate phase 7 incidents came
+            # from files landing in the wrong directory.
+            if path.resolve() == review_tool:
                 continue
             tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
             for node in ast.walk(tree):
@@ -815,3 +820,52 @@ class TestReviewCheckerItself:
             "record = Thing(status=ReviewStatus.PENDING_REVIEW)\n", encoding="utf-8"
         )
         assert status_writes(planted) == set()
+
+
+class TestModulesLiveWhereTheyBelong:
+    """Where a file sits is part of what it means.
+
+    ``puzzlegen/content/review.py`` shipped as three byte-identical copies:
+    the real one, one at the repository root, and one in ``content/``, which
+    is a data directory. None was imported, so nothing failed; the root copy
+    was importable as ``review`` by every tool, since each tool puts the
+    repository root on ``sys.path``. A duplicate that is only latently wrong
+    is the kind that survives.
+    """
+
+    #: Directories that hold content artifacts, never code.
+    DATA_DIRECTORIES = ("content", "docs")
+
+    def test_no_module_sits_at_the_repository_root(self):
+        strays = sorted(p.name for p in ROOT.glob("*.py"))
+        assert not strays, f"modules at the repository root: {strays}"
+
+    def test_data_directories_hold_no_modules(self):
+        for name in self.DATA_DIRECTORIES:
+            directory = ROOT / name
+            if not directory.exists():
+                continue
+            strays = sorted(
+                str(p.relative_to(ROOT)) for p in python_files(directory)
+            )
+            assert not strays, f"{name}/ holds modules: {strays}"
+
+    def test_each_package_module_name_is_unique_outside_the_package(self):
+        """No file outside puzzlegen/ shares a name with a module inside it.
+
+        A tool that adds the repository root to ``sys.path`` and imports a
+        bare name gets whichever copy the path finds first, which is decided
+        by directory order rather than by intent.
+        """
+        package_names = {p.stem for p in python_files(PACKAGE)} - {"__init__"}
+        collisions = []
+        for path in python_files(ROOT):
+            if PACKAGE in path.parents or path.stem == "__init__":
+                continue
+            if "tests" in path.relative_to(ROOT).parts:
+                continue
+            # tools/ is exempt: a script there is a top-level name by
+            # design, and nothing in the package may import it.
+            if path.stem in package_names and path.parent != TOOLS:
+                collisions.append(str(path.relative_to(ROOT)))
+        assert not collisions, f"shadow package module names: {collisions}"
