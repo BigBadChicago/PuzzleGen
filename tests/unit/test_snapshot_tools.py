@@ -17,9 +17,11 @@ from pathlib import Path
 import pytest
 from conftest import NOW
 
+from puzzlegen.core import ids
 from puzzlegen.core.types import ReviewStatus
 from puzzlegen.content.snapshots import SnapshotBuilder
 from puzzlegen.graph import GraphRepositories, SqliteDocumentStore
+from puzzlegen.providers.wordnet import WordNetLexiconProvider
 
 ROOT = Path(__file__).resolve().parents[2]
 TOOLS = ROOT / "tools"
@@ -687,6 +689,131 @@ class TestMergedCategories:
         out = capsys.readouterr().out
         assert "merged categories" in out
         assert "monoreme" in out
+
+
+class TestSelfAncestorCollisions:
+    """A synset and one of its own hypernym ancestors share a first lemma.
+
+    Depth 3 never ran the hypernym chain far enough for two same-named
+    synsets to land in a genuine ancestor-descendant relationship; depth 6
+    does. Once merged by name, the pair would assert a category as its own
+    parent, which ``Category.build`` refuses -- this is the crash a deep
+    export can hit that a shallow one cannot, distinct from ``TestMergedCategories``
+    above, where the colliding synsets are unrelated siblings and the merge is
+    perfectly safe.
+    """
+
+    def planes(self, tmp_path) -> Path:
+        return write_lexicon(
+            tmp_path / "tool.lexicon.json",
+            [
+                sense("hand tool", "s.handtool"),
+                sense("plane", "s.plane_hand"),
+                sense("plane", "s.plane_sub"),
+            ],
+            synsets=[
+                {
+                    "id": "s.handtool",
+                    "name": "hand tool",
+                    "definition": "a tool used with workers' hands",
+                    "hypernyms": [],
+                },
+                {
+                    "id": "s.plane_hand",
+                    "name": "plane",
+                    "definition": "a carpenter's hand tool",
+                    "hypernyms": ["s.handtool"],
+                },
+                {
+                    "id": "s.plane_sub",
+                    "name": "plane",
+                    "definition": "a kind of plane",
+                    "hypernyms": ["s.plane_hand"],
+                },
+            ],
+        )
+
+    def test_the_pair_is_named(self, tmp_path):
+        found = collisions.category_collisions([self.planes(tmp_path)])
+        row = next(r for r in found if r["name"] == "plane")
+        assert row["self_ancestor_pairs"] == [
+            {"descendant": "s.plane_sub", "ancestor": "s.plane_hand"}
+        ]
+
+    def test_an_ordinary_merge_has_no_pairs(self, tmp_path):
+        found = collisions.category_collisions([self.galley(tmp_path)])
+        assert found[0]["self_ancestor_pairs"] == []
+
+    def test_the_count_reaches_the_report(self, tmp_path):
+        path = self.planes(tmp_path)
+        report = collisions.build_report(
+            collisions.collect([path]), {}, categories=collisions.category_collisions([path])
+        )
+        assert report["counts"]["merged_categories_self_ancestor"] == 1
+
+    def test_the_section_renders_as_fatal(self, tmp_path):
+        path = self.planes(tmp_path)
+        report = collisions.build_report(
+            collisions.collect([path]), {}, categories=collisions.category_collisions([path])
+        )
+        text = collisions.render(report)
+        assert "FATAL" in text
+        assert "s.plane_sub is a descendant of s.plane_hand" in text
+
+    def test_the_normalizer_drops_the_self_edge_instead_of_crashing(self, tmp_path):
+        """End to end: the real import path the Codespace build runs.
+
+        This is the regression the fix in ``normalizer.py`` exists for --
+        proved through ``import_provider``, the same route
+        ``build_snapshot.py`` uses, not through a lower-level unit of the
+        normalizer alone.
+        """
+        path = self.planes(tmp_path)
+        with opened(tmp_path / "graph.sqlite3") as repos:
+            builder = SnapshotBuilder(repos, now=NOW)
+            builder.import_provider(
+                WordNetLexiconProvider(path, taxonomy="wordnet", now=NOW),
+                taxonomy="wordnet",
+                entity_identity="lemma",
+            )
+            plane = repos.categories.get(ids.for_category("plane", "en", "wordnet"))
+            handtool = repos.categories.get(
+                ids.for_category("hand tool", "en", "wordnet")
+            )
+            assert plane is not None
+            assert handtool.id in plane.parent_ids
+            assert plane.id not in plane.parent_ids
+
+    def galley(self, tmp_path) -> Path:
+        """Reused from ``TestMergedCategories`` for the safe-merge comparison."""
+        return write_lexicon(
+            tmp_path / "vehicle.lexicon.json",
+            [
+                sense("galley", "s.kitchen"),
+                sense("galley", "s.ship"),
+                sense("monoreme", "s.monoreme"),
+            ],
+            synsets=[
+                {
+                    "id": "s.kitchen",
+                    "name": "galley",
+                    "definition": "a ship's kitchen",
+                    "hypernyms": [],
+                },
+                {
+                    "id": "s.ship",
+                    "name": "galley",
+                    "definition": "a ship propelled by oars",
+                    "hypernyms": [],
+                },
+                {
+                    "id": "s.monoreme",
+                    "name": "monoreme",
+                    "definition": "a galley with one bank of oars",
+                    "hypernyms": ["s.kitchen", "s.ship"],
+                },
+            ],
+        )
 
 
 class TestStaleInputs:

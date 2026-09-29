@@ -245,14 +245,29 @@ class Normalizer:
         # "galley" synsets, and both are hypernyms of "monoreme". Rejecting
         # that would be rejecting the identity rule's own consequence, and
         # keeping the duplicate would claim an edge twice.
+        own_id = ids.for_category(raw.name, raw.lang, self._taxonomy)
         seen: dict[str, Category] = {}
         for key in raw.parent_keys:
             candidate = built[key]
+            # A same-name ancestor, dropped rather than rejected. Name-based
+            # merging means a synset and one of its own hypernyms can collapse
+            # onto the same category id when they share a first lemma: a
+            # narrower "plane" sense whose hypernym is a broader "plane" sense
+            # a few hyponym levels up, both already merged into the single
+            # "plane" category by the time this synset is processed. At depth
+            # 3 the ancestor chain never ran long enough to hit this; depth 6
+            # does. The edge would assert a category as its own parent, which
+            # Category.build refuses outright, so it is simply not asserted:
+            # the merged category already carries this synset's identity, and
+            # its own real (non-colliding) ancestors, recorded when whichever
+            # same-named sibling was processed first, still apply.
+            if candidate.id == own_id:
+                continue
             seen.setdefault(candidate.id, candidate)
         parents = tuple(seen.values())
         freshness = FreshnessClass.SLOW_CHANGING
         return Category.build(
-            id=ids.for_category(raw.name, raw.lang, self._taxonomy),
+            id=own_id,
             canonical_name=raw.name,
             parents=parents,
             lang=raw.lang,

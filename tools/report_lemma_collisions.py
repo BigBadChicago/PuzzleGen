@@ -88,6 +88,30 @@ def collect(paths: list[Path]) -> dict[str, LemmaUse]:
     return uses
 
 
+def _hypernym_edges(paths: list[Path]) -> dict[str, tuple[str, ...]]:
+    edges: dict[str, tuple[str, ...]] = {}
+    for path in paths:
+        for synset in read_lexicon(path).get("synsets", ()):
+            edges[synset["id"]] = tuple(synset.get("hypernyms", ()))
+    return edges
+
+
+def _reaches(edges: dict[str, tuple[str, ...]], start: str, targets: set[str]) -> str | None:
+    """The first of ``targets`` reachable by walking hypernyms from ``start``.
+
+    Depth-bounded by the graph itself: WordNet's hypernym edges are acyclic
+    upstream, so this always terminates without a visited-set guard, the same
+    trust the exporter already places in that property.
+    """
+    frontier = list(edges.get(start, ()))
+    while frontier:
+        current = frontier.pop()
+        if current in targets:
+            return current
+        frontier.extend(edges.get(current, ()))
+    return None
+
+
 def category_collisions(paths: list[Path]) -> list[dict]:
     """Synsets that become one category because they share a first lemma.
 
@@ -98,6 +122,14 @@ def category_collisions(paths: list[Path]) -> list[dict]:
     is the identity rule working as designed, but it also means a child can
     inherit one parent twice and a category can carry a gloss from a sense
     nobody meant. Worth seeing before a build rather than during one.
+
+    A third shape is fatal rather than merely worth seeing:
+    ``self_ancestor_pairs`` names any pair in the group where one synset's own
+    hypernym chain reaches the other. Once merged, that pair asserts a single
+    category as its own parent; ``Category.build`` refuses this, and it is
+    what a deep export can hit that a shallow one never reaches, because the
+    two colliding synsets have to be far enough apart in the tree for one to
+    be a genuine ancestor of the other rather than an unrelated sibling.
     """
     by_name: dict[str, dict[str, dict]] = {}
     for path in paths:
@@ -112,6 +144,7 @@ def category_collisions(paths: list[Path]) -> list[dict]:
                 "file": path.name,
             }
 
+    edges = _hypernym_edges(paths)
     merged = []
     for name, group in sorted(by_name.items()):
         if len(group) < 2:
@@ -122,11 +155,22 @@ def category_collisions(paths: list[Path]) -> list[dict]:
             for synset in read_lexicon(path).get("synsets", ()):
                 if len(ids & set(synset.get("hypernyms", ()))) > 1:
                     children.append(synset.get("name") or synset["id"])
+
+        self_ancestor_pairs = []
+        for descendant in sorted(ids):
+            others = ids - {descendant}
+            ancestor = _reaches(edges, descendant, others)
+            if ancestor is not None:
+                self_ancestor_pairs.append(
+                    {"descendant": descendant, "ancestor": ancestor}
+                )
+
         merged.append(
             {
                 "name": name,
                 "synsets": [group[k] for k in sorted(group)],
                 "children_inheriting_it_twice": sorted(set(children)),
+                "self_ancestor_pairs": self_ancestor_pairs,
             }
         )
     return merged
@@ -189,6 +233,9 @@ def build_report(
             "merged_categories_with_double_inheritance": sum(
                 1 for c in (categories or ()) if c["children_inheriting_it_twice"]
             ),
+            "merged_categories_self_ancestor": sum(
+                1 for c in (categories or ()) if c.get("self_ancestor_pairs")
+            ),
         },
         "sense_histogram": {str(k): histogram[k] for k in sorted(histogram)},
         "polysemous": cut([u.as_json() for u in polysemous]),
@@ -241,6 +288,14 @@ def render(report: dict) -> str:
                 lines.append(
                     "    inherited twice by: "
                     + ", ".join(row["children_inheriting_it_twice"])
+                )
+            for pair in row.get("self_ancestor_pairs", ()):
+                lines.append(
+                    f"    FATAL: {pair['descendant']} is a descendant of "
+                    f"{pair['ancestor']} -- same name would make the merged "
+                    f"category its own parent (normalizer now drops this "
+                    f"edge automatically; shown so the responsible synset "
+                    f"pair is visible rather than silently resolved)"
                 )
     if report["cross_file"]:
         lines.append("")
