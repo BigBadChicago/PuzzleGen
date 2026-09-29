@@ -293,7 +293,15 @@ class TestItIsTheProposersInputFormat:
 #: The five real exports the runbook produces. Named rather than globbed,
 #: because ``wordnet-mini.lexicon.json`` is an 8 synset test fixture and a glob
 #: would quietly run these tests against it and fail for the wrong reason.
-LEXICON_ROOTS = ("animal", "plant", "tool", "vehicle", "instrument")
+LEXICON_ROOTS = (
+    "carnivore",
+    "bird",
+    "fruit",
+    "instrument",
+    "vehicle",
+    "garment",
+    "tool",
+)
 LEXICONS = [
     SEED.parent / f"wordnet-{root}.lexicon.json" for root in LEXICON_ROOTS
 ]
