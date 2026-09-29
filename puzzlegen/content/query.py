@@ -81,14 +81,21 @@ class ContentQuery:
     #: Require a group to contain members that also belong to some category in
     #: this taxonomy, whichever one.
     #:
-    #: The difference between hoping two axes meet and asking for the places
-    #: they already do. An overlay of 144 entities inside a 14,720 entity graph
-    #: is touched by 157 lexical categories out of 6,511, so groups sampled
-    #: from the lexicon almost never contain overlay members: the first real
-    #: day covered its best hidden group one member in five. Naming the
-    #: taxonomy rather than a category keeps the question the game is actually
-    #: asking, which is "words that carry a second meaning", not "words that
-    #: carry this particular one".
+    #: This is a storage-and-query pattern, not a game mechanic: an entity can
+    #: sit in categories from more than one taxonomy at once (a primary one
+    #: that organizes it, plus any number of others that cut across it), and
+    #: this is how a query asks for the places two taxonomies' memberships
+    #: overlap, with no assumption that either taxonomy is about words. See
+    #: "The primary-plus-crosscutting storage pattern" near the top of phase 3
+    #: in docs/architecture.md for the full definition and a non-word example.
+    #:
+    #: Game 1 (grouping) is one caller, and its numbers illustrate why the
+    #: field exists rather than what it means: an overlay of 144 entities
+    #: inside a 14,720 entity graph is touched by 157 lexical categories out
+    #: of 6,511, so groups sampled from the lexicon almost never contain
+    #: overlay members without this constraint. A number game asking
+    #: `intersects_taxonomy="notable_years"` against a `parity` taxonomy would
+    #: use this exact field the same way, with no words involved.
     intersects_taxonomy: str | None = None
     #: How many of a group's members must carry that second meaning. One by
     #: default, because requiring all of them is a different and much stronger
