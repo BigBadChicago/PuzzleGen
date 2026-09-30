@@ -13,6 +13,7 @@ import importlib.util
 import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -173,6 +174,71 @@ class TestARealDay:
         assert result.group_size == 6
         assert result.reason.strip()
 
+
+class TestDescribingAFailure:
+    """Built on the record's own flattening, and checked against a real trace.
+
+    The first version walked the tallies itself and read one as though it were
+    a single reason. The fixture's failing day records no tallies, so nothing
+    caught it until a real day did.
+    """
+
+    def outcome(self, summary, failure="no candidates"):
+        return SimpleNamespace(
+            trace=SimpleNamespace(
+                failure_reason=failure, rejection_summary=lambda: summary
+            )
+        )
+
+    def test_the_stated_reason_comes_first(self):
+        text = tool.describe_failure(self.outcome({"not_disjoint": 4}))
+
+        assert text.startswith("no candidates")
+
+    def test_the_commonest_reasons_lead(self):
+        text = tool.describe_failure(
+            self.outcome({"rare": 1, "common": 9, "middling": 5})
+        )
+
+        assert text.index("common 9") < text.index("middling 5") < text.index("rare 1")
+
+    def test_only_three_reasons_are_shown(self):
+        text = tool.describe_failure(self.outcome({f"r{n}": 10 - n for n in range(6)}))
+
+        assert text.count(",") == 2
+
+    def test_no_rejections_leaves_just_the_reason(self):
+        assert tool.describe_failure(self.outcome({})) == "no candidates"
+
+    def test_a_missing_reason_still_reads(self):
+        assert "no reason recorded" in tool.describe_failure(self.outcome({}, failure=None))
+
+    def test_a_real_trace_flattens_its_tallies(self):
+        """The contract the stub above stands in for.
+
+        A tally is a stage with a mapping of reason to count, and the summary
+        is what turns several of them into one mapping. If this shape changes,
+        the stub is wrong and this fails alongside it.
+        """
+        from puzzlegen.engine.records import RejectionTally
+
+        tallies = (
+            RejectionTally(stage="content", reasons={"not_disjoint": 3}),
+            RejectionTally(stage="assembly", reasons={"not_disjoint": 4, "thin": 1}),
+        )
+
+        assert sum(t.total for t in tallies) == 8
+        assert tallies[1].reasons["not_disjoint"] == 4
+
+    def test_a_real_failing_day_describes_itself(self, world):
+        db, _ = world
+        [result] = tool.run(db, start=day_of_size(6), days=1, now=NOW)
+
+        assert not result.generated
+        assert result.reason.strip()
+
+
+class TestARunOfDays:
     def test_a_run_covers_consecutive_days(self, world):
         db, _ = world
         start = day_of_size(5)

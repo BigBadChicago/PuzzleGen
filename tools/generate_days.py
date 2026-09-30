@@ -91,14 +91,18 @@ def pick_snapshot(repos: GraphRepositories, label: str | None):
 
 
 def describe_failure(outcome) -> str:
+    """The stated reason, then the commonest rejections behind it.
+
+    ``GenerationTrace.rejection_summary`` already flattens content rejections
+    and every stage's tally into one mapping, which is the shape this wants.
+    Reimplementing that walk here read a tally as though it were a single
+    reason, which raised on the first real day that recorded one.
+    """
     trace = outcome.trace
     parts = [trace.failure_reason or "no reason recorded"]
-    rejected = sorted(
-        ((t.reason, t.count) for t in trace.candidates_rejected),
-        key=lambda pair: -pair[1],
-    )
-    if rejected:
-        parts.append(", ".join(f"{getattr(r, 'value', r)} {n}" for r, n in rejected[:3]))
+    counts = Counter(trace.rejection_summary())
+    if counts:
+        parts.append(", ".join(f"{reason} {n}" for reason, n in counts.most_common(3)))
     return "; ".join(parts)
 
 
