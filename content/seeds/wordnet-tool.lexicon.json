@@ -1,33 +1,9 @@
 {
-  "exported": "2026-09-28",
+  "exported": "2026-09-29",
   "lexicon": "oewn",
   "lexicon_schema": 1,
-  "root": "oewn-04459089-n",
+  "root": "oewn-03494245-n",
   "senses": [
-    {
-      "definition": "a tool or machine used for wearing down or smoothing or polishing",
-      "forms": [],
-      "id": "oewn-abrader__1.06.00..",
-      "lang": "en",
-      "lemma": "abrader",
-      "synset": "oewn-02671023-n"
-    },
-    {
-      "definition": "a tool or machine used for wearing down or smoothing or polishing",
-      "forms": [],
-      "id": "oewn-abradant__1.06.00..",
-      "lang": "en",
-      "lemma": "abradant",
-      "synset": "oewn-02671023-n"
-    },
-    {
-      "definition": "a primitive stone artifact (usually made of sandstone) used as an abrader",
-      "forms": [],
-      "id": "oewn-abrading_stone__1.06.00..",
-      "lang": "en",
-      "lemma": "abrading stone",
-      "synset": "oewn-02671243-n"
-    },
     {
       "definition": "can be changed to different settings",
       "forms": [],
@@ -43,30 +19,6 @@
       "lang": "en",
       "lemma": "adjustable spanner",
       "synset": "oewn-02683608-n"
-    },
-    {
-      "definition": "a hammer driven by compressed air",
-      "forms": [],
-      "id": "oewn-air_hammer__1.06.00..",
-      "lang": "en",
-      "lemma": "air hammer",
-      "synset": "oewn-02692293-n"
-    },
-    {
-      "definition": "a hammer driven by compressed air",
-      "forms": [],
-      "id": "oewn-jackhammer__1.06.00..",
-      "lang": "en",
-      "lemma": "jackhammer",
-      "synset": "oewn-02692293-n"
-    },
-    {
-      "definition": "a hammer driven by compressed air",
-      "forms": [],
-      "id": "oewn-pneumatic_hammer__1.06.00..",
-      "lang": "en",
-      "lemma": "pneumatic hammer",
-      "synset": "oewn-02692293-n"
     },
     {
       "definition": "a wrench for Allen screws",
@@ -85,44 +37,28 @@
       "synset": "oewn-02700735-n"
     },
     {
-      "definition": "hand tool for boring holes",
-      "forms": [],
-      "id": "oewn-auger__1.06.00..",
-      "lang": "en",
-      "lemma": "auger",
-      "synset": "oewn-02761495-n"
-    },
-    {
-      "definition": "hand tool for boring holes",
-      "forms": [],
-      "id": "oewn-gimlet__1.06.00..",
-      "lang": "en",
-      "lemma": "gimlet",
-      "synset": "oewn-02761495-n"
-    },
-    {
-      "definition": "hand tool for boring holes",
-      "forms": [],
-      "id": "oewn-screw_auger__1.06.00..",
-      "lang": "en",
-      "lemma": "screw auger",
-      "synset": "oewn-02761495-n"
-    },
-    {
-      "definition": "hand tool for boring holes",
-      "forms": [],
-      "id": "oewn-wimble__1.06.00..",
-      "lang": "en",
-      "lemma": "wimble",
-      "synset": "oewn-02761495-n"
-    },
-    {
       "definition": "a pointed tool for marking surfaces or for punching small holes",
       "forms": [],
       "id": "oewn-awl__1.06.00..",
       "lang": "en",
       "lemma": "awl",
       "synset": "oewn-02766719-n"
+    },
+    {
+      "definition": "a handsaw that is stiffened by metal reinforcement along the upper edge",
+      "forms": [],
+      "id": "oewn-backsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "backsaw",
+      "synset": "oewn-02773590-n"
+    },
+    {
+      "definition": "a handsaw that is stiffened by metal reinforcement along the upper edge",
+      "forms": [],
+      "id": "oewn-back_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "back saw",
+      "synset": "oewn-02773590-n"
     },
     {
       "definition": "a hammer with one round and one flat end; used in working metal",
@@ -133,44 +69,12 @@
       "synset": "oewn-02786058-n"
     },
     {
-      "definition": "an endless saw consisting of a toothed metal band that is driven around two wheels",
-      "forms": [],
-      "id": "oewn-bandsaw__1.06.00..",
-      "lang": "en",
-      "lemma": "bandsaw",
-      "synset": "oewn-02789860-n"
-    },
-    {
-      "definition": "an endless saw consisting of a toothed metal band that is driven around two wheels",
-      "forms": [],
-      "id": "oewn-band_saw__1.06.00..",
-      "lang": "en",
-      "lemma": "band saw",
-      "synset": "oewn-02789860-n"
-    },
-    {
-      "definition": "a ram used to break down doors of fortified buildings",
-      "forms": [],
-      "id": "oewn-battering_ram__1.06.00..",
-      "lang": "en",
-      "lemma": "battering ram",
-      "synset": "oewn-02813274-n"
-    },
-    {
       "definition": "a plane with a concave blade for making moulding with beadwork",
       "forms": [],
       "id": "oewn-beading_plane__1.06.00..",
       "lang": "en",
       "lemma": "beading plane",
       "synset": "oewn-02818613-n"
-    },
-    {
-      "definition": "a tool for bending",
-      "forms": [],
-      "id": "oewn-bender__1.06.00..",
-      "lang": "en",
-      "lemma": "bender",
-      "synset": "oewn-02833341-n"
     },
     {
       "definition": "a hand tool consisting of two rules that are hinged together so you can draw or measure angles of any size",
@@ -203,22 +107,6 @@
       "lang": "en",
       "lemma": "billhook",
       "synset": "oewn-02842193-n"
-    },
-    {
-      "definition": "the cutting part of a drill; usually pointed and threaded and is replaceable in a brace or bitstock or drill press",
-      "forms": [],
-      "id": "oewn-bit__1.06.00..",
-      "lang": "en",
-      "lemma": "bit",
-      "synset": "oewn-02847545-n"
-    },
-    {
-      "definition": "the flat part of a tool or weapon that (usually) has a cutting edge",
-      "forms": [],
-      "id": "oewn-blade__1.06.00..",
-      "lang": "en",
-      "lemma": "blade",
-      "synset": "oewn-02851454-n"
     },
     {
       "definition": "a small plane used on end grains of wood",
@@ -261,46 +149,6 @@
       "synset": "oewn-02864998-n"
     },
     {
-      "definition": "an implement for cutting bolts",
-      "forms": [],
-      "id": "oewn-bolt_cutter__1.06.00..",
-      "lang": "en",
-      "lemma": "bolt cutter",
-      "synset": "oewn-02869726-n"
-    },
-    {
-      "definition": "a drill for penetrating rock",
-      "forms": [],
-      "id": "oewn-bore_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "bore bit",
-      "synset": "oewn-02878678-n"
-    },
-    {
-      "definition": "a drill for penetrating rock",
-      "forms": [],
-      "id": "oewn-borer__1.06.00..",
-      "lang": "en",
-      "lemma": "borer",
-      "synset": "oewn-02878678-n"
-    },
-    {
-      "definition": "a drill for penetrating rock",
-      "forms": [],
-      "id": "oewn-rock_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "rock drill",
-      "synset": "oewn-02878678-n"
-    },
-    {
-      "definition": "a drill for penetrating rock",
-      "forms": [],
-      "id": "oewn-stone_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "stone drill",
-      "synset": "oewn-02878678-n"
-    },
-    {
       "definition": "an opener for removing caps or corks from bottles",
       "forms": [],
       "id": "oewn-bottle_opener__1.06.00..",
@@ -325,14 +173,6 @@
       "synset": "oewn-02889675-n"
     },
     {
-      "definition": "a drill consisting of a bit and a brace to hold and turn it",
-      "forms": [],
-      "id": "oewn-brace_and_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "brace and bit",
-      "synset": "oewn-02891073-n"
-    },
-    {
       "definition": "a wrench shaped like a brace (has a handle shaped like a crank) and a socket head",
       "forms": [],
       "id": "oewn-brace_wrench__1.06.00..",
@@ -355,14 +195,6 @@
       "lang": "en",
       "lemma": "pricker",
       "synset": "oewn-02892139-n"
-    },
-    {
-      "definition": "a portable drill with a plate that is pressed against the chest to force the drill point into the work",
-      "forms": [],
-      "id": "oewn-breast_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "breast drill",
-      "synset": "oewn-02898109-n"
     },
     {
       "definition": "a hammer used in laying bricks",
@@ -397,22 +229,6 @@
       "synset": "oewn-02914026-n"
     },
     {
-      "definition": "a power tool used to buff surfaces",
-      "forms": [],
-      "id": "oewn-buffer__1.06.01..",
-      "lang": "en",
-      "lemma": "buffer",
-      "synset": "oewn-02914678-n"
-    },
-    {
-      "definition": "a power tool used to buff surfaces",
-      "forms": [],
-      "id": "oewn-polisher__1.06.00..",
-      "lang": "en",
-      "lemma": "polisher",
-      "synset": "oewn-02914678-n"
-    },
-    {
       "definition": "a wrench designed to provide a firm grip on something",
       "forms": [],
       "id": "oewn-bulldog_wrench__1.06.00..",
@@ -437,46 +253,6 @@
       "synset": "oewn-02920953-n"
     },
     {
-      "definition": "a heavy plow with a single wide blade; used chiefly in cotton fields",
-      "forms": [],
-      "id": "oewn-bull_tongue__1.06.00..",
-      "lang": "en",
-      "lemma": "bull tongue",
-      "synset": "oewn-02921588-n"
-    },
-    {
-      "definition": "a jack for lifting a motor vehicle by the bumper",
-      "forms": [],
-      "id": "oewn-bumper_jack__1.06.00..",
-      "lang": "en",
-      "lemma": "bumper jack",
-      "synset": "oewn-02922692-n"
-    },
-    {
-      "definition": "small bit used in dentistry or surgery",
-      "forms": [],
-      "id": "oewn-bur__1.06.00..",
-      "lang": "en",
-      "lemma": "bur",
-      "synset": "oewn-02924676-n"
-    },
-    {
-      "definition": "small bit used in dentistry or surgery",
-      "forms": [],
-      "id": "oewn-burr__1.06.02..",
-      "lang": "en",
-      "lemma": "burr",
-      "synset": "oewn-02924676-n"
-    },
-    {
-      "definition": "rotary file for smoothing rough edges left on a workpiece",
-      "forms": [],
-      "id": "oewn-burr__1.06.01..",
-      "lang": "en",
-      "lemma": "burr",
-      "synset": "oewn-02927299-n"
-    },
-    {
       "definition": "a device for cutting cans open",
       "forms": [],
       "id": "oewn-can_opener__1.06.00..",
@@ -491,6 +267,14 @@
       "lang": "en",
       "lemma": "tin opener",
       "synset": "oewn-02955021-n"
+    },
+    {
+      "definition": "a bottle opener to pry off caps",
+      "forms": [],
+      "id": "oewn-cap_opener__1.06.00..",
+      "lang": "en",
+      "lemma": "cap opener",
+      "synset": "oewn-02960231-n"
     },
     {
       "definition": "a hammer with a cleft at one end for pulling nails",
@@ -517,6 +301,14 @@
       "synset": "oewn-02969997-n"
     },
     {
+      "definition": "a short-handled mallet with a wooden head used to strike a chisel or wedge",
+      "forms": [],
+      "id": "oewn-carpenter-ap-s_mallet__1.06.00..",
+      "lang": "en",
+      "lemma": "carpenter's mallet",
+      "synset": "oewn-02970394-n"
+    },
+    {
       "definition": "a steel square used by carpenters; larger than a try square",
       "forms": [],
       "id": "oewn-carpenter-ap-s_square__1.06.00..",
@@ -533,52 +325,20 @@
       "synset": "oewn-02972986-n"
     },
     {
-      "definition": "a bit with a sharp center point for guidance and two side cutters",
+      "definition": "a pipe wrench used for turning large pipes; an adjustable chain circles the pipe with its ends connected to the head whose teeth engage the pipe",
       "forms": [],
-      "id": "oewn-center_bit__1.06.00..",
+      "id": "oewn-chain_tongs__1.06.00..",
       "lang": "en",
-      "lemma": "center bit",
-      "synset": "oewn-02997370-n"
+      "lemma": "chain tongs",
+      "synset": "oewn-03004886-n"
     },
     {
-      "definition": "a bit with a sharp center point for guidance and two side cutters",
+      "definition": "another name for chain tongs",
       "forms": [],
-      "id": "oewn-centre_bit__1.06.00..",
+      "id": "oewn-chain_wrench__1.06.00..",
       "lang": "en",
-      "lemma": "centre bit",
-      "synset": "oewn-02997370-n"
-    },
-    {
-      "definition": "a tool with a conical point that is used to make indentations in metal (especially to mark points for drilling)",
-      "forms": [],
-      "id": "oewn-center_punch__1.06.00..",
-      "lang": "en",
-      "lemma": "center punch",
-      "synset": "oewn-02998180-n"
-    },
-    {
-      "definition": "portable power saw; teeth linked to form an endless chain",
-      "forms": [],
-      "id": "oewn-chain_saw__1.06.00..",
-      "lang": "en",
-      "lemma": "chain saw",
-      "synset": "oewn-03004288-n"
-    },
-    {
-      "definition": "portable power saw; teeth linked to form an endless chain",
-      "forms": [],
-      "id": "oewn-chainsaw__1.06.00..",
-      "lang": "en",
-      "lemma": "chainsaw",
-      "synset": "oewn-03004288-n"
-    },
-    {
-      "definition": "a bit that is used for beveling",
-      "forms": [],
-      "id": "oewn-chamfer_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "chamfer bit",
-      "synset": "oewn-03008135-n"
+      "lemma": "chain wrench",
+      "synset": "oewn-03005144-n"
     },
     {
       "definition": "a plane that makes a beveled edge",
@@ -589,12 +349,12 @@
       "synset": "oewn-03008224-n"
     },
     {
-      "definition": "an implement for cutting the tip off of a cigar",
+      "definition": "can opener that has a triangular pointed end that pierces the tops of cans",
       "forms": [],
-      "id": "oewn-cigar_cutter__1.06.00..",
+      "id": "oewn-church_key__1.06.00..",
       "lang": "en",
-      "lemma": "cigar cutter",
-      "synset": "oewn-03034542-n"
+      "lemma": "church key",
+      "synset": "oewn-03032749-n"
     },
     {
       "definition": "a plane with a flexible face that can plane concave or convex surfaces",
@@ -613,36 +373,12 @@
       "synset": "oewn-03038501-n"
     },
     {
-      "definition": "a power saw that has a steel disk with cutting teeth on the periphery; rotates on a spindle",
+      "definition": "a hand shovel for shoveling coal",
       "forms": [],
-      "id": "oewn-circular_saw__1.06.00..",
+      "id": "oewn-coal_shovel__1.06.00..",
       "lang": "en",
-      "lemma": "circular saw",
-      "synset": "oewn-03038648-n"
-    },
-    {
-      "definition": "a power saw that has a steel disk with cutting teeth on the periphery; rotates on a spindle",
-      "forms": [],
-      "id": "oewn-buzz_saw__1.06.00..",
-      "lang": "en",
-      "lemma": "buzz saw",
-      "synset": "oewn-03038648-n"
-    },
-    {
-      "definition": "a tool used to clinch nails or bolts or rivets",
-      "forms": [],
-      "id": "oewn-clincher__1.06.00..",
-      "lang": "en",
-      "lemma": "clincher",
-      "synset": "oewn-03047158-n"
-    },
-    {
-      "definition": "any of several tools for straightening fibers",
-      "forms": [],
-      "id": "oewn-comb__1.06.01..",
-      "lang": "en",
-      "lemma": "comb",
-      "synset": "oewn-03079101-n"
+      "lemma": "coal shovel",
+      "synset": "oewn-03060478-n"
     },
     {
       "definition": "a woodworking plane that has interchangeable cutters of various shapes",
@@ -653,52 +389,36 @@
       "synset": "oewn-03079504-n"
     },
     {
-      "definition": "a drill that removes a cylindrical core from the drill hole",
+      "definition": "a handsaw with a narrow triangular blade for cutting curves",
       "forms": [],
-      "id": "oewn-core_drill__1.06.00..",
+      "id": "oewn-compass_saw__1.06.00..",
       "lang": "en",
-      "lemma": "core drill",
-      "synset": "oewn-03113275-n"
+      "lemma": "compass saw",
+      "synset": "oewn-03084908-n"
     },
     {
-      "definition": "a bit for enlarging the upper part of a hole",
+      "definition": "a handsaw with a taut thin blade; used for cutting small curves in wood",
       "forms": [],
-      "id": "oewn-counterbore__1.06.00..",
+      "id": "oewn-coping_saw__1.06.00..",
       "lang": "en",
-      "lemma": "counterbore",
-      "synset": "oewn-03122293-n"
+      "lemma": "coping saw",
+      "synset": "oewn-03108670-n"
     },
     {
-      "definition": "a bit for enlarging the upper part of a hole",
+      "definition": "a bottle opener that pulls corks",
       "forms": [],
-      "id": "oewn-countersink__1.06.00..",
+      "id": "oewn-corkscrew__1.06.00..",
       "lang": "en",
-      "lemma": "countersink",
-      "synset": "oewn-03122293-n"
+      "lemma": "corkscrew",
+      "synset": "oewn-03113801-n"
     },
     {
-      "definition": "a bit for enlarging the upper part of a hole",
+      "definition": "a bottle opener that pulls corks",
       "forms": [],
-      "id": "oewn-countersink_bit__1.06.00..",
+      "id": "oewn-bottle_screw__1.06.00..",
       "lang": "en",
-      "lemma": "countersink bit",
-      "synset": "oewn-03122293-n"
-    },
-    {
-      "definition": "a hinged pair of curved iron bars; used to raise heavy objects",
-      "forms": [],
-      "id": "oewn-crampon__1.06.01..",
-      "lang": "en",
-      "lemma": "crampon",
-      "synset": "oewn-03131231-n"
-    },
-    {
-      "definition": "a hinged pair of curved iron bars; used to raise heavy objects",
-      "forms": [],
-      "id": "oewn-crampoon__1.06.01..",
-      "lang": "en",
-      "lemma": "crampoon",
-      "synset": "oewn-03131231-n"
+      "lemma": "bottle screw",
+      "synset": "oewn-03113801-n"
     },
     {
       "definition": "a hand tool consisting of a rotating shaft with parallel handle",
@@ -733,20 +453,36 @@
       "synset": "oewn-03131953-n"
     },
     {
-      "definition": "a rock drill having cruciform cutting edges; used in mining",
+      "definition": "an adjustable wrench designed to fit hexagonal nuts with the adjusting screw built into the head of the wrench",
       "forms": [],
-      "id": "oewn-cross_bit__1.06.00..",
+      "id": "oewn-crescent_wrench__1.06.00..",
       "lang": "en",
-      "lemma": "cross bit",
-      "synset": "oewn-03140905-n"
+      "lemma": "crescent wrench",
+      "synset": "oewn-03135517-n"
     },
     {
-      "definition": "a small rake used by a croupier to move chips around on the table",
+      "definition": "handsaw that cuts at right angles to the grain (or major axis)",
       "forms": [],
-      "id": "oewn-croupier-ap-s_rake__1.06.00..",
+      "id": "oewn-crosscut_saw__1.06.00..",
       "lang": "en",
-      "lemma": "croupier's rake",
-      "synset": "oewn-03142868-n"
+      "lemma": "crosscut saw",
+      "synset": "oewn-03141155-n"
+    },
+    {
+      "definition": "handsaw that cuts at right angles to the grain (or major axis)",
+      "forms": [],
+      "id": "oewn-crosscut_handsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "crosscut handsaw",
+      "synset": "oewn-03141155-n"
+    },
+    {
+      "definition": "handsaw that cuts at right angles to the grain (or major axis)",
+      "forms": [],
+      "id": "oewn-cutoff_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "cutoff saw",
+      "synset": "oewn-03141155-n"
     },
     {
       "definition": "a saw having teeth around the edge of a hollow cylinder",
@@ -757,52 +493,12 @@
       "synset": "oewn-03144538-n"
     },
     {
-      "definition": "a cutting implement; a tool for cutting",
+      "definition": "a plane for making a dado groove",
       "forms": [],
-      "id": "oewn-cutter__1.06.00..",
+      "id": "oewn-dado_plane__1.06.00..",
       "lang": "en",
-      "lemma": "cutter",
-      "synset": "oewn-03158739-n"
-    },
-    {
-      "definition": "a cutting implement; a tool for cutting",
-      "forms": [],
-      "id": "oewn-cutlery__1.06.01..",
-      "lang": "en",
-      "lemma": "cutlery",
-      "synset": "oewn-03158739-n"
-    },
-    {
-      "definition": "a cutting implement; a tool for cutting",
-      "forms": [],
-      "id": "oewn-cutting_tool__1.06.00..",
-      "lang": "en",
-      "lemma": "cutting tool",
-      "synset": "oewn-03158739-n"
-    },
-    {
-      "definition": "a tool used for cutting or slicing",
-      "forms": [],
-      "id": "oewn-cutting_implement__1.06.00..",
-      "lang": "en",
-      "lemma": "cutting implement",
-      "synset": "oewn-03159112-n"
-    },
-    {
-      "definition": "a high speed drill that dentists use to cut into teeth",
-      "forms": [],
-      "id": "oewn-dentist-ap-s_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "dentist's drill",
-      "synset": "oewn-03180904-n"
-    },
-    {
-      "definition": "a high speed drill that dentists use to cut into teeth",
-      "forms": [],
-      "id": "oewn-burr_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "burr drill",
-      "synset": "oewn-03180904-n"
+      "lemma": "dado plane",
+      "synset": "oewn-03163462-n"
     },
     {
       "definition": "a wooden hand tool with a pointed end; used to make holes in the ground for planting seeds or bulbs",
@@ -821,20 +517,20 @@
       "synset": "oewn-03195142-n"
     },
     {
-      "definition": "a device used for shaping metal",
+      "definition": "a spade with a long handle for digging narrow ditches",
       "forms": [],
-      "id": "oewn-die__1.06.01..",
+      "id": "oewn-ditch_spade__1.06.00..",
       "lang": "en",
-      "lemma": "die",
-      "synset": "oewn-03197474-n"
+      "lemma": "ditch spade",
+      "synset": "oewn-03219153-n"
     },
     {
-      "definition": "a cutting tool that is fitted into a diestock and used for cutting male (external) screw threads on screws or bolts or pipes or rods",
+      "definition": "a spade with a long handle for digging narrow ditches",
       "forms": [],
-      "id": "oewn-die__1.06.02..",
+      "id": "oewn-long-handled_spade__1.06.00..",
       "lang": "en",
-      "lemma": "die",
-      "synset": "oewn-03197591-n"
+      "lemma": "long-handled spade",
+      "synset": "oewn-03219153-n"
     },
     {
       "definition": "a wrench with a handle shaped like a crank",
@@ -853,116 +549,20 @@
       "synset": "oewn-03233818-n"
     },
     {
-      "definition": "a tool with a sharp point and cutting edges for making holes in hard materials (usually rotating rapidly or by repeated blows)",
+      "definition": "a hand shovel carried by infantrymen for digging trenches",
       "forms": [],
-      "id": "oewn-drill__1.06.00..",
+      "id": "oewn-entrenching_tool__1.06.00..",
       "lang": "en",
-      "lemma": "drill",
-      "synset": "oewn-03244429-n"
+      "lemma": "entrenching tool",
+      "synset": "oewn-03296324-n"
     },
     {
-      "definition": "a rotating power drill powered by an electric motor",
+      "definition": "a hand shovel carried by infantrymen for digging trenches",
       "forms": [],
-      "id": "oewn-electric_drill__1.06.00..",
+      "id": "oewn-trenching_spade__1.06.00..",
       "lang": "en",
-      "lemma": "electric drill",
-      "synset": "oewn-03244843-n"
-    },
-    {
-      "definition": "a bit used in drilling for oil",
-      "forms": [],
-      "id": "oewn-drilling_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "drilling bit",
-      "synset": "oewn-03245030-n"
-    },
-    {
-      "definition": "a bit used in drilling for oil",
-      "forms": [],
-      "id": "oewn-drill_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "drill bit",
-      "synset": "oewn-03245030-n"
-    },
-    {
-      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
-      "forms": [],
-      "id": "oewn-drum_sander__1.06.00..",
-      "lang": "en",
-      "lemma": "drum sander",
-      "synset": "oewn-03255291-n"
-    },
-    {
-      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
-      "forms": [],
-      "id": "oewn-electric_sander__1.06.00..",
-      "lang": "en",
-      "lemma": "electric sander",
-      "synset": "oewn-03255291-n"
-    },
-    {
-      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
-      "forms": [],
-      "id": "oewn-sander__1.06.00..",
-      "lang": "en",
-      "lemma": "sander",
-      "synset": "oewn-03255291-n"
-    },
-    {
-      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
-      "forms": [],
-      "id": "oewn-smoother__1.06.00..",
-      "lang": "en",
-      "lemma": "smoother",
-      "synset": "oewn-03255291-n"
-    },
-    {
-      "definition": "garden tool for cutting grass around the edges of a yard",
-      "forms": [],
-      "id": "oewn-edger__1.06.00..",
-      "lang": "en",
-      "lemma": "edger",
-      "synset": "oewn-03269817-n"
-    },
-    {
-      "definition": "any cutting tool with a sharp cutting edge (as a chisel or knife or plane or gouge)",
-      "forms": [],
-      "id": "oewn-edge_tool__1.06.00..",
-      "lang": "en",
-      "lemma": "edge tool",
-      "synset": "oewn-03269943-n"
-    },
-    {
-      "definition": "a hammer driven by electric motor",
-      "forms": [],
-      "id": "oewn-electric_hammer__1.06.00..",
-      "lang": "en",
-      "lemma": "electric hammer",
-      "synset": "oewn-03277036-n"
-    },
-    {
-      "definition": "a crude stone artifact (as a chipped flint); possibly the earliest tools",
-      "forms": [],
-      "id": "oewn-eolith__1.06.00..",
-      "lang": "en",
-      "lemma": "eolith",
-      "synset": "oewn-03296996-n"
-    },
-    {
-      "definition": "a bit with a cutting blade that can be adjusted to different sizes",
-      "forms": [],
-      "id": "oewn-expansion_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "expansion bit",
-      "synset": "oewn-03309268-n"
-    },
-    {
-      "definition": "a bit with a cutting blade that can be adjusted to different sizes",
-      "forms": [],
-      "id": "oewn-expansive_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "expansive bit",
-      "synset": "oewn-03309268-n"
+      "lemma": "trenching spade",
+      "synset": "oewn-03296324-n"
     },
     {
       "definition": "a steel hand tool with small sharp teeth on some or all of its surfaces; used for smoothing wood or metal",
@@ -1021,52 +621,12 @@
       "synset": "oewn-03387815-n"
     },
     {
-      "definition": "an agricultural tool used for lifting or digging; has a handle and metal prongs",
+      "definition": "a spade used by gardeners",
       "forms": [],
-      "id": "oewn-fork__1.06.02..",
+      "id": "oewn-garden_spade__1.06.00..",
       "lang": "en",
-      "lemma": "fork",
-      "synset": "oewn-03389013-n"
-    },
-    {
-      "definition": "tool consisting of a combination of implements arranged to work together",
-      "forms": [],
-      "id": "oewn-gang__1.06.00..",
-      "lang": "en",
-      "lemma": "gang",
-      "synset": "oewn-03420273-n"
-    },
-    {
-      "definition": "a power saw that has several parallel blades making simultaneous cuts",
-      "forms": [],
-      "id": "oewn-gangsaw__1.06.00..",
-      "lang": "en",
-      "lemma": "gangsaw",
-      "synset": "oewn-03420536-n"
-    },
-    {
-      "definition": "a rake used by gardeners",
-      "forms": [],
-      "id": "oewn-garden_rake__1.06.00..",
-      "lang": "en",
-      "lemma": "garden rake",
-      "synset": "oewn-03422880-n"
-    },
-    {
-      "definition": "used for working in gardens or yards",
-      "forms": [],
-      "id": "oewn-garden_tool__1.06.00..",
-      "lang": "en",
-      "lemma": "garden tool",
-      "synset": "oewn-03423152-n"
-    },
-    {
-      "definition": "used for working in gardens or yards",
-      "forms": [],
-      "id": "oewn-lawn_tool__1.06.00..",
-      "lang": "en",
-      "lemma": "lawn tool",
-      "synset": "oewn-03423152-n"
+      "lemma": "garden spade",
+      "synset": "oewn-03423068-n"
     },
     {
       "definition": "a trowel used by gardeners",
@@ -1077,52 +637,12 @@
       "synset": "oewn-03423312-n"
     },
     {
-      "definition": "a tool for cutting glass",
+      "definition": "a small mallet used by a presiding officer or a judge",
       "forms": [],
-      "id": "oewn-glass_cutter__1.06.00..",
+      "id": "oewn-gavel__1.06.00..",
       "lang": "en",
-      "lemma": "glass cutter",
-      "synset": "oewn-03443704-n"
-    },
-    {
-      "definition": "a tool consisting of several hooks for grasping and holding; often thrown with a rope",
-      "forms": [],
-      "id": "oewn-grapnel__1.06.01..",
-      "lang": "en",
-      "lemma": "grapnel",
-      "synset": "oewn-03459155-n"
-    },
-    {
-      "definition": "a tool consisting of several hooks for grasping and holding; often thrown with a rope",
-      "forms": [],
-      "id": "oewn-grapple__1.06.00..",
-      "lang": "en",
-      "lemma": "grapple",
-      "synset": "oewn-03459155-n"
-    },
-    {
-      "definition": "a tool consisting of several hooks for grasping and holding; often thrown with a rope",
-      "forms": [],
-      "id": "oewn-grappler__1.06.00..",
-      "lang": "en",
-      "lemma": "grappler",
-      "synset": "oewn-03459155-n"
-    },
-    {
-      "definition": "a tool consisting of several hooks for grasping and holding; often thrown with a rope",
-      "forms": [],
-      "id": "oewn-grappling_hook__1.06.00..",
-      "lang": "en",
-      "lemma": "grappling hook",
-      "synset": "oewn-03459155-n"
-    },
-    {
-      "definition": "a tool consisting of several hooks for grasping and holding; often thrown with a rope",
-      "forms": [],
-      "id": "oewn-grappling_iron__1.06.00..",
-      "lang": "en",
-      "lemma": "grappling iron",
-      "synset": "oewn-03459155-n"
+      "lemma": "gavel",
+      "synset": "oewn-03435223-n"
     },
     {
       "definition": "a tool used by an engraver",
@@ -1165,14 +685,6 @@
       "synset": "oewn-03476808-n"
     },
     {
-      "definition": "a tool (as a hoe or pick or mattock) used for breaking up the surface of the soil",
-      "forms": [],
-      "id": "oewn-hack__1.06.01..",
-      "lang": "en",
-      "lemma": "hack",
-      "synset": "oewn-03479590-n"
-    },
-    {
       "definition": "saw used with one hand for cutting metal",
       "forms": [],
       "id": "oewn-hacksaw__1.06.00..",
@@ -1203,46 +715,6 @@
       "lang": "en",
       "lemma": "hammer",
       "synset": "oewn-03486255-n"
-    },
-    {
-      "definition": "a power tool for drilling rocks",
-      "forms": [],
-      "id": "oewn-hammer__1.06.01..",
-      "lang": "en",
-      "lemma": "hammer",
-      "synset": "oewn-03486604-n"
-    },
-    {
-      "definition": "a power tool for drilling rocks",
-      "forms": [],
-      "id": "oewn-power_hammer__1.06.00..",
-      "lang": "en",
-      "lemma": "power hammer",
-      "synset": "oewn-03486604-n"
-    },
-    {
-      "definition": "a small portable drill held and operated by hand",
-      "forms": [],
-      "id": "oewn-hand_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "hand drill",
-      "synset": "oewn-03489892-n"
-    },
-    {
-      "definition": "a small portable drill held and operated by hand",
-      "forms": [],
-      "id": "oewn-handheld_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "handheld drill",
-      "synset": "oewn-03489892-n"
-    },
-    {
-      "definition": "a lawn mower that is operated by hand",
-      "forms": [],
-      "id": "oewn-hand_mower__1.06.00..",
-      "lang": "en",
-      "lemma": "hand mower",
-      "synset": "oewn-03492857-n"
     },
     {
       "definition": "a saw used with one hand for cutting wood",
@@ -1285,46 +757,6 @@
       "synset": "oewn-03494245-n"
     },
     {
-      "definition": "a comb for separating flax fibers",
-      "forms": [],
-      "id": "oewn-hatchel__1.06.00..",
-      "lang": "en",
-      "lemma": "hatchel",
-      "synset": "oewn-03504010-n"
-    },
-    {
-      "definition": "a comb for separating flax fibers",
-      "forms": [],
-      "id": "oewn-heckle__1.06.00..",
-      "lang": "en",
-      "lemma": "heckle",
-      "synset": "oewn-03504010-n"
-    },
-    {
-      "definition": "a long-handled fork for turning or lifting hay",
-      "forms": [],
-      "id": "oewn-hayfork__1.06.00..",
-      "lang": "en",
-      "lemma": "hayfork",
-      "synset": "oewn-03505601-n"
-    },
-    {
-      "definition": "a garden tool for trimming hedges",
-      "forms": [],
-      "id": "oewn-hedge_trimmer__1.06.00..",
-      "lang": "en",
-      "lemma": "hedge trimmer",
-      "synset": "oewn-03516477-n"
-    },
-    {
-      "definition": "a tool with a flat blade attached at right angles to a long handle",
-      "forms": [],
-      "id": "oewn-hoe__1.06.00..",
-      "lang": "en",
-      "lemma": "hoe",
-      "synset": "oewn-03529754-n"
-    },
-    {
       "definition": "a wrench with a hook that fits over a nut or bolt head",
       "forms": [],
       "id": "oewn-hook_wrench__1.06.00..",
@@ -1357,68 +789,12 @@
       "synset": "oewn-03563187-n"
     },
     {
-      "definition": "tool for exerting pressure or lifting",
-      "forms": [],
-      "id": "oewn-jack__1.06.00..",
-      "lang": "en",
-      "lemma": "jack",
-      "synset": "oewn-03594138-n"
-    },
-    {
       "definition": "a carpenter's plane for rough finishing",
       "forms": [],
       "id": "oewn-jack_plane__1.06.00..",
       "lang": "en",
       "lemma": "jack plane",
       "synset": "oewn-03596119-n"
-    },
-    {
-      "definition": "screw-operated jack",
-      "forms": [],
-      "id": "oewn-jackscrew__1.06.00..",
-      "lang": "en",
-      "lemma": "jackscrew",
-      "synset": "oewn-03596215-n"
-    },
-    {
-      "definition": "screw-operated jack",
-      "forms": [],
-      "id": "oewn-screw_jack__1.06.00..",
-      "lang": "en",
-      "lemma": "screw jack",
-      "synset": "oewn-03596215-n"
-    },
-    {
-      "definition": "hydraulic tool inserted into a wrecked vehicle and used to pry the wreckage apart in order to provide access to people trapped inside",
-      "forms": [],
-      "id": "oewn-jaws_of_life__1.06.00..",
-      "lang": "en",
-      "lemma": "Jaws of Life",
-      "synset": "oewn-03599710-n"
-    },
-    {
-      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
-      "forms": [],
-      "id": "oewn-jigsaw__1.06.00..",
-      "lang": "en",
-      "lemma": "jigsaw",
-      "synset": "oewn-03603976-n"
-    },
-    {
-      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
-      "forms": [],
-      "id": "oewn-scroll_saw__1.06.00..",
-      "lang": "en",
-      "lemma": "scroll saw",
-      "synset": "oewn-03603976-n"
-    },
-    {
-      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
-      "forms": [],
-      "id": "oewn-fretsaw__1.06.00..",
-      "lang": "en",
-      "lemma": "fretsaw",
-      "synset": "oewn-03603976-n"
     },
     {
       "definition": "a long carpenter's plane used to shape the edges of boards so they will fit together",
@@ -1453,12 +829,12 @@
       "synset": "oewn-03606851-n"
     },
     {
-      "definition": "the blade of a knife",
+      "definition": "a handsaw with a long narrow blade for cutting short radius curves; similar to a compass saw",
       "forms": [],
-      "id": "oewn-knife_blade__1.06.00..",
+      "id": "oewn-keyhole_saw__1.06.00..",
       "lang": "en",
-      "lemma": "knife blade",
-      "synset": "oewn-03629609-n"
+      "lemma": "keyhole saw",
+      "synset": "oewn-03620096-n"
     },
     {
       "definition": "opener consisting of a string that can be passed through a hole in a door for raising the latch from outside",
@@ -1467,62 +843,6 @@
       "lang": "en",
       "lemma": "latchstring",
       "synset": "oewn-03650725-n"
-    },
-    {
-      "definition": "garden tool for mowing grass on lawns",
-      "forms": [],
-      "id": "oewn-lawn_mower__1.06.00..",
-      "lang": "en",
-      "lemma": "lawn mower",
-      "synset": "oewn-03655235-n"
-    },
-    {
-      "definition": "garden tool for mowing grass on lawns",
-      "forms": [],
-      "id": "oewn-mower__1.06.00..",
-      "lang": "en",
-      "lemma": "mower",
-      "synset": "oewn-03655235-n"
-    },
-    {
-      "definition": "moldboard plow with a double moldboard designed to move dirt to either side of a central furrow",
-      "forms": [],
-      "id": "oewn-lister__1.06.00..",
-      "lang": "en",
-      "lemma": "lister",
-      "synset": "oewn-03683092-n"
-    },
-    {
-      "definition": "moldboard plow with a double moldboard designed to move dirt to either side of a central furrow",
-      "forms": [],
-      "id": "oewn-lister_plow__1.06.00..",
-      "lang": "en",
-      "lemma": "lister plow",
-      "synset": "oewn-03683092-n"
-    },
-    {
-      "definition": "moldboard plow with a double moldboard designed to move dirt to either side of a central furrow",
-      "forms": [],
-      "id": "oewn-lister_plough__1.06.00..",
-      "lang": "en",
-      "lemma": "lister plough",
-      "synset": "oewn-03683092-n"
-    },
-    {
-      "definition": "moldboard plow with a double moldboard designed to move dirt to either side of a central furrow",
-      "forms": [],
-      "id": "oewn-middlebreaker__1.06.00..",
-      "lang": "en",
-      "lemma": "middlebreaker",
-      "synset": "oewn-03683092-n"
-    },
-    {
-      "definition": "moldboard plow with a double moldboard designed to move dirt to either side of a central furrow",
-      "forms": [],
-      "id": "oewn-middle_buster__1.06.00..",
-      "lang": "en",
-      "lemma": "middle buster",
-      "synset": "oewn-03683092-n"
     },
     {
       "definition": "pliers that can be locked in place",
@@ -1637,20 +957,20 @@
       "synset": "oewn-03779860-n"
     },
     {
-      "definition": "plow that has a moldboard",
+      "definition": "adjustable wrench that has one fixed and one adjustable jaw",
       "forms": [],
-      "id": "oewn-moldboard_plow__1.06.00..",
+      "id": "oewn-monkey-wrench__1.06.00..",
       "lang": "en",
-      "lemma": "moldboard plow",
-      "synset": "oewn-03785580-n"
+      "lemma": "monkey-wrench",
+      "synset": "oewn-03788327-n"
     },
     {
-      "definition": "plow that has a moldboard",
+      "definition": "adjustable wrench that has one fixed and one adjustable jaw",
       "forms": [],
-      "id": "oewn-mouldboard_plough__1.06.00..",
+      "id": "oewn-monkey_wrench__1.06.00..",
       "lang": "en",
-      "lemma": "mouldboard plough",
-      "synset": "oewn-03785580-n"
+      "lemma": "monkey wrench",
+      "synset": "oewn-03788327-n"
     },
     {
       "definition": "a small flat file for shaping the nails",
@@ -1667,14 +987,6 @@
       "lang": "en",
       "lemma": "needlenose pliers",
       "synset": "oewn-03822070-n"
-    },
-    {
-      "definition": "a stone tool from the Neolithic Age",
-      "forms": [],
-      "id": "oewn-neolith__1.06.00..",
-      "lang": "en",
-      "lemma": "neolith",
-      "synset": "oewn-03823541-n"
     },
     {
       "definition": "a wrench having parallel jaws at fixed separation (often on both ends of the handle)",
@@ -1717,14 +1029,6 @@
       "synset": "oewn-03854795-n"
     },
     {
-      "definition": "a stone tool from the Paleolithic age",
-      "forms": [],
-      "id": "oewn-paleolith__1.06.00..",
-      "lang": "en",
-      "lemma": "paleolith",
-      "synset": "oewn-03884115-n"
-    },
-    {
       "definition": "a spatula used by artists for mixing or applying or scraping off oil paints",
       "forms": [],
       "id": "oewn-palette_knife__1.06.00..",
@@ -1741,44 +1045,12 @@
       "synset": "oewn-03885153-n"
     },
     {
-      "definition": "a cutting implement for cutting sheets of paper to the desired size",
-      "forms": [],
-      "id": "oewn-paper_cutter__1.06.00..",
-      "lang": "en",
-      "lemma": "paper cutter",
-      "synset": "oewn-03892637-n"
-    },
-    {
       "definition": "a club-shaped hand tool for grinding and mixing substances in a mortar",
       "forms": [],
       "id": "oewn-pestle__1.06.00..",
       "lang": "en",
       "lemma": "pestle",
       "synset": "oewn-03925411-n"
-    },
-    {
-      "definition": "a heavy tool of stone or iron (usually with a flat base and a handle) that is used to grind and mix material (as grain or drugs or pigments) against a slab of stone",
-      "forms": [],
-      "id": "oewn-pestle__1.06.01..",
-      "lang": "en",
-      "lemma": "pestle",
-      "synset": "oewn-03925552-n"
-    },
-    {
-      "definition": "a heavy tool of stone or iron (usually with a flat base and a handle) that is used to grind and mix material (as grain or drugs or pigments) against a slab of stone",
-      "forms": [],
-      "id": "oewn-muller__1.06.00..",
-      "lang": "en",
-      "lemma": "muller",
-      "synset": "oewn-03925552-n"
-    },
-    {
-      "definition": "a heavy tool of stone or iron (usually with a flat base and a handle) that is used to grind and mix material (as grain or drugs or pigments) against a slab of stone",
-      "forms": [],
-      "id": "oewn-pounder__1.06.00..",
-      "lang": "en",
-      "lemma": "pounder",
-      "synset": "oewn-03925552-n"
     },
     {
       "definition": "a screwdriver for use with Phillips screws",
@@ -1795,14 +1067,6 @@
       "lang": "en",
       "lemma": "pick",
       "synset": "oewn-03935681-n"
-    },
-    {
-      "definition": "a small bit that drills a first hole to guide a larger drill",
-      "forms": [],
-      "id": "oewn-pilot_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "pilot bit",
-      "synset": "oewn-03945338-n"
     },
     {
       "definition": "a hand tool for holding consisting of a compound lever for grasping",
@@ -1853,12 +1117,36 @@
       "synset": "oewn-03952352-n"
     },
     {
+      "definition": "adjustable wrench for gripping and turning a pipe; has two serrated jaws that are adjusted to grip the pipe",
+      "forms": [],
+      "id": "oewn-pipe_wrench__1.06.00..",
+      "lang": "en",
+      "lemma": "pipe wrench",
+      "synset": "oewn-03953742-n"
+    },
+    {
+      "definition": "adjustable wrench for gripping and turning a pipe; has two serrated jaws that are adjusted to grip the pipe",
+      "forms": [],
+      "id": "oewn-tube_wrench__1.06.00..",
+      "lang": "en",
+      "lemma": "tube wrench",
+      "synset": "oewn-03953742-n"
+    },
+    {
       "definition": "a long-handled hand tool with sharp widely spaced prongs for lifting and pitching hay",
       "forms": [],
       "id": "oewn-pitchfork__1.06.00..",
       "lang": "en",
       "lemma": "pitchfork",
       "synset": "oewn-03956635-n"
+    },
+    {
+      "definition": "a large two-handed saw formerly used to cut logs into planks; one man stood above the log and the other in a pit below",
+      "forms": [],
+      "id": "oewn-pitsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "pitsaw",
+      "synset": "oewn-03958076-n"
     },
     {
       "definition": "a carpenter's hand tool with an adjustable blade for smoothing or shaping wood",
@@ -1883,30 +1171,6 @@
       "lang": "en",
       "lemma": "woodworking plane",
       "synset": "oewn-03961007-n"
-    },
-    {
-      "definition": "a power tool for smoothing or shaping wood",
-      "forms": [],
-      "id": "oewn-plane__1.06.02..",
-      "lang": "en",
-      "lemma": "plane",
-      "synset": "oewn-03961572-n"
-    },
-    {
-      "definition": "a power tool for smoothing or shaping wood",
-      "forms": [],
-      "id": "oewn-planer__1.06.00..",
-      "lang": "en",
-      "lemma": "planer",
-      "synset": "oewn-03961572-n"
-    },
-    {
-      "definition": "a power tool for smoothing or shaping wood",
-      "forms": [],
-      "id": "oewn-planing_machine__1.06.00..",
-      "lang": "en",
-      "lemma": "planing machine",
-      "synset": "oewn-03961572-n"
     },
     {
       "definition": "a trowel used to spread and smooth plaster",
@@ -1965,22 +1229,6 @@
       "synset": "oewn-03973308-n"
     },
     {
-      "definition": "a farm tool having one or more heavy blades to break the soil and cut a furrow prior to sowing",
-      "forms": [],
-      "id": "oewn-plow__1.06.00..",
-      "lang": "en",
-      "lemma": "plow",
-      "synset": "oewn-03973894-n"
-    },
-    {
-      "definition": "a farm tool having one or more heavy blades to break the soil and cut a furrow prior to sowing",
-      "forms": [],
-      "id": "oewn-plough__1.06.00..",
-      "lang": "en",
-      "lemma": "plough",
-      "synset": "oewn-03973894-n"
-    },
-    {
       "definition": "a long flexible steel coil for dislodging stoppages in curved pipes",
       "forms": [],
       "id": "oewn-plumber-ap-s_snake__1.06.00..",
@@ -2021,14 +1269,6 @@
       "synset": "oewn-03976514-n"
     },
     {
-      "definition": "a power drill powered by compressed air",
-      "forms": [],
-      "id": "oewn-pneumatic_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "pneumatic drill",
-      "synset": "oewn-03977679-n"
-    },
-    {
       "definition": "a trowel used to fill and finish masonry joints with mortar or cement",
       "forms": [],
       "id": "oewn-pointing_trowel__1.06.00..",
@@ -2053,60 +1293,36 @@
       "synset": "oewn-03996023-n"
     },
     {
-      "definition": "a power tool for drilling holes into hard materials",
+      "definition": "a long-handled pruning saw with a curved blade at the end and sometimes a clipper; used to prune small trees",
       "forms": [],
-      "id": "oewn-power_drill__1.06.00..",
+      "id": "oewn-pruner__1.06.00..",
       "lang": "en",
-      "lemma": "power drill",
-      "synset": "oewn-04001730-n"
+      "lemma": "pruner",
+      "synset": "oewn-04022634-n"
     },
     {
-      "definition": "a lawn mower powered by a gasoline motor",
+      "definition": "a long-handled pruning saw with a curved blade at the end and sometimes a clipper; used to prune small trees",
       "forms": [],
-      "id": "oewn-power_mower__1.06.00..",
+      "id": "oewn-pruning_hook__1.06.00..",
       "lang": "en",
-      "lemma": "power mower",
-      "synset": "oewn-04002214-n"
+      "lemma": "pruning hook",
+      "synset": "oewn-04022634-n"
     },
     {
-      "definition": "a lawn mower powered by a gasoline motor",
+      "definition": "a long-handled pruning saw with a curved blade at the end and sometimes a clipper; used to prune small trees",
       "forms": [],
-      "id": "oewn-motor_mower__1.06.00..",
+      "id": "oewn-lopper__1.06.00..",
       "lang": "en",
-      "lemma": "motor mower",
-      "synset": "oewn-04002214-n"
+      "lemma": "lopper",
+      "synset": "oewn-04022634-n"
     },
     {
-      "definition": "a power tool for cutting wood",
+      "definition": "a handsaw used for pruning trees",
       "forms": [],
-      "id": "oewn-power_saw__1.06.00..",
+      "id": "oewn-pruning_saw__1.06.00..",
       "lang": "en",
-      "lemma": "power saw",
-      "synset": "oewn-04002503-n"
-    },
-    {
-      "definition": "a power tool for cutting wood",
-      "forms": [],
-      "id": "oewn-saw__1.06.01..",
-      "lang": "en",
-      "lemma": "saw",
-      "synset": "oewn-04002503-n"
-    },
-    {
-      "definition": "a power tool for cutting wood",
-      "forms": [],
-      "id": "oewn-sawing_machine__1.06.00..",
-      "lang": "en",
-      "lemma": "sawing machine",
-      "synset": "oewn-04002503-n"
-    },
-    {
-      "definition": "a tool driven by a motor",
-      "forms": [],
-      "id": "oewn-power_tool__1.06.00..",
-      "lang": "en",
-      "lemma": "power tool",
-      "synset": "oewn-04003842-n"
+      "lemma": "pruning saw",
+      "synset": "oewn-04022970-n"
     },
     {
       "definition": "a type of pliers; usually used to grip and turn nuts, bolts and pipe fittings",
@@ -2117,60 +1333,12 @@
       "synset": "oewn-04029415-n"
     },
     {
-      "definition": "a tool for making holes or indentations",
-      "forms": [],
-      "id": "oewn-punch__1.06.00..",
-      "lang": "en",
-      "lemma": "punch",
-      "synset": "oewn-04029643-n"
-    },
-    {
-      "definition": "a tool for making holes or indentations",
-      "forms": [],
-      "id": "oewn-puncher__1.06.00..",
-      "lang": "en",
-      "lemma": "puncher",
-      "synset": "oewn-04029643-n"
-    },
-    {
-      "definition": "punch consisting of pliers for perforating paper or leather",
-      "forms": [],
-      "id": "oewn-punch_pliers__1.06.00..",
-      "lang": "en",
-      "lemma": "punch pliers",
-      "synset": "oewn-04030531-n"
-    },
-    {
       "definition": "a spatula used to mix or apply putty",
       "forms": [],
       "id": "oewn-putty_knife__1.06.00..",
       "lang": "en",
       "lemma": "putty knife",
       "synset": "oewn-04034697-n"
-    },
-    {
-      "definition": "a long-handled tool with a row of teeth at its head; used to move leaves or loosen soil",
-      "forms": [],
-      "id": "oewn-rake__1.06.00..",
-      "lang": "en",
-      "lemma": "rake",
-      "synset": "oewn-04057178-n"
-    },
-    {
-      "definition": "a tool for driving or forcing something by impact",
-      "forms": [],
-      "id": "oewn-ram__1.06.00..",
-      "lang": "en",
-      "lemma": "ram",
-      "synset": "oewn-04057522-n"
-    },
-    {
-      "definition": "a tool for driving something with force",
-      "forms": [],
-      "id": "oewn-rammer__1.06.00..",
-      "lang": "en",
-      "lemma": "rammer",
-      "synset": "oewn-04058551-n"
     },
     {
       "definition": "a coarse file with sharp pointed projections",
@@ -2205,28 +1373,28 @@
       "synset": "oewn-04063711-n"
     },
     {
-      "definition": "a blade that has very sharp edge",
-      "forms": [],
-      "id": "oewn-razorblade__1.06.00..",
-      "lang": "en",
-      "lemma": "razorblade",
-      "synset": "oewn-04064327-n"
-    },
-    {
-      "definition": "a drill that is used to shape or enlarge holes",
-      "forms": [],
-      "id": "oewn-reamer__1.06.00..",
-      "lang": "en",
-      "lemma": "reamer",
-      "synset": "oewn-04066511-n"
-    },
-    {
       "definition": "a type of pliers, the pivot of which may be moved to expand its gripping range",
       "forms": [],
       "id": "oewn-rib_joint_pliers__1.06.00..",
       "lang": "en",
       "lemma": "rib joint pliers",
       "synset": "oewn-04095455-n"
+    },
+    {
+      "definition": "a handsaw for cutting with the grain of the wood",
+      "forms": [],
+      "id": "oewn-ripsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "ripsaw",
+      "synset": "oewn-04101702-n"
+    },
+    {
+      "definition": "a handsaw for cutting with the grain of the wood",
+      "forms": [],
+      "id": "oewn-splitsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "splitsaw",
+      "synset": "oewn-04101702-n"
     },
     {
       "definition": "metal tweezers used by marijuana smokers to hold a roach",
@@ -2245,14 +1413,6 @@
       "synset": "oewn-04103032-n"
     },
     {
-      "definition": "a tool for rounding corners or edges",
-      "forms": [],
-      "id": "oewn-rounder__1.06.00..",
-      "lang": "en",
-      "lemma": "rounder",
-      "synset": "oewn-04121287-n"
-    },
-    {
       "definition": "a file with a circular cross section; used to file the inside of holes",
       "forms": [],
       "id": "oewn-round_file__1.06.00..",
@@ -2261,44 +1421,12 @@
       "synset": "oewn-04121395-n"
     },
     {
-      "definition": "a power tool with a shaped cutter; used in carpentry for cutting grooves",
-      "forms": [],
-      "id": "oewn-router__1.06.00..",
-      "lang": "en",
-      "lemma": "router",
-      "synset": "oewn-04121813-n"
-    },
-    {
       "definition": "a woodworking plane with a narrow cutting head that will make grooves with smooth bottoms",
       "forms": [],
       "id": "oewn-router_plane__1.06.00..",
       "lang": "en",
       "lemma": "router plane",
       "synset": "oewn-04122090-n"
-    },
-    {
-      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
-      "forms": [],
-      "id": "oewn-saber_saw__1.06.00..",
-      "lang": "en",
-      "lemma": "saber saw",
-      "synset": "oewn-04128822-n"
-    },
-    {
-      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
-      "forms": [],
-      "id": "oewn-jigsaw__1.06.01..",
-      "lang": "en",
-      "lemma": "jigsaw",
-      "synset": "oewn-04128822-n"
-    },
-    {
-      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
-      "forms": [],
-      "id": "oewn-reciprocating_saw__1.06.00..",
-      "lang": "en",
-      "lemma": "reciprocating saw",
-      "synset": "oewn-04128822-n"
     },
     {
       "definition": "a tool that throws out a blast of steam laden with sand; used to clean or grind hard surfaces",
@@ -2315,22 +1443,6 @@
       "lang": "en",
       "lemma": "saw",
       "synset": "oewn-04147147-n"
-    },
-    {
-      "definition": "a large sawing machine",
-      "forms": [],
-      "id": "oewn-sawmill__1.06.01..",
-      "lang": "en",
-      "lemma": "sawmill",
-      "synset": "oewn-04147842-n"
-    },
-    {
-      "definition": "a tool used to bend each alternate sawtooth at a slight angle outward",
-      "forms": [],
-      "id": "oewn-saw_set__1.06.00..",
-      "lang": "en",
-      "lemma": "saw set",
-      "synset": "oewn-04147918-n"
     },
     {
       "definition": "a graver used to scoop out broad areas when engraving wood or metal",
@@ -2389,6 +1501,14 @@
       "synset": "oewn-04161915-n"
     },
     {
+      "definition": "adjustable wrench that has one jaw that can be adjusted by turning a screw",
+      "forms": [],
+      "id": "oewn-screw_wrench__1.06.00..",
+      "lang": "en",
+      "lemma": "screw wrench",
+      "synset": "oewn-04162238-n"
+    },
+    {
       "definition": "a sharp-pointed awl for marking wood or metal to be cut",
       "forms": [],
       "id": "oewn-scriber__1.06.00..",
@@ -2421,36 +1541,12 @@
       "synset": "oewn-04163358-n"
     },
     {
-      "definition": "a hoe that is used by pushing rather than pulling",
+      "definition": "a try square with an adjustable sliding head",
       "forms": [],
-      "id": "oewn-scuffle__1.06.00..",
+      "id": "oewn-set_square__1.06.00..",
       "lang": "en",
-      "lemma": "scuffle",
-      "synset": "oewn-04163652-n"
-    },
-    {
-      "definition": "a hoe that is used by pushing rather than pulling",
-      "forms": [],
-      "id": "oewn-scuffle_hoe__1.06.00..",
-      "lang": "en",
-      "lemma": "scuffle hoe",
-      "synset": "oewn-04163652-n"
-    },
-    {
-      "definition": "a hoe that is used by pushing rather than pulling",
-      "forms": [],
-      "id": "oewn-dutch_hoe__1.06.00..",
-      "lang": "en",
-      "lemma": "Dutch hoe",
-      "synset": "oewn-04163652-n"
-    },
-    {
-      "definition": "a tool for shaping metal",
-      "forms": [],
-      "id": "oewn-shaping_tool__1.06.00..",
-      "lang": "en",
-      "lemma": "shaping tool",
-      "synset": "oewn-04191643-n"
+      "lemma": "set square",
+      "synset": "oewn-04184715-n"
     },
     {
       "definition": "a hand tool for lifting loose material; consists of a curved container or scoop and a handle",
@@ -2517,12 +1613,12 @@
       "synset": "oewn-04265969-n"
     },
     {
-      "definition": "a thin bit with a center point and cutting edges on either side",
+      "definition": "a sturdy hand shovel that can be pushed into the earth with the foot",
       "forms": [],
-      "id": "oewn-spade_bit__1.06.00..",
+      "id": "oewn-spade__1.06.00..",
       "lang": "en",
-      "lemma": "spade bit",
-      "synset": "oewn-04273959-n"
+      "lemma": "spade",
+      "synset": "oewn-04273596-n"
     },
     {
       "definition": "a wrench for removing or tightening spark plugs into the cylinder head of an internal combustion engine",
@@ -2573,6 +1669,22 @@
       "synset": "oewn-04295124-n"
     },
     {
+      "definition": "a sharp hand shovel for digging out roots and weeds",
+      "forms": [],
+      "id": "oewn-spud__1.06.00..",
+      "lang": "en",
+      "lemma": "spud",
+      "synset": "oewn-04297102-n"
+    },
+    {
+      "definition": "a sharp hand shovel for digging out roots and weeds",
+      "forms": [],
+      "id": "oewn-stump_spud__1.06.00..",
+      "lang": "en",
+      "lemma": "stump spud",
+      "synset": "oewn-04297102-n"
+    },
+    {
       "definition": "a hand tool consisting of two straight arms at right angles; used to construct or test right angles",
       "forms": [],
       "id": "oewn-square__1.06.00..",
@@ -2581,52 +1693,12 @@
       "synset": "oewn-04298380-n"
     },
     {
-      "definition": "a block or die used to imprint a mark or design",
+      "definition": "a large pipe wrench with L-shaped adjustable jaws that tighten as pressure on the handle is increased",
       "forms": [],
-      "id": "oewn-stamp__1.06.02..",
+      "id": "oewn-stillson_wrench__1.06.00..",
       "lang": "en",
-      "lemma": "stamp",
-      "synset": "oewn-04307101-n"
-    },
-    {
-      "definition": "a power tool that stamps",
-      "forms": [],
-      "id": "oewn-stamping_machine__1.06.00..",
-      "lang": "en",
-      "lemma": "stamping machine",
-      "synset": "oewn-04307647-n"
-    },
-    {
-      "definition": "a power tool that stamps",
-      "forms": [],
-      "id": "oewn-stamper__1.06.00..",
-      "lang": "en",
-      "lemma": "stamper",
-      "synset": "oewn-04307647-n"
-    },
-    {
-      "definition": "a steel rock drill with a star-shaped point that is used for making holes in stones or masonry; it is operated by hitting the end with a hammer while rotating it between blows",
-      "forms": [],
-      "id": "oewn-star_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "star drill",
-      "synset": "oewn-04310990-n"
-    },
-    {
-      "definition": "abrader consisting of a pad of steel wool used for polishing or smoothing",
-      "forms": [],
-      "id": "oewn-steel-wool_pad__1.06.00..",
-      "lang": "en",
-      "lemma": "steel-wool pad",
-      "synset": "oewn-04319158-n"
-    },
-    {
-      "definition": "a miner's tamping bar for ramming packing in over a blasting charge",
-      "forms": [],
-      "id": "oewn-stemmer__1.06.01..",
-      "lang": "en",
-      "lemma": "stemmer",
-      "synset": "oewn-04321124-n"
+      "lemma": "Stillson wrench",
+      "synset": "oewn-04326912-n"
     },
     {
       "definition": "hand tool consisting of a flat rigid rectangular bar (metal or wood) that can be used to draw straight lines (or test their straightness)",
@@ -2637,46 +1709,12 @@
       "synset": "oewn-04338581-n"
     },
     {
-      "definition": "a rock drill with flutes that are straight",
+      "definition": "a wrench with an S-shaped handle",
       "forms": [],
-      "id": "oewn-straight_flute__1.06.00..",
+      "id": "oewn-s_wrench__1.06.00..",
       "lang": "en",
-      "lemma": "straight flute",
-      "synset": "oewn-04338903-n"
-    },
-    {
-      "definition": "a rock drill with flutes that are straight",
-      "forms": [],
-      "id": "oewn-straight-fluted_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "straight-fluted drill",
-      "synset": "oewn-04338903-n"
-    },
-    {
-      "definition": "a tool used in a foundry to shape a mold in sand",
-      "forms": [],
-      "id": "oewn-strickle__1.06.00..",
-      "lang": "en",
-      "lemma": "strickle",
-      "synset": "oewn-04344538-n"
-    },
-    {
-      "definition": "a pointed tool for writing or drawing or engraving",
-      "forms": [
-        "styli"
-      ],
-      "id": "oewn-stylus__1.06.00..",
-      "lang": "en",
-      "lemma": "stylus",
-      "synset": "oewn-04353589-n"
-    },
-    {
-      "definition": "a pointed tool for writing or drawing or engraving",
-      "forms": [],
-      "id": "oewn-style__1.06.00..",
-      "lang": "en",
-      "lemma": "style",
-      "synset": "oewn-04353589-n"
+      "lemma": "S wrench",
+      "synset": "oewn-04381608-n"
     },
     {
       "definition": "a light hammer that is used to drive tacks",
@@ -2685,38 +1723,6 @@
       "lang": "en",
       "lemma": "tack hammer",
       "synset": "oewn-04390388-n"
-    },
-    {
-      "definition": "a tool for tamping (e.g., for tamping tobacco into a pipe bowl or a charge into a drill hole etc.)",
-      "forms": [],
-      "id": "oewn-tamp__1.06.00..",
-      "lang": "en",
-      "lemma": "tamp",
-      "synset": "oewn-04394793-n"
-    },
-    {
-      "definition": "a tool for tamping (e.g., for tamping tobacco into a pipe bowl or a charge into a drill hole etc.)",
-      "forms": [],
-      "id": "oewn-tamper__1.06.00..",
-      "lang": "en",
-      "lemma": "tamper",
-      "synset": "oewn-04394793-n"
-    },
-    {
-      "definition": "a tool for tamping (e.g., for tamping tobacco into a pipe bowl or a charge into a drill hole etc.)",
-      "forms": [],
-      "id": "oewn-tamping_bar__1.06.00..",
-      "lang": "en",
-      "lemma": "tamping bar",
-      "synset": "oewn-04394793-n"
-    },
-    {
-      "definition": "a tool for cutting female (internal) screw threads",
-      "forms": [],
-      "id": "oewn-tap__1.06.02..",
-      "lang": "en",
-      "lemma": "tap",
-      "synset": "oewn-04398245-n"
     },
     {
       "definition": "a file with converging edges",
@@ -2735,14 +1741,6 @@
       "synset": "oewn-04401006-n"
     },
     {
-      "definition": "a cutter (tool for cutting) for floor tiles",
-      "forms": [],
-      "id": "oewn-tile_cutter__1.06.00..",
-      "lang": "en",
-      "lemma": "tile cutter",
-      "synset": "oewn-04442686-n"
-    },
-    {
       "definition": "hand tool consisting of a lever that is used to force the casing of a pneumatic tire onto a steel wheel",
       "forms": [],
       "id": "oewn-tire_iron__1.06.00..",
@@ -2757,14 +1755,6 @@
       "lang": "en",
       "lemma": "tire tool",
       "synset": "oewn-04448227-n"
-    },
-    {
-      "definition": "an implement used in the practice of a vocation",
-      "forms": [],
-      "id": "oewn-tool__1.06.00..",
-      "lang": "en",
-      "lemma": "tool",
-      "synset": "oewn-04459089-n"
     },
     {
       "definition": "pick consisting of a small strip of wood or plastic; used to pick food from between the teeth",
@@ -2791,22 +1781,6 @@
       "synset": "oewn-04482430-n"
     },
     {
-      "definition": "a drill for cutting circular holes around a center",
-      "forms": [],
-      "id": "oewn-trepan__1.06.00..",
-      "lang": "en",
-      "lemma": "trepan",
-      "synset": "oewn-04486640-n"
-    },
-    {
-      "definition": "a massive power hammer; raised by a cam until released to fall under gravity",
-      "forms": [],
-      "id": "oewn-triphammer__1.06.00..",
-      "lang": "en",
-      "lemma": "triphammer",
-      "synset": "oewn-04491903-n"
-    },
-    {
       "definition": "a small hand tool with a handle and flat metal blade; used for scooping or spreading plaster or similar materials",
       "forms": [],
       "id": "oewn-trowel__1.06.00..",
@@ -2829,22 +1803,6 @@
       "lang": "en",
       "lemma": "T-square",
       "synset": "oewn-04500554-n"
-    },
-    {
-      "definition": "a bit or drill having deep helical grooves",
-      "forms": [],
-      "id": "oewn-twist_bit__1.06.00..",
-      "lang": "en",
-      "lemma": "twist bit",
-      "synset": "oewn-04510888-n"
-    },
-    {
-      "definition": "a bit or drill having deep helical grooves",
-      "forms": [],
-      "id": "oewn-twist_drill__1.06.00..",
-      "lang": "en",
-      "lemma": "twist drill",
-      "synset": "oewn-04510888-n"
     },
     {
       "definition": "a saw with handles at both ends; intended for use by two people",
@@ -2877,22 +1835,6 @@
       "lang": "en",
       "lemma": "lumberman's saw",
       "synset": "oewn-04511131-n"
-    },
-    {
-      "definition": "a tool used to thicken or spread metal (the end of a bar or a rivet etc.) by forging or hammering or swaging",
-      "forms": [],
-      "id": "oewn-upset__1.06.00..",
-      "lang": "en",
-      "lemma": "upset",
-      "synset": "oewn-04522739-n"
-    },
-    {
-      "definition": "a tool used to thicken or spread metal (the end of a bar or a rivet etc.) by forging or hammering or swaging",
-      "forms": [],
-      "id": "oewn-swage__1.06.00..",
-      "lang": "en",
-      "lemma": "swage",
-      "synset": "oewn-04522739-n"
     },
     {
       "definition": "a hand tool for removing weeds",
@@ -2999,84 +1941,12 @@
       "synset": "oewn-92299200-n"
     },
     {
-      "definition": "(mountaineering) a tool for extracting a nut, chock, etc., from a crack after use.",
-      "forms": [],
-      "id": "oewn-nut_tool__1.06.01..",
-      "lang": "en",
-      "lemma": "nut tool",
-      "synset": "oewn-92435345-n"
-    },
-    {
-      "definition": "(mountaineering) a tool for extracting a nut, chock, etc., from a crack after use.",
-      "forms": [],
-      "id": "oewn-nut_key__1.06.01..",
-      "lang": "en",
-      "lemma": "nut key",
-      "synset": "oewn-92435345-n"
-    },
-    {
-      "definition": "a simple light plough without a mouldboard.",
-      "forms": [],
-      "id": "oewn-ard__1.06.01..",
-      "lang": "en",
-      "lemma": "ard",
-      "synset": "oewn-92444425-n"
-    },
-    {
-      "definition": "a simple light plough without a mouldboard.",
-      "forms": [],
-      "id": "oewn-ard_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "ard plough",
-      "synset": "oewn-92444425-n"
-    },
-    {
-      "definition": "a simple light plough without a mouldboard.",
-      "forms": [],
-      "id": "oewn-scratch_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "scratch plough",
-      "synset": "oewn-92444425-n"
-    },
-    {
-      "definition": "a light wooden ard, consisting of two body ards, with their parallel beams forming the two shafts for a single horse-drawn tillage implement with two socket shares.",
-      "forms": [],
-      "id": "oewn-sokha__1.06.01..",
-      "lang": "en",
-      "lemma": "sokha",
-      "synset": "oewn-92444429-n"
-    },
-    {
-      "definition": "a plow that consists of a gang of concave steel cutting disks, used for work in hard dry soils.",
-      "forms": [],
-      "id": "oewn-disc_plow__1.06.01..",
-      "lang": "en",
-      "lemma": "disc plow",
-      "synset": "oewn-92445675-n"
-    },
-    {
-      "definition": "a plow that consists of a gang of concave steel cutting disks, used for work in hard dry soils.",
-      "forms": [],
-      "id": "oewn-disc_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "disc plough",
-      "synset": "oewn-92445675-n"
-    },
-    {
       "definition": "A hooked tool, usually of metal, used to clean the hooves of a horse; some designs include a small, very stiff brush for removing additional mud or dirt.",
       "forms": [],
       "id": "oewn-hoof_pick__1.06.01..",
       "lang": "en",
       "lemma": "hoof pick",
       "synset": "oewn-92449890-n"
-    },
-    {
-      "definition": "a high precision tool used for finishing in a small amount of gear tooth surface after processing with hob and shaper cutter.",
-      "forms": [],
-      "id": "oewn-shaving_cutter__1.06.01..",
-      "lang": "en",
-      "lemma": "shaving cutter",
-      "synset": "oewn-92460165-n"
     },
     {
       "definition": "a hand tool used for joining two pieces of metal or other ductile material (usually a wire and a metal plate) by deforming one or both of them to hold the other.",
@@ -3095,60 +1965,12 @@
       "synset": "oewn-92460209-n"
     },
     {
-      "definition": "A large pile driving device.",
+      "definition": "a small backsaw used to cut dovetails.",
       "forms": [],
-      "id": "oewn-piling_hammer__1.06.01..",
+      "id": "oewn-dovetail_saw__1.06.01..",
       "lang": "en",
-      "lemma": "piling hammer",
-      "synset": "oewn-92460211-n"
-    },
-    {
-      "definition": "a hand tool used to clinch tubular rivets.",
-      "forms": [],
-      "id": "oewn-rivet_clincher__1.06.01..",
-      "lang": "en",
-      "lemma": "rivet clincher",
-      "synset": "oewn-92460303-n"
-    },
-    {
-      "definition": "a die that produces a flat piece of material by cutting the desired shape in one operation.",
-      "forms": [],
-      "id": "oewn-blanking_die__1.06.01..",
-      "lang": "en",
-      "lemma": "blanking die",
-      "synset": "oewn-92460909-n"
-    },
-    {
-      "definition": "a punch used in conjunction with a blanking die.",
-      "forms": [],
-      "id": "oewn-blanking_punch__1.06.01..",
-      "lang": "en",
-      "lemma": "blanking punch",
-      "synset": "oewn-92460910-n"
-    },
-    {
-      "definition": "a cutting implement used to cut leading (spacing between lines) and slugs (thicker pieces of lead to provide support to set type forms).",
-      "forms": [],
-      "id": "oewn-slug_cutter__1.06.01..",
-      "lang": "en",
-      "lemma": "slug cutter",
-      "synset": "oewn-92461775-n"
-    },
-    {
-      "definition": "a tool consisting of a number of fine abrasive slips held in a machine head, rotated and reciprocated to impart a smooth finish to cylinder bores, etc.",
-      "forms": [],
-      "id": "oewn-hone__1.06.01..",
-      "lang": "en",
-      "lemma": "hone",
-      "synset": "oewn-92462184-n"
-    },
-    {
-      "definition": "a small spiral type hand drill, similar to a pin vice, used for pilot holes and small precise holes for miniatures and crafts.",
-      "forms": [],
-      "id": "oewn-archimedean_drill__1.06.01..",
-      "lang": "en",
-      "lemma": "Archimedean drill",
-      "synset": "oewn-92462380-n"
+      "lemma": "dovetail saw",
+      "synset": "oewn-92462233-n"
     },
     {
       "definition": "a hand tool with polished agate tips (or other gemstone) for rubbing the gold leaf in order to obtain a highly polished surface, used in gilding.",
@@ -3165,86 +1987,6 @@
       "lang": "en",
       "lemma": "burnishing tool",
       "synset": "oewn-92465639-n"
-    },
-    {
-      "definition": "a plough that has only one wheel at the front and handles at the rear for the ploughman to steer and maneuver it.",
-      "forms": [],
-      "id": "oewn-single-furrow_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "single-furrow plough",
-      "synset": "oewn-92465707-n"
-    },
-    {
-      "definition": "a plough that has only one wheel at the front and handles at the rear for the ploughman to steer and maneuver it.",
-      "forms": [],
-      "id": "oewn-single-furrow_plow__1.06.01..",
-      "lang": "en",
-      "lemma": "single-furrow plow",
-      "synset": "oewn-92465707-n"
-    },
-    {
-      "definition": "a plough with two moldboards.",
-      "forms": [],
-      "id": "oewn-two-furrow_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "two-furrow plough",
-      "synset": "oewn-92465729-n"
-    },
-    {
-      "definition": "a plough with two moldboards.",
-      "forms": [],
-      "id": "oewn-double-furrow_plow__1.06.01..",
-      "lang": "en",
-      "lemma": "double-furrow plow",
-      "synset": "oewn-92465729-n"
-    },
-    {
-      "definition": "a plough with two moldboards.",
-      "forms": [],
-      "id": "oewn-double-furrow_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "double-furrow plough",
-      "synset": "oewn-92465729-n"
-    },
-    {
-      "definition": "a plough with two moldboards.",
-      "forms": [],
-      "id": "oewn-two-furrow_plow__1.06.01..",
-      "lang": "en",
-      "lemma": "two-furrow plow",
-      "synset": "oewn-92465729-n"
-    },
-    {
-      "definition": "a plough having two or more shares, coulters, and mouldboards designed to work simultaneously.",
-      "forms": [],
-      "id": "oewn-gang_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "gang plough",
-      "synset": "oewn-92465732-n"
-    },
-    {
-      "definition": "a plough having two or more shares, coulters, and mouldboards designed to work simultaneously.",
-      "forms": [],
-      "id": "oewn-multiple-furrow_plow__1.06.01..",
-      "lang": "en",
-      "lemma": "multiple-furrow plow",
-      "synset": "oewn-92465732-n"
-    },
-    {
-      "definition": "a plough having two or more shares, coulters, and mouldboards designed to work simultaneously.",
-      "forms": [],
-      "id": "oewn-multiple-furrow_plough__1.06.01..",
-      "lang": "en",
-      "lemma": "multiple-furrow plough",
-      "synset": "oewn-92465732-n"
-    },
-    {
-      "definition": "a plough having two or more shares, coulters, and mouldboards designed to work simultaneously.",
-      "forms": [],
-      "id": "oewn-gang_plow__1.06.01..",
-      "lang": "en",
-      "lemma": "gang plow",
-      "synset": "oewn-92465732-n"
     },
     {
       "definition": "a weeder with steel claws that grab weeds by the root for clean removal.",
@@ -3265,28 +2007,6 @@
   ],
   "synsets": [
     {
-      "definition": "a tool or machine used for wearing down or smoothing or polishing",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-02671023-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "abrader"
-    },
-    {
-      "definition": "a primitive stone artifact (usually made of sandstone) used as an abrader",
-      "hypernyms": [
-        "oewn-02671023-n"
-      ],
-      "id": "oewn-02671243-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "abrading stone"
-    },
-    {
       "definition": "can be changed to different settings",
       "hypernyms": [
         "oewn-04613932-n"
@@ -3296,17 +2016,6 @@
       "max_depth": 10,
       "min_depth": 10,
       "name": "adjustable wrench"
-    },
-    {
-      "definition": "a hammer driven by compressed air",
-      "hypernyms": [
-        "oewn-03486604-n"
-      ],
-      "id": "oewn-02692293-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "air hammer"
     },
     {
       "definition": "a wrench for Allen screws",
@@ -3331,17 +2040,6 @@
       "name": "alligator wrench"
     },
     {
-      "definition": "hand tool for boring holes",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-02761495-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "auger"
-    },
-    {
       "definition": "a pointed tool for marking surfaces or for punching small holes",
       "hypernyms": [
         "oewn-03494245-n"
@@ -3351,6 +2049,17 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "awl"
+    },
+    {
+      "definition": "a handsaw that is stiffened by metal reinforcement along the upper edge",
+      "hypernyms": [
+        "oewn-03493271-n"
+      ],
+      "id": "oewn-02773590-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "backsaw"
     },
     {
       "definition": "a hammer with one round and one flat end; used in working metal",
@@ -3364,29 +2073,6 @@
       "name": "ball-peen hammer"
     },
     {
-      "definition": "an endless saw consisting of a toothed metal band that is driven around two wheels",
-      "hypernyms": [
-        "oewn-04002503-n"
-      ],
-      "id": "oewn-02789860-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "bandsaw"
-    },
-    {
-      "definition": "a ram used to break down doors of fortified buildings",
-      "hypernyms": [
-        "oewn-03292914-n",
-        "oewn-04057522-n"
-      ],
-      "id": "oewn-02813274-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "battering ram"
-    },
-    {
       "definition": "a plane with a concave blade for making moulding with beadwork",
       "hypernyms": [
         "oewn-03961007-n"
@@ -3396,17 +2082,6 @@
       "max_depth": 12,
       "min_depth": 10,
       "name": "beading plane"
-    },
-    {
-      "definition": "a tool for bending",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-02833341-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "bender"
     },
     {
       "definition": "a hand tool consisting of two rules that are hinged together so you can draw or measure angles of any size",
@@ -3429,28 +2104,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "bill"
-    },
-    {
-      "definition": "the cutting part of a drill; usually pointed and threaded and is replaceable in a brace or bitstock or drill press",
-      "hypernyms": [
-        "oewn-03159112-n"
-      ],
-      "id": "oewn-02847545-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "bit"
-    },
-    {
-      "definition": "the flat part of a tool or weapon that (usually) has a cutting edge",
-      "hypernyms": [
-        "oewn-03159112-n"
-      ],
-      "id": "oewn-02851454-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "blade"
     },
     {
       "definition": "a small plane used on end grains of wood",
@@ -3497,28 +2150,6 @@
       "name": "bodkin"
     },
     {
-      "definition": "an implement for cutting bolts",
-      "hypernyms": [
-        "oewn-03158739-n"
-      ],
-      "id": "oewn-02869726-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "bolt cutter"
-    },
-    {
-      "definition": "a drill for penetrating rock",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-02878678-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "bore bit"
-    },
-    {
       "definition": "an opener for removing caps or corks from bottles",
       "hypernyms": [
         "oewn-03853868-n"
@@ -3541,17 +2172,6 @@
       "name": "box wrench"
     },
     {
-      "definition": "a drill consisting of a bit and a brace to hold and turn it",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-02891073-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "brace and bit"
-    },
-    {
       "definition": "a wrench shaped like a brace (has a handle shaped like a crank) and a socket head",
       "hypernyms": [
         "oewn-04613932-n"
@@ -3572,17 +2192,6 @@
       "max_depth": 10,
       "min_depth": 10,
       "name": "bradawl"
-    },
-    {
-      "definition": "a portable drill with a plate that is pressed against the chest to force the drill point into the work",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-02898109-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "breast drill"
     },
     {
       "definition": "a hammer used in laying bricks",
@@ -3618,17 +2227,6 @@
       "name": "bucksaw"
     },
     {
-      "definition": "a power tool used to buff surfaces",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-02914678-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "buffer"
-    },
-    {
       "definition": "a wrench designed to provide a firm grip on something",
       "hypernyms": [
         "oewn-04613932-n"
@@ -3651,50 +2249,6 @@
       "name": "bullnose"
     },
     {
-      "definition": "a heavy plow with a single wide blade; used chiefly in cotton fields",
-      "hypernyms": [
-        "oewn-03973894-n"
-      ],
-      "id": "oewn-02921588-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "bull tongue"
-    },
-    {
-      "definition": "a jack for lifting a motor vehicle by the bumper",
-      "hypernyms": [
-        "oewn-03594138-n"
-      ],
-      "id": "oewn-02922692-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "bumper jack"
-    },
-    {
-      "definition": "small bit used in dentistry or surgery",
-      "hypernyms": [
-        "oewn-02847545-n"
-      ],
-      "id": "oewn-02924676-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "bur"
-    },
-    {
-      "definition": "rotary file for smoothing rough edges left on a workpiece",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-02927299-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "burr"
-    },
-    {
       "definition": "a device for cutting cans open",
       "hypernyms": [
         "oewn-03853868-n"
@@ -3706,6 +2260,17 @@
       "name": "can opener"
     },
     {
+      "definition": "a bottle opener to pry off caps",
+      "hypernyms": [
+        "oewn-02881204-n"
+      ],
+      "id": "oewn-02960231-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "cap opener"
+    },
+    {
       "definition": "a hammer with a cleft at one end for pulling nails",
       "hypernyms": [
         "oewn-03486255-n"
@@ -3715,6 +2280,17 @@
       "max_depth": 10,
       "min_depth": 10,
       "name": "carpenter's hammer"
+    },
+    {
+      "definition": "a short-handled mallet with a wooden head used to strike a chisel or wedge",
+      "hypernyms": [
+        "oewn-03720925-n"
+      ],
+      "id": "oewn-02970394-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "carpenter's mallet"
     },
     {
       "definition": "a steel square used by carpenters; larger than a try square",
@@ -3739,48 +2315,26 @@
       "name": "carriage wrench"
     },
     {
-      "definition": "a bit with a sharp center point for guidance and two side cutters",
+      "definition": "a pipe wrench used for turning large pipes; an adjustable chain circles the pipe with its ends connected to the head whose teeth engage the pipe",
       "hypernyms": [
-        "oewn-02847545-n"
+        "oewn-03953742-n"
       ],
-      "id": "oewn-02997370-n",
+      "id": "oewn-03004886-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "center bit"
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "chain tongs"
     },
     {
-      "definition": "a tool with a conical point that is used to make indentations in metal (especially to mark points for drilling)",
+      "definition": "another name for chain tongs",
       "hypernyms": [
-        "oewn-04029643-n"
+        "oewn-03004886-n"
       ],
-      "id": "oewn-02998180-n",
+      "id": "oewn-03005144-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "center punch"
-    },
-    {
-      "definition": "portable power saw; teeth linked to form an endless chain",
-      "hypernyms": [
-        "oewn-04002503-n"
-      ],
-      "id": "oewn-03004288-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "chain saw"
-    },
-    {
-      "definition": "a bit that is used for beveling",
-      "hypernyms": [
-        "oewn-02847545-n"
-      ],
-      "id": "oewn-03008135-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "chamfer bit"
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "chain wrench"
     },
     {
       "definition": "a plane that makes a beveled edge",
@@ -3794,15 +2348,15 @@
       "name": "chamfer plane"
     },
     {
-      "definition": "an implement for cutting the tip off of a cigar",
+      "definition": "can opener that has a triangular pointed end that pierces the tops of cans",
       "hypernyms": [
-        "oewn-03158739-n"
+        "oewn-02955021-n"
       ],
-      "id": "oewn-03034542-n",
+      "id": "oewn-03032749-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "cigar cutter"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "church key"
     },
     {
       "definition": "a plane with a flexible face that can plane concave or convex surfaces",
@@ -3816,37 +2370,15 @@
       "name": "circular plane"
     },
     {
-      "definition": "a power saw that has a steel disk with cutting teeth on the periphery; rotates on a spindle",
+      "definition": "a hand shovel for shoveling coal",
       "hypernyms": [
-        "oewn-04002503-n"
+        "oewn-03493686-n"
       ],
-      "id": "oewn-03038648-n",
+      "id": "oewn-03060478-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "circular saw"
-    },
-    {
-      "definition": "a tool used to clinch nails or bolts or rivets",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03047158-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "clincher"
-    },
-    {
-      "definition": "any of several tools for straightening fibers",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03079101-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "comb"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "coal shovel"
     },
     {
       "definition": "a woodworking plane that has interchangeable cutters of various shapes",
@@ -3860,37 +2392,37 @@
       "name": "combination plane"
     },
     {
-      "definition": "a drill that removes a cylindrical core from the drill hole",
+      "definition": "a handsaw with a narrow triangular blade for cutting curves",
       "hypernyms": [
-        "oewn-03244429-n"
+        "oewn-03493271-n"
       ],
-      "id": "oewn-03113275-n",
+      "id": "oewn-03084908-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "core drill"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "compass saw"
     },
     {
-      "definition": "a bit for enlarging the upper part of a hole",
+      "definition": "a handsaw with a taut thin blade; used for cutting small curves in wood",
       "hypernyms": [
-        "oewn-02847545-n"
+        "oewn-03493271-n"
       ],
-      "id": "oewn-03122293-n",
+      "id": "oewn-03108670-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "counterbore"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "coping saw"
     },
     {
-      "definition": "a hinged pair of curved iron bars; used to raise heavy objects",
+      "definition": "a bottle opener that pulls corks",
       "hypernyms": [
-        "oewn-03459155-n"
+        "oewn-02881204-n"
       ],
-      "id": "oewn-03131231-n",
+      "id": "oewn-03113801-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "crampon"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "corkscrew"
     },
     {
       "definition": "a hand tool consisting of a rotating shaft with parallel handle",
@@ -3915,26 +2447,26 @@
       "name": "crank handle"
     },
     {
-      "definition": "a rock drill having cruciform cutting edges; used in mining",
+      "definition": "an adjustable wrench designed to fit hexagonal nuts with the adjusting screw built into the head of the wrench",
       "hypernyms": [
-        "oewn-02878678-n"
+        "oewn-02683608-n"
       ],
-      "id": "oewn-03140905-n",
+      "id": "oewn-03135517-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "cross bit"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "crescent wrench"
     },
     {
-      "definition": "a small rake used by a croupier to move chips around on the table",
+      "definition": "handsaw that cuts at right angles to the grain (or major axis)",
       "hypernyms": [
-        "oewn-04057178-n"
+        "oewn-03493271-n"
       ],
-      "id": "oewn-03142868-n",
+      "id": "oewn-03141155-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "croupier's rake"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "crosscut saw"
     },
     {
       "definition": "a saw having teeth around the edge of a hollow cylinder",
@@ -3948,37 +2480,15 @@
       "name": "crown saw"
     },
     {
-      "definition": "a cutting implement; a tool for cutting",
+      "definition": "a plane for making a dado groove",
       "hypernyms": [
-        "oewn-03159112-n"
+        "oewn-03854795-n"
       ],
-      "id": "oewn-03158739-n",
+      "id": "oewn-03163462-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "cutter"
-    },
-    {
-      "definition": "a tool used for cutting or slicing",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03159112-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "cutting implement"
-    },
-    {
-      "definition": "a high speed drill that dentists use to cut into teeth",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-03180904-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "dentist's drill"
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "dado plane"
     },
     {
       "definition": "a wooden hand tool with a pointed end; used to make holes in the ground for planting seeds or bulbs",
@@ -3992,26 +2502,15 @@
       "name": "dibble"
     },
     {
-      "definition": "a device used for shaping metal",
+      "definition": "a spade with a long handle for digging narrow ditches",
       "hypernyms": [
-        "oewn-04191643-n"
+        "oewn-04273596-n"
       ],
-      "id": "oewn-03197474-n",
+      "id": "oewn-03219153-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "die"
-    },
-    {
-      "definition": "a cutting tool that is fitted into a diestock and used for cutting male (external) screw threads on screws or bolts or pipes or rods",
-      "hypernyms": [
-        "oewn-03158739-n"
-      ],
-      "id": "oewn-03197591-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "die"
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "ditch spade"
     },
     {
       "definition": "a wrench with a handle shaped like a crank",
@@ -4036,103 +2535,15 @@
       "name": "dovetail plane"
     },
     {
-      "definition": "a tool with a sharp point and cutting edges for making holes in hard materials (usually rotating rapidly or by repeated blows)",
+      "definition": "a hand shovel carried by infantrymen for digging trenches",
       "hypernyms": [
-        "oewn-04459089-n"
+        "oewn-03493686-n"
       ],
-      "id": "oewn-03244429-n",
+      "id": "oewn-03296324-n",
       "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "drill"
-    },
-    {
-      "definition": "a rotating power drill powered by an electric motor",
-      "hypernyms": [
-        "oewn-04001730-n"
-      ],
-      "id": "oewn-03244843-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "electric drill"
-    },
-    {
-      "definition": "a bit used in drilling for oil",
-      "hypernyms": [
-        "oewn-02847545-n"
-      ],
-      "id": "oewn-03245030-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "drilling bit"
-    },
-    {
-      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-03255291-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "drum sander"
-    },
-    {
-      "definition": "garden tool for cutting grass around the edges of a yard",
-      "hypernyms": [
-        "oewn-03423152-n"
-      ],
-      "id": "oewn-03269817-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "edger"
-    },
-    {
-      "definition": "any cutting tool with a sharp cutting edge (as a chisel or knife or plane or gouge)",
-      "hypernyms": [
-        "oewn-03158739-n"
-      ],
-      "id": "oewn-03269943-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "edge tool"
-    },
-    {
-      "definition": "a hammer driven by electric motor",
-      "hypernyms": [
-        "oewn-03486604-n"
-      ],
-      "id": "oewn-03277036-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "electric hammer"
-    },
-    {
-      "definition": "a crude stone artifact (as a chipped flint); possibly the earliest tools",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03296996-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "eolith"
-    },
-    {
-      "definition": "a bit with a cutting blade that can be adjusted to different sizes",
-      "hypernyms": [
-        "oewn-02847545-n"
-      ],
-      "id": "oewn-03309268-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "expansion bit"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "entrenching tool"
     },
     {
       "definition": "a steel hand tool with small sharp teeth on some or all of its surfaces; used for smoothing wood or metal",
@@ -4201,59 +2612,15 @@
       "name": "fore plane"
     },
     {
-      "definition": "an agricultural tool used for lifting or digging; has a handle and metal prongs",
+      "definition": "a spade used by gardeners",
       "hypernyms": [
-        "oewn-04459089-n"
+        "oewn-04273596-n"
       ],
-      "id": "oewn-03389013-n",
+      "id": "oewn-03423068-n",
       "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "fork"
-    },
-    {
-      "definition": "tool consisting of a combination of implements arranged to work together",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03420273-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "gang"
-    },
-    {
-      "definition": "a power saw that has several parallel blades making simultaneous cuts",
-      "hypernyms": [
-        "oewn-04002503-n"
-      ],
-      "id": "oewn-03420536-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "gangsaw"
-    },
-    {
-      "definition": "a rake used by gardeners",
-      "hypernyms": [
-        "oewn-04057178-n"
-      ],
-      "id": "oewn-03422880-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "garden rake"
-    },
-    {
-      "definition": "used for working in gardens or yards",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03423152-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "garden tool"
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "garden spade"
     },
     {
       "definition": "a trowel used by gardeners",
@@ -4267,26 +2634,15 @@
       "name": "garden trowel"
     },
     {
-      "definition": "a tool for cutting glass",
+      "definition": "a small mallet used by a presiding officer or a judge",
       "hypernyms": [
-        "oewn-03158739-n"
+        "oewn-03720925-n"
       ],
-      "id": "oewn-03443704-n",
+      "id": "oewn-03435223-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "glass cutter"
-    },
-    {
-      "definition": "a tool consisting of several hooks for grasping and holding; often thrown with a rope",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03459155-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "grapnel"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "gavel"
     },
     {
       "definition": "a tool used by an engraver",
@@ -4311,17 +2667,6 @@
       "name": "gutter"
     },
     {
-      "definition": "a tool (as a hoe or pick or mattock) used for breaking up the surface of the soil",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03479590-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "hack"
-    },
-    {
       "definition": "saw used with one hand for cutting metal",
       "hypernyms": [
         "oewn-04147147-n"
@@ -4342,39 +2687,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "hammer"
-    },
-    {
-      "definition": "a power tool for drilling rocks",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-03486604-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "hammer"
-    },
-    {
-      "definition": "a small portable drill held and operated by hand",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-03489892-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "hand drill"
-    },
-    {
-      "definition": "a lawn mower that is operated by hand",
-      "hypernyms": [
-        "oewn-03655235-n"
-      ],
-      "id": "oewn-03492857-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "hand mower"
     },
     {
       "definition": "a saw used with one hand for cutting wood",
@@ -4410,50 +2722,6 @@
       "name": "hand tool"
     },
     {
-      "definition": "a comb for separating flax fibers",
-      "hypernyms": [
-        "oewn-03079101-n"
-      ],
-      "id": "oewn-03504010-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "hatchel"
-    },
-    {
-      "definition": "a long-handled fork for turning or lifting hay",
-      "hypernyms": [
-        "oewn-03389013-n"
-      ],
-      "id": "oewn-03505601-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "hayfork"
-    },
-    {
-      "definition": "a garden tool for trimming hedges",
-      "hypernyms": [
-        "oewn-03423152-n"
-      ],
-      "id": "oewn-03516477-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "hedge trimmer"
-    },
-    {
-      "definition": "a tool with a flat blade attached at right angles to a long handle",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03529754-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "hoe"
-    },
-    {
       "definition": "a wrench with a hook that fits over a nut or bolt head",
       "hypernyms": [
         "oewn-04613932-n"
@@ -4476,17 +2744,6 @@
       "name": "icepick"
     },
     {
-      "definition": "tool for exerting pressure or lifting",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03594138-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "jack"
-    },
-    {
       "definition": "a carpenter's plane for rough finishing",
       "hypernyms": [
         "oewn-03961007-n"
@@ -4496,39 +2753,6 @@
       "max_depth": 12,
       "min_depth": 10,
       "name": "jack plane"
-    },
-    {
-      "definition": "screw-operated jack",
-      "hypernyms": [
-        "oewn-03594138-n"
-      ],
-      "id": "oewn-03596215-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "jackscrew"
-    },
-    {
-      "definition": "hydraulic tool inserted into a wrecked vehicle and used to pry the wreckage apart in order to provide access to people trapped inside",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03599710-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "Jaws of Life"
-    },
-    {
-      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
-      "hypernyms": [
-        "oewn-04002503-n"
-      ],
-      "id": "oewn-03603976-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "jigsaw"
     },
     {
       "definition": "a long carpenter's plane used to shape the edges of boards so they will fit together",
@@ -4542,15 +2766,15 @@
       "name": "jointer"
     },
     {
-      "definition": "the blade of a knife",
+      "definition": "a handsaw with a long narrow blade for cutting short radius curves; similar to a compass saw",
       "hypernyms": [
-        "oewn-02851454-n"
+        "oewn-03493271-n"
       ],
-      "id": "oewn-03629609-n",
+      "id": "oewn-03620096-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "knife blade"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "keyhole saw"
     },
     {
       "definition": "opener consisting of a string that can be passed through a hole in a door for raising the latch from outside",
@@ -4562,28 +2786,6 @@
       "max_depth": 10,
       "min_depth": 10,
       "name": "latchstring"
-    },
-    {
-      "definition": "garden tool for mowing grass on lawns",
-      "hypernyms": [
-        "oewn-03423152-n"
-      ],
-      "id": "oewn-03655235-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "lawn mower"
-    },
-    {
-      "definition": "moldboard plow with a double moldboard designed to move dirt to either side of a central furrow",
-      "hypernyms": [
-        "oewn-03785580-n"
-      ],
-      "id": "oewn-03683092-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "lister"
     },
     {
       "definition": "pliers that can be locked in place",
@@ -4663,15 +2865,15 @@
       "name": "miter box"
     },
     {
-      "definition": "plow that has a moldboard",
+      "definition": "adjustable wrench that has one fixed and one adjustable jaw",
       "hypernyms": [
-        "oewn-03973894-n"
+        "oewn-02683608-n"
       ],
-      "id": "oewn-03785580-n",
+      "id": "oewn-03788327-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "moldboard plow"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "monkey-wrench"
     },
     {
       "definition": "a small flat file for shaping the nails",
@@ -4694,17 +2896,6 @@
       "max_depth": 11,
       "min_depth": 10,
       "name": "needlenose pliers"
-    },
-    {
-      "definition": "a stone tool from the Neolithic Age",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03823541-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "neolith"
     },
     {
       "definition": "a wrench having parallel jaws at fixed separation (often on both ends of the handle)",
@@ -4740,17 +2931,6 @@
       "name": "openside plane"
     },
     {
-      "definition": "a stone tool from the Paleolithic age",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03884115-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "paleolith"
-    },
-    {
       "definition": "a spatula used by artists for mixing or applying or scraping off oil paints",
       "hypernyms": [
         "oewn-04277054-n"
@@ -4773,17 +2953,6 @@
       "name": "pallet"
     },
     {
-      "definition": "a cutting implement for cutting sheets of paper to the desired size",
-      "hypernyms": [
-        "oewn-03159112-n"
-      ],
-      "id": "oewn-03892637-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "paper cutter"
-    },
-    {
       "definition": "a club-shaped hand tool for grinding and mixing substances in a mortar",
       "hypernyms": [
         "oewn-03494245-n"
@@ -4792,17 +2961,6 @@
       "lang": "en",
       "max_depth": 9,
       "min_depth": 9,
-      "name": "pestle"
-    },
-    {
-      "definition": "a heavy tool of stone or iron (usually with a flat base and a handle) that is used to grind and mix material (as grain or drugs or pigments) against a slab of stone",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03925552-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
       "name": "pestle"
     },
     {
@@ -4826,17 +2984,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "pick"
-    },
-    {
-      "definition": "a small bit that drills a first hole to guide a larger drill",
-      "hypernyms": [
-        "oewn-02847545-n"
-      ],
-      "id": "oewn-03945338-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "pilot bit"
     },
     {
       "definition": "a hand tool for holding consisting of a compound lever for grasping",
@@ -4872,6 +3019,17 @@
       "name": "pipe cutter"
     },
     {
+      "definition": "adjustable wrench for gripping and turning a pipe; has two serrated jaws that are adjusted to grip the pipe",
+      "hypernyms": [
+        "oewn-02683608-n"
+      ],
+      "id": "oewn-03953742-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "pipe wrench"
+    },
+    {
       "definition": "a long-handled hand tool with sharp widely spaced prongs for lifting and pitching hay",
       "hypernyms": [
         "oewn-03494245-n"
@@ -4883,6 +3041,17 @@
       "name": "pitchfork"
     },
     {
+      "definition": "a large two-handed saw formerly used to cut logs into planks; one man stood above the log and the other in a pit below",
+      "hypernyms": [
+        "oewn-04511131-n"
+      ],
+      "id": "oewn-03958076-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "pitsaw"
+    },
+    {
       "definition": "a carpenter's hand tool with an adjustable blade for smoothing or shaping wood",
       "hypernyms": [
         "oewn-03269943-n",
@@ -4891,17 +3060,6 @@
       "id": "oewn-03961007-n",
       "lang": "en",
       "max_depth": 11,
-      "min_depth": 9,
-      "name": "plane"
-    },
-    {
-      "definition": "a power tool for smoothing or shaping wood",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-03961572-n",
-      "lang": "en",
-      "max_depth": 9,
       "min_depth": 9,
       "name": "plane"
     },
@@ -4940,17 +3098,6 @@
       "name": "pliers"
     },
     {
-      "definition": "a farm tool having one or more heavy blades to break the soil and cut a furrow prior to sowing",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-03973894-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "plow"
-    },
-    {
       "definition": "a long flexible steel coil for dislodging stoppages in curved pipes",
       "hypernyms": [
         "oewn-03494245-n",
@@ -4972,17 +3119,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "plunger"
-    },
-    {
-      "definition": "a power drill powered by compressed air",
-      "hypernyms": [
-        "oewn-04001730-n"
-      ],
-      "id": "oewn-03977679-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "pneumatic drill"
     },
     {
       "definition": "a trowel used to fill and finish masonry joints with mortar or cement",
@@ -5007,50 +3143,26 @@
       "name": "posthole digger"
     },
     {
-      "definition": "a power tool for drilling holes into hard materials",
+      "definition": "a long-handled pruning saw with a curved blade at the end and sometimes a clipper; used to prune small trees",
       "hypernyms": [
-        "oewn-03244429-n",
-        "oewn-04003842-n"
+        "oewn-04022970-n"
       ],
-      "id": "oewn-04001730-n",
+      "id": "oewn-04022634-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "power drill"
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "pruner"
     },
     {
-      "definition": "a lawn mower powered by a gasoline motor",
+      "definition": "a handsaw used for pruning trees",
       "hypernyms": [
-        "oewn-03655235-n"
+        "oewn-03493271-n"
       ],
-      "id": "oewn-04002214-n",
+      "id": "oewn-04022970-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "power mower"
-    },
-    {
-      "definition": "a power tool for cutting wood",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-04002503-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "power saw"
-    },
-    {
-      "definition": "a tool driven by a motor",
-      "hypernyms": [
-        "oewn-03705309-n",
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04003842-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "power tool"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "pruning saw"
     },
     {
       "definition": "a type of pliers; usually used to grip and turn nuts, bolts and pipe fittings",
@@ -5064,28 +3176,6 @@
       "name": "pump-type pliers"
     },
     {
-      "definition": "a tool for making holes or indentations",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04029643-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "punch"
-    },
-    {
-      "definition": "punch consisting of pliers for perforating paper or leather",
-      "hypernyms": [
-        "oewn-04029643-n"
-      ],
-      "id": "oewn-04030531-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "punch pliers"
-    },
-    {
       "definition": "a spatula used to mix or apply putty",
       "hypernyms": [
         "oewn-04277054-n"
@@ -5095,39 +3185,6 @@
       "max_depth": 10,
       "min_depth": 10,
       "name": "putty knife"
-    },
-    {
-      "definition": "a long-handled tool with a row of teeth at its head; used to move leaves or loosen soil",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04057178-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "rake"
-    },
-    {
-      "definition": "a tool for driving or forcing something by impact",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04057522-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "ram"
-    },
-    {
-      "definition": "a tool for driving something with force",
-      "hypernyms": [
-        "oewn-04057522-n"
-      ],
-      "id": "oewn-04058551-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "rammer"
     },
     {
       "definition": "a coarse file with sharp pointed projections",
@@ -5163,28 +3220,6 @@
       "name": "ravehook"
     },
     {
-      "definition": "a blade that has very sharp edge",
-      "hypernyms": [
-        "oewn-02851454-n"
-      ],
-      "id": "oewn-04064327-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "razorblade"
-    },
-    {
-      "definition": "a drill that is used to shape or enlarge holes",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-04066511-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "reamer"
-    },
-    {
       "definition": "a type of pliers, the pivot of which may be moved to expand its gripping range",
       "hypernyms": [
         "oewn-03973308-n"
@@ -5194,6 +3229,17 @@
       "max_depth": 11,
       "min_depth": 10,
       "name": "rib joint pliers"
+    },
+    {
+      "definition": "a handsaw for cutting with the grain of the wood",
+      "hypernyms": [
+        "oewn-03493271-n"
+      ],
+      "id": "oewn-04101702-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "ripsaw"
     },
     {
       "definition": "metal tweezers used by marijuana smokers to hold a roach",
@@ -5207,17 +3253,6 @@
       "name": "roach clip"
     },
     {
-      "definition": "a tool for rounding corners or edges",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04121287-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "rounder"
-    },
-    {
       "definition": "a file with a circular cross section; used to file the inside of holes",
       "hypernyms": [
         "oewn-03341784-n"
@@ -5229,17 +3264,6 @@
       "name": "round file"
     },
     {
-      "definition": "a power tool with a shaped cutter; used in carpentry for cutting grooves",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-04121813-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "router"
-    },
-    {
       "definition": "a woodworking plane with a narrow cutting head that will make grooves with smooth bottoms",
       "hypernyms": [
         "oewn-03961007-n"
@@ -5249,17 +3273,6 @@
       "max_depth": 12,
       "min_depth": 10,
       "name": "router plane"
-    },
-    {
-      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
-      "hypernyms": [
-        "oewn-04002503-n"
-      ],
-      "id": "oewn-04128822-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "saber saw"
     },
     {
       "definition": "a tool that throws out a blast of steam laden with sand; used to clean or grind hard surfaces",
@@ -5282,28 +3295,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "saw"
-    },
-    {
-      "definition": "a large sawing machine",
-      "hypernyms": [
-        "oewn-04002503-n"
-      ],
-      "id": "oewn-04147842-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "sawmill"
-    },
-    {
-      "definition": "a tool used to bend each alternate sawtooth at a slight angle outward",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04147918-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "saw set"
     },
     {
       "definition": "a graver used to scoop out broad areas when engraving wood or metal",
@@ -5361,6 +3352,17 @@
       "name": "screw key"
     },
     {
+      "definition": "adjustable wrench that has one jaw that can be adjusted by turning a screw",
+      "hypernyms": [
+        "oewn-02683608-n"
+      ],
+      "id": "oewn-04162238-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "screw wrench"
+    },
+    {
       "definition": "a sharp-pointed awl for marking wood or metal to be cut",
       "hypernyms": [
         "oewn-02766719-n"
@@ -5383,26 +3385,15 @@
       "name": "scrub plane"
     },
     {
-      "definition": "a hoe that is used by pushing rather than pulling",
+      "definition": "a try square with an adjustable sliding head",
       "hypernyms": [
-        "oewn-03529754-n"
+        "oewn-04500404-n"
       ],
-      "id": "oewn-04163652-n",
+      "id": "oewn-04184715-n",
       "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "scuffle"
-    },
-    {
-      "definition": "a tool for shaping metal",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04191643-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "shaping tool"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "set square"
     },
     {
       "definition": "a hand tool for lifting loose material; consists of a curved container or scoop and a handle",
@@ -5482,15 +3473,15 @@
       "name": "soldering iron"
     },
     {
-      "definition": "a thin bit with a center point and cutting edges on either side",
+      "definition": "a sturdy hand shovel that can be pushed into the earth with the foot",
       "hypernyms": [
-        "oewn-02847545-n"
+        "oewn-03493686-n"
       ],
-      "id": "oewn-04273959-n",
+      "id": "oewn-04273596-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "spade bit"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "spade"
     },
     {
       "definition": "a wrench for removing or tightening spark plugs into the cylinder head of an internal combustion engine",
@@ -5548,6 +3539,17 @@
       "name": "spreader"
     },
     {
+      "definition": "a sharp hand shovel for digging out roots and weeds",
+      "hypernyms": [
+        "oewn-03493686-n"
+      ],
+      "id": "oewn-04297102-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "spud"
+    },
+    {
       "definition": "a hand tool consisting of two straight arms at right angles; used to construct or test right angles",
       "hypernyms": [
         "oewn-03494245-n"
@@ -5559,59 +3561,15 @@
       "name": "square"
     },
     {
-      "definition": "a block or die used to imprint a mark or design",
+      "definition": "a large pipe wrench with L-shaped adjustable jaws that tighten as pressure on the handle is increased",
       "hypernyms": [
-        "oewn-03197474-n"
+        "oewn-03953742-n"
       ],
-      "id": "oewn-04307101-n",
+      "id": "oewn-04326912-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "stamp"
-    },
-    {
-      "definition": "a power tool that stamps",
-      "hypernyms": [
-        "oewn-04003842-n"
-      ],
-      "id": "oewn-04307647-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "stamping machine"
-    },
-    {
-      "definition": "a steel rock drill with a star-shaped point that is used for making holes in stones or masonry; it is operated by hitting the end with a hammer while rotating it between blows",
-      "hypernyms": [
-        "oewn-02878678-n"
-      ],
-      "id": "oewn-04310990-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "star drill"
-    },
-    {
-      "definition": "abrader consisting of a pad of steel wool used for polishing or smoothing",
-      "hypernyms": [
-        "oewn-02671023-n"
-      ],
-      "id": "oewn-04319158-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "steel-wool pad"
-    },
-    {
-      "definition": "a miner's tamping bar for ramming packing in over a blasting charge",
-      "hypernyms": [
-        "oewn-04394793-n"
-      ],
-      "id": "oewn-04321124-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "stemmer"
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "Stillson wrench"
     },
     {
       "definition": "hand tool consisting of a flat rigid rectangular bar (metal or wood) that can be used to draw straight lines (or test their straightness)",
@@ -5625,37 +3583,15 @@
       "name": "straightedge"
     },
     {
-      "definition": "a rock drill with flutes that are straight",
+      "definition": "a wrench with an S-shaped handle",
       "hypernyms": [
-        "oewn-02878678-n"
+        "oewn-03853688-n"
       ],
-      "id": "oewn-04338903-n",
+      "id": "oewn-04381608-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "straight flute"
-    },
-    {
-      "definition": "a tool used in a foundry to shape a mold in sand",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04344538-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "strickle"
-    },
-    {
-      "definition": "a pointed tool for writing or drawing or engraving",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04353589-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "stylus"
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "S wrench"
     },
     {
       "definition": "a light hammer that is used to drive tacks",
@@ -5667,28 +3603,6 @@
       "max_depth": 10,
       "min_depth": 10,
       "name": "tack hammer"
-    },
-    {
-      "definition": "a tool for tamping (e.g., for tamping tobacco into a pipe bowl or a charge into a drill hole etc.)",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04394793-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "tamp"
-    },
-    {
-      "definition": "a tool for cutting female (internal) screw threads",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04398245-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "tap"
     },
     {
       "definition": "a file with converging edges",
@@ -5713,17 +3627,6 @@
       "name": "tap wrench"
     },
     {
-      "definition": "a cutter (tool for cutting) for floor tiles",
-      "hypernyms": [
-        "oewn-03158739-n"
-      ],
-      "id": "oewn-04442686-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "tile cutter"
-    },
-    {
       "definition": "hand tool consisting of a lever that is used to force the casing of a pneumatic tire onto a steel wheel",
       "hypernyms": [
         "oewn-03494245-n",
@@ -5734,17 +3637,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "tire iron"
-    },
-    {
-      "definition": "an implement used in the practice of a vocation",
-      "hypernyms": [
-        "oewn-03569147-n"
-      ],
-      "id": "oewn-04459089-n",
-      "lang": "en",
-      "max_depth": 7,
-      "min_depth": 7,
-      "name": "tool"
     },
     {
       "definition": "pick consisting of a small strip of wood or plastic; used to pick food from between the teeth",
@@ -5781,28 +3673,6 @@
       "name": "trap-and-drain auger"
     },
     {
-      "definition": "a drill for cutting circular holes around a center",
-      "hypernyms": [
-        "oewn-03244429-n"
-      ],
-      "id": "oewn-04486640-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "trepan"
-    },
-    {
-      "definition": "a massive power hammer; raised by a cam until released to fall under gravity",
-      "hypernyms": [
-        "oewn-03486604-n"
-      ],
-      "id": "oewn-04491903-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "triphammer"
-    },
-    {
       "definition": "a small hand tool with a handle and flat metal blade; used for scooping or spreading plaster or similar materials",
       "hypernyms": [
         "oewn-03494245-n"
@@ -5837,17 +3707,6 @@
       "name": "T-square"
     },
     {
-      "definition": "a bit or drill having deep helical grooves",
-      "hypernyms": [
-        "oewn-02847545-n"
-      ],
-      "id": "oewn-04510888-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "twist bit"
-    },
-    {
       "definition": "a saw with handles at both ends; intended for use by two people",
       "hypernyms": [
         "oewn-04147147-n"
@@ -5857,17 +3716,6 @@
       "max_depth": 10,
       "min_depth": 10,
       "name": "two-handed saw"
-    },
-    {
-      "definition": "a tool used to thicken or spread metal (the end of a bar or a rivet etc.) by forging or hammering or swaging",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-04522739-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "upset"
     },
     {
       "definition": "a hand tool for removing weeds",
@@ -5914,51 +3762,6 @@
       "name": "zeta key"
     },
     {
-      "definition": "(mountaineering) a tool for extracting a nut, chock, etc., from a crack after use.",
-      "hypernyms": [
-        "oewn-04459089-n",
-        "oewn-92435347-n"
-      ],
-      "id": "oewn-92435345-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 8,
-      "name": "nut tool"
-    },
-    {
-      "definition": "a simple light plough without a mouldboard.",
-      "hypernyms": [
-        "oewn-03973894-n"
-      ],
-      "id": "oewn-92444425-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "ard"
-    },
-    {
-      "definition": "a light wooden ard, consisting of two body ards, with their parallel beams forming the two shafts for a single horse-drawn tillage implement with two socket shares.",
-      "hypernyms": [
-        "oewn-92444425-n"
-      ],
-      "id": "oewn-92444429-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "sokha"
-    },
-    {
-      "definition": "a plow that consists of a gang of concave steel cutting disks, used for work in hard dry soils.",
-      "hypernyms": [
-        "oewn-03785580-n"
-      ],
-      "id": "oewn-92445675-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "disc plow"
-    },
-    {
       "definition": "A hooked tool, usually of metal, used to clean the hooves of a horse; some designs include a small, very stiff brush for removing additional mud or dirt.",
       "hypernyms": [
         "oewn-03494245-n"
@@ -5968,17 +3771,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "hoof pick"
-    },
-    {
-      "definition": "a high precision tool used for finishing in a small amount of gear tooth surface after processing with hob and shaper cutter.",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-92460165-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "shaving cutter"
     },
     {
       "definition": "a hand tool used for joining two pieces of metal or other ductile material (usually a wire and a metal plate) by deforming one or both of them to hold the other.",
@@ -5992,82 +3784,15 @@
       "name": "crimper"
     },
     {
-      "definition": "A large pile driving device.",
+      "definition": "a small backsaw used to cut dovetails.",
       "hypernyms": [
-        "oewn-03486604-n",
-        "oewn-03942742-n"
+        "oewn-02773590-n"
       ],
-      "id": "oewn-92460211-n",
+      "id": "oewn-92462233-n",
       "lang": "en",
-      "max_depth": 10,
-      "min_depth": 9,
-      "name": "piling hammer"
-    },
-    {
-      "definition": "a hand tool used to clinch tubular rivets.",
-      "hypernyms": [
-        "oewn-03047158-n"
-      ],
-      "id": "oewn-92460303-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "rivet clincher"
-    },
-    {
-      "definition": "a die that produces a flat piece of material by cutting the desired shape in one operation.",
-      "hypernyms": [
-        "oewn-03197474-n"
-      ],
-      "id": "oewn-92460909-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "blanking die"
-    },
-    {
-      "definition": "a punch used in conjunction with a blanking die.",
-      "hypernyms": [
-        "oewn-04029643-n"
-      ],
-      "id": "oewn-92460910-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "blanking punch"
-    },
-    {
-      "definition": "a cutting implement used to cut leading (spacing between lines) and slugs (thicker pieces of lead to provide support to set type forms).",
-      "hypernyms": [
-        "oewn-03159112-n"
-      ],
-      "id": "oewn-92461775-n",
-      "lang": "en",
-      "max_depth": 9,
-      "min_depth": 9,
-      "name": "slug cutter"
-    },
-    {
-      "definition": "a tool consisting of a number of fine abrasive slips held in a machine head, rotated and reciprocated to impart a smooth finish to cylinder bores, etc.",
-      "hypernyms": [
-        "oewn-04459089-n"
-      ],
-      "id": "oewn-92462184-n",
-      "lang": "en",
-      "max_depth": 8,
-      "min_depth": 8,
-      "name": "hone"
-    },
-    {
-      "definition": "a small spiral type hand drill, similar to a pin vice, used for pilot holes and small precise holes for miniatures and crafts.",
-      "hypernyms": [
-        "oewn-03489892-n"
-      ],
-      "id": "oewn-92462380-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "Archimedean drill"
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "dovetail saw"
     },
     {
       "definition": "a hand tool with polished agate tips (or other gemstone) for rubbing the gold leaf in order to obtain a highly polished surface, used in gilding.",
@@ -6079,39 +3804,6 @@
       "max_depth": 9,
       "min_depth": 9,
       "name": "burnisher"
-    },
-    {
-      "definition": "a plough that has only one wheel at the front and handles at the rear for the ploughman to steer and maneuver it.",
-      "hypernyms": [
-        "oewn-03785580-n"
-      ],
-      "id": "oewn-92465707-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "single-furrow plough"
-    },
-    {
-      "definition": "a plough with two moldboards.",
-      "hypernyms": [
-        "oewn-03785580-n"
-      ],
-      "id": "oewn-92465729-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "two-furrow plough"
-    },
-    {
-      "definition": "a plough having two or more shares, coulters, and mouldboards designed to work simultaneously.",
-      "hypernyms": [
-        "oewn-03785580-n"
-      ],
-      "id": "oewn-92465732-n",
-      "lang": "en",
-      "max_depth": 10,
-      "min_depth": 10,
-      "name": "gang plough"
     },
     {
       "definition": "a weeder with steel claws that grab weeds by the root for clean removal.",

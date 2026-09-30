@@ -1,0 +1,4798 @@
+{
+  "exported": "2026-09-29",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-07721676-n",
+  "senses": [
+    {
+      "definition": "edible reproductive body of a seed plant especially one having sweet flesh",
+      "forms": [],
+      "id": "oewn-edible_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "edible fruit",
+      "synset": "oewn-07721676-n"
+    },
+    {
+      "definition": "fruit (especially peach) whose flesh does not adhere to the pit",
+      "forms": [],
+      "id": "oewn-freestone__1.13.00..",
+      "lang": "en",
+      "lemma": "freestone",
+      "synset": "oewn-07754081-n"
+    },
+    {
+      "definition": "fruit (especially peach) whose flesh adheres strongly to the pit",
+      "forms": [],
+      "id": "oewn-cling__1.13.00..",
+      "lang": "en",
+      "lemma": "cling",
+      "synset": "oewn-07754200-n"
+    },
+    {
+      "definition": "fruit (especially peach) whose flesh adheres strongly to the pit",
+      "forms": [],
+      "id": "oewn-clingstone__1.13.00..",
+      "lang": "en",
+      "lemma": "clingstone",
+      "synset": "oewn-07754200-n"
+    },
+    {
+      "definition": "fruit that has fallen from the tree",
+      "forms": [],
+      "id": "oewn-windfall__1.13.00..",
+      "lang": "en",
+      "lemma": "windfall",
+      "synset": "oewn-07755011-n"
+    },
+    {
+      "definition": "fruit with red or yellow or green skin and sweet to tart crisp whitish flesh",
+      "forms": [],
+      "id": "oewn-apple__1.13.00..",
+      "lang": "en",
+      "lemma": "apple",
+      "synset": "oewn-07755101-n"
+    },
+    {
+      "definition": "small sour apple; suitable for preserving",
+      "forms": [],
+      "id": "oewn-crab_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "crab apple",
+      "synset": "oewn-07755320-n"
+    },
+    {
+      "definition": "small sour apple; suitable for preserving",
+      "forms": [],
+      "id": "oewn-crabapple__1.13.00..",
+      "lang": "en",
+      "lemma": "crabapple",
+      "synset": "oewn-07755320-n"
+    },
+    {
+      "definition": "an apple used primarily for eating raw without cooking",
+      "forms": [],
+      "id": "oewn-eating_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "eating apple",
+      "synset": "oewn-07755482-n"
+    },
+    {
+      "definition": "an apple used primarily for eating raw without cooking",
+      "forms": [],
+      "id": "oewn-dessert_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "dessert apple",
+      "synset": "oewn-07755482-n"
+    },
+    {
+      "definition": "an American eating apple with red or yellow and red skin",
+      "forms": [],
+      "id": "oewn-baldwin__1.13.00..",
+      "lang": "en",
+      "lemma": "Baldwin",
+      "synset": "oewn-07755899-n"
+    },
+    {
+      "definition": "large apple with a red skin",
+      "forms": [],
+      "id": "oewn-cortland__1.13.00..",
+      "lang": "en",
+      "lemma": "Cortland",
+      "synset": "oewn-07756009-n"
+    },
+    {
+      "definition": "a yellow Pippin with distinctive flavor",
+      "forms": [],
+      "id": "oewn-cox-ap-s_orange_pippin__1.13.00..",
+      "lang": "en",
+      "lemma": "Cox's Orange Pippin",
+      "synset": "oewn-07756091-n"
+    },
+    {
+      "definition": "variety of sweet eating apples",
+      "forms": [],
+      "id": "oewn-delicious__1.13.00..",
+      "lang": "en",
+      "lemma": "Delicious",
+      "synset": "oewn-07756196-n"
+    },
+    {
+      "definition": "a sweet eating apple with yellow skin",
+      "forms": [],
+      "id": "oewn-golden_delicious__1.13.00..",
+      "lang": "en",
+      "lemma": "Golden Delicious",
+      "synset": "oewn-07756318-n"
+    },
+    {
+      "definition": "a sweet eating apple with yellow skin",
+      "forms": [],
+      "id": "oewn-yellow_delicious__1.13.00..",
+      "lang": "en",
+      "lemma": "Yellow Delicious",
+      "synset": "oewn-07756318-n"
+    },
+    {
+      "definition": "a sweet eating apple with bright red skin; most widely grown apple worldwide",
+      "forms": [],
+      "id": "oewn-red_delicious__1.13.00..",
+      "lang": "en",
+      "lemma": "Red Delicious",
+      "synset": "oewn-07756437-n"
+    },
+    {
+      "definition": "an eating apple that somewhat resembles a McIntosh; used as both an eating and a cooking apple",
+      "forms": [],
+      "id": "oewn-empire__1.13.00..",
+      "lang": "en",
+      "lemma": "Empire",
+      "synset": "oewn-07756573-n"
+    },
+    {
+      "definition": "yellow apple that ripens in late autumn; eaten raw",
+      "forms": [],
+      "id": "oewn-grimes-ap-_golden__1.13.00..",
+      "lang": "en",
+      "lemma": "Grimes' golden",
+      "synset": "oewn-07756720-n"
+    },
+    {
+      "definition": "red late-ripening apple; primarily eaten raw",
+      "forms": [],
+      "id": "oewn-jonathan__1.13.00..",
+      "lang": "en",
+      "lemma": "Jonathan",
+      "synset": "oewn-07756831-n"
+    },
+    {
+      "definition": "early-ripening apple popular in the northeastern United States; primarily eaten raw but suitable for applesauce",
+      "forms": [],
+      "id": "oewn-mcintosh__1.13.00..",
+      "lang": "en",
+      "lemma": "McIntosh",
+      "synset": "oewn-07756930-n"
+    },
+    {
+      "definition": "similar to McIntosh; juicy and late-ripening",
+      "forms": [],
+      "id": "oewn-macoun__1.13.00..",
+      "lang": "en",
+      "lemma": "Macoun",
+      "synset": "oewn-07757114-n"
+    },
+    {
+      "definition": "large late-ripening apple with skin striped with yellow and red",
+      "forms": [],
+      "id": "oewn-northern_spy__1.13.00..",
+      "lang": "en",
+      "lemma": "Northern Spy",
+      "synset": "oewn-07757211-n"
+    },
+    {
+      "definition": "any of several varieties of apples with red skins",
+      "forms": [],
+      "id": "oewn-pearmain__1.13.00..",
+      "lang": "en",
+      "lemma": "Pearmain",
+      "synset": "oewn-07757333-n"
+    },
+    {
+      "definition": "any of numerous superior eating apples with yellow or greenish yellow skin flushed with red",
+      "forms": [],
+      "id": "oewn-pippin__1.13.00..",
+      "lang": "en",
+      "lemma": "Pippin",
+      "synset": "oewn-07757437-n"
+    },
+    {
+      "definition": "used primarily as eating apples",
+      "forms": [],
+      "id": "oewn-prima__1.13.00..",
+      "lang": "en",
+      "lemma": "Prima",
+      "synset": "oewn-07757599-n"
+    },
+    {
+      "definition": "apple grown chiefly in the Shenandoah Valley",
+      "forms": [],
+      "id": "oewn-stayman__1.13.00..",
+      "lang": "en",
+      "lemma": "Stayman",
+      "synset": "oewn-07757682-n"
+    },
+    {
+      "definition": "crisp apple with dark red skin",
+      "forms": [],
+      "id": "oewn-winesap__1.13.00..",
+      "lang": "en",
+      "lemma": "Winesap",
+      "synset": "oewn-07757780-n"
+    },
+    {
+      "definition": "crisp tart apple; good for eating raw and suitable for cooking",
+      "forms": [],
+      "id": "oewn-stayman_winesap__1.13.00..",
+      "lang": "en",
+      "lemma": "Stayman Winesap",
+      "synset": "oewn-07757864-n"
+    },
+    {
+      "definition": "an apple used primarily in cooking for pies and applesauce etc",
+      "forms": [],
+      "id": "oewn-cooking_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "cooking apple",
+      "synset": "oewn-07757988-n"
+    },
+    {
+      "definition": "very large cooking apple",
+      "forms": [],
+      "id": "oewn-bramley-ap-s_seedling__1.13.00..",
+      "lang": "en",
+      "lemma": "Bramley's Seedling",
+      "synset": "oewn-07758200-n"
+    },
+    {
+      "definition": "apple with a green skin and hard tart flesh",
+      "forms": [],
+      "id": "oewn-granny_smith__1.13.00..",
+      "lang": "en",
+      "lemma": "Granny Smith",
+      "synset": "oewn-07758289-n"
+    },
+    {
+      "definition": "apple used primarily in cooking",
+      "forms": [],
+      "id": "oewn-lane-ap-s_prince_albert__1.13.00..",
+      "lang": "en",
+      "lemma": "Lane's Prince Albert",
+      "synset": "oewn-07758391-n"
+    },
+    {
+      "definition": "apple used primarily in cooking; bright scarlet with stripes of crimson red",
+      "forms": [],
+      "id": "oewn-newtown_wonder__1.13.00..",
+      "lang": "en",
+      "lemma": "Newtown Wonder",
+      "synset": "oewn-07758489-n"
+    },
+    {
+      "definition": "large red apple used primarily for baking",
+      "forms": [],
+      "id": "oewn-rome_beauty__1.13.00..",
+      "lang": "en",
+      "lemma": "Rome Beauty",
+      "synset": "oewn-07758581-n"
+    },
+    {
+      "definition": "any of numerous small and pulpy edible fruits; used as desserts or in making jams and jellies and preserves",
+      "forms": [],
+      "id": "oewn-berry__1.13.00..",
+      "lang": "en",
+      "lemma": "berry",
+      "synset": "oewn-07758680-n"
+    },
+    {
+      "definition": "blue-black berries similar to American blueberries",
+      "forms": [],
+      "id": "oewn-bilberry__1.13.00..",
+      "lang": "en",
+      "lemma": "bilberry",
+      "synset": "oewn-07759200-n"
+    },
+    {
+      "definition": "blue-black berries similar to American blueberries",
+      "forms": [],
+      "id": "oewn-whortleberry__1.13.00..",
+      "lang": "en",
+      "lemma": "whortleberry",
+      "synset": "oewn-07759200-n"
+    },
+    {
+      "definition": "blue-black berries similar to American blueberries",
+      "forms": [],
+      "id": "oewn-european_blueberry__1.13.00..",
+      "lang": "en",
+      "lemma": "European blueberry",
+      "synset": "oewn-07759200-n"
+    },
+    {
+      "definition": "blue-black berry similar to blueberries and bilberries of the eastern United States",
+      "forms": [],
+      "id": "oewn-huckleberry__1.13.00..",
+      "lang": "en",
+      "lemma": "huckleberry",
+      "synset": "oewn-07759360-n"
+    },
+    {
+      "definition": "sweet edible dark-blue berries of either low-growing or high-growing blueberry plants",
+      "forms": [],
+      "id": "oewn-blueberry__1.13.00..",
+      "lang": "en",
+      "lemma": "blueberry",
+      "synset": "oewn-07759520-n"
+    },
+    {
+      "definition": "spicy red berrylike fruit; source of wintergreen oil",
+      "forms": [],
+      "id": "oewn-wintergreen__1.13.00..",
+      "lang": "en",
+      "lemma": "wintergreen",
+      "synset": "oewn-07759699-n"
+    },
+    {
+      "definition": "spicy red berrylike fruit; source of wintergreen oil",
+      "forms": [],
+      "id": "oewn-boxberry__1.13.00..",
+      "lang": "en",
+      "lemma": "boxberry",
+      "synset": "oewn-07759699-n"
+    },
+    {
+      "definition": "spicy red berrylike fruit; source of wintergreen oil",
+      "forms": [],
+      "id": "oewn-checkerberry__1.13.00..",
+      "lang": "en",
+      "lemma": "checkerberry",
+      "synset": "oewn-07759699-n"
+    },
+    {
+      "definition": "spicy red berrylike fruit; source of wintergreen oil",
+      "forms": [],
+      "id": "oewn-teaberry__1.13.00..",
+      "lang": "en",
+      "lemma": "teaberry",
+      "synset": "oewn-07759699-n"
+    },
+    {
+      "definition": "spicy red berrylike fruit; source of wintergreen oil",
+      "forms": [],
+      "id": "oewn-spiceberry__1.13.01..",
+      "lang": "en",
+      "lemma": "spiceberry",
+      "synset": "oewn-07759699-n"
+    },
+    {
+      "definition": "very tart red berry used for sauce or juice",
+      "forms": [],
+      "id": "oewn-cranberry__1.13.00..",
+      "lang": "en",
+      "lemma": "cranberry",
+      "synset": "oewn-07759878-n"
+    },
+    {
+      "definition": "tart red berries similar to American cranberries but smaller",
+      "forms": [],
+      "id": "oewn-lingonberry__1.13.00..",
+      "lang": "en",
+      "lemma": "lingonberry",
+      "synset": "oewn-07760033-n"
+    },
+    {
+      "definition": "tart red berries similar to American cranberries but smaller",
+      "forms": [],
+      "id": "oewn-mountain_cranberry__1.13.00..",
+      "lang": "en",
+      "lemma": "mountain cranberry",
+      "synset": "oewn-07760033-n"
+    },
+    {
+      "definition": "tart red berries similar to American cranberries but smaller",
+      "forms": [],
+      "id": "oewn-cowberry__1.13.00..",
+      "lang": "en",
+      "lemma": "cowberry",
+      "synset": "oewn-07760033-n"
+    },
+    {
+      "definition": "tart red berries similar to American cranberries but smaller",
+      "forms": [],
+      "id": "oewn-lowbush_cranberry__1.13.00..",
+      "lang": "en",
+      "lemma": "lowbush cranberry",
+      "synset": "oewn-07760033-n"
+    },
+    {
+      "definition": "any of several tart red or black berries used primarily for jellies and jams",
+      "forms": [],
+      "id": "oewn-currant__1.13.01..",
+      "lang": "en",
+      "lemma": "currant",
+      "synset": "oewn-07760222-n"
+    },
+    {
+      "definition": "currant-like berry used primarily in jams and jellies",
+      "forms": [],
+      "id": "oewn-gooseberry__1.13.00..",
+      "lang": "en",
+      "lemma": "gooseberry",
+      "synset": "oewn-07760406-n"
+    },
+    {
+      "definition": "small black berries used in jams and jellies",
+      "forms": [],
+      "id": "oewn-black_currant__1.13.00..",
+      "lang": "en",
+      "lemma": "black currant",
+      "synset": "oewn-07760535-n"
+    },
+    {
+      "definition": "small red berries used primarily in jams and jellies",
+      "forms": [],
+      "id": "oewn-red_currant__1.13.00..",
+      "lang": "en",
+      "lemma": "red currant",
+      "synset": "oewn-07760658-n"
+    },
+    {
+      "definition": "large sweet black or very dark purple edible aggregate fruit of any of various bushes of the genus Rubus",
+      "forms": [],
+      "id": "oewn-blackberry__1.13.00..",
+      "lang": "en",
+      "lemma": "blackberry",
+      "synset": "oewn-07760787-n"
+    },
+    {
+      "definition": "large raspberry-flavored fruit; cross between blackberries and raspberries",
+      "forms": [],
+      "id": "oewn-boysenberry__1.13.00..",
+      "lang": "en",
+      "lemma": "boysenberry",
+      "synset": "oewn-07761022-n"
+    },
+    {
+      "definition": "blackberry-like fruits of any of several trailing blackberry bushes",
+      "forms": [],
+      "id": "oewn-dewberry__1.13.00..",
+      "lang": "en",
+      "lemma": "dewberry",
+      "synset": "oewn-07761173-n"
+    },
+    {
+      "definition": "large red variety of the dewberry",
+      "forms": [],
+      "id": "oewn-loganberry__1.13.00..",
+      "lang": "en",
+      "lemma": "loganberry",
+      "synset": "oewn-07761333-n"
+    },
+    {
+      "definition": "red or black edible aggregate berries usually smaller than the related blackberries",
+      "forms": [],
+      "id": "oewn-raspberry__1.13.00..",
+      "lang": "en",
+      "lemma": "raspberry",
+      "synset": "oewn-07761442-n"
+    },
+    {
+      "definition": "edible purple or red berries",
+      "forms": [],
+      "id": "oewn-saskatoon__1.13.00..",
+      "lang": "en",
+      "lemma": "saskatoon",
+      "synset": "oewn-07761637-n"
+    },
+    {
+      "definition": "edible purple or red berries",
+      "forms": [],
+      "id": "oewn-serviceberry__1.13.00..",
+      "lang": "en",
+      "lemma": "serviceberry",
+      "synset": "oewn-07761637-n"
+    },
+    {
+      "definition": "edible purple or red berries",
+      "forms": [],
+      "id": "oewn-shadberry__1.13.00..",
+      "lang": "en",
+      "lemma": "shadberry",
+      "synset": "oewn-07761637-n"
+    },
+    {
+      "definition": "edible purple or red berries",
+      "forms": [],
+      "id": "oewn-juneberry__1.13.00..",
+      "lang": "en",
+      "lemma": "juneberry",
+      "synset": "oewn-07761637-n"
+    },
+    {
+      "definition": "East Indian tart yellow berrylike fruit",
+      "forms": [],
+      "id": "oewn-lanseh__1.13.00..",
+      "lang": "en",
+      "lemma": "lanseh",
+      "synset": "oewn-07761779-n"
+    },
+    {
+      "definition": "East Indian tart yellow berrylike fruit",
+      "forms": [],
+      "id": "oewn-lansa__1.13.00..",
+      "lang": "en",
+      "lemma": "lansa",
+      "synset": "oewn-07761779-n"
+    },
+    {
+      "definition": "East Indian tart yellow berrylike fruit",
+      "forms": [],
+      "id": "oewn-lansat__1.13.00..",
+      "lang": "en",
+      "lemma": "lansat",
+      "synset": "oewn-07761779-n"
+    },
+    {
+      "definition": "East Indian tart yellow berrylike fruit",
+      "forms": [],
+      "id": "oewn-lanset__1.13.00..",
+      "lang": "en",
+      "lemma": "lanset",
+      "synset": "oewn-07761779-n"
+    },
+    {
+      "definition": "sweet fleshy red fruit",
+      "forms": [],
+      "id": "oewn-strawberry__1.13.00..",
+      "lang": "en",
+      "lemma": "strawberry",
+      "synset": "oewn-07761916-n"
+    },
+    {
+      "definition": "small edible dark purple to black berry with large pits; southern United States",
+      "forms": [],
+      "id": "oewn-sugarberry__1.13.00..",
+      "lang": "en",
+      "lemma": "sugarberry",
+      "synset": "oewn-07762014-n"
+    },
+    {
+      "definition": "small edible dark purple to black berry with large pits; southern United States",
+      "forms": [],
+      "id": "oewn-hackberry__1.13.00..",
+      "lang": "en",
+      "lemma": "hackberry",
+      "synset": "oewn-07762014-n"
+    },
+    {
+      "definition": "orange fruit resembling a plum; edible when fully ripe",
+      "forms": [],
+      "id": "oewn-persimmon__1.13.00..",
+      "lang": "en",
+      "lemma": "persimmon",
+      "synset": "oewn-07762162-n"
+    },
+    {
+      "definition": "acid red or yellow cherry-like fruit of a tropical American shrub very rich in vitamin C",
+      "forms": [],
+      "id": "oewn-acerola__1.13.00..",
+      "lang": "en",
+      "lemma": "acerola",
+      "synset": "oewn-07762310-n"
+    },
+    {
+      "definition": "acid red or yellow cherry-like fruit of a tropical American shrub very rich in vitamin C",
+      "forms": [],
+      "id": "oewn-barbados_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "barbados cherry",
+      "synset": "oewn-07762310-n"
+    },
+    {
+      "definition": "acid red or yellow cherry-like fruit of a tropical American shrub very rich in vitamin C",
+      "forms": [],
+      "id": "oewn-surinam_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "surinam cherry",
+      "synset": "oewn-07762310-n"
+    },
+    {
+      "definition": "acid red or yellow cherry-like fruit of a tropical American shrub very rich in vitamin C",
+      "forms": [],
+      "id": "oewn-west_indian_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "West Indian cherry",
+      "synset": "oewn-07762310-n"
+    },
+    {
+      "definition": "deeply ridged yellow-brown tropical fruit; used raw as a vegetable or in salad or when fully ripe as a dessert",
+      "forms": [],
+      "id": "oewn-carambola__1.13.00..",
+      "lang": "en",
+      "lemma": "carambola",
+      "synset": "oewn-07762527-n"
+    },
+    {
+      "definition": "deeply ridged yellow-brown tropical fruit; used raw as a vegetable or in salad or when fully ripe as a dessert",
+      "forms": [],
+      "id": "oewn-star_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "star fruit",
+      "synset": "oewn-07762527-n"
+    },
+    {
+      "definition": "tropical cylindrical fruit resembling a pinecone with pineapple-banana flavor",
+      "forms": [],
+      "id": "oewn-ceriman__1.13.00..",
+      "lang": "en",
+      "lemma": "ceriman",
+      "synset": "oewn-07762725-n"
+    },
+    {
+      "definition": "tropical cylindrical fruit resembling a pinecone with pineapple-banana flavor",
+      "forms": [],
+      "id": "oewn-monstera__1.13.00..",
+      "lang": "en",
+      "lemma": "monstera",
+      "synset": "oewn-07762725-n"
+    },
+    {
+      "definition": "edible scarlet plumlike fruit of a South African plant",
+      "forms": [],
+      "id": "oewn-carissa_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "carissa plum",
+      "synset": "oewn-07762886-n"
+    },
+    {
+      "definition": "edible scarlet plumlike fruit of a South African plant",
+      "forms": [],
+      "id": "oewn-natal_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "natal plum",
+      "synset": "oewn-07762886-n"
+    },
+    {
+      "definition": "any of numerous fruits of the genus Citrus having thick rind and juicy pulp; grown in warm regions",
+      "forms": [],
+      "id": "oewn-citrus__1.13.00..",
+      "lang": "en",
+      "lemma": "citrus",
+      "synset": "oewn-07763031-n"
+    },
+    {
+      "definition": "any of numerous fruits of the genus Citrus having thick rind and juicy pulp; grown in warm regions",
+      "forms": [],
+      "id": "oewn-citrus_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "citrus fruit",
+      "synset": "oewn-07763031-n"
+    },
+    {
+      "definition": "any of numerous fruits of the genus Citrus having thick rind and juicy pulp; grown in warm regions",
+      "forms": [],
+      "id": "oewn-citrous_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "citrous fruit",
+      "synset": "oewn-07763031-n"
+    },
+    {
+      "definition": "round yellow to orange fruit of any of several citrus trees",
+      "forms": [],
+      "id": "oewn-orange__1.13.00..",
+      "lang": "en",
+      "lemma": "orange",
+      "synset": "oewn-07763583-n"
+    },
+    {
+      "definition": "large sweet easily-peeled Florida fruit with deep orange rind",
+      "forms": [],
+      "id": "oewn-temple_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "temple orange",
+      "synset": "oewn-07763787-n"
+    },
+    {
+      "definition": "a somewhat flat reddish-orange loose skinned citrus of China",
+      "forms": [],
+      "id": "oewn-mandarin__1.13.00..",
+      "lang": "en",
+      "lemma": "mandarin",
+      "synset": "oewn-07763927-n"
+    },
+    {
+      "definition": "a somewhat flat reddish-orange loose skinned citrus of China",
+      "forms": [],
+      "id": "oewn-mandarin_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "mandarin orange",
+      "synset": "oewn-07763927-n"
+    },
+    {
+      "definition": "a mandarin orange of a deep reddish orange color and few seeds",
+      "forms": [],
+      "id": "oewn-clementine__1.13.00..",
+      "lang": "en",
+      "lemma": "clementine",
+      "synset": "oewn-07764133-n"
+    },
+    {
+      "definition": "medium-sized largely seedless mandarin orange with thin smooth skin",
+      "forms": [],
+      "id": "oewn-satsuma__1.13.00..",
+      "lang": "en",
+      "lemma": "satsuma",
+      "synset": "oewn-07764252-n"
+    },
+    {
+      "definition": "any of various deep orange mandarins grown in the United States and southern Africa",
+      "forms": [],
+      "id": "oewn-tangerine__1.13.00..",
+      "lang": "en",
+      "lemma": "tangerine",
+      "synset": "oewn-07764392-n"
+    },
+    {
+      "definition": "large sweet juicy hybrid between tangerine and grapefruit having a thick wrinkled skin",
+      "forms": [],
+      "id": "oewn-tangelo__1.13.00..",
+      "lang": "en",
+      "lemma": "tangelo",
+      "synset": "oewn-07764550-n"
+    },
+    {
+      "definition": "large sweet juicy hybrid between tangerine and grapefruit having a thick wrinkled skin",
+      "forms": [
+        "uglies"
+      ],
+      "id": "oewn-ugli__1.13.00..",
+      "lang": "en",
+      "lemma": "ugli",
+      "synset": "oewn-07764550-n"
+    },
+    {
+      "definition": "large sweet juicy hybrid between tangerine and grapefruit having a thick wrinkled skin",
+      "forms": [],
+      "id": "oewn-ugli_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "ugli fruit",
+      "synset": "oewn-07764550-n"
+    },
+    {
+      "definition": "highly acidic orange used especially in marmalade",
+      "forms": [],
+      "id": "oewn-bitter_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "bitter orange",
+      "synset": "oewn-07764729-n"
+    },
+    {
+      "definition": "highly acidic orange used especially in marmalade",
+      "forms": [],
+      "id": "oewn-seville_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "Seville orange",
+      "synset": "oewn-07764729-n"
+    },
+    {
+      "definition": "highly acidic orange used especially in marmalade",
+      "forms": [],
+      "id": "oewn-sour_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "sour orange",
+      "synset": "oewn-07764729-n"
+    },
+    {
+      "definition": "orange with sweet juicy pulp; often has a thin skin",
+      "forms": [],
+      "id": "oewn-sweet_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet orange",
+      "synset": "oewn-07764888-n"
+    },
+    {
+      "definition": "sweet almost seedless orange of Israel",
+      "forms": [],
+      "id": "oewn-jaffa_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "Jaffa orange",
+      "synset": "oewn-07765071-n"
+    },
+    {
+      "definition": "seedless orange enclosing a small secondary fruit at the apex",
+      "forms": [],
+      "id": "oewn-navel_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "navel orange",
+      "synset": "oewn-07765168-n"
+    },
+    {
+      "definition": "variety of sweet orange cultivated extensively in Florida and California",
+      "forms": [],
+      "id": "oewn-valencia_orange__1.13.00..",
+      "lang": "en",
+      "lemma": "Valencia orange",
+      "synset": "oewn-07765288-n"
+    },
+    {
+      "definition": "small oval citrus fruit with thin sweet rind and very acid pulp",
+      "forms": [],
+      "id": "oewn-kumquat__1.13.00..",
+      "lang": "en",
+      "lemma": "kumquat",
+      "synset": "oewn-07765422-n"
+    },
+    {
+      "definition": "yellow oval fruit with juicy acidic flesh",
+      "forms": [],
+      "id": "oewn-lemon__1.13.00..",
+      "lang": "en",
+      "lemma": "lemon",
+      "synset": "oewn-07765558-n"
+    },
+    {
+      "definition": "the green acidic fruit of any of various lime trees",
+      "forms": [],
+      "id": "oewn-lime__1.13.00..",
+      "lang": "en",
+      "lemma": "lime",
+      "synset": "oewn-07765707-n"
+    },
+    {
+      "definition": "small yellow-green limes of southern Florida",
+      "forms": [],
+      "id": "oewn-key_lime__1.13.00..",
+      "lang": "en",
+      "lemma": "key lime",
+      "synset": "oewn-07765846-n"
+    },
+    {
+      "definition": "large yellow fruit with somewhat acid juicy pulp; usual serving consists of a half",
+      "forms": [],
+      "id": "oewn-grapefruit__1.13.00..",
+      "lang": "en",
+      "lemma": "grapefruit",
+      "synset": "oewn-07765945-n"
+    },
+    {
+      "definition": "large pear-shaped fruit similar to grapefruit but with coarse dry pulp",
+      "forms": [],
+      "id": "oewn-pomelo__1.13.00..",
+      "lang": "en",
+      "lemma": "pomelo",
+      "synset": "oewn-07766122-n"
+    },
+    {
+      "definition": "large pear-shaped fruit similar to grapefruit but with coarse dry pulp",
+      "forms": [],
+      "id": "oewn-shaddock__1.13.00..",
+      "lang": "en",
+      "lemma": "shaddock",
+      "synset": "oewn-07766122-n"
+    },
+    {
+      "definition": "more aromatic and acid tasting than oranges; used in beverages and marmalade",
+      "forms": [],
+      "id": "oewn-citrange__1.13.00..",
+      "lang": "en",
+      "lemma": "citrange",
+      "synset": "oewn-07766275-n"
+    },
+    {
+      "definition": "large lemonlike fruit with thick aromatic rind; usually preserved",
+      "forms": [],
+      "id": "oewn-citron__1.13.00..",
+      "lang": "en",
+      "lemma": "citron",
+      "synset": "oewn-07766425-n"
+    },
+    {
+      "definition": "downy yellow to rosy-colored fruit resembling a small peach",
+      "forms": [],
+      "id": "oewn-apricot__1.13.00..",
+      "lang": "en",
+      "lemma": "apricot",
+      "synset": "oewn-07766848-n"
+    },
+    {
+      "definition": "downy juicy fruit with sweet yellowish or whitish flesh",
+      "forms": [],
+      "id": "oewn-peach__1.13.00..",
+      "lang": "en",
+      "lemma": "peach",
+      "synset": "oewn-07766980-n"
+    },
+    {
+      "definition": "a variety or mutation of the peach that has a smooth skin",
+      "forms": [],
+      "id": "oewn-nectarine__1.13.00..",
+      "lang": "en",
+      "lemma": "nectarine",
+      "synset": "oewn-07767124-n"
+    },
+    {
+      "definition": "highly colored edible fruit of pitahaya cactus having bright red juice; often as large as a peach",
+      "forms": [],
+      "id": "oewn-pitahaya__1.13.00..",
+      "lang": "en",
+      "lemma": "pitahaya",
+      "synset": "oewn-07767256-n"
+    },
+    {
+      "definition": "any of numerous varieties of small to medium-sized round or oval fruit having a smooth skin and a single pit",
+      "forms": [],
+      "id": "oewn-plum__1.13.00..",
+      "lang": "en",
+      "lemma": "plum",
+      "synset": "oewn-07767427-n"
+    },
+    {
+      "definition": "dark purple plum of the damson tree",
+      "forms": [],
+      "id": "oewn-damson__1.13.00..",
+      "lang": "en",
+      "lemma": "damson",
+      "synset": "oewn-07767713-n"
+    },
+    {
+      "definition": "dark purple plum of the damson tree",
+      "forms": [],
+      "id": "oewn-damson_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "damson plum",
+      "synset": "oewn-07767713-n"
+    },
+    {
+      "definition": "sweet green or greenish-yellow variety of plum",
+      "forms": [],
+      "id": "oewn-greengage__1.13.00..",
+      "lang": "en",
+      "lemma": "greengage",
+      "synset": "oewn-07767834-n"
+    },
+    {
+      "definition": "sweet green or greenish-yellow variety of plum",
+      "forms": [],
+      "id": "oewn-greengage_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "greengage plum",
+      "synset": "oewn-07767834-n"
+    },
+    {
+      "definition": "small dark purple fruit used especially in jams and pies",
+      "forms": [],
+      "id": "oewn-beach_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "beach plum",
+      "synset": "oewn-07767953-n"
+    },
+    {
+      "definition": "small sour dark purple fruit of especially the Allegheny plum bush",
+      "forms": [],
+      "id": "oewn-sloe__1.13.00..",
+      "lang": "en",
+      "lemma": "sloe",
+      "synset": "oewn-07768085-n"
+    },
+    {
+      "definition": "a large red plum served as dessert",
+      "forms": [],
+      "id": "oewn-victoria_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "Victoria plum",
+      "synset": "oewn-07768240-n"
+    },
+    {
+      "definition": "fruit preserved by drying",
+      "forms": [],
+      "id": "oewn-dried_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "dried fruit",
+      "synset": "oewn-07768353-n"
+    },
+    {
+      "definition": "apricots preserved by drying",
+      "forms": [],
+      "id": "oewn-dried_apricot__1.13.00..",
+      "lang": "en",
+      "lemma": "dried apricot",
+      "synset": "oewn-07768490-n"
+    },
+    {
+      "definition": "dried plum",
+      "forms": [],
+      "id": "oewn-prune__1.13.00..",
+      "lang": "en",
+      "lemma": "prune",
+      "synset": "oewn-07768578-n"
+    },
+    {
+      "definition": "dried grape",
+      "forms": [],
+      "id": "oewn-raisin__1.13.00..",
+      "lang": "en",
+      "lemma": "raisin",
+      "synset": "oewn-07768640-n"
+    },
+    {
+      "definition": "dried seedless grape",
+      "forms": [],
+      "id": "oewn-seedless_raisin__1.13.00..",
+      "lang": "en",
+      "lemma": "seedless raisin",
+      "synset": "oewn-07768758-n"
+    },
+    {
+      "definition": "dried seedless grape",
+      "forms": [],
+      "id": "oewn-sultana__1.13.01..",
+      "lang": "en",
+      "lemma": "sultana",
+      "synset": "oewn-07768758-n"
+    },
+    {
+      "definition": "seeded grape that has been dried",
+      "forms": [],
+      "id": "oewn-seeded_raisin__1.13.00..",
+      "lang": "en",
+      "lemma": "seeded raisin",
+      "synset": "oewn-07768850-n"
+    },
+    {
+      "definition": "small dried seedless raisin grown in the Mediterranean region and California; used in cooking",
+      "forms": [],
+      "id": "oewn-currant__1.13.02..",
+      "lang": "en",
+      "lemma": "currant",
+      "synset": "oewn-07768942-n"
+    },
+    {
+      "definition": "fleshy sweet pear-shaped yellowish or purple multiple fruit eaten fresh or preserved or dried",
+      "forms": [],
+      "id": "oewn-fig__1.13.00..",
+      "lang": "en",
+      "lemma": "fig",
+      "synset": "oewn-07769089-n"
+    },
+    {
+      "definition": "large sweet fleshy tropical fruit with a terminal tuft of stiff leaves; widely cultivated",
+      "forms": [],
+      "id": "oewn-pineapple__1.13.00..",
+      "lang": "en",
+      "lemma": "pineapple",
+      "synset": "oewn-07769251-n"
+    },
+    {
+      "definition": "large sweet fleshy tropical fruit with a terminal tuft of stiff leaves; widely cultivated",
+      "forms": [],
+      "id": "oewn-ananas__1.13.00..",
+      "lang": "en",
+      "lemma": "ananas",
+      "synset": "oewn-07769251-n"
+    },
+    {
+      "definition": "West Indian fruit resembling the mango; often pickled",
+      "forms": [],
+      "id": "oewn-anchovy_pear__1.13.00..",
+      "lang": "en",
+      "lemma": "anchovy pear",
+      "synset": "oewn-07769424-n"
+    },
+    {
+      "definition": "West Indian fruit resembling the mango; often pickled",
+      "forms": [],
+      "id": "oewn-river_pear__1.13.00..",
+      "lang": "en",
+      "lemma": "river pear",
+      "synset": "oewn-07769424-n"
+    },
+    {
+      "definition": "elongated crescent-shaped yellow fruit with soft sweet flesh",
+      "forms": [],
+      "id": "oewn-banana__1.13.00..",
+      "lang": "en",
+      "lemma": "banana",
+      "synset": "oewn-07769568-n"
+    },
+    {
+      "definition": "egg-shaped tropical fruit of certain passionflower vines; used for sherbets and confectionery and drinks",
+      "forms": [],
+      "id": "oewn-passion_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "passion fruit",
+      "synset": "oewn-07769719-n"
+    },
+    {
+      "definition": "the egg-shaped edible fruit of tropical American vines related to passionflowers",
+      "forms": [],
+      "id": "oewn-granadilla__1.13.00..",
+      "lang": "en",
+      "lemma": "granadilla",
+      "synset": "oewn-07769956-n"
+    },
+    {
+      "definition": "apple-sized passion fruit of the West Indies",
+      "forms": [],
+      "id": "oewn-sweet_calabash__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet calabash",
+      "synset": "oewn-07770131-n"
+    },
+    {
+      "definition": "the edible yellow fruit of the Jamaica honeysuckle",
+      "forms": [],
+      "id": "oewn-bell_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "bell apple",
+      "synset": "oewn-07770255-n"
+    },
+    {
+      "definition": "the edible yellow fruit of the Jamaica honeysuckle",
+      "forms": [],
+      "id": "oewn-sweet_cup__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet cup",
+      "synset": "oewn-07770255-n"
+    },
+    {
+      "definition": "the edible yellow fruit of the Jamaica honeysuckle",
+      "forms": [],
+      "id": "oewn-water_lemon__1.13.00..",
+      "lang": "en",
+      "lemma": "water lemon",
+      "synset": "oewn-07770255-n"
+    },
+    {
+      "definition": "the edible yellow fruit of the Jamaica honeysuckle",
+      "forms": [],
+      "id": "oewn-yellow_granadilla__1.13.00..",
+      "lang": "en",
+      "lemma": "yellow granadilla",
+      "synset": "oewn-07770255-n"
+    },
+    {
+      "definition": "a large round seedless or seeded fruit with a texture like bread; eaten boiled or baked or roasted or ground into flour; the roasted seeds resemble chestnuts",
+      "forms": [],
+      "id": "oewn-breadfruit__1.13.00..",
+      "lang": "en",
+      "lemma": "breadfruit",
+      "synset": "oewn-07770427-n"
+    },
+    {
+      "definition": "immense East Indian fruit resembling breadfruit; it contains an edible pulp and nutritious seeds that are commonly roasted",
+      "forms": [],
+      "id": "oewn-jackfruit__1.13.00..",
+      "lang": "en",
+      "lemma": "jackfruit",
+      "synset": "oewn-07770660-n"
+    },
+    {
+      "definition": "immense East Indian fruit resembling breadfruit; it contains an edible pulp and nutritious seeds that are commonly roasted",
+      "forms": [],
+      "id": "oewn-jak__1.13.00..",
+      "lang": "en",
+      "lemma": "jak",
+      "synset": "oewn-07770660-n"
+    },
+    {
+      "definition": "immense East Indian fruit resembling breadfruit; it contains an edible pulp and nutritious seeds that are commonly roasted",
+      "forms": [],
+      "id": "oewn-jack__1.13.00..",
+      "lang": "en",
+      "lemma": "jack",
+      "synset": "oewn-07770660-n"
+    },
+    {
+      "definition": "ovoid orange-yellow mealy sweet fruit of Florida and West Indies",
+      "forms": [],
+      "id": "oewn-canistel__1.13.00..",
+      "lang": "en",
+      "lemma": "canistel",
+      "synset": "oewn-07771238-n"
+    },
+    {
+      "definition": "ovoid orange-yellow mealy sweet fruit of Florida and West Indies",
+      "forms": [],
+      "id": "oewn-eggfruit__1.13.00..",
+      "lang": "en",
+      "lemma": "eggfruit",
+      "synset": "oewn-07771238-n"
+    },
+    {
+      "definition": "any of numerous fruits of the gourd family having a hard rind and sweet juicy flesh",
+      "forms": [],
+      "id": "oewn-melon__1.13.00..",
+      "lang": "en",
+      "lemma": "melon",
+      "synset": "oewn-07771387-n"
+    },
+    {
+      "definition": "a bite of melon cut as a sphere",
+      "forms": [],
+      "id": "oewn-melon_ball__1.13.00..",
+      "lang": "en",
+      "lemma": "melon ball",
+      "synset": "oewn-07771595-n"
+    },
+    {
+      "definition": "the fruit of a muskmelon vine; any of several sweet melons related to cucumbers",
+      "forms": [],
+      "id": "oewn-muskmelon__1.13.00..",
+      "lang": "en",
+      "lemma": "muskmelon",
+      "synset": "oewn-07771683-n"
+    },
+    {
+      "definition": "the fruit of a muskmelon vine; any of several sweet melons related to cucumbers",
+      "forms": [],
+      "id": "oewn-sweet_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet melon",
+      "synset": "oewn-07771683-n"
+    },
+    {
+      "definition": "the fruit of a cantaloup vine; small to medium-sized melon with yellowish flesh",
+      "forms": [],
+      "id": "oewn-cantaloup__1.13.00..",
+      "lang": "en",
+      "lemma": "cantaloup",
+      "synset": "oewn-07771905-n"
+    },
+    {
+      "definition": "the fruit of a cantaloup vine; small to medium-sized melon with yellowish flesh",
+      "forms": [],
+      "id": "oewn-cantaloupe__1.13.00..",
+      "lang": "en",
+      "lemma": "cantaloupe",
+      "synset": "oewn-07771905-n"
+    },
+    {
+      "definition": "the fruit of the winter melon vine; a green melon with pale green to orange flesh that keeps well",
+      "forms": [],
+      "id": "oewn-winter_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "winter melon",
+      "synset": "oewn-07772072-n"
+    },
+    {
+      "definition": "the fruit of a variety of winter melon vine; a large smooth greenish-white melon with pale green flesh",
+      "forms": [],
+      "id": "oewn-honeydew__1.13.00..",
+      "lang": "en",
+      "lemma": "honeydew",
+      "synset": "oewn-07772301-n"
+    },
+    {
+      "definition": "the fruit of a variety of winter melon vine; a large smooth greenish-white melon with pale green flesh",
+      "forms": [],
+      "id": "oewn-honeydew_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "honeydew melon",
+      "synset": "oewn-07772301-n"
+    },
+    {
+      "definition": "the fruit of a variety of winter melon vine; a large green melon with orange flesh",
+      "forms": [],
+      "id": "oewn-persian_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "Persian melon",
+      "synset": "oewn-07772475-n"
+    },
+    {
+      "definition": "the fruit of a variety of muskmelon vine; a melon with netlike markings and deep green flesh",
+      "forms": [],
+      "id": "oewn-net_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "net melon",
+      "synset": "oewn-07772617-n"
+    },
+    {
+      "definition": "the fruit of a variety of muskmelon vine; a melon with netlike markings and deep green flesh",
+      "forms": [],
+      "id": "oewn-netted_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "netted melon",
+      "synset": "oewn-07772617-n"
+    },
+    {
+      "definition": "the fruit of a variety of muskmelon vine; a melon with netlike markings and deep green flesh",
+      "forms": [],
+      "id": "oewn-nutmeg_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "nutmeg melon",
+      "synset": "oewn-07772617-n"
+    },
+    {
+      "definition": "melon having yellowish rind and whitish flesh",
+      "forms": [],
+      "id": "oewn-casaba__1.13.00..",
+      "lang": "en",
+      "lemma": "casaba",
+      "synset": "oewn-07772814-n"
+    },
+    {
+      "definition": "melon having yellowish rind and whitish flesh",
+      "forms": [],
+      "id": "oewn-casaba_melon__1.13.00..",
+      "lang": "en",
+      "lemma": "casaba melon",
+      "synset": "oewn-07772814-n"
+    },
+    {
+      "definition": "large oblong or roundish melon with a hard green rind and sweet watery red or occasionally yellowish pulp",
+      "forms": [],
+      "id": "oewn-watermelon__1.13.00..",
+      "lang": "en",
+      "lemma": "watermelon",
+      "synset": "oewn-07772927-n"
+    },
+    {
+      "definition": "a red fruit with a single hard stone",
+      "forms": [],
+      "id": "oewn-cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "cherry",
+      "synset": "oewn-07773108-n"
+    },
+    {
+      "definition": "any of several fruits of cultivated cherry trees that have sweet flesh",
+      "forms": [],
+      "id": "oewn-sweet_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet cherry",
+      "synset": "oewn-07773288-n"
+    },
+    {
+      "definition": "any of several fruits of cultivated cherry trees that have sweet flesh",
+      "forms": [],
+      "id": "oewn-black_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "black cherry",
+      "synset": "oewn-07773288-n"
+    },
+    {
+      "definition": "dark red or blackish sweet cherry",
+      "forms": [],
+      "id": "oewn-bing_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "bing cherry",
+      "synset": "oewn-07773487-n"
+    },
+    {
+      "definition": "large heart-shaped sweet cherry with soft flesh",
+      "forms": [],
+      "id": "oewn-heart_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "heart cherry",
+      "synset": "oewn-07773578-n"
+    },
+    {
+      "definition": "large heart-shaped sweet cherry with soft flesh",
+      "forms": [],
+      "id": "oewn-oxheart__1.13.00..",
+      "lang": "en",
+      "lemma": "oxheart",
+      "synset": "oewn-07773578-n"
+    },
+    {
+      "definition": "large heart-shaped sweet cherry with soft flesh",
+      "forms": [],
+      "id": "oewn-oxheart_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "oxheart cherry",
+      "synset": "oewn-07773578-n"
+    },
+    {
+      "definition": "heart cherry with dark flesh and skin",
+      "forms": [],
+      "id": "oewn-blackheart__1.13.00..",
+      "lang": "en",
+      "lemma": "blackheart",
+      "synset": "oewn-07773729-n"
+    },
+    {
+      "definition": "heart cherry with dark flesh and skin",
+      "forms": [],
+      "id": "oewn-blackheart_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "blackheart cherry",
+      "synset": "oewn-07773729-n"
+    },
+    {
+      "definition": "Mexican black cherry",
+      "forms": [],
+      "id": "oewn-capulin__1.13.00..",
+      "lang": "en",
+      "lemma": "capulin",
+      "synset": "oewn-07773850-n"
+    },
+    {
+      "definition": "Mexican black cherry",
+      "forms": [],
+      "id": "oewn-mexican_black_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "Mexican black cherry",
+      "synset": "oewn-07773850-n"
+    },
+    {
+      "definition": "acid cherries used for pies and preserves",
+      "forms": [],
+      "id": "oewn-sour_cherry__1.13.00..",
+      "lang": "en",
+      "lemma": "sour cherry",
+      "synset": "oewn-07773966-n"
+    },
+    {
+      "definition": "pale red sour cherry with colorless or nearly colorless juice",
+      "forms": [],
+      "id": "oewn-amarelle__1.13.00..",
+      "lang": "en",
+      "lemma": "amarelle",
+      "synset": "oewn-07774101-n"
+    },
+    {
+      "definition": "cultivated sour cherry with dark-colored skin and juice",
+      "forms": [],
+      "id": "oewn-morello__1.13.00..",
+      "lang": "en",
+      "lemma": "morello",
+      "synset": "oewn-07774236-n"
+    },
+    {
+      "definition": "plum-shaped whitish to almost black fruit used for preserves; tropical American",
+      "forms": [],
+      "id": "oewn-cocoa_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "cocoa plum",
+      "synset": "oewn-07774383-n"
+    },
+    {
+      "definition": "plum-shaped whitish to almost black fruit used for preserves; tropical American",
+      "forms": [],
+      "id": "oewn-coco_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "coco plum",
+      "synset": "oewn-07774383-n"
+    },
+    {
+      "definition": "plum-shaped whitish to almost black fruit used for preserves; tropical American",
+      "forms": [],
+      "id": "oewn-icaco__1.13.00..",
+      "lang": "en",
+      "lemma": "icaco",
+      "synset": "oewn-07774383-n"
+    },
+    {
+      "definition": "any of various juicy fruit of the genus Vitis with green or purple skins; grow in clusters",
+      "forms": [],
+      "id": "oewn-grape__1.13.00..",
+      "lang": "en",
+      "lemma": "grape",
+      "synset": "oewn-07774656-n"
+    },
+    {
+      "definition": "purplish-black wild grape of the eastern United States with tough skins that slip easily from the flesh; cultivated in many varieties",
+      "forms": [],
+      "id": "oewn-fox_grape__1.13.00..",
+      "lang": "en",
+      "lemma": "fox grape",
+      "synset": "oewn-07774926-n"
+    },
+    {
+      "definition": "slipskin grape; a purple table grape of the northeastern United States",
+      "forms": [],
+      "id": "oewn-concord_grape__1.13.00..",
+      "lang": "en",
+      "lemma": "Concord grape",
+      "synset": "oewn-07775170-n"
+    },
+    {
+      "definition": "slipskin grape; a reddish American table grape",
+      "forms": [],
+      "id": "oewn-catawba__1.13.00..",
+      "lang": "en",
+      "lemma": "Catawba",
+      "synset": "oewn-07775300-n"
+    },
+    {
+      "definition": "dull-purple grape of southern United States",
+      "forms": [],
+      "id": "oewn-muscadine__1.13.00..",
+      "lang": "en",
+      "lemma": "muscadine",
+      "synset": "oewn-07775400-n"
+    },
+    {
+      "definition": "dull-purple grape of southern United States",
+      "forms": [],
+      "id": "oewn-bullace_grape__1.13.00..",
+      "lang": "en",
+      "lemma": "bullace grape",
+      "synset": "oewn-07775400-n"
+    },
+    {
+      "definition": "amber-green muscadine grape of southeastern United States",
+      "forms": [],
+      "id": "oewn-scuppernong__1.13.00..",
+      "lang": "en",
+      "lemma": "scuppernong",
+      "synset": "oewn-07775552-n"
+    },
+    {
+      "definition": "a grape whose skin slips readily from the pulp",
+      "forms": [],
+      "id": "oewn-slipskin_grape__1.13.00..",
+      "lang": "en",
+      "lemma": "slipskin grape",
+      "synset": "oewn-07775667-n"
+    },
+    {
+      "definition": "grape from a cultivated variety of the common grape vine of Europe",
+      "forms": [],
+      "id": "oewn-vinifera_grape__1.13.00..",
+      "lang": "en",
+      "lemma": "vinifera grape",
+      "synset": "oewn-07775792-n"
+    },
+    {
+      "definition": "red table grape of California",
+      "forms": [],
+      "id": "oewn-emperor__1.13.00..",
+      "lang": "en",
+      "lemma": "emperor",
+      "synset": "oewn-07776046-n"
+    },
+    {
+      "definition": "sweet aromatic grape used for raisins and wine",
+      "forms": [],
+      "id": "oewn-muscat__1.13.01..",
+      "lang": "en",
+      "lemma": "muscat",
+      "synset": "oewn-07776129-n"
+    },
+    {
+      "definition": "sweet aromatic grape used for raisins and wine",
+      "forms": [],
+      "id": "oewn-muscatel__1.13.01..",
+      "lang": "en",
+      "lemma": "muscatel",
+      "synset": "oewn-07776129-n"
+    },
+    {
+      "definition": "sweet aromatic grape used for raisins and wine",
+      "forms": [],
+      "id": "oewn-muscat_grape__1.13.00..",
+      "lang": "en",
+      "lemma": "muscat grape",
+      "synset": "oewn-07776129-n"
+    },
+    {
+      "definition": "dark reddish-purple table grape of California",
+      "forms": [],
+      "id": "oewn-ribier__1.13.00..",
+      "lang": "en",
+      "lemma": "ribier",
+      "synset": "oewn-07776273-n"
+    },
+    {
+      "definition": "pale yellow seedless grape used for raisins and wine",
+      "forms": [],
+      "id": "oewn-sultana__1.13.02..",
+      "lang": "en",
+      "lemma": "sultana",
+      "synset": "oewn-07776371-n"
+    },
+    {
+      "definition": "variety of wine grape originally grown in Hungary; the prototype of vinifera grapes",
+      "forms": [],
+      "id": "oewn-tokay__1.13.01..",
+      "lang": "en",
+      "lemma": "Tokay",
+      "synset": "oewn-07776477-n"
+    },
+    {
+      "definition": "purplish-red table grape",
+      "forms": [],
+      "id": "oewn-flame_tokay__1.13.00..",
+      "lang": "en",
+      "lemma": "flame tokay",
+      "synset": "oewn-07776649-n"
+    },
+    {
+      "definition": "seedless green table grape of California",
+      "forms": [],
+      "id": "oewn-thompson_seedless__1.13.00..",
+      "lang": "en",
+      "lemma": "Thompson Seedless",
+      "synset": "oewn-07776731-n"
+    },
+    {
+      "definition": "the fruit of any of several tropical American trees of the genus Annona having soft edible pulp",
+      "forms": [],
+      "id": "oewn-custard_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "custard apple",
+      "synset": "oewn-07776835-n"
+    },
+    {
+      "definition": "large tropical fruit with leathery skin and soft pulp; related to custard apples",
+      "forms": [],
+      "id": "oewn-cherimoya__1.13.00..",
+      "lang": "en",
+      "lemma": "cherimoya",
+      "synset": "oewn-07777117-n"
+    },
+    {
+      "definition": "large tropical fruit with leathery skin and soft pulp; related to custard apples",
+      "forms": [],
+      "id": "oewn-cherimolla__1.13.00..",
+      "lang": "en",
+      "lemma": "cherimolla",
+      "synset": "oewn-07777117-n"
+    },
+    {
+      "definition": "large spiny tropical fruit with tart pulp related to custard apples",
+      "forms": [],
+      "id": "oewn-soursop__1.13.00..",
+      "lang": "en",
+      "lemma": "soursop",
+      "synset": "oewn-07777285-n"
+    },
+    {
+      "definition": "large spiny tropical fruit with tart pulp related to custard apples",
+      "forms": [],
+      "id": "oewn-guanabana__1.13.00..",
+      "lang": "en",
+      "lemma": "guanabana",
+      "synset": "oewn-07777285-n"
+    },
+    {
+      "definition": "large heart-shaped tropical fruit with soft acid pulp",
+      "forms": [],
+      "id": "oewn-bullock-ap-s_heart__1.13.00..",
+      "lang": "en",
+      "lemma": "bullock's heart",
+      "synset": "oewn-07777437-n"
+    },
+    {
+      "definition": "large heart-shaped tropical fruit with soft acid pulp",
+      "forms": [],
+      "id": "oewn-jamaica_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "Jamaica apple",
+      "synset": "oewn-07777437-n"
+    },
+    {
+      "definition": "sweet pulpy tropical fruit with thick scaly rind and shiny black seeds",
+      "forms": [],
+      "id": "oewn-sweetsop__1.13.00..",
+      "lang": "en",
+      "lemma": "sweetsop",
+      "synset": "oewn-07777587-n"
+    },
+    {
+      "definition": "sweet pulpy tropical fruit with thick scaly rind and shiny black seeds",
+      "forms": [],
+      "id": "oewn-annon__1.13.00..",
+      "lang": "en",
+      "lemma": "annon",
+      "synset": "oewn-07777587-n"
+    },
+    {
+      "definition": "sweet pulpy tropical fruit with thick scaly rind and shiny black seeds",
+      "forms": [],
+      "id": "oewn-sugar_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "sugar apple",
+      "synset": "oewn-07777587-n"
+    },
+    {
+      "definition": "whitish tropical fruit with a pinkish tinge related to custard apples; grown in the southern United States",
+      "forms": [],
+      "id": "oewn-ilama__1.13.00..",
+      "lang": "en",
+      "lemma": "ilama",
+      "synset": "oewn-07777753-n"
+    },
+    {
+      "definition": "ovoid yellow fruit with very fragrant peach-colored flesh; related to custard apples",
+      "forms": [],
+      "id": "oewn-pond_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "pond apple",
+      "synset": "oewn-07777930-n"
+    },
+    {
+      "definition": "fruit with yellow flesh; related to custard apples",
+      "forms": [],
+      "id": "oewn-papaw__1.13.00..",
+      "lang": "en",
+      "lemma": "papaw",
+      "synset": "oewn-07778090-n"
+    },
+    {
+      "definition": "fruit with yellow flesh; related to custard apples",
+      "forms": [],
+      "id": "oewn-pawpaw__1.13.00..",
+      "lang": "en",
+      "lemma": "pawpaw",
+      "synset": "oewn-07778090-n"
+    },
+    {
+      "definition": "large oval melon-like tropical fruit with yellowish flesh",
+      "forms": [],
+      "id": "oewn-papaya__1.13.00..",
+      "lang": "en",
+      "lemma": "papaya",
+      "synset": "oewn-07778220-n"
+    },
+    {
+      "definition": "South African fruit smelling and tasting like apricots; used for pickles and preserves",
+      "forms": [],
+      "id": "oewn-kai_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "kai apple",
+      "synset": "oewn-07778349-n"
+    },
+    {
+      "definition": "maroon-purple gooseberry-like fruit of India having tart-sweet purple pulp used especially for preserves",
+      "forms": [],
+      "id": "oewn-ketembilla__1.13.00..",
+      "lang": "en",
+      "lemma": "ketembilla",
+      "synset": "oewn-07778510-n"
+    },
+    {
+      "definition": "maroon-purple gooseberry-like fruit of India having tart-sweet purple pulp used especially for preserves",
+      "forms": [],
+      "id": "oewn-kitembilla__1.13.00..",
+      "lang": "en",
+      "lemma": "kitembilla",
+      "synset": "oewn-07778510-n"
+    },
+    {
+      "definition": "maroon-purple gooseberry-like fruit of India having tart-sweet purple pulp used especially for preserves",
+      "forms": [],
+      "id": "oewn-kitambilla__1.13.00..",
+      "lang": "en",
+      "lemma": "kitambilla",
+      "synset": "oewn-07778510-n"
+    },
+    {
+      "definition": "red pear-shaped tropical fruit with poisonous seeds; flesh is poisonous when unripe or overripe",
+      "forms": [],
+      "id": "oewn-ackee__1.13.00..",
+      "lang": "en",
+      "lemma": "ackee",
+      "synset": "oewn-07778716-n"
+    },
+    {
+      "definition": "red pear-shaped tropical fruit with poisonous seeds; flesh is poisonous when unripe or overripe",
+      "forms": [],
+      "id": "oewn-akee__1.13.00..",
+      "lang": "en",
+      "lemma": "akee",
+      "synset": "oewn-07778716-n"
+    },
+    {
+      "definition": "huge fruit native to southeastern Asia \u2018smelling like Hell and tasting like Heaven\u2019; seeds are roasted and eaten like nuts",
+      "forms": [],
+      "id": "oewn-durian__1.13.00..",
+      "lang": "en",
+      "lemma": "durian",
+      "synset": "oewn-07778889-n"
+    },
+    {
+      "definition": "dark-green kiwi-sized tropical fruit with white flesh; used chiefly for jellies and preserves",
+      "forms": [],
+      "id": "oewn-feijoa__1.13.00..",
+      "lang": "en",
+      "lemma": "feijoa",
+      "synset": "oewn-07779083-n"
+    },
+    {
+      "definition": "dark-green kiwi-sized tropical fruit with white flesh; used chiefly for jellies and preserves",
+      "forms": [],
+      "id": "oewn-pineapple_guava__1.13.00..",
+      "lang": "en",
+      "lemma": "pineapple guava",
+      "synset": "oewn-07779083-n"
+    },
+    {
+      "definition": "round one-inch Caribbean fruit with green leathery skin and sweet juicy translucent pulp; eaten like grapes",
+      "forms": [],
+      "id": "oewn-genip__1.13.00..",
+      "lang": "en",
+      "lemma": "genip",
+      "synset": "oewn-07779266-n"
+    },
+    {
+      "definition": "round one-inch Caribbean fruit with green leathery skin and sweet juicy translucent pulp; eaten like grapes",
+      "forms": [],
+      "id": "oewn-spanish_lime__1.13.00..",
+      "lang": "en",
+      "lemma": "Spanish lime",
+      "synset": "oewn-07779266-n"
+    },
+    {
+      "definition": "a succulent orange-sized tropical fruit with a thick rind",
+      "forms": [],
+      "id": "oewn-genipap__1.13.00..",
+      "lang": "en",
+      "lemma": "genipap",
+      "synset": "oewn-07779459-n"
+    },
+    {
+      "definition": "a succulent orange-sized tropical fruit with a thick rind",
+      "forms": [],
+      "id": "oewn-genipap_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "genipap fruit",
+      "synset": "oewn-07779459-n"
+    },
+    {
+      "definition": "fuzzy brown egg-shaped fruit with slightly tart green flesh",
+      "forms": [],
+      "id": "oewn-kiwi__1.13.00..",
+      "lang": "en",
+      "lemma": "kiwi",
+      "synset": "oewn-07779605-n"
+    },
+    {
+      "definition": "fuzzy brown egg-shaped fruit with slightly tart green flesh",
+      "forms": [],
+      "id": "oewn-kiwi_fruit__1.13.00..",
+      "lang": "en",
+      "lemma": "kiwi fruit",
+      "synset": "oewn-07779605-n"
+    },
+    {
+      "definition": "fuzzy brown egg-shaped fruit with slightly tart green flesh",
+      "forms": [],
+      "id": "oewn-chinese_gooseberry__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese gooseberry",
+      "synset": "oewn-07779605-n"
+    },
+    {
+      "definition": "yellow olive-sized semitropical fruit with a large free stone and relatively little flesh; used for jellies",
+      "forms": [],
+      "id": "oewn-loquat__1.13.00..",
+      "lang": "en",
+      "lemma": "loquat",
+      "synset": "oewn-07779768-n"
+    },
+    {
+      "definition": "yellow olive-sized semitropical fruit with a large free stone and relatively little flesh; used for jellies",
+      "forms": [],
+      "id": "oewn-japanese_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "Japanese plum",
+      "synset": "oewn-07779768-n"
+    },
+    {
+      "definition": "two- to three-inch tropical fruit with juicy flesh suggestive of both peaches and pineapples",
+      "forms": [],
+      "id": "oewn-mangosteen__1.13.00..",
+      "lang": "en",
+      "lemma": "mangosteen",
+      "synset": "oewn-07779963-n"
+    },
+    {
+      "definition": "large oval tropical fruit having smooth skin, juicy aromatic pulp, and a large hairy seed",
+      "forms": [
+        "mangoes"
+      ],
+      "id": "oewn-mango__1.13.00..",
+      "lang": "en",
+      "lemma": "mango",
+      "synset": "oewn-07780131-n"
+    },
+    {
+      "definition": "tropical fruit with a rough brownish skin and very sweet brownish pulp",
+      "forms": [],
+      "id": "oewn-sapodilla__1.13.00..",
+      "lang": "en",
+      "lemma": "sapodilla",
+      "synset": "oewn-07780291-n"
+    },
+    {
+      "definition": "tropical fruit with a rough brownish skin and very sweet brownish pulp",
+      "forms": [],
+      "id": "oewn-sapodilla_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "sapodilla plum",
+      "synset": "oewn-07780291-n"
+    },
+    {
+      "definition": "tropical fruit with a rough brownish skin and very sweet brownish pulp",
+      "forms": [],
+      "id": "oewn-sapota__1.13.00..",
+      "lang": "en",
+      "lemma": "sapota",
+      "synset": "oewn-07780291-n"
+    },
+    {
+      "definition": "brown oval fruit flesh makes excellent sherbet",
+      "forms": [],
+      "id": "oewn-sapote__1.13.00..",
+      "lang": "en",
+      "lemma": "sapote",
+      "synset": "oewn-07780462-n"
+    },
+    {
+      "definition": "brown oval fruit flesh makes excellent sherbet",
+      "forms": [],
+      "id": "oewn-mammee__1.13.02..",
+      "lang": "en",
+      "lemma": "mammee",
+      "synset": "oewn-07780462-n"
+    },
+    {
+      "definition": "brown oval fruit flesh makes excellent sherbet",
+      "forms": [],
+      "id": "oewn-marmalade_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "marmalade plum",
+      "synset": "oewn-07780462-n"
+    },
+    {
+      "definition": "large tropical seed pod with very tangy pulp that is eaten fresh or cooked with rice and fish or preserved for curries and chutneys",
+      "forms": [],
+      "id": "oewn-tamarind__1.13.00..",
+      "lang": "en",
+      "lemma": "tamarind",
+      "synset": "oewn-07780606-n"
+    },
+    {
+      "definition": "large tropical seed pod with very tangy pulp that is eaten fresh or cooked with rice and fish or preserved for curries and chutneys",
+      "forms": [],
+      "id": "oewn-tamarindo__1.13.00..",
+      "lang": "en",
+      "lemma": "tamarindo",
+      "synset": "oewn-07780606-n"
+    },
+    {
+      "definition": "a pear-shaped tropical fruit with green or blackish skin and rich yellowish pulp enclosing a single large seed",
+      "forms": [],
+      "id": "oewn-avocado__1.13.00..",
+      "lang": "en",
+      "lemma": "avocado",
+      "synset": "oewn-07780823-n"
+    },
+    {
+      "definition": "a pear-shaped tropical fruit with green or blackish skin and rich yellowish pulp enclosing a single large seed",
+      "forms": [],
+      "id": "oewn-alligator_pear__1.13.00..",
+      "lang": "en",
+      "lemma": "alligator pear",
+      "synset": "oewn-07780823-n"
+    },
+    {
+      "definition": "a pear-shaped tropical fruit with green or blackish skin and rich yellowish pulp enclosing a single large seed",
+      "forms": [],
+      "id": "oewn-avocado_pear__1.13.00..",
+      "lang": "en",
+      "lemma": "avocado pear",
+      "synset": "oewn-07780823-n"
+    },
+    {
+      "definition": "a pear-shaped tropical fruit with green or blackish skin and rich yellowish pulp enclosing a single large seed",
+      "forms": [],
+      "id": "oewn-aguacate__1.13.00..",
+      "lang": "en",
+      "lemma": "aguacate",
+      "synset": "oewn-07780823-n"
+    },
+    {
+      "definition": "sweet edible fruit of the date palm with a single long woody seed",
+      "forms": [],
+      "id": "oewn-date__1.13.00..",
+      "lang": "en",
+      "lemma": "date",
+      "synset": "oewn-07781049-n"
+    },
+    {
+      "definition": "berrylike fruit of an elder used for e.g. wines and jellies",
+      "forms": [],
+      "id": "oewn-elderberry__1.13.00..",
+      "lang": "en",
+      "lemma": "elderberry",
+      "synset": "oewn-07781184-n"
+    },
+    {
+      "definition": "tropical fruit having yellow skin and pink pulp; eaten fresh or used for e.g. jellies",
+      "forms": [],
+      "id": "oewn-guava__1.13.00..",
+      "lang": "en",
+      "lemma": "guava",
+      "synset": "oewn-07781337-n"
+    },
+    {
+      "definition": "purplish tropical fruit",
+      "forms": [],
+      "id": "oewn-mombin__1.13.00..",
+      "lang": "en",
+      "lemma": "mombin",
+      "synset": "oewn-07781493-n"
+    },
+    {
+      "definition": "yellow oval tropical fruit",
+      "forms": [],
+      "id": "oewn-hog_plum__1.13.02..",
+      "lang": "en",
+      "lemma": "hog plum",
+      "synset": "oewn-07781588-n"
+    },
+    {
+      "definition": "yellow oval tropical fruit",
+      "forms": [],
+      "id": "oewn-yellow_mombin__1.13.00..",
+      "lang": "en",
+      "lemma": "yellow mombin",
+      "synset": "oewn-07781588-n"
+    },
+    {
+      "definition": "fruit of the wild plum of southern United States",
+      "forms": [],
+      "id": "oewn-hog_plum__1.13.01..",
+      "lang": "en",
+      "lemma": "hog plum",
+      "synset": "oewn-07781704-n"
+    },
+    {
+      "definition": "fruit of the wild plum of southern United States",
+      "forms": [],
+      "id": "oewn-wild_plum__1.13.00..",
+      "lang": "en",
+      "lemma": "wild plum",
+      "synset": "oewn-07781704-n"
+    },
+    {
+      "definition": "tough-skinned purple grapelike tropical fruit grown in Brazil",
+      "forms": [],
+      "id": "oewn-jaboticaba__1.13.00..",
+      "lang": "en",
+      "lemma": "jaboticaba",
+      "synset": "oewn-07781838-n"
+    },
+    {
+      "definition": "dark red plumlike fruit of Old World buckthorn trees",
+      "forms": [],
+      "id": "oewn-jujube__1.13.02..",
+      "lang": "en",
+      "lemma": "jujube",
+      "synset": "oewn-07781975-n"
+    },
+    {
+      "definition": "dark red plumlike fruit of Old World buckthorn trees",
+      "forms": [],
+      "id": "oewn-chinese_date__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese date",
+      "synset": "oewn-07781975-n"
+    },
+    {
+      "definition": "dark red plumlike fruit of Old World buckthorn trees",
+      "forms": [],
+      "id": "oewn-chinese_jujube__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese jujube",
+      "synset": "oewn-07781975-n"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "forms": [],
+      "id": "oewn-litchi__1.13.00..",
+      "lang": "en",
+      "lemma": "litchi",
+      "synset": "oewn-07782149-n"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "forms": [],
+      "id": "oewn-litchi_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "litchi nut",
+      "synset": "oewn-07782149-n"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "forms": [],
+      "id": "oewn-litchee__1.13.00..",
+      "lang": "en",
+      "lemma": "litchee",
+      "synset": "oewn-07782149-n"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "forms": [],
+      "id": "oewn-lichi__1.13.00..",
+      "lang": "en",
+      "lemma": "lichi",
+      "synset": "oewn-07782149-n"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "forms": [],
+      "id": "oewn-leechee__1.13.00..",
+      "lang": "en",
+      "lemma": "leechee",
+      "synset": "oewn-07782149-n"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "forms": [],
+      "id": "oewn-lichee__1.13.00..",
+      "lang": "en",
+      "lemma": "lichee",
+      "synset": "oewn-07782149-n"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "forms": [],
+      "id": "oewn-lychee__1.13.00..",
+      "lang": "en",
+      "lemma": "lychee",
+      "synset": "oewn-07782149-n"
+    },
+    {
+      "definition": "Asian fruit similar to litchi",
+      "forms": [],
+      "id": "oewn-longanberry__1.13.00..",
+      "lang": "en",
+      "lemma": "longanberry",
+      "synset": "oewn-07782385-n"
+    },
+    {
+      "definition": "Asian fruit similar to litchi",
+      "forms": [],
+      "id": "oewn-dragon-ap-s_eye__1.13.00..",
+      "lang": "en",
+      "lemma": "dragon's eye",
+      "synset": "oewn-07782385-n"
+    },
+    {
+      "definition": "globular or ovoid tropical fruit with thick russet leathery rind and juicy yellow or reddish flesh",
+      "forms": [],
+      "id": "oewn-mamey__1.13.00..",
+      "lang": "en",
+      "lemma": "mamey",
+      "synset": "oewn-07782506-n"
+    },
+    {
+      "definition": "globular or ovoid tropical fruit with thick russet leathery rind and juicy yellow or reddish flesh",
+      "forms": [],
+      "id": "oewn-mammee__1.13.01..",
+      "lang": "en",
+      "lemma": "mammee",
+      "synset": "oewn-07782506-n"
+    },
+    {
+      "definition": "globular or ovoid tropical fruit with thick russet leathery rind and juicy yellow or reddish flesh",
+      "forms": [],
+      "id": "oewn-mammee_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "mammee apple",
+      "synset": "oewn-07782506-n"
+    },
+    {
+      "definition": "tropical fruit from the Philippines having a mass of small seeds embedded in sweetish white pulp",
+      "forms": [],
+      "id": "oewn-marang__1.13.00..",
+      "lang": "en",
+      "lemma": "marang",
+      "synset": "oewn-07782699-n"
+    },
+    {
+      "definition": "crabapple-like fruit used for preserves",
+      "forms": [],
+      "id": "oewn-medlar__1.13.01..",
+      "lang": "en",
+      "lemma": "medlar",
+      "synset": "oewn-07782867-n"
+    },
+    {
+      "definition": "a South African globular fruit with brown leathery skin and pithy flesh having a sweet-acid taste",
+      "forms": [],
+      "id": "oewn-medlar__1.13.02..",
+      "lang": "en",
+      "lemma": "medlar",
+      "synset": "oewn-07782978-n"
+    },
+    {
+      "definition": "sweet usually dark purple blackberry-like fruit of any of several mulberry trees of the genus Morus",
+      "forms": [],
+      "id": "oewn-mulberry__1.13.00..",
+      "lang": "en",
+      "lemma": "mulberry",
+      "synset": "oewn-07783147-n"
+    },
+    {
+      "definition": "sweet juicy gritty-textured fruit available in many varieties",
+      "forms": [],
+      "id": "oewn-pear__1.13.00..",
+      "lang": "en",
+      "lemma": "pear",
+      "synset": "oewn-07783823-n"
+    },
+    {
+      "definition": "greenish-yellow pear",
+      "forms": [],
+      "id": "oewn-bosc__1.13.00..",
+      "lang": "en",
+      "lemma": "bosc",
+      "synset": "oewn-07784044-n"
+    },
+    {
+      "definition": "a pear with firm flesh and a green skin",
+      "forms": [],
+      "id": "oewn-anjou__1.13.00..",
+      "lang": "en",
+      "lemma": "anjou",
+      "synset": "oewn-07784115-n"
+    },
+    {
+      "definition": "juicy yellow pear",
+      "forms": [],
+      "id": "oewn-bartlett__1.13.00..",
+      "lang": "en",
+      "lemma": "bartlett",
+      "synset": "oewn-07784206-n"
+    },
+    {
+      "definition": "juicy yellow pear",
+      "forms": [],
+      "id": "oewn-bartlett_pear__1.13.00..",
+      "lang": "en",
+      "lemma": "bartlett pear",
+      "synset": "oewn-07784206-n"
+    },
+    {
+      "definition": "small yellowish- to reddish-brown pear",
+      "forms": [],
+      "id": "oewn-seckel__1.13.00..",
+      "lang": "en",
+      "lemma": "seckel",
+      "synset": "oewn-07784294-n"
+    },
+    {
+      "definition": "small yellowish- to reddish-brown pear",
+      "forms": [],
+      "id": "oewn-seckel_pear__1.13.00..",
+      "lang": "en",
+      "lemma": "seckel pear",
+      "synset": "oewn-07784294-n"
+    },
+    {
+      "definition": "hybrid between plum and apricot",
+      "forms": [],
+      "id": "oewn-plumcot__1.13.00..",
+      "lang": "en",
+      "lemma": "plumcot",
+      "synset": "oewn-07784566-n"
+    },
+    {
+      "definition": "large globular fruit having many seeds with juicy red pulp in a tough brownish-red rind",
+      "forms": [],
+      "id": "oewn-pomegranate__1.13.00..",
+      "lang": "en",
+      "lemma": "pomegranate",
+      "synset": "oewn-07784670-n"
+    },
+    {
+      "definition": "round or pear-shaped spiny fruit of any of various prickly pear cacti",
+      "forms": [],
+      "id": "oewn-prickly_pear__1.13.00..",
+      "lang": "en",
+      "lemma": "prickly pear",
+      "synset": "oewn-07784834-n"
+    },
+    {
+      "definition": "small berrylike fruit",
+      "forms": [],
+      "id": "oewn-garambulla__1.13.00..",
+      "lang": "en",
+      "lemma": "garambulla",
+      "synset": "oewn-07784981-n"
+    },
+    {
+      "definition": "small yellow to orange fruit of the Barbados gooseberry cactus used in desserts and preserves and jellies",
+      "forms": [],
+      "id": "oewn-barbados_gooseberry__1.13.00..",
+      "lang": "en",
+      "lemma": "Barbados gooseberry",
+      "synset": "oewn-07785078-n"
+    },
+    {
+      "definition": "small yellow to orange fruit of the Barbados gooseberry cactus used in desserts and preserves and jellies",
+      "forms": [],
+      "id": "oewn-blade_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "blade apple",
+      "synset": "oewn-07785078-n"
+    },
+    {
+      "definition": "red Australian fruit; used for dessert or in jam",
+      "forms": [],
+      "id": "oewn-quandong__1.13.00..",
+      "lang": "en",
+      "lemma": "quandong",
+      "synset": "oewn-07785282-n"
+    },
+    {
+      "definition": "red Australian fruit; used for dessert or in jam",
+      "forms": [],
+      "id": "oewn-quandang__1.13.00..",
+      "lang": "en",
+      "lemma": "quandang",
+      "synset": "oewn-07785282-n"
+    },
+    {
+      "definition": "red Australian fruit; used for dessert or in jam",
+      "forms": [],
+      "id": "oewn-quantong__1.13.00..",
+      "lang": "en",
+      "lemma": "quantong",
+      "synset": "oewn-07785282-n"
+    },
+    {
+      "definition": "red Australian fruit; used for dessert or in jam",
+      "forms": [],
+      "id": "oewn-native_peach__1.13.00..",
+      "lang": "en",
+      "lemma": "native peach",
+      "synset": "oewn-07785282-n"
+    },
+    {
+      "definition": "aromatic acid-tasting pear-shaped fruit used in preserves",
+      "forms": [],
+      "id": "oewn-quince__1.13.00..",
+      "lang": "en",
+      "lemma": "quince",
+      "synset": "oewn-07785560-n"
+    },
+    {
+      "definition": "pleasantly acid bright red oval Malayan fruit covered with soft spines",
+      "forms": [],
+      "id": "oewn-rambutan__1.13.00..",
+      "lang": "en",
+      "lemma": "rambutan",
+      "synset": "oewn-07785707-n"
+    },
+    {
+      "definition": "pleasantly acid bright red oval Malayan fruit covered with soft spines",
+      "forms": [],
+      "id": "oewn-rambotan__1.13.00..",
+      "lang": "en",
+      "lemma": "rambotan",
+      "synset": "oewn-07785707-n"
+    },
+    {
+      "definition": "fruit of an East Indian tree similar to the rambutan but sweeter",
+      "forms": [],
+      "id": "oewn-pulasan__1.13.00..",
+      "lang": "en",
+      "lemma": "pulasan",
+      "synset": "oewn-07785862-n"
+    },
+    {
+      "definition": "fruit of an East Indian tree similar to the rambutan but sweeter",
+      "forms": [],
+      "id": "oewn-pulassan__1.13.00..",
+      "lang": "en",
+      "lemma": "pulassan",
+      "synset": "oewn-07785862-n"
+    },
+    {
+      "definition": "fragrant oval yellowish tropical fruit used in jellies and confections",
+      "forms": [],
+      "id": "oewn-rose_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "rose apple",
+      "synset": "oewn-07786010-n"
+    },
+    {
+      "definition": "acid gritty-textured fruit",
+      "forms": [],
+      "id": "oewn-sorb__1.13.00..",
+      "lang": "en",
+      "lemma": "sorb",
+      "synset": "oewn-07786156-n"
+    },
+    {
+      "definition": "acid gritty-textured fruit",
+      "forms": [],
+      "id": "oewn-sorb_apple__1.13.00..",
+      "lang": "en",
+      "lemma": "sorb apple",
+      "synset": "oewn-07786156-n"
+    },
+    {
+      "definition": "acid-tasting Australian gourd-like fruit with a woody rind and large seeds",
+      "forms": [],
+      "id": "oewn-sour_gourd__1.13.01..",
+      "lang": "en",
+      "lemma": "sour gourd",
+      "synset": "oewn-07786265-n"
+    },
+    {
+      "definition": "African gourd-like fruit with edible pulp",
+      "forms": [],
+      "id": "oewn-sour_gourd__1.13.02..",
+      "lang": "en",
+      "lemma": "sour gourd",
+      "synset": "oewn-07786415-n"
+    },
+    {
+      "definition": "African gourd-like fruit with edible pulp",
+      "forms": [],
+      "id": "oewn-monkey_bread__1.13.00..",
+      "lang": "en",
+      "lemma": "monkey bread",
+      "synset": "oewn-07786415-n"
+    },
+    {
+      "definition": "a fruit of the calamondin tree.",
+      "forms": [],
+      "id": "oewn-calamondin__1.13.01..",
+      "lang": "en",
+      "lemma": "calamondin",
+      "synset": "oewn-92410005-n"
+    },
+    {
+      "definition": "the fruit from the korlan tree.",
+      "forms": [],
+      "id": "oewn-korlan__1.13.01..",
+      "lang": "en",
+      "lemma": "korlan",
+      "synset": "oewn-92412619-n"
+    },
+    {
+      "definition": "the white translucent edible berry of a group of cultivars of the red currant (Ribes rubrum).",
+      "forms": [],
+      "id": "oewn-white_currant__1.13.01..",
+      "lang": "en",
+      "lemma": "white currant",
+      "synset": "oewn-92412630-n"
+    },
+    {
+      "definition": "a variety of apple bred in Poland; it is harvested in October.",
+      "forms": [],
+      "id": "oewn-ligol__1.13.01..",
+      "lang": "en",
+      "lemma": "Ligol",
+      "synset": "oewn-92413635-n"
+    },
+    {
+      "definition": "an edible fruit of the small tree Prunus cerasifera.",
+      "forms": [],
+      "id": "oewn-cherry_plum__1.13.01..",
+      "lang": "en",
+      "lemma": "cherry plum",
+      "synset": "oewn-92413959-n"
+    },
+    {
+      "definition": "a fruit that has orange skin and lime green, jelly-like flesh with a refreshingly fruity taste, and texture similar to a passionfruit or pomegranate; grows on the annual vine Cucumis metuliferus.",
+      "forms": [],
+      "id": "oewn-kiwano__1.20.01..",
+      "lang": "en",
+      "lemma": "kiwano",
+      "synset": "oewn-92414343-n"
+    },
+    {
+      "definition": "large lemonlike fruit segmented into finger-like sections; most varieties contain no pulp or juice.",
+      "forms": [],
+      "id": "oewn-buddha-ap-s_hand__1.13.01..",
+      "lang": "en",
+      "lemma": "Buddha's hand",
+      "synset": "oewn-92414549-n"
+    },
+    {
+      "definition": "a small fruit with fleshy pulp; tastes like a combination of grape and grapefruit.",
+      "forms": [],
+      "id": "oewn-langsat__1.13.01..",
+      "lang": "en",
+      "lemma": "langsat",
+      "synset": "oewn-92414551-n"
+    },
+    {
+      "definition": "Clapp's Favourite is a useful early-season pear, ripening in mid-August.",
+      "forms": [],
+      "id": "oewn-clapp-ap-s_favourite__1.13.01..",
+      "lang": "en",
+      "lemma": "Clapp's Favourite",
+      "synset": "oewn-92426961-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "edible reproductive body of a seed plant especially one having sweet flesh",
+      "hypernyms": [
+        "oewn-07721456-n",
+        "oewn-13155706-n"
+      ],
+      "id": "oewn-07721676-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "edible fruit"
+    },
+    {
+      "definition": "fruit (especially peach) whose flesh does not adhere to the pit",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07754081-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "freestone"
+    },
+    {
+      "definition": "fruit (especially peach) whose flesh adheres strongly to the pit",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07754200-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "cling"
+    },
+    {
+      "definition": "fruit that has fallen from the tree",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07755011-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "windfall"
+    },
+    {
+      "definition": "fruit with red or yellow or green skin and sweet to tart crisp whitish flesh",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159619-n"
+      ],
+      "id": "oewn-07755101-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "apple"
+    },
+    {
+      "definition": "small sour apple; suitable for preserving",
+      "hypernyms": [
+        "oewn-07755101-n"
+      ],
+      "id": "oewn-07755320-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "crab apple"
+    },
+    {
+      "definition": "an apple used primarily for eating raw without cooking",
+      "hypernyms": [
+        "oewn-07755101-n"
+      ],
+      "id": "oewn-07755482-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "eating apple"
+    },
+    {
+      "definition": "an American eating apple with red or yellow and red skin",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07755899-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Baldwin"
+    },
+    {
+      "definition": "large apple with a red skin",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07756009-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Cortland"
+    },
+    {
+      "definition": "a yellow Pippin with distinctive flavor",
+      "hypernyms": [
+        "oewn-07757437-n"
+      ],
+      "id": "oewn-07756091-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Cox's Orange Pippin"
+    },
+    {
+      "definition": "variety of sweet eating apples",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07756196-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Delicious"
+    },
+    {
+      "definition": "a sweet eating apple with yellow skin",
+      "hypernyms": [
+        "oewn-07756196-n"
+      ],
+      "id": "oewn-07756318-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Golden Delicious"
+    },
+    {
+      "definition": "a sweet eating apple with bright red skin; most widely grown apple worldwide",
+      "hypernyms": [
+        "oewn-07756196-n"
+      ],
+      "id": "oewn-07756437-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Red Delicious"
+    },
+    {
+      "definition": "an eating apple that somewhat resembles a McIntosh; used as both an eating and a cooking apple",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07756573-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Empire"
+    },
+    {
+      "definition": "yellow apple that ripens in late autumn; eaten raw",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07756720-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Grimes' golden"
+    },
+    {
+      "definition": "red late-ripening apple; primarily eaten raw",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07756831-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Jonathan"
+    },
+    {
+      "definition": "early-ripening apple popular in the northeastern United States; primarily eaten raw but suitable for applesauce",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07756930-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "McIntosh"
+    },
+    {
+      "definition": "similar to McIntosh; juicy and late-ripening",
+      "hypernyms": [
+        "oewn-07756930-n"
+      ],
+      "id": "oewn-07757114-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Macoun"
+    },
+    {
+      "definition": "large late-ripening apple with skin striped with yellow and red",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07757211-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Northern Spy"
+    },
+    {
+      "definition": "any of several varieties of apples with red skins",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07757333-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Pearmain"
+    },
+    {
+      "definition": "any of numerous superior eating apples with yellow or greenish yellow skin flushed with red",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07757437-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Pippin"
+    },
+    {
+      "definition": "used primarily as eating apples",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07757599-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Prima"
+    },
+    {
+      "definition": "apple grown chiefly in the Shenandoah Valley",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07757682-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Stayman"
+    },
+    {
+      "definition": "crisp apple with dark red skin",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07757780-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Winesap"
+    },
+    {
+      "definition": "crisp tart apple; good for eating raw and suitable for cooking",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07757864-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Stayman Winesap"
+    },
+    {
+      "definition": "an apple used primarily in cooking for pies and applesauce etc",
+      "hypernyms": [
+        "oewn-07755101-n"
+      ],
+      "id": "oewn-07757988-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "cooking apple"
+    },
+    {
+      "definition": "very large cooking apple",
+      "hypernyms": [
+        "oewn-07757988-n"
+      ],
+      "id": "oewn-07758200-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Bramley's Seedling"
+    },
+    {
+      "definition": "apple with a green skin and hard tart flesh",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-07758289-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Granny Smith"
+    },
+    {
+      "definition": "apple used primarily in cooking",
+      "hypernyms": [
+        "oewn-07757988-n"
+      ],
+      "id": "oewn-07758391-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Lane's Prince Albert"
+    },
+    {
+      "definition": "apple used primarily in cooking; bright scarlet with stripes of crimson red",
+      "hypernyms": [
+        "oewn-07757988-n"
+      ],
+      "id": "oewn-07758489-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Newtown Wonder"
+    },
+    {
+      "definition": "large red apple used primarily for baking",
+      "hypernyms": [
+        "oewn-07757988-n"
+      ],
+      "id": "oewn-07758581-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Rome Beauty"
+    },
+    {
+      "definition": "any of numerous small and pulpy edible fruits; used as desserts or in making jams and jellies and preserves",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07758680-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "berry"
+    },
+    {
+      "definition": "blue-black berries similar to American blueberries",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07759200-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "bilberry"
+    },
+    {
+      "definition": "blue-black berry similar to blueberries and bilberries of the eastern United States",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07759360-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "huckleberry"
+    },
+    {
+      "definition": "sweet edible dark-blue berries of either low-growing or high-growing blueberry plants",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07759520-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "blueberry"
+    },
+    {
+      "definition": "spicy red berrylike fruit; source of wintergreen oil",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07759699-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "wintergreen"
+    },
+    {
+      "definition": "very tart red berry used for sauce or juice",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07759878-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "cranberry"
+    },
+    {
+      "definition": "tart red berries similar to American cranberries but smaller",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07760033-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "lingonberry"
+    },
+    {
+      "definition": "any of several tart red or black berries used primarily for jellies and jams",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07760222-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "currant"
+    },
+    {
+      "definition": "currant-like berry used primarily in jams and jellies",
+      "hypernyms": [
+        "oewn-07760222-n"
+      ],
+      "id": "oewn-07760406-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "gooseberry"
+    },
+    {
+      "definition": "small black berries used in jams and jellies",
+      "hypernyms": [
+        "oewn-07760222-n"
+      ],
+      "id": "oewn-07760535-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "black currant"
+    },
+    {
+      "definition": "small red berries used primarily in jams and jellies",
+      "hypernyms": [
+        "oewn-07760222-n"
+      ],
+      "id": "oewn-07760658-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "red currant"
+    },
+    {
+      "definition": "large sweet black or very dark purple edible aggregate fruit of any of various bushes of the genus Rubus",
+      "hypernyms": [
+        "oewn-07758680-n",
+        "oewn-13159435-n"
+      ],
+      "id": "oewn-07760787-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "blackberry"
+    },
+    {
+      "definition": "large raspberry-flavored fruit; cross between blackberries and raspberries",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07761022-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "boysenberry"
+    },
+    {
+      "definition": "blackberry-like fruits of any of several trailing blackberry bushes",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07761173-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "dewberry"
+    },
+    {
+      "definition": "large red variety of the dewberry",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07761333-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "loganberry"
+    },
+    {
+      "definition": "red or black edible aggregate berries usually smaller than the related blackberries",
+      "hypernyms": [
+        "oewn-07758680-n",
+        "oewn-13159435-n"
+      ],
+      "id": "oewn-07761442-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "raspberry"
+    },
+    {
+      "definition": "edible purple or red berries",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07761637-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "saskatoon"
+    },
+    {
+      "definition": "East Indian tart yellow berrylike fruit",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07761779-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "lanseh"
+    },
+    {
+      "definition": "sweet fleshy red fruit",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07761916-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "strawberry"
+    },
+    {
+      "definition": "small edible dark purple to black berry with large pits; southern United States",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07762014-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sugarberry"
+    },
+    {
+      "definition": "orange fruit resembling a plum; edible when fully ripe",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07762162-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "persimmon"
+    },
+    {
+      "definition": "acid red or yellow cherry-like fruit of a tropical American shrub very rich in vitamin C",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07762310-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "acerola"
+    },
+    {
+      "definition": "deeply ridged yellow-brown tropical fruit; used raw as a vegetable or in salad or when fully ripe as a dessert",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07762527-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "carambola"
+    },
+    {
+      "definition": "tropical cylindrical fruit resembling a pinecone with pineapple-banana flavor",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07762725-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "ceriman"
+    },
+    {
+      "definition": "edible scarlet plumlike fruit of a South African plant",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07762886-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "carissa plum"
+    },
+    {
+      "definition": "any of numerous fruits of the genus Citrus having thick rind and juicy pulp; grown in warm regions",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07763031-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "citrus"
+    },
+    {
+      "definition": "round yellow to orange fruit of any of several citrus trees",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07763583-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "orange"
+    },
+    {
+      "definition": "large sweet easily-peeled Florida fruit with deep orange rind",
+      "hypernyms": [
+        "oewn-07763583-n"
+      ],
+      "id": "oewn-07763787-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "temple orange"
+    },
+    {
+      "definition": "a somewhat flat reddish-orange loose skinned citrus of China",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07763927-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "mandarin"
+    },
+    {
+      "definition": "a mandarin orange of a deep reddish orange color and few seeds",
+      "hypernyms": [
+        "oewn-07763927-n"
+      ],
+      "id": "oewn-07764133-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "clementine"
+    },
+    {
+      "definition": "medium-sized largely seedless mandarin orange with thin smooth skin",
+      "hypernyms": [
+        "oewn-07763927-n"
+      ],
+      "id": "oewn-07764252-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "satsuma"
+    },
+    {
+      "definition": "any of various deep orange mandarins grown in the United States and southern Africa",
+      "hypernyms": [
+        "oewn-07763927-n"
+      ],
+      "id": "oewn-07764392-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "tangerine"
+    },
+    {
+      "definition": "large sweet juicy hybrid between tangerine and grapefruit having a thick wrinkled skin",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07764550-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "tangelo"
+    },
+    {
+      "definition": "highly acidic orange used especially in marmalade",
+      "hypernyms": [
+        "oewn-07763583-n"
+      ],
+      "id": "oewn-07764729-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "bitter orange"
+    },
+    {
+      "definition": "orange with sweet juicy pulp; often has a thin skin",
+      "hypernyms": [
+        "oewn-07763583-n"
+      ],
+      "id": "oewn-07764888-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "sweet orange"
+    },
+    {
+      "definition": "sweet almost seedless orange of Israel",
+      "hypernyms": [
+        "oewn-07764888-n"
+      ],
+      "id": "oewn-07765071-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Jaffa orange"
+    },
+    {
+      "definition": "seedless orange enclosing a small secondary fruit at the apex",
+      "hypernyms": [
+        "oewn-07764888-n"
+      ],
+      "id": "oewn-07765168-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "navel orange"
+    },
+    {
+      "definition": "variety of sweet orange cultivated extensively in Florida and California",
+      "hypernyms": [
+        "oewn-07764888-n"
+      ],
+      "id": "oewn-07765288-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Valencia orange"
+    },
+    {
+      "definition": "small oval citrus fruit with thin sweet rind and very acid pulp",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07765422-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "kumquat"
+    },
+    {
+      "definition": "yellow oval fruit with juicy acidic flesh",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07765558-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "lemon"
+    },
+    {
+      "definition": "the green acidic fruit of any of various lime trees",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07765707-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "lime"
+    },
+    {
+      "definition": "small yellow-green limes of southern Florida",
+      "hypernyms": [
+        "oewn-07765707-n"
+      ],
+      "id": "oewn-07765846-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "key lime"
+    },
+    {
+      "definition": "large yellow fruit with somewhat acid juicy pulp; usual serving consists of a half",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07765945-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "grapefruit"
+    },
+    {
+      "definition": "large pear-shaped fruit similar to grapefruit but with coarse dry pulp",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07766122-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "pomelo"
+    },
+    {
+      "definition": "more aromatic and acid tasting than oranges; used in beverages and marmalade",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07766275-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "citrange"
+    },
+    {
+      "definition": "large lemonlike fruit with thick aromatic rind; usually preserved",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-07766425-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "citron"
+    },
+    {
+      "definition": "downy yellow to rosy-colored fruit resembling a small peach",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07766848-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "apricot"
+    },
+    {
+      "definition": "downy juicy fruit with sweet yellowish or whitish flesh",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159085-n"
+      ],
+      "id": "oewn-07766980-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "peach"
+    },
+    {
+      "definition": "a variety or mutation of the peach that has a smooth skin",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07767124-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "nectarine"
+    },
+    {
+      "definition": "highly colored edible fruit of pitahaya cactus having bright red juice; often as large as a peach",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07767256-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "pitahaya"
+    },
+    {
+      "definition": "any of numerous varieties of small to medium-sized round or oval fruit having a smooth skin and a single pit",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159085-n"
+      ],
+      "id": "oewn-07767427-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "plum"
+    },
+    {
+      "definition": "dark purple plum of the damson tree",
+      "hypernyms": [
+        "oewn-07767427-n"
+      ],
+      "id": "oewn-07767713-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "damson"
+    },
+    {
+      "definition": "sweet green or greenish-yellow variety of plum",
+      "hypernyms": [
+        "oewn-07767427-n"
+      ],
+      "id": "oewn-07767834-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "greengage"
+    },
+    {
+      "definition": "small dark purple fruit used especially in jams and pies",
+      "hypernyms": [
+        "oewn-07767427-n"
+      ],
+      "id": "oewn-07767953-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "beach plum"
+    },
+    {
+      "definition": "small sour dark purple fruit of especially the Allegheny plum bush",
+      "hypernyms": [
+        "oewn-07767427-n"
+      ],
+      "id": "oewn-07768085-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sloe"
+    },
+    {
+      "definition": "a large red plum served as dessert",
+      "hypernyms": [
+        "oewn-07767427-n"
+      ],
+      "id": "oewn-07768240-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "Victoria plum"
+    },
+    {
+      "definition": "fruit preserved by drying",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07768353-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "dried fruit"
+    },
+    {
+      "definition": "apricots preserved by drying",
+      "hypernyms": [
+        "oewn-07768353-n"
+      ],
+      "id": "oewn-07768490-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "dried apricot"
+    },
+    {
+      "definition": "dried plum",
+      "hypernyms": [
+        "oewn-07768353-n"
+      ],
+      "id": "oewn-07768578-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "prune"
+    },
+    {
+      "definition": "dried grape",
+      "hypernyms": [
+        "oewn-07768353-n"
+      ],
+      "id": "oewn-07768640-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "raisin"
+    },
+    {
+      "definition": "dried seedless grape",
+      "hypernyms": [
+        "oewn-07768640-n"
+      ],
+      "id": "oewn-07768758-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "seedless raisin"
+    },
+    {
+      "definition": "seeded grape that has been dried",
+      "hypernyms": [
+        "oewn-07768640-n"
+      ],
+      "id": "oewn-07768850-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "seeded raisin"
+    },
+    {
+      "definition": "small dried seedless raisin grown in the Mediterranean region and California; used in cooking",
+      "hypernyms": [
+        "oewn-07768640-n"
+      ],
+      "id": "oewn-07768942-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "currant"
+    },
+    {
+      "definition": "fleshy sweet pear-shaped yellowish or purple multiple fruit eaten fresh or preserved or dried",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07769089-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "fig"
+    },
+    {
+      "definition": "large sweet fleshy tropical fruit with a terminal tuft of stiff leaves; widely cultivated",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07769251-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "pineapple"
+    },
+    {
+      "definition": "West Indian fruit resembling the mango; often pickled",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07769424-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "anchovy pear"
+    },
+    {
+      "definition": "elongated crescent-shaped yellow fruit with soft sweet flesh",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07769568-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "banana"
+    },
+    {
+      "definition": "egg-shaped tropical fruit of certain passionflower vines; used for sherbets and confectionery and drinks",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07769719-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "passion fruit"
+    },
+    {
+      "definition": "the egg-shaped edible fruit of tropical American vines related to passionflowers",
+      "hypernyms": [
+        "oewn-07769719-n"
+      ],
+      "id": "oewn-07769956-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "granadilla"
+    },
+    {
+      "definition": "apple-sized passion fruit of the West Indies",
+      "hypernyms": [
+        "oewn-07769719-n"
+      ],
+      "id": "oewn-07770131-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sweet calabash"
+    },
+    {
+      "definition": "the edible yellow fruit of the Jamaica honeysuckle",
+      "hypernyms": [
+        "oewn-07769719-n"
+      ],
+      "id": "oewn-07770255-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "bell apple"
+    },
+    {
+      "definition": "a large round seedless or seeded fruit with a texture like bread; eaten boiled or baked or roasted or ground into flour; the roasted seeds resemble chestnuts",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07770427-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "breadfruit"
+    },
+    {
+      "definition": "immense East Indian fruit resembling breadfruit; it contains an edible pulp and nutritious seeds that are commonly roasted",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07770660-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "jackfruit"
+    },
+    {
+      "definition": "ovoid orange-yellow mealy sweet fruit of Florida and West Indies",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07771238-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "canistel"
+    },
+    {
+      "definition": "any of numerous fruits of the gourd family having a hard rind and sweet juicy flesh",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07771387-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "melon"
+    },
+    {
+      "definition": "a bite of melon cut as a sphere",
+      "hypernyms": [
+        "oewn-07771387-n"
+      ],
+      "id": "oewn-07771595-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "melon ball"
+    },
+    {
+      "definition": "the fruit of a muskmelon vine; any of several sweet melons related to cucumbers",
+      "hypernyms": [
+        "oewn-07771387-n"
+      ],
+      "id": "oewn-07771683-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "muskmelon"
+    },
+    {
+      "definition": "the fruit of a cantaloup vine; small to medium-sized melon with yellowish flesh",
+      "hypernyms": [
+        "oewn-07771683-n"
+      ],
+      "id": "oewn-07771905-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "cantaloup"
+    },
+    {
+      "definition": "the fruit of the winter melon vine; a green melon with pale green to orange flesh that keeps well",
+      "hypernyms": [
+        "oewn-07771683-n"
+      ],
+      "id": "oewn-07772072-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "winter melon"
+    },
+    {
+      "definition": "the fruit of a variety of winter melon vine; a large smooth greenish-white melon with pale green flesh",
+      "hypernyms": [
+        "oewn-07772072-n"
+      ],
+      "id": "oewn-07772301-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "honeydew"
+    },
+    {
+      "definition": "the fruit of a variety of winter melon vine; a large green melon with orange flesh",
+      "hypernyms": [
+        "oewn-07772072-n"
+      ],
+      "id": "oewn-07772475-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Persian melon"
+    },
+    {
+      "definition": "the fruit of a variety of muskmelon vine; a melon with netlike markings and deep green flesh",
+      "hypernyms": [
+        "oewn-07771683-n"
+      ],
+      "id": "oewn-07772617-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "net melon"
+    },
+    {
+      "definition": "melon having yellowish rind and whitish flesh",
+      "hypernyms": [
+        "oewn-07772072-n"
+      ],
+      "id": "oewn-07772814-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "casaba"
+    },
+    {
+      "definition": "large oblong or roundish melon with a hard green rind and sweet watery red or occasionally yellowish pulp",
+      "hypernyms": [
+        "oewn-07771387-n"
+      ],
+      "id": "oewn-07772927-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "watermelon"
+    },
+    {
+      "definition": "a red fruit with a single hard stone",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159085-n"
+      ],
+      "id": "oewn-07773108-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "cherry"
+    },
+    {
+      "definition": "any of several fruits of cultivated cherry trees that have sweet flesh",
+      "hypernyms": [
+        "oewn-07773108-n"
+      ],
+      "id": "oewn-07773288-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sweet cherry"
+    },
+    {
+      "definition": "dark red or blackish sweet cherry",
+      "hypernyms": [
+        "oewn-07773288-n"
+      ],
+      "id": "oewn-07773487-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "bing cherry"
+    },
+    {
+      "definition": "large heart-shaped sweet cherry with soft flesh",
+      "hypernyms": [
+        "oewn-07773288-n"
+      ],
+      "id": "oewn-07773578-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "heart cherry"
+    },
+    {
+      "definition": "heart cherry with dark flesh and skin",
+      "hypernyms": [
+        "oewn-07773578-n"
+      ],
+      "id": "oewn-07773729-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "blackheart"
+    },
+    {
+      "definition": "Mexican black cherry",
+      "hypernyms": [
+        "oewn-07773108-n"
+      ],
+      "id": "oewn-07773850-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "capulin"
+    },
+    {
+      "definition": "acid cherries used for pies and preserves",
+      "hypernyms": [
+        "oewn-07773108-n"
+      ],
+      "id": "oewn-07773966-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sour cherry"
+    },
+    {
+      "definition": "pale red sour cherry with colorless or nearly colorless juice",
+      "hypernyms": [
+        "oewn-07773966-n"
+      ],
+      "id": "oewn-07774101-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "amarelle"
+    },
+    {
+      "definition": "cultivated sour cherry with dark-colored skin and juice",
+      "hypernyms": [
+        "oewn-07773966-n"
+      ],
+      "id": "oewn-07774236-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "morello"
+    },
+    {
+      "definition": "plum-shaped whitish to almost black fruit used for preserves; tropical American",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07774383-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "cocoa plum"
+    },
+    {
+      "definition": "any of various juicy fruit of the genus Vitis with green or purple skins; grow in clusters",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07774656-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "grape"
+    },
+    {
+      "definition": "purplish-black wild grape of the eastern United States with tough skins that slip easily from the flesh; cultivated in many varieties",
+      "hypernyms": [
+        "oewn-07775667-n"
+      ],
+      "id": "oewn-07774926-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "fox grape"
+    },
+    {
+      "definition": "slipskin grape; a purple table grape of the northeastern United States",
+      "hypernyms": [
+        "oewn-07774926-n"
+      ],
+      "id": "oewn-07775170-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Concord grape"
+    },
+    {
+      "definition": "slipskin grape; a reddish American table grape",
+      "hypernyms": [
+        "oewn-07774926-n"
+      ],
+      "id": "oewn-07775300-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "Catawba"
+    },
+    {
+      "definition": "dull-purple grape of southern United States",
+      "hypernyms": [
+        "oewn-07774656-n"
+      ],
+      "id": "oewn-07775400-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "muscadine"
+    },
+    {
+      "definition": "amber-green muscadine grape of southeastern United States",
+      "hypernyms": [
+        "oewn-07775400-n"
+      ],
+      "id": "oewn-07775552-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "scuppernong"
+    },
+    {
+      "definition": "a grape whose skin slips readily from the pulp",
+      "hypernyms": [
+        "oewn-07774656-n"
+      ],
+      "id": "oewn-07775667-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "slipskin grape"
+    },
+    {
+      "definition": "grape from a cultivated variety of the common grape vine of Europe",
+      "hypernyms": [
+        "oewn-07774656-n"
+      ],
+      "id": "oewn-07775792-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "vinifera grape"
+    },
+    {
+      "definition": "red table grape of California",
+      "hypernyms": [
+        "oewn-07775792-n"
+      ],
+      "id": "oewn-07776046-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "emperor"
+    },
+    {
+      "definition": "sweet aromatic grape used for raisins and wine",
+      "hypernyms": [
+        "oewn-07775792-n"
+      ],
+      "id": "oewn-07776129-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "muscat"
+    },
+    {
+      "definition": "dark reddish-purple table grape of California",
+      "hypernyms": [
+        "oewn-07775792-n"
+      ],
+      "id": "oewn-07776273-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "ribier"
+    },
+    {
+      "definition": "pale yellow seedless grape used for raisins and wine",
+      "hypernyms": [
+        "oewn-07775792-n"
+      ],
+      "id": "oewn-07776371-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "sultana"
+    },
+    {
+      "definition": "variety of wine grape originally grown in Hungary; the prototype of vinifera grapes",
+      "hypernyms": [
+        "oewn-07775792-n"
+      ],
+      "id": "oewn-07776477-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Tokay"
+    },
+    {
+      "definition": "purplish-red table grape",
+      "hypernyms": [
+        "oewn-07776477-n"
+      ],
+      "id": "oewn-07776649-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "flame tokay"
+    },
+    {
+      "definition": "seedless green table grape of California",
+      "hypernyms": [
+        "oewn-07775792-n"
+      ],
+      "id": "oewn-07776731-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Thompson Seedless"
+    },
+    {
+      "definition": "the fruit of any of several tropical American trees of the genus Annona having soft edible pulp",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07776835-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "custard apple"
+    },
+    {
+      "definition": "large tropical fruit with leathery skin and soft pulp; related to custard apples",
+      "hypernyms": [
+        "oewn-07776835-n"
+      ],
+      "id": "oewn-07777117-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "cherimoya"
+    },
+    {
+      "definition": "large spiny tropical fruit with tart pulp related to custard apples",
+      "hypernyms": [
+        "oewn-07776835-n"
+      ],
+      "id": "oewn-07777285-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "soursop"
+    },
+    {
+      "definition": "large heart-shaped tropical fruit with soft acid pulp",
+      "hypernyms": [
+        "oewn-07776835-n"
+      ],
+      "id": "oewn-07777437-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "bullock's heart"
+    },
+    {
+      "definition": "sweet pulpy tropical fruit with thick scaly rind and shiny black seeds",
+      "hypernyms": [
+        "oewn-07776835-n"
+      ],
+      "id": "oewn-07777587-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sweetsop"
+    },
+    {
+      "definition": "whitish tropical fruit with a pinkish tinge related to custard apples; grown in the southern United States",
+      "hypernyms": [
+        "oewn-07776835-n"
+      ],
+      "id": "oewn-07777753-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "ilama"
+    },
+    {
+      "definition": "ovoid yellow fruit with very fragrant peach-colored flesh; related to custard apples",
+      "hypernyms": [
+        "oewn-07776835-n"
+      ],
+      "id": "oewn-07777930-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "pond apple"
+    },
+    {
+      "definition": "fruit with yellow flesh; related to custard apples",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07778090-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "papaw"
+    },
+    {
+      "definition": "large oval melon-like tropical fruit with yellowish flesh",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07778220-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "papaya"
+    },
+    {
+      "definition": "South African fruit smelling and tasting like apricots; used for pickles and preserves",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07778349-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "kai apple"
+    },
+    {
+      "definition": "maroon-purple gooseberry-like fruit of India having tart-sweet purple pulp used especially for preserves",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07778510-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "ketembilla"
+    },
+    {
+      "definition": "red pear-shaped tropical fruit with poisonous seeds; flesh is poisonous when unripe or overripe",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07778716-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "ackee"
+    },
+    {
+      "definition": "huge fruit native to southeastern Asia \u2018smelling like Hell and tasting like Heaven\u2019; seeds are roasted and eaten like nuts",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07778889-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "durian"
+    },
+    {
+      "definition": "dark-green kiwi-sized tropical fruit with white flesh; used chiefly for jellies and preserves",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07779083-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "feijoa"
+    },
+    {
+      "definition": "round one-inch Caribbean fruit with green leathery skin and sweet juicy translucent pulp; eaten like grapes",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07779266-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "genip"
+    },
+    {
+      "definition": "a succulent orange-sized tropical fruit with a thick rind",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07779459-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "genipap"
+    },
+    {
+      "definition": "fuzzy brown egg-shaped fruit with slightly tart green flesh",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07779605-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "kiwi"
+    },
+    {
+      "definition": "yellow olive-sized semitropical fruit with a large free stone and relatively little flesh; used for jellies",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07779768-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "loquat"
+    },
+    {
+      "definition": "two- to three-inch tropical fruit with juicy flesh suggestive of both peaches and pineapples",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07779963-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "mangosteen"
+    },
+    {
+      "definition": "large oval tropical fruit having smooth skin, juicy aromatic pulp, and a large hairy seed",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07780131-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "mango"
+    },
+    {
+      "definition": "tropical fruit with a rough brownish skin and very sweet brownish pulp",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07780291-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "sapodilla"
+    },
+    {
+      "definition": "brown oval fruit flesh makes excellent sherbet",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07780462-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "sapote"
+    },
+    {
+      "definition": "large tropical seed pod with very tangy pulp that is eaten fresh or cooked with rice and fish or preserved for curries and chutneys",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07780606-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "tamarind"
+    },
+    {
+      "definition": "a pear-shaped tropical fruit with green or blackish skin and rich yellowish pulp enclosing a single large seed",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07780823-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "avocado"
+    },
+    {
+      "definition": "sweet edible fruit of the date palm with a single long woody seed",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07781049-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "date"
+    },
+    {
+      "definition": "berrylike fruit of an elder used for e.g. wines and jellies",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159085-n"
+      ],
+      "id": "oewn-07781184-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "elderberry"
+    },
+    {
+      "definition": "tropical fruit having yellow skin and pink pulp; eaten fresh or used for e.g. jellies",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07781337-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "guava"
+    },
+    {
+      "definition": "purplish tropical fruit",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07781493-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "mombin"
+    },
+    {
+      "definition": "yellow oval tropical fruit",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07781588-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "hog plum"
+    },
+    {
+      "definition": "fruit of the wild plum of southern United States",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07781704-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "hog plum"
+    },
+    {
+      "definition": "tough-skinned purple grapelike tropical fruit grown in Brazil",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07781838-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "jaboticaba"
+    },
+    {
+      "definition": "dark red plumlike fruit of Old World buckthorn trees",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159085-n"
+      ],
+      "id": "oewn-07781975-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "jujube"
+    },
+    {
+      "definition": "Chinese fruit having a thin brittle shell enclosing a sweet jellylike pulp and a single seed; often dried",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07782149-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "litchi"
+    },
+    {
+      "definition": "Asian fruit similar to litchi",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07782385-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "longanberry"
+    },
+    {
+      "definition": "globular or ovoid tropical fruit with thick russet leathery rind and juicy yellow or reddish flesh",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07782506-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "mamey"
+    },
+    {
+      "definition": "tropical fruit from the Philippines having a mass of small seeds embedded in sweetish white pulp",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07782699-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "marang"
+    },
+    {
+      "definition": "crabapple-like fruit used for preserves",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07782867-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "medlar"
+    },
+    {
+      "definition": "a South African globular fruit with brown leathery skin and pithy flesh having a sweet-acid taste",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07782978-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "medlar"
+    },
+    {
+      "definition": "sweet usually dark purple blackberry-like fruit of any of several mulberry trees of the genus Morus",
+      "hypernyms": [
+        "oewn-07758680-n"
+      ],
+      "id": "oewn-07783147-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "mulberry"
+    },
+    {
+      "definition": "sweet juicy gritty-textured fruit available in many varieties",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159619-n"
+      ],
+      "id": "oewn-07783823-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "pear"
+    },
+    {
+      "definition": "greenish-yellow pear",
+      "hypernyms": [
+        "oewn-07783823-n"
+      ],
+      "id": "oewn-07784044-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "bosc"
+    },
+    {
+      "definition": "a pear with firm flesh and a green skin",
+      "hypernyms": [
+        "oewn-07783823-n"
+      ],
+      "id": "oewn-07784115-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "anjou"
+    },
+    {
+      "definition": "juicy yellow pear",
+      "hypernyms": [
+        "oewn-07783823-n"
+      ],
+      "id": "oewn-07784206-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "bartlett"
+    },
+    {
+      "definition": "small yellowish- to reddish-brown pear",
+      "hypernyms": [
+        "oewn-07783823-n"
+      ],
+      "id": "oewn-07784294-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "seckel"
+    },
+    {
+      "definition": "hybrid between plum and apricot",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07784566-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "plumcot"
+    },
+    {
+      "definition": "large globular fruit having many seeds with juicy red pulp in a tough brownish-red rind",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07784670-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "pomegranate"
+    },
+    {
+      "definition": "round or pear-shaped spiny fruit of any of various prickly pear cacti",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07784834-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "prickly pear"
+    },
+    {
+      "definition": "small berrylike fruit",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07784981-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "garambulla"
+    },
+    {
+      "definition": "small yellow to orange fruit of the Barbados gooseberry cactus used in desserts and preserves and jellies",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07785078-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "Barbados gooseberry"
+    },
+    {
+      "definition": "red Australian fruit; used for dessert or in jam",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07785282-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "quandong"
+    },
+    {
+      "definition": "aromatic acid-tasting pear-shaped fruit used in preserves",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-13159619-n"
+      ],
+      "id": "oewn-07785560-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "quince"
+    },
+    {
+      "definition": "pleasantly acid bright red oval Malayan fruit covered with soft spines",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07785707-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "rambutan"
+    },
+    {
+      "definition": "fruit of an East Indian tree similar to the rambutan but sweeter",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07785862-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "pulasan"
+    },
+    {
+      "definition": "fragrant oval yellowish tropical fruit used in jellies and confections",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07786010-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "rose apple"
+    },
+    {
+      "definition": "acid gritty-textured fruit",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07786156-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "sorb"
+    },
+    {
+      "definition": "acid-tasting Australian gourd-like fruit with a woody rind and large seeds",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07786265-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "sour gourd"
+    },
+    {
+      "definition": "African gourd-like fruit with edible pulp",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-07786415-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "sour gourd"
+    },
+    {
+      "definition": "a fruit of the calamondin tree.",
+      "hypernyms": [
+        "oewn-07763031-n"
+      ],
+      "id": "oewn-92410005-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "calamondin"
+    },
+    {
+      "definition": "the fruit from the korlan tree.",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-92412619-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "korlan"
+    },
+    {
+      "definition": "the white translucent edible berry of a group of cultivars of the red currant (Ribes rubrum).",
+      "hypernyms": [
+        "oewn-07760222-n"
+      ],
+      "id": "oewn-92412630-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "white currant"
+    },
+    {
+      "definition": "a variety of apple bred in Poland; it is harvested in October.",
+      "hypernyms": [
+        "oewn-07755482-n"
+      ],
+      "id": "oewn-92413635-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Ligol"
+    },
+    {
+      "definition": "an edible fruit of the small tree Prunus cerasifera.",
+      "hypernyms": [
+        "oewn-07767427-n"
+      ],
+      "id": "oewn-92413959-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "cherry plum"
+    },
+    {
+      "definition": "a fruit that has orange skin and lime green, jelly-like flesh with a refreshingly fruity taste, and texture similar to a passionfruit or pomegranate; grows on the annual vine Cucumis metuliferus.",
+      "hypernyms": [
+        "oewn-07721676-n",
+        "oewn-12185901-n"
+      ],
+      "id": "oewn-92414343-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 7,
+      "name": "kiwano"
+    },
+    {
+      "definition": "large lemonlike fruit segmented into finger-like sections; most varieties contain no pulp or juice.",
+      "hypernyms": [
+        "oewn-07766425-n"
+      ],
+      "id": "oewn-92414549-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "Buddha's hand"
+    },
+    {
+      "definition": "a small fruit with fleshy pulp; tastes like a combination of grape and grapefruit.",
+      "hypernyms": [
+        "oewn-07721676-n"
+      ],
+      "id": "oewn-92414551-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "langsat"
+    },
+    {
+      "definition": "Clapp's Favourite is a useful early-season pear, ripening in mid-August.",
+      "hypernyms": [
+        "oewn-07783823-n"
+      ],
+      "id": "oewn-92426961-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "Clapp's Favourite"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

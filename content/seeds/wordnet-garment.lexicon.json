@@ -1,0 +1,6786 @@
+{
+  "exported": "2026-09-29",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-03423924-n",
+  "senses": [
+    {
+      "definition": "a loose sleeveless outer garment made from aba cloth; worn by Arabs",
+      "forms": [],
+      "id": "oewn-aba__1.06.01..",
+      "lang": "en",
+      "lemma": "aba",
+      "synset": "oewn-02668709-n"
+    },
+    {
+      "definition": "(Arabic) a loose black robe from head to toe; traditionally worn by Muslim women",
+      "forms": [],
+      "id": "oewn-abaya__1.06.00..",
+      "lang": "en",
+      "lemma": "abaya",
+      "synset": "oewn-02669723-n"
+    },
+    {
+      "definition": "a cravat with wide square ends; secured with an ornamental pin",
+      "forms": [],
+      "id": "oewn-ascot__1.06.00..",
+      "lang": "en",
+      "lemma": "ascot",
+      "synset": "oewn-02750068-n"
+    },
+    {
+      "definition": "a woman's headscarf folded into a triangle and tied under the chin; worn by Russian peasant women",
+      "forms": [],
+      "id": "oewn-babushka__1.06.00..",
+      "lang": "en",
+      "lemma": "babushka",
+      "synset": "oewn-02769173-n"
+    },
+    {
+      "definition": "very short skirt worn by ballerinas",
+      "forms": [],
+      "id": "oewn-ballet_skirt__1.06.00..",
+      "lang": "en",
+      "lemma": "ballet skirt",
+      "synset": "oewn-02783838-n"
+    },
+    {
+      "definition": "very short skirt worn by ballerinas",
+      "forms": [],
+      "id": "oewn-tutu__1.06.00..",
+      "lang": "en",
+      "lemma": "tutu",
+      "synset": "oewn-02783838-n"
+    },
+    {
+      "definition": "a loose fitting jacket; originally worn in India",
+      "forms": [],
+      "id": "oewn-banyan__1.06.00..",
+      "lang": "en",
+      "lemma": "banyan",
+      "synset": "oewn-02791485-n"
+    },
+    {
+      "definition": "a loose fitting jacket; originally worn in India",
+      "forms": [],
+      "id": "oewn-banian__1.06.00..",
+      "lang": "en",
+      "lemma": "banian",
+      "synset": "oewn-02791485-n"
+    },
+    {
+      "definition": "a loose-fitting robe of towelling; worn after a bath or swim",
+      "forms": [],
+      "id": "oewn-bathrobe__1.06.00..",
+      "lang": "en",
+      "lemma": "bathrobe",
+      "synset": "oewn-02810801-n"
+    },
+    {
+      "definition": "a lightweight jacket worn over bedclothes (as when sitting in bed)",
+      "forms": [],
+      "id": "oewn-bed_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "bed jacket",
+      "synset": "oewn-02823810-n"
+    },
+    {
+      "definition": "(used in the plural) trousers with legs that flare; worn by sailors; absurdly wide hems were fashionable in the 1960s",
+      "forms": [],
+      "id": "oewn-bellbottom_trousers__1.06.00..",
+      "lang": "en",
+      "lemma": "bellbottom trousers",
+      "synset": "oewn-02828584-n"
+    },
+    {
+      "definition": "(used in the plural) trousers with legs that flare; worn by sailors; absurdly wide hems were fashionable in the 1960s",
+      "forms": [],
+      "id": "oewn-bell-bottoms__1.06.00..",
+      "lang": "en",
+      "lemma": "bell-bottoms",
+      "synset": "oewn-02828584-n"
+    },
+    {
+      "definition": "(used in the plural) trousers with legs that flare; worn by sailors; absurdly wide hems were fashionable in the 1960s",
+      "forms": [],
+      "id": "oewn-bellbottom_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "bellbottom pants",
+      "synset": "oewn-02828584-n"
+    },
+    {
+      "definition": "(used in the plural) short pants that end at the knee",
+      "forms": [],
+      "id": "oewn-bermuda_shorts__1.06.00..",
+      "lang": "en",
+      "lemma": "Bermuda shorts",
+      "synset": "oewn-02834779-n"
+    },
+    {
+      "definition": "(used in the plural) short pants that end at the knee",
+      "forms": [],
+      "id": "oewn-jamaica_shorts__1.06.00..",
+      "lang": "en",
+      "lemma": "Jamaica shorts",
+      "synset": "oewn-02834779-n"
+    },
+    {
+      "definition": "a woman's very brief bathing suit",
+      "forms": [],
+      "id": "oewn-bikini__1.06.00..",
+      "lang": "en",
+      "lemma": "bikini",
+      "synset": "oewn-02841003-n"
+    },
+    {
+      "definition": "a woman's very brief bathing suit",
+      "forms": [],
+      "id": "oewn-two-piece__1.06.01..",
+      "lang": "en",
+      "lemma": "two-piece",
+      "synset": "oewn-02841003-n"
+    },
+    {
+      "definition": "(used in the plural) small and tight-fitting underpants; worn by women",
+      "forms": [],
+      "id": "oewn-bikini_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "bikini pants",
+      "synset": "oewn-02841101-n"
+    },
+    {
+      "definition": "a black bow tie worn with a dinner jacket",
+      "forms": [],
+      "id": "oewn-black_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "black tie",
+      "synset": "oewn-02850869-n"
+    },
+    {
+      "definition": "lightweight single-breasted jacket; often striped in the colors of a club or school",
+      "forms": [],
+      "id": "oewn-blazer__1.06.00..",
+      "lang": "en",
+      "lemma": "blazer",
+      "synset": "oewn-02853596-n"
+    },
+    {
+      "definition": "lightweight single-breasted jacket; often striped in the colors of a club or school",
+      "forms": [],
+      "id": "oewn-sport_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "sport jacket",
+      "synset": "oewn-02853596-n"
+    },
+    {
+      "definition": "lightweight single-breasted jacket; often striped in the colors of a club or school",
+      "forms": [],
+      "id": "oewn-sport_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "sport coat",
+      "synset": "oewn-02853596-n"
+    },
+    {
+      "definition": "lightweight single-breasted jacket; often striped in the colors of a club or school",
+      "forms": [],
+      "id": "oewn-sports_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "sports jacket",
+      "synset": "oewn-02853596-n"
+    },
+    {
+      "definition": "lightweight single-breasted jacket; often striped in the colors of a club or school",
+      "forms": [],
+      "id": "oewn-sports_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "sports coat",
+      "synset": "oewn-02853596-n"
+    },
+    {
+      "definition": "(used in the plural) underpants worn by women",
+      "forms": [],
+      "id": "oewn-bloomers__1.06.00..",
+      "lang": "en",
+      "lemma": "bloomers",
+      "synset": "oewn-02857998-n"
+    },
+    {
+      "definition": "(used in the plural) underpants worn by women",
+      "forms": [],
+      "id": "oewn-pants__1.06.01..",
+      "lang": "en",
+      "lemma": "pants",
+      "synset": "oewn-02857998-n"
+    },
+    {
+      "definition": "(used in the plural) underpants worn by women",
+      "forms": [],
+      "id": "oewn-drawers__1.06.01..",
+      "lang": "en",
+      "lemma": "drawers",
+      "synset": "oewn-02857998-n"
+    },
+    {
+      "definition": "(used in the plural) underpants worn by women",
+      "forms": [],
+      "id": "oewn-knickers__1.06.00..",
+      "lang": "en",
+      "lemma": "knickers",
+      "synset": "oewn-02857998-n"
+    },
+    {
+      "definition": "a one-piece tight-fitting undergarment for women that covers the torso (and may have sleeves and legs)",
+      "forms": [],
+      "id": "oewn-body_stocking__1.06.00..",
+      "lang": "en",
+      "lemma": "body stocking",
+      "synset": "oewn-02866354-n"
+    },
+    {
+      "definition": "a short jacket; worn mostly by women",
+      "forms": [],
+      "id": "oewn-bolero__1.06.00..",
+      "lang": "en",
+      "lemma": "bolero",
+      "synset": "oewn-02867844-n"
+    },
+    {
+      "definition": "a cord fastened around the neck with an ornamental clasp and worn as a necktie",
+      "forms": [],
+      "id": "oewn-bolo_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "bolo tie",
+      "synset": "oewn-02868691-n"
+    },
+    {
+      "definition": "a cord fastened around the neck with an ornamental clasp and worn as a necktie",
+      "forms": [],
+      "id": "oewn-bolo__1.06.01..",
+      "lang": "en",
+      "lemma": "bolo",
+      "synset": "oewn-02868691-n"
+    },
+    {
+      "definition": "a cord fastened around the neck with an ornamental clasp and worn as a necktie",
+      "forms": [],
+      "id": "oewn-bola_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "bola tie",
+      "synset": "oewn-02868691-n"
+    },
+    {
+      "definition": "a cord fastened around the neck with an ornamental clasp and worn as a necktie",
+      "forms": [],
+      "id": "oewn-bola__1.06.01..",
+      "lang": "en",
+      "lemma": "bola",
+      "synset": "oewn-02868691-n"
+    },
+    {
+      "definition": "a jacket gathered into a band at the waist",
+      "forms": [],
+      "id": "oewn-bomber_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "bomber jacket",
+      "synset": "oewn-02871306-n"
+    },
+    {
+      "definition": "a man's tie that ties in a bow",
+      "forms": [],
+      "id": "oewn-bow_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "bow tie",
+      "synset": "oewn-02886446-n"
+    },
+    {
+      "definition": "a man's tie that ties in a bow",
+      "forms": [],
+      "id": "oewn-bow-tie__1.06.00..",
+      "lang": "en",
+      "lemma": "bow-tie",
+      "synset": "oewn-02886446-n"
+    },
+    {
+      "definition": "a man's tie that ties in a bow",
+      "forms": [],
+      "id": "oewn-bowtie__1.06.00..",
+      "lang": "en",
+      "lemma": "bowtie",
+      "synset": "oewn-02886446-n"
+    },
+    {
+      "definition": "a short coat that hangs loosely from the shoulders",
+      "forms": [],
+      "id": "oewn-box_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "box coat",
+      "synset": "oewn-02888474-n"
+    },
+    {
+      "definition": "an undergarment worn by women to support their breasts",
+      "forms": [],
+      "id": "oewn-brassiere__1.06.00..",
+      "lang": "en",
+      "lemma": "brassiere",
+      "synset": "oewn-02896008-n"
+    },
+    {
+      "definition": "an undergarment worn by women to support their breasts",
+      "forms": [],
+      "id": "oewn-bra__1.06.00..",
+      "lang": "en",
+      "lemma": "bra",
+      "synset": "oewn-02896008-n"
+    },
+    {
+      "definition": "an undergarment worn by women to support their breasts",
+      "forms": [
+        "bandeaux"
+      ],
+      "id": "oewn-bandeau__1.06.00..",
+      "lang": "en",
+      "lemma": "bandeau",
+      "synset": "oewn-02896008-n"
+    },
+    {
+      "definition": "a garment that provides covering for the loins",
+      "forms": [],
+      "id": "oewn-breechcloth__1.06.00..",
+      "lang": "en",
+      "lemma": "breechcloth",
+      "synset": "oewn-02899556-n"
+    },
+    {
+      "definition": "a garment that provides covering for the loins",
+      "forms": [],
+      "id": "oewn-breechclout__1.06.00..",
+      "lang": "en",
+      "lemma": "breechclout",
+      "synset": "oewn-02899556-n"
+    },
+    {
+      "definition": "a garment that provides covering for the loins",
+      "forms": [],
+      "id": "oewn-loincloth__1.06.00..",
+      "lang": "en",
+      "lemma": "loincloth",
+      "synset": "oewn-02899556-n"
+    },
+    {
+      "definition": "(used in the plural) trousers ending above the knee",
+      "forms": [],
+      "id": "oewn-breeches__1.06.00..",
+      "lang": "en",
+      "lemma": "breeches",
+      "synset": "oewn-02899704-n"
+    },
+    {
+      "definition": "(used in the plural) trousers ending above the knee",
+      "forms": [],
+      "id": "oewn-knee_breeches__1.06.00..",
+      "lang": "en",
+      "lemma": "knee breeches",
+      "synset": "oewn-02899704-n"
+    },
+    {
+      "definition": "(used in the plural) trousers ending above the knee",
+      "forms": [],
+      "id": "oewn-knee_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "knee pants",
+      "synset": "oewn-02899704-n"
+    },
+    {
+      "definition": "(used in the plural) trousers ending above the knee",
+      "forms": [],
+      "id": "oewn-knickerbockers__1.06.00..",
+      "lang": "en",
+      "lemma": "knickerbockers",
+      "synset": "oewn-02899704-n"
+    },
+    {
+      "definition": "(used in the plural) trousers ending above the knee",
+      "forms": [],
+      "id": "oewn-knickers__1.06.01..",
+      "lang": "en",
+      "lemma": "knickers",
+      "synset": "oewn-02899704-n"
+    },
+    {
+      "definition": "(used in the plural) short tight-fitting underpants (trade name Jockey shorts)",
+      "forms": [],
+      "id": "oewn-briefs__1.06.00..",
+      "lang": "en",
+      "lemma": "briefs",
+      "synset": "oewn-02904397-n"
+    },
+    {
+      "definition": "(used in the plural) short tight-fitting underpants (trade name Jockey shorts)",
+      "forms": [],
+      "id": "oewn-jockey_shorts__1.06.00..",
+      "lang": "en",
+      "lemma": "Jockey shorts",
+      "synset": "oewn-02904397-n"
+    },
+    {
+      "definition": "(used in the plural) informal term for breeches",
+      "forms": [],
+      "id": "oewn-britches__1.06.00..",
+      "lang": "en",
+      "lemma": "britches",
+      "synset": "oewn-02906120-n"
+    },
+    {
+      "definition": "(used in the plural) breeches made of buckskin",
+      "forms": [],
+      "id": "oewn-buckskins__1.06.00..",
+      "lang": "en",
+      "lemma": "buckskins",
+      "synset": "oewn-02914189-n"
+    },
+    {
+      "definition": "a vest capable of resisting the impact of a bullet",
+      "forms": [],
+      "id": "oewn-bulletproof_vest__1.06.00..",
+      "lang": "en",
+      "lemma": "bulletproof vest",
+      "synset": "oewn-02920282-n"
+    },
+    {
+      "definition": "a lightweight belted raincoat typically made of tan gabardine with a distinctive tartan lining; named for the original manufacturer",
+      "forms": [],
+      "id": "oewn-burberry__1.06.00..",
+      "lang": "en",
+      "lemma": "Burberry",
+      "synset": "oewn-02924790-n"
+    },
+    {
+      "definition": "a loose garment (usually with veiled holes for the eyes) worn by Muslim women especially in India and Pakistan",
+      "forms": [],
+      "id": "oewn-burqa__1.06.00..",
+      "lang": "en",
+      "lemma": "burqa",
+      "synset": "oewn-02925962-n"
+    },
+    {
+      "definition": "a loose garment (usually with veiled holes for the eyes) worn by Muslim women especially in India and Pakistan",
+      "forms": [],
+      "id": "oewn-burka__1.06.00..",
+      "lang": "en",
+      "lemma": "burka",
+      "synset": "oewn-02925962-n"
+    },
+    {
+      "definition": "a long hooded cloak woven of wool in one piece; worn by Arabs and Moors",
+      "forms": [],
+      "id": "oewn-burnous__1.06.00..",
+      "lang": "en",
+      "lemma": "burnous",
+      "synset": "oewn-02926919-n"
+    },
+    {
+      "definition": "a long hooded cloak woven of wool in one piece; worn by Arabs and Moors",
+      "forms": [],
+      "id": "oewn-burnoose__1.06.00..",
+      "lang": "en",
+      "lemma": "burnoose",
+      "synset": "oewn-02926919-n"
+    },
+    {
+      "definition": "a long hooded cloak woven of wool in one piece; worn by Arabs and Moors",
+      "forms": [],
+      "id": "oewn-burnouse__1.06.00..",
+      "lang": "en",
+      "lemma": "burnouse",
+      "synset": "oewn-02926919-n"
+    },
+    {
+      "definition": "a loose fitting jacket; resembles a shirt with four patch pockets and a belt",
+      "forms": [],
+      "id": "oewn-bush_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "bush jacket",
+      "synset": "oewn-02928769-n"
+    },
+    {
+      "definition": "a suit of clothes traditionally worn by businessmen",
+      "forms": [],
+      "id": "oewn-business_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "business suit",
+      "synset": "oewn-02928903-n"
+    },
+    {
+      "definition": "trademark for men's underwear",
+      "forms": [],
+      "id": "oewn-bvd__1.06.00..",
+      "lang": "en",
+      "lemma": "BVD",
+      "synset": "oewn-02933598-n"
+    },
+    {
+      "definition": "trademark for men's underwear",
+      "forms": [],
+      "id": "oewn-bvd-ap-s__1.06.00..",
+      "lang": "en",
+      "lemma": "BVD's",
+      "synset": "oewn-02933598-n"
+    },
+    {
+      "definition": "a (cotton or silk) cloak with full sleeves and sash reaching down to the ankles; worn by men in the Levant",
+      "forms": [],
+      "id": "oewn-caftan__1.06.00..",
+      "lang": "en",
+      "lemma": "caftan",
+      "synset": "oewn-02939786-n"
+    },
+    {
+      "definition": "a (cotton or silk) cloak with full sleeves and sash reaching down to the ankles; worn by men in the Levant",
+      "forms": [],
+      "id": "oewn-kaftan__1.06.00..",
+      "lang": "en",
+      "lemma": "kaftan",
+      "synset": "oewn-02939786-n"
+    },
+    {
+      "definition": "lightweight parka; waterproof",
+      "forms": [],
+      "id": "oewn-cagoule__1.06.00..",
+      "lang": "en",
+      "lemma": "cagoule",
+      "synset": "oewn-02940394-n"
+    },
+    {
+      "definition": "a loose shirt or tunic; originally worn in the Middle Ages",
+      "forms": [],
+      "id": "oewn-camise__1.06.00..",
+      "lang": "en",
+      "lemma": "camise",
+      "synset": "oewn-02947419-n"
+    },
+    {
+      "definition": "a short sleeveless undergarment for women",
+      "forms": [],
+      "id": "oewn-camisole__1.06.01..",
+      "lang": "en",
+      "lemma": "camisole",
+      "synset": "oewn-02947601-n"
+    },
+    {
+      "definition": "a short sleeveless undergarment for women",
+      "forms": [],
+      "id": "oewn-underbodice__1.06.00..",
+      "lang": "en",
+      "lemma": "underbodice",
+      "synset": "oewn-02947601-n"
+    },
+    {
+      "definition": "a garment made of camlet fabric",
+      "forms": [],
+      "id": "oewn-camlet__1.06.01..",
+      "lang": "en",
+      "lemma": "camlet",
+      "synset": "oewn-02947830-n"
+    },
+    {
+      "definition": "a sleeveless garment like a cloak but shorter",
+      "forms": [],
+      "id": "oewn-cape__1.06.00..",
+      "lang": "en",
+      "lemma": "cape",
+      "synset": "oewn-02959203-n"
+    },
+    {
+      "definition": "a sleeveless garment like a cloak but shorter",
+      "forms": [],
+      "id": "oewn-mantle__1.06.00..",
+      "lang": "en",
+      "lemma": "mantle",
+      "synset": "oewn-02959203-n"
+    },
+    {
+      "definition": "a long cloak with a hood that can be pulled over the head",
+      "forms": [],
+      "id": "oewn-capote__1.06.00..",
+      "lang": "en",
+      "lemma": "capote",
+      "synset": "oewn-02960319-n"
+    },
+    {
+      "definition": "a long cloak with a hood that can be pulled over the head",
+      "forms": [],
+      "id": "oewn-hooded_cloak__1.06.00..",
+      "lang": "en",
+      "lemma": "hooded cloak",
+      "synset": "oewn-02960319-n"
+    },
+    {
+      "definition": "a long overcoat with a hood that can be pulled over the head",
+      "forms": [],
+      "id": "oewn-capote__1.06.01..",
+      "lang": "en",
+      "lemma": "capote",
+      "synset": "oewn-02960444-n"
+    },
+    {
+      "definition": "a long overcoat with a hood that can be pulled over the head",
+      "forms": [],
+      "id": "oewn-hooded_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "hooded coat",
+      "synset": "oewn-02960444-n"
+    },
+    {
+      "definition": "a hooded cloak for women",
+      "forms": [],
+      "id": "oewn-capuchin__1.06.00..",
+      "lang": "en",
+      "lemma": "capuchin",
+      "synset": "oewn-02961700-n"
+    },
+    {
+      "definition": "knitted jacket that is fastened up the front with buttons or a zipper",
+      "forms": [],
+      "id": "oewn-cardigan__1.06.00..",
+      "lang": "en",
+      "lemma": "cardigan",
+      "synset": "oewn-02966595-n"
+    },
+    {
+      "definition": "a cloth used as a head covering (and veil and shawl) by Muslim and Hindu women",
+      "forms": [],
+      "id": "oewn-chador__1.06.00..",
+      "lang": "en",
+      "lemma": "chador",
+      "synset": "oewn-03002448-n"
+    },
+    {
+      "definition": "a cloth used as a head covering (and veil and shawl) by Muslim and Hindu women",
+      "forms": [],
+      "id": "oewn-chadar__1.06.00..",
+      "lang": "en",
+      "lemma": "chadar",
+      "synset": "oewn-03002448-n"
+    },
+    {
+      "definition": "a cloth used as a head covering (and veil and shawl) by Muslim and Hindu women",
+      "forms": [],
+      "id": "oewn-chaddar__1.06.00..",
+      "lang": "en",
+      "lemma": "chaddar",
+      "synset": "oewn-03002448-n"
+    },
+    {
+      "definition": "a cloth used as a head covering (and veil and shawl) by Muslim and Hindu women",
+      "forms": [],
+      "id": "oewn-chuddar__1.06.00..",
+      "lang": "en",
+      "lemma": "chuddar",
+      "synset": "oewn-03002448-n"
+    },
+    {
+      "definition": "(usually in the plural) leather leggings without a seat; joined by a belt; often have flared outer flaps; worn over trousers by cowboys to protect their legs",
+      "forms": [],
+      "id": "oewn-chap__1.06.00..",
+      "lang": "en",
+      "lemma": "chap",
+      "synset": "oewn-03010507-n"
+    },
+    {
+      "definition": "a woman's sleeveless undergarment",
+      "forms": [],
+      "id": "oewn-chemise__1.06.01..",
+      "lang": "en",
+      "lemma": "chemise",
+      "synset": "oewn-03017234-n"
+    },
+    {
+      "definition": "a woman's sleeveless undergarment",
+      "forms": [],
+      "id": "oewn-shimmy__1.06.00..",
+      "lang": "en",
+      "lemma": "shimmy",
+      "synset": "oewn-03017234-n"
+    },
+    {
+      "definition": "a woman's sleeveless undergarment",
+      "forms": [],
+      "id": "oewn-shift__1.06.01..",
+      "lang": "en",
+      "lemma": "shift",
+      "synset": "oewn-03017234-n"
+    },
+    {
+      "definition": "a woman's sleeveless undergarment",
+      "forms": [],
+      "id": "oewn-slip__1.06.00..",
+      "lang": "en",
+      "lemma": "slip",
+      "synset": "oewn-03017234-n"
+    },
+    {
+      "definition": "a woman's sleeveless undergarment",
+      "forms": [],
+      "id": "oewn-teddy__1.06.00..",
+      "lang": "en",
+      "lemma": "teddy",
+      "synset": "oewn-03017234-n"
+    },
+    {
+      "definition": "a fitted overcoat with a velvet collar",
+      "forms": [],
+      "id": "oewn-chesterfield__1.06.00..",
+      "lang": "en",
+      "lemma": "chesterfield",
+      "synset": "oewn-03018706-n"
+    },
+    {
+      "definition": "(plural) trousers made with chino cloth",
+      "forms": [],
+      "id": "oewn-chinos__1.06.00..",
+      "lang": "en",
+      "lemma": "chinos",
+      "synset": "oewn-03023088-n"
+    },
+    {
+      "definition": "a woolen tunic worn by men and women in ancient Greece",
+      "forms": [],
+      "id": "oewn-chiton__1.06.00..",
+      "lang": "en",
+      "lemma": "chiton",
+      "synset": "oewn-03024804-n"
+    },
+    {
+      "definition": "a short mantle or cape fastened at the shoulder; worn by men in ancient Greece",
+      "forms": [
+        "chlamydes",
+        "chlamyses"
+      ],
+      "id": "oewn-chlamys__1.06.00..",
+      "lang": "en",
+      "lemma": "chlamys",
+      "synset": "oewn-03024911-n"
+    },
+    {
+      "definition": "tight trousers worn by people from the Indian subcontinent (typically with a kameez or kurta)",
+      "forms": [],
+      "id": "oewn-churidars__1.06.00..",
+      "lang": "en",
+      "lemma": "churidars",
+      "synset": "oewn-03032979-n"
+    },
+    {
+      "definition": "a loose outer garment",
+      "forms": [],
+      "id": "oewn-cloak__1.06.00..",
+      "lang": "en",
+      "lemma": "cloak",
+      "synset": "oewn-03049322-n"
+    },
+    {
+      "definition": "an outer garment that has sleeves and covers the body from shoulder down; worn outdoors",
+      "forms": [],
+      "id": "oewn-coat__1.06.00..",
+      "lang": "en",
+      "lemma": "coat",
+      "synset": "oewn-03061006-n"
+    },
+    {
+      "definition": "a short close-fitting coat",
+      "forms": [],
+      "id": "oewn-coatee__1.06.00..",
+      "lang": "en",
+      "lemma": "coatee",
+      "synset": "oewn-03061826-n"
+    },
+    {
+      "definition": "a long cloak; worn by a priest or bishop on ceremonial occasions",
+      "forms": [],
+      "id": "oewn-cope__1.06.01..",
+      "lang": "en",
+      "lemma": "cope",
+      "synset": "oewn-03108555-n"
+    },
+    {
+      "definition": "cotton trousers made of corduroy cloth",
+      "forms": [],
+      "id": "oewn-cords__1.06.04..",
+      "lang": "en",
+      "lemma": "cords",
+      "synset": "oewn-03112139-n"
+    },
+    {
+      "definition": "cotton trousers made of corduroy cloth",
+      "forms": [],
+      "id": "oewn-corduroys__1.06.04..",
+      "lang": "en",
+      "lemma": "corduroys",
+      "synset": "oewn-03112139-n"
+    },
+    {
+      "definition": "a woman's close-fitting foundation garment",
+      "forms": [],
+      "id": "oewn-corset__1.06.00..",
+      "lang": "en",
+      "lemma": "corset",
+      "synset": "oewn-03117520-n"
+    },
+    {
+      "definition": "a woman's close-fitting foundation garment",
+      "forms": [],
+      "id": "oewn-girdle__1.06.00..",
+      "lang": "en",
+      "lemma": "girdle",
+      "synset": "oewn-03117520-n"
+    },
+    {
+      "definition": "a woman's close-fitting foundation garment",
+      "forms": [],
+      "id": "oewn-stays__1.06.00..",
+      "lang": "en",
+      "lemma": "stays",
+      "synset": "oewn-03117520-n"
+    },
+    {
+      "definition": "neckwear worn in a slipknot with long ends overlapping vertically in front",
+      "forms": [],
+      "id": "oewn-cravat__1.06.01..",
+      "lang": "en",
+      "lemma": "cravat",
+      "synset": "oewn-03132736-n"
+    },
+    {
+      "definition": "a full stiff petticoat made of crinoline fabric",
+      "forms": [],
+      "id": "oewn-crinoline__1.06.01..",
+      "lang": "en",
+      "lemma": "crinoline",
+      "synset": "oewn-03137427-n"
+    },
+    {
+      "definition": "a divided skirt",
+      "forms": [],
+      "id": "oewn-culotte__1.06.00..",
+      "lang": "en",
+      "lemma": "culotte",
+      "synset": "oewn-03151443-n"
+    },
+    {
+      "definition": "a man's coat cut diagonally from the waist to the back of the knees",
+      "forms": [],
+      "id": "oewn-cutaway__1.06.00..",
+      "lang": "en",
+      "lemma": "cutaway",
+      "synset": "oewn-03157496-n"
+    },
+    {
+      "definition": "a loose and brightly colored African shirt",
+      "forms": [],
+      "id": "oewn-dashiki__1.06.00..",
+      "lang": "en",
+      "lemma": "dashiki",
+      "synset": "oewn-03168047-n"
+    },
+    {
+      "definition": "a loose and brightly colored African shirt",
+      "forms": [],
+      "id": "oewn-daishiki__1.06.00..",
+      "lang": "en",
+      "lemma": "daishiki",
+      "synset": "oewn-03168047-n"
+    },
+    {
+      "definition": "a long loincloth worn by Hindu men",
+      "forms": [],
+      "id": "oewn-dhoti__1.06.00..",
+      "lang": "en",
+      "lemma": "dhoti",
+      "synset": "oewn-03190883-n"
+    },
+    {
+      "definition": "garment consisting of a folded cloth drawn up between the legs and fastened at the waist; worn by infants to catch excrement",
+      "forms": [],
+      "id": "oewn-diaper__1.06.00..",
+      "lang": "en",
+      "lemma": "diaper",
+      "synset": "oewn-03193215-n"
+    },
+    {
+      "definition": "garment consisting of a folded cloth drawn up between the legs and fastened at the waist; worn by infants to catch excrement",
+      "forms": [],
+      "id": "oewn-nappy__1.06.00..",
+      "lang": "en",
+      "lemma": "nappy",
+      "synset": "oewn-03193215-n"
+    },
+    {
+      "definition": "garment consisting of a folded cloth drawn up between the legs and fastened at the waist; worn by infants to catch excrement",
+      "forms": [],
+      "id": "oewn-napkin__1.06.01..",
+      "lang": "en",
+      "lemma": "napkin",
+      "synset": "oewn-03193215-n"
+    },
+    {
+      "definition": "a full skirt with a gathered waistband",
+      "forms": [],
+      "id": "oewn-dirndl__1.06.01..",
+      "lang": "en",
+      "lemma": "dirndl",
+      "synset": "oewn-03210390-n"
+    },
+    {
+      "definition": "a woman's cloak with dolman sleeves",
+      "forms": [],
+      "id": "oewn-dolman__1.06.00..",
+      "lang": "en",
+      "lemma": "dolman",
+      "synset": "oewn-03224562-n"
+    },
+    {
+      "definition": "a hussar's jacket worn over the shoulders",
+      "forms": [],
+      "id": "oewn-dolman__1.06.01..",
+      "lang": "en",
+      "lemma": "dolman",
+      "synset": "oewn-03224669-n"
+    },
+    {
+      "definition": "a hussar's jacket worn over the shoulders",
+      "forms": [],
+      "id": "oewn-dolman_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "dolman jacket",
+      "synset": "oewn-03224669-n"
+    },
+    {
+      "definition": "a loose hooded cloak worn with a half mask as part of a masquerade costume",
+      "forms": [
+        "dominoes"
+      ],
+      "id": "oewn-domino__1.06.02..",
+      "lang": "en",
+      "lemma": "domino",
+      "synset": "oewn-03225908-n"
+    },
+    {
+      "definition": "a short thick jacket; often worn by workmen",
+      "forms": [],
+      "id": "oewn-donkey_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "donkey jacket",
+      "synset": "oewn-03226243-n"
+    },
+    {
+      "definition": "a jacket having fronts that overlap enough for two separate rows of buttons",
+      "forms": [],
+      "id": "oewn-double-breasted_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "double-breasted jacket",
+      "synset": "oewn-03231078-n"
+    },
+    {
+      "definition": "a suit with a double-breasted jacket",
+      "forms": [],
+      "id": "oewn-double-breasted_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "double-breasted suit",
+      "synset": "oewn-03231241-n"
+    },
+    {
+      "definition": "a man's close-fitting jacket; worn during the Renaissance",
+      "forms": [],
+      "id": "oewn-doublet__1.06.00..",
+      "lang": "en",
+      "lemma": "doublet",
+      "synset": "oewn-03232957-n"
+    },
+    {
+      "definition": "underpants worn by men",
+      "forms": [],
+      "id": "oewn-drawers__1.06.02..",
+      "lang": "en",
+      "lemma": "drawers",
+      "synset": "oewn-03238867-n"
+    },
+    {
+      "definition": "underpants worn by men",
+      "forms": [],
+      "id": "oewn-underdrawers__1.06.00..",
+      "lang": "en",
+      "lemma": "underdrawers",
+      "synset": "oewn-03238867-n"
+    },
+    {
+      "definition": "underpants worn by men",
+      "forms": [],
+      "id": "oewn-shorts__1.06.01..",
+      "lang": "en",
+      "lemma": "shorts",
+      "synset": "oewn-03238867-n"
+    },
+    {
+      "definition": "underpants worn by men",
+      "forms": [],
+      "id": "oewn-boxers__1.06.00..",
+      "lang": "en",
+      "lemma": "boxers",
+      "synset": "oewn-03238867-n"
+    },
+    {
+      "definition": "underpants worn by men",
+      "forms": [],
+      "id": "oewn-boxershorts__1.06.00..",
+      "lang": "en",
+      "lemma": "boxershorts",
+      "synset": "oewn-03238867-n"
+    },
+    {
+      "definition": "a robe worn before dressing or while lounging",
+      "forms": [],
+      "id": "oewn-dressing_gown__1.06.00..",
+      "lang": "en",
+      "lemma": "dressing gown",
+      "synset": "oewn-03242695-n"
+    },
+    {
+      "definition": "a robe worn before dressing or while lounging",
+      "forms": [
+        "robes-de-chambre"
+      ],
+      "id": "oewn-robe-de-chambre__1.06.00..",
+      "lang": "en",
+      "lemma": "robe-de-chambre",
+      "synset": "oewn-03242695-n"
+    },
+    {
+      "definition": "a robe worn before dressing or while lounging",
+      "forms": [],
+      "id": "oewn-lounging_robe__1.06.00..",
+      "lang": "en",
+      "lemma": "lounging robe",
+      "synset": "oewn-03242695-n"
+    },
+    {
+      "definition": "a woman's loose jacket; worn while dressing",
+      "forms": [],
+      "id": "oewn-dressing_sack__1.06.00..",
+      "lang": "en",
+      "lemma": "dressing sack",
+      "synset": "oewn-03242989-n"
+    },
+    {
+      "definition": "a woman's loose jacket; worn while dressing",
+      "forms": [],
+      "id": "oewn-dressing_sacque__1.06.00..",
+      "lang": "en",
+      "lemma": "dressing sacque",
+      "synset": "oewn-03242989-n"
+    },
+    {
+      "definition": "a man's white shirt (with a starch front) for evening wear (usually with a tuxedo)",
+      "forms": [],
+      "id": "oewn-dress_shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "dress shirt",
+      "synset": "oewn-03243582-n"
+    },
+    {
+      "definition": "a man's white shirt (with a starch front) for evening wear (usually with a tuxedo)",
+      "forms": [],
+      "id": "oewn-evening_shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "evening shirt",
+      "synset": "oewn-03243582-n"
+    },
+    {
+      "definition": "a warm coat made of duffel; usually has a hood and fastens with toggles",
+      "forms": [],
+      "id": "oewn-duffel_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "duffel coat",
+      "synset": "oewn-03258749-n"
+    },
+    {
+      "definition": "a warm coat made of duffel; usually has a hood and fastens with toggles",
+      "forms": [],
+      "id": "oewn-duffle_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "duffle coat",
+      "synset": "oewn-03258749-n"
+    },
+    {
+      "definition": "a jacket hanging to the waist and cut square at the bottom",
+      "forms": [],
+      "id": "oewn-eton_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "Eton jacket",
+      "synset": "oewn-03306120-n"
+    },
+    {
+      "definition": "a piece of more-or-less transparent material that covers the face",
+      "forms": [],
+      "id": "oewn-face_veil__1.06.00..",
+      "lang": "en",
+      "lemma": "face veil",
+      "synset": "oewn-03319829-n"
+    },
+    {
+      "definition": "a long thin fluffy scarf of feathers or fur",
+      "forms": [],
+      "id": "oewn-feather_boa__1.06.00..",
+      "lang": "en",
+      "lemma": "feather boa",
+      "synset": "oewn-03330529-n"
+    },
+    {
+      "definition": "a long thin fluffy scarf of feathers or fur",
+      "forms": [],
+      "id": "oewn-boa__1.06.00..",
+      "lang": "en",
+      "lemma": "boa",
+      "synset": "oewn-03330529-n"
+    },
+    {
+      "definition": "a lightweight triangular scarf worn by a woman",
+      "forms": [],
+      "id": "oewn-fichu__1.06.00..",
+      "lang": "en",
+      "lemma": "fichu",
+      "synset": "oewn-03337118-n"
+    },
+    {
+      "definition": "(usually in the plural) trousers made of flannel or gabardine or tweed or white cloth",
+      "forms": [],
+      "id": "oewn-flannel__1.06.03..",
+      "lang": "en",
+      "lemma": "flannel",
+      "synset": "oewn-03361927-n"
+    },
+    {
+      "definition": "(usually in the plural) trousers made of flannel or gabardine or tweed or white cloth",
+      "forms": [],
+      "id": "oewn-gabardine__1.06.03..",
+      "lang": "en",
+      "lemma": "gabardine",
+      "synset": "oewn-03361927-n"
+    },
+    {
+      "definition": "(usually in the plural) trousers made of flannel or gabardine or tweed or white cloth",
+      "forms": [],
+      "id": "oewn-tweed__1.06.03..",
+      "lang": "en",
+      "lemma": "tweed",
+      "synset": "oewn-03361927-n"
+    },
+    {
+      "definition": "(usually in the plural) trousers made of flannel or gabardine or tweed or white cloth",
+      "forms": [],
+      "id": "oewn-white__1.06.03..",
+      "lang": "en",
+      "lemma": "white",
+      "synset": "oewn-03361927-n"
+    },
+    {
+      "definition": "ironing that can be done mechanically",
+      "forms": [],
+      "id": "oewn-flatwork__1.06.00..",
+      "lang": "en",
+      "lemma": "flatwork",
+      "synset": "oewn-03366965-n"
+    },
+    {
+      "definition": "ironing that can be done mechanically",
+      "forms": [],
+      "id": "oewn-flat_wash__1.06.00..",
+      "lang": "en",
+      "lemma": "flat wash",
+      "synset": "oewn-03366965-n"
+    },
+    {
+      "definition": "a woman's undergarment worn to give shape to the contours of the body",
+      "forms": [],
+      "id": "oewn-foundation_garment__1.06.00..",
+      "lang": "en",
+      "lemma": "foundation garment",
+      "synset": "oewn-03392169-n"
+    },
+    {
+      "definition": "a woman's undergarment worn to give shape to the contours of the body",
+      "forms": [],
+      "id": "oewn-foundation__1.06.01..",
+      "lang": "en",
+      "lemma": "foundation",
+      "synset": "oewn-03392169-n"
+    },
+    {
+      "definition": "a long necktie that is tied in a slipknot with one end hanging in front of the other",
+      "forms": [],
+      "id": "oewn-four-in-hand__1.06.01..",
+      "lang": "en",
+      "lemma": "four-in-hand",
+      "synset": "oewn-03393169-n"
+    },
+    {
+      "definition": "a long, loose outer garment",
+      "forms": [],
+      "id": "oewn-frock__1.06.02..",
+      "lang": "en",
+      "lemma": "frock",
+      "synset": "oewn-03403064-n"
+    },
+    {
+      "definition": "a man's coat having knee-length skirts front and back; worn in the 19th century",
+      "forms": [],
+      "id": "oewn-frock_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "frock coat",
+      "synset": "oewn-03403143-n"
+    },
+    {
+      "definition": "a long skirt gathered at the waist",
+      "forms": [],
+      "id": "oewn-full_skirt__1.06.00..",
+      "lang": "en",
+      "lemma": "full skirt",
+      "synset": "oewn-03407426-n"
+    },
+    {
+      "definition": "a garment made of animal pelts or synthetic fur",
+      "forms": [],
+      "id": "oewn-fur__1.06.00..",
+      "lang": "en",
+      "lemma": "fur",
+      "synset": "oewn-03409064-n"
+    },
+    {
+      "definition": "a coat made of fur",
+      "forms": [],
+      "id": "oewn-fur_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "fur coat",
+      "synset": "oewn-03409161-n"
+    },
+    {
+      "definition": "legging consisting of a cloth or leather covering for the leg from the knee to the ankle",
+      "forms": [],
+      "id": "oewn-gaiter__1.06.01..",
+      "lang": "en",
+      "lemma": "gaiter",
+      "synset": "oewn-03415848-n"
+    },
+    {
+      "definition": "an article of clothing",
+      "forms": [],
+      "id": "oewn-garment__1.06.00..",
+      "lang": "en",
+      "lemma": "garment",
+      "synset": "oewn-03423924-n"
+    },
+    {
+      "definition": "a wide belt of elastic with straps hanging from it; worn by women to hold up stockings",
+      "forms": [],
+      "id": "oewn-garter_belt__1.06.00..",
+      "lang": "en",
+      "lemma": "garter belt",
+      "synset": "oewn-03426234-n"
+    },
+    {
+      "definition": "a wide belt of elastic with straps hanging from it; worn by women to hold up stockings",
+      "forms": [],
+      "id": "oewn-suspender_belt__1.06.00..",
+      "lang": "en",
+      "lemma": "suspender belt",
+      "synset": "oewn-03426234-n"
+    },
+    {
+      "definition": "a skirt whose fabric is drawn together around the waist",
+      "forms": [],
+      "id": "oewn-gathered_skirt__1.06.00..",
+      "lang": "en",
+      "lemma": "gathered skirt",
+      "synset": "oewn-03433913-n"
+    },
+    {
+      "definition": "protective garment worn by surgeons during operations",
+      "forms": [],
+      "id": "oewn-gown__1.06.02..",
+      "lang": "en",
+      "lemma": "gown",
+      "synset": "oewn-03455678-n"
+    },
+    {
+      "definition": "protective garment worn by surgeons during operations",
+      "forms": [],
+      "id": "oewn-surgical_gown__1.06.00..",
+      "lang": "en",
+      "lemma": "surgical gown",
+      "synset": "oewn-03455678-n"
+    },
+    {
+      "definition": "protective garment worn by surgeons during operations",
+      "forms": [],
+      "id": "oewn-scrubs__1.06.00..",
+      "lang": "en",
+      "lemma": "scrubs",
+      "synset": "oewn-03455678-n"
+    },
+    {
+      "definition": "a skirt made of long blades of grass",
+      "forms": [],
+      "id": "oewn-grass_skirt__1.06.00..",
+      "lang": "en",
+      "lemma": "grass skirt",
+      "synset": "oewn-03459386-n"
+    },
+    {
+      "definition": "a heavy coat worn over clothes in winter",
+      "forms": [],
+      "id": "oewn-greatcoat__1.06.00..",
+      "lang": "en",
+      "lemma": "greatcoat",
+      "synset": "oewn-03461607-n"
+    },
+    {
+      "definition": "a heavy coat worn over clothes in winter",
+      "forms": [],
+      "id": "oewn-overcoat__1.06.00..",
+      "lang": "en",
+      "lemma": "overcoat",
+      "synset": "oewn-03461607-n"
+    },
+    {
+      "definition": "a heavy coat worn over clothes in winter",
+      "forms": [],
+      "id": "oewn-topcoat__1.06.00..",
+      "lang": "en",
+      "lemma": "topcoat",
+      "synset": "oewn-03461607-n"
+    },
+    {
+      "definition": "a sleeveless tunic worn by English girls as part of a school uniform",
+      "forms": [],
+      "id": "oewn-gymslip__1.06.00..",
+      "lang": "en",
+      "lemma": "gymslip",
+      "synset": "oewn-03477919-n"
+    },
+    {
+      "definition": "an outer garment consisting of a large piece of white cloth; worn by men and women in northern Africa",
+      "forms": [],
+      "id": "oewn-haik__1.06.00..",
+      "lang": "en",
+      "lemma": "haik",
+      "synset": "oewn-03480544-n"
+    },
+    {
+      "definition": "an outer garment consisting of a large piece of white cloth; worn by men and women in northern Africa",
+      "forms": [],
+      "id": "oewn-haick__1.06.00..",
+      "lang": "en",
+      "lemma": "haick",
+      "synset": "oewn-03480544-n"
+    },
+    {
+      "definition": "an uncomfortable shirt made of coarse animal hair; worn next to the skin as a penance",
+      "forms": [],
+      "id": "oewn-hair_shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "hair shirt",
+      "synset": "oewn-03481665-n"
+    },
+    {
+      "definition": "outgrown garment passed down from one person to another",
+      "forms": [],
+      "id": "oewn-hand-me-down__1.06.00..",
+      "lang": "en",
+      "lemma": "hand-me-down",
+      "synset": "oewn-03492725-n"
+    },
+    {
+      "definition": "a garment that covers the head and face",
+      "forms": [],
+      "id": "oewn-head_covering__1.06.00..",
+      "lang": "en",
+      "lemma": "head covering",
+      "synset": "oewn-03507475-n"
+    },
+    {
+      "definition": "a garment that covers the head and face",
+      "forms": [],
+      "id": "oewn-veil__1.06.00..",
+      "lang": "en",
+      "lemma": "veil",
+      "synset": "oewn-03507475-n"
+    },
+    {
+      "definition": "a kerchief worn over the head and tied under the chin",
+      "forms": [],
+      "id": "oewn-headscarf__1.06.00..",
+      "lang": "en",
+      "lemma": "headscarf",
+      "synset": "oewn-03510648-n"
+    },
+    {
+      "definition": "a headscarf worn by Muslim women; conceals the hair and neck and usually has a face veil that covers the face",
+      "forms": [],
+      "id": "oewn-hijab__1.06.00..",
+      "lang": "en",
+      "lemma": "hijab",
+      "synset": "oewn-03525656-n"
+    },
+    {
+      "definition": "a long skirt very narrow below the knees, worn between 1910 and 1914",
+      "forms": [],
+      "id": "oewn-hobble_skirt__1.06.00..",
+      "lang": "en",
+      "lemma": "hobble skirt",
+      "synset": "oewn-03528669-n"
+    },
+    {
+      "definition": "a skirt stiffened with hoops",
+      "forms": [],
+      "id": "oewn-hoopskirt__1.06.00..",
+      "lang": "en",
+      "lemma": "hoopskirt",
+      "synset": "oewn-03539760-n"
+    },
+    {
+      "definition": "a skirt stiffened with hoops",
+      "forms": [],
+      "id": "oewn-crinoline__1.06.02..",
+      "lang": "en",
+      "lemma": "crinoline",
+      "synset": "oewn-03539760-n"
+    },
+    {
+      "definition": "man's close-fitting garment of the 16th and 17th centuries covering the legs and reaching up to the waist; worn with a doublet",
+      "forms": [],
+      "id": "oewn-hose__1.06.02..",
+      "lang": "en",
+      "lemma": "hose",
+      "synset": "oewn-03545270-n"
+    },
+    {
+      "definition": "skin-tight very short pants worn by young women as an outer garment",
+      "forms": [],
+      "id": "oewn-hot_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "hot pants",
+      "synset": "oewn-03548292-n"
+    },
+    {
+      "definition": "a woman's fitted jacket",
+      "forms": [],
+      "id": "oewn-hug-me-tight__1.06.00..",
+      "lang": "en",
+      "lemma": "hug-me-tight",
+      "synset": "oewn-03553500-n"
+    },
+    {
+      "definition": "garments (clothes or linens) that are to be (or have been) ironed",
+      "forms": [],
+      "id": "oewn-ironing__1.06.00..",
+      "lang": "en",
+      "lemma": "ironing",
+      "synset": "oewn-03591044-n"
+    },
+    {
+      "definition": "a voluminous cotton outer garment (usually white) traditionally worn by Muslim women of northern Africa and the Middle East; covers the entire body",
+      "forms": [],
+      "id": "oewn-izar__1.06.00..",
+      "lang": "en",
+      "lemma": "izar",
+      "synset": "oewn-03593385-n"
+    },
+    {
+      "definition": "a short coat",
+      "forms": [],
+      "id": "oewn-jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "jacket",
+      "synset": "oewn-03594978-n"
+    },
+    {
+      "definition": "(used in the plural) close-fitting trousers of heavy denim for manual work or casual wear",
+      "forms": [],
+      "id": "oewn-jeans__1.06.00..",
+      "lang": "en",
+      "lemma": "jeans",
+      "synset": "oewn-03599921-n"
+    },
+    {
+      "definition": "(used in the plural) close-fitting trousers of heavy denim for manual work or casual wear",
+      "forms": [],
+      "id": "oewn-blue_jeans__1.06.00..",
+      "lang": "en",
+      "lemma": "blue jeans",
+      "synset": "oewn-03599921-n"
+    },
+    {
+      "definition": "(used in the plural) close-fitting trousers of heavy denim for manual work or casual wear",
+      "forms": [],
+      "id": "oewn-denim__1.06.03..",
+      "lang": "en",
+      "lemma": "denim",
+      "synset": "oewn-03599921-n"
+    },
+    {
+      "definition": "a loose cloak with a hood; worn in the Middle East and northern Africa",
+      "forms": [],
+      "id": "oewn-jellaba__1.06.00..",
+      "lang": "en",
+      "lemma": "jellaba",
+      "synset": "oewn-03600248-n"
+    },
+    {
+      "definition": "a tight sleeveless and collarless jacket (often made of leather) worn by men in former times",
+      "forms": [],
+      "id": "oewn-jerkin__1.06.00..",
+      "lang": "en",
+      "lemma": "jerkin",
+      "synset": "oewn-03600457-n"
+    },
+    {
+      "definition": "a close-fitting pullover shirt",
+      "forms": [],
+      "id": "oewn-jersey__1.06.01..",
+      "lang": "en",
+      "lemma": "jersey",
+      "synset": "oewn-03600807-n"
+    },
+    {
+      "definition": "a close-fitting pullover shirt",
+      "forms": [],
+      "id": "oewn-t-shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "T-shirt",
+      "synset": "oewn-03600807-n"
+    },
+    {
+      "definition": "a close-fitting pullover shirt",
+      "forms": [],
+      "id": "oewn-tee_shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "tee shirt",
+      "synset": "oewn-03600807-n"
+    },
+    {
+      "definition": "(used in the plural) flared trousers ending at the calves; worn with riding boots",
+      "forms": [],
+      "id": "oewn-jodhpurs__1.06.00..",
+      "lang": "en",
+      "lemma": "jodhpurs",
+      "synset": "oewn-03605477-n"
+    },
+    {
+      "definition": "(used in the plural) flared trousers ending at the calves; worn with riding boots",
+      "forms": [],
+      "id": "oewn-jodhpur_breeches__1.06.00..",
+      "lang": "en",
+      "lemma": "jodhpur breeches",
+      "synset": "oewn-03605477-n"
+    },
+    {
+      "definition": "(used in the plural) flared trousers ending at the calves; worn with riding boots",
+      "forms": [],
+      "id": "oewn-riding_breeches__1.06.00..",
+      "lang": "en",
+      "lemma": "riding breeches",
+      "synset": "oewn-03605477-n"
+    },
+    {
+      "definition": "a loose jacket or blouse worn by workmen",
+      "forms": [],
+      "id": "oewn-jumper__1.06.01..",
+      "lang": "en",
+      "lemma": "jumper",
+      "synset": "oewn-03609749-n"
+    },
+    {
+      "definition": "one-piece garment fashioned after a parachutist's uniform",
+      "forms": [],
+      "id": "oewn-jump_suit__1.06.01..",
+      "lang": "en",
+      "lemma": "jump suit",
+      "synset": "oewn-03610811-n"
+    },
+    {
+      "definition": "one-piece garment fashioned after a parachutist's uniform",
+      "forms": [],
+      "id": "oewn-jumpsuit__1.06.00..",
+      "lang": "en",
+      "lemma": "jumpsuit",
+      "synset": "oewn-03610811-n"
+    },
+    {
+      "definition": "a long tunic worn by many people from the Indian subcontinent (usually with a salwar or churidars)",
+      "forms": [],
+      "id": "oewn-kameez__1.06.00..",
+      "lang": "en",
+      "lemma": "kameez",
+      "synset": "oewn-03613136-n"
+    },
+    {
+      "definition": "(Swahili) a long garment (usually white) with long sleeves; worn by men in East Africa",
+      "forms": [],
+      "id": "oewn-kanzu__1.06.00..",
+      "lang": "en",
+      "lemma": "kanzu",
+      "synset": "oewn-03613717-n"
+    },
+    {
+      "definition": "a square scarf that is folded into a triangle and worn over the head or about the neck",
+      "forms": [],
+      "id": "oewn-kerchief__1.06.00..",
+      "lang": "en",
+      "lemma": "kerchief",
+      "synset": "oewn-03616205-n"
+    },
+    {
+      "definition": "a headscarf worn by observant Muslim women that hangs down to just above the waist",
+      "forms": [],
+      "id": "oewn-khimar__1.06.00..",
+      "lang": "en",
+      "lemma": "khimar",
+      "synset": "oewn-03620864-n"
+    },
+    {
+      "definition": "a knee-length pleated tartan skirt worn by men as part of the traditional dress in the Highlands of northern Scotland",
+      "forms": [],
+      "id": "oewn-kilt__1.06.00..",
+      "lang": "en",
+      "lemma": "kilt",
+      "synset": "oewn-03622521-n"
+    },
+    {
+      "definition": "a loose robe; imitated from robes originally worn by Japanese",
+      "forms": [],
+      "id": "oewn-kimono__1.06.00..",
+      "lang": "en",
+      "lemma": "kimono",
+      "synset": "oewn-03622689-n"
+    },
+    {
+      "definition": "a garment resembling a tunic that was worn by men in the Middle Ages",
+      "forms": [],
+      "id": "oewn-kirtle__1.06.02..",
+      "lang": "en",
+      "lemma": "kirtle",
+      "synset": "oewn-03624484-n"
+    },
+    {
+      "definition": "a loose collarless shirt worn by many people on the Indian subcontinent (usually with a salwar or churidars or pyjama)",
+      "forms": [],
+      "id": "oewn-kurta__1.06.00..",
+      "lang": "en",
+      "lemma": "kurta",
+      "synset": "oewn-03634522-n"
+    },
+    {
+      "definition": "a light coat worn to protect clothing from substances used while working in a laboratory",
+      "forms": [],
+      "id": "oewn-lab_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "lab coat",
+      "synset": "oewn-03635674-n"
+    },
+    {
+      "definition": "a light coat worn to protect clothing from substances used while working in a laboratory",
+      "forms": [],
+      "id": "oewn-laboratory_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "laboratory coat",
+      "synset": "oewn-03635674-n"
+    },
+    {
+      "definition": "a scarf that covers a knight's helmet",
+      "forms": [],
+      "id": "oewn-lambrequin__1.06.01..",
+      "lang": "en",
+      "lemma": "lambrequin",
+      "synset": "oewn-03640527-n"
+    },
+    {
+      "definition": "garments or white goods that can be cleaned by laundering",
+      "forms": [],
+      "id": "oewn-laundry__1.06.01..",
+      "lang": "en",
+      "lemma": "laundry",
+      "synset": "oewn-03653533-n"
+    },
+    {
+      "definition": "garments or white goods that can be cleaned by laundering",
+      "forms": [],
+      "id": "oewn-wash__1.06.00..",
+      "lang": "en",
+      "lemma": "wash",
+      "synset": "oewn-03653533-n"
+    },
+    {
+      "definition": "garments or white goods that can be cleaned by laundering",
+      "forms": [],
+      "id": "oewn-washing__1.06.00..",
+      "lang": "en",
+      "lemma": "washing",
+      "synset": "oewn-03653533-n"
+    },
+    {
+      "definition": "garments or white goods that can be cleaned by laundering",
+      "forms": [],
+      "id": "oewn-washables__1.06.00..",
+      "lang": "en",
+      "lemma": "washables",
+      "synset": "oewn-03653533-n"
+    },
+    {
+      "definition": "a skirt consisting of a rectangle of calico or printed cotton; worn by Polynesians (especially Samoans)",
+      "forms": [],
+      "id": "oewn-lavalava__1.06.00..",
+      "lang": "en",
+      "lemma": "lavalava",
+      "synset": "oewn-03654317-n"
+    },
+    {
+      "definition": "leather shorts often worn with suspenders; worn especially by men and boys in Bavaria",
+      "forms": [],
+      "id": "oewn-lederhosen__1.06.00..",
+      "lang": "en",
+      "lemma": "lederhosen",
+      "synset": "oewn-03659159-n"
+    },
+    {
+      "definition": "a garment covering the leg (usually extending from the knee to the ankle)",
+      "forms": [],
+      "id": "oewn-legging__1.06.00..",
+      "lang": "en",
+      "lemma": "legging",
+      "synset": "oewn-03660398-n"
+    },
+    {
+      "definition": "a garment covering the leg (usually extending from the knee to the ankle)",
+      "forms": [],
+      "id": "oewn-leging__1.06.00..",
+      "lang": "en",
+      "lemma": "leging",
+      "synset": "oewn-03660398-n"
+    },
+    {
+      "definition": "a garment covering the leg (usually extending from the knee to the ankle)",
+      "forms": [],
+      "id": "oewn-leg_covering__1.06.00..",
+      "lang": "en",
+      "lemma": "leg covering",
+      "synset": "oewn-03660398-n"
+    },
+    {
+      "definition": "a tight-fitting garment of stretchy material that covers the body from the shoulders to the thighs (and may have long sleeves or legs reaching down to the ankles); worn by ballet dancers and acrobats for practice or performance",
+      "forms": [],
+      "id": "oewn-leotard__1.06.00..",
+      "lang": "en",
+      "lemma": "leotard",
+      "synset": "oewn-03662837-n"
+    },
+    {
+      "definition": "a tight-fitting garment of stretchy material that covers the body from the shoulders to the thighs (and may have long sleeves or legs reaching down to the ankles); worn by ballet dancers and acrobats for practice or performance",
+      "forms": [],
+      "id": "oewn-unitard__1.06.00..",
+      "lang": "en",
+      "lemma": "unitard",
+      "synset": "oewn-03662837-n"
+    },
+    {
+      "definition": "a tight-fitting garment of stretchy material that covers the body from the shoulders to the thighs (and may have long sleeves or legs reaching down to the ankles); worn by ballet dancers and acrobats for practice or performance",
+      "forms": [],
+      "id": "oewn-body_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "body suit",
+      "synset": "oewn-03662837-n"
+    },
+    {
+      "definition": "a tight-fitting garment of stretchy material that covers the body from the shoulders to the thighs (and may have long sleeves or legs reaching down to the ankles); worn by ballet dancers and acrobats for practice or performance",
+      "forms": [],
+      "id": "oewn-cat_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "cat suit",
+      "synset": "oewn-03662837-n"
+    },
+    {
+      "definition": "a popular brand of jeans",
+      "forms": [],
+      "id": "oewn-levi-ap-s__1.06.00..",
+      "lang": "en",
+      "lemma": "Levi's",
+      "synset": "oewn-03665450-n"
+    },
+    {
+      "definition": "a popular brand of jeans",
+      "forms": [],
+      "id": "oewn-levis__1.06.00..",
+      "lang": "en",
+      "lemma": "levis",
+      "synset": "oewn-03665450-n"
+    },
+    {
+      "definition": "women's underwear and nightclothes",
+      "forms": [],
+      "id": "oewn-lingerie__1.06.00..",
+      "lang": "en",
+      "lemma": "lingerie",
+      "synset": "oewn-03678776-n"
+    },
+    {
+      "definition": "women's underwear and nightclothes",
+      "forms": [],
+      "id": "oewn-intimate_apparel__1.06.00..",
+      "lang": "en",
+      "lemma": "intimate apparel",
+      "synset": "oewn-03678776-n"
+    },
+    {
+      "definition": "warm underwear with long legs",
+      "forms": [],
+      "id": "oewn-long_johns__1.06.00..",
+      "lang": "en",
+      "lemma": "long johns",
+      "synset": "oewn-03693518-n"
+    },
+    {
+      "definition": "trousers reaching to the foot",
+      "forms": [],
+      "id": "oewn-long_trousers__1.06.00..",
+      "lang": "en",
+      "lemma": "long trousers",
+      "synset": "oewn-03693931-n"
+    },
+    {
+      "definition": "trousers reaching to the foot",
+      "forms": [],
+      "id": "oewn-long_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "long pants",
+      "synset": "oewn-03693931-n"
+    },
+    {
+      "definition": "an undergarment with shirt and drawers in one piece",
+      "forms": [],
+      "id": "oewn-long_underwear__1.06.00..",
+      "lang": "en",
+      "lemma": "long underwear",
+      "synset": "oewn-03694033-n"
+    },
+    {
+      "definition": "an undergarment with shirt and drawers in one piece",
+      "forms": [],
+      "id": "oewn-union_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "union suit",
+      "synset": "oewn-03694033-n"
+    },
+    {
+      "definition": "a short warm outer jacket",
+      "forms": [],
+      "id": "oewn-lumberjack__1.06.00..",
+      "lang": "en",
+      "lemma": "lumberjack",
+      "synset": "oewn-03702243-n"
+    },
+    {
+      "definition": "a short warm outer jacket",
+      "forms": [],
+      "id": "oewn-lumber_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "lumber jacket",
+      "synset": "oewn-03702243-n"
+    },
+    {
+      "definition": "a waterproof raincoat made of rubberized fabric",
+      "forms": [],
+      "id": "oewn-macintosh__1.06.00..",
+      "lang": "en",
+      "lemma": "macintosh",
+      "synset": "oewn-03708258-n"
+    },
+    {
+      "definition": "a waterproof raincoat made of rubberized fabric",
+      "forms": [],
+      "id": "oewn-mackintosh__1.06.01..",
+      "lang": "en",
+      "lemma": "mackintosh",
+      "synset": "oewn-03708258-n"
+    },
+    {
+      "definition": "a waterproof raincoat made of rubberized fabric",
+      "forms": [],
+      "id": "oewn-mac__1.06.00..",
+      "lang": "en",
+      "lemma": "mac",
+      "synset": "oewn-03708258-n"
+    },
+    {
+      "definition": "a waterproof raincoat made of rubberized fabric",
+      "forms": [],
+      "id": "oewn-mack__1.06.00..",
+      "lang": "en",
+      "lemma": "mack",
+      "synset": "oewn-03708258-n"
+    },
+    {
+      "definition": "a short plaid coat made of made of thick woolen material",
+      "forms": [],
+      "id": "oewn-mackinaw__1.06.03..",
+      "lang": "en",
+      "lemma": "mackinaw",
+      "synset": "oewn-03709002-n"
+    },
+    {
+      "definition": "a short plaid coat made of made of thick woolen material",
+      "forms": [],
+      "id": "oewn-mackinaw_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "Mackinaw coat",
+      "synset": "oewn-03709002-n"
+    },
+    {
+      "definition": "a woman's one-piece bathing suit",
+      "forms": [],
+      "id": "oewn-maillot__1.06.01..",
+      "lang": "en",
+      "lemma": "maillot",
+      "synset": "oewn-03716260-n"
+    },
+    {
+      "definition": "a woman's one-piece bathing suit",
+      "forms": [],
+      "id": "oewn-tank_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "tank suit",
+      "synset": "oewn-03716260-n"
+    },
+    {
+      "definition": "short cape worn by women",
+      "forms": [],
+      "id": "oewn-mantelet__1.06.00..",
+      "lang": "en",
+      "lemma": "mantelet",
+      "synset": "oewn-03725051-n"
+    },
+    {
+      "definition": "short cape worn by women",
+      "forms": [],
+      "id": "oewn-mantilla__1.06.02..",
+      "lang": "en",
+      "lemma": "mantilla",
+      "synset": "oewn-03725051-n"
+    },
+    {
+      "definition": "a woman's silk or lace scarf",
+      "forms": [],
+      "id": "oewn-mantilla__1.06.00..",
+      "lang": "en",
+      "lemma": "mantilla",
+      "synset": "oewn-03725234-n"
+    },
+    {
+      "definition": "a light weight jacket with a high collar; worn by Mao Zedong and the Chinese people during his regime",
+      "forms": [],
+      "id": "oewn-mao_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "Mao jacket",
+      "synset": "oewn-03725496-n"
+    },
+    {
+      "definition": "a long skirt ending below the calf",
+      "forms": [],
+      "id": "oewn-maxi__1.06.00..",
+      "lang": "en",
+      "lemma": "maxi",
+      "synset": "oewn-03737949-n"
+    },
+    {
+      "definition": "garments that must be repaired",
+      "forms": [],
+      "id": "oewn-mending__1.06.00..",
+      "lang": "en",
+      "lemma": "mending",
+      "synset": "oewn-03750978-n"
+    },
+    {
+      "definition": "waist-length jacket tapering to a point at the back; worn by officers in the mess for formal dinners",
+      "forms": [],
+      "id": "oewn-mess_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "mess jacket",
+      "synset": "oewn-03756760-n"
+    },
+    {
+      "definition": "waist-length jacket tapering to a point at the back; worn by officers in the mess for formal dinners",
+      "forms": [],
+      "id": "oewn-monkey_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "monkey jacket",
+      "synset": "oewn-03756760-n"
+    },
+    {
+      "definition": "waist-length jacket tapering to a point at the back; worn by officers in the mess for formal dinners",
+      "forms": [],
+      "id": "oewn-shell_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "shell jacket",
+      "synset": "oewn-03756760-n"
+    },
+    {
+      "definition": "a very short skirt",
+      "forms": [],
+      "id": "oewn-miniskirt__1.06.00..",
+      "lang": "en",
+      "lemma": "miniskirt",
+      "synset": "oewn-03775972-n"
+    },
+    {
+      "definition": "a very short skirt",
+      "forms": [],
+      "id": "oewn-mini__1.06.00..",
+      "lang": "en",
+      "lemma": "mini",
+      "synset": "oewn-03775972-n"
+    },
+    {
+      "definition": "fur coat made from the soft lustrous fur of minks",
+      "forms": [],
+      "id": "oewn-mink__1.06.00..",
+      "lang": "en",
+      "lemma": "mink",
+      "synset": "oewn-03776487-n"
+    },
+    {
+      "definition": "fur coat made from the soft lustrous fur of minks",
+      "forms": [],
+      "id": "oewn-mink_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "mink coat",
+      "synset": "oewn-03776487-n"
+    },
+    {
+      "definition": "a garment made of motley (especially a court jester's costume)",
+      "forms": [],
+      "id": "oewn-motley__1.06.01..",
+      "lang": "en",
+      "lemma": "motley",
+      "synset": "oewn-03795327-n"
+    },
+    {
+      "definition": "a scarf worn around the neck",
+      "forms": [],
+      "id": "oewn-muffler__1.06.00..",
+      "lang": "en",
+      "lemma": "muffler",
+      "synset": "oewn-03802704-n"
+    },
+    {
+      "definition": "an ornamental white cravat",
+      "forms": [],
+      "id": "oewn-neckcloth__1.06.00..",
+      "lang": "en",
+      "lemma": "neckcloth",
+      "synset": "oewn-03820267-n"
+    },
+    {
+      "definition": "an ornamental white cravat",
+      "forms": [],
+      "id": "oewn-stock__1.06.03..",
+      "lang": "en",
+      "lemma": "stock",
+      "synset": "oewn-03820267-n"
+    },
+    {
+      "definition": "a kerchief worn around the neck",
+      "forms": [],
+      "id": "oewn-neckerchief__1.06.00..",
+      "lang": "en",
+      "lemma": "neckerchief",
+      "synset": "oewn-03820357-n"
+    },
+    {
+      "definition": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "forms": [],
+      "id": "oewn-necktie__1.06.00..",
+      "lang": "en",
+      "lemma": "necktie",
+      "synset": "oewn-03821155-n"
+    },
+    {
+      "definition": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "forms": [],
+      "id": "oewn-tie__1.06.01..",
+      "lang": "en",
+      "lemma": "tie",
+      "synset": "oewn-03821155-n"
+    },
+    {
+      "definition": "articles of clothing worn about the neck",
+      "forms": [],
+      "id": "oewn-neckwear__1.06.00..",
+      "lang": "en",
+      "lemma": "neckwear",
+      "synset": "oewn-03821545-n"
+    },
+    {
+      "definition": "a long close-fitting coat worn for riding in the 19th century",
+      "forms": [],
+      "id": "oewn-newmarket__1.06.00..",
+      "lang": "en",
+      "lemma": "newmarket",
+      "synset": "oewn-03827438-n"
+    },
+    {
+      "definition": "lingerie consisting of a loose dress designed to be worn in bed by women",
+      "forms": [],
+      "id": "oewn-nightgown__1.06.00..",
+      "lang": "en",
+      "lemma": "nightgown",
+      "synset": "oewn-03829921-n"
+    },
+    {
+      "definition": "lingerie consisting of a loose dress designed to be worn in bed by women",
+      "forms": [],
+      "id": "oewn-gown__1.06.03..",
+      "lang": "en",
+      "lemma": "gown",
+      "synset": "oewn-03829921-n"
+    },
+    {
+      "definition": "lingerie consisting of a loose dress designed to be worn in bed by women",
+      "forms": [],
+      "id": "oewn-nightie__1.06.00..",
+      "lang": "en",
+      "lemma": "nightie",
+      "synset": "oewn-03829921-n"
+    },
+    {
+      "definition": "lingerie consisting of a loose dress designed to be worn in bed by women",
+      "forms": [],
+      "id": "oewn-night-robe__1.06.00..",
+      "lang": "en",
+      "lemma": "night-robe",
+      "synset": "oewn-03829921-n"
+    },
+    {
+      "definition": "lingerie consisting of a loose dress designed to be worn in bed by women",
+      "forms": [],
+      "id": "oewn-nightdress__1.06.00..",
+      "lang": "en",
+      "lemma": "nightdress",
+      "synset": "oewn-03829921-n"
+    },
+    {
+      "definition": "a face veil covering the lower part of the face (up to the eyes) worn by observant Muslim women",
+      "forms": [],
+      "id": "oewn-niqab__1.06.00..",
+      "lang": "en",
+      "lemma": "niqab",
+      "synset": "oewn-03831579-n"
+    },
+    {
+      "definition": "loose-fitting single-breasted jacket",
+      "forms": [],
+      "id": "oewn-norfolk_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "Norfolk jacket",
+      "synset": "oewn-03835397-n"
+    },
+    {
+      "definition": "a macintosh made from cotton fabric treated with oil and pigment to make it waterproof",
+      "forms": [],
+      "id": "oewn-oilskin__1.06.00..",
+      "lang": "en",
+      "lemma": "oilskin",
+      "synset": "oewn-03850335-n"
+    },
+    {
+      "definition": "a macintosh made from cotton fabric treated with oil and pigment to make it waterproof",
+      "forms": [],
+      "id": "oewn-slicker__1.06.00..",
+      "lang": "en",
+      "lemma": "slicker",
+      "synset": "oewn-03850335-n"
+    },
+    {
+      "definition": "necktie indicating the school the wearer attended",
+      "forms": [],
+      "id": "oewn-old_school_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "old school tie",
+      "synset": "oewn-03851510-n"
+    },
+    {
+      "definition": "a large cloak worn over evening clothes",
+      "forms": [],
+      "id": "oewn-opera_cloak__1.06.00..",
+      "lang": "en",
+      "lemma": "opera cloak",
+      "synset": "oewn-03855463-n"
+    },
+    {
+      "definition": "a large cloak worn over evening clothes",
+      "forms": [],
+      "id": "oewn-opera_hood__1.06.00..",
+      "lang": "en",
+      "lemma": "opera hood",
+      "synset": "oewn-03855463-n"
+    },
+    {
+      "definition": "a garment worn over other garments",
+      "forms": [],
+      "id": "oewn-overgarment__1.06.00..",
+      "lang": "en",
+      "lemma": "overgarment",
+      "synset": "oewn-03869443-n"
+    },
+    {
+      "definition": "a garment worn over other garments",
+      "forms": [],
+      "id": "oewn-outer_garment__1.06.00..",
+      "lang": "en",
+      "lemma": "outer garment",
+      "synset": "oewn-03869443-n"
+    },
+    {
+      "definition": "an outer skirt worn over another skirt",
+      "forms": [],
+      "id": "oewn-overskirt__1.06.00..",
+      "lang": "en",
+      "lemma": "overskirt",
+      "synset": "oewn-03871760-n"
+    },
+    {
+      "definition": "a pair of loose trousers tied by a drawstring around the waist; worn by men and women in some Asian countries",
+      "forms": [],
+      "id": "oewn-pajama__1.06.02..",
+      "lang": "en",
+      "lemma": "pajama",
+      "synset": "oewn-03883371-n"
+    },
+    {
+      "definition": "a pair of loose trousers tied by a drawstring around the waist; worn by men and women in some Asian countries",
+      "forms": [],
+      "id": "oewn-pyjama__1.06.02..",
+      "lang": "en",
+      "lemma": "pyjama",
+      "synset": "oewn-03883371-n"
+    },
+    {
+      "definition": "cloak or mantle worn by men in ancient Rome",
+      "forms": [
+        "pallia"
+      ],
+      "id": "oewn-pallium__1.06.00..",
+      "lang": "en",
+      "lemma": "pallium",
+      "synset": "oewn-03885729-n"
+    },
+    {
+      "definition": "trousers worn in former times",
+      "forms": [],
+      "id": "oewn-pantaloon__1.06.00..",
+      "lang": "en",
+      "lemma": "pantaloon",
+      "synset": "oewn-03890251-n"
+    },
+    {
+      "definition": "short underpants for women or children",
+      "forms": [],
+      "id": "oewn-pantie__1.06.00..",
+      "lang": "en",
+      "lemma": "pantie",
+      "synset": "oewn-03890725-n"
+    },
+    {
+      "definition": "short underpants for women or children",
+      "forms": [],
+      "id": "oewn-panty__1.06.00..",
+      "lang": "en",
+      "lemma": "panty",
+      "synset": "oewn-03890725-n"
+    },
+    {
+      "definition": "short underpants for women or children",
+      "forms": [],
+      "id": "oewn-scanty__1.06.00..",
+      "lang": "en",
+      "lemma": "scanty",
+      "synset": "oewn-03890725-n"
+    },
+    {
+      "definition": "short underpants for women or children",
+      "forms": [],
+      "id": "oewn-step-in__1.06.00..",
+      "lang": "en",
+      "lemma": "step-in",
+      "synset": "oewn-03890725-n"
+    },
+    {
+      "definition": "a pair of pants and a matching jacket worn by women",
+      "forms": [],
+      "id": "oewn-pants_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "pants suit",
+      "synset": "oewn-03891366-n"
+    },
+    {
+      "definition": "a pair of pants and a matching jacket worn by women",
+      "forms": [],
+      "id": "oewn-pantsuit__1.06.00..",
+      "lang": "en",
+      "lemma": "pantsuit",
+      "synset": "oewn-03891366-n"
+    },
+    {
+      "definition": "a woman's undergarment that combines a girdle and panties",
+      "forms": [],
+      "id": "oewn-panty_girdle__1.06.00..",
+      "lang": "en",
+      "lemma": "panty girdle",
+      "synset": "oewn-03891485-n"
+    },
+    {
+      "definition": "a kind of heavy jacket",
+      "forms": [],
+      "id": "oewn-parka__1.06.00..",
+      "lang": "en",
+      "lemma": "parka",
+      "synset": "oewn-03896748-n"
+    },
+    {
+      "definition": "a kind of heavy jacket",
+      "forms": [],
+      "id": "oewn-windbreaker__1.06.00..",
+      "lang": "en",
+      "lemma": "windbreaker",
+      "synset": "oewn-03896748-n"
+    },
+    {
+      "definition": "a kind of heavy jacket",
+      "forms": [],
+      "id": "oewn-windcheater__1.06.00..",
+      "lang": "en",
+      "lemma": "windcheater",
+      "synset": "oewn-03896748-n"
+    },
+    {
+      "definition": "a kind of heavy jacket",
+      "forms": [],
+      "id": "oewn-anorak__1.06.00..",
+      "lang": "en",
+      "lemma": "anorak",
+      "synset": "oewn-03896748-n"
+    },
+    {
+      "definition": "a scarf worn by Sikh men",
+      "forms": [],
+      "id": "oewn-patka__1.06.00..",
+      "lang": "en",
+      "lemma": "patka",
+      "synset": "oewn-03906106-n"
+    },
+    {
+      "definition": "a sailor's heavy woolen double-breasted jacket",
+      "forms": [],
+      "id": "oewn-pea_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "pea jacket",
+      "synset": "oewn-03908834-n"
+    },
+    {
+      "definition": "a sailor's heavy woolen double-breasted jacket",
+      "forms": [],
+      "id": "oewn-peacoat__1.06.00..",
+      "lang": "en",
+      "lemma": "peacoat",
+      "synset": "oewn-03908834-n"
+    },
+    {
+      "definition": "(used in the plural) snug trousers ending at the calves; worn by women and girls",
+      "forms": [],
+      "id": "oewn-pedal_pushers__1.06.00..",
+      "lang": "en",
+      "lemma": "pedal pushers",
+      "synset": "oewn-03909811-n"
+    },
+    {
+      "definition": "(used in the plural) snug trousers ending at the calves; worn by women and girls",
+      "forms": [],
+      "id": "oewn-toreador_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "toreador pants",
+      "synset": "oewn-03909811-n"
+    },
+    {
+      "definition": "a sleeveless cape that is lined or trimmed with fur",
+      "forms": [],
+      "id": "oewn-pelisse__1.06.00..",
+      "lang": "en",
+      "lemma": "pelisse",
+      "synset": "oewn-03912908-n"
+    },
+    {
+      "definition": "a garment worn by women in ancient Greece; cloth caught at the shoulders and draped in folds to the waist",
+      "forms": [],
+      "id": "oewn-peplos__1.06.00..",
+      "lang": "en",
+      "lemma": "peplos",
+      "synset": "oewn-03920049-n"
+    },
+    {
+      "definition": "a garment worn by women in ancient Greece; cloth caught at the shoulders and draped in folds to the waist",
+      "forms": [],
+      "id": "oewn-peplus__1.06.00..",
+      "lang": "en",
+      "lemma": "peplus",
+      "synset": "oewn-03920049-n"
+    },
+    {
+      "definition": "a garment worn by women in ancient Greece; cloth caught at the shoulders and draped in folds to the waist",
+      "forms": [
+        "pepla"
+      ],
+      "id": "oewn-peplum__1.06.01..",
+      "lang": "en",
+      "lemma": "peplum",
+      "synset": "oewn-03920049-n"
+    },
+    {
+      "definition": "undergarment worn under a skirt",
+      "forms": [],
+      "id": "oewn-petticoat__1.06.00..",
+      "lang": "en",
+      "lemma": "petticoat",
+      "synset": "oewn-03926859-n"
+    },
+    {
+      "definition": "undergarment worn under a skirt",
+      "forms": [],
+      "id": "oewn-half-slip__1.06.00..",
+      "lang": "en",
+      "lemma": "half-slip",
+      "synset": "oewn-03926859-n"
+    },
+    {
+      "definition": "undergarment worn under a skirt",
+      "forms": [],
+      "id": "oewn-underskirt__1.06.00..",
+      "lang": "en",
+      "lemma": "underskirt",
+      "synset": "oewn-03926859-n"
+    },
+    {
+      "definition": "a suit made from a fabric with very thin stripes",
+      "forms": [],
+      "id": "oewn-pinstripe__1.06.02..",
+      "lang": "en",
+      "lemma": "pinstripe",
+      "synset": "oewn-03950196-n"
+    },
+    {
+      "definition": "men's baggy knickers hanging below the knees; formerly worn for sports (especially golf)",
+      "forms": [],
+      "id": "oewn-plus_fours__1.06.00..",
+      "lang": "en",
+      "lemma": "plus fours",
+      "synset": "oewn-03976721-n"
+    },
+    {
+      "definition": "a shirt with short sleeves designed for comfort and casual wear",
+      "forms": [],
+      "id": "oewn-polo_shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "polo shirt",
+      "synset": "oewn-03985324-n"
+    },
+    {
+      "definition": "a shirt with short sleeves designed for comfort and casual wear",
+      "forms": [],
+      "id": "oewn-sport_shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "sport shirt",
+      "synset": "oewn-03985324-n"
+    },
+    {
+      "definition": "a blanket-like cloak with a hole in the center for the head",
+      "forms": [],
+      "id": "oewn-poncho__1.06.00..",
+      "lang": "en",
+      "lemma": "poncho",
+      "synset": "oewn-03987232-n"
+    },
+    {
+      "definition": "(Judaism) a shawl with a ritually knotted fringe at each corner; worn by Jews at morning prayer",
+      "forms": [],
+      "id": "oewn-prayer_shawl__1.06.00..",
+      "lang": "en",
+      "lemma": "prayer shawl",
+      "synset": "oewn-04004691-n"
+    },
+    {
+      "definition": "(Judaism) a shawl with a ritually knotted fringe at each corner; worn by Jews at morning prayer",
+      "forms": [
+        "tallaisim",
+        "tallithes",
+        "tallitoth"
+      ],
+      "id": "oewn-tallith__1.06.00..",
+      "lang": "en",
+      "lemma": "tallith",
+      "synset": "oewn-04004691-n"
+    },
+    {
+      "definition": "(Judaism) a shawl with a ritually knotted fringe at each corner; worn by Jews at morning prayer",
+      "forms": [],
+      "id": "oewn-tallis__1.06.00..",
+      "lang": "en",
+      "lemma": "tallis",
+      "synset": "oewn-04004691-n"
+    },
+    {
+      "definition": "a man's double-breasted frock coat",
+      "forms": [],
+      "id": "oewn-prince_albert__1.06.00..",
+      "lang": "en",
+      "lemma": "Prince Albert",
+      "synset": "oewn-04009717-n"
+    },
+    {
+      "definition": "a sweater that is put on by pulling it over the head",
+      "forms": [],
+      "id": "oewn-pullover__1.06.00..",
+      "lang": "en",
+      "lemma": "pullover",
+      "synset": "oewn-04027422-n"
+    },
+    {
+      "definition": "a sweater that is put on by pulling it over the head",
+      "forms": [],
+      "id": "oewn-slipover__1.06.00..",
+      "lang": "en",
+      "lemma": "slipover",
+      "synset": "oewn-04027422-n"
+    },
+    {
+      "definition": "a strip of cloth wound around the leg to form legging; used by soldiers in World War I",
+      "forms": [],
+      "id": "oewn-puttee__1.06.00..",
+      "lang": "en",
+      "lemma": "puttee",
+      "synset": "oewn-04034411-n"
+    },
+    {
+      "definition": "a garment (coat or sweater) that has raglan sleeves",
+      "forms": [],
+      "id": "oewn-raglan__1.06.00..",
+      "lang": "en",
+      "lemma": "raglan",
+      "synset": "oewn-04053370-n"
+    },
+    {
+      "definition": "a water-resistant coat",
+      "forms": [],
+      "id": "oewn-raincoat__1.06.00..",
+      "lang": "en",
+      "lemma": "raincoat",
+      "synset": "oewn-04056517-n"
+    },
+    {
+      "definition": "a water-resistant coat",
+      "forms": [],
+      "id": "oewn-waterproof__1.06.01..",
+      "lang": "en",
+      "lemma": "waterproof",
+      "synset": "oewn-04056517-n"
+    },
+    {
+      "definition": "a long woolen or linen scarf covering the head and shoulders (also used as a sling for holding a baby); traditionally worn by Latin-American women",
+      "forms": [],
+      "id": "oewn-rebozo__1.06.00..",
+      "lang": "en",
+      "lemma": "rebozo",
+      "synset": "oewn-04067560-n"
+    },
+    {
+      "definition": "a garment (especially a coat) that can be worn inside out (with either side of the cloth showing)",
+      "forms": [],
+      "id": "oewn-reversible__1.06.00..",
+      "lang": "en",
+      "lemma": "reversible",
+      "synset": "oewn-04092686-n"
+    },
+    {
+      "definition": "any loose flowing garment",
+      "forms": [],
+      "id": "oewn-robe__1.06.00..",
+      "lang": "en",
+      "lemma": "robe",
+      "synset": "oewn-04104960-n"
+    },
+    {
+      "definition": "a woman's foundation garment rolled on to the hips",
+      "forms": [],
+      "id": "oewn-roll-on__1.06.00..",
+      "lang": "en",
+      "lemma": "roll-on",
+      "synset": "oewn-04110759-n"
+    },
+    {
+      "definition": "a one-piece garment for children to wear at play; the lower part is shaped like bloomers",
+      "forms": [],
+      "id": "oewn-romper__1.06.00..",
+      "lang": "en",
+      "lemma": "romper",
+      "synset": "oewn-04111864-n"
+    },
+    {
+      "definition": "a one-piece garment for children to wear at play; the lower part is shaped like bloomers",
+      "forms": [],
+      "id": "oewn-romper_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "romper suit",
+      "synset": "oewn-04111864-n"
+    },
+    {
+      "definition": "a scarf (or trimming) made of sable",
+      "forms": [],
+      "id": "oewn-sable__1.06.00..",
+      "lang": "en",
+      "lemma": "sable",
+      "synset": "oewn-04129356-n"
+    },
+    {
+      "definition": "a fur coat made of sable furs",
+      "forms": [],
+      "id": "oewn-sable_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "sable coat",
+      "synset": "oewn-04129586-n"
+    },
+    {
+      "definition": "a woman's full loose hiplength jacket",
+      "forms": [],
+      "id": "oewn-sack__1.06.03..",
+      "lang": "en",
+      "lemma": "sack",
+      "synset": "oewn-04130120-n"
+    },
+    {
+      "definition": "a woman's full loose hiplength jacket",
+      "forms": [],
+      "id": "oewn-sacque__1.06.00..",
+      "lang": "en",
+      "lemma": "sacque",
+      "synset": "oewn-04130120-n"
+    },
+    {
+      "definition": "a garment made of coarse sacking; formerly worn as an indication of remorse",
+      "forms": [],
+      "id": "oewn-sackcloth__1.06.01..",
+      "lang": "en",
+      "lemma": "sackcloth",
+      "synset": "oewn-04130411-n"
+    },
+    {
+      "definition": "man's hiplength coat with a straight back; the jacket of a suit",
+      "forms": [],
+      "id": "oewn-sack_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "sack coat",
+      "synset": "oewn-04130542-n"
+    },
+    {
+      "definition": "a pair of light loose trousers with a tight fit around the ankles; worn by women from the Indian subcontinent (usually with a kameez)",
+      "forms": [],
+      "id": "oewn-salwar__1.06.00..",
+      "lang": "en",
+      "lemma": "salwar",
+      "synset": "oewn-04139241-n"
+    },
+    {
+      "definition": "a pair of light loose trousers with a tight fit around the ankles; worn by women from the Indian subcontinent (usually with a kameez)",
+      "forms": [],
+      "id": "oewn-shalwar__1.06.00..",
+      "lang": "en",
+      "lemma": "shalwar",
+      "synset": "oewn-04139241-n"
+    },
+    {
+      "definition": "a loose skirt consisting of brightly colored fabric wrapped around the body; worn by both women and men in the South Pacific",
+      "forms": [],
+      "id": "oewn-sarong__1.06.00..",
+      "lang": "en",
+      "lemma": "sarong",
+      "synset": "oewn-04143416-n"
+    },
+    {
+      "definition": "garment consisting of a long wide piece of woolen cloth worn over the shoulders with an opening for the head; part of a monastic habit",
+      "forms": [],
+      "id": "oewn-scapular__1.06.00..",
+      "lang": "en",
+      "lemma": "scapular",
+      "synset": "oewn-04150557-n"
+    },
+    {
+      "definition": "garment consisting of a long wide piece of woolen cloth worn over the shoulders with an opening for the head; part of a monastic habit",
+      "forms": [],
+      "id": "oewn-scapulary__1.06.00..",
+      "lang": "en",
+      "lemma": "scapulary",
+      "synset": "oewn-04150557-n"
+    },
+    {
+      "definition": "a garment worn around the head or neck or shoulders for warmth or decoration",
+      "forms": [
+        "scarves"
+      ],
+      "id": "oewn-scarf__1.06.00..",
+      "lang": "en",
+      "lemma": "scarf",
+      "synset": "oewn-04150962-n"
+    },
+    {
+      "definition": "a garment (as a jacket or coat or robe) made of sealskin",
+      "forms": [],
+      "id": "oewn-sealskin__1.06.00..",
+      "lang": "en",
+      "lemma": "sealskin",
+      "synset": "oewn-04167322-n"
+    },
+    {
+      "definition": "a garment that can be purchased separately and worn in combinations with other garments",
+      "forms": [],
+      "id": "oewn-separate__1.06.00..",
+      "lang": "en",
+      "lemma": "separate",
+      "synset": "oewn-04179965-n"
+    },
+    {
+      "definition": "a long brightly colored shawl; worn mainly by Mexican men",
+      "forms": [],
+      "id": "oewn-serape__1.06.00..",
+      "lang": "en",
+      "lemma": "serape",
+      "synset": "oewn-04180968-n"
+    },
+    {
+      "definition": "a long brightly colored shawl; worn mainly by Mexican men",
+      "forms": [],
+      "id": "oewn-sarape__1.06.00..",
+      "lang": "en",
+      "lemma": "sarape",
+      "synset": "oewn-04180968-n"
+    },
+    {
+      "definition": "cloak consisting of an oblong piece of cloth used to cover the head and shoulders",
+      "forms": [],
+      "id": "oewn-shawl__1.06.00..",
+      "lang": "en",
+      "lemma": "shawl",
+      "synset": "oewn-04193498-n"
+    },
+    {
+      "definition": "a coat made of sheepskin",
+      "forms": [],
+      "id": "oewn-sheepskin_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "sheepskin coat",
+      "synset": "oewn-04195013-n"
+    },
+    {
+      "definition": "a coat made of sheepskin",
+      "forms": [],
+      "id": "oewn-afghan__1.06.01..",
+      "lang": "en",
+      "lemma": "afghan",
+      "synset": "oewn-04195013-n"
+    },
+    {
+      "definition": "a garment worn on the upper half of the body",
+      "forms": [],
+      "id": "oewn-shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "shirt",
+      "synset": "oewn-04204434-n"
+    },
+    {
+      "definition": "(used in the plural) trousers that end at or above the knee",
+      "forms": [],
+      "id": "oewn-short_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "short pants",
+      "synset": "oewn-04212364-n"
+    },
+    {
+      "definition": "(used in the plural) trousers that end at or above the knee",
+      "forms": [],
+      "id": "oewn-shorts__1.06.00..",
+      "lang": "en",
+      "lemma": "shorts",
+      "synset": "oewn-04212364-n"
+    },
+    {
+      "definition": "(used in the plural) trousers that end at or above the knee",
+      "forms": [],
+      "id": "oewn-trunks__1.06.00..",
+      "lang": "en",
+      "lemma": "trunks",
+      "synset": "oewn-04212364-n"
+    },
+    {
+      "definition": "the brightly colored garments of a jockey; emblematic of the stable",
+      "forms": [],
+      "id": "oewn-silks__1.06.00..",
+      "lang": "en",
+      "lemma": "silks",
+      "synset": "oewn-04226647-n"
+    },
+    {
+      "definition": "a jacket having fronts that overlap only enough for a single row of buttons",
+      "forms": [],
+      "id": "oewn-single-breasted_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "single-breasted jacket",
+      "synset": "oewn-04229374-n"
+    },
+    {
+      "definition": "a suit having a single-breasted jacket",
+      "forms": [],
+      "id": "oewn-single-breasted_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "single-breasted suit",
+      "synset": "oewn-04229537-n"
+    },
+    {
+      "definition": "a collarless men's undergarment for the upper part of the body",
+      "forms": [],
+      "id": "oewn-singlet__1.06.00..",
+      "lang": "en",
+      "lemma": "singlet",
+      "synset": "oewn-04230374-n"
+    },
+    {
+      "definition": "a collarless men's undergarment for the upper part of the body",
+      "forms": [],
+      "id": "oewn-vest__1.06.00..",
+      "lang": "en",
+      "lemma": "vest",
+      "synset": "oewn-04230374-n"
+    },
+    {
+      "definition": "a collarless men's undergarment for the upper part of the body",
+      "forms": [],
+      "id": "oewn-undershirt__1.06.00..",
+      "lang": "en",
+      "lemma": "undershirt",
+      "synset": "oewn-04230374-n"
+    },
+    {
+      "definition": "a parka to be worn while skiing",
+      "forms": [],
+      "id": "oewn-ski_parka__1.06.00..",
+      "lang": "en",
+      "lemma": "ski parka",
+      "synset": "oewn-04237449-n"
+    },
+    {
+      "definition": "a parka to be worn while skiing",
+      "forms": [],
+      "id": "oewn-ski_jacket__1.06.00..",
+      "lang": "en",
+      "lemma": "ski jacket",
+      "synset": "oewn-04237449-n"
+    },
+    {
+      "definition": "a garment hanging from the waist; worn mainly by girls and women",
+      "forms": [],
+      "id": "oewn-skirt__1.06.00..",
+      "lang": "en",
+      "lemma": "skirt",
+      "synset": "oewn-04237870-n"
+    },
+    {
+      "definition": "(used in the plural) men's underwear consisting of cotton undershirt and underpants",
+      "forms": [],
+      "id": "oewn-skivvies__1.06.00..",
+      "lang": "en",
+      "lemma": "skivvies",
+      "synset": "oewn-04238967-n"
+    },
+    {
+      "definition": "(used in the plural) pants for casual wear",
+      "forms": [],
+      "id": "oewn-slacks__1.06.00..",
+      "lang": "en",
+      "lemma": "slacks",
+      "synset": "oewn-04240824-n"
+    },
+    {
+      "definition": "casual dress consisting of slacks and matching jacket",
+      "forms": [],
+      "id": "oewn-slack_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "slack suit",
+      "synset": "oewn-04240938-n"
+    },
+    {
+      "definition": "a child's overgarment for cold weather",
+      "forms": [],
+      "id": "oewn-snowsuit__1.06.00..",
+      "lang": "en",
+      "lemma": "snowsuit",
+      "synset": "oewn-04259670-n"
+    },
+    {
+      "definition": "a cloth covering (a legging) that covers the instep and ankles",
+      "forms": [],
+      "id": "oewn-spat__1.06.00..",
+      "lang": "en",
+      "lemma": "spat",
+      "synset": "oewn-04276932-n"
+    },
+    {
+      "definition": "a cloth covering (a legging) that covers the instep and ankles",
+      "forms": [],
+      "id": "oewn-gaiter__1.06.02..",
+      "lang": "en",
+      "lemma": "gaiter",
+      "synset": "oewn-04276932-n"
+    },
+    {
+      "definition": "a wide scarf worn about their shoulders by women",
+      "forms": [],
+      "id": "oewn-stole__1.06.00..",
+      "lang": "en",
+      "lemma": "stole",
+      "synset": "oewn-04332842-n"
+    },
+    {
+      "definition": "garment consisting of a V-shaped panel of stiff material worn over the chest and stomach in the 16th century",
+      "forms": [],
+      "id": "oewn-stomacher__1.06.00..",
+      "lang": "en",
+      "lemma": "stomacher",
+      "synset": "oewn-04332942-n"
+    },
+    {
+      "definition": "a garment similar to a jacket that is used to bind the arms tightly against the body as a means of restraining a violent person",
+      "forms": [],
+      "id": "oewn-straitjacket__1.06.00..",
+      "lang": "en",
+      "lemma": "straitjacket",
+      "synset": "oewn-04339718-n"
+    },
+    {
+      "definition": "a garment similar to a jacket that is used to bind the arms tightly against the body as a means of restraining a violent person",
+      "forms": [],
+      "id": "oewn-straightjacket__1.06.00..",
+      "lang": "en",
+      "lemma": "straightjacket",
+      "synset": "oewn-04339718-n"
+    },
+    {
+      "definition": "trousers made of a stretchy fabric",
+      "forms": [],
+      "id": "oewn-stretch_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "stretch pants",
+      "synset": "oewn-04344425-n"
+    },
+    {
+      "definition": "a very narrow necktie usually tied in a bow",
+      "forms": [],
+      "id": "oewn-string_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "string tie",
+      "synset": "oewn-04346269-n"
+    },
+    {
+      "definition": "a set of garments (usually including a jacket and trousers or skirt) for outerwear all of the same fabric and color",
+      "forms": [],
+      "id": "oewn-suit__1.06.00..",
+      "lang": "en",
+      "lemma": "suit",
+      "synset": "oewn-04357983-n"
+    },
+    {
+      "definition": "a set of garments (usually including a jacket and trousers or skirt) for outerwear all of the same fabric and color",
+      "forms": [],
+      "id": "oewn-suit_of_clothes__1.06.00..",
+      "lang": "en",
+      "lemma": "suit of clothes",
+      "synset": "oewn-04357983-n"
+    },
+    {
+      "definition": "a child's garment consisting of a brief top and shorts",
+      "forms": [],
+      "id": "oewn-sunsuit__1.06.00..",
+      "lang": "en",
+      "lemma": "sunsuit",
+      "synset": "oewn-04364618-n"
+    },
+    {
+      "definition": "a tunic worn over a knight's armor",
+      "forms": [],
+      "id": "oewn-surcoat__1.06.00..",
+      "lang": "en",
+      "lemma": "surcoat",
+      "synset": "oewn-04369024-n"
+    },
+    {
+      "definition": "a loose outer coat usually of rich material",
+      "forms": [],
+      "id": "oewn-surcoat__1.06.01..",
+      "lang": "en",
+      "lemma": "surcoat",
+      "synset": "oewn-04370864-n"
+    },
+    {
+      "definition": "a man's overcoat in the style of a frock coat",
+      "forms": [],
+      "id": "oewn-surtout__1.06.00..",
+      "lang": "en",
+      "lemma": "surtout",
+      "synset": "oewn-04372316-n"
+    },
+    {
+      "definition": "a garment (a gown or narrow strips of cloth) for an infant",
+      "forms": [],
+      "id": "oewn-swaddling_clothes__1.06.00..",
+      "lang": "en",
+      "lemma": "swaddling clothes",
+      "synset": "oewn-04375037-n"
+    },
+    {
+      "definition": "a garment (a gown or narrow strips of cloth) for an infant",
+      "forms": [],
+      "id": "oewn-swaddling_bands__1.06.00..",
+      "lang": "en",
+      "lemma": "swaddling bands",
+      "synset": "oewn-04375037-n"
+    },
+    {
+      "definition": "a man's full-dress jacket with two long tapering tails at the back",
+      "forms": [],
+      "id": "oewn-swallow-tailed_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "swallow-tailed coat",
+      "synset": "oewn-04375583-n"
+    },
+    {
+      "definition": "a man's full-dress jacket with two long tapering tails at the back",
+      "forms": [],
+      "id": "oewn-swallowtail__1.06.00..",
+      "lang": "en",
+      "lemma": "swallowtail",
+      "synset": "oewn-04375583-n"
+    },
+    {
+      "definition": "a man's full-dress jacket with two long tapering tails at the back",
+      "forms": [],
+      "id": "oewn-morning_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "morning coat",
+      "synset": "oewn-04375583-n"
+    },
+    {
+      "definition": "a crocheted or knitted garment covering the upper part of the body",
+      "forms": [],
+      "id": "oewn-sweater__1.06.00..",
+      "lang": "en",
+      "lemma": "sweater",
+      "synset": "oewn-04377135-n"
+    },
+    {
+      "definition": "a crocheted or knitted garment covering the upper part of the body",
+      "forms": [],
+      "id": "oewn-jumper__1.06.04..",
+      "lang": "en",
+      "lemma": "jumper",
+      "synset": "oewn-04377135-n"
+    },
+    {
+      "definition": "loose-fitting trousers with elastic cuffs; worn by athletes",
+      "forms": [],
+      "id": "oewn-sweat_pants__1.06.00..",
+      "lang": "en",
+      "lemma": "sweat pants",
+      "synset": "oewn-04377375-n"
+    },
+    {
+      "definition": "loose-fitting trousers with elastic cuffs; worn by athletes",
+      "forms": [],
+      "id": "oewn-sweatpants__1.06.00..",
+      "lang": "en",
+      "lemma": "sweatpants",
+      "synset": "oewn-04377375-n"
+    },
+    {
+      "definition": "cotton knit pullover with long sleeves worn during athletic activity",
+      "forms": [],
+      "id": "oewn-sweatshirt__1.06.00..",
+      "lang": "en",
+      "lemma": "sweatshirt",
+      "synset": "oewn-04377543-n"
+    },
+    {
+      "definition": "garment consisting of sweat pants and a sweatshirt",
+      "forms": [],
+      "id": "oewn-sweat_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "sweat suit",
+      "synset": "oewn-04377861-n"
+    },
+    {
+      "definition": "garment consisting of sweat pants and a sweatshirt",
+      "forms": [],
+      "id": "oewn-sweatsuit__1.06.00..",
+      "lang": "en",
+      "lemma": "sweatsuit",
+      "synset": "oewn-04377861-n"
+    },
+    {
+      "definition": "garment consisting of sweat pants and a sweatshirt",
+      "forms": [],
+      "id": "oewn-sweats__1.06.00..",
+      "lang": "en",
+      "lemma": "sweats",
+      "synset": "oewn-04377861-n"
+    },
+    {
+      "definition": "garment consisting of sweat pants and a sweatshirt",
+      "forms": [],
+      "id": "oewn-workout_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "workout suit",
+      "synset": "oewn-04377861-n"
+    },
+    {
+      "definition": "swimsuit worn by men while swimming",
+      "forms": [],
+      "id": "oewn-swimming_trunks__1.06.00..",
+      "lang": "en",
+      "lemma": "swimming trunks",
+      "synset": "oewn-04378517-n"
+    },
+    {
+      "definition": "swimsuit worn by men while swimming",
+      "forms": [],
+      "id": "oewn-bathing_trunks__1.06.00..",
+      "lang": "en",
+      "lemma": "bathing trunks",
+      "synset": "oewn-04378517-n"
+    },
+    {
+      "definition": "tight fitting garment worn for swimming",
+      "forms": [],
+      "id": "oewn-swimsuit__1.06.00..",
+      "lang": "en",
+      "lemma": "swimsuit",
+      "synset": "oewn-04378650-n"
+    },
+    {
+      "definition": "tight fitting garment worn for swimming",
+      "forms": [],
+      "id": "oewn-swimwear__1.06.00..",
+      "lang": "en",
+      "lemma": "swimwear",
+      "synset": "oewn-04378650-n"
+    },
+    {
+      "definition": "tight fitting garment worn for swimming",
+      "forms": [],
+      "id": "oewn-bathing_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "bathing suit",
+      "synset": "oewn-04378650-n"
+    },
+    {
+      "definition": "tight fitting garment worn for swimming",
+      "forms": [],
+      "id": "oewn-swimming_costume__1.06.00..",
+      "lang": "en",
+      "lemma": "swimming costume",
+      "synset": "oewn-04378650-n"
+    },
+    {
+      "definition": "tight fitting garment worn for swimming",
+      "forms": [],
+      "id": "oewn-bathing_costume__1.06.00..",
+      "lang": "en",
+      "lemma": "bathing costume",
+      "synset": "oewn-04378650-n"
+    },
+    {
+      "definition": "a short sleeveless outer tunic emblazoned with a coat of arms; worn by a knight over the knight's armor or by a herald",
+      "forms": [],
+      "id": "oewn-tabard__1.06.00..",
+      "lang": "en",
+      "lemma": "tabard",
+      "synset": "oewn-04385576-n"
+    },
+    {
+      "definition": "a tight-fitting sleeveless shirt with wide shoulder straps and low neck and no front opening; often worn over a shirt or blouse",
+      "forms": [],
+      "id": "oewn-tank_top__1.06.00..",
+      "lang": "en",
+      "lemma": "tank top",
+      "synset": "oewn-04397664-n"
+    },
+    {
+      "definition": "underpants resembling a G-string; worn by women especially under very tight pants",
+      "forms": [],
+      "id": "oewn-thong__1.06.04..",
+      "lang": "en",
+      "lemma": "thong",
+      "synset": "oewn-04433562-n"
+    },
+    {
+      "definition": "a business suit consisting of a jacket and vest and trousers",
+      "forms": [],
+      "id": "oewn-three-piece_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "three-piece suit",
+      "synset": "oewn-04434850-n"
+    },
+    {
+      "definition": "a woman's fur shoulder cape with hanging ends; often consisting of the whole fur of a fox or marten",
+      "forms": [],
+      "id": "oewn-tippet__1.06.00..",
+      "lang": "en",
+      "lemma": "tippet",
+      "synset": "oewn-04447731-n"
+    },
+    {
+      "definition": "a one-piece cloak worn by men in ancient Rome",
+      "forms": [],
+      "id": "oewn-toga__1.06.00..",
+      "lang": "en",
+      "lemma": "toga",
+      "synset": "oewn-04452174-n"
+    },
+    {
+      "definition": "(ancient Rome) a toga worn by a youth as a symbol of manhood and citizenship",
+      "forms": [],
+      "id": "oewn-toga_virilis__1.06.00..",
+      "lang": "en",
+      "lemma": "toga virilis",
+      "synset": "oewn-04452288-n"
+    },
+    {
+      "definition": "a woman's short coat",
+      "forms": [],
+      "id": "oewn-topper__1.06.01..",
+      "lang": "en",
+      "lemma": "topper",
+      "synset": "oewn-04462850-n"
+    },
+    {
+      "definition": "a military style raincoat; belted with deep pockets",
+      "forms": [],
+      "id": "oewn-trench_coat__1.06.00..",
+      "lang": "en",
+      "lemma": "trench coat",
+      "synset": "oewn-04486281-n"
+    },
+    {
+      "definition": "(used in the plural) tight-fitting trousers; usually of tartan",
+      "forms": [],
+      "id": "oewn-trews__1.06.00..",
+      "lang": "en",
+      "lemma": "trews",
+      "synset": "oewn-04487538-n"
+    },
+    {
+      "definition": "a garment (or part of a garment) designed for or relating to trousers",
+      "forms": [],
+      "id": "oewn-trouser__1.06.01..",
+      "lang": "en",
+      "lemma": "trouser",
+      "synset": "oewn-04495786-n"
+    },
+    {
+      "definition": "(usually in the plural) a garment extending from the waist to the knee or ankle, covering each leg separately",
+      "forms": [],
+      "id": "oewn-trousers__1.06.00..",
+      "lang": "en",
+      "lemma": "trousers",
+      "synset": "oewn-04496264-n"
+    },
+    {
+      "definition": "(usually in the plural) a garment extending from the waist to the knee or ankle, covering each leg separately",
+      "forms": [],
+      "id": "oewn-pair_of_trousers__1.06.00..",
+      "lang": "en",
+      "lemma": "pair of trousers",
+      "synset": "oewn-04496264-n"
+    },
+    {
+      "definition": "(usually in the plural) a garment extending from the waist to the knee or ankle, covering each leg separately",
+      "forms": [],
+      "id": "oewn-pant__1.06.00..",
+      "lang": "en",
+      "lemma": "pant",
+      "synset": "oewn-04496264-n"
+    },
+    {
+      "definition": "puffed breeches of the 16th and 17th centuries usually worn over hose",
+      "forms": [],
+      "id": "oewn-trunk_hose__1.06.00..",
+      "lang": "en",
+      "lemma": "trunk hose",
+      "synset": "oewn-04499229-n"
+    },
+    {
+      "definition": "a scarf worn around the head by Muslim women in Malaysia; conceals the hair but not the face",
+      "forms": [],
+      "id": "oewn-tudung__1.06.00..",
+      "lang": "en",
+      "lemma": "tudung",
+      "synset": "oewn-04502993-n"
+    },
+    {
+      "definition": "any of a variety of loose fitting cloaks extending to the hips or knees",
+      "forms": [],
+      "id": "oewn-tunic__1.06.00..",
+      "lang": "en",
+      "lemma": "tunic",
+      "synset": "oewn-04504865-n"
+    },
+    {
+      "definition": "a sweater or jersey with a high close-fitting collar",
+      "forms": [],
+      "id": "oewn-turtleneck__1.06.00..",
+      "lang": "en",
+      "lemma": "turtleneck",
+      "synset": "oewn-04509492-n"
+    },
+    {
+      "definition": "a sweater or jersey with a high close-fitting collar",
+      "forms": [],
+      "id": "oewn-turtle__1.06.00..",
+      "lang": "en",
+      "lemma": "turtle",
+      "synset": "oewn-04509492-n"
+    },
+    {
+      "definition": "a sweater or jersey with a high close-fitting collar",
+      "forms": [],
+      "id": "oewn-polo-neck__1.06.00..",
+      "lang": "en",
+      "lemma": "polo-neck",
+      "synset": "oewn-04509492-n"
+    },
+    {
+      "definition": "a business suit consisting of a matching jacket and skirt or trousers",
+      "forms": [],
+      "id": "oewn-two-piece__1.06.02..",
+      "lang": "en",
+      "lemma": "two-piece",
+      "synset": "oewn-04511436-n"
+    },
+    {
+      "definition": "a business suit consisting of a matching jacket and skirt or trousers",
+      "forms": [],
+      "id": "oewn-two-piece_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "two-piece suit",
+      "synset": "oewn-04511436-n"
+    },
+    {
+      "definition": "a business suit consisting of a matching jacket and skirt or trousers",
+      "forms": [],
+      "id": "oewn-lounge_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "lounge suit",
+      "synset": "oewn-04511436-n"
+    },
+    {
+      "definition": "loose long overcoat of heavy fabric; usually belted",
+      "forms": [],
+      "id": "oewn-ulster__1.06.00..",
+      "lang": "en",
+      "lemma": "ulster",
+      "synset": "oewn-04513697-n"
+    },
+    {
+      "definition": "a garment worn under other garments",
+      "forms": [],
+      "id": "oewn-undergarment__1.06.00..",
+      "lang": "en",
+      "lemma": "undergarment",
+      "synset": "oewn-04515458-n"
+    },
+    {
+      "definition": "a garment worn under other garments",
+      "forms": [],
+      "id": "oewn-unmentionable__1.06.00..",
+      "lang": "en",
+      "lemma": "unmentionable",
+      "synset": "oewn-04515458-n"
+    },
+    {
+      "definition": "an undergarment that covers the body from the waist no further than to the thighs; usually worn next to the skin",
+      "forms": [],
+      "id": "oewn-underpants__1.06.00..",
+      "lang": "en",
+      "lemma": "underpants",
+      "synset": "oewn-04515784-n"
+    },
+    {
+      "definition": "undergarment worn next to the skin and under the outer garments",
+      "forms": [],
+      "id": "oewn-underwear__1.06.00..",
+      "lang": "en",
+      "lemma": "underwear",
+      "synset": "oewn-04516244-n"
+    },
+    {
+      "definition": "undergarment worn next to the skin and under the outer garments",
+      "forms": [],
+      "id": "oewn-underclothes__1.06.00..",
+      "lang": "en",
+      "lemma": "underclothes",
+      "synset": "oewn-04516244-n"
+    },
+    {
+      "definition": "undergarment worn next to the skin and under the outer garments",
+      "forms": [],
+      "id": "oewn-underclothing__1.06.00..",
+      "lang": "en",
+      "lemma": "underclothing",
+      "synset": "oewn-04516244-n"
+    },
+    {
+      "definition": "women's underwear",
+      "forms": [],
+      "id": "oewn-undies__1.06.00..",
+      "lang": "en",
+      "lemma": "undies",
+      "synset": "oewn-04516466-n"
+    },
+    {
+      "definition": "a brassiere that lifts and supports the breasts",
+      "forms": [],
+      "id": "oewn-uplift__1.06.00..",
+      "lang": "en",
+      "lemma": "uplift",
+      "synset": "oewn-04521536-n"
+    },
+    {
+      "definition": "a man's sleeveless garment worn underneath a coat",
+      "forms": [],
+      "id": "oewn-vest__1.06.01..",
+      "lang": "en",
+      "lemma": "vest",
+      "synset": "oewn-04539168-n"
+    },
+    {
+      "definition": "a man's sleeveless garment worn underneath a coat",
+      "forms": [],
+      "id": "oewn-waistcoat__1.06.00..",
+      "lang": "en",
+      "lemma": "waistcoat",
+      "synset": "oewn-04539168-n"
+    },
+    {
+      "definition": "a black garment (dress) worn by a widow as a sign of mourning",
+      "forms": [],
+      "id": "oewn-weeds__1.06.00..",
+      "lang": "en",
+      "lemma": "weeds",
+      "synset": "oewn-04577818-n"
+    },
+    {
+      "definition": "a black garment (dress) worn by a widow as a sign of mourning",
+      "forms": [],
+      "id": "oewn-widow-ap-s_weeds__1.06.00..",
+      "lang": "en",
+      "lemma": "widow's weeds",
+      "synset": "oewn-04577818-n"
+    },
+    {
+      "definition": "a close-fitting garment made of a permeable material; worn in cold water (as by skin divers) to retain body heat",
+      "forms": [],
+      "id": "oewn-wet_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "wet suit",
+      "synset": "oewn-04581353-n"
+    },
+    {
+      "definition": "bow tie worn as part of a man's formal evening dress",
+      "forms": [],
+      "id": "oewn-white_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "white tie",
+      "synset": "oewn-04588280-n"
+    },
+    {
+      "definition": "a wide necktie worn in a loose bow",
+      "forms": [],
+      "id": "oewn-windsor_tie__1.06.00..",
+      "lang": "en",
+      "lemma": "Windsor tie",
+      "synset": "oewn-04598460-n"
+    },
+    {
+      "definition": "heavy-duty shirts worn for manual or physical work",
+      "forms": [],
+      "id": "oewn-work-shirt__1.06.00..",
+      "lang": "en",
+      "lemma": "work-shirt",
+      "synset": "oewn-04610314-n"
+    },
+    {
+      "definition": "cloak that is folded or wrapped around a person",
+      "forms": [],
+      "id": "oewn-wrap__1.06.00..",
+      "lang": "en",
+      "lemma": "wrap",
+      "synset": "oewn-04612804-n"
+    },
+    {
+      "definition": "cloak that is folded or wrapped around a person",
+      "forms": [],
+      "id": "oewn-wrapper__1.06.00..",
+      "lang": "en",
+      "lemma": "wrapper",
+      "synset": "oewn-04612804-n"
+    },
+    {
+      "definition": "a garment (as a dress or coat) with a full length opening; adjusts to the body by wrapping around",
+      "forms": [],
+      "id": "oewn-wraparound__1.06.00..",
+      "lang": "en",
+      "lemma": "wraparound",
+      "synset": "oewn-04612930-n"
+    },
+    {
+      "definition": "the face veil worn by Muslim women",
+      "forms": [],
+      "id": "oewn-yashmak__1.06.00..",
+      "lang": "en",
+      "lemma": "yashmak",
+      "synset": "oewn-04619516-n"
+    },
+    {
+      "definition": "the face veil worn by Muslim women",
+      "forms": [],
+      "id": "oewn-yashmac__1.06.00..",
+      "lang": "en",
+      "lemma": "yashmac",
+      "synset": "oewn-04619516-n"
+    },
+    {
+      "definition": "a flashy suit of extreme cut",
+      "forms": [],
+      "id": "oewn-zoot_suit__1.06.00..",
+      "lang": "en",
+      "lemma": "zoot suit",
+      "synset": "oewn-04623001-n"
+    },
+    {
+      "definition": "Tight, white underwear worn by men",
+      "forms": [],
+      "id": "oewn-tighty_whitey__1.06.01..",
+      "lang": "en",
+      "lemma": "tighty whitey",
+      "synset": "oewn-91001521-n"
+    },
+    {
+      "definition": "A pair of jean trousers ripped and bleached on purpose or by extended wear.",
+      "forms": [],
+      "id": "oewn-distressed_jeans__1.06.01..",
+      "lang": "en",
+      "lemma": "distressed jeans",
+      "synset": "oewn-92448762-n"
+    },
+    {
+      "definition": "A sweater with a short turtleneck collar that does not fold down.",
+      "forms": [],
+      "id": "oewn-mock_polo_neck__1.06.01..",
+      "lang": "en",
+      "lemma": "mock polo neck",
+      "synset": "oewn-92448833-n"
+    },
+    {
+      "definition": "A sweater with a short turtleneck collar that does not fold down.",
+      "forms": [],
+      "id": "oewn-mock_turtleneck__1.06.01..",
+      "lang": "en",
+      "lemma": "mock turtleneck",
+      "synset": "oewn-92448833-n"
+    },
+    {
+      "definition": "a necktie that is narrower than the standard tie, and often all-black.",
+      "forms": [],
+      "id": "oewn-skinny_tie__1.06.01..",
+      "lang": "en",
+      "lemma": "skinny tie",
+      "synset": "oewn-92464062-n"
+    },
+    {
+      "definition": "a fur-lined coat decorated with braid, worn in the sixteenth century.",
+      "forms": [],
+      "id": "oewn-chamarre__1.06.01..",
+      "lang": "en",
+      "lemma": "chamarre",
+      "synset": "oewn-92464238-n"
+    },
+    {
+      "definition": "a fur-lined coat decorated with braid, worn in the sixteenth century.",
+      "forms": [],
+      "id": "oewn-simarre__1.06.01..",
+      "lang": "en",
+      "lemma": "simarre",
+      "synset": "oewn-92464238-n"
+    },
+    {
+      "definition": "a fur-lined coat decorated with braid, worn in the sixteenth century.",
+      "forms": [],
+      "id": "oewn-chimer__1.06.01..",
+      "lang": "en",
+      "lemma": "chimer",
+      "synset": "oewn-92464238-n"
+    },
+    {
+      "definition": "a broad kaftan with long sleeves, worn by the nobility in Russia in the 16th and 17th centuries.",
+      "forms": [],
+      "id": "oewn-feryaz__1.06.01..",
+      "lang": "en",
+      "lemma": "feryaz",
+      "synset": "oewn-92464255-n"
+    },
+    {
+      "definition": "a small cape that covers the shoulders and is worn predominantly by women.",
+      "forms": [],
+      "id": "oewn-capelet__1.06.01..",
+      "lang": "en",
+      "lemma": "capelet",
+      "synset": "oewn-92464466-n"
+    },
+    {
+      "definition": "trousers usually of stretch material and kept taut by a strap under the foot, worn for skiing or as a fashion garment.",
+      "forms": [],
+      "id": "oewn-ski_pants__1.06.01..",
+      "lang": "en",
+      "lemma": "ski pants",
+      "synset": "oewn-92464512-n"
+    },
+    {
+      "definition": "trousers usually of stretch material and kept taut by a strap under the foot, worn for skiing or as a fashion garment.",
+      "forms": [],
+      "id": "oewn-salopettes__1.06.01..",
+      "lang": "en",
+      "lemma": "salopettes",
+      "synset": "oewn-92464512-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a loose sleeveless outer garment made from aba cloth; worn by Arabs",
+      "hypernyms": [
+        "oewn-03869443-n"
+      ],
+      "id": "oewn-02668709-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "aba"
+    },
+    {
+      "definition": "(Arabic) a loose black robe from head to toe; traditionally worn by Muslim women",
+      "hypernyms": [
+        "oewn-04104960-n"
+      ],
+      "id": "oewn-02669723-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "abaya"
+    },
+    {
+      "definition": "a cravat with wide square ends; secured with an ornamental pin",
+      "hypernyms": [
+        "oewn-03132736-n"
+      ],
+      "id": "oewn-02750068-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "ascot"
+    },
+    {
+      "definition": "a woman's headscarf folded into a triangle and tied under the chin; worn by Russian peasant women",
+      "hypernyms": [
+        "oewn-03510648-n"
+      ],
+      "id": "oewn-02769173-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "babushka"
+    },
+    {
+      "definition": "very short skirt worn by ballerinas",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-02783838-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "ballet skirt"
+    },
+    {
+      "definition": "a loose fitting jacket; originally worn in India",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-02791485-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "banyan"
+    },
+    {
+      "definition": "a loose-fitting robe of towelling; worn after a bath or swim",
+      "hypernyms": [
+        "oewn-04104960-n"
+      ],
+      "id": "oewn-02810801-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bathrobe"
+    },
+    {
+      "definition": "a lightweight jacket worn over bedclothes (as when sitting in bed)",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-02823810-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "bed jacket"
+    },
+    {
+      "definition": "(used in the plural) trousers with legs that flare; worn by sailors; absurdly wide hems were fashionable in the 1960s",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-02828584-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bellbottom trousers"
+    },
+    {
+      "definition": "(used in the plural) short pants that end at the knee",
+      "hypernyms": [
+        "oewn-04212364-n"
+      ],
+      "id": "oewn-02834779-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Bermuda shorts"
+    },
+    {
+      "definition": "a woman's very brief bathing suit",
+      "hypernyms": [
+        "oewn-04378650-n"
+      ],
+      "id": "oewn-02841003-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bikini"
+    },
+    {
+      "definition": "(used in the plural) small and tight-fitting underpants; worn by women",
+      "hypernyms": [
+        "oewn-04515784-n"
+      ],
+      "id": "oewn-02841101-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bikini pants"
+    },
+    {
+      "definition": "a black bow tie worn with a dinner jacket",
+      "hypernyms": [
+        "oewn-02886446-n"
+      ],
+      "id": "oewn-02850869-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "black tie"
+    },
+    {
+      "definition": "lightweight single-breasted jacket; often striped in the colors of a club or school",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-02853596-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "blazer"
+    },
+    {
+      "definition": "(used in the plural) underpants worn by women",
+      "hypernyms": [
+        "oewn-04515784-n"
+      ],
+      "id": "oewn-02857998-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bloomers"
+    },
+    {
+      "definition": "a one-piece tight-fitting undergarment for women that covers the torso (and may have sleeves and legs)",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-02866354-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "body stocking"
+    },
+    {
+      "definition": "a short jacket; worn mostly by women",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-02867844-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "bolero"
+    },
+    {
+      "definition": "a cord fastened around the neck with an ornamental clasp and worn as a necktie",
+      "hypernyms": [
+        "oewn-03821155-n"
+      ],
+      "id": "oewn-02868691-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bolo tie"
+    },
+    {
+      "definition": "a jacket gathered into a band at the waist",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-02871306-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "bomber jacket"
+    },
+    {
+      "definition": "a man's tie that ties in a bow",
+      "hypernyms": [
+        "oewn-03821155-n"
+      ],
+      "id": "oewn-02886446-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bow tie"
+    },
+    {
+      "definition": "a short coat that hangs loosely from the shoulders",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-02888474-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "box coat"
+    },
+    {
+      "definition": "an undergarment worn by women to support their breasts",
+      "hypernyms": [
+        "oewn-04515458-n",
+        "oewn-04604179-n"
+      ],
+      "id": "oewn-02896008-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "brassiere"
+    },
+    {
+      "definition": "a garment that provides covering for the loins",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-02899556-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "breechcloth"
+    },
+    {
+      "definition": "(used in the plural) trousers ending above the knee",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-02899704-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "breeches"
+    },
+    {
+      "definition": "(used in the plural) short tight-fitting underpants (trade name Jockey shorts)",
+      "hypernyms": [
+        "oewn-04515784-n"
+      ],
+      "id": "oewn-02904397-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "briefs"
+    },
+    {
+      "definition": "(used in the plural) informal term for breeches",
+      "hypernyms": [
+        "oewn-02899704-n"
+      ],
+      "id": "oewn-02906120-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "britches"
+    },
+    {
+      "definition": "(used in the plural) breeches made of buckskin",
+      "hypernyms": [
+        "oewn-02899704-n"
+      ],
+      "id": "oewn-02914189-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "buckskins"
+    },
+    {
+      "definition": "a vest capable of resisting the impact of a bullet",
+      "hypernyms": [
+        "oewn-02865388-n",
+        "oewn-04539168-n"
+      ],
+      "id": "oewn-02920282-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bulletproof vest"
+    },
+    {
+      "definition": "a lightweight belted raincoat typically made of tan gabardine with a distinctive tartan lining; named for the original manufacturer",
+      "hypernyms": [
+        "oewn-04056517-n"
+      ],
+      "id": "oewn-02924790-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Burberry"
+    },
+    {
+      "definition": "a loose garment (usually with veiled holes for the eyes) worn by Muslim women especially in India and Pakistan",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-02925962-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "burqa"
+    },
+    {
+      "definition": "a long hooded cloak woven of wool in one piece; worn by Arabs and Moors",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-02926919-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "burnous"
+    },
+    {
+      "definition": "a loose fitting jacket; resembles a shirt with four patch pockets and a belt",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-02928769-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "bush jacket"
+    },
+    {
+      "definition": "a suit of clothes traditionally worn by businessmen",
+      "hypernyms": [
+        "oewn-04357983-n"
+      ],
+      "id": "oewn-02928903-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "business suit"
+    },
+    {
+      "definition": "trademark for men's underwear",
+      "hypernyms": [
+        "oewn-04516244-n"
+      ],
+      "id": "oewn-02933598-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "BVD"
+    },
+    {
+      "definition": "a (cotton or silk) cloak with full sleeves and sash reaching down to the ankles; worn by men in the Levant",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-02939786-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "caftan"
+    },
+    {
+      "definition": "lightweight parka; waterproof",
+      "hypernyms": [
+        "oewn-03896748-n"
+      ],
+      "id": "oewn-02940394-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "cagoule"
+    },
+    {
+      "definition": "a loose shirt or tunic; originally worn in the Middle Ages",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-02947419-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "camise"
+    },
+    {
+      "definition": "a short sleeveless undergarment for women",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-02947601-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "camisole"
+    },
+    {
+      "definition": "a garment made of camlet fabric",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-02947830-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "camlet"
+    },
+    {
+      "definition": "a sleeveless garment like a cloak but shorter",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-02959203-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cape"
+    },
+    {
+      "definition": "a long cloak with a hood that can be pulled over the head",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-02960319-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "capote"
+    },
+    {
+      "definition": "a long overcoat with a hood that can be pulled over the head",
+      "hypernyms": [
+        "oewn-03461607-n"
+      ],
+      "id": "oewn-02960444-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "capote"
+    },
+    {
+      "definition": "a hooded cloak for women",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-02961700-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "capuchin"
+    },
+    {
+      "definition": "knitted jacket that is fastened up the front with buttons or a zipper",
+      "hypernyms": [
+        "oewn-04377135-n"
+      ],
+      "id": "oewn-02966595-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "cardigan"
+    },
+    {
+      "definition": "a cloth used as a head covering (and veil and shawl) by Muslim and Hindu women",
+      "hypernyms": [
+        "oewn-03507475-n"
+      ],
+      "id": "oewn-03002448-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chador"
+    },
+    {
+      "definition": "(usually in the plural) leather leggings without a seat; joined by a belt; often have flared outer flaps; worn over trousers by cowboys to protect their legs",
+      "hypernyms": [
+        "oewn-03660398-n"
+      ],
+      "id": "oewn-03010507-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chap"
+    },
+    {
+      "definition": "a woman's sleeveless undergarment",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-03017234-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chemise"
+    },
+    {
+      "definition": "a fitted overcoat with a velvet collar",
+      "hypernyms": [
+        "oewn-03461607-n"
+      ],
+      "id": "oewn-03018706-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "chesterfield"
+    },
+    {
+      "definition": "(plural) trousers made with chino cloth",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03023088-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chinos"
+    },
+    {
+      "definition": "a woolen tunic worn by men and women in ancient Greece",
+      "hypernyms": [
+        "oewn-04504865-n"
+      ],
+      "id": "oewn-03024804-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "chiton"
+    },
+    {
+      "definition": "a short mantle or cape fastened at the shoulder; worn by men in ancient Greece",
+      "hypernyms": [
+        "oewn-02959203-n"
+      ],
+      "id": "oewn-03024911-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "chlamys"
+    },
+    {
+      "definition": "tight trousers worn by people from the Indian subcontinent (typically with a kameez or kurta)",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03032979-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "churidars"
+    },
+    {
+      "definition": "a loose outer garment",
+      "hypernyms": [
+        "oewn-03869443-n"
+      ],
+      "id": "oewn-03049322-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "cloak"
+    },
+    {
+      "definition": "an outer garment that has sleeves and covers the body from shoulder down; worn outdoors",
+      "hypernyms": [
+        "oewn-03869443-n"
+      ],
+      "id": "oewn-03061006-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "coat"
+    },
+    {
+      "definition": "a short close-fitting coat",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03061826-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "coatee"
+    },
+    {
+      "definition": "a long cloak; worn by a priest or bishop on ceremonial occasions",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-03108555-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cope"
+    },
+    {
+      "definition": "cotton trousers made of corduroy cloth",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03112139-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "cords"
+    },
+    {
+      "definition": "a woman's close-fitting foundation garment",
+      "hypernyms": [
+        "oewn-03392169-n"
+      ],
+      "id": "oewn-03117520-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "corset"
+    },
+    {
+      "definition": "neckwear worn in a slipknot with long ends overlapping vertically in front",
+      "hypernyms": [
+        "oewn-03821545-n"
+      ],
+      "id": "oewn-03132736-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "cravat"
+    },
+    {
+      "definition": "a full stiff petticoat made of crinoline fabric",
+      "hypernyms": [
+        "oewn-03926859-n"
+      ],
+      "id": "oewn-03137427-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "crinoline"
+    },
+    {
+      "definition": "a divided skirt",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03151443-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "culotte"
+    },
+    {
+      "definition": "a man's coat cut diagonally from the waist to the back of the knees",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03157496-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cutaway"
+    },
+    {
+      "definition": "a loose and brightly colored African shirt",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-03168047-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "dashiki"
+    },
+    {
+      "definition": "a long loincloth worn by Hindu men",
+      "hypernyms": [
+        "oewn-02899556-n"
+      ],
+      "id": "oewn-03190883-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "dhoti"
+    },
+    {
+      "definition": "garment consisting of a folded cloth drawn up between the legs and fastened at the waist; worn by infants to catch excrement",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03193215-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "diaper"
+    },
+    {
+      "definition": "a full skirt with a gathered waistband",
+      "hypernyms": [
+        "oewn-03433913-n"
+      ],
+      "id": "oewn-03210390-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "dirndl"
+    },
+    {
+      "definition": "a woman's cloak with dolman sleeves",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-03224562-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "dolman"
+    },
+    {
+      "definition": "a hussar's jacket worn over the shoulders",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03224669-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "dolman"
+    },
+    {
+      "definition": "a loose hooded cloak worn with a half mask as part of a masquerade costume",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-03225908-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "domino"
+    },
+    {
+      "definition": "a short thick jacket; often worn by workmen",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03226243-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "donkey jacket"
+    },
+    {
+      "definition": "a jacket having fronts that overlap enough for two separate rows of buttons",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03231078-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "double-breasted jacket"
+    },
+    {
+      "definition": "a suit with a double-breasted jacket",
+      "hypernyms": [
+        "oewn-04357983-n"
+      ],
+      "id": "oewn-03231241-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "double-breasted suit"
+    },
+    {
+      "definition": "a man's close-fitting jacket; worn during the Renaissance",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03232957-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "doublet"
+    },
+    {
+      "definition": "underpants worn by men",
+      "hypernyms": [
+        "oewn-04515784-n"
+      ],
+      "id": "oewn-03238867-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "drawers"
+    },
+    {
+      "definition": "a robe worn before dressing or while lounging",
+      "hypernyms": [
+        "oewn-04104960-n"
+      ],
+      "id": "oewn-03242695-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "dressing gown"
+    },
+    {
+      "definition": "a woman's loose jacket; worn while dressing",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03242989-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "dressing sack"
+    },
+    {
+      "definition": "a man's white shirt (with a starch front) for evening wear (usually with a tuxedo)",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-03243582-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "dress shirt"
+    },
+    {
+      "definition": "a warm coat made of duffel; usually has a hood and fastens with toggles",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03258749-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "duffel coat"
+    },
+    {
+      "definition": "a jacket hanging to the waist and cut square at the bottom",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03306120-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Eton jacket"
+    },
+    {
+      "definition": "a piece of more-or-less transparent material that covers the face",
+      "hypernyms": [
+        "oewn-03507475-n"
+      ],
+      "id": "oewn-03319829-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "face veil"
+    },
+    {
+      "definition": "a long thin fluffy scarf of feathers or fur",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-03330529-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "feather boa"
+    },
+    {
+      "definition": "a lightweight triangular scarf worn by a woman",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-03337118-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "fichu"
+    },
+    {
+      "definition": "(usually in the plural) trousers made of flannel or gabardine or tweed or white cloth",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03361927-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "flannel"
+    },
+    {
+      "definition": "ironing that can be done mechanically",
+      "hypernyms": [
+        "oewn-03591044-n"
+      ],
+      "id": "oewn-03366965-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "flatwork"
+    },
+    {
+      "definition": "a woman's undergarment worn to give shape to the contours of the body",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-03392169-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "foundation garment"
+    },
+    {
+      "definition": "a long necktie that is tied in a slipknot with one end hanging in front of the other",
+      "hypernyms": [
+        "oewn-03821155-n"
+      ],
+      "id": "oewn-03393169-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "four-in-hand"
+    },
+    {
+      "definition": "a long, loose outer garment",
+      "hypernyms": [
+        "oewn-03869443-n"
+      ],
+      "id": "oewn-03403064-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "frock"
+    },
+    {
+      "definition": "a man's coat having knee-length skirts front and back; worn in the 19th century",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03403143-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "frock coat"
+    },
+    {
+      "definition": "a long skirt gathered at the waist",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03407426-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "full skirt"
+    },
+    {
+      "definition": "a garment made of animal pelts or synthetic fur",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03409064-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "fur"
+    },
+    {
+      "definition": "a coat made of fur",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03409161-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "fur coat"
+    },
+    {
+      "definition": "legging consisting of a cloth or leather covering for the leg from the knee to the ankle",
+      "hypernyms": [
+        "oewn-03660398-n"
+      ],
+      "id": "oewn-03415848-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "gaiter"
+    },
+    {
+      "definition": "an article of clothing",
+      "hypernyms": [
+        "oewn-03055525-n"
+      ],
+      "id": "oewn-03423924-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "garment"
+    },
+    {
+      "definition": "a wide belt of elastic with straps hanging from it; worn by women to hold up stockings",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-03426234-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "garter belt"
+    },
+    {
+      "definition": "a skirt whose fabric is drawn together around the waist",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03433913-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "gathered skirt"
+    },
+    {
+      "definition": "protective garment worn by surgeons during operations",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03455678-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "gown"
+    },
+    {
+      "definition": "a skirt made of long blades of grass",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03459386-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "grass skirt"
+    },
+    {
+      "definition": "a heavy coat worn over clothes in winter",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03461607-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "greatcoat"
+    },
+    {
+      "definition": "a sleeveless tunic worn by English girls as part of a school uniform",
+      "hypernyms": [
+        "oewn-04504865-n"
+      ],
+      "id": "oewn-03477919-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "gymslip"
+    },
+    {
+      "definition": "an outer garment consisting of a large piece of white cloth; worn by men and women in northern Africa",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03480544-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "haik"
+    },
+    {
+      "definition": "an uncomfortable shirt made of coarse animal hair; worn next to the skin as a penance",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-03481665-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "hair shirt"
+    },
+    {
+      "definition": "outgrown garment passed down from one person to another",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03492725-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "hand-me-down"
+    },
+    {
+      "definition": "a garment that covers the head and face",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03507475-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "head covering"
+    },
+    {
+      "definition": "a kerchief worn over the head and tied under the chin",
+      "hypernyms": [
+        "oewn-03616205-n"
+      ],
+      "id": "oewn-03510648-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "headscarf"
+    },
+    {
+      "definition": "a headscarf worn by Muslim women; conceals the hair and neck and usually has a face veil that covers the face",
+      "hypernyms": [
+        "oewn-03510648-n"
+      ],
+      "id": "oewn-03525656-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "hijab"
+    },
+    {
+      "definition": "a long skirt very narrow below the knees, worn between 1910 and 1914",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03528669-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "hobble skirt"
+    },
+    {
+      "definition": "a skirt stiffened with hoops",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03539760-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "hoopskirt"
+    },
+    {
+      "definition": "man's close-fitting garment of the 16th and 17th centuries covering the legs and reaching up to the waist; worn with a doublet",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03545270-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "hose"
+    },
+    {
+      "definition": "skin-tight very short pants worn by young women as an outer garment",
+      "hypernyms": [
+        "oewn-04212364-n"
+      ],
+      "id": "oewn-03548292-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "hot pants"
+    },
+    {
+      "definition": "a woman's fitted jacket",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03553500-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "hug-me-tight"
+    },
+    {
+      "definition": "garments (clothes or linens) that are to be (or have been) ironed",
+      "hypernyms": [
+        "oewn-03423924-n",
+        "oewn-04587584-n"
+      ],
+      "id": "oewn-03591044-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "ironing"
+    },
+    {
+      "definition": "a voluminous cotton outer garment (usually white) traditionally worn by Muslim women of northern Africa and the Middle East; covers the entire body",
+      "hypernyms": [
+        "oewn-03869443-n"
+      ],
+      "id": "oewn-03593385-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "izar"
+    },
+    {
+      "definition": "a short coat",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03594978-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "jacket"
+    },
+    {
+      "definition": "(used in the plural) close-fitting trousers of heavy denim for manual work or casual wear",
+      "hypernyms": [
+        "oewn-04496264-n",
+        "oewn-04611230-n"
+      ],
+      "id": "oewn-03599921-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "jeans"
+    },
+    {
+      "definition": "a loose cloak with a hood; worn in the Middle East and northern Africa",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-03600248-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "jellaba"
+    },
+    {
+      "definition": "a tight sleeveless and collarless jacket (often made of leather) worn by men in former times",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03600457-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "jerkin"
+    },
+    {
+      "definition": "a close-fitting pullover shirt",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-03600807-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "jersey"
+    },
+    {
+      "definition": "(used in the plural) flared trousers ending at the calves; worn with riding boots",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03605477-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "jodhpurs"
+    },
+    {
+      "definition": "a loose jacket or blouse worn by workmen",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03609749-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "jumper"
+    },
+    {
+      "definition": "one-piece garment fashioned after a parachutist's uniform",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03610811-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "jump suit"
+    },
+    {
+      "definition": "a long tunic worn by many people from the Indian subcontinent (usually with a salwar or churidars)",
+      "hypernyms": [
+        "oewn-04504865-n"
+      ],
+      "id": "oewn-03613136-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "kameez"
+    },
+    {
+      "definition": "(Swahili) a long garment (usually white) with long sleeves; worn by men in East Africa",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03613717-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "kanzu"
+    },
+    {
+      "definition": "a square scarf that is folded into a triangle and worn over the head or about the neck",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-03616205-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "kerchief"
+    },
+    {
+      "definition": "a headscarf worn by observant Muslim women that hangs down to just above the waist",
+      "hypernyms": [
+        "oewn-03510648-n"
+      ],
+      "id": "oewn-03620864-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "khimar"
+    },
+    {
+      "definition": "a knee-length pleated tartan skirt worn by men as part of the traditional dress in the Highlands of northern Scotland",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03622521-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "kilt"
+    },
+    {
+      "definition": "a loose robe; imitated from robes originally worn by Japanese",
+      "hypernyms": [
+        "oewn-04104960-n"
+      ],
+      "id": "oewn-03622689-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "kimono"
+    },
+    {
+      "definition": "a garment resembling a tunic that was worn by men in the Middle Ages",
+      "hypernyms": [
+        "oewn-04504865-n"
+      ],
+      "id": "oewn-03624484-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "kirtle"
+    },
+    {
+      "definition": "a loose collarless shirt worn by many people on the Indian subcontinent (usually with a salwar or churidars or pyjama)",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-03634522-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "kurta"
+    },
+    {
+      "definition": "a light coat worn to protect clothing from substances used while working in a laboratory",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03635674-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "lab coat"
+    },
+    {
+      "definition": "a scarf that covers a knight's helmet",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-03640527-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lambrequin"
+    },
+    {
+      "definition": "garments or white goods that can be cleaned by laundering",
+      "hypernyms": [
+        "oewn-03423924-n",
+        "oewn-04587584-n"
+      ],
+      "id": "oewn-03653533-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "laundry"
+    },
+    {
+      "definition": "a skirt consisting of a rectangle of calico or printed cotton; worn by Polynesians (especially Samoans)",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03654317-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lavalava"
+    },
+    {
+      "definition": "leather shorts often worn with suspenders; worn especially by men and boys in Bavaria",
+      "hypernyms": [
+        "oewn-04212364-n"
+      ],
+      "id": "oewn-03659159-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "lederhosen"
+    },
+    {
+      "definition": "a garment covering the leg (usually extending from the knee to the ankle)",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03660398-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "legging"
+    },
+    {
+      "definition": "a tight-fitting garment of stretchy material that covers the body from the shoulders to the thighs (and may have long sleeves or legs reaching down to the ankles); worn by ballet dancers and acrobats for practice or performance",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03662837-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "leotard"
+    },
+    {
+      "definition": "a popular brand of jeans",
+      "hypernyms": [
+        "oewn-03599921-n"
+      ],
+      "id": "oewn-03665450-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Levi's"
+    },
+    {
+      "definition": "women's underwear and nightclothes",
+      "hypernyms": [
+        "oewn-04516244-n"
+      ],
+      "id": "oewn-03678776-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "lingerie"
+    },
+    {
+      "definition": "warm underwear with long legs",
+      "hypernyms": [
+        "oewn-04516244-n"
+      ],
+      "id": "oewn-03693518-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "long johns"
+    },
+    {
+      "definition": "trousers reaching to the foot",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03693931-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "long trousers"
+    },
+    {
+      "definition": "an undergarment with shirt and drawers in one piece",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-03694033-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "long underwear"
+    },
+    {
+      "definition": "a short warm outer jacket",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03702243-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "lumberjack"
+    },
+    {
+      "definition": "a waterproof raincoat made of rubberized fabric",
+      "hypernyms": [
+        "oewn-04056517-n"
+      ],
+      "id": "oewn-03708258-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "macintosh"
+    },
+    {
+      "definition": "a short plaid coat made of made of thick woolen material",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03709002-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "mackinaw"
+    },
+    {
+      "definition": "a woman's one-piece bathing suit",
+      "hypernyms": [
+        "oewn-04378650-n"
+      ],
+      "id": "oewn-03716260-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "maillot"
+    },
+    {
+      "definition": "short cape worn by women",
+      "hypernyms": [
+        "oewn-02959203-n"
+      ],
+      "id": "oewn-03725051-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "mantelet"
+    },
+    {
+      "definition": "a woman's silk or lace scarf",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-03725234-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "mantilla"
+    },
+    {
+      "definition": "a light weight jacket with a high collar; worn by Mao Zedong and the Chinese people during his regime",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03725496-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Mao jacket"
+    },
+    {
+      "definition": "a long skirt ending below the calf",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03737949-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "maxi"
+    },
+    {
+      "definition": "garments that must be repaired",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03750978-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "mending"
+    },
+    {
+      "definition": "waist-length jacket tapering to a point at the back; worn by officers in the mess for formal dinners",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03756760-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "mess jacket"
+    },
+    {
+      "definition": "a very short skirt",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03775972-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "miniskirt"
+    },
+    {
+      "definition": "fur coat made from the soft lustrous fur of minks",
+      "hypernyms": [
+        "oewn-03409161-n"
+      ],
+      "id": "oewn-03776487-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "mink"
+    },
+    {
+      "definition": "a garment made of motley (especially a court jester's costume)",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03795327-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "motley"
+    },
+    {
+      "definition": "a scarf worn around the neck",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-03802704-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "muffler"
+    },
+    {
+      "definition": "an ornamental white cravat",
+      "hypernyms": [
+        "oewn-03132736-n"
+      ],
+      "id": "oewn-03820267-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "neckcloth"
+    },
+    {
+      "definition": "a kerchief worn around the neck",
+      "hypernyms": [
+        "oewn-03616205-n"
+      ],
+      "id": "oewn-03820357-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "neckerchief"
+    },
+    {
+      "definition": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "hypernyms": [
+        "oewn-03821545-n"
+      ],
+      "id": "oewn-03821155-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "necktie"
+    },
+    {
+      "definition": "articles of clothing worn about the neck",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03821545-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "neckwear"
+    },
+    {
+      "definition": "a long close-fitting coat worn for riding in the 19th century",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-03827438-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "newmarket"
+    },
+    {
+      "definition": "lingerie consisting of a loose dress designed to be worn in bed by women",
+      "hypernyms": [
+        "oewn-03678776-n",
+        "oewn-03830620-n"
+      ],
+      "id": "oewn-03829921-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 8,
+      "name": "nightgown"
+    },
+    {
+      "definition": "a face veil covering the lower part of the face (up to the eyes) worn by observant Muslim women",
+      "hypernyms": [
+        "oewn-03319829-n"
+      ],
+      "id": "oewn-03831579-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "niqab"
+    },
+    {
+      "definition": "loose-fitting single-breasted jacket",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03835397-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Norfolk jacket"
+    },
+    {
+      "definition": "a macintosh made from cotton fabric treated with oil and pigment to make it waterproof",
+      "hypernyms": [
+        "oewn-03708258-n"
+      ],
+      "id": "oewn-03850335-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "oilskin"
+    },
+    {
+      "definition": "necktie indicating the school the wearer attended",
+      "hypernyms": [
+        "oewn-03821155-n"
+      ],
+      "id": "oewn-03851510-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "old school tie"
+    },
+    {
+      "definition": "a large cloak worn over evening clothes",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-03855463-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "opera cloak"
+    },
+    {
+      "definition": "a garment worn over other garments",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03869443-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "overgarment"
+    },
+    {
+      "definition": "an outer skirt worn over another skirt",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-03871760-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "overskirt"
+    },
+    {
+      "definition": "a pair of loose trousers tied by a drawstring around the waist; worn by men and women in some Asian countries",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03883371-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "pajama"
+    },
+    {
+      "definition": "cloak or mantle worn by men in ancient Rome",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-03885729-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pallium"
+    },
+    {
+      "definition": "trousers worn in former times",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03890251-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "pantaloon"
+    },
+    {
+      "definition": "short underpants for women or children",
+      "hypernyms": [
+        "oewn-04515784-n"
+      ],
+      "id": "oewn-03890725-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pantie"
+    },
+    {
+      "definition": "a pair of pants and a matching jacket worn by women",
+      "hypernyms": [
+        "oewn-04240938-n"
+      ],
+      "id": "oewn-03891366-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pants suit"
+    },
+    {
+      "definition": "a woman's undergarment that combines a girdle and panties",
+      "hypernyms": [
+        "oewn-03117520-n"
+      ],
+      "id": "oewn-03891485-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "panty girdle"
+    },
+    {
+      "definition": "a kind of heavy jacket",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03896748-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "parka"
+    },
+    {
+      "definition": "a scarf worn by Sikh men",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-03906106-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "patka"
+    },
+    {
+      "definition": "a sailor's heavy woolen double-breasted jacket",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-03908834-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "pea jacket"
+    },
+    {
+      "definition": "(used in the plural) snug trousers ending at the calves; worn by women and girls",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-03909811-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "pedal pushers"
+    },
+    {
+      "definition": "a sleeveless cape that is lined or trimmed with fur",
+      "hypernyms": [
+        "oewn-02959203-n"
+      ],
+      "id": "oewn-03912908-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "pelisse"
+    },
+    {
+      "definition": "a garment worn by women in ancient Greece; cloth caught at the shoulders and draped in folds to the waist",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-03920049-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "peplos"
+    },
+    {
+      "definition": "undergarment worn under a skirt",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-03926859-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "petticoat"
+    },
+    {
+      "definition": "a suit made from a fabric with very thin stripes",
+      "hypernyms": [
+        "oewn-04357983-n"
+      ],
+      "id": "oewn-03950196-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "pinstripe"
+    },
+    {
+      "definition": "men's baggy knickers hanging below the knees; formerly worn for sports (especially golf)",
+      "hypernyms": [
+        "oewn-02899704-n"
+      ],
+      "id": "oewn-03976721-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "plus fours"
+    },
+    {
+      "definition": "a shirt with short sleeves designed for comfort and casual wear",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-03985324-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "polo shirt"
+    },
+    {
+      "definition": "a blanket-like cloak with a hole in the center for the head",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-03987232-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "poncho"
+    },
+    {
+      "definition": "(Judaism) a shawl with a ritually knotted fringe at each corner; worn by Jews at morning prayer",
+      "hypernyms": [
+        "oewn-04193498-n"
+      ],
+      "id": "oewn-04004691-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "prayer shawl"
+    },
+    {
+      "definition": "a man's double-breasted frock coat",
+      "hypernyms": [
+        "oewn-03403143-n"
+      ],
+      "id": "oewn-04009717-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Prince Albert"
+    },
+    {
+      "definition": "a sweater that is put on by pulling it over the head",
+      "hypernyms": [
+        "oewn-04377135-n"
+      ],
+      "id": "oewn-04027422-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "pullover"
+    },
+    {
+      "definition": "a strip of cloth wound around the leg to form legging; used by soldiers in World War I",
+      "hypernyms": [
+        "oewn-03660398-n"
+      ],
+      "id": "oewn-04034411-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "puttee"
+    },
+    {
+      "definition": "a garment (coat or sweater) that has raglan sleeves",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04053370-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "raglan"
+    },
+    {
+      "definition": "a water-resistant coat",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-04056517-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "raincoat"
+    },
+    {
+      "definition": "a long woolen or linen scarf covering the head and shoulders (also used as a sling for holding a baby); traditionally worn by Latin-American women",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-04067560-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "rebozo"
+    },
+    {
+      "definition": "a garment (especially a coat) that can be worn inside out (with either side of the cloth showing)",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04092686-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "reversible"
+    },
+    {
+      "definition": "any loose flowing garment",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04104960-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "robe"
+    },
+    {
+      "definition": "a woman's foundation garment rolled on to the hips",
+      "hypernyms": [
+        "oewn-03392169-n"
+      ],
+      "id": "oewn-04110759-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "roll-on"
+    },
+    {
+      "definition": "a one-piece garment for children to wear at play; the lower part is shaped like bloomers",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04111864-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "romper"
+    },
+    {
+      "definition": "a scarf (or trimming) made of sable",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-04129356-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sable"
+    },
+    {
+      "definition": "a fur coat made of sable furs",
+      "hypernyms": [
+        "oewn-03409161-n"
+      ],
+      "id": "oewn-04129586-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "sable coat"
+    },
+    {
+      "definition": "a woman's full loose hiplength jacket",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-04130120-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "sack"
+    },
+    {
+      "definition": "a garment made of coarse sacking; formerly worn as an indication of remorse",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04130411-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sackcloth"
+    },
+    {
+      "definition": "man's hiplength coat with a straight back; the jacket of a suit",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-04130542-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "sack coat"
+    },
+    {
+      "definition": "a pair of light loose trousers with a tight fit around the ankles; worn by women from the Indian subcontinent (usually with a kameez)",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-04139241-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "salwar"
+    },
+    {
+      "definition": "a loose skirt consisting of brightly colored fabric wrapped around the body; worn by both women and men in the South Pacific",
+      "hypernyms": [
+        "oewn-04237870-n"
+      ],
+      "id": "oewn-04143416-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sarong"
+    },
+    {
+      "definition": "garment consisting of a long wide piece of woolen cloth worn over the shoulders with an opening for the head; part of a monastic habit",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04150557-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "scapular"
+    },
+    {
+      "definition": "a garment worn around the head or neck or shoulders for warmth or decoration",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04150962-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "scarf"
+    },
+    {
+      "definition": "a garment (as a jacket or coat or robe) made of sealskin",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04167322-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sealskin"
+    },
+    {
+      "definition": "a garment that can be purchased separately and worn in combinations with other garments",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04179965-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "separate"
+    },
+    {
+      "definition": "a long brightly colored shawl; worn mainly by Mexican men",
+      "hypernyms": [
+        "oewn-04193498-n"
+      ],
+      "id": "oewn-04180968-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "serape"
+    },
+    {
+      "definition": "cloak consisting of an oblong piece of cloth used to cover the head and shoulders",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-04193498-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "shawl"
+    },
+    {
+      "definition": "a coat made of sheepskin",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-04195013-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "sheepskin coat"
+    },
+    {
+      "definition": "a garment worn on the upper half of the body",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04204434-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "shirt"
+    },
+    {
+      "definition": "(used in the plural) trousers that end at or above the knee",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-04212364-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "short pants"
+    },
+    {
+      "definition": "the brightly colored garments of a jockey; emblematic of the stable",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04226647-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "silks"
+    },
+    {
+      "definition": "a jacket having fronts that overlap only enough for a single row of buttons",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-04229374-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "single-breasted jacket"
+    },
+    {
+      "definition": "a suit having a single-breasted jacket",
+      "hypernyms": [
+        "oewn-04357983-n"
+      ],
+      "id": "oewn-04229537-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "single-breasted suit"
+    },
+    {
+      "definition": "a collarless men's undergarment for the upper part of the body",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-04230374-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "singlet"
+    },
+    {
+      "definition": "a parka to be worn while skiing",
+      "hypernyms": [
+        "oewn-03896748-n"
+      ],
+      "id": "oewn-04237449-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "ski parka"
+    },
+    {
+      "definition": "a garment hanging from the waist; worn mainly by girls and women",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04237870-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "skirt"
+    },
+    {
+      "definition": "(used in the plural) men's underwear consisting of cotton undershirt and underpants",
+      "hypernyms": [
+        "oewn-04516244-n"
+      ],
+      "id": "oewn-04238967-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "skivvies"
+    },
+    {
+      "definition": "(used in the plural) pants for casual wear",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-04240824-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "slacks"
+    },
+    {
+      "definition": "casual dress consisting of slacks and matching jacket",
+      "hypernyms": [
+        "oewn-04357983-n"
+      ],
+      "id": "oewn-04240938-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "slack suit"
+    },
+    {
+      "definition": "a child's overgarment for cold weather",
+      "hypernyms": [
+        "oewn-03869443-n"
+      ],
+      "id": "oewn-04259670-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "snowsuit"
+    },
+    {
+      "definition": "a cloth covering (a legging) that covers the instep and ankles",
+      "hypernyms": [
+        "oewn-03660398-n"
+      ],
+      "id": "oewn-04276932-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "spat"
+    },
+    {
+      "definition": "a wide scarf worn about their shoulders by women",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-04332842-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "stole"
+    },
+    {
+      "definition": "garment consisting of a V-shaped panel of stiff material worn over the chest and stomach in the 16th century",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04332942-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "stomacher"
+    },
+    {
+      "definition": "a garment similar to a jacket that is used to bind the arms tightly against the body as a means of restraining a violent person",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04339718-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "straitjacket"
+    },
+    {
+      "definition": "trousers made of a stretchy fabric",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-04344425-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "stretch pants"
+    },
+    {
+      "definition": "a very narrow necktie usually tied in a bow",
+      "hypernyms": [
+        "oewn-03821155-n"
+      ],
+      "id": "oewn-04346269-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "string tie"
+    },
+    {
+      "definition": "a set of garments (usually including a jacket and trousers or skirt) for outerwear all of the same fabric and color",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04357983-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "suit"
+    },
+    {
+      "definition": "a child's garment consisting of a brief top and shorts",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04364618-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sunsuit"
+    },
+    {
+      "definition": "a tunic worn over a knight's armor",
+      "hypernyms": [
+        "oewn-04504865-n"
+      ],
+      "id": "oewn-04369024-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "surcoat"
+    },
+    {
+      "definition": "a loose outer coat usually of rich material",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-04370864-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "surcoat"
+    },
+    {
+      "definition": "a man's overcoat in the style of a frock coat",
+      "hypernyms": [
+        "oewn-03461607-n"
+      ],
+      "id": "oewn-04372316-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "surtout"
+    },
+    {
+      "definition": "a garment (a gown or narrow strips of cloth) for an infant",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04375037-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "swaddling clothes"
+    },
+    {
+      "definition": "a man's full-dress jacket with two long tapering tails at the back",
+      "hypernyms": [
+        "oewn-03594978-n"
+      ],
+      "id": "oewn-04375583-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "swallow-tailed coat"
+    },
+    {
+      "definition": "a crocheted or knitted garment covering the upper part of the body",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04377135-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sweater"
+    },
+    {
+      "definition": "loose-fitting trousers with elastic cuffs; worn by athletes",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-04377375-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sweat pants"
+    },
+    {
+      "definition": "cotton knit pullover with long sleeves worn during athletic activity",
+      "hypernyms": [
+        "oewn-04027422-n"
+      ],
+      "id": "oewn-04377543-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "sweatshirt"
+    },
+    {
+      "definition": "garment consisting of sweat pants and a sweatshirt",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04377861-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sweat suit"
+    },
+    {
+      "definition": "swimsuit worn by men while swimming",
+      "hypernyms": [
+        "oewn-04378650-n"
+      ],
+      "id": "oewn-04378517-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "swimming trunks"
+    },
+    {
+      "definition": "tight fitting garment worn for swimming",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04378650-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "swimsuit"
+    },
+    {
+      "definition": "a short sleeveless outer tunic emblazoned with a coat of arms; worn by a knight over the knight's armor or by a herald",
+      "hypernyms": [
+        "oewn-04504865-n"
+      ],
+      "id": "oewn-04385576-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "tabard"
+    },
+    {
+      "definition": "a tight-fitting sleeveless shirt with wide shoulder straps and low neck and no front opening; often worn over a shirt or blouse",
+      "hypernyms": [
+        "oewn-04204434-n"
+      ],
+      "id": "oewn-04397664-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "tank top"
+    },
+    {
+      "definition": "underpants resembling a G-string; worn by women especially under very tight pants",
+      "hypernyms": [
+        "oewn-04515784-n"
+      ],
+      "id": "oewn-04433562-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "thong"
+    },
+    {
+      "definition": "a business suit consisting of a jacket and vest and trousers",
+      "hypernyms": [
+        "oewn-02928903-n"
+      ],
+      "id": "oewn-04434850-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "three-piece suit"
+    },
+    {
+      "definition": "a woman's fur shoulder cape with hanging ends; often consisting of the whole fur of a fox or marten",
+      "hypernyms": [
+        "oewn-02959203-n"
+      ],
+      "id": "oewn-04447731-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "tippet"
+    },
+    {
+      "definition": "a one-piece cloak worn by men in ancient Rome",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-04452174-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "toga"
+    },
+    {
+      "definition": "(ancient Rome) a toga worn by a youth as a symbol of manhood and citizenship",
+      "hypernyms": [
+        "oewn-04452174-n"
+      ],
+      "id": "oewn-04452288-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "toga virilis"
+    },
+    {
+      "definition": "a woman's short coat",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-04462850-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "topper"
+    },
+    {
+      "definition": "a military style raincoat; belted with deep pockets",
+      "hypernyms": [
+        "oewn-04056517-n"
+      ],
+      "id": "oewn-04486281-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "trench coat"
+    },
+    {
+      "definition": "(used in the plural) tight-fitting trousers; usually of tartan",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-04487538-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "trews"
+    },
+    {
+      "definition": "a garment (or part of a garment) designed for or relating to trousers",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04495786-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "trouser"
+    },
+    {
+      "definition": "(usually in the plural) a garment extending from the waist to the knee or ankle, covering each leg separately",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04496264-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "trousers"
+    },
+    {
+      "definition": "puffed breeches of the 16th and 17th centuries usually worn over hose",
+      "hypernyms": [
+        "oewn-02899704-n"
+      ],
+      "id": "oewn-04499229-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "trunk hose"
+    },
+    {
+      "definition": "a scarf worn around the head by Muslim women in Malaysia; conceals the hair but not the face",
+      "hypernyms": [
+        "oewn-04150962-n"
+      ],
+      "id": "oewn-04502993-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "tudung"
+    },
+    {
+      "definition": "any of a variety of loose fitting cloaks extending to the hips or knees",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-04504865-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "tunic"
+    },
+    {
+      "definition": "a sweater or jersey with a high close-fitting collar",
+      "hypernyms": [
+        "oewn-03600807-n",
+        "oewn-04377135-n"
+      ],
+      "id": "oewn-04509492-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "turtleneck"
+    },
+    {
+      "definition": "a business suit consisting of a matching jacket and skirt or trousers",
+      "hypernyms": [
+        "oewn-02928903-n"
+      ],
+      "id": "oewn-04511436-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "two-piece"
+    },
+    {
+      "definition": "loose long overcoat of heavy fabric; usually belted",
+      "hypernyms": [
+        "oewn-03461607-n"
+      ],
+      "id": "oewn-04513697-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "ulster"
+    },
+    {
+      "definition": "a garment worn under other garments",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04515458-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "undergarment"
+    },
+    {
+      "definition": "an undergarment that covers the body from the waist no further than to the thighs; usually worn next to the skin",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-04515784-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "underpants"
+    },
+    {
+      "definition": "undergarment worn next to the skin and under the outer garments",
+      "hypernyms": [
+        "oewn-04515458-n"
+      ],
+      "id": "oewn-04516244-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "underwear"
+    },
+    {
+      "definition": "women's underwear",
+      "hypernyms": [
+        "oewn-03678776-n"
+      ],
+      "id": "oewn-04516466-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "undies"
+    },
+    {
+      "definition": "a brassiere that lifts and supports the breasts",
+      "hypernyms": [
+        "oewn-02896008-n"
+      ],
+      "id": "oewn-04521536-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "uplift"
+    },
+    {
+      "definition": "a man's sleeveless garment worn underneath a coat",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04539168-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "vest"
+    },
+    {
+      "definition": "a black garment (dress) worn by a widow as a sign of mourning",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04577818-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "weeds"
+    },
+    {
+      "definition": "a close-fitting garment made of a permeable material; worn in cold water (as by skin divers) to retain body heat",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04581353-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "wet suit"
+    },
+    {
+      "definition": "bow tie worn as part of a man's formal evening dress",
+      "hypernyms": [
+        "oewn-02886446-n"
+      ],
+      "id": "oewn-04588280-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "white tie"
+    },
+    {
+      "definition": "a wide necktie worn in a loose bow",
+      "hypernyms": [
+        "oewn-03821155-n"
+      ],
+      "id": "oewn-04598460-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Windsor tie"
+    },
+    {
+      "definition": "heavy-duty shirts worn for manual or physical work",
+      "hypernyms": [
+        "oewn-04204434-n",
+        "oewn-04611230-n"
+      ],
+      "id": "oewn-04610314-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "work-shirt"
+    },
+    {
+      "definition": "cloak that is folded or wrapped around a person",
+      "hypernyms": [
+        "oewn-03049322-n"
+      ],
+      "id": "oewn-04612804-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "wrap"
+    },
+    {
+      "definition": "a garment (as a dress or coat) with a full length opening; adjusts to the body by wrapping around",
+      "hypernyms": [
+        "oewn-03423924-n"
+      ],
+      "id": "oewn-04612930-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "wraparound"
+    },
+    {
+      "definition": "the face veil worn by Muslim women",
+      "hypernyms": [
+        "oewn-03507475-n"
+      ],
+      "id": "oewn-04619516-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "yashmak"
+    },
+    {
+      "definition": "a flashy suit of extreme cut",
+      "hypernyms": [
+        "oewn-04357983-n"
+      ],
+      "id": "oewn-04623001-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "zoot suit"
+    },
+    {
+      "definition": "Tight, white underwear worn by men",
+      "hypernyms": [
+        "oewn-04516244-n"
+      ],
+      "id": "oewn-91001521-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "tighty whitey"
+    },
+    {
+      "definition": "A pair of jean trousers ripped and bleached on purpose or by extended wear.",
+      "hypernyms": [
+        "oewn-03599921-n"
+      ],
+      "id": "oewn-92448762-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "distressed jeans"
+    },
+    {
+      "definition": "A sweater with a short turtleneck collar that does not fold down.",
+      "hypernyms": [
+        "oewn-04509492-n"
+      ],
+      "id": "oewn-92448833-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mock polo neck"
+    },
+    {
+      "definition": "a necktie that is narrower than the standard tie, and often all-black.",
+      "hypernyms": [
+        "oewn-03821155-n"
+      ],
+      "id": "oewn-92464062-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "skinny tie"
+    },
+    {
+      "definition": "a fur-lined coat decorated with braid, worn in the sixteenth century.",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-92464238-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "chamarre"
+    },
+    {
+      "definition": "a broad kaftan with long sleeves, worn by the nobility in Russia in the 16th and 17th centuries.",
+      "hypernyms": [
+        "oewn-03061006-n"
+      ],
+      "id": "oewn-92464255-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "feryaz"
+    },
+    {
+      "definition": "a small cape that covers the shoulders and is worn predominantly by women.",
+      "hypernyms": [
+        "oewn-02959203-n"
+      ],
+      "id": "oewn-92464466-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "capelet"
+    },
+    {
+      "definition": "trousers usually of stretch material and kept taut by a strap under the foot, worn for skiing or as a fashion garment.",
+      "hypernyms": [
+        "oewn-04496264-n"
+      ],
+      "id": "oewn-92464512-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "ski pants"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}
