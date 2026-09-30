@@ -38,6 +38,7 @@ from overlay_coverage import (
     survey,
 )
 
+from puzzlegen.games.grouping.content import VISIBLE_GROUPING
 from puzzlegen.games.grouping.descriptor import GROUP_SIZES, VISIBLE_GROUPS
 from puzzlegen.graph import GraphRepositories, SqliteDocumentStore
 
@@ -336,6 +337,16 @@ def main(argv: list[str] | None = None) -> int:
         help="measure one size only; repeatable. Defaults to every supported size.",
     )
     parser.add_argument(
+        "--grouping",
+        choices=("shared_category", "siblings"),
+        default=str(VISIBLE_GROUPING),
+        help=(
+            "how a visible group is formed. Defaults to what game 1 actually "
+            "does, so the numbers describe the game rather than a rule it "
+            "no longer uses."
+        ),
+    )
+    parser.add_argument(
         "--candidates",
         type=Path,
         default=None,
@@ -358,7 +369,7 @@ def main(argv: list[str] | None = None) -> int:
 
     repos = GraphRepositories(SqliteDocumentStore(args.db))
     try:
-        snapshot = load(repos)
+        snapshot = load(repos, grouping=args.grouping)
     finally:
         # Python 3.13 and later report a collected-unclosed connection as a
         # warning, which the suite turns into a failure somewhere unrelated.

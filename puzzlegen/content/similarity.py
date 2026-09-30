@@ -46,6 +46,11 @@ class TaxonomyIndex:
 
         self._ancestors: dict[str, frozenset[str]] = {}
         self._descendants: dict[str, set[str]] = {cid: set() for cid in self._by_id}
+        self._children: dict[str, set[str]] = {cid: set() for cid in self._by_id}
+        for category in self._by_id.values():
+            for parent_id in category.parent_ids:
+                if parent_id in self._by_id:
+                    self._children[parent_id].add(category.id)
 
         # Shallowest first, so every parent's ancestor set is already final.
         for category in sorted(self._by_id.values(), key=lambda c: (c.depth, c.id)):
@@ -75,6 +80,10 @@ class TaxonomyIndex:
 
     def ancestors(self, category_id: str) -> frozenset[str]:
         return self._ancestors.get(category_id, frozenset())
+
+    def children(self, category_id: str) -> frozenset[str]:
+        """Direct children only, one edge down."""
+        return frozenset(self._children.get(category_id, set()))
 
     def descendants(self, category_id: str) -> frozenset[str]:
         return frozenset(self._descendants.get(category_id, set()))

@@ -9,6 +9,13 @@ command line. The overlay is not optional content: without it there is no
 second axis, and a grouping game with no second axis is four piles. Making it a
 flag would let a build silently produce a snapshot that no game can use.
 
+A future game's own taxonomy is different: nothing about it is required by
+another game, so it is exactly the optional, repeatable ``--curated`` flag the
+overlay deliberately is not. Each value is ``path:taxonomy`` -- a curated JSON
+file and the taxonomy name its categories import under. Category identity
+already includes the taxonomy, so a new game's own categories never collide
+with ``wordnet`` or ``overlay`` regardless of what names it picks internally.
+
 Two modes:
 
     # write the input lists the export commands need
@@ -19,6 +26,14 @@ Two modes:
     python tools/build_snapshot.py --db content/graph.sqlite \\
         --label 2026.09.1 \\
         --lexicon content/seeds/wordnet-animal.lexicon.json \\
+        --frequency content/seeds/frequency.json \\
+        --embeddings content/seeds/embeddings.json
+
+    # build, with a new game's own curated taxonomy alongside the shared data
+    python tools/build_snapshot.py --db content/graph.sqlite \\
+        --label 2026.09.1 \\
+        --lexicon content/seeds/wordnet-animal.lexicon.json \\
+        --curated content/seeds/numbers.curated.json:parity \\
         --frequency content/seeds/frequency.json \\
         --embeddings content/seeds/embeddings.json
 """
@@ -51,9 +66,42 @@ OVERLAY_SEED = Path("content/seeds/overlay.curated.json")
 LEXICAL_TAXONOMY = "wordnet"
 OVERLAY_TAXONOMY = "overlay"
 
+#: Names a --curated taxonomy may not claim, since these are already the two
+#: built-in imports and category identity would otherwise silently merge a
+#: new game's categories into one of them.
+RESERVED_TAXONOMIES = frozenset({LEXICAL_TAXONOMY, OVERLAY_TAXONOMY})
+
+
+def parse_curated_spec(value: str) -> tuple[Path, str]:
+    """``path:taxonomy`` -> (Path, taxonomy). Split on the last colon.
+
+    A taxonomy name never contains a colon; a path could, in principle, on a
+    platform this project does not target. Splitting from the right is the
+    side that is actually safe to assume.
+    """
+    if ":" not in value:
+        raise ValueError(
+            f"--curated expects path:taxonomy, got {value!r} (no colon)"
+        )
+    path_part, _, taxonomy = value.rpartition(":")
+    if not path_part or not taxonomy:
+        raise ValueError(
+            f"--curated expects path:taxonomy, got {value!r} "
+            "(both sides must be non-empty)"
+        )
+    if taxonomy in RESERVED_TAXONOMIES:
+        raise ValueError(
+            f"--curated taxonomy {taxonomy!r} is reserved "
+            f"({', '.join(sorted(RESERVED_TAXONOMIES))})"
+        )
+    return Path(path_part), taxonomy
+
 
 def input_lists(
-    lexicons: list[Path], overlay: Path, now: dt.datetime
+    lexicons: list[Path],
+    overlay: Path,
+    now: dt.datetime,
+    extra_curated: tuple[tuple[Path, str], ...] = (),
 ) -> tuple[list[str], list[str]]:
     """The two lists the export commands consume.
 
@@ -73,7 +121,7 @@ def input_lists(
     repos = GraphRepositories(InMemoryDocumentStore())
     try:
         builder = SnapshotBuilder(repos, now=now)
-        for provider, options in providers(lexicons, overlay, now):
+        for provider, options in providers(lexicons, overlay, now, extra_curated):
             builder.import_provider(provider, **options)
         entities = sorted(repos.entities.iter_all(), key=lambda e: e.canonical_name)
         terms = [e.canonical_name for e in entities]
@@ -84,9 +132,13 @@ def input_lists(
 
 
 def write_inputs(
-    directory: Path, lexicons: list[Path], overlay: Path, now: dt.datetime
+    directory: Path,
+    lexicons: list[Path],
+    overlay: Path,
+    now: dt.datetime,
+    extra_curated: tuple[tuple[Path, str], ...] = (),
 ) -> tuple[Path, Path]:
-    terms, texts = input_lists(lexicons, overlay, now)
+    terms, texts = input_lists(lexicons, overlay, now, extra_curated)
     directory.mkdir(parents=True, exist_ok=True)
     terms_path = directory / "terms.txt"
     texts_path = directory / "texts.txt"
@@ -95,13 +147,22 @@ def write_inputs(
     return terms_path, texts_path
 
 
-def providers(lexicons: list[Path], overlay: Path, now: dt.datetime) -> list[tuple]:
-    """Lexicon imports first, then the overlay.
+def providers(
+    lexicons: list[Path],
+    overlay: Path,
+    now: dt.datetime,
+    extra_curated: tuple[tuple[Path, str], ...] = (),
+) -> list[tuple]:
+    """Lexicon imports first, then the overlay, then any game's own taxonomy.
 
-    Order is not cosmetic. The overlay asserts membership for lemmas the
-    lexicon also supplies, and the merge keeps the earlier record's definition;
-    importing the overlay first would leave every shared entity glossless until
-    something overwrote it.
+    Order is not cosmetic between the lexicons and the overlay: the overlay
+    asserts membership for lemmas the lexicon also supplies, and the merge
+    keeps the earlier record's definition; importing the overlay first would
+    leave every shared entity glossless until something overwrote it. A new
+    game's own taxonomy carries no such relationship to the other two -- its
+    categories live under their own name and cannot collide -- so it is
+    appended last purely for a stable, readable ordering, not because an
+    earlier position would be wrong.
     """
     chosen: list[tuple] = [
         (
@@ -116,6 +177,13 @@ def providers(lexicons: list[Path], overlay: Path, now: dt.datetime) -> list[tup
             {"taxonomy": OVERLAY_TAXONOMY, "entity_identity": "lemma"},
         )
     )
+    for path, taxonomy in extra_curated:
+        chosen.append(
+            (
+                CuratedJSONProvider(path, name=taxonomy, now=now),
+                {"taxonomy": taxonomy, "entity_identity": "lemma"},
+            )
+        )
     return chosen
 
 
@@ -203,6 +271,19 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--lexicon", action="append", required=True, type=Path)
     parser.add_argument("--overlay", type=Path, default=OVERLAY_SEED)
+    parser.add_argument(
+        "--curated",
+        action="append",
+        default=[],
+        metavar="PATH:TAXONOMY",
+        type=parse_curated_spec,
+        help=(
+            "a curated JSON file and the taxonomy its categories import "
+            "under, for a game's own content. Repeatable. Taxonomy must not "
+            "be 'wordnet' or 'overlay', and each --curated needs a distinct "
+            "taxonomy."
+        ),
+    )
     parser.add_argument("--write-inputs", type=Path, default=None)
     parser.add_argument("--db", type=Path, default=None)
     parser.add_argument("--label", default=None)
@@ -236,13 +317,28 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    missing = [p for p in (*args.lexicon, args.overlay) if not p.exists()]
+    curated_taxonomies = [taxonomy for _, taxonomy in args.curated]
+    duplicated = {t for t in curated_taxonomies if curated_taxonomies.count(t) > 1}
+    if duplicated:
+        print(
+            f"--curated taxonomy given more than once: {', '.join(sorted(duplicated))}",
+            file=sys.stderr,
+        )
+        return 2
+
+    missing = [
+        p
+        for p in (*args.lexicon, args.overlay, *(path for path, _ in args.curated))
+        if not p.exists()
+    ]
     if missing:
         print(f"input not found: {missing[0]}", file=sys.stderr)
         return 2
 
     derived = [p for p in (args.frequency, args.embeddings) if p is not None]
-    stale = stale_inputs(derived, [*args.lexicon, args.overlay])
+    stale = stale_inputs(
+        derived, [*args.lexicon, args.overlay, *(path for path, _ in args.curated)]
+    )
     if stale and not args.ignore_stale:
         for path, source in stale:
             print(f"{path} is older than {source}", file=sys.stderr)
@@ -259,6 +355,7 @@ def main(argv: list[str] | None = None) -> int:
             args.lexicon,
             args.overlay,
             dt.datetime.fromisoformat(args.now) if args.now else dt.datetime.now(dt.timezone.utc),
+            tuple(args.curated),
         )
         print(f"wrote {terms_path}\nwrote {texts_path}")
         return 0
@@ -299,7 +396,7 @@ def main(argv: list[str] | None = None) -> int:
 
         meta, report = SnapshotBuilder(repos, now=now).build(
             args.label,
-            providers(args.lexicon, args.overlay, now),
+            providers(args.lexicon, args.overlay, now, tuple(args.curated)),
             frequency=frequency,
             embeddings=embeddings,
             policy=ActivationPolicy(minimum_confidence=args.minimum_confidence),

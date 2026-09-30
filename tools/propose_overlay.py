@@ -35,6 +35,7 @@ from overlay_coverage import Snapshot, gain_of
 from overlay_coverage import load as load_coverage
 
 from puzzlegen.content.review import ReviewRepository, derive_status
+from puzzlegen.games.grouping.content import VISIBLE_GROUPING
 from puzzlegen.core import ids
 from puzzlegen.core.types import (
     FreshnessClass,
@@ -530,7 +531,13 @@ def main(argv: list[str] | None = None) -> int:
             "coverage_check_limit": args.coverage_check_limit,
             "coverage": not args.no_coverage,
         }
-        coverage = None if args.no_coverage else load_coverage(repos)
+        # The rule game 1 actually groups by, so the annotation predicts the
+        # boards that get built rather than boards under a retired rule.
+        coverage = (
+            None
+            if args.no_coverage
+            else load_coverage(repos, grouping=str(VISIBLE_GROUPING))
+        )
         candidates = propose(
             repos,
             reviews,

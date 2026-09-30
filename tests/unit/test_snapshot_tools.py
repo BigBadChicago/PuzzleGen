@@ -311,6 +311,195 @@ class TestInputLists:
         assert texts_path.read_text().splitlines()
 
 
+def write_curated(path: Path, taxonomy_label: str, entities: list[str]) -> Path:
+    """A minimal curated file: one category, N single-word entities.
+
+    Deliberately not shaped like the overlay -- a future game's own taxonomy
+    is its own concern, and this fixture exists to prove that shape is usable
+    at all, not to imitate any particular game's content.
+    """
+    path.write_text(
+        json.dumps(
+            {
+                "curated_schema": 1,
+                "version": "test",
+                "categories": [{"key": "cat.root", "name": taxonomy_label}],
+                "entities": [
+                    {
+                        "key": f"ent.{name}",
+                        "name": name,
+                        "categories": ["cat.root"],
+                    }
+                    for name in entities
+                ],
+            }
+        )
+    )
+    return path
+
+
+class TestGamesBringingTheirOwnTaxonomy:
+    """A future game's own curated content, alongside wordnet and overlay.
+
+    ``CuratedJSONProvider`` was already generic -- nothing in it names the
+    overlay or WordNet. What was missing was a way to tell ``build_snapshot``
+    about a *third* curated file from the command line without editing the
+    script itself. ``--curated PATH:TAXONOMY`` is that door.
+    """
+
+    def test_parses_path_and_taxonomy(self):
+        path, taxonomy = build_snapshot.parse_curated_spec(
+            "content/seeds/numbers.curated.json:parity"
+        )
+        assert taxonomy == "parity"
+        assert path == Path("content/seeds/numbers.curated.json")
+
+    def test_a_path_with_no_colon_is_rejected(self):
+        with pytest.raises(ValueError, match="no colon"):
+            build_snapshot.parse_curated_spec("no-colon-here")
+
+    def test_an_empty_taxonomy_is_rejected(self):
+        with pytest.raises(ValueError, match="non-empty"):
+            build_snapshot.parse_curated_spec("path.json:")
+
+    def test_the_reserved_taxonomies_cannot_be_claimed(self):
+        with pytest.raises(ValueError, match="reserved"):
+            build_snapshot.parse_curated_spec("path.json:wordnet")
+        with pytest.raises(ValueError, match="reserved"):
+            build_snapshot.parse_curated_spec("path.json:overlay")
+
+    def test_providers_appends_extra_curated_after_the_overlay(self):
+        chosen = build_snapshot.providers(
+            [MINI_LEXICON], OVERLAY, NOW, ((Path("x.json"), "parity"),)
+        )
+        assert chosen[-1][1]["taxonomy"] == "parity"
+        assert chosen[-2][1]["taxonomy"] == build_snapshot.OVERLAY_TAXONOMY
+
+    def test_a_full_build_stores_the_new_taxonomy_alongside_the_others(
+        self, tmp_path
+    ):
+        curated = write_curated(
+            tmp_path / "numbers.curated.json", "parity", ["two", "four", "six"]
+        )
+        db = tmp_path / "graph.sqlite"
+
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(MINI_LEXICON),
+                "--curated",
+                f"{curated}:parity",
+                "--db",
+                str(db),
+                "--label",
+                "2026.09.1",
+                "--dev-embeddings",
+            ]
+        )
+
+        assert code == 0
+        with opened(db) as repos:
+            parity = repos.categories.live("parity")
+            assert len(parity) == 1
+            assert parity[0].canonical_name == "parity"
+            assert all(c.status is ReviewStatus.ACTIVE for c in parity)
+            # The overlay is untouched: still exactly its own 15 categories,
+            # not merged with or shadowed by the new taxonomy.
+            overlay = repos.categories.live(build_snapshot.OVERLAY_TAXONOMY)
+            assert len(overlay) == 15
+
+    def test_a_missing_curated_file_exits_two(self, tmp_path, capsys):
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(MINI_LEXICON),
+                "--curated",
+                f"{tmp_path / 'nope.json'}:parity",
+                "--write-inputs",
+                str(tmp_path / "build"),
+            ]
+        )
+        assert code == 2
+        assert "not found" in capsys.readouterr().err
+
+    def test_two_curated_files_cannot_share_a_taxonomy(self, tmp_path, capsys):
+        a = write_curated(tmp_path / "a.json", "parity", ["two"])
+        b = write_curated(tmp_path / "b.json", "parity", ["three"])
+
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(MINI_LEXICON),
+                "--curated",
+                f"{a}:parity",
+                "--curated",
+                f"{b}:parity",
+                "--write-inputs",
+                str(tmp_path / "build"),
+            ]
+        )
+
+        assert code == 2
+        assert "more than once" in capsys.readouterr().err
+
+    def test_write_inputs_includes_the_new_taxonomys_own_words(self, tmp_path):
+        """The term list a future game's frequency/embedding export reads
+        from has to include its own vocabulary, not just wordnet's and the
+        overlay's -- otherwise its entities get no score and no vector.
+        """
+        curated = write_curated(
+            tmp_path / "numbers.curated.json", "parity", ["seventeen"]
+        )
+
+        build_snapshot.main(
+            [
+                "--lexicon",
+                str(MINI_LEXICON),
+                "--curated",
+                f"{curated}:parity",
+                "--write-inputs",
+                str(tmp_path / "build"),
+            ]
+        )
+
+        terms = (tmp_path / "build" / "terms.txt").read_text()
+        assert "seventeen" in terms
+
+    def test_a_stale_curated_file_is_caught_like_any_other_input(self, tmp_path):
+        curated = write_curated(
+            tmp_path / "numbers.curated.json", "parity", ["seventeen"]
+        )
+        freq = tmp_path / "frequency.json"
+        freq.write_text("{}")
+        embeddings = tmp_path / "embeddings.json"
+        embeddings.write_text("{}")
+        # Make the curated file newer than the derived inputs.
+        import os
+        import time
+
+        time.sleep(0.01)
+        os.utime(curated, None)
+
+        code = build_snapshot.main(
+            [
+                "--lexicon",
+                str(MINI_LEXICON),
+                "--curated",
+                f"{curated}:parity",
+                "--frequency",
+                str(freq),
+                "--embeddings",
+                str(embeddings),
+                "--db",
+                str(tmp_path / "graph.sqlite"),
+                "--label",
+                "x",
+            ]
+        )
+
+        assert code == 2
+
+
 class TestProviderOrder:
     def test_the_overlay_is_always_last(self, tmp_path):
         import datetime as dt

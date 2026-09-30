@@ -21,7 +21,7 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
-from ...content.query import ContentQuery, ContentRequirement, Operation
+from ...content.query import ContentQuery, ContentRequirement, GroupingMode, Operation
 from ...core.types import DifficultyBand
 from .descriptor import GAME_ID, VISIBLE_GROUPS, group_size_for
 
@@ -87,6 +87,18 @@ MAXIMUM_FREQUENCY_SPREAD = 1
 #: may be used and this asks whether it should be shown to a player today.
 MINIMUM_CONFIDENCE = 0.8
 
+#: How the visible groups are drawn from the lexical taxonomy.
+#:
+#: Siblings, because that taxonomy is imported from WordNet, where a category
+#: is one meaning and its direct members are that meaning's synonyms. Grouping
+#: by a shared category there yields nine names for one periwinkle or five for
+#: a pram, which is one tile repeated, not a group. Distinct children of one
+#: parent are peers ("kinds of fish"), which is what a player can sort.
+#:
+#: This is a property of how the taxonomy was made, not of the game: a game
+#: over a hand-authored taxonomy keeps the default shared-category rule.
+VISIBLE_GROUPING = GroupingMode.SIBLINGS
+
 
 def visible_group_query(
     *, group_size: int, difficulty_target: DifficultyBand, locale: str
@@ -102,6 +114,7 @@ def visible_group_query(
     return ContentQuery(
         operation=Operation.FIND_GROUPS,
         taxonomy=LEXICAL_TAXONOMY,
+        grouping=VISIBLE_GROUPING,
         group_size=group_size,
         group_count=VISIBLE_GROUPS,
         minimum_similarity=MINIMUM_GROUP_SIMILARITY,

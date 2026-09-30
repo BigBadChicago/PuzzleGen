@@ -209,7 +209,24 @@ def shortlist_for(
             pair[1].shared_category_id or pair[1].shared_category or "",
         )
     )
-    return [group for count, group in scored if count > 0][:VISIBLE_SHORTLIST]
+    ranked = [group for count, group in scored if count > 0]
+
+    # One group per defining category before any category gets a second. Groups
+    # drawn from one parent overlap heavily and tie on how many hidden members
+    # they hold, so filling the shortlist in rank order spends every slot on
+    # variations of a few parents and leaves the four-way combination search
+    # to discover, thousands of times, that they share tiles.
+    chosen: list[GroupView] = []
+    seen_categories: set[str] = set()
+    remainder: list[GroupView] = []
+    for group in ranked:
+        key = group.shared_category_id or group.shared_category or ""
+        if key in seen_categories:
+            remainder.append(group)
+        else:
+            seen_categories.add(key)
+            chosen.append(group)
+    return (chosen + remainder)[:VISIBLE_SHORTLIST]
 
 
 #: Why a combination of four visible groups was not a board. Counted rather

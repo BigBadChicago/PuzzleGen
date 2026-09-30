@@ -29,6 +29,7 @@ from .query import (
     ContentResult,
     EntityView,
     FactView,
+    GroupingMode,
     GroupView,
     Operation,
     PathView,
@@ -528,15 +529,35 @@ class ContentService:
             e.id: self._view(e, query, game_id, taxonomy=index) for e in pool
         }
 
+        if query.grouping is GroupingMode.SIBLINGS:
+            candidates = self._candidate_sibling_groups(
+                pool, memberships, index, size, query
+            )
+        else:
+            candidates = (
+                (combination, None)
+                for combination in self._candidate_groups(
+                    pool, memberships, index, size
+                )
+            )
+
         groups: list[GroupView] = []
         examined = 0
-        for combination in self._candidate_groups(pool, memberships, index, size):
+        for combination, parent_id in candidates:
             examined += 1
             if examined > MAX_COMBINATIONS_EXAMINED:
                 rejected["COMBINATION_BUDGET_EXHAUSTED"] = 1
                 break
             group = self._assess_group(
-                combination, views, memberships, strategy, vectors, query, rejected, index
+                combination,
+                views,
+                memberships,
+                strategy,
+                vectors,
+                query,
+                rejected,
+                index,
+                parent_id=parent_id,
             )
             if group is not None:
                 groups.append(group)
@@ -618,6 +639,155 @@ class ContentService:
                 seen.add(key)
                 yield combination
 
+    def _representatives(
+        self,
+        pool: Sequence[Entity],
+        memberships: dict[str, tuple[str, ...]],
+        index: TaxonomyIndex,
+    ) -> dict[str, Entity]:
+        """One entity per category: the one carrying the category's own name.
+
+        A category imported from a hierarchy is one meaning, and its direct
+        members are that meaning's synonyms. Picking the entity named like the
+        category picks the first lemma the exporter chose, deterministically,
+        and means a child with nine synonyms still contributes a single tile.
+        A category with no such entity has no representative and cannot be
+        offered as a sibling, rather than being represented by a guess.
+        """
+        found: dict[str, Entity] = {}
+        for entity in pool:
+            for category_id in memberships.get(entity.id, ()):
+                category = index.get(category_id)
+                if category is not None and entity.canonical_name == category.canonical_name:
+                    found.setdefault(category_id, entity)
+        return found
+
+    def _candidate_sibling_groups(
+        self,
+        pool: Sequence[Entity],
+        memberships: dict[str, tuple[str, ...]],
+        index: TaxonomyIndex,
+        size: int,
+        query: ContentQuery,
+    ):
+        """Combinations of distinct children of one parent, parent by parent.
+
+        Yields ``(members, parent_id)``. The same shape and the same
+        discipline as ``_candidate_groups``: most specific parents first,
+        round robin across parents so a limit is filled with different groups
+        rather than variations on one, and each set of members assessed once.
+
+        When the query requires members from a second taxonomy, children whose
+        representative carries it are ordered first within each parent.
+        Combinations are produced in index order, so the earliest ones all
+        contain the leading children, and the requirement is met by
+        construction rather than by refusing most of what is offered.
+        """
+        representative = self._representatives(pool, memberships, index)
+        carrying: set[str] = set()
+        if query.intersects_taxonomy is not None:
+            other = self.taxonomy(query.intersects_taxonomy)
+            carrying = {
+                category_id
+                for category_id, entity in representative.items()
+                if any(cid in other for cid in memberships[entity.id])
+            }
+
+        needed = (
+            query.minimum_intersecting_members
+            if query.intersects_taxonomy is not None
+            else 0
+        )
+        children_of: dict[str, list[str]] = {}
+        for category_id in representative:
+            category = index.get(category_id)
+            for parent_id in category.parent_ids if category else ():
+                if parent_id in index:
+                    children_of.setdefault(parent_id, []).append(category_id)
+
+        ordered = sorted(
+            (pid for pid, kids in children_of.items() if len(kids) >= size),
+            key=lambda pid: (-index.depth(pid), pid),
+        )
+        streams = {}
+        for parent_id in ordered:
+            kids = sorted(
+                children_of[parent_id],
+                key=lambda cid: (cid not in carrying, representative[cid].id),
+            )
+            streams[parent_id] = self._spread_combinations(kids, size)
+
+        seen: set[frozenset[str]] = set()
+        while streams:
+            for parent_id in list(ordered):
+                stream = streams.get(parent_id)
+                if stream is None:
+                    continue
+                combination = next(stream, None)
+                if combination is None:
+                    del streams[parent_id]
+                    continue
+                # Not offered at all rather than offered and refused: a
+                # combination that cannot meet the second-taxonomy requirement
+                # costs an examination and teaches nothing. The assessor still
+                # checks, because this is a performance property and its gate
+                # is the correctness proof.
+                if needed and sum(1 for cid in combination if cid in carrying) < needed:
+                    continue
+                members = tuple(representative[cid] for cid in combination)
+                key = frozenset(e.id for e in members)
+                if key in seen:
+                    continue
+                seen.add(key)
+                yield members, parent_id
+
+    @staticmethod
+    def _spread_combinations(kids: Sequence[str], size: int):
+        """Combinations of ``size`` children, varied before they are exhaustive.
+
+        ``itertools.combinations`` changes only the last member for thousands
+        of steps, so a caller taking the first few dozen groups of a parent
+        with thirty children gets one group and its near-copies, and a game
+        needing different members on the board never sees them. Cyclic windows
+        over the ordered children come first: one per starting position, so
+        every child leads a window and appears in ``size`` of them, and a
+        limit reaches all of a parent's children after a few dozen groups
+        rather than after a few million. The full enumeration follows, so
+        nothing a caller could have had is withheld, only reordered.
+        """
+        count = len(kids)
+        for start in range(count):
+            yield tuple(kids[(start + offset) % count] for offset in range(size))
+        yield from itertools.combinations(kids, size)
+
+    def _sibling_children(
+        self,
+        member_ids: Sequence[str],
+        memberships: dict[str, tuple[str, ...]],
+        index: TaxonomyIndex,
+        parent_id: str,
+        views: dict[str, EntityView],
+    ) -> dict[str, str] | None:
+        """Which child of ``parent_id`` each member stands for, or None.
+
+        Re-derived from the members rather than trusted from the generator:
+        every gate runs even when the query should already guarantee its
+        result, because a precise query is a performance property and the
+        gate is the correctness proof.
+        """
+        chosen: dict[str, str] = {}
+        for entity_id in member_ids:
+            candidates = sorted(
+                cid
+                for cid in memberships[entity_id]
+                if cid in index and parent_id in index.get(cid).parent_ids
+                and views[entity_id].name == index.get(cid).canonical_name
+            )
+            if not candidates:
+                return None
+            chosen[entity_id] = candidates[0]
+        return chosen
+
     def _assess_group(
         self,
         members: Sequence[Entity],
@@ -628,6 +798,7 @@ class ContentService:
         query: ContentQuery,
         rejected: dict[str, int],
         index: TaxonomyIndex,
+        parent_id: str | None = None,
     ) -> GroupView | None:
         def refuse(reason: RejectionReason) -> None:
             rejected[reason.value] = rejected.get(reason.value, 0) + 1
@@ -645,15 +816,35 @@ class ContentService:
                 refuse(RejectionReason.NOT_IN_REQUIRED_TAXONOMY)
                 return None
 
-        shared = set(memberships[member_ids[0]])
-        for entity_id in member_ids[1:]:
-            shared &= set(memberships[entity_id])
-        shared &= set(index._by_id)  # noqa: SLF001
-        if not shared:
-            refuse(RejectionReason.NO_SHARED_CATEGORY)
-            return None
-        # The most specific shared category is what the group is "about".
-        shared_id = max(sorted(shared), key=lambda cid: index.depth(cid))
+        child_of: dict[str, str] | None = None
+        if parent_id is not None:
+            child_of = self._sibling_children(
+                member_ids, memberships, index, parent_id, views
+            )
+            if child_of is None:
+                refuse(RejectionReason.NO_SHARED_CATEGORY)
+                return None
+            children = list(child_of.values())
+            nested = any(
+                index.is_descendant_of(a, b)
+                for a in children
+                for b in children
+                if a != b
+            )
+            if len(set(children)) != len(children) or nested:
+                refuse(RejectionReason.NOT_DISTINCT_SIBLINGS)
+                return None
+            shared_id = parent_id
+        else:
+            shared = set(memberships[member_ids[0]])
+            for entity_id in member_ids[1:]:
+                shared &= set(memberships[entity_id])
+            shared &= set(index._by_id)  # noqa: SLF001
+            if not shared:
+                refuse(RejectionReason.NO_SHARED_CATEGORY)
+                return None
+            # The most specific shared category is what the group is "about".
+            shared_id = max(sorted(shared), key=lambda cid: index.depth(cid))
 
         # Frequency fairness before the expensive similarity work.
         bands = [
@@ -668,13 +859,21 @@ class ContentService:
             refuse(RejectionReason.FREQUENCY_SPREAD_TOO_WIDE)
             return None
 
-        primary_categories = [
-            max(
-                (c for c in memberships[eid] if c in index),
-                key=lambda cid: (index.depth(cid), cid),
-            )
-            for eid in member_ids
-        ]
+        # Similarity is judged between the categories the members stand for.
+        # In a sibling group that is each member's own child of the parent,
+        # not whichever of its categories happens to be deepest, which for a
+        # word with two senses could be one from another branch entirely.
+        primary_categories = (
+            [child_of[eid] for eid in member_ids]
+            if child_of is not None
+            else [
+                max(
+                    (c for c in memberships[eid] if c in index),
+                    key=lambda cid: (index.depth(cid), cid),
+                )
+                for eid in member_ids
+            ]
+        )
         stats: GroupSimilarity = group_similarity(strategy, primary_categories)
 
         if query.minimum_similarity is not None and stats.minimum < query.minimum_similarity:

@@ -580,3 +580,126 @@ class TestTileOrder:
     def test_the_order_actually_changes(self):
         tiles = [f"t{n:02d}" for n in range(36)]
         assert tile_order(tiles, DeterministicRng(derive_seed(DAY, GAME_ID))) != tiles
+
+
+class TestTheShortlistSpansParents:
+    """One group per defining category before any category gets a second.
+
+    Sibling grouping produces many overlapping groups from one parent, and
+    they tie on how many hidden members they hold. Filled in rank order the
+    shortlist is variations of a few parents, and the four-way combination
+    search then spends its budget discovering that they share tiles.
+    """
+
+    def hidden(self):
+        return group(
+            "category:hidden",
+            [entity(f"h{i}", "category:hidden") for i in range(SIZE)],
+        )
+
+    def visible(self, parent: str, count: int):
+        """``count`` groups of one parent, each holding one hidden member."""
+        return [
+            group(
+                f"category:{parent}",
+                [entity(f"h{index}", f"category:{parent}")]
+                + [entity(f"{parent}{index}x{n}", f"category:{parent}") for n in range(SIZE - 1)],
+            )
+            for index in range(count)
+        ]
+
+    def test_every_parent_is_present_before_any_repeats(self):
+        pool = (
+            self.visible("aaa", 5)
+            + self.visible("bbb", 5)
+            + self.visible("ccc", 5)
+            + self.visible("ddd", 5)
+        )
+
+        shortlist = generate_module.shortlist_for(self.hidden(), pool, SIZE)
+
+        assert len(shortlist) == generate_module.VISIBLE_SHORTLIST
+        first_four = {g.shared_category_id for g in shortlist[:4]}
+        assert first_four == {
+            "category:aaa", "category:bbb", "category:ccc", "category:ddd"
+        }
+
+    def test_without_the_spread_one_parent_would_fill_the_front(self):
+        """The control: rank order alone puts one parent's variants first."""
+        pool = self.visible("aaa", 5) + self.visible("bbb", 5)
+        ranked = sorted(
+            pool,
+            key=lambda g: (
+                -len(member_ids(g) & member_ids(self.hidden())),
+                g.shared_category_id,
+            ),
+        )
+
+        assert [g.shared_category_id for g in ranked[:5]] == ["category:aaa"] * 5
+
+    def test_a_more_useful_group_still_leads_within_its_parent(self):
+        """Spreading reorders across parents, never within one."""
+        rich = group(
+            "category:aaa",
+            [entity(f"h{i}", "category:aaa") for i in range(3)]
+            + [entity(f"pad{i}", "category:aaa") for i in range(SIZE - 3)],
+        )
+        pool = self.visible("aaa", 2) + [rich] + self.visible("bbb", 1)
+
+        shortlist = generate_module.shortlist_for(self.hidden(), pool, SIZE)
+
+        assert shortlist[0] is rich
+
+    def test_the_shortlist_is_still_capped(self):
+        pool = [g for parent in "abcdefghij" for g in self.visible(parent, 4)]
+
+        shortlist = generate_module.shortlist_for(self.hidden(), pool, SIZE)
+
+        assert len(shortlist) == generate_module.VISIBLE_SHORTLIST
+
+    def test_groups_holding_no_hidden_member_are_left_out(self):
+        useless = group(
+            "category:zzz", [entity(f"u{i}", "category:zzz") for i in range(SIZE)]
+        )
+
+        shortlist = generate_module.shortlist_for(
+            self.hidden(), self.visible("aaa", 2) + [useless], SIZE
+        )
+
+        assert useless not in shortlist
+
+
+class TestTheFloorIsASumOverPairs:
+    """The game's own function, agreeing with the coverage tool's model of it."""
+
+    def visible(self, name: str, *shared: str):
+        return group(
+            f"category:{name}",
+            [entity(f"{name}{i}", f"category:{name}", *shared) for i in range(SIZE)],
+        )
+
+    def test_one_pair_sharing_a_root_meets_the_floor(self):
+        groups = [
+            self.visible("a", "category:root"),
+            self.visible("b", "category:root"),
+            self.visible("c"),
+            self.visible("d"),
+        ]
+
+        assert temptation_of(groups) >= generate_module.MINIMUM_TEMPTATION
+
+    def test_four_unrelated_groups_do_not(self):
+        groups = [self.visible(n) for n in "abcd"]
+
+        assert temptation_of(groups) < generate_module.MINIMUM_TEMPTATION
+
+    def test_the_defining_categories_themselves_do_not_count(self):
+        """Two groups whose only shared category is one of the four chosen."""
+        groups = [
+            self.visible("a", "category:c"),
+            self.visible("b", "category:c"),
+            self.visible("c"),
+            self.visible("d"),
+        ]
+
+        assert temptation_of(groups) < generate_module.MINIMUM_TEMPTATION

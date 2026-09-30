@@ -17,6 +17,10 @@ itself, exactly as ``puzzlegen/games/grouping/generate.py`` states it:
 * one overlay category supplying ``group_size`` members, every one of them on
   the board, and every visible group giving up at least one
   (``borrowings_for``)
+* the four groups sharing at least ``MINIMUM_TEMPTATION`` categories of
+  ancestry beyond the ones that define them (``temptation_of``). Measured here
+  as what each group's members all share, a lower bound on the real figure,
+  which also counts categories only some members carry.
 
 What this does not apply is the similarity, frequency-spread, confidence and
 freshness gates the day's queries carry. Those can only ever remove boards, so
@@ -40,6 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from puzzlegen.core.types import ReviewStatus
 from puzzlegen.games.grouping.content import LEXICAL_TAXONOMY, OVERLAY_TAXONOMY
 from puzzlegen.games.grouping.descriptor import GROUP_SIZES, VISIBLE_GROUPS
+from puzzlegen.games.grouping.generate import MINIMUM_TEMPTATION
 from puzzlegen.graph import GraphRepositories
 
 MEMBERSHIP_PREDICATE = "is_a"
@@ -56,6 +61,10 @@ TOO_FEW_HIDDEN_MEMBERS = "too_few_hidden_members"
 MEMBERS_WITHOUT_HOME = "members_without_home"
 TOO_FEW_DISTINCT_HOMES = "too_few_distinct_homes"
 NO_VALID_QUADRUPLE = "no_valid_quadruple"
+#: Boards exist except that the four groups share no ancestry. The game
+#: requires some, because four unrelated piles sort themselves, and separate
+#: export roots share none, so a board has to live inside one domain.
+NO_SHARED_DOMAIN = "no_shared_domain"
 BUDGET_EXHAUSTED = "budget_exhausted"
 
 
@@ -189,13 +198,28 @@ def _ancestors(parents: dict[str, tuple[str, ...]], start: str) -> set[str]:
     return found
 
 
+SHARED_CATEGORY = "shared_category"
+SIBLINGS = "siblings"
+
+
 def load(
     repos: GraphRepositories,
     *,
     lexical_taxonomy: str = LEXICAL_TAXONOMY,
     overlay_taxonomy: str = OVERLAY_TAXONOMY,
+    grouping: str = SHARED_CATEGORY,
 ) -> Snapshot:
-    """Read the active graph into the shape the precondition needs."""
+    """Read the active graph into the shape the precondition needs.
+
+    ``grouping`` is how the game under measurement forms a group, and it
+    decides what a "lexical group" is here. Under ``shared_category`` a group
+    is drawn from one category's direct members. Under ``siblings`` a group is
+    drawn from a parent, and its members are the representatives of that
+    parent's children, one entity per child, the one carrying the child's own
+    name. Everything downstream (homes, matching, cross-membership) is the
+    same question asked of a different set of sets, which is why the mode
+    changes only what ``lexical_members`` holds.
+    """
     active_entities = {e.id: e.canonical_name for e in repos.entities.active()}
 
     lexical = [
@@ -227,6 +251,11 @@ def load(
             types_of.setdefault(entity_id, set()).add(category.id)
             types_of[entity_id] |= ancestry[category.id]
 
+    if grouping == SIBLINGS:
+        lexical_members = _sibling_members(lexical, lexical_members, active_entities)
+    elif grouping != SHARED_CATEGORY:
+        raise ValueError(f"unknown grouping {grouping!r}")
+
     overlay_members: dict[str, frozenset[str]] = {}
     for category in overlay:
         overlay_members[category.id] = frozenset(
@@ -245,6 +274,35 @@ def load(
         types_of={k: frozenset(v) for k, v in types_of.items()},
         entity_names=active_entities,
     )
+
+
+def _sibling_members(
+    lexical,
+    direct: dict[str, frozenset[str]],
+    entity_names: dict[str, str],
+) -> dict[str, frozenset[str]]:
+    """Parent -> one representative entity per child that has one.
+
+    Mirrors ``ContentService._representatives``: a child is represented by the
+    direct member named like the child itself, and a child with no such member
+    is not offered. Kept in step with the service by a test that runs both on
+    one graph, because two implementations of one rule drift silently.
+    """
+    representative: dict[str, str] = {}
+    for category in lexical:
+        for entity_id in sorted(direct.get(category.id, ())):
+            if entity_names.get(entity_id) == category.canonical_name:
+                representative.setdefault(category.id, entity_id)
+                break
+
+    members: dict[str, set[str]] = {}
+    for category in lexical:
+        rep = representative.get(category.id)
+        if rep is None:
+            continue
+        for parent_id in category.parent_ids:
+            members.setdefault(parent_id, set()).add(rep)
+    return {cid: frozenset(found) for cid, found in members.items()}
 
 
 # -- the precondition ---------------------------------------------------------
@@ -277,12 +335,28 @@ def _can_fill(eligible: list[set[str]], needed: list[int]) -> bool:
     return all(assign(index, set()) for index in range(len(slots)))
 
 
+OK = "ok"
+FAILS = "fails"
+NEEDS_DOMAIN = "needs_domain"
+
+
+def _shared_ancestry(snapshot: Snapshot, category_id: str) -> frozenset[str]:
+    """Everything every member of a group has in common, defining category
+    and its ancestors included."""
+    common: frozenset[str] | None = None
+    for member in snapshot.lexical_members[category_id]:
+        types = snapshot.types_of.get(member, frozenset())
+        common = types if common is None else common & types
+    return frozenset(common or ())
+
+
 def _quadruple_works(
     snapshot: Snapshot,
     categories: tuple[str, ...],
     hidden: frozenset[str],
     group_size: int,
-) -> bool:
+    ancestry: dict[str, frozenset[str]],
+) -> str:
     chosen = set(categories)
     home_of: dict[str, str] = {}
     for member in hidden:
@@ -291,15 +365,15 @@ def _quadruple_works(
         # the tile belongs to a second chosen group's category, which is the
         # cross-membership the assembler refuses.
         if len(owning) != 1:
-            return False
+            return FAILS
         home_of[member] = owning[0]
 
     if len(set(home_of.values())) != len(categories):
-        return False
+        return FAILS
 
     for member, home in home_of.items():
         if (snapshot.types_of.get(member, frozenset()) & chosen) - {home}:
-            return False
+            return FAILS
 
     borrowed = Counter(home_of.values())
     eligible: list[set[str]] = []
@@ -307,7 +381,7 @@ def _quadruple_works(
     for category in categories:
         shortfall = group_size - borrowed[category]
         if shortfall < 0:
-            return False
+            return FAILS
         eligible.append(
             {
                 entity_id
@@ -321,7 +395,14 @@ def _quadruple_works(
         )
         needed.append(shortfall)
 
-    return _can_fill(eligible, needed)
+    if not _can_fill(eligible, needed):
+        return FAILS
+
+    resemblance = sum(
+        len((ancestry[left] & ancestry[right]) - chosen)
+        for left, right in itertools.combinations(categories, 2)
+    )
+    return OK if resemblance >= MINIMUM_TEMPTATION else NEEDS_DOMAIN
 
 
 def assess(
@@ -387,8 +468,10 @@ def assess(
             homes=tuple(reachable),
         )
 
+    ancestry = {cid: _shared_ancestry(snapshot, cid) for cid in reachable}
     examined = 0
     exhausted = True
+    domain_blocked = False
     for subset in itertools.combinations(placeable, group_size):
         hidden = frozenset(subset)
         candidates = sorted(
@@ -401,7 +484,10 @@ def assess(
                 exhausted = False
                 break
             examined += 1
-            if _quadruple_works(snapshot, quadruple, hidden, group_size):
+            verdict = _quadruple_works(snapshot, quadruple, hidden, group_size, ancestry)
+            if verdict == NEEDS_DOMAIN:
+                domain_blocked = True
+            if verdict == OK:
                 return Finding(
                     group_size=group_size,
                     category_id=category_id,
@@ -423,7 +509,11 @@ def assess(
         feasible=False,
         exhausted=exhausted,
         examined=examined,
-        reason=NO_VALID_QUADRUPLE if exhausted else BUDGET_EXHAUSTED,
+        reason=(
+            (NO_SHARED_DOMAIN if domain_blocked else NO_VALID_QUADRUPLE)
+            if exhausted
+            else BUDGET_EXHAUSTED
+        ),
         homeless=homeless,
         homes=tuple(reachable),
     )
@@ -515,6 +605,7 @@ __all__ = [
     "DEFAULT_BUDGET",
     "Finding",
     "MEMBERS_WITHOUT_HOME",
+    "NO_SHARED_DOMAIN",
     "NO_VALID_QUADRUPLE",
     "Report",
     "Snapshot",

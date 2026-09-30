@@ -108,7 +108,22 @@ class World:
             )
         )
 
-    def lexical_group(self, name: str, members: list[str], *, parent=None) -> None:
+    def domain(self) -> str:
+        """A root every group shares by default.
+
+        The game refuses a board whose four groups share no ancestry, so a
+        fixture of four unrelated groups would model a board that can never
+        be built. Tests that mean to model that pass ``rooted=False``.
+        """
+        if "domain" not in self.categories:
+            self.category("domain", taxonomy=LEXICAL)
+        return "domain"
+
+    def lexical_group(
+        self, name: str, members: list[str], *, parent=None, rooted: bool = True
+    ) -> None:
+        if parent is None and rooted:
+            parent = self.domain()
         self.category(name, taxonomy=LEXICAL, parent=parent)
         for member in members:
             self.entity(member)
@@ -530,6 +545,16 @@ class TestRanking:
 # -- the command --------------------------------------------------------------
 
 
+def direct_membership(argv):
+    """The command, told these fixtures are hand-authored direct-membership
+    taxonomies. The default follows game 1, which groups by siblings, and the
+    fixtures below model the other kind on purpose.
+    """
+    if "--grouping" in argv:
+        return measure_coverage.main(argv)
+    return measure_coverage.main(["--grouping", "shared_category", *argv])
+
+
 class TestMeasureCommand:
     def build(self, path: Path, curated_source, builder) -> None:
         repos = GraphRepositories(SqliteDocumentStore(path))
@@ -544,7 +569,7 @@ class TestMeasureCommand:
         db = tmp_path / "graph.sqlite"
         self.build(db, curated_source, workable)
 
-        code = measure_coverage.main(["--db", str(db), "--group-size", "5"])
+        code = direct_membership(["--db", str(db), "--group-size", "5"])
 
         assert code == 0
         assert "generatable: yes" in capsys.readouterr().out
@@ -566,7 +591,7 @@ class TestMeasureCommand:
         db = tmp_path / "graph.sqlite"
         self.build(db, curated_source, three_homes)
 
-        code = measure_coverage.main(["--db", str(db), "--group-size", "5"])
+        code = direct_membership(["--db", str(db), "--group-size", "5"])
 
         assert code == 1
         out = capsys.readouterr().out
@@ -580,7 +605,7 @@ class TestMeasureCommand:
         self.build(db, curated_source, workable)
         out = tmp_path / "coverage.json"
 
-        measure_coverage.main(
+        direct_membership(
             ["--db", str(db), "--group-size", "5", "--json", str(out)]
         )
         capsys.readouterr()
@@ -594,7 +619,7 @@ class TestMeasureCommand:
 
     def test_a_missing_database_is_an_argument_error(self, tmp_path):
         with pytest.raises(SystemExit):
-            measure_coverage.main(["--db", str(tmp_path / "absent.sqlite")])
+            direct_membership(["--db", str(tmp_path / "absent.sqlite")])
 
 
 class TestCandidateBatch:
@@ -631,7 +656,7 @@ class TestCandidateBatch:
             )
         )
 
-        code = measure_coverage.main(
+        code = direct_membership(
             [
                 "--db",
                 str(db),
@@ -658,7 +683,7 @@ class TestCandidateBatch:
             json.dumps([{"entity": "narwhal", "category": "also_a_verb"}])
         )
 
-        code = measure_coverage.main(
+        code = direct_membership(
             ["--db", str(db), "--group-size", "5", "--candidates", str(candidates)]
         )
 
@@ -676,7 +701,7 @@ class TestCandidateBatch:
             json.dumps([{"entity": "punt", "category": "Also_A_Verb"}])
         )
 
-        code = measure_coverage.main(
+        code = direct_membership(
             ["--db", str(db), "--group-size", "5", "--candidates", str(candidates)]
         )
 
@@ -692,7 +717,7 @@ class TestCandidateBatch:
             json.dumps([{"entity": "punt", "category": "also_a_verb"}])
         )
 
-        measure_coverage.main(
+        direct_membership(
             ["--db", str(db), "--group-size", "5", "--candidates", str(candidates)]
         )
 
@@ -709,7 +734,7 @@ class TestCandidateBatch:
         )
         out_path = tmp_path / "ranked.json"
 
-        measure_coverage.main(
+        direct_membership(
             [
                 "--db",
                 str(db),
@@ -734,3 +759,264 @@ class TestCandidateBatch:
 
         with pytest.raises(ValueError, match="entity.*category"):
             measure_coverage.load_candidates(candidates)
+
+
+# -- sibling grouping ---------------------------------------------------------
+
+
+def sibling_group(
+    world: World, parent: str, kids: list[str], *, unrooted: bool = False
+) -> None:
+    """A parent whose children each carry an entity named like themselves.
+
+    The shape a hierarchy imported from WordNet has: the parent holds no
+    members of its own, each child is a category, and each child's own name is
+    an entity sitting in it.
+    """
+    world.category(parent, taxonomy=LEXICAL, parent=None if unrooted else world.domain())
+    for kid in kids:
+        world.category(kid, taxonomy=LEXICAL, parent=parent)
+        world.entity(kid)
+        world.member(kid, kid)
+
+
+def workable_siblings(world: World) -> None:
+    sibling_group(world, "cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
+    sibling_group(world, "birds", ["robin", "crane", "swift", "finch", "heron"])
+    sibling_group(world, "tools", ["hammer", "chisel", "plane", "file", "awl"])
+    sibling_group(world, "boats", ["ketch", "punt", "yawl", "dinghy", "canoe"])
+    world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
+
+
+class TestSiblingCoverage:
+    def test_the_same_graph_is_feasible_by_siblings_and_not_by_direct_members(
+        self, world
+    ):
+        """The point of the mode, in one graph.
+
+        No parent holds a member of its own, so under the old rule there is
+        no group anywhere. Under siblings each parent supplies its five
+        children.
+        """
+        workable_siblings(world)
+
+        siblings = overlay_coverage.load(
+            world.repos,
+            lexical_taxonomy=LEXICAL,
+            overlay_taxonomy=OVERLAY,
+            grouping=overlay_coverage.SIBLINGS,
+        )
+        direct = overlay_coverage.load(
+            world.repos, lexical_taxonomy=LEXICAL, overlay_taxonomy=OVERLAY
+        )
+
+        overlay_id = world.id_of("also_a_verb")
+        assert overlay_coverage.assess(siblings, overlay_id, 5).feasible
+        assert not overlay_coverage.assess(direct, overlay_id, 5).feasible
+
+    def test_a_parent_is_made_of_its_childrens_representatives(self, world):
+        workable_siblings(world)
+        snapshot = overlay_coverage.load(
+            world.repos,
+            lexical_taxonomy=LEXICAL,
+            overlay_taxonomy=OVERLAY,
+            grouping=overlay_coverage.SIBLINGS,
+        )
+
+        cats = snapshot.lexical_members[world.id_of("cats")]
+        assert {snapshot.entity_names[e] for e in cats} == {
+            "lion", "tiger", "puma", "lynx", "ocelot"
+        }
+
+    def test_a_child_with_no_entity_named_like_it_is_not_represented(self, world):
+        sibling_group(world, "fleet", ["a", "b", "c", "d"])
+        world.category("e", taxonomy=LEXICAL, parent="fleet")
+        world.entity("only-an-alias")
+        world.member("only-an-alias", "e")
+        snapshot = overlay_coverage.load(
+            world.repos,
+            lexical_taxonomy=LEXICAL,
+            overlay_taxonomy=OVERLAY,
+            grouping=overlay_coverage.SIBLINGS,
+        )
+
+        assert len(snapshot.lexical_members[world.id_of("fleet")]) == 4
+
+    def test_an_unknown_grouping_is_refused(self, world):
+        with pytest.raises(ValueError, match="unknown grouping"):
+            overlay_coverage.load(
+                world.repos,
+                lexical_taxonomy=LEXICAL,
+                overlay_taxonomy=OVERLAY,
+                grouping="nonsense",
+            )
+
+    def test_it_agrees_with_the_content_service(self, world):
+        """Two implementations of one rule, kept from drifting by running both.
+
+        The service decides which entity stands for each child when it builds
+        groups; this module decides it when it predicts them. If they ever
+        disagree, the coverage numbers describe a game that is not the one
+        that runs.
+        """
+        from puzzlegen.content.query import ContentQuery, Operation
+        from puzzlegen.content.service import ContentService
+
+        workable_siblings(world)
+        sibling_group(world, "fleet", ["a", "b", "c"])
+        world.category("d", taxonomy=LEXICAL, parent="fleet")
+        world.entity("d-alias")
+        world.member("d-alias", "d")
+
+        snapshot = overlay_coverage.load(
+            world.repos,
+            lexical_taxonomy=LEXICAL,
+            overlay_taxonomy=OVERLAY,
+            grouping=overlay_coverage.SIBLINGS,
+        )
+        service = ContentService(world.repos)
+        query = ContentQuery(operation=Operation.FIND_GROUPS, taxonomy=LEXICAL)
+        pool, memberships = service._pool(query, None, {})
+        index = service.taxonomy(LEXICAL)
+        by_child = service._representatives(pool, memberships, index)
+
+        expected: dict[str, set[str]] = {}
+        for child_id, entity in by_child.items():
+            for parent_id in index.get(child_id).parent_ids:
+                expected.setdefault(parent_id, set()).add(entity.id)
+
+        assert {k: set(v) for k, v in snapshot.lexical_members.items()} == expected
+
+    def test_the_command_defaults_to_the_rule_the_game_uses(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        try:
+            workable_siblings(World(repos, curated_source))
+        finally:
+            repos.close()
+
+        code = measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        assert code == 0
+        assert "generatable: yes" in capsys.readouterr().out
+
+    def test_the_default_grouping_is_the_games_own(self):
+        from puzzlegen.games.grouping.content import VISIBLE_GROUPING
+
+        assert str(VISIBLE_GROUPING) == "siblings"
+
+
+class TestGroupsMustShareADomain:
+    """Four groups with no common ancestry are four unrelated piles.
+
+    The game's temptation floor refuses them, and separate export roots share
+    no ancestors, so this decides which hidden groups a set of exports can
+    ever support: one whose members are spread across roots has no board,
+    however many homes it reaches.
+    """
+
+    def separate_roots(self, world: World) -> None:
+        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"], rooted=False)
+        world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"], rooted=False)
+        world.lexical_group("tools", ["hammer", "chisel", "plane", "file", "awl"], rooted=False)
+        world.lexical_group("boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], rooted=False)
+        world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
+
+    def test_groups_from_separate_roots_are_not_a_board(self, world):
+        self.separate_roots(world)
+        snapshot = snapshot_of(world)
+
+        finding = overlay_coverage.assess(snapshot, world.id_of("also_a_verb"), 5)
+
+        assert not finding.feasible
+        assert finding.reason == overlay_coverage.NO_SHARED_DOMAIN
+
+    def test_the_same_groups_under_one_root_are_a_board(self, world):
+        workable(world)
+        snapshot = snapshot_of(world)
+
+        assert overlay_coverage.assess(
+            snapshot, world.id_of("also_a_verb"), 5
+        ).feasible
+
+    def test_the_reason_is_not_the_general_one(self, world):
+        """A curator told "no valid quadruple" would grow content that was
+        never the problem. This names the actual cause."""
+        self.separate_roots(world)
+        finding = overlay_coverage.assess(
+            snapshot_of(world), world.id_of("also_a_verb"), 5
+        )
+
+        assert finding.reason != overlay_coverage.NO_VALID_QUADRUPLE
+
+    def test_the_same_holds_for_sibling_groups(self, world):
+        sibling_group(world, "cats", ["lion", "tiger", "puma", "lynx", "ocelot"], unrooted=True)
+        sibling_group(world, "birds", ["robin", "crane", "swift", "finch", "heron"], unrooted=True)
+        sibling_group(world, "tools", ["hammer", "chisel", "plane", "file", "awl"], unrooted=True)
+        sibling_group(world, "boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], unrooted=True)
+        world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
+        snapshot = overlay_coverage.load(
+            world.repos,
+            lexical_taxonomy=LEXICAL,
+            overlay_taxonomy=OVERLAY,
+            grouping=overlay_coverage.SIBLINGS,
+        )
+
+        finding = overlay_coverage.assess(snapshot, world.id_of("also_a_verb"), 5)
+
+        assert finding.reason == overlay_coverage.NO_SHARED_DOMAIN
+
+    def test_the_floor_is_the_games_own(self):
+        from puzzlegen.games.grouping.generate import MINIMUM_TEMPTATION
+
+        assert overlay_coverage.MINIMUM_TEMPTATION == MINIMUM_TEMPTATION
+
+
+class TestOneResemblingPairIsEnough:
+    """The floor is a sum over pairs of groups, not a rule for every pair.
+
+    ``temptation_of`` adds up shared ancestry across every pair of the four
+    groups and the game asks only that the total reach ``MINIMUM_TEMPTATION``.
+    So two groups from one root and two from other roots is a board. Stating
+    the rule as "all four must share a domain" overstates it, and would rule
+    out hidden groups that span domains for no reason.
+    """
+
+    def test_two_rooted_and_two_unrooted_groups_are_a_board(self, world):
+        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
+        world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"])
+        world.lexical_group(
+            "tools", ["hammer", "chisel", "plane", "file", "awl"], rooted=False
+        )
+        world.lexical_group(
+            "boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], rooted=False
+        )
+        world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
+
+        finding = overlay_coverage.assess(
+            snapshot_of(world), world.id_of("also_a_verb"), 5
+        )
+
+        assert finding.feasible
+
+    def test_one_rooted_group_alone_is_not_enough(self, world):
+        """One group under a root has nobody to resemble."""
+        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
+        world.lexical_group(
+            "birds", ["robin", "crane", "swift", "finch", "heron"], rooted=False
+        )
+        world.lexical_group(
+            "tools", ["hammer", "chisel", "plane", "file", "awl"], rooted=False
+        )
+        world.lexical_group(
+            "boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], rooted=False
+        )
+        world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
+
+        finding = overlay_coverage.assess(
+            snapshot_of(world), world.id_of("also_a_verb"), 5
+        )
+
+        assert finding.reason == overlay_coverage.NO_SHARED_DOMAIN

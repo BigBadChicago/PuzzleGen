@@ -80,6 +80,10 @@ class RejectionReason(StrEnum):
     #: content, and one code for both sent a reader looking at the wrong
     #: knob for an afternoon.
     NO_SHARED_CATEGORY = "NO_SHARED_CATEGORY"
+    #: A sibling group where two members stand for the same child category,
+    #: or where one child is an ancestor of another. Either would make the
+    #: group a repeated concept rather than peers under a parent.
+    NOT_DISTINCT_SIBLINGS = "NOT_DISTINCT_SIBLINGS"
     #: The entity belongs to no category in a taxonomy the query
     #: required it to intersect.
     NOT_IN_REQUIRED_TAXONOMY = "NOT_IN_REQUIRED_TAXONOMY"

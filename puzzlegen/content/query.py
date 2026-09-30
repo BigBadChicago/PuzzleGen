@@ -36,6 +36,32 @@ class Operation(StrEnum):
     FIND_ENTITIES_BY_DIFFICULTY = "find_entities_by_difficulty"
 
 
+class GroupingMode(StrEnum):
+    """What makes a set of entities a group in a group query.
+
+    The two modes answer different questions about how a taxonomy encodes
+    "these belong together", and which one is right depends on how the
+    taxonomy was made, not on the game asking.
+
+    ``SHARED_CATEGORY``: every member is a direct member of one category.
+    Right for a taxonomy someone authored by hand, where "even numbers" is a
+    category holding every even number. Wrong for one derived from an is-a
+    hierarchy such as WordNet, where a category is one meaning and its direct
+    members are synonyms: nine names for one periwinkle is one thing, not a
+    group of nine.
+
+    ``SIBLINGS``: every member stands for a different child of one parent
+    category, so the group is "kinds of" that parent. Right for a derived
+    hierarchy, where peers are children of a common parent and are never
+    synonyms of one another. Each child is represented by the entity carrying
+    its own name, which is the first lemma the exporter chose for it, so a
+    child with many synonyms still contributes exactly one tile.
+    """
+
+    SHARED_CATEGORY = "shared_category"
+    SIBLINGS = "siblings"
+
+
 @dataclass(frozen=True, slots=True)
 class ContentQuery:
     """Constraints on a content request.
@@ -104,6 +130,10 @@ class ContentQuery:
     #: "at least one" is exactly what a board needs, since each visible group
     #: gives up one tile to the hidden group.
     minimum_intersecting_members: int = 1
+
+    #: How a group query decides what a group is. Defaults to the original
+    #: rule so nothing that already asks for groups changes behaviour.
+    grouping: GroupingMode = GroupingMode.SHARED_CATEGORY
 
     group_size: int | None = None
     group_count: int | None = None
