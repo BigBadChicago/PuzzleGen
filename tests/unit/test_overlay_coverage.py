@@ -1020,3 +1020,256 @@ class TestOneResemblingPairIsEnough:
         )
 
         assert finding.reason == overlay_coverage.NO_SHARED_DOMAIN
+
+
+# -- why a near miss misses ---------------------------------------------------
+
+
+def siblings_snapshot(world: World):
+    return overlay_coverage.load(
+        world.repos,
+        lexical_taxonomy=LEXICAL,
+        overlay_taxonomy=OVERLAY,
+        grouping=overlay_coverage.SIBLINGS,
+    )
+
+
+def eid(name: str) -> str:
+    return ids.for_entity(name, "en")
+
+
+class TestWhyAWordHasNoHome:
+    """Three causes, three different fixes, one sentence each."""
+
+    def test_a_synonym_is_named_as_one(self, world):
+        """"Fiddle" is a fine word and never a tile: violin is the tile."""
+        sibling_group(world, "strings", ["violin", "viola", "cello", "bass", "harp"])
+        world.entity("fiddle")
+        world.member("fiddle", "violin")
+        world.overlay_group("has_strings", ["fiddle", "harp"])
+
+        why = overlay_coverage.explain_homeless(siblings_snapshot(world), eid("fiddle"), 5)
+
+        assert "synonym of violin" in why
+
+    def test_the_word_that_stands_for_a_child_is_not_a_synonym(self, world):
+        sibling_group(world, "strings", ["violin", "viola", "cello", "bass", "harp"])
+        world.overlay_group("has_strings", ["violin"])
+        snapshot = siblings_snapshot(world)
+
+        assert eid("violin") in snapshot.lexical_members[world.id_of("strings")]
+
+    def test_a_small_parent_says_how_small(self, world):
+        sibling_group(world, "boats", ["ketch", "punt"])
+        world.overlay_group("floats", ["ketch"])
+
+        why = overlay_coverage.explain_homeless(siblings_snapshot(world), eid("ketch"), 5)
+
+        assert "a kind of boats" in why
+        assert "has 2 kinds" in why
+        assert "needs 5" in why
+
+    def test_a_word_the_lexicon_lacks_is_named_as_one(self, world):
+        world.entity("garlic")
+        world.overlay_group("kitchen", ["garlic"])
+
+        why = overlay_coverage.explain_homeless(siblings_snapshot(world), eid("garlic"), 5)
+
+        assert "not in the lexicon" in why
+
+    def test_a_top_of_tree_word_says_so(self, world):
+        world.category("island", taxonomy=LEXICAL)
+        world.entity("island")
+        world.member("island", "island")
+        world.overlay_group("land", ["island"])
+
+        why = overlay_coverage.explain_homeless(siblings_snapshot(world), eid("island"), 5)
+
+        assert "no parent" in why
+
+    def test_the_direct_membership_rule_gets_its_own_sentence(self, world):
+        world.lexical_group("cats", ["lion", "tiger"])
+        world.overlay_group("roars", ["lion"])
+        snapshot = overlay_coverage.load(
+            world.repos, lexical_taxonomy=LEXICAL, overlay_taxonomy=OVERLAY
+        )
+
+        why = overlay_coverage.explain_homeless(snapshot, eid("lion"), 5)
+
+        assert "in cats" in why and "has 2 members" in why and "needs 5" in why
+
+
+class TestWhyNoBoardWasFound:
+    """A category can reach every home it needs and still have no board."""
+
+    def nested(self, world: World) -> None:
+        """Parent B is itself a child of parent A.
+
+        Every tile under B has A in its ancestry, so a board naming both
+        parents makes each B tile belong to A's group as well.
+        """
+        sibling_group(world, "A", ["k1", "k2", "k3", "k4"])
+        world.category("B", taxonomy=LEXICAL, parent="A")
+        world.entity("B")
+        world.member("B", "B")
+        for kid in ["b1", "b2", "b3", "b4", "b5"]:
+            world.category(kid, taxonomy=LEXICAL, parent="B")
+            world.entity(kid)
+            world.member(kid, kid)
+        sibling_group(world, "C", ["c1", "c2", "c3", "c4", "c5"])
+        sibling_group(world, "D", ["d1", "d2", "d3", "d4", "d5"])
+        world.overlay_group("axis", ["b1", "k1", "c1", "d1", "c2"])
+
+    def test_nested_parents_are_named_as_the_cause(self, world):
+        self.nested(world)
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("axis"), 5
+        )
+
+        assert not finding.feasible
+        assert finding.reason == overlay_coverage.NO_VALID_QUADRUPLE
+        assert dict(finding.failures) == {overlay_coverage.CROSS_MEMBERSHIP: 1}
+
+    def test_a_hidden_member_left_off_the_board_is_named(self, world):
+        """Five homes, one member each: any four leave a member behind."""
+        for parent in "PQRST":
+            sibling_group(
+                world, parent, [f"{parent.lower()}{n}" for n in range(1, 6)]
+            )
+        world.overlay_group("axis", ["p1", "q1", "r1", "s1", "t1"])
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("axis"), 5
+        )
+
+        assert finding.reason == overlay_coverage.NO_VALID_QUADRUPLE
+        assert dict(finding.failures) == {overlay_coverage.OFF_BOARD: 5}
+
+    def test_causes_are_most_common_first(self, world):
+        for parent in "PQRST":
+            sibling_group(
+                world, parent, [f"{parent.lower()}{n}" for n in range(1, 6)]
+            )
+        world.overlay_group("axis", ["p1", "q1", "r1", "s1", "t1"])
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("axis"), 5
+        )
+
+        counts = [count for _, count in finding.failures]
+        assert counts == sorted(counts, reverse=True)
+
+    def test_a_feasible_category_reports_no_failures(self, world):
+        workable_siblings(world)
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("also_a_verb"), 5
+        )
+
+        assert finding.feasible
+        assert finding.failures == ()
+
+    def test_a_search_that_never_ran_reports_none(self, world):
+        sibling_group(world, "boats", ["ketch", "punt"])
+        world.overlay_group("floats", ["ketch"])
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("floats"), 5
+        )
+
+        assert finding.reason == overlay_coverage.TOO_FEW_HIDDEN_MEMBERS
+        assert finding.failures == ()
+
+
+class TestTheReportExplainsItself:
+    def build(self, path: Path, curated_source, builder) -> None:
+        repos = GraphRepositories(SqliteDocumentStore(path))
+        try:
+            builder(World(repos, curated_source))
+        finally:
+            repos.close()
+
+    def test_the_cause_and_the_homes_are_printed(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, TestWhyNoBoardWasFound().nested)
+
+        code = measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        out = capsys.readouterr().out
+        assert code == 1
+        assert "reaches 4 homes (needs 4)" in out
+        assert "homes: A, B, C, D" in out
+        assert "why no board: hidden_member_also_in_another_chosen_parent 1" in out
+
+    def test_a_homeless_word_is_explained_in_the_report(
+        self, tmp_path, curated_source, capsys
+    ):
+        def strings(world: World) -> None:
+            sibling_group(
+                world, "strings", ["violin", "viola", "cello", "bass", "harp"]
+            )
+            world.entity("fiddle")
+            world.member("fiddle", "violin")
+            world.overlay_group(
+                "has_strings", ["fiddle", "harp", "cello", "viola", "violin"]
+            )
+
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, strings)
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        out = capsys.readouterr().out
+        assert "no usable home: fiddle" in out
+        assert "fiddle: a synonym of violin" in out
+
+    def test_reasons_appear_once_not_once_per_size(
+        self, tmp_path, curated_source, capsys
+    ):
+        def strings(world: World) -> None:
+            sibling_group(
+                world, "strings", ["violin", "viola", "cello", "bass", "harp"]
+            )
+            world.entity("fiddle")
+            world.member("fiddle", "violin")
+            world.overlay_group(
+                "has_strings", ["fiddle", "harp", "cello", "viola", "violin"]
+            )
+
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, strings)
+
+        measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--group-size", "6"]
+        )
+
+        assert capsys.readouterr().out.count("fiddle: a synonym of violin") == 1
+
+    def test_the_json_carries_the_explanations(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, TestWhyNoBoardWasFound().nested)
+        out_path = tmp_path / "coverage.json"
+
+        measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--json", str(out_path)]
+        )
+        capsys.readouterr()
+
+        row = json.loads(out_path.read_text())["targets"]["5"][0]
+        assert row["home_names"] == ["A", "B", "C", "D"]
+        assert row["why_no_quadruple"] == [
+            {"cause": "hidden_member_also_in_another_chosen_parent", "count": 1}
+        ]
+
+    def test_the_size_only_note_is_printed(self, tmp_path, curated_source, capsys):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, TestWhyNoBoardWasFound().nested)
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        assert "chosen by size alone" in capsys.readouterr().out

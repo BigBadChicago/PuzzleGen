@@ -84,6 +84,12 @@ class Snapshot:
     overlay_names: dict[str, str]
     types_of: dict[str, frozenset[str]]
     entity_names: dict[str, str]
+    #: What ``explain_homeless`` needs to say why a word has no home. Optional
+    #: so a snapshot built by hand for a test still works without them.
+    direct_categories: dict[str, tuple[str, ...]] = field(default_factory=dict)
+    representative: dict[str, str] = field(default_factory=dict)
+    parents: dict[str, tuple[str, ...]] = field(default_factory=dict)
+    grouping: str = "shared_category"
 
     def usable_lexical(self, group_size: int) -> list[str]:
         """Categories large enough to supply one visible group."""
@@ -118,6 +124,10 @@ class Snapshot:
             overlay_names=self.overlay_names,
             types_of=self.types_of,
             entity_names=self.entity_names,
+            direct_categories=self.direct_categories,
+            representative=self.representative,
+            parents=self.parents,
+            grouping=self.grouping,
         )
 
 
@@ -138,6 +148,10 @@ class Finding:
     #: Distinct lexical categories the members do reach.
     homes: tuple[str, ...] = ()
     quadruple: tuple[str, ...] = ()
+    #: For a failed search: which check ended each choice of four groups, most
+    #: common first. Without it "no valid quadruple" says only that something
+    #: failed, and a curator cannot tell content from structure.
+    failures: tuple[tuple[str, int], ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -251,8 +265,16 @@ def load(
             types_of.setdefault(entity_id, set()).add(category.id)
             types_of[entity_id] |= ancestry[category.id]
 
+    direct_categories: dict[str, list[str]] = {}
+    for category_id, members in lexical_members.items():
+        for member_id in members:
+            direct_categories.setdefault(member_id, []).append(category_id)
+
+    representative: dict[str, str] = {}
     if grouping == SIBLINGS:
-        lexical_members = _sibling_members(lexical, lexical_members, active_entities)
+        lexical_members, representative = _sibling_members(
+            lexical, lexical_members, active_entities
+        )
     elif grouping != SHARED_CATEGORY:
         raise ValueError(f"unknown grouping {grouping!r}")
 
@@ -273,6 +295,10 @@ def load(
         overlay_names={c.id: c.canonical_name for c in overlay},
         types_of={k: frozenset(v) for k, v in types_of.items()},
         entity_names=active_entities,
+        direct_categories={k: tuple(sorted(v)) for k, v in direct_categories.items()},
+        representative=representative,
+        parents={c.id: tuple(c.parent_ids) for c in lexical},
+        grouping=grouping,
     )
 
 
@@ -280,7 +306,7 @@ def _sibling_members(
     lexical,
     direct: dict[str, frozenset[str]],
     entity_names: dict[str, str],
-) -> dict[str, frozenset[str]]:
+) -> tuple[dict[str, frozenset[str]], dict[str, str]]:
     """Parent -> one representative entity per child that has one.
 
     Mirrors ``ContentService._representatives``: a child is represented by the
@@ -302,7 +328,7 @@ def _sibling_members(
             continue
         for parent_id in category.parent_ids:
             members.setdefault(parent_id, set()).add(rep)
-    return {cid: frozenset(found) for cid, found in members.items()}
+    return {cid: frozenset(found) for cid, found in members.items()}, representative
 
 
 # -- the precondition ---------------------------------------------------------
@@ -336,8 +362,15 @@ def _can_fill(eligible: list[set[str]], needed: list[int]) -> bool:
 
 
 OK = "ok"
-FAILS = "fails"
 NEEDS_DOMAIN = "needs_domain"
+
+#: Why one choice of four groups was not a board: the first check that failed.
+OFF_BOARD = "hidden_member_on_no_chosen_group"
+IN_TWO_GROUPS = "hidden_member_in_two_chosen_groups"
+UNUSED_GROUP = "a_group_gives_up_no_hidden_member"
+CROSS_MEMBERSHIP = "hidden_member_also_in_another_chosen_parent"
+OVER_BORROWED = "a_group_holds_too_many_hidden_members"
+CANNOT_FILL = "too_few_other_tiles_to_fill_the_groups"
 
 
 def _shared_ancestry(snapshot: Snapshot, category_id: str) -> frozenset[str]:
@@ -364,16 +397,18 @@ def _quadruple_works(
         # Exactly one: none means the tile is not on the board, and two means
         # the tile belongs to a second chosen group's category, which is the
         # cross-membership the assembler refuses.
-        if len(owning) != 1:
-            return FAILS
+        if not owning:
+            return OFF_BOARD
+        if len(owning) > 1:
+            return IN_TWO_GROUPS
         home_of[member] = owning[0]
 
     if len(set(home_of.values())) != len(categories):
-        return FAILS
+        return UNUSED_GROUP
 
     for member, home in home_of.items():
         if (snapshot.types_of.get(member, frozenset()) & chosen) - {home}:
-            return FAILS
+            return CROSS_MEMBERSHIP
 
     borrowed = Counter(home_of.values())
     eligible: list[set[str]] = []
@@ -381,7 +416,7 @@ def _quadruple_works(
     for category in categories:
         shortfall = group_size - borrowed[category]
         if shortfall < 0:
-            return FAILS
+            return OVER_BORROWED
         eligible.append(
             {
                 entity_id
@@ -396,7 +431,7 @@ def _quadruple_works(
         needed.append(shortfall)
 
     if not _can_fill(eligible, needed):
-        return FAILS
+        return CANNOT_FILL
 
     resemblance = sum(
         len((ancestry[left] & ancestry[right]) - chosen)
@@ -472,6 +507,7 @@ def assess(
     examined = 0
     exhausted = True
     domain_blocked = False
+    causes: Counter[str] = Counter()
     for subset in itertools.combinations(placeable, group_size):
         hidden = frozenset(subset)
         candidates = sorted(
@@ -487,6 +523,8 @@ def assess(
             verdict = _quadruple_works(snapshot, quadruple, hidden, group_size, ancestry)
             if verdict == NEEDS_DOMAIN:
                 domain_blocked = True
+            elif verdict != OK:
+                causes[verdict] += 1
             if verdict == OK:
                 return Finding(
                     group_size=group_size,
@@ -516,6 +554,7 @@ def assess(
         ),
         homeless=homeless,
         homes=tuple(reachable),
+        failures=tuple(sorted(causes.items(), key=lambda pair: (-pair[1], pair[0]))),
     )
 
 
@@ -548,6 +587,47 @@ def distinct_homes(
         for cid in snapshot.usable_lexical(group_size)
         if snapshot.lexical_members[cid] & members
     }
+
+
+def explain_homeless(snapshot: Snapshot, entity_id: str, group_size: int) -> str:
+    """Why this word is not a tile anywhere, in a sentence a curator can act on.
+
+    The three causes need three different fixes, and the survey alone shows
+    only that a word has no home. A word the lexicon lacks needs a different
+    word or a different export. A word that is a synonym of another child's
+    name is never a tile under sibling grouping, so the seed should use the
+    word that stands for it. A word whose parent has too few kinds needs a
+    bigger parent, not a different word.
+    """
+    categories = snapshot.direct_categories.get(entity_id, ())
+    if not categories:
+        return "not in the lexicon, so only the overlay knows this word"
+
+    reasons: list[str] = []
+    for category_id in categories:
+        name = snapshot.lexical_names.get(category_id, category_id)
+        if snapshot.grouping != SIBLINGS:
+            size = len(snapshot.lexical_members.get(category_id, ()))
+            reasons.append(f"in {name}, which has {size} members and needs {group_size}")
+            continue
+
+        stands_for = snapshot.representative.get(category_id)
+        if stands_for is None:
+            reasons.append(f"in {name}, which has no word carrying its own name")
+        elif stands_for != entity_id:
+            other = snapshot.entity_names.get(stands_for, stands_for)
+            reasons.append(f"a synonym of {other}, which is the word that stands for {name}")
+        else:
+            parent_ids = snapshot.parents.get(category_id, ())
+            if not parent_ids:
+                reasons.append(f"{name} has no parent, so it is the top of its tree")
+                continue
+            kinds = max(len(snapshot.lexical_members.get(p, ())) for p in parent_ids)
+            parent_names = ", ".join(snapshot.lexical_names.get(p, p) for p in parent_ids)
+            reasons.append(
+                f"a kind of {parent_names}, which has {kinds} kinds and needs {group_size}"
+            )
+    return "; ".join(reasons)
 
 
 def gain_of(
@@ -613,6 +693,7 @@ __all__ = [
     "TOO_FEW_HIDDEN_MEMBERS",
     "assess",
     "distinct_homes",
+    "explain_homeless",
     "gain_of",
     "load",
     "survey",

@@ -33,6 +33,7 @@ from overlay_coverage import (
     Report,
     Snapshot,
     distinct_homes,
+    explain_homeless,
     gain_of,
     load,
     survey,
@@ -122,6 +123,17 @@ def targeting(snapshot: Snapshot, report: Report, group_size: int) -> list[dict]
                 "homeless_members": [
                     snapshot.name_of(m) for m in finding.homeless
                 ],
+                "homeless_reasons": {
+                    snapshot.name_of(m): explain_homeless(snapshot, m, group_size)
+                    for m in finding.homeless
+                },
+                "home_names": sorted(
+                    snapshot.lexical_names.get(cid, cid) for cid in reached
+                )[:8],
+                "why_no_quadruple": [
+                    {"cause": cause, "count": count}
+                    for cause, count in finding.failures
+                ],
                 "propose_from": [
                     {
                         "category": snapshot.lexical_names.get(cid, cid),
@@ -175,14 +187,27 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
         for row in rows:
             lines.append(
                 f"  {row['hidden_group']} ({row['members']} members) reaches "
-                f"{row['homes_reached']} of {row['homes_needed']} homes "
+                f"{row['homes_reached']} homes (needs {row['homes_needed']}) "
                 f"[{row['reason']}]"
             )
+            if row.get("home_names"):
+                lines.append("    homes: " + ", ".join(row["home_names"]))
             if row["homeless_members"]:
                 lines.append(
                     "    no usable home: "
                     + ", ".join(row["homeless_members"][:10])
                 )
+                # Once, at the smallest size: the same words are homeless for
+                # the same reasons at every size, and repeating five times
+                # buries the part that changes.
+                if group_size == min(targets):
+                    for word, why in list(row["homeless_reasons"].items())[:8]:
+                        lines.append(f"      {word}: {why}")
+            if row.get("why_no_quadruple"):
+                causes = ", ".join(
+                    f"{c['cause']} {c['count']}" for c in row["why_no_quadruple"]
+                )
+                lines.append(f"    why no board: {causes}")
             if row["propose_from"]:
                 offered = ", ".join(
                     f"{entry['category']}({entry['members']})"
@@ -191,6 +216,10 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
                 lines.append(f"    propose words from: {offered}")
 
     lines.append("")
+    lines.append(
+        "propose words from: lists parents chosen by size alone. Whether one "
+        "suits a category's meaning is a human call the tool cannot make."
+    )
     lines.append(
         "generatable: yes" if summary["generatable"] else "generatable: no"
     )
