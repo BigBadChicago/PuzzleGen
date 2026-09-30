@@ -33,6 +33,7 @@ from overlay_coverage import (
     Report,
     Snapshot,
     distinct_homes,
+    gain_of,
     load,
     survey,
 )
@@ -195,6 +196,133 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
     return "\n".join(lines)
 
 
+def resolve_category(snapshot: Snapshot, name_or_id: str) -> str | None:
+    """A category argument can be given as a name or an id; try both.
+
+    Names are what a curator actually has in hand when proposing a candidate
+    ("thing that can be smoked"); ids are what the rest of this module works
+    in. Ambiguous names (two overlay categories sharing a lowercased name)
+    are rejected rather than guessed at, since a silent wrong match would
+    misreport gain for the wrong hidden group.
+    """
+    if name_or_id in snapshot.overlay_names:
+        return name_or_id
+    matches = [
+        cid
+        for cid, name in snapshot.overlay_names.items()
+        if name.lower() == name_or_id.lower()
+    ]
+    if len(matches) == 1:
+        return matches[0]
+    return None
+
+
+def resolve_entity(snapshot: Snapshot, name_or_id: str) -> str | None:
+    if name_or_id in snapshot.entity_names:
+        return name_or_id
+    matches = [
+        eid
+        for eid, name in snapshot.entity_names.items()
+        if name.lower() == name_or_id.lower()
+    ]
+    if len(matches) == 1:
+        return matches[0]
+    return None
+
+
+def load_candidates(path: Path) -> list[dict]:
+    """A JSON array of ``{"entity": ..., "category": ...}`` rows.
+
+    Plain JSON, not a manifest schema of its own, because this is a working
+    list a curator edits by hand while deciding what to add to the seed --
+    the same shape ``overlay.curated.json`` uses for entity-to-category pairs,
+    kept separate so trying a candidate is not the same act as accepting one.
+    """
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(rows, list):
+        raise ValueError(f"{path}: expected a JSON array of candidate rows")
+    for row in rows:
+        if "entity" not in row or "category" not in row:
+            raise ValueError(f"{path}: each row needs 'entity' and 'category'")
+    return rows
+
+
+def rank_candidates(
+    snapshot: Snapshot,
+    rows: list[dict],
+    *,
+    group_sizes: tuple[int, ...],
+    exact: bool,
+    budget: int,
+) -> list[dict]:
+    """Every candidate's gain, worst problems surfaced rather than buried.
+
+    An unresolved entity or category is reported as its own row instead of
+    raising, because a batch of forty candidates should not abort on the
+    first typo -- the curator fixes what the report shows and reruns.
+    """
+    results = []
+    for row in rows:
+        entity_id = resolve_entity(snapshot, row["entity"])
+        category_id = resolve_category(snapshot, row["category"])
+        if entity_id is None or category_id is None:
+            results.append(
+                {
+                    "entity": row["entity"],
+                    "category": row["category"],
+                    "error": (
+                        "unknown entity" if entity_id is None else "unknown category"
+                    ),
+                }
+            )
+            continue
+        gain = gain_of(
+            snapshot,
+            entity_id,
+            category_id,
+            group_sizes=group_sizes,
+            exact=exact,
+            budget=budget,
+        )
+        results.append(
+            {
+                "entity": row["entity"],
+                "category": row["category"],
+                "new_homes": [
+                    snapshot.lexical_names.get(cid, cid) for cid in gain.new_homes
+                ],
+                "unblocks": list(gain.unblocks),
+                "checked": gain.checked,
+                "rank": gain.rank,
+            }
+        )
+    results.sort(
+        key=lambda r: r.get("rank", (0, 0, r["entity"])) if "error" not in r else (1, 0, r["entity"])
+    )
+    return results
+
+
+def render_candidates(results: list[dict]) -> str:
+    lines = ["candidate gain, best first"]
+    problems = [r for r in results if "error" in r]
+    ranked = [r for r in results if "error" not in r]
+    for row in ranked:
+        flag = "UNBLOCKS" if row["unblocks"] else ("new home" if row["new_homes"] else "no gain")
+        lines.append(
+            f"  [{flag:>8}] {row['entity']:<16} -> {row['category']:<32} "
+            + (f"unblocks sizes {row['unblocks']}" if row["unblocks"] else "")
+            + (f" new: {', '.join(row['new_homes'])}" if row["new_homes"] else "")
+        )
+        if not row["checked"] and not row["new_homes"]:
+            lines.append("             (already reaches every home this category has)")
+    if problems:
+        lines.append("")
+        lines.append("could not evaluate:")
+        for row in problems:
+            lines.append(f"  {row['entity']} -> {row['category']}: {row['error']}")
+    return "\n".join(lines)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--db", type=Path, default=DEFAULT_DB)
@@ -206,6 +334,20 @@ def main(argv: list[str] | None = None) -> int:
         action="append",
         default=None,
         help="measure one size only; repeatable. Defaults to every supported size.",
+    )
+    parser.add_argument(
+        "--candidates",
+        type=Path,
+        default=None,
+        help=(
+            "JSON array of {'entity': ..., 'category': ...} rows to rank by "
+            "coverage gain, instead of the default full survey"
+        ),
+    )
+    parser.add_argument(
+        "--exact",
+        action="store_true",
+        help="with --candidates, run the exact feasibility flip check, not just the cheap new-homes count",
     )
     args = parser.parse_args(argv)
 
@@ -221,6 +363,20 @@ def main(argv: list[str] | None = None) -> int:
         # Python 3.13 and later report a collected-unclosed connection as a
         # warning, which the suite turns into a failure somewhere unrelated.
         repos.close()
+
+    if args.candidates is not None:
+        rows = load_candidates(args.candidates)
+        results = rank_candidates(
+            snapshot, rows, group_sizes=sizes, exact=args.exact, budget=args.budget
+        )
+        print(render_candidates(results))
+        if args.json is not None:
+            args.json.parent.mkdir(parents=True, exist_ok=True)
+            args.json.write_text(
+                json.dumps(results, indent=2, sort_keys=True), encoding="utf-8"
+            )
+            print(f"json: {args.json}")
+        return 0 if any(r.get("unblocks") for r in results) else 1
 
     report = survey(snapshot, group_sizes=sizes, budget=args.budget)
     summary = summarise(snapshot, report)

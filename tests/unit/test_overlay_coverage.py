@@ -13,6 +13,7 @@ because that is the failure the measurement had to stop hiding.
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 from pathlib import Path
 
@@ -594,3 +595,142 @@ class TestMeasureCommand:
     def test_a_missing_database_is_an_argument_error(self, tmp_path):
         with pytest.raises(SystemExit):
             measure_coverage.main(["--db", str(tmp_path / "absent.sqlite")])
+
+
+class TestCandidateBatch:
+    """The workflow this whole exercise was for: rank candidates before
+    committing them to the seed file, rather than checking one at a time.
+    """
+
+    def three_homes(self, world: World) -> None:
+        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
+        world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"])
+        world.lexical_group("tools", ["hammer", "chisel", "plane", "file", "awl"])
+        world.lexical_group("boats", ["ketch", "punt", "yawl", "dinghy", "canoe"])
+        world.overlay_group("also_a_verb", ["crane", "swift", "file", "lynx", "puma"])
+
+    def build(self, path: Path, curated_source) -> None:
+        repos = GraphRepositories(SqliteDocumentStore(path))
+        try:
+            self.three_homes(World(repos, curated_source))
+        finally:
+            repos.close()
+
+    def test_the_unblocking_candidate_ranks_first(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source)
+        candidates = tmp_path / "candidates.json"
+        candidates.write_text(
+            json.dumps(
+                [
+                    {"entity": "robin", "category": "also_a_verb"},
+                    {"entity": "punt", "category": "also_a_verb"},
+                ]
+            )
+        )
+
+        code = measure_coverage.main(
+            [
+                "--db",
+                str(db),
+                "--group-size",
+                "5",
+                "--candidates",
+                str(candidates),
+                "--exact",
+            ]
+        )
+
+        out = capsys.readouterr().out
+        assert code == 0
+        assert out.index("punt") < out.index("robin")
+        assert "UNBLOCKS" in out
+
+    def test_an_unknown_entity_is_reported_not_raised(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source)
+        candidates = tmp_path / "candidates.json"
+        candidates.write_text(
+            json.dumps([{"entity": "narwhal", "category": "also_a_verb"}])
+        )
+
+        code = measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--candidates", str(candidates)]
+        )
+
+        out = capsys.readouterr().out
+        assert code == 1
+        assert "unknown entity" in out
+
+    def test_category_matches_by_name_not_just_id(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source)
+        candidates = tmp_path / "candidates.json"
+        candidates.write_text(
+            json.dumps([{"entity": "punt", "category": "Also_A_Verb"}])
+        )
+
+        code = measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--candidates", str(candidates)]
+        )
+
+        assert "unknown category" not in capsys.readouterr().out
+
+    def test_without_exact_the_cheap_new_home_still_shows(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source)
+        candidates = tmp_path / "candidates.json"
+        candidates.write_text(
+            json.dumps([{"entity": "punt", "category": "also_a_verb"}])
+        )
+
+        measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--candidates", str(candidates)]
+        )
+
+        out = capsys.readouterr().out
+        assert "new home" in out or "UNBLOCKS" in out
+        assert "boats" in out
+
+    def test_the_json_report_is_written(self, tmp_path, curated_source, capsys):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source)
+        candidates = tmp_path / "candidates.json"
+        candidates.write_text(
+            json.dumps([{"entity": "punt", "category": "also_a_verb"}])
+        )
+        out_path = tmp_path / "ranked.json"
+
+        measure_coverage.main(
+            [
+                "--db",
+                str(db),
+                "--group-size",
+                "5",
+                "--candidates",
+                str(candidates),
+                "--json",
+                str(out_path),
+            ]
+        )
+        capsys.readouterr()
+
+        document = json.loads(out_path.read_text())
+        assert document[0]["entity"] == "punt"
+
+    def test_a_malformed_candidate_file_fails_loudly(self, tmp_path, curated_source):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source)
+        candidates = tmp_path / "candidates.json"
+        candidates.write_text(json.dumps([{"entity": "punt"}]))
+
+        with pytest.raises(ValueError, match="entity.*category"):
+            measure_coverage.load_candidates(candidates)
