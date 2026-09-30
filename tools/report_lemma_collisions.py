@@ -136,7 +136,12 @@ def category_collisions(paths: list[Path]) -> list[dict]:
         document = read_lexicon(path)
         in_file = {row["id"]: row.get("name") or row["id"] for row in document.get("synsets", ())}
         for synset in document.get("synsets", ()):
-            name = (synset.get("name") or "").lower()
+            # Case sensitive, because the id is minted from the name as
+            # written: "Cardigan" the corgi and "cardigan" the sweater are two
+            # categories and never merge. Lowercasing here reported a
+            # collision the graph does not have, and named a parent as lost
+            # that was never at risk.
+            name = synset.get("name") or ""
             if not name:
                 continue
             by_name.setdefault(name, {})[synset["id"]] = {
@@ -242,7 +247,7 @@ def build_report(
     ]
     histogram = collections.Counter(u.senses for u in uses.values())
     losing = [c for c in (categories or ()) if c.get("parents_lost")]
-    by_lemma = {c["name"]: c for c in losing}
+    by_lemma = {c["name"].lower(): c for c in losing}
     overlay_losing = [
         {
             "lemma": lemma,

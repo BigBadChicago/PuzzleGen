@@ -58,9 +58,9 @@ exports and the last two that is not one of the seven.
 ```bash
 # 1 to 5: the lexical exports
 python tools/export_wordnet.py --root animal.n.01 --depth 3 \
-    --out content/seeds/wordnet-animal.lexicon.json
+    --out content/seeds/wordnet-carnivore.lexicon.json
 python tools/export_wordnet.py --root plant.n.02 --depth 3 \
-    --out content/seeds/wordnet-plant.lexicon.json
+    --out content/seeds/wordnet-bird.lexicon.json
 python tools/export_wordnet.py --root tool.n.01 --depth 3 \
     --out content/seeds/wordnet-tool.lexicon.json
 python tools/export_wordnet.py --root vehicle.n.01 --depth 3 \
@@ -70,8 +70,10 @@ python tools/export_wordnet.py --root musical_instrument.n.01 --depth 3 \
 
 # prepare: the two input lists the next two commands consume
 python tools/build_snapshot.py --write-inputs build/ \
-    --lexicon content/seeds/wordnet-animal.lexicon.json \
-    --lexicon content/seeds/wordnet-plant.lexicon.json \
+    --lexicon content/seeds/wordnet-carnivore.lexicon.json \
+    --lexicon content/seeds/wordnet-bird.lexicon.json \
+    --lexicon content/seeds/wordnet-fruit.lexicon.json \
+    --lexicon content/seeds/wordnet-garment.lexicon.json \
     --lexicon content/seeds/wordnet-tool.lexicon.json \
     --lexicon content/seeds/wordnet-vehicle.lexicon.json \
     --lexicon content/seeds/wordnet-instrument.lexicon.json
@@ -116,8 +118,10 @@ be, not what was observed.
 
 ```bash
 python tools/report_lemma_collisions.py \
-    --lexicon content/seeds/wordnet-animal.lexicon.json \
-    --lexicon content/seeds/wordnet-plant.lexicon.json \
+    --lexicon content/seeds/wordnet-carnivore.lexicon.json \
+    --lexicon content/seeds/wordnet-bird.lexicon.json \
+    --lexicon content/seeds/wordnet-fruit.lexicon.json \
+    --lexicon content/seeds/wordnet-garment.lexicon.json \
     --lexicon content/seeds/wordnet-tool.lexicon.json \
     --lexicon content/seeds/wordnet-vehicle.lexicon.json \
     --lexicon content/seeds/wordnet-instrument.lexicon.json \
@@ -181,8 +185,10 @@ python tools/build_snapshot.py \
     --db content/graph.sqlite \
     --label 2026.09.1 \
     --now 2026-09-28T12:00:00+00:00 \
-    --lexicon content/seeds/wordnet-animal.lexicon.json \
-    --lexicon content/seeds/wordnet-plant.lexicon.json \
+    --lexicon content/seeds/wordnet-carnivore.lexicon.json \
+    --lexicon content/seeds/wordnet-bird.lexicon.json \
+    --lexicon content/seeds/wordnet-fruit.lexicon.json \
+    --lexicon content/seeds/wordnet-garment.lexicon.json \
     --lexicon content/seeds/wordnet-tool.lexicon.json \
     --lexicon content/seeds/wordnet-vehicle.lexicon.json \
     --lexicon content/seeds/wordnet-instrument.lexicon.json \
@@ -246,3 +252,24 @@ Losing the file loses the ten-day accept history outright, and the review
 system's whole anti-abuse property is that those ten days cannot be
 manufactured. Regenerating the graph is cheap; regenerating ten days of
 curation is impossible.
+
+
+## Which exports belong to a build
+
+Seven roots, exported at depth 6: `carnivore.n.01`, `bird.n.01`,
+`edible_fruit.n.01`, `musical_instrument.n.01`, `vehicle.n.01`,
+`garment.n.01`, `hand_tool.n.01`.
+
+Name every one of them explicitly. Do not glob `wordnet-*.lexicon.json`: a
+glob picks up whatever is in the directory, including the test fixture
+`wordnet-mini.lexicon.json` and any superseded export that has not been
+deleted yet. The broad `animal` and `plant` exports this project began with
+were removed for exactly that reason. Measured before they were: building the
+seven roots produced 8 categories that lose a parent to a name collision, and
+building all nine produced 31, including `viola`, which is an overlay word.
+
+Run `tools/report_lemma_collisions.py` over the same list before building, and
+read its "overlay words whose second meaning lost its parent" section. Order
+matters in one respect only: the first file to name a category sets its gloss.
+Parents from a later file are added to it (see "Merging a category" in
+`architecture.md`), so no sense loses its ancestry to the order any more.

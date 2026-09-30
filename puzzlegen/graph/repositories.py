@@ -248,6 +248,51 @@ class CategoryRepository(_GovernedRepository[Category]):
     def children(self, parent_id: str) -> list[Category]:
         return self.find(parent_id=parent_id)
 
+    def ancestor_ids(self, category_id: str) -> set[str]:
+        """Every category above this one, by walking parents.
+
+        The one traversal in the system. ``put`` alone cannot prevent a cycle
+        once a category may gain a parent after it is stored: both records
+        exist by then, so the existence check passes while the edge still
+        closes a loop. Callers that add a parent must ask this first.
+
+        Guarded against a cycle it may itself encounter, so a store that has
+        somehow acquired one is reported by the caller rather than hanging.
+        """
+        seen: set[str] = set()
+        frontier = list(self._parents_of(category_id))
+        while frontier:
+            current = frontier.pop()
+            if current in seen:
+                continue
+            seen.add(current)
+            frontier.extend(self._parents_of(current))
+        return seen
+
+    def _parents_of(self, category_id: str) -> tuple[str, ...]:
+        record = self.get(category_id)
+        return record.parent_ids if record is not None else ()
+
+    def descendant_ids(self, category_id: str) -> list[str]:
+        """Every category below this one, nearest first.
+
+        Depth is denormalised onto each category, so a category that gains a
+        parent can change the depth of everything under it. The order is what
+        lets a caller recompute those depths parents-first.
+        """
+        found: list[str] = []
+        seen = {category_id}
+        frontier = [category_id]
+        while frontier:
+            current = frontier.pop(0)
+            for child in self.children(current):
+                if child.id in seen:
+                    continue
+                seen.add(child.id)
+                found.append(child.id)
+                frontier.append(child.id)
+        return found
+
     def roots(self, taxonomy: str = "default") -> list[Category]:
         return self.find(taxonomy=taxonomy, depth="0")
 

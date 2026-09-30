@@ -1367,3 +1367,77 @@ class TestParentsLostInAMerge:
         row = self.viola([plant, instrument])
 
         assert row["parents_lost"] == ["bowed stringed instrument"]
+
+
+class TestCollisionsAreCaseSensitive:
+    """An id is minted from the name as written, so case decides identity.
+
+    ``Cardigan`` the corgi and ``cardigan`` the sweater are two categories and
+    never merge. Grouping by lowercased name reported a collision the graph
+    does not have and named a parent as lost that was never at risk.
+    """
+
+    def files(self, tmp_path):
+        dog = write_lexicon(
+            tmp_path / "dog.lexicon.json",
+            [sense("corgi", "s.corgi"), sense("Cardigan", "s.dog")],
+            synsets=[
+                {"id": "s.corgi", "name": "corgi", "definition": "a breed", "hypernyms": []},
+                {"id": "s.dog", "name": "Cardigan", "definition": "a corgi", "hypernyms": ["s.corgi"]},
+            ],
+        )
+        wear = write_lexicon(
+            tmp_path / "wear.lexicon.json",
+            [sense("sweater", "s.sweater"), sense("cardigan", "s.wear")],
+            synsets=[
+                {"id": "s.sweater", "name": "sweater", "definition": "a garment", "hypernyms": []},
+                {"id": "s.wear", "name": "cardigan", "definition": "a sweater", "hypernyms": ["s.sweater"]},
+            ],
+        )
+        return [dog, wear]
+
+    def test_names_differing_only_by_case_are_not_one_category(self, tmp_path):
+        rows = collisions.category_collisions(self.files(tmp_path))
+
+        assert not [r for r in rows if r["name"].lower() == "cardigan"]
+
+    def test_neither_loses_a_parent(self, tmp_path):
+        rows = collisions.category_collisions(self.files(tmp_path))
+
+        assert all(not r["parents_lost"] for r in rows)
+
+    def test_an_exact_match_still_collides(self, tmp_path):
+        paths = self.files(tmp_path)
+        same = write_lexicon(
+            tmp_path / "third.lexicon.json",
+            [sense("knitwear", "s.k"), sense("cardigan", "s.same")],
+            synsets=[
+                {"id": "s.k", "name": "knitwear", "definition": "d", "hypernyms": []},
+                {"id": "s.same", "name": "cardigan", "definition": "another", "hypernyms": ["s.k"]},
+            ],
+        )
+
+        rows = collisions.category_collisions([*paths, same])
+
+        row = next(r for r in rows if r["name"] == "cardigan")
+        assert row["parents_kept"] == ["sweater"]
+        assert row["parents_lost"] == ["knitwear"]
+
+    def test_the_import_agrees_with_the_report(self, tmp_path):
+        """The report and the graph must not disagree about what merges."""
+        paths = self.files(tmp_path)
+        with opened(tmp_path / "graph.sqlite3") as repos:
+            builder = SnapshotBuilder(repos, now=NOW)
+            for path in paths:
+                builder.import_provider(
+                    WordNetLexiconProvider(path, taxonomy="wordnet", now=NOW),
+                    taxonomy="wordnet",
+                    entity_identity="lemma",
+                )
+            dog = repos.categories.get(ids.for_category("Cardigan", "en", "wordnet"))
+            wear = repos.categories.get(ids.for_category("cardigan", "en", "wordnet"))
+
+            assert dog is not None and wear is not None
+            assert dog.id != wear.id
+            assert [repos.categories.get(p).canonical_name for p in dog.parent_ids] == ["corgi"]
+            assert [repos.categories.get(p).canonical_name for p in wear.parent_ids] == ["sweater"]

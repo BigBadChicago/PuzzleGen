@@ -180,6 +180,83 @@ class SnapshotBuilder:
 
         return normalized
 
+    def _merge_category(self, existing, incoming, report):
+        """Merge a category, keeping the parents of every sense that named it.
+
+        A category is identified by its name, so two senses of one word
+        exported under different roots become one category: ``viola`` the
+        plant under ``herb`` and ``viola`` the instrument under ``bowed
+        stringed instrument``. Keeping only the first import's parents homed
+        the other sense in the wrong family or nowhere, which is precisely the
+        double meaning this project is built on. The parents are therefore
+        unioned, and the category ends up under both.
+
+        Two costs come with that and are paid here rather than left implicit:
+
+        * ``CategoryRepository.put`` refusing an absent parent is no longer
+          the whole of cycle prevention, because both records exist by the
+          time an edge is added. Every added parent is checked against the
+          existing category's descendants first, and one that would close a
+          loop is refused and reported rather than written.
+        * ``depth`` is denormalised and derived from parents, so a category
+          that gains a deeper parent changes its own depth and that of
+          everything beneath it. Those depths are recomputed, nearest first.
+        """
+        combined = merge_governed(existing, incoming)
+        added = [p for p in incoming.parent_ids if p not in existing.parent_ids]
+        if not added:
+            return combined
+
+        below = set(self._repos.categories.descendant_ids(existing.id))
+        safe, refused = [], []
+        for parent_id in added:
+            if parent_id == existing.id or parent_id in below:
+                refused.append(parent_id)
+            else:
+                safe.append(parent_id)
+
+        if refused and report is not None:
+            names = ", ".join(sorted(refused))
+            report.warnings.append(
+                f"category {existing.canonical_name!r} ({existing.id}): refused "
+                f"parents that would make it its own ancestor: {names}"
+            )
+        if not safe:
+            return combined
+
+        parents = (*existing.parent_ids, *safe)
+        combined = combined.model_copy(update={"parent_ids": parents, **self._depths(parents)})
+        self._repos.categories.put(combined)
+        self._repair_depths(existing.id)
+        return combined
+
+    def _depths(self, parent_ids) -> dict[str, int]:
+        """Depth and min_depth derived from the stored parents."""
+        parents = [self._repos.categories.get(p) for p in parent_ids]
+        present = [p for p in parents if p is not None]
+        if not present:
+            return {"depth": 0, "min_depth": 0}
+        return {
+            "depth": 1 + max(p.depth for p in present),
+            "min_depth": 1 + min(p.min_depth for p in present),
+        }
+
+    def _repair_depths(self, category_id: str) -> None:
+        """Recompute depth for everything under a category that just moved.
+
+        Nearest first, so each category is recomputed after its own parents.
+        Wu-Palmer similarity and the "most specific shared category" rule both
+        read depth, so a stale value is a wrong similarity score rather than a
+        cosmetic error.
+        """
+        for descendant_id in self._repos.categories.descendant_ids(category_id):
+            record = self._repos.categories.get(descendant_id)
+            if record is None:
+                continue
+            depths = self._depths(record.parent_ids)
+            if (record.depth, record.min_depth) != (depths["depth"], depths["min_depth"]):
+                self._repos.categories.put(record.model_copy(update=depths))
+
     def _write_merged(
         self, normalized: NormalizedBundle, report: ImportReport | None
     ) -> dict[str, int]:
@@ -195,7 +272,7 @@ class SnapshotBuilder:
             if existing is None:
                 self._repos.categories.put(category)
             else:
-                self._repos.categories.put(merge_governed(existing, category))
+                self._repos.categories.put(self._merge_category(existing, category, report))
                 merged["categories"] += 1
 
         for name, records, repo in (
