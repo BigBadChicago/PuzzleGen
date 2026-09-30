@@ -1042,11 +1042,11 @@ class TestWhyAWordHasNoHome:
     """Three causes, three different fixes, one sentence each."""
 
     def test_a_synonym_is_named_as_one(self, world):
-        """"Fiddle" is a fine word and never a tile: violin is the tile."""
+        """Both are tagged, and the word bearing the category's name wins."""
         sibling_group(world, "strings", ["violin", "viola", "cello", "bass", "harp"])
         world.entity("fiddle")
         world.member("fiddle", "violin")
-        world.overlay_group("has_strings", ["fiddle", "harp"])
+        world.overlay_group("has_strings", ["fiddle", "violin"])
 
         why = overlay_coverage.explain_homeless(siblings_snapshot(world), eid("fiddle"), 5)
 
@@ -1440,3 +1440,78 @@ class TestTheVerdictDoesNotDependOnIterationOrder:
 
         assert verdict == overlay_coverage.IN_TWO_GROUPS
         assert detail == "bee is a kind of both P and Q"
+
+
+class TestTheTaggedWordStandsForItsChild:
+    """Option R in the coverage model: the curator's spelling is the tile."""
+
+    def strings(self, world: World, tagged: list[str]) -> None:
+        sibling_group(world, "strings", ["violin", "viola", "cello", "bass", "harp"])
+        world.entity("fiddle")
+        world.member("fiddle", "violin")
+        world.overlay_group("has_strings", tagged)
+
+    def test_a_tagged_synonym_is_the_tile(self, world):
+        self.strings(world, ["fiddle", "harp"])
+        snapshot = siblings_snapshot(world)
+
+        tiles = snapshot.lexical_members[world.id_of("strings")]
+        assert eid("fiddle") in tiles
+        assert eid("violin") not in tiles
+
+    def test_an_untagged_child_keeps_its_own_name(self, world):
+        self.strings(world, ["fiddle"])
+        snapshot = siblings_snapshot(world)
+
+        tiles = snapshot.lexical_members[world.id_of("strings")]
+        assert {eid(n) for n in ("viola", "cello", "bass", "harp")} <= tiles
+
+    def test_when_both_are_tagged_the_name_bearing_word_wins(self, world):
+        self.strings(world, ["fiddle", "violin"])
+        snapshot = siblings_snapshot(world)
+
+        tiles = snapshot.lexical_members[world.id_of("strings")]
+        assert eid("violin") in tiles and eid("fiddle") not in tiles
+
+    def test_nothing_tagged_means_the_first_lemma(self, world):
+        self.strings(world, ["harp"])
+        snapshot = siblings_snapshot(world)
+
+        tiles = snapshot.lexical_members[world.id_of("strings")]
+        assert eid("violin") in tiles and eid("fiddle") not in tiles
+
+    def test_a_what_if_rebuilds_the_groups(self, world):
+        """Tagging a word can change which word stands for its child, so the
+        exact check cannot reuse the lexical structure it started with."""
+        self.strings(world, ["harp"])
+        snapshot = siblings_snapshot(world)
+        overlay_id = world.id_of("has_strings")
+
+        after = snapshot.with_membership(eid("fiddle"), overlay_id)
+
+        strings = world.id_of("strings")
+        assert eid("violin") in snapshot.lexical_members[strings]
+        assert eid("fiddle") in after.lexical_members[strings]
+        assert eid("violin") not in after.lexical_members[strings]
+        assert after.representative[world.id_of("violin")] == eid("fiddle")
+
+    def test_it_agrees_with_the_content_service_when_words_are_tagged(self, world):
+        from puzzlegen.content.query import ContentQuery, Operation
+        from puzzlegen.content.service import ContentService
+
+        self.strings(world, ["fiddle", "harp"])
+        snapshot = siblings_snapshot(world)
+        service = ContentService(world.repos)
+        pool, memberships = service._pool(
+            ContentQuery(operation=Operation.FIND_GROUPS, taxonomy=LEXICAL), None, {}
+        )
+        index = service.taxonomy(LEXICAL)
+        carrying = frozenset(
+            e.id
+            for e in pool
+            if any(c in service.taxonomy(OVERLAY) for c in memberships[e.id])
+        )
+
+        chosen = service._representatives(pool, memberships, index, carrying)
+
+        assert {cid: e.id for cid, e in chosen.items()} == snapshot.representative

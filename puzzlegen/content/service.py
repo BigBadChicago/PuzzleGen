@@ -35,6 +35,7 @@ from .query import (
     PathView,
     RelationshipView,
 )
+from .representatives import choose_representatives
 from .similarity import (
     DEFAULT_STRATEGY,
     GroupSimilarity,
@@ -535,7 +536,7 @@ class ContentService:
             )
         else:
             candidates = (
-                (combination, None)
+                (combination, None, None)
                 for combination in self._candidate_groups(
                     pool, memberships, index, size
                 )
@@ -543,7 +544,7 @@ class ContentService:
 
         groups: list[GroupView] = []
         examined = 0
-        for combination, parent_id in candidates:
+        for combination, parent_id, children in candidates:
             examined += 1
             if examined > MAX_COMBINATIONS_EXAMINED:
                 rejected["COMBINATION_BUDGET_EXHAUSTED"] = 1
@@ -558,6 +559,7 @@ class ContentService:
                 rejected,
                 index,
                 parent_id=parent_id,
+                children=children,
             )
             if group is not None:
                 groups.append(group)
@@ -644,23 +646,30 @@ class ContentService:
         pool: Sequence[Entity],
         memberships: dict[str, tuple[str, ...]],
         index: TaxonomyIndex,
+        carrying: frozenset[str] = frozenset(),
     ) -> dict[str, Entity]:
-        """One entity per category: the one carrying the category's own name.
+        """One entity per category, chosen by ``choose_representatives``.
 
-        A category imported from a hierarchy is one meaning, and its direct
-        members are that meaning's synonyms. Picking the entity named like the
-        category picks the first lemma the exporter chose, deterministically,
-        and means a child with nine synonyms still contributes a single tile.
-        A category with no such entity has no representative and cannot be
-        offered as a sibling, rather than being represented by a guess.
+        The rule and its reasons live there, shared with the coverage tool.
+        Without ``carrying`` this is the entity bearing the category's own
+        name, the first lemma the exporter chose. With it, the word a curator
+        tagged in the second taxonomy wins, so a familiar synonym is a tile
+        when the overlay says it should be.
         """
-        found: dict[str, Entity] = {}
+        names: dict[str, str] = {}
+        direct: dict[str, list[tuple[str, str]]] = {}
+        by_id = {entity.id: entity for entity in pool}
         for entity in pool:
             for category_id in memberships.get(entity.id, ()):
                 category = index.get(category_id)
-                if category is not None and entity.canonical_name == category.canonical_name:
-                    found.setdefault(category_id, entity)
-        return found
+                if category is None:
+                    continue
+                names[category_id] = category.canonical_name
+                direct.setdefault(category_id, []).append(
+                    (entity.id, entity.canonical_name)
+                )
+        chosen = choose_representatives(names, direct, carrying)
+        return {category_id: by_id[entity_id] for category_id, entity_id in chosen.items()}
 
     def _candidate_sibling_groups(
         self,
@@ -672,32 +681,43 @@ class ContentService:
     ):
         """Combinations of distinct children of one parent, parent by parent.
 
-        Yields ``(members, parent_id)``. The same shape and the same
-        discipline as ``_candidate_groups``: most specific parents first,
-        round robin across parents so a limit is filled with different groups
-        rather than variations on one, and each set of members assessed once.
+        Yields ``(members, parent_id, children)``, ``children`` being the child
+        category each member stands for, in the same order. The same shape and
+        the same discipline as ``_candidate_groups``: most specific parents
+        first, round robin across parents so a limit is filled with different
+        groups rather than variations on one, and each set of members assessed
+        once.
 
-        When the query requires members from a second taxonomy, children whose
-        representative carries it are ordered first within each parent.
-        Combinations are produced in index order, so the earliest ones all
-        contain the leading children, and the requirement is met by
-        construction rather than by refusing most of what is offered.
+        When the query requires members from a second taxonomy, the word that
+        carries it stands for its child, and children whose tile carries it are
+        ordered first within each parent. Combinations are produced in index
+        order, so the earliest ones all contain the leading children, and the
+        requirement is met by construction rather than by refusing most of what
+        is offered.
         """
-        representative = self._representatives(pool, memberships, index)
-        carrying: set[str] = set()
-        if query.intersects_taxonomy is not None:
-            other = self.taxonomy(query.intersects_taxonomy)
-            carrying = {
-                category_id
-                for category_id, entity in representative.items()
-                if any(cid in other for cid in memberships[entity.id])
-            }
-
         needed = (
             query.minimum_intersecting_members
             if query.intersects_taxonomy is not None
             else 0
         )
+        carrying_entities: frozenset[str] = frozenset()
+        if query.intersects_taxonomy is not None:
+            other = self.taxonomy(query.intersects_taxonomy)
+            carrying_entities = frozenset(
+                entity.id
+                for entity in pool
+                if any(cid in other for cid in memberships[entity.id])
+            )
+
+        representative = self._representatives(
+            pool, memberships, index, carrying_entities
+        )
+        carrying = {
+            category_id
+            for category_id, entity in representative.items()
+            if entity.id in carrying_entities
+        }
+
         children_of: dict[str, list[str]] = {}
         for category_id in representative:
             category = index.get(category_id)
@@ -739,7 +759,7 @@ class ContentService:
                 if key in seen:
                     continue
                 seen.add(key)
-                yield members, parent_id
+                yield members, parent_id, tuple(combination)
 
     @staticmethod
     def _spread_combinations(kids: Sequence[str], size: int):
@@ -767,20 +787,41 @@ class ContentService:
         index: TaxonomyIndex,
         parent_id: str,
         views: dict[str, EntityView],
+        children: Sequence[str] | None = None,
     ) -> dict[str, str] | None:
         """Which child of ``parent_id`` each member stands for, or None.
 
-        Re-derived from the members rather than trusted from the generator:
-        every gate runs even when the query should already guarantee its
-        result, because a precise query is a performance property and the
-        gate is the correctness proof.
+        With ``children`` given, each is checked: the member must be a direct
+        member of its stated child, and that child must be a direct child of
+        the parent. Without it the child is derived from the member's name, the
+        first lemma rule. Either way the result is re-derived rather than
+        trusted from the generator, because a precise query is a performance
+        property and the gate is the correctness proof.
+
+        The member's name is not compared with the child's here. Which word
+        stands for a child is the generator's decision, and a synonym the
+        curator tagged is a legitimate tile; what has to hold is that the tile
+        really is a member of the child it claims to stand for.
         """
         chosen: dict[str, str] = {}
+        if children is not None:
+            for entity_id, category_id in zip(member_ids, children):
+                category = index.get(category_id)
+                if (
+                    category is None
+                    or category_id not in memberships[entity_id]
+                    or parent_id not in category.parent_ids
+                ):
+                    return None
+                chosen[entity_id] = category_id
+            return chosen
+
         for entity_id in member_ids:
             candidates = sorted(
                 cid
                 for cid in memberships[entity_id]
-                if cid in index and parent_id in index.get(cid).parent_ids
+                if cid in index
+                and parent_id in index.get(cid).parent_ids
                 and views[entity_id].name == index.get(cid).canonical_name
             )
             if not candidates:
@@ -799,6 +840,7 @@ class ContentService:
         rejected: dict[str, int],
         index: TaxonomyIndex,
         parent_id: str | None = None,
+        children: Sequence[str] | None = None,
     ) -> GroupView | None:
         def refuse(reason: RejectionReason) -> None:
             rejected[reason.value] = rejected.get(reason.value, 0) + 1
@@ -819,7 +861,7 @@ class ContentService:
         child_of: dict[str, str] | None = None
         if parent_id is not None:
             child_of = self._sibling_children(
-                member_ids, memberships, index, parent_id, views
+                member_ids, memberships, index, parent_id, views, children
             )
             if child_of is None:
                 refuse(RejectionReason.NO_SHARED_CATEGORY)

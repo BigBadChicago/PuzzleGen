@@ -31,7 +31,12 @@ MEMBERSHIP_PREDICATE = "is_a"
 #: than this is invisible to the generator on its widest days.
 MAX_GROUP_SIZE = 9
 
-EXPECTED_CATEGORIES = 15
+#: Live categories, the ones a build imports. Pinned on purpose: this is the
+#: guard against a category disappearing by accident, and it changes only
+#: when someone retires or reopens one and says so here.
+EXPECTED_CATEGORIES = 14
+#: Every category ever authored, live or retired.
+EXPECTED_AUTHORED = 15
 EXPECTED_MEMBERS_EACH = 10
 
 
@@ -68,8 +73,11 @@ class TestTheFile:
         assert document["version"]
         dt.date.fromisoformat(document["updated"])
 
-    def test_it_carries_fifteen_categories(self, document):
-        assert len(document["categories"]) == EXPECTED_CATEGORIES
+    def test_it_carries_every_authored_category_live_or_retired(self, document):
+        """A retirement moves a category, it never loses one."""
+        live = len(document["categories"])
+        assert live == EXPECTED_CATEGORIES
+        assert live + len(document.get("retired", ())) == EXPECTED_AUTHORED
 
     def test_every_category_has_a_gloss(self, document):
         assert all(c["gloss"] for c in document["categories"])
@@ -131,10 +139,10 @@ class TestTheFile:
         """The point of the overlay is a group the taxonomy cannot make.
 
         A category whose members all come from one branch of WordNet is a
-        visible group wearing a second name. Eleven of fifteen here cross two
-        or more of animal, plant, tool, vehicle and instrument; the four that
-        do not (wheels, floats, names, blown) are kept because their word play
-        carries them.
+        visible group wearing a second name. Eleven of the fourteen live here
+        cross two or more of animal, plant, tool, vehicle and instrument; the
+        three that do not (floats, names, blown) are kept because their word
+        play carries them. Wheels was a fourth and is retired.
         """
         single_domain = {
             "thing with wheels",
@@ -243,7 +251,7 @@ class TestItIsTheProposersInputFormat:
         """The seed is designed as the proposer's input, not retrofitted to it.
 
         The proposer queries live overlay categories and their active members;
-        after this import it finds fifteen of them, each with a member set big
+        after this import it finds every live one, each with a member set big
         enough to build a centroid from once embeddings exist.
         """
         import importlib.util
@@ -368,3 +376,45 @@ class TestTheSeedMeetsTheLexicon:
     ):
         for entity in document["entities"]:
             assert lexicon_senses[entity["name"]] is not None
+
+
+class TestRetiredCategories:
+    """Set aside with a reason, never deleted and never imported."""
+
+    def retired(self, document):
+        return document.get("retired", [])
+
+    def test_wheels_is_retired_with_its_ten_members(self, document):
+        entry = next(e for e in self.retired(document) if e["key"] == "overlay.wheels")
+
+        assert entry["name"] == "thing with wheels"
+        assert len(entry["members"]) == EXPECTED_MEMBERS_EACH
+
+    def test_a_retired_category_is_not_a_live_one(self, document):
+        live = {c["key"] for c in document["categories"]}
+
+        assert not live & {e["key"] for e in self.retired(document)}
+
+    def test_every_retirement_says_why_and_when_to_reopen(self, document):
+        for entry in self.retired(document):
+            assert entry["reason"].strip(), entry["key"]
+            assert entry["reopen_when"].strip(), entry["key"]
+            dt.date.fromisoformat(entry["retired_on"])
+
+    def test_no_live_entity_still_names_a_retired_category(self, document):
+        retired = {e["key"] for e in self.retired(document)}
+        for entity in document["entities"]:
+            assert not retired & set(entity["categories"]), entity["key"]
+
+    def test_the_provider_reports_them(self):
+        provider = CuratedJSONProvider(SEED, name="overlay-seed", now=NOW)
+
+        assert [e["key"] for e in provider.retired_categories()] == [
+            e["key"] for e in json.loads(SEED.read_text(encoding="utf-8")).get("retired", [])
+        ]
+
+    def test_the_graph_never_sees_them(self, imported):
+        names = {c.canonical_name for c in imported.categories.live(OVERLAY_TAXONOMY)}
+
+        assert "thing with wheels" not in names
+        assert len(names) == EXPECTED_CATEGORIES

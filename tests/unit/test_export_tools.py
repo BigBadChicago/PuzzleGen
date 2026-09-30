@@ -27,6 +27,8 @@ from pathlib import Path
 import pytest
 from conftest import NOW
 
+from ..support.overlay_counts import CATEGORIES, ENTITIES
+
 from puzzlegen.content.snapshots import ImportReport, SnapshotBuilder
 from puzzlegen.providers.curated import CuratedJSONProvider
 from puzzlegen.providers.wordnet import WordNetLexiconProvider
@@ -402,8 +404,8 @@ class TestBuildReportCounts:
         # The animals seed and the overlay share lemmas now, and lemma
         # identity merges them, so the per provider sum counts what each
         # import produced while the graph holds fewer records than the total.
-        assert counts["entities"] == 23 + 144
-        assert counts["categories"] == 8 + 15
+        assert counts["entities"] == 23 + ENTITIES
+        assert counts["categories"] == 8 + CATEGORIES
 
     def test_two_imports_under_two_names_stay_separate(self, repos):
         report = ImportReport(snapshot_id="", label="counts")
@@ -418,7 +420,7 @@ class TestBuildReportCounts:
             report=report,
         )
         assert report.provider_counts["a"]["entities"] == 23
-        assert report.provider_counts["b"]["entities"] == 144
+        assert report.provider_counts["b"]["entities"] == ENTITIES
 
     def test_the_summed_count_is_what_each_import_produced(self, repos):
         """Not what the graph ends up holding.
@@ -430,7 +432,7 @@ class TestBuildReportCounts:
         """
         report = self.import_two(repos, "shared")
         produced = report.provider_counts["shared"]["entities"]
-        assert produced == 23 + 144
+        assert produced == 23 + ENTITIES
         assert repos.entities.count() <= produced
 
 

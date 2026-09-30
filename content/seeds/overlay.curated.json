@@ -1,7 +1,7 @@
 {
   "curated_schema": 1,
   "version": "2026.09.2",
-  "updated": "2026-09-28",
+  "updated": "2026-09-30",
   "warnings": [
     "Overlay memberships are asserted by a curator, not inferred by tooling. Import this file with taxonomy='overlay'."
   ],
@@ -14,7 +14,6 @@
     {"key": "overlay.teeth", "name": "thing with teeth", "gloss": "A thing whose parts are called teeth."},
     {"key": "overlay.blade", "name": "thing with a blade", "gloss": "A thing that has a blade."},
     {"key": "overlay.handle", "name": "thing with a handle", "gloss": "A thing held by a handle."},
-    {"key": "overlay.wheels", "name": "thing with wheels", "gloss": "A thing that rolls on wheels."},
     {"key": "overlay.floats", "name": "thing that floats", "gloss": "A thing built to stay on the water."},
     {"key": "overlay.name", "name": "word that is also a person's name", "gloss": "A word that is also a given name."},
     {"key": "overlay.smoked", "name": "thing that can be smoked", "gloss": "A thing people smoke, or smoke to cure."},
@@ -103,16 +102,6 @@
     {"key": "e.wrench", "name": "wrench", "categories": ["overlay.handle"], "confidence": 0.95},
     {"key": "e.screwdriver", "name": "screwdriver", "categories": ["overlay.handle"], "confidence": 0.95},
     {"key": "e.broom", "name": "broom", "categories": ["overlay.handle"], "confidence": 0.95},
-    {"key": "e.car", "name": "car", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.bicycle", "name": "bicycle", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.wagon", "name": "wagon", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.cart", "name": "cart", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.truck", "name": "truck", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.tractor", "name": "tractor", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.motorcycle", "name": "motorcycle", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.bus", "name": "bus", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.jeep", "name": "jeep", "categories": ["overlay.wheels"], "confidence": 0.95},
-    {"key": "e.scooter", "name": "scooter", "categories": ["overlay.wheels"], "confidence": 0.95},
     {"key": "e.boat", "name": "boat", "categories": ["overlay.floats"], "confidence": 0.95},
     {"key": "e.ship", "name": "ship", "categories": ["overlay.floats"], "confidence": 0.95},
     {"key": "e.canoe", "name": "canoe", "categories": ["overlay.floats"], "confidence": 0.95},
@@ -167,5 +156,140 @@
     {"key": "e.piccolo", "name": "piccolo", "categories": ["overlay.blown"], "confidence": 0.95},
     {"key": "e.recorder", "name": "recorder", "categories": ["overlay.blown"], "confidence": 0.95},
     {"key": "e.saxophone", "name": "saxophone", "categories": ["overlay.blown"], "confidence": 0.95}
+  ],
+  "retired": [
+    {
+      "key": "overlay.wheels",
+      "name": "thing with wheels",
+      "gloss": "A thing that rolls on wheels.",
+      "position": 8,
+      "members": [
+        "car",
+        "bicycle",
+        "wagon",
+        "cart",
+        "truck",
+        "tractor",
+        "motorcycle",
+        "bus",
+        "jeep",
+        "scooter"
+      ],
+      "entities_removed": [
+        {
+          "index": 80,
+          "row": {
+            "key": "e.car",
+            "name": "car",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 81,
+          "row": {
+            "key": "e.bicycle",
+            "name": "bicycle",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 82,
+          "row": {
+            "key": "e.wagon",
+            "name": "wagon",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 83,
+          "row": {
+            "key": "e.cart",
+            "name": "cart",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 84,
+          "row": {
+            "key": "e.truck",
+            "name": "truck",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 85,
+          "row": {
+            "key": "e.tractor",
+            "name": "tractor",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 86,
+          "row": {
+            "key": "e.motorcycle",
+            "name": "motorcycle",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 87,
+          "row": {
+            "key": "e.bus",
+            "name": "bus",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 88,
+          "row": {
+            "key": "e.jeep",
+            "name": "jeep",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        },
+        {
+          "index": 89,
+          "row": {
+            "key": "e.scooter",
+            "name": "scooter",
+            "categories": [
+              "overlay.wheels"
+            ],
+            "confidence": 0.95
+          }
+        }
+      ],
+      "retired_on": "2026-09-30",
+      "reason": "The parents that hold its words nest under one another (motor vehicle under self-propelled vehicle under wheeled vehicle, with car and wagon also under wheeled vehicle), so no four peer parents hold them and every board is refused as ambiguous.",
+      "reopen_when": "New words and parents are added so that wheeled things sit under four peer parents, for example kinds of wagon, cart, bicycle and railway car, each parent with at least five kinds."
+    }
   ]
 }

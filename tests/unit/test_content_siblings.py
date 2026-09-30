@@ -424,3 +424,117 @@ class TestTaxonomyIndexChildren:
         index = service.taxonomy(TAXONOMY)
 
         assert index.children(ids.for_category("canoe", "en", TAXONOMY)) == frozenset()
+
+
+class TestTheTaggedWordIsTheTile:
+    """When a query needs a second taxonomy, the word tagged in it stands for
+    its child, so a familiar synonym is a tile because the curator said so."""
+
+    def strings(self, repos, tmp_path, tagged):
+        categories = [category("thing"), category("strings", "thing")]
+        entities: list[dict] = []
+        family(
+            categories,
+            entities,
+            "strings",
+            {"violin": ["fiddle"], "viola": [], "cello": [], "bass": [], "harp": []},
+        )
+        extra = (
+            [{"key": "x.s", "name": "has strings"}],
+            [
+                {"key": f"e.{w}", "name": w, "categories": ["x.s"], "confidence": 0.95}
+                for w in tagged
+            ],
+        )
+        return build(repos, tmp_path, categories, entities, extra=extra)
+
+    def names(self, result) -> set[str]:
+        return {m.name for g in result.groups for m in g.members}
+
+    def test_a_tagged_synonym_is_the_tile(self, repos, tmp_path):
+        service = self.strings(repos, tmp_path, ["fiddle", "harp"])
+
+        result = service.execute(
+            groups_query(5, GroupingMode.SIBLINGS, intersects_taxonomy="extra")
+        )
+
+        assert result.groups
+        assert "fiddle" in self.names(result)
+        assert "violin" not in self.names(result)
+
+    def test_without_the_requirement_the_first_lemma_is_the_tile(self, repos, tmp_path):
+        service = self.strings(repos, tmp_path, ["fiddle", "harp"])
+
+        result = service.execute(groups_query(5, GroupingMode.SIBLINGS))
+
+        assert "violin" in self.names(result)
+        assert "fiddle" not in self.names(result)
+
+    def test_when_both_are_tagged_the_name_bearing_word_wins(self, repos, tmp_path):
+        service = self.strings(repos, tmp_path, ["fiddle", "violin", "harp"])
+
+        result = service.execute(
+            groups_query(5, GroupingMode.SIBLINGS, intersects_taxonomy="extra")
+        )
+
+        assert "violin" in self.names(result)
+        assert "fiddle" not in self.names(result)
+
+    def test_the_assessor_accepts_a_synonym_it_was_told_stands_for_its_child(
+        self, repos, tmp_path
+    ):
+        """The name check that would have refused "fiddle" is gone. What is
+        checked instead is that the tile is a member of the child it claims."""
+        service = self.strings(repos, tmp_path, ["fiddle"])
+        entities = {e.canonical_name: e for e in service._repos.entities.active()}
+        members = [entities[n] for n in ("fiddle", "viola", "cello", "bass", "harp")]
+        memberships = {m.id: service._membership_ids(m.id) for m in members}
+        index = service.taxonomy(TAXONOMY)
+        query = groups_query(5, GroupingMode.SIBLINGS)
+        views = {m.id: service._view(m, query, None, taxonomy=index) for m in members}
+        parent = ids.for_category("strings", "en", TAXONOMY)
+        member_ids = [m.id for m in members]
+        right = [
+            ids.for_category(n, "en", TAXONOMY)
+            for n in ("violin", "viola", "cello", "bass", "harp")
+        ]
+        wrong = [right[1], *right[1:]]
+
+        found = service._sibling_children(member_ids, memberships, index, parent, views, right)
+
+        assert found is not None and len(set(found.values())) == 5
+        assert service._sibling_children(member_ids, memberships, index, parent, views, wrong) is None
+
+    def test_a_word_filed_under_two_children_is_a_tile_once(self, repos, tmp_path):
+        """``horn`` is a synonym under both cornet and French horn."""
+        categories = [category("thing"), category("brass", "thing")]
+        entities: list[dict] = []
+        family(
+            categories,
+            entities,
+            "brass",
+            {"tuba": [], "bugle": [], "trombone": [], "sackbut": []},
+        )
+        categories += [category("cornet", "brass"), category("French horn", "brass")]
+        entities += [
+            entity("cornet", "cornet"),
+            entity("French horn", "French horn"),
+            entity("horn", "cornet", "French horn"),
+        ]
+        extra = (
+            [{"key": "x.b", "name": "is blown"}],
+            [{"key": "e.horn", "name": "horn", "categories": ["x.b"], "confidence": 0.95}],
+        )
+        service = build(repos, tmp_path, categories, entities, extra=extra)
+
+        result = service.execute(
+            groups_query(5, GroupingMode.SIBLINGS, intersects_taxonomy="extra", limit=20)
+        )
+
+        assert result.groups
+        for group in result.groups:
+            tiles = [m.entity_id for m in group.members]
+            assert len(set(tiles)) == len(tiles) == 5
+        names = self.names(result)
+        assert "horn" in names and "cornet" in names
+        assert "French horn" not in names

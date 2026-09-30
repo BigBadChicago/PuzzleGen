@@ -16,6 +16,7 @@ from pathlib import Path
 
 import pytest
 from conftest import NOW
+from ..support.overlay_counts import CATEGORIES, ENTITIES
 
 from puzzlegen.core import ids
 from puzzlegen.core.types import ReviewStatus
@@ -134,7 +135,7 @@ class TestOverlayMembers:
         assert len(members["salmon"]) == 2
 
     def test_every_seed_member_is_present(self):
-        assert len(collisions.overlay_members(OVERLAY)) == 144
+        assert len(collisions.overlay_members(OVERLAY)) == ENTITIES
 
 
 class TestTheReport:
@@ -246,7 +247,7 @@ class TestCollisionsCommandLine:
         )
         assert code == 0
         assert "overlay members" in capsys.readouterr().out
-        assert json.loads(out.read_text())["counts"]["overlay_members"] == 144
+        assert json.loads(out.read_text())["counts"]["overlay_members"] == ENTITIES
 
     def test_a_missing_lexicon_exits_two(self, tmp_path, capsys):
         code = collisions.main(["--lexicon", str(tmp_path / "nope.json")])
@@ -403,10 +404,10 @@ class TestGamesBringingTheirOwnTaxonomy:
             assert len(parity) == 1
             assert parity[0].canonical_name == "parity"
             assert all(c.status is ReviewStatus.ACTIVE for c in parity)
-            # The overlay is untouched: still exactly its own 15 categories,
+            # The overlay is untouched: still exactly its own live categories,
             # not merged with or shadowed by the new taxonomy.
             overlay = repos.categories.live(build_snapshot.OVERLAY_TAXONOMY)
-            assert len(overlay) == 15
+            assert len(overlay) == CATEGORIES
 
     def test_a_missing_curated_file_exits_two(self, tmp_path, capsys):
         code = build_snapshot.main(
@@ -589,7 +590,7 @@ class TestBuildCommandLine:
         )
         with opened(db) as repos:
             overlay = repos.categories.live(build_snapshot.OVERLAY_TAXONOMY)
-            assert len(overlay) == 15
+            assert len(overlay) == CATEGORIES
             assert all(c.status is ReviewStatus.ACTIVE for c in overlay)
 
     def test_a_dev_embedding_build_warns_that_it_is_not_publishable(

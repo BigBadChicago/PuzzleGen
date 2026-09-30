@@ -118,6 +118,16 @@ class CuratedJSONProvider:
             warnings=tuple(document.get("warnings", [])),
         )
 
+    def retired_categories(self) -> tuple[dict[str, Any], ...]:
+        """Categories set aside in the file, never imported.
+
+        A retired category keeps its members, the reason it was retired and the
+        condition for reopening it, so retiring is a decision that can be
+        reversed rather than a deletion history has to be searched for. The
+        provider only reports them; nothing here reaches the graph.
+        """
+        return tuple(self._read().get("retired", ()))
+
     def fetch_entity(self, key: ProviderKey) -> RawEntity | None:
         for row in self._read().get("entities", []):
             if row.get("key") == key:

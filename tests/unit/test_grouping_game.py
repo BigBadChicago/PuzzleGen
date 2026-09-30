@@ -32,6 +32,8 @@ from ..support.broken_grouping import (
 )
 from .test_grouping_verify import clean_board
 
+from ..support.overlay_counts import CATEGORIES, MEMBERSHIPS
+
 DAY = "2026-09-28"
 SIZE = 5
 
@@ -362,7 +364,7 @@ class TestAgainstTheRealSnapshot:
 
     def test_the_snapshot_holds_the_overlay(self, snapshot_repos):
         overlay = snapshot_repos.categories.live("overlay")
-        assert len(overlay) == 15
+        assert len(overlay) == CATEGORIES
 
     def test_the_overlay_members_are_active(self, snapshot_repos):
         from puzzlegen.core.types import ReviewStatus
@@ -373,7 +375,7 @@ class TestAgainstTheRealSnapshot:
             for r in snapshot_repos.relationships.find(predicate="is_a")
             if r.object_id in overlay
         ]
-        assert len(members) == 150
+        assert len(members) == MEMBERSHIPS
         assert all(r.status is ReviewStatus.ACTIVE for r in members)
 
     def test_a_day_can_be_asked_for(self, game, port):

@@ -41,6 +41,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from puzzlegen.content.representatives import choose_representatives
 from puzzlegen.core.types import ReviewStatus
 from puzzlegen.games.grouping.content import LEXICAL_TAXONOMY, OVERLAY_TAXONOMY
 from puzzlegen.games.grouping.descriptor import GROUP_SIZES, VISIBLE_GROUPS
@@ -90,6 +91,10 @@ class Snapshot:
     representative: dict[str, str] = field(default_factory=dict)
     parents: dict[str, tuple[str, ...]] = field(default_factory=dict)
     grouping: str = "shared_category"
+    #: Direct members per lexical category, before any sibling regrouping. Kept
+    #: because tagging a word can change which word stands for its child, and
+    #: a what-if has to rebuild the groups from these rather than reuse them.
+    direct_members: dict[str, frozenset[str]] = field(default_factory=dict)
 
     def usable_lexical(self, group_size: int) -> list[str]:
         """Categories large enough to supply one visible group."""
@@ -117,17 +122,29 @@ class Snapshot:
         """
         overlay = dict(self.overlay_members)
         overlay[category_id] = overlay.get(category_id, frozenset()) | {entity_id}
+        lexical_members, representative = self.lexical_members, self.representative
+        if self.grouping == "siblings" and self.direct_members:
+            # Tagging a word can change which word stands for its child, so the
+            # groups are rebuilt from the direct members instead of shared.
+            lexical_members, representative = _sibling_members(
+                self.lexical_names,
+                self.parents,
+                self.direct_members,
+                self.entity_names,
+                _carrying(overlay),
+            )
         return Snapshot(
-            lexical_members=self.lexical_members,
+            lexical_members=lexical_members,
             lexical_names=self.lexical_names,
             overlay_members=overlay,
             overlay_names=self.overlay_names,
             types_of=self.types_of,
             entity_names=self.entity_names,
             direct_categories=self.direct_categories,
-            representative=self.representative,
+            representative=representative,
             parents=self.parents,
             grouping=self.grouping,
+            direct_members=self.direct_members,
         )
 
 
@@ -274,11 +291,8 @@ def load(
             direct_categories.setdefault(member_id, []).append(category_id)
 
     representative: dict[str, str] = {}
-    if grouping == SIBLINGS:
-        lexical_members, representative = _sibling_members(
-            lexical, lexical_members, active_entities
-        )
-    elif grouping != SHARED_CATEGORY:
+    direct_members = dict(lexical_members)
+    if grouping not in (SIBLINGS, SHARED_CATEGORY):
         raise ValueError(f"unknown grouping {grouping!r}")
 
     overlay_members: dict[str, frozenset[str]] = {}
@@ -291,47 +305,62 @@ def load(
             if rel.status is ReviewStatus.ACTIVE and rel.subject_id in active_entities
         )
 
+    lexical_names = {c.id: c.canonical_name for c in lexical}
+    parents = {c.id: tuple(c.parent_ids) for c in lexical}
+    if grouping == SIBLINGS:
+        lexical_members, representative = _sibling_members(
+            lexical_names, parents, direct_members, active_entities, _carrying(overlay_members)
+        )
+
     return Snapshot(
         lexical_members=lexical_members,
-        lexical_names={c.id: c.canonical_name for c in lexical},
+        lexical_names=lexical_names,
         overlay_members=overlay_members,
         overlay_names={c.id: c.canonical_name for c in overlay},
         types_of={k: frozenset(v) for k, v in types_of.items()},
         entity_names=active_entities,
         direct_categories={k: tuple(sorted(v)) for k, v in direct_categories.items()},
         representative=representative,
-        parents={c.id: tuple(c.parent_ids) for c in lexical},
+        parents=parents,
         grouping=grouping,
+        direct_members=direct_members,
     )
 
 
+def _carrying(overlay_members: dict[str, frozenset[str]]) -> frozenset[str]:
+    """Every entity tagged in any overlay category."""
+    return frozenset().union(*overlay_members.values()) if overlay_members else frozenset()
+
+
 def _sibling_members(
-    lexical,
+    names: dict[str, str],
+    parents: dict[str, tuple[str, ...]],
     direct: dict[str, frozenset[str]],
     entity_names: dict[str, str],
+    carrying: frozenset[str],
 ) -> tuple[dict[str, frozenset[str]], dict[str, str]]:
-    """Parent -> one representative entity per child that has one.
+    """Parent to one representative entity per child, and who represents whom.
 
-    Mirrors ``ContentService._representatives``: a child is represented by the
-    direct member named like the child itself, and a child with no such member
-    is not offered. Kept in step with the service by a test that runs both on
-    one graph, because two implementations of one rule drift silently.
+    The choice is ``choose_representatives``, the same function the content
+    service calls, so the coverage numbers describe the tiles the game would
+    actually show. A child with no eligible word is not offered.
     """
-    representative: dict[str, str] = {}
-    for category in lexical:
-        for entity_id in sorted(direct.get(category.id, ())):
-            if entity_names.get(entity_id) == category.canonical_name:
-                representative.setdefault(category.id, entity_id)
-                break
+    members_of = {
+        category_id: [
+            (entity_id, entity_names[entity_id])
+            for entity_id in sorted(entity_ids)
+            if entity_id in entity_names
+        ]
+        for category_id, entity_ids in direct.items()
+    }
+    representative = choose_representatives(names, members_of, carrying)
 
-    members: dict[str, set[str]] = {}
-    for category in lexical:
-        rep = representative.get(category.id)
-        if rep is None:
-            continue
-        for parent_id in category.parent_ids:
-            members.setdefault(parent_id, set()).add(rep)
-    return {cid: frozenset(found) for cid, found in members.items()}, representative
+    grouped: dict[str, set[str]] = {}
+    for category_id, entity_id in representative.items():
+        for parent_id in parents.get(category_id, ()):
+            if parent_id in names:
+                grouped.setdefault(parent_id, set()).add(entity_id)
+    return {pid: frozenset(found) for pid, found in grouped.items()}, representative
 
 
 # -- the precondition ---------------------------------------------------------
