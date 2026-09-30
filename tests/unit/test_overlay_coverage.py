@@ -1273,3 +1273,170 @@ class TestTheReportExplainsItself:
         measure_coverage.main(["--db", str(db), "--group-size", "5"])
 
         assert "chosen by size alone" in capsys.readouterr().out
+
+
+class TestTheCauseComesWithAnExample:
+    """A count says something failed. The word and the parents say what."""
+
+    def piano(self, world: World) -> None:
+        """One word filed under two instrument families, as WordNet does."""
+        sibling_group(world, "keyboard", ["harpsichord", "organ", "celesta", "clavichord"])
+        sibling_group(world, "percussion", ["drum", "gong", "bell", "cymbal"])
+        record = category(
+            "piano",
+            world.source,
+            taxonomy=LEXICAL,
+            parents=(world.categories["keyboard"], world.categories["percussion"]),
+        )
+        world.repos.categories.put(record)
+        world.categories["piano"] = record
+        world.entity("piano")
+        world.member("piano", "piano")
+        sibling_group(world, "wind", ["flute", "oboe", "horn", "fife", "reed"])
+        sibling_group(world, "brass", ["tuba", "cornet", "bugle", "trombone", "sackbut"])
+        world.overlay_group("axis", ["piano", "organ", "drum", "flute", "tuba"])
+
+    def test_a_word_in_two_families_is_named_with_both(self, world):
+        self.piano(world)
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("axis"), 5
+        )
+
+        assert finding.failures == ((overlay_coverage.IN_TWO_GROUPS, 1),)
+        assert dict(finding.examples) == {
+            overlay_coverage.IN_TWO_GROUPS: "piano is a kind of both keyboard and percussion"
+        }
+
+    def test_a_nested_example_names_the_word_and_both_parents(self, world):
+        TestWhyNoBoardWasFound().nested(world)
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("axis"), 5
+        )
+
+        assert dict(finding.examples) == {
+            overlay_coverage.CROSS_MEMBERSHIP: "b1 is under A as well as B"
+        }
+
+    def test_choices_that_leave_a_word_out_are_not_counted_as_causes(self, world):
+        """Five homes on offer, and only the one choice that holds every word
+        is asked why it fails.
+
+        One hidden word is filed under both D and E, so five parents are in
+        play. Of the five ways to choose four, four leave a hidden word with no
+        home among them, and the count used to be mostly those. The fifth holds
+        every word and fails on the nesting, which is the only thing worth
+        reporting.
+        """
+        TestWhyNoBoardWasFound().nested(world)
+        sibling_group(world, "E", ["e1", "e2", "e3", "e4", "e5"])
+        record = category(
+            "z",
+            world.source,
+            taxonomy=LEXICAL,
+            parents=(world.categories["D"], world.categories["E"]),
+        )
+        world.repos.categories.put(record)
+        world.categories["z"] = record
+        world.entity("z")
+        world.member("z", "z")
+        world.overlay_group("wide", ["b1", "k1", "c1", "d1", "z"])
+
+        finding = overlay_coverage.assess(
+            siblings_snapshot(world), world.id_of("wide"), 5
+        )
+
+        assert not finding.feasible
+        assert finding.examined == 5
+        assert finding.failures == ((overlay_coverage.CROSS_MEMBERSHIP, 1),)
+
+    def test_nested_homes_are_listed(self, world):
+        TestWhyNoBoardWasFound().nested(world)
+        snapshot = siblings_snapshot(world)
+        homes = {world.id_of(n) for n in "ABCD"}
+
+        assert measure_coverage.nested_pairs(snapshot, homes) == ["B is under A"]
+
+    def test_peers_are_not_listed_as_nested(self, world):
+        workable_siblings(world)
+        snapshot = siblings_snapshot(world)
+        homes = {world.id_of(n) for n in ("cats", "birds", "tools", "boats")}
+
+        assert measure_coverage.nested_pairs(snapshot, homes) == []
+
+    def test_the_report_prints_the_example_and_the_nesting(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        try:
+            TestWhyNoBoardWasFound().nested(World(repos, curated_source))
+        finally:
+            repos.close()
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        out = capsys.readouterr().out
+        assert "e.g. hidden_member_also_in_another_chosen_parent: b1 is under A as well as B" in out
+        assert "nested homes: B is under A" in out
+
+
+class TestTheVerdictDoesNotDependOnIterationOrder:
+    """A set iterates in a different order every run, so a diagnostic that
+    returns the first problem it meets reports a different one each time."""
+
+    def snapshot(self, doubled: str):
+        return overlay_coverage.Snapshot(
+            lexical_members={
+                "P": frozenset({doubled}),
+                "Q": frozenset({doubled}),
+                "R": frozenset(),
+                "S": frozenset(),
+            },
+            lexical_names={c: c for c in "PQRS"},
+            overlay_members={},
+            overlay_names={},
+            types_of={},
+            entity_names={},
+        )
+
+    def test_a_word_left_out_wins_whichever_word_sorts_first(self):
+        """One word has no home among the four and another has two.
+
+        Tried with the left out word sorting first and then last, so a check
+        that stops at the first word it looks at gives different answers.
+        """
+        for left_out, doubled in (("a_out", "z_two"), ("z_out", "a_two")):
+            verdict, _ = overlay_coverage._quadruple_works(
+                self.snapshot(doubled),
+                ("P", "Q", "R", "S"),
+                frozenset({left_out, doubled}),
+                5,
+                {c: frozenset() for c in "PQRS"},
+            )
+
+            assert verdict == overlay_coverage.OFF_BOARD
+
+    def test_two_words_in_two_groups_report_the_first_by_name(self):
+        snapshot = overlay_coverage.Snapshot(
+            lexical_members={
+                "P": frozenset({"b", "c"}),
+                "Q": frozenset({"b", "c"}),
+                "R": frozenset(),
+                "S": frozenset(),
+            },
+            lexical_names={c: c for c in "PQRS"},
+            overlay_members={},
+            overlay_names={},
+            types_of={},
+            entity_names={"b": "bee", "c": "cat"},
+        )
+
+        verdict, detail = overlay_coverage._quadruple_works(
+            snapshot, ("P", "Q", "R", "S"), frozenset({"b", "c"}), 5,
+            {c: frozenset() for c in "PQRS"},
+        )
+
+        assert verdict == overlay_coverage.IN_TWO_GROUPS
+        assert detail == "bee is a kind of both P and Q"

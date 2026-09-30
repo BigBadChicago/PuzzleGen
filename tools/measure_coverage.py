@@ -90,6 +90,33 @@ def summarise(snapshot: Snapshot, report: Report) -> dict:
     }
 
 
+def nested_pairs(snapshot: Snapshot, homes: set[str]) -> list[str]:
+    """Which reached homes sit under another reached home.
+
+    A board naming both makes every tile of the lower one belong to the upper
+    as well, which the game refuses. A category whose homes are one line of
+    descent has no four peers to choose, and no amount of content fixes that.
+    """
+
+    def above(category_id: str) -> set[str]:
+        found: set[str] = set()
+        frontier = list(snapshot.parents.get(category_id, ()))
+        while frontier:
+            current = frontier.pop()
+            if current not in found:
+                found.add(current)
+                frontier.extend(snapshot.parents.get(current, ()))
+        return found
+
+    name = lambda cid: snapshot.lexical_names.get(cid, cid)
+    return sorted(
+        f"{name(low)} is under {name(high)}"
+        for low in homes
+        for high in homes
+        if high in above(low)
+    )
+
+
 def targeting(snapshot: Snapshot, report: Report, group_size: int) -> list[dict]:
     """Near misses, and the lexical categories that would close each one.
 
@@ -134,6 +161,11 @@ def targeting(snapshot: Snapshot, report: Report, group_size: int) -> list[dict]
                     {"cause": cause, "count": count}
                     for cause, count in finding.failures
                 ],
+                "failure_examples": [
+                    {"cause": cause, "example": example}
+                    for cause, example in finding.examples
+                ],
+                "nested_homes": nested_pairs(snapshot, reached)[:8],
                 "propose_from": [
                     {
                         "category": snapshot.lexical_names.get(cid, cid),
@@ -208,6 +240,10 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
                     f"{c['cause']} {c['count']}" for c in row["why_no_quadruple"]
                 )
                 lines.append(f"    why no board: {causes}")
+                for example in row.get("failure_examples", ()):
+                    lines.append(f"      e.g. {example['cause']}: {example['example']}")
+                if row.get("nested_homes"):
+                    lines.append("    nested homes: " + "; ".join(row["nested_homes"]))
             if row["propose_from"]:
                 offered = ", ".join(
                     f"{entry['category']}({entry['members']})"

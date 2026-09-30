@@ -152,6 +152,9 @@ class Finding:
     #: common first. Without it "no valid quadruple" says only that something
     #: failed, and a curator cannot tell content from structure.
     failures: tuple[tuple[str, int], ...] = ()
+    #: One concrete instance per cause, so "in two chosen groups" arrives with
+    #: the word and the two parents rather than as a bare count.
+    examples: tuple[tuple[str, str], ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -389,26 +392,42 @@ def _quadruple_works(
     hidden: frozenset[str],
     group_size: int,
     ancestry: dict[str, frozenset[str]],
-) -> str:
+) -> tuple[str, str]:
     chosen = set(categories)
     home_of: dict[str, str] = {}
-    for member in hidden:
-        owning = [c for c in categories if member in snapshot.lexical_members[c]]
-        # Exactly one: none means the tile is not on the board, and two means
-        # the tile belongs to a second chosen group's category, which is the
-        # cross-membership the assembler refuses.
-        if not owning:
-            return OFF_BOARD
+
+    def word(entity_id: str) -> str:
+        return snapshot.entity_names.get(entity_id, entity_id)
+
+    def named(category_ids) -> str:
+        return " and ".join(sorted(snapshot.lexical_names.get(c, c) for c in category_ids))
+
+    # Every word is looked at before any verdict, and in sorted order. A set
+    # iterates in an order that changes from one run to the next, and the first
+    # problem found used to win, so one board could be reported as leaving a
+    # word out on one run and as a word in two groups on the next.
+    owners = {
+        member: [c for c in categories if member in snapshot.lexical_members[c]]
+        for member in sorted(hidden)
+    }
+    if any(not owning for owning in owners.values()):
+        return OFF_BOARD, ""
+    for member, owning in owners.items():
         if len(owning) > 1:
-            return IN_TWO_GROUPS
-        home_of[member] = owning[0]
+            return IN_TWO_GROUPS, f"{word(member)} is a kind of both {named(owning)}"
+    home_of = {member: owning[0] for member, owning in owners.items()}
 
     if len(set(home_of.values())) != len(categories):
-        return UNUSED_GROUP
+        idle = [c for c in categories if c not in set(home_of.values())]
+        return UNUSED_GROUP, f"no hidden word sits in {named(idle)}"
 
-    for member, home in home_of.items():
-        if (snapshot.types_of.get(member, frozenset()) & chosen) - {home}:
-            return CROSS_MEMBERSHIP
+    for member, home in sorted(home_of.items()):
+        clash = (snapshot.types_of.get(member, frozenset()) & chosen) - {home}
+        if clash:
+            return CROSS_MEMBERSHIP, (
+                f"{word(member)} is under {named(clash)} as well as "
+                f"{snapshot.lexical_names.get(home, home)}"
+            )
 
     borrowed = Counter(home_of.values())
     eligible: list[set[str]] = []
@@ -416,7 +435,10 @@ def _quadruple_works(
     for category in categories:
         shortfall = group_size - borrowed[category]
         if shortfall < 0:
-            return OVER_BORROWED
+            return OVER_BORROWED, (
+                f"{snapshot.lexical_names.get(category, category)} would hold "
+                f"{borrowed[category]} hidden words but has {group_size} tiles"
+            )
         eligible.append(
             {
                 entity_id
@@ -431,13 +453,13 @@ def _quadruple_works(
         needed.append(shortfall)
 
     if not _can_fill(eligible, needed):
-        return CANNOT_FILL
+        return CANNOT_FILL, ""
 
     resemblance = sum(
         len((ancestry[left] & ancestry[right]) - chosen)
         for left, right in itertools.combinations(categories, 2)
     )
-    return OK if resemblance >= MINIMUM_TEMPTATION else NEEDS_DOMAIN
+    return (OK if resemblance >= MINIMUM_TEMPTATION else NEEDS_DOMAIN), ""
 
 
 def assess(
@@ -508,6 +530,8 @@ def assess(
     exhausted = True
     domain_blocked = False
     causes: Counter[str] = Counter()
+    examples: dict[str, str] = {}
+    uncovered = 0
     for subset in itertools.combinations(placeable, group_size):
         hidden = frozenset(subset)
         candidates = sorted(
@@ -520,11 +544,19 @@ def assess(
                 exhausted = False
                 break
             examined += 1
-            verdict = _quadruple_works(snapshot, quadruple, hidden, group_size, ancestry)
+            verdict, detail = _quadruple_works(
+                snapshot, quadruple, hidden, group_size, ancestry
+            )
             if verdict == NEEDS_DOMAIN:
                 domain_blocked = True
+            elif verdict == OFF_BOARD:
+                # Not a cause, only a choice of four that left a hidden word
+                # out. With five homes on offer most choices do, and counting
+                # them buried the checks that actually said something.
+                uncovered += 1
             elif verdict != OK:
                 causes[verdict] += 1
+                examples.setdefault(verdict, detail)
             if verdict == OK:
                 return Finding(
                     group_size=group_size,
@@ -554,7 +586,12 @@ def assess(
         ),
         homeless=homeless,
         homes=tuple(reachable),
-        failures=tuple(sorted(causes.items(), key=lambda pair: (-pair[1], pair[0]))),
+        failures=(
+            tuple(sorted(causes.items(), key=lambda pair: (-pair[1], pair[0])))
+            if causes
+            else (((OFF_BOARD, uncovered),) if uncovered else ())
+        ),
+        examples=tuple(sorted(examples.items())),
     )
 
 
