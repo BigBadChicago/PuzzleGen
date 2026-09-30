@@ -1239,3 +1239,131 @@ class TestBuildingIntoAPopulatedDatabase:
             held = build_snapshot.existing_content(repos)
         assert set(held) == {"snapshots", "entities", "categories", "relationships"}
         assert all(count > 0 for count in held.values())
+
+
+class TestParentsLostInAMerge:
+    """Two senses of one word, exported under different roots, become one
+    category, and only the first import's parents survive.
+
+    ``viola`` the plant sits under ``herb`` and ``viola`` the instrument under
+    ``bowed stringed instrument``. In the graph there is one ``viola`` and its
+    only parent is whichever came first, so the other sense is homed in the
+    wrong family. For a game built on words with two meanings this is the case
+    that matters most, and nothing said so.
+    """
+
+    def files(self, tmp_path):
+        plant = write_lexicon(
+            tmp_path / "plant.lexicon.json",
+            [sense("herb", "s.herb"), sense("viola", "s.vp")],
+            synsets=[
+                {"id": "s.herb", "name": "herb", "definition": "a plant", "hypernyms": []},
+                {"id": "s.vp", "name": "viola", "definition": "a genus", "hypernyms": ["s.herb"]},
+            ],
+        )
+        instrument = write_lexicon(
+            tmp_path / "instrument.lexicon.json",
+            [sense("bowed stringed instrument", "s.bowed"), sense("viola", "s.vi")],
+            synsets=[
+                {"id": "s.bowed", "name": "bowed stringed instrument", "definition": "a family", "hypernyms": []},
+                {"id": "s.vi", "name": "viola", "definition": "a bowed instrument", "hypernyms": ["s.bowed"]},
+            ],
+        )
+        return plant, instrument
+
+    def viola(self, paths):
+        return next(r for r in collisions.category_collisions(paths) if r["name"] == "viola")
+
+    def test_the_first_file_keeps_its_parent_and_the_later_one_loses_its_own(self, tmp_path):
+        plant, instrument = self.files(tmp_path)
+
+        row = self.viola([plant, instrument])
+
+        assert row["first_file"] == "plant.lexicon.json"
+        assert row["parents_kept"] == ["herb"]
+        assert row["parents_lost"] == ["bowed stringed instrument"]
+
+    def test_the_order_decides_which_sense_is_lost(self, tmp_path):
+        plant, instrument = self.files(tmp_path)
+
+        row = self.viola([instrument, plant])
+
+        assert row["parents_kept"] == ["bowed stringed instrument"]
+        assert row["parents_lost"] == ["herb"]
+
+    def test_identical_parents_lose_nothing(self, tmp_path):
+        one = write_lexicon(
+            tmp_path / "one.lexicon.json",
+            [sense("ship", "s.a")],
+            synsets=[
+                {"id": "s.root", "name": "vessel", "definition": "d", "hypernyms": []},
+                {"id": "s.a", "name": "galley", "definition": "a kitchen", "hypernyms": ["s.root"]},
+            ],
+        )
+        two = write_lexicon(
+            tmp_path / "two.lexicon.json",
+            [sense("ship", "s.b")],
+            synsets=[
+                {"id": "s.root2", "name": "vessel", "definition": "d", "hypernyms": []},
+                {"id": "s.b", "name": "galley", "definition": "a ship", "hypernyms": ["s.root2"]},
+            ],
+        )
+
+        row = next(r for r in collisions.category_collisions([one, two]) if r["name"] == "galley")
+
+        assert row["parents_lost"] == []
+
+    def test_a_word_in_one_file_only_is_not_reported_as_losing_anything(self, tmp_path):
+        plant, _ = self.files(tmp_path)
+
+        rows = collisions.category_collisions([plant])
+
+        assert all(not r["parents_lost"] for r in rows)
+
+    def test_the_count_and_the_overlay_words_reach_the_report(self, tmp_path):
+        plant, instrument = self.files(tmp_path)
+        paths = [plant, instrument]
+
+        report = collisions.build_report(
+            collisions.collect(paths),
+            {"viola": ["thing with strings"], "cello": ["thing with strings"]},
+            categories=collisions.category_collisions(paths),
+        )
+
+        assert report["counts"]["merged_categories_losing_parents"] == 1
+        assert report["counts"]["overlay_words_losing_parents"] == 1
+        assert report["overlay_words_losing_parents"] == [
+            {
+                "lemma": "viola",
+                "overlay_categories": ["thing with strings"],
+                "kept": ["herb"],
+                "lost": ["bowed stringed instrument"],
+            }
+        ]
+
+    def test_the_report_says_what_was_lost(self, tmp_path):
+        plant, instrument = self.files(tmp_path)
+        paths = [plant, instrument]
+
+        text = collisions.render(
+            collisions.build_report(
+                collisions.collect(paths),
+                {"viola": ["thing with strings"]},
+                categories=collisions.category_collisions(paths),
+            )
+        )
+
+        assert "parents lost in the merge: bowed stringed instrument (kept from plant.lexicon.json: herb)" in text
+        assert "overlay words whose second meaning lost its parent in the merge:" in text
+        assert "viola" in text.split("overlay words whose second meaning lost its parent")[1]
+        assert "losing a parent     : 1 (1 are overlay words)" in text
+
+    def test_the_real_pair_shows_viola(self):
+        seeds = SEEDS
+        plant, instrument = seeds / "wordnet-plant.lexicon.json", seeds / "wordnet-instrument.lexicon.json"
+        if not (plant.exists() and instrument.exists()):
+            pytest.skip("the committed exports are not present")
+
+        row = self.viola([plant, instrument])
+
+        assert row["parents_lost"] == ["bowed stringed instrument"]

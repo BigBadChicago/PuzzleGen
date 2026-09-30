@@ -1515,3 +1515,245 @@ class TestTheTaggedWordStandsForItsChild:
         chosen = service._representatives(pool, memberships, index, carrying)
 
         assert {cid: e.id for cid, e in chosen.items()} == snapshot.representative
+
+
+class TestTheReportNamesWhatCanBeBuilt:
+    """A list of failures says nothing about the one thing that works."""
+
+    def build(self, path: Path, curated_source, builder) -> None:
+        repos = GraphRepositories(SqliteDocumentStore(path))
+        try:
+            builder(World(repos, curated_source))
+        finally:
+            repos.close()
+
+    def test_a_buildable_category_is_named_with_its_visible_groups(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, workable_siblings)
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        line = next(
+            l for l in capsys.readouterr().out.splitlines() if "can be built" in l
+        )
+        assert line.startswith("  size 5 can be built: also_a_verb")
+        for parent in ("cats", "birds", "tools", "boats"):
+            assert parent in line
+
+    def test_nothing_is_claimed_when_nothing_can_be_built(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, TestWhyNoBoardWasFound().nested)
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        assert "can be built" not in capsys.readouterr().out
+
+    def test_the_json_lists_the_buildable_boards(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, workable_siblings)
+        out = tmp_path / "coverage.json"
+
+        measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--json", str(out)]
+        )
+        capsys.readouterr()
+
+        [size] = json.loads(out.read_text())["summary"]["sizes"]
+        [board] = size["feasible_boards"]
+        assert board["hidden_group"] == "also_a_verb"
+        assert sorted(board["parents"]) == ["birds", "boats", "cats", "tools"]
+
+    def chain(self, world: World) -> None:
+        """Three homes in one line of descent: A, B under A, C under B."""
+        sibling_group(world, "A", ["k1", "k2", "k3", "k4"])
+        world.category("B", taxonomy=LEXICAL, parent="A")
+        world.entity("B")
+        world.member("B", "B")
+        for kid in ["b1", "b2", "b3", "b4"]:
+            world.category(kid, taxonomy=LEXICAL, parent="B")
+            world.entity(kid)
+            world.member(kid, kid)
+        world.category("C", taxonomy=LEXICAL, parent="B")
+        world.entity("C")
+        world.member("C", "C")
+        for kid in ["c1", "c2", "c3", "c4", "c5"]:
+            world.category(kid, taxonomy=LEXICAL, parent="C")
+            world.entity(kid)
+            world.member(kid, kid)
+        world.overlay_group("chain", ["k1", "b1", "c1", "c2", "c3"])
+
+    def test_nesting_is_shown_when_the_reason_is_too_few_homes(
+        self, tmp_path, curated_source, capsys
+    ):
+        """Three homes in a line are not three peers, whatever the count says.
+
+        The reason here is the count, not the nesting, and the nesting is the
+        part a curator needs: adding a fourth word in the same family cannot
+        help, because the family is one line.
+        """
+        db = tmp_path / "graph.sqlite"
+        self.build(db, curated_source, self.chain)
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        out = capsys.readouterr().out
+        assert "[too_few_distinct_homes]" in out
+        assert "nested homes: B is under A; C is under A; C is under B" in out
+
+
+# -- nearest home only --------------------------------------------------------
+
+
+class TestAWordServesItsNearestCategoryOnly:
+    """``bass guitar`` belongs to ``guitar``, not to ``stringed instrument``.
+
+    A word is a tile for its nearest category, so it can serve a group no
+    larger than that category has kinds. Nothing pulls it up a level to make a
+    bigger group, because then a board naming both ``guitar`` and
+    ``stringed instrument`` would have one word in two groups.
+    """
+
+    def instruments(self, world: World) -> None:
+        sibling_group(
+            world,
+            "stringed",
+            ["guitar", "banjo", "harp", "lute", "sitar", "zither", "koto", "piano"],
+        )
+        world.category("bowed", taxonomy=LEXICAL, parent="stringed")
+        world.entity("bowed")
+        world.member("bowed", "bowed")
+        sibling_group(world, "guitar_kinds", ["acoustic", "electric", "bass_guitar", "hawaiian"])
+        sibling_group(world, "bowed_kinds", ["violin", "cello", "viol", "bass_fiddle"])
+
+    def test_a_grandchild_is_not_a_tile_of_its_grandparent(self, world):
+        sibling_group(world, "stringed", ["guitar", "banjo", "harp", "lute", "sitar"])
+        world.category("bass_guitar", taxonomy=LEXICAL, parent="guitar")
+        world.entity("bass_guitar")
+        world.member("bass_guitar", "bass_guitar")
+        world.overlay_group("axis", ["bass_guitar"])
+        snapshot = siblings_snapshot(world)
+
+        assert eid("bass_guitar") not in snapshot.lexical_members[world.id_of("stringed")]
+        assert eid("guitar") in snapshot.lexical_members[world.id_of("stringed")]
+
+    def test_a_words_ceiling_is_the_size_of_its_nearest_category(self, world):
+        sibling_group(world, "big", [f"k{n}" for n in range(1, 9)])
+        sibling_group(world, "small", ["s1", "s2", "s3", "s4"])
+        world.entity("orphan")
+        world.overlay_group("axis", ["k1", "s1", "orphan"])
+
+        found = measure_coverage.ceilings(siblings_snapshot(world), world.id_of("axis"))
+
+        assert found == {"k1": 8, "s1": 4, "orphan": 0}
+
+    def test_a_synonym_that_is_not_the_tile_has_a_ceiling_of_zero(self, world):
+        sibling_group(world, "strings", ["violin", "viola", "cello", "bass", "harp"])
+        world.entity("fiddle")
+        world.member("fiddle", "violin")
+        world.overlay_group("axis", ["fiddle", "violin"])
+
+        found = measure_coverage.ceilings(siblings_snapshot(world), world.id_of("axis"))
+
+        assert found == {"fiddle": 0, "violin": 5}
+
+    def test_a_word_in_two_homes_takes_the_larger(self, world):
+        sibling_group(world, "one", ["a1", "a2", "a3", "a4", "a5", "a6", "a7"])
+        sibling_group(world, "two", ["b1", "b2", "b3", "b4", "b5"])
+        record = category(
+            "both",
+            world.source,
+            taxonomy=LEXICAL,
+            parents=(world.categories["one"], world.categories["two"]),
+        )
+        world.repos.categories.put(record)
+        world.categories["both"] = record
+        world.entity("both")
+        world.member("both", "both")
+        world.overlay_group("axis", ["both"])
+
+        found = measure_coverage.ceilings(siblings_snapshot(world), world.id_of("axis"))
+
+        assert found == {"both": 8}
+
+    def test_the_report_prints_the_ceilings_once(self, tmp_path, curated_source, capsys):
+        def build(world: World) -> None:
+            sibling_group(world, "big", [f"k{n}" for n in range(1, 9)])
+            sibling_group(world, "small", ["s1", "s2", "s3", "s4"])
+            world.entity("orphan")
+            world.overlay_group("axis", ["k1", "s1", "orphan"])
+
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        try:
+            build(World(repos, curated_source))
+        finally:
+            repos.close()
+
+        measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--group-size", "6"]
+        )
+
+        out = capsys.readouterr().out
+        line = "largest group each word can be a tile in: k1 8, s1 4, orphan 0"
+        assert out.count(line) == 1
+
+    def test_the_json_carries_the_ceilings(self, tmp_path, curated_source, capsys):
+        def build(world: World) -> None:
+            sibling_group(world, "big", [f"k{n}" for n in range(1, 9)])
+            world.overlay_group("axis", ["k1"])
+
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        try:
+            build(World(repos, curated_source))
+        finally:
+            repos.close()
+        out = tmp_path / "coverage.json"
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5", "--json", str(out)])
+        capsys.readouterr()
+
+        row = json.loads(out.read_text())["targets"]["5"][0]
+        assert row["ceilings"] == {"k1": 8}
+
+    def test_the_rule_is_stated_at_the_end_of_the_report(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        try:
+            TestWhyNoBoardWasFound().nested(World(repos, curated_source))
+        finally:
+            repos.close()
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        assert "a word is a tile only for its nearest category" in capsys.readouterr().out
+
+
+class TestTheCapacityColumn:
+    def test_the_report_counts_parents_able_to_supply_each_size(
+        self, tmp_path, curated_source, capsys
+    ):
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        try:
+            workable_siblings(World(repos, curated_source))
+        finally:
+            repos.close()
+        out = tmp_path / "coverage.json"
+
+        measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--group-size", "6", "--json", str(out)]
+        )
+        capsys.readouterr()
+
+        sizes = {s["group_size"]: s for s in json.loads(out.read_text())["summary"]["sizes"]}
+        assert sizes[5]["parents_able"] == 4
+        assert sizes[6]["parents_able"] == 0

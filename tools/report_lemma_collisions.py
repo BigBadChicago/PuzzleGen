@@ -134,6 +134,7 @@ def category_collisions(paths: list[Path]) -> list[dict]:
     by_name: dict[str, dict[str, dict]] = {}
     for path in paths:
         document = read_lexicon(path)
+        in_file = {row["id"]: row.get("name") or row["id"] for row in document.get("synsets", ())}
         for synset in document.get("synsets", ()):
             name = (synset.get("name") or "").lower()
             if not name:
@@ -142,6 +143,9 @@ def category_collisions(paths: list[Path]) -> list[dict]:
                 "id": synset["id"],
                 "definition": synset.get("definition", ""),
                 "file": path.name,
+                "parents": sorted(
+                    {in_file[h] for h in synset.get("hypernyms", ()) if h in in_file}
+                ),
             }
 
     edges = _hypernym_edges(paths)
@@ -165,12 +169,32 @@ def category_collisions(paths: list[Path]) -> list[dict]:
                     {"descendant": descendant, "ancestor": ancestor}
                 )
 
+        # The first import to name a category decides its parents, and a later
+        # import of the same name is merged into it without adding any: a
+        # category's parents are fixed when it is made. So the sense exported
+        # first keeps its ancestry and a same-named sense from a later file
+        # loses its own. Exact across files, in the order they are given here,
+        # which must be the order the build imports them. Two same-named
+        # synsets inside one file are ordered by the importer and are not
+        # reported here.
+        order = [path.name for path in paths]
+        first_file = min({g["file"] for g in group.values()}, key=order.index)
+        kept = {par for g in group.values() if g["file"] == first_file for par in g["parents"]}
+        later = {
+            par
+            for g in group.values()
+            if g["file"] != first_file
+            for par in g["parents"]
+        }
         merged.append(
             {
                 "name": name,
                 "synsets": [group[k] for k in sorted(group)],
                 "children_inheriting_it_twice": sorted(set(children)),
                 "self_ancestor_pairs": self_ancestor_pairs,
+                "first_file": first_file,
+                "parents_kept": sorted(kept),
+                "parents_lost": sorted(later - kept),
             }
         )
     return merged
@@ -217,6 +241,18 @@ def build_report(
         if lemma not in uses
     ]
     histogram = collections.Counter(u.senses for u in uses.values())
+    losing = [c for c in (categories or ()) if c.get("parents_lost")]
+    by_lemma = {c["name"]: c for c in losing}
+    overlay_losing = [
+        {
+            "lemma": lemma,
+            "overlay_categories": cats,
+            "kept": by_lemma[lemma.lower()]["parents_kept"],
+            "lost": by_lemma[lemma.lower()]["parents_lost"],
+        }
+        for lemma, cats in sorted(members.items())
+        if lemma.lower() in by_lemma
+    ]
 
     def cut(rows: list) -> list:
         return rows[:limit] if limit is not None else rows
@@ -236,6 +272,8 @@ def build_report(
             "merged_categories_self_ancestor": sum(
                 1 for c in (categories or ()) if c.get("self_ancestor_pairs")
             ),
+            "merged_categories_losing_parents": len(losing),
+            "overlay_words_losing_parents": len(overlay_losing),
         },
         "sense_histogram": {str(k): histogram[k] for k in sorted(histogram)},
         "polysemous": cut([u.as_json() for u in polysemous]),
@@ -243,6 +281,7 @@ def build_report(
         "overlay_ambiguous": cut(ambiguous_overlay),
         "overlay_missing": cut(missing_overlay),
         "merged_categories": cut(list(categories or ())),
+        "overlay_words_losing_parents": overlay_losing,
     }
 
 
@@ -257,6 +296,8 @@ def render(report: dict) -> str:
         f"  absent from lexicon : {counts['overlay_missing']}",
         f"merged categories     : {counts['merged_categories']}"
         f" ({counts['merged_categories_with_double_inheritance']} inherited twice)",
+        f"  losing a parent     : {counts['merged_categories_losing_parents']}"
+        f" ({counts['overlay_words_losing_parents']} are overlay words)",
         "",
         "senses per lemma: "
         + ", ".join(f"{k}={v}" for k, v in report["sense_histogram"].items()),
@@ -284,6 +325,11 @@ def render(report: dict) -> str:
             lines.append(f"  {row['name']}")
             for synset in row["synsets"]:
                 lines.append(f"    {synset['id']}  {synset['definition'][:70]}")
+            if row.get("parents_lost"):
+                lines.append(
+                    f"    parents lost in the merge: {', '.join(row['parents_lost'])}"
+                    f" (kept from {row['first_file']}: {', '.join(row['parents_kept'])})"
+                )
             if row["children_inheriting_it_twice"]:
                 lines.append(
                     "    inherited twice by: "
@@ -297,6 +343,14 @@ def render(report: dict) -> str:
                     f"edge automatically; shown so the responsible synset "
                     f"pair is visible rather than silently resolved)"
                 )
+    if report.get("overlay_words_losing_parents"):
+        lines.append("")
+        lines.append("overlay words whose second meaning lost its parent in the merge:")
+        for row in report["overlay_words_losing_parents"]:
+            lines.append(
+                f"  {row['lemma']:<16} kept: {', '.join(row['kept'])}; "
+                f"lost: {', '.join(row['lost'])}"
+            )
     if report["cross_file"]:
         lines.append("")
         lines.append("lemmas exported under more than one root:")

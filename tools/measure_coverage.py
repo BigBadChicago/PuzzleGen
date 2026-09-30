@@ -76,8 +76,16 @@ def summarise(snapshot: Snapshot, report: Report) -> dict:
                 "hidden_groups_examined": len(findings),
                 "bounded_searches": sum(1 for f in findings if not f.exhausted),
                 "proxy_usable_categories": proxy_count(snapshot, group_size),
+                "parents_able": len(snapshot.usable_lexical(group_size)),
                 "reasons": dict(sorted(reasons.items())),
                 "feasible_examples": [f.category_name for f in feasible[:SHORTLIST]],
+                "feasible_boards": [
+                    {
+                        "hidden_group": f.category_name,
+                        "parents": [snapshot.lexical_names.get(c, c) for c in f.quadruple],
+                    }
+                    for f in feasible
+                ],
             }
         )
     return {
@@ -115,6 +123,27 @@ def nested_pairs(snapshot: Snapshot, homes: set[str]) -> list[str]:
         for high in homes
         if high in above(low)
     )
+
+
+def ceilings(snapshot: Snapshot, category_id: str) -> dict[str, int]:
+    """The largest group each of a category's words can be a tile in.
+
+    A word is a tile only for its nearest category, so it can serve a group no
+    larger than that category has kinds: ``bass guitar`` belongs to ``guitar``
+    and is never pulled up into ``stringed instrument``. A word that is not a
+    tile anywhere has a ceiling of zero. The number is what to read when
+    choosing overlay words for a larger board, because a word whose nearest
+    parent has four kinds cannot appear on a board of six.
+    """
+    result: dict[str, int] = {}
+    for entity_id in snapshot.overlay_members.get(category_id, ()):
+        sizes = [
+            len(members)
+            for members in snapshot.lexical_members.values()
+            if entity_id in members
+        ]
+        result[snapshot.name_of(entity_id)] = max(sizes, default=0)
+    return result
 
 
 def targeting(snapshot: Snapshot, report: Report, group_size: int) -> list[dict]:
@@ -166,6 +195,7 @@ def targeting(snapshot: Snapshot, report: Report, group_size: int) -> list[dict]
                     for cause, example in finding.examples
                 ],
                 "nested_homes": nested_pairs(snapshot, reached)[:8],
+                "ceilings": ceilings(snapshot, finding.category_id),
                 "propose_from": [
                     {
                         "category": snapshot.lexical_names.get(cid, cid),
@@ -184,15 +214,18 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
     lines = [
         "overlay coverage against the generator's actual precondition",
         "",
+        "parents = groups able to supply a group of that size, whether or not any overlay word sits in them",
+        "",
         f"entities {summary['entities']}, "
         f"lexical categories {summary['lexical_categories']}, "
         f"overlay categories {summary['overlay_categories']}",
         "",
-        "size  board  feasible  bounded  proxy(old table)",
+        "size  board  parents  feasible  bounded  proxy(old table)",
     ]
     for row in summary["sizes"]:
         lines.append(
             f"{row['group_size']:>4}  {row['board_size']:>5}  "
+            f"{row['parents_able']:>7}  "
             f"{row['feasible_hidden_groups']:>8}  {row['bounded_searches']:>7}  "
             f"{row['proxy_usable_categories']:>16}"
         )
@@ -206,6 +239,12 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
         "an upper bound that does not imply a board"
     )
 
+    for row in summary["sizes"]:
+        for board in row.get("feasible_boards", ()):
+            lines.append(
+                f"  size {row['group_size']} can be built: {board['hidden_group']}, "
+                f"with visible groups {', '.join(board['parents'])}"
+            )
     for row in summary["sizes"]:
         if row["reasons"]:
             reasons = ", ".join(f"{k} {v}" for k, v in row["reasons"].items())
@@ -224,6 +263,13 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
             )
             if row.get("home_names"):
                 lines.append("    homes: " + ", ".join(row["home_names"]))
+            if group_size == min(targets) and row.get("ceilings"):
+                # Once: a word's ceiling does not depend on the size asked for.
+                ordered = sorted(row["ceilings"].items(), key=lambda pair: (-pair[1], pair[0]))
+                lines.append(
+                    "    largest group each word can be a tile in: "
+                    + ", ".join(f"{word} {size}" for word, size in ordered)
+                )
             if row["homeless_members"]:
                 lines.append(
                     "    no usable home: "
@@ -242,8 +288,8 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
                 lines.append(f"    why no board: {causes}")
                 for example in row.get("failure_examples", ()):
                     lines.append(f"      e.g. {example['cause']}: {example['example']}")
-                if row.get("nested_homes"):
-                    lines.append("    nested homes: " + "; ".join(row["nested_homes"]))
+            if row.get("nested_homes"):
+                lines.append("    nested homes: " + "; ".join(row["nested_homes"]))
             if row["propose_from"]:
                 offered = ", ".join(
                     f"{entry['category']}({entry['members']})"
@@ -255,6 +301,10 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
     lines.append(
         "propose words from: lists parents chosen by size alone. Whether one "
         "suits a category's meaning is a human call the tool cannot make."
+    )
+    lines.append(
+        "largest group: a word is a tile only for its nearest category, so it "
+        "can serve a group no larger than that category has kinds."
     )
     lines.append(
         "generatable: yes" if summary["generatable"] else "generatable: no"
