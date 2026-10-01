@@ -1,0 +1,71 @@
+{
+  "exported": "2026-10-01",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-10008583-n",
+  "senses": [
+    {
+      "definition": "informal terms for a (young) woman",
+      "forms": [],
+      "id": "oewn-dame__1.18.00..",
+      "lang": "en",
+      "lemma": "dame",
+      "synset": "oewn-10008583-n"
+    },
+    {
+      "definition": "informal terms for a (young) woman",
+      "forms": [],
+      "id": "oewn-doll__1.18.00..",
+      "lang": "en",
+      "lemma": "doll",
+      "synset": "oewn-10008583-n"
+    },
+    {
+      "definition": "informal terms for a (young) woman",
+      "forms": [],
+      "id": "oewn-wench__1.18.00..",
+      "lang": "en",
+      "lemma": "wench",
+      "synset": "oewn-10008583-n"
+    },
+    {
+      "definition": "informal terms for a (young) woman",
+      "forms": [],
+      "id": "oewn-skirt__1.18.00..",
+      "lang": "en",
+      "lemma": "skirt",
+      "synset": "oewn-10008583-n"
+    },
+    {
+      "definition": "informal terms for a (young) woman",
+      "forms": [],
+      "id": "oewn-chick__1.18.00..",
+      "lang": "en",
+      "lemma": "chick",
+      "synset": "oewn-10008583-n"
+    },
+    {
+      "definition": "informal terms for a (young) woman",
+      "forms": [],
+      "id": "oewn-bird__1.18.00..",
+      "lang": "en",
+      "lemma": "bird",
+      "synset": "oewn-10008583-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "informal terms for a (young) woman",
+      "hypernyms": [
+        "oewn-10149362-n"
+      ],
+      "id": "oewn-10008583-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "dame"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

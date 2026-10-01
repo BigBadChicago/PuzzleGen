@@ -1,0 +1,97 @@
+[
+  {
+    "completeness": "COMPLETE",
+    "day": "2026-10-05",
+    "difficulty": 0.341,
+    "generated": true,
+    "group_size": 5,
+    "hidden": "word that is also a color",
+    "measured_band": "MEDIUM",
+    "on_target": true,
+    "reason": "",
+    "solutions": 1,
+    "states": 5005,
+    "visible": [
+      "airplane",
+      "citrus",
+      "finch",
+      "food fish"
+    ]
+  },
+  {
+    "completeness": "COMPLETE",
+    "day": "2026-10-06",
+    "difficulty": 0.341,
+    "generated": true,
+    "group_size": 5,
+    "hidden": "word that is also a color",
+    "measured_band": "MEDIUM",
+    "on_target": true,
+    "reason": "",
+    "solutions": 1,
+    "states": 5005,
+    "visible": [
+      "airplane",
+      "citrus",
+      "finch",
+      "food fish"
+    ]
+  },
+  {
+    "completeness": "COMPLETE",
+    "day": "2026-10-07",
+    "difficulty": 0.341,
+    "generated": true,
+    "group_size": 5,
+    "hidden": "word that is also a color",
+    "measured_band": "MEDIUM",
+    "on_target": true,
+    "reason": "",
+    "solutions": 1,
+    "states": 5005,
+    "visible": [
+      "airplane",
+      "citrus",
+      "finch",
+      "food fish"
+    ]
+  },
+  {
+    "completeness": "COMPLETE",
+    "day": "2026-10-08",
+    "difficulty": 0.341,
+    "generated": true,
+    "group_size": 7,
+    "hidden": "word that is also a color",
+    "measured_band": "MEDIUM",
+    "on_target": true,
+    "reason": "",
+    "solutions": 1,
+    "states": 5005,
+    "visible": [
+      "airplane",
+      "citrus",
+      "finch",
+      "food fish"
+    ]
+  },
+  {
+    "completeness": "COMPLETE",
+    "day": "2026-10-09",
+    "difficulty": 0.341,
+    "generated": true,
+    "group_size": 6,
+    "hidden": "word that is also a color",
+    "measured_band": "MEDIUM",
+    "on_target": true,
+    "reason": "",
+    "solutions": 1,
+    "states": 5005,
+    "visible": [
+      "airplane",
+      "citrus",
+      "finch",
+      "food fish"
+    ]
+  }
+]

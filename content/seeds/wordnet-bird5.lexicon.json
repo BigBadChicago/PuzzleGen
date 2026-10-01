@@ -1,0 +1,55 @@
+{
+  "exported": "2026-10-01",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-04219349-n",
+  "senses": [
+    {
+      "definition": "badminton equipment consisting of a ball of cork or rubber with a crown of feathers",
+      "forms": [],
+      "id": "oewn-shuttlecock__1.06.00..",
+      "lang": "en",
+      "lemma": "shuttlecock",
+      "synset": "oewn-04219349-n"
+    },
+    {
+      "definition": "badminton equipment consisting of a ball of cork or rubber with a crown of feathers",
+      "forms": [],
+      "id": "oewn-bird__1.06.01..",
+      "lang": "en",
+      "lemma": "bird",
+      "synset": "oewn-04219349-n"
+    },
+    {
+      "definition": "badminton equipment consisting of a ball of cork or rubber with a crown of feathers",
+      "forms": [],
+      "id": "oewn-birdie__1.06.00..",
+      "lang": "en",
+      "lemma": "birdie",
+      "synset": "oewn-04219349-n"
+    },
+    {
+      "definition": "badminton equipment consisting of a ball of cork or rubber with a crown of feathers",
+      "forms": [],
+      "id": "oewn-shuttle__1.06.02..",
+      "lang": "en",
+      "lemma": "shuttle",
+      "synset": "oewn-04219349-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "badminton equipment consisting of a ball of cork or rubber with a crown of feathers",
+      "hypernyms": [
+        "oewn-02775559-n"
+      ],
+      "id": "oewn-04219349-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "shuttlecock"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

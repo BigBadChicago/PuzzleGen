@@ -1,0 +1,974 @@
+{
+  "exported": "2026-10-01",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-07827392-n",
+  "senses": [
+    {
+      "definition": "aromatic potherb used in cookery for its savory qualities",
+      "forms": [],
+      "id": "oewn-herb__1.13.00..",
+      "lang": "en",
+      "lemma": "herb",
+      "synset": "oewn-07827392-n"
+    },
+    {
+      "definition": "a mixture of finely chopped fresh herbs",
+      "forms": [],
+      "id": "oewn-fines_herbes__1.13.00..",
+      "lang": "en",
+      "lemma": "fines herbes",
+      "synset": "oewn-07828022-n"
+    },
+    {
+      "definition": "leaves of the common basil; used fresh or dried",
+      "forms": [],
+      "id": "oewn-basil__1.13.00..",
+      "lang": "en",
+      "lemma": "basil",
+      "synset": "oewn-07832140-n"
+    },
+    {
+      "definition": "leaves of the common basil; used fresh or dried",
+      "forms": [],
+      "id": "oewn-sweet_basil__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet basil",
+      "synset": "oewn-07832140-n"
+    },
+    {
+      "definition": "dried leaf of the bay laurel",
+      "forms": [],
+      "id": "oewn-bay_leaf__1.13.00..",
+      "lang": "en",
+      "lemma": "bay leaf",
+      "synset": "oewn-07832272-n"
+    },
+    {
+      "definition": "an herb whose leaves are used to flavor sauces and punches; young leaves can be eaten in salads or cooked",
+      "forms": [],
+      "id": "oewn-borage__1.13.00..",
+      "lang": "en",
+      "lemma": "borage",
+      "synset": "oewn-07832374-n"
+    },
+    {
+      "definition": "bitter leaves used sparingly in salads; dried flowers used in soups and tisanes",
+      "forms": [],
+      "id": "oewn-hyssop__1.13.00..",
+      "lang": "en",
+      "lemma": "hyssop",
+      "synset": "oewn-07832551-n"
+    },
+    {
+      "definition": "leaves used sparingly in soups and stews",
+      "forms": [],
+      "id": "oewn-caraway__1.13.00..",
+      "lang": "en",
+      "lemma": "caraway",
+      "synset": "oewn-07832702-n"
+    },
+    {
+      "definition": "fresh ferny parsley-like leaves used as a garnish with chicken and veal and omelets and green salads and spinach",
+      "forms": [],
+      "id": "oewn-chervil__1.13.00..",
+      "lang": "en",
+      "lemma": "chervil",
+      "synset": "oewn-07832815-n"
+    },
+    {
+      "definition": "cylindrical leaves used fresh as a mild onion-flavored seasoning",
+      "forms": [],
+      "id": "oewn-chives__1.13.00..",
+      "lang": "en",
+      "lemma": "chives",
+      "synset": "oewn-07833000-n"
+    },
+    {
+      "definition": "leaves make a popular tisane; young leaves used in salads or cooked",
+      "forms": [],
+      "id": "oewn-comfrey__1.13.00..",
+      "lang": "en",
+      "lemma": "comfrey",
+      "synset": "oewn-07833136-n"
+    },
+    {
+      "definition": "leaves make a popular tisane; young leaves used in salads or cooked",
+      "forms": [],
+      "id": "oewn-healing_herb__1.13.00..",
+      "lang": "en",
+      "lemma": "healing herb",
+      "synset": "oewn-07833136-n"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "forms": [],
+      "id": "oewn-coriander__1.13.00..",
+      "lang": "en",
+      "lemma": "coriander",
+      "synset": "oewn-07833291-n"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "forms": [],
+      "id": "oewn-chinese_parsley__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese parsley",
+      "synset": "oewn-07833291-n"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "forms": [],
+      "id": "oewn-cilantro__1.13.00..",
+      "lang": "en",
+      "lemma": "cilantro",
+      "synset": "oewn-07833291-n"
+    },
+    {
+      "definition": "leaves used sparingly (because of bitter overtones) in sauces and soups and stuffings",
+      "forms": [],
+      "id": "oewn-costmary__1.13.00..",
+      "lang": "en",
+      "lemma": "costmary",
+      "synset": "oewn-07833575-n"
+    },
+    {
+      "definition": "leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-fennel__1.13.01..",
+      "lang": "en",
+      "lemma": "fennel",
+      "synset": "oewn-07833734-n"
+    },
+    {
+      "definition": "leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-common_fennel__1.13.00..",
+      "lang": "en",
+      "lemma": "common fennel",
+      "synset": "oewn-07833734-n"
+    },
+    {
+      "definition": "lemony leaves used for a tisane or in soups or fruit punches",
+      "forms": [],
+      "id": "oewn-lemon_balm__1.13.00..",
+      "lang": "en",
+      "lemma": "lemon balm",
+      "synset": "oewn-07834665-n"
+    },
+    {
+      "definition": "stalks eaten like celery or candied like angelica; seeds used for flavoring or pickled like capers",
+      "forms": [],
+      "id": "oewn-lovage__1.13.00..",
+      "lang": "en",
+      "lemma": "lovage",
+      "synset": "oewn-07834801-n"
+    },
+    {
+      "definition": "pungent leaves used as seasoning with meats and fowl and in stews and soups and omelets",
+      "forms": [],
+      "id": "oewn-marjoram__1.13.00..",
+      "lang": "en",
+      "lemma": "marjoram",
+      "synset": "oewn-07834971-n"
+    },
+    {
+      "definition": "pungent leaves used as seasoning with meats and fowl and in stews and soups and omelets",
+      "forms": [],
+      "id": "oewn-oregano__1.13.00..",
+      "lang": "en",
+      "lemma": "oregano",
+      "synset": "oewn-07834971-n"
+    },
+    {
+      "definition": "the leaves of a mint plant used fresh or candied",
+      "forms": [],
+      "id": "oewn-mint__1.13.01..",
+      "lang": "en",
+      "lemma": "mint",
+      "synset": "oewn-07835142-n"
+    },
+    {
+      "definition": "aromatic herb with flat or crinkly leaves that are cut finely and used to garnish food",
+      "forms": [],
+      "id": "oewn-parsley__1.13.00..",
+      "lang": "en",
+      "lemma": "parsley",
+      "synset": "oewn-07835872-n"
+    },
+    {
+      "definition": "extremely pungent leaves used fresh or dried as seasoning for especially meats",
+      "forms": [],
+      "id": "oewn-rosemary__1.13.00..",
+      "lang": "en",
+      "lemma": "rosemary",
+      "synset": "oewn-07836121-n"
+    },
+    {
+      "definition": "leaves sometimes used for flavoring fruit or claret cup but should be used with great caution: can cause irritation like poison ivy",
+      "forms": [],
+      "id": "oewn-rue__1.13.00..",
+      "lang": "en",
+      "lemma": "rue",
+      "synset": "oewn-07836273-n"
+    },
+    {
+      "definition": "aromatic fresh or dried grey-green leaves used widely as seasoning for meats and fowl and game etc",
+      "forms": [],
+      "id": "oewn-sage__1.13.00..",
+      "lang": "en",
+      "lemma": "sage",
+      "synset": "oewn-07836473-n"
+    },
+    {
+      "definition": "fresh leaves used in omelets and fritters and with lamb",
+      "forms": [],
+      "id": "oewn-clary_sage__1.13.00..",
+      "lang": "en",
+      "lemma": "clary sage",
+      "synset": "oewn-07836659-n"
+    },
+    {
+      "definition": "either of two aromatic herbs of the mint family",
+      "forms": [],
+      "id": "oewn-savory__1.13.00..",
+      "lang": "en",
+      "lemma": "savory",
+      "synset": "oewn-07836790-n"
+    },
+    {
+      "definition": "either of two aromatic herbs of the mint family",
+      "forms": [],
+      "id": "oewn-savoury__1.13.00..",
+      "lang": "en",
+      "lemma": "savoury",
+      "synset": "oewn-07836790-n"
+    },
+    {
+      "definition": "herb with delicately flavored leaves with many uses",
+      "forms": [],
+      "id": "oewn-summer_savory__1.13.00..",
+      "lang": "en",
+      "lemma": "summer savory",
+      "synset": "oewn-07836936-n"
+    },
+    {
+      "definition": "herb with delicately flavored leaves with many uses",
+      "forms": [],
+      "id": "oewn-summer_savoury__1.13.00..",
+      "lang": "en",
+      "lemma": "summer savoury",
+      "synset": "oewn-07836936-n"
+    },
+    {
+      "definition": "resinous leaves used in stews and stuffings and meat loaf",
+      "forms": [],
+      "id": "oewn-winter_savory__1.13.00..",
+      "lang": "en",
+      "lemma": "winter savory",
+      "synset": "oewn-07837083-n"
+    },
+    {
+      "definition": "resinous leaves used in stews and stuffings and meat loaf",
+      "forms": [],
+      "id": "oewn-winter_savoury__1.13.00..",
+      "lang": "en",
+      "lemma": "winter savoury",
+      "synset": "oewn-07837083-n"
+    },
+    {
+      "definition": "fragrant dark green leaves used to flavor May wine",
+      "forms": [],
+      "id": "oewn-sweet_woodruff__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet woodruff",
+      "synset": "oewn-07837236-n"
+    },
+    {
+      "definition": "fragrant dark green leaves used to flavor May wine",
+      "forms": [],
+      "id": "oewn-waldmeister__1.13.00..",
+      "lang": "en",
+      "lemma": "waldmeister",
+      "synset": "oewn-07837236-n"
+    },
+    {
+      "definition": "fresh ferny leaves and green seeds used as garnish in salads and cold vegetables; dried seeds used in confectionery and liqueurs",
+      "forms": [],
+      "id": "oewn-sweet_cicely__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet cicely",
+      "synset": "oewn-07837380-n"
+    },
+    {
+      "definition": "fresh leaves (or leaves preserved in vinegar) used as seasoning",
+      "forms": [],
+      "id": "oewn-tarragon__1.13.00..",
+      "lang": "en",
+      "lemma": "tarragon",
+      "synset": "oewn-07837586-n"
+    },
+    {
+      "definition": "fresh leaves (or leaves preserved in vinegar) used as seasoning",
+      "forms": [],
+      "id": "oewn-estragon__1.13.00..",
+      "lang": "en",
+      "lemma": "estragon",
+      "synset": "oewn-07837586-n"
+    },
+    {
+      "definition": "leaves can be used as seasoning for almost any meat and stews and stuffings and vegetables",
+      "forms": [],
+      "id": "oewn-thyme__1.13.00..",
+      "lang": "en",
+      "lemma": "thyme",
+      "synset": "oewn-07837734-n"
+    },
+    {
+      "definition": "aromatic stems or leaves or roots of Angelica Archangelica",
+      "forms": [],
+      "id": "oewn-angelica__1.13.01..",
+      "lang": "en",
+      "lemma": "angelica",
+      "synset": "oewn-07842316-n"
+    },
+    {
+      "definition": "aromatic threadlike foliage of the dill plant used as seasoning",
+      "forms": [],
+      "id": "oewn-dill__1.13.00..",
+      "lang": "en",
+      "lemma": "dill",
+      "synset": "oewn-07843872-n"
+    },
+    {
+      "definition": "aromatic threadlike foliage of the dill plant used as seasoning",
+      "forms": [],
+      "id": "oewn-dill_weed__1.13.00..",
+      "lang": "en",
+      "lemma": "dill weed",
+      "synset": "oewn-07843872-n"
+    },
+    {
+      "definition": "dried leaves of the tea shrub; used to make tea",
+      "forms": [],
+      "id": "oewn-tea__1.13.02..",
+      "lang": "en",
+      "lemma": "tea",
+      "synset": "oewn-07949081-n"
+    },
+    {
+      "definition": "dried leaves of the tea shrub; used to make tea",
+      "forms": [],
+      "id": "oewn-tea_leaf__1.13.00..",
+      "lang": "en",
+      "lemma": "tea leaf",
+      "synset": "oewn-07949081-n"
+    },
+    {
+      "definition": "a measured amount of tea in a bag for an individual serving of tea",
+      "forms": [],
+      "id": "oewn-tea_bag__1.13.00..",
+      "lang": "en",
+      "lemma": "tea bag",
+      "synset": "oewn-07949394-n"
+    },
+    {
+      "definition": "fermented tea leaves",
+      "forms": [],
+      "id": "oewn-black_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "black tea",
+      "synset": "oewn-07950770-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-congou__1.13.00..",
+      "lang": "en",
+      "lemma": "congou",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-congo__1.13.00..",
+      "lang": "en",
+      "lemma": "congo",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-congou_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "congou tea",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-english_breakfast_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "English breakfast tea",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "a fine variety of black tea grown in northern India",
+      "forms": [],
+      "id": "oewn-darjeeling__1.13.00..",
+      "lang": "en",
+      "lemma": "Darjeeling",
+      "synset": "oewn-07951040-n"
+    },
+    {
+      "definition": "a superior grade of black tea; grown in India and Sri Lanka and Java",
+      "forms": [],
+      "id": "oewn-orange_pekoe__1.13.00..",
+      "lang": "en",
+      "lemma": "orange pekoe",
+      "synset": "oewn-07951148-n"
+    },
+    {
+      "definition": "a superior grade of black tea; grown in India and Sri Lanka and Java",
+      "forms": [],
+      "id": "oewn-pekoe__1.13.00..",
+      "lang": "en",
+      "lemma": "pekoe",
+      "synset": "oewn-07951148-n"
+    },
+    {
+      "definition": "a fine quality of black tea native to China",
+      "forms": [],
+      "id": "oewn-souchong__1.13.00..",
+      "lang": "en",
+      "lemma": "souchong",
+      "synset": "oewn-07951283-n"
+    },
+    {
+      "definition": "a fine quality of black tea native to China",
+      "forms": [],
+      "id": "oewn-soochong__1.13.00..",
+      "lang": "en",
+      "lemma": "soochong",
+      "synset": "oewn-07951283-n"
+    },
+    {
+      "definition": "tea leaves that have been steamed and dried without fermenting",
+      "forms": [],
+      "id": "oewn-green_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "green tea",
+      "synset": "oewn-07951392-n"
+    },
+    {
+      "definition": "a Chinese green tea with twisted leaves",
+      "forms": [],
+      "id": "oewn-hyson__1.13.00..",
+      "lang": "en",
+      "lemma": "hyson",
+      "synset": "oewn-07951528-n"
+    },
+    {
+      "definition": "Chinese tea leaves that have been partially fermented before being dried",
+      "forms": [],
+      "id": "oewn-oolong__1.13.00..",
+      "lang": "en",
+      "lemma": "oolong",
+      "synset": "oewn-07951619-n"
+    },
+    {
+      "definition": "a type of tea that is more oxidized than oolong, green and white teas.",
+      "forms": [],
+      "id": "oewn-ceylon_black_tea__1.13.01..",
+      "lang": "en",
+      "lemma": "ceylon black tea",
+      "synset": "oewn-92406449-n"
+    },
+    {
+      "definition": "a beverage prepared by infusion of sage leaves.",
+      "forms": [],
+      "id": "oewn-sage_tea__1.13.01..",
+      "lang": "en",
+      "lemma": "sage tea",
+      "synset": "oewn-92426796-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "aromatic potherb used in cookery for its savory qualities",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07827392-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "herb"
+    },
+    {
+      "definition": "a mixture of finely chopped fresh herbs",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07828022-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "fines herbes"
+    },
+    {
+      "definition": "leaves of the common basil; used fresh or dried",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832140-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "basil"
+    },
+    {
+      "definition": "dried leaf of the bay laurel",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832272-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bay leaf"
+    },
+    {
+      "definition": "an herb whose leaves are used to flavor sauces and punches; young leaves can be eaten in salads or cooked",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832374-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "borage"
+    },
+    {
+      "definition": "bitter leaves used sparingly in salads; dried flowers used in soups and tisanes",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832551-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "hyssop"
+    },
+    {
+      "definition": "leaves used sparingly in soups and stews",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832702-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "caraway"
+    },
+    {
+      "definition": "fresh ferny parsley-like leaves used as a garnish with chicken and veal and omelets and green salads and spinach",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832815-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chervil"
+    },
+    {
+      "definition": "cylindrical leaves used fresh as a mild onion-flavored seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833000-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chives"
+    },
+    {
+      "definition": "leaves make a popular tisane; young leaves used in salads or cooked",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833136-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "comfrey"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833291-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "coriander"
+    },
+    {
+      "definition": "leaves used sparingly (because of bitter overtones) in sauces and soups and stuffings",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833575-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "costmary"
+    },
+    {
+      "definition": "leaves used for seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833734-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "fennel"
+    },
+    {
+      "definition": "lemony leaves used for a tisane or in soups or fruit punches",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07834665-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lemon balm"
+    },
+    {
+      "definition": "stalks eaten like celery or candied like angelica; seeds used for flavoring or pickled like capers",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07834801-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lovage"
+    },
+    {
+      "definition": "pungent leaves used as seasoning with meats and fowl and in stews and soups and omelets",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07834971-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "marjoram"
+    },
+    {
+      "definition": "the leaves of a mint plant used fresh or candied",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07835142-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "mint"
+    },
+    {
+      "definition": "aromatic herb with flat or crinkly leaves that are cut finely and used to garnish food",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07835872-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "parsley"
+    },
+    {
+      "definition": "extremely pungent leaves used fresh or dried as seasoning for especially meats",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836121-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "rosemary"
+    },
+    {
+      "definition": "leaves sometimes used for flavoring fruit or claret cup but should be used with great caution: can cause irritation like poison ivy",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836273-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "rue"
+    },
+    {
+      "definition": "aromatic fresh or dried grey-green leaves used widely as seasoning for meats and fowl and game etc",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836473-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sage"
+    },
+    {
+      "definition": "fresh leaves used in omelets and fritters and with lamb",
+      "hypernyms": [
+        "oewn-07836473-n"
+      ],
+      "id": "oewn-07836659-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "clary sage"
+    },
+    {
+      "definition": "either of two aromatic herbs of the mint family",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836790-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "savory"
+    },
+    {
+      "definition": "herb with delicately flavored leaves with many uses",
+      "hypernyms": [
+        "oewn-07836790-n"
+      ],
+      "id": "oewn-07836936-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "summer savory"
+    },
+    {
+      "definition": "resinous leaves used in stews and stuffings and meat loaf",
+      "hypernyms": [
+        "oewn-07836790-n"
+      ],
+      "id": "oewn-07837083-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "winter savory"
+    },
+    {
+      "definition": "fragrant dark green leaves used to flavor May wine",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837236-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sweet woodruff"
+    },
+    {
+      "definition": "fresh ferny leaves and green seeds used as garnish in salads and cold vegetables; dried seeds used in confectionery and liqueurs",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837380-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sweet cicely"
+    },
+    {
+      "definition": "fresh leaves (or leaves preserved in vinegar) used as seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837586-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "tarragon"
+    },
+    {
+      "definition": "leaves can be used as seasoning for almost any meat and stews and stuffings and vegetables",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837734-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "thyme"
+    },
+    {
+      "definition": "aromatic stems or leaves or roots of Angelica Archangelica",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07842316-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "angelica"
+    },
+    {
+      "definition": "aromatic threadlike foliage of the dill plant used as seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07843872-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "dill"
+    },
+    {
+      "definition": "dried leaves of the tea shrub; used to make tea",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07949081-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "tea"
+    },
+    {
+      "definition": "a measured amount of tea in a bag for an individual serving of tea",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07949394-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "tea bag"
+    },
+    {
+      "definition": "fermented tea leaves",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07950770-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "black tea"
+    },
+    {
+      "definition": "black tea grown in China",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07950918-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "congou"
+    },
+    {
+      "definition": "a fine variety of black tea grown in northern India",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07951040-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Darjeeling"
+    },
+    {
+      "definition": "a superior grade of black tea; grown in India and Sri Lanka and Java",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07951148-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "orange pekoe"
+    },
+    {
+      "definition": "a fine quality of black tea native to China",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07951283-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "souchong"
+    },
+    {
+      "definition": "tea leaves that have been steamed and dried without fermenting",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07951392-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "green tea"
+    },
+    {
+      "definition": "a Chinese green tea with twisted leaves",
+      "hypernyms": [
+        "oewn-07951392-n"
+      ],
+      "id": "oewn-07951528-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "hyson"
+    },
+    {
+      "definition": "Chinese tea leaves that have been partially fermented before being dried",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07951619-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "oolong"
+    },
+    {
+      "definition": "a type of tea that is more oxidized than oolong, green and white teas.",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-92406449-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "ceylon black tea"
+    },
+    {
+      "definition": "a beverage prepared by infusion of sage leaves.",
+      "hypernyms": [
+        "oewn-07836473-n",
+        "oewn-07950131-n"
+      ],
+      "id": "oewn-92426796-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sage tea"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

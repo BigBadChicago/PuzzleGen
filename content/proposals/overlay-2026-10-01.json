@@ -73,29 +73,6 @@
       "unblocks": []
     },
     {
-      "category_id": "category:90c3195cc686fc33a4ba",
-      "category_name": "thing with strings",
-      "confidence": 0.607,
-      "coverage_checked": true,
-      "entity_id": "entity:stringed-instrument",
-      "entity_name": "stringed instrument",
-      "new_homes": [
-        "category:7c8646fe201f0e2b7e24"
-      ],
-      "previously_rejected": false,
-      "rejected_at": null,
-      "rejected_by": null,
-      "signals": [
-        {
-          "evidence": "cosine 0.742 against the centroid of 10 existing members",
-          "name": "embedding",
-          "strength": 0.7422592315941668
-        }
-      ],
-      "subject_ref": "rel:33118ebec9bdb14f3468",
-      "unblocks": []
-    },
-    {
       "category_id": "category:f6f54b542513a7585846",
       "category_name": "thing that floats",
       "confidence": 0.602,
@@ -373,27 +350,6 @@
       "unblocks": []
     },
     {
-      "category_id": "category:90c3195cc686fc33a4ba",
-      "category_name": "thing with strings",
-      "confidence": 0.629,
-      "coverage_checked": true,
-      "entity_id": "entity:string",
-      "entity_name": "string",
-      "new_homes": [],
-      "previously_rejected": false,
-      "rejected_at": null,
-      "rejected_by": null,
-      "signals": [
-        {
-          "evidence": "cosine 0.783 against the centroid of 10 existing members",
-          "name": "embedding",
-          "strength": 0.7828040274417093
-        }
-      ],
-      "subject_ref": "rel:2e35eec99462a5588de4",
-      "unblocks": []
-    },
-    {
       "category_id": "category:187211dfc6372576072f",
       "category_name": "thing that is blown",
       "confidence": 0.629,
@@ -415,27 +371,6 @@
       "unblocks": []
     },
     {
-      "category_id": "category:90c3195cc686fc33a4ba",
-      "category_name": "thing with strings",
-      "confidence": 0.629,
-      "coverage_checked": true,
-      "entity_id": "entity:bowed-stringed-instrument",
-      "entity_name": "bowed stringed instrument",
-      "new_homes": [],
-      "previously_rejected": false,
-      "rejected_at": null,
-      "rejected_by": null,
-      "signals": [
-        {
-          "evidence": "cosine 0.783 against the centroid of 10 existing members",
-          "name": "embedding",
-          "strength": 0.7826966195429617
-        }
-      ],
-      "subject_ref": "rel:c71622561019f5543341",
-      "unblocks": []
-    },
-    {
       "category_id": "category:f83eb9ce3512a8a53dd9",
       "category_name": "thing with wings",
       "confidence": 0.625,
@@ -454,6 +389,27 @@
         }
       ],
       "subject_ref": "rel:b9fe08138e17caf18892",
+      "unblocks": []
+    },
+    {
+      "category_id": "category:90c3195cc686fc33a4ba",
+      "category_name": "thing with strings",
+      "confidence": 0.623,
+      "coverage_checked": true,
+      "entity_id": "entity:string",
+      "entity_name": "string",
+      "new_homes": [],
+      "previously_rejected": false,
+      "rejected_at": null,
+      "rejected_by": null,
+      "signals": [
+        {
+          "evidence": "cosine 0.771 against the centroid of 10 existing members",
+          "name": "embedding",
+          "strength": 0.7709721152604362
+        }
+      ],
+      "subject_ref": "rel:2e35eec99462a5588de4",
       "unblocks": []
     },
     {
@@ -496,6 +452,27 @@
         }
       ],
       "subject_ref": "rel:ac739cc523458de84ea8",
+      "unblocks": []
+    },
+    {
+      "category_id": "category:90c3195cc686fc33a4ba",
+      "category_name": "thing with strings",
+      "confidence": 0.619,
+      "coverage_checked": true,
+      "entity_id": "entity:bowed-stringed-instrument",
+      "entity_name": "bowed stringed instrument",
+      "new_homes": [],
+      "previously_rejected": false,
+      "rejected_at": null,
+      "rejected_by": null,
+      "signals": [
+        {
+          "evidence": "cosine 0.764 against the centroid of 10 existing members",
+          "name": "embedding",
+          "strength": 0.7639010030798604
+        }
+      ],
+      "subject_ref": "rel:c71622561019f5543341",
       "unblocks": []
     },
     {
@@ -857,17 +834,17 @@
     }
   ],
   "counts": {
-    "adds_a_new_home": 6,
+    "adds_a_new_home": 5,
     "both_signals": 0,
     "by_signal": {
-      "embedding": 40
+      "embedding": 39
     },
-    "candidates": 40,
-    "coverage_checked": 40,
+    "candidates": 39,
+    "coverage_checked": 39,
     "previously_rejected": 0,
     "would_unblock_a_board": 1
   },
-  "generated_at": "2026-10-01T15:48:30.940175+00:00",
+  "generated_at": "2026-10-01T19:01:38.544063+00:00",
   "parameters": {
     "coverage": true,
     "coverage_check_limit": 200,
