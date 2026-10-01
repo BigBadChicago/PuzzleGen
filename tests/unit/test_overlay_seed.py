@@ -37,7 +37,13 @@ MAX_GROUP_SIZE = 9
 EXPECTED_CATEGORIES = 14
 #: Every category ever authored, live or retired.
 EXPECTED_AUTHORED = 15
-EXPECTED_MEMBERS_EACH = 10
+#: The floor a category must clear, not a fixed size. The architecture states
+#: it as "at least as many members as the day's group size", and the widest
+#: board draws nine. A category may hold more: adding placeable words to one
+#: that cannot currently reach four homes is how a category becomes usable,
+#: and a pin at exactly ten would make that change fail a test rather than
+#: fix a board.
+MINIMUM_MEMBERS_EACH = 10
 
 
 @pytest.fixture(scope="module")
@@ -90,9 +96,9 @@ class TestTheFile:
         keys = [e["key"] for e in document["entities"]]
         assert len(set(keys)) == len(keys)
 
-    def test_every_category_has_exactly_ten_members(self, document):
+    def test_every_category_has_at_least_ten_members(self, document):
         sizes = {key: len(names) for key, names in members_of(document).items()}
-        assert set(sizes.values()) == {EXPECTED_MEMBERS_EACH}
+        assert min(sizes.values()) >= MINIMUM_MEMBERS_EACH
 
     def test_every_category_can_serve_the_widest_board(self, document):
         """The hidden group needs as many members as the day's group size, and
@@ -186,7 +192,7 @@ class TestWhatItImports:
 
     def test_every_membership_activates(self, imported):
         memberships = imported.relationships.find(predicate=MEMBERSHIP_PREDICATE)
-        assert len(memberships) == EXPECTED_CATEGORIES * EXPECTED_MEMBERS_EACH
+        assert len(memberships) >= EXPECTED_CATEGORIES * MINIMUM_MEMBERS_EACH
         assert all(r.status is ReviewStatus.ACTIVE for r in memberships)
 
     def test_membership_provenance_is_sourced_not_judged(self, imported):
@@ -211,7 +217,7 @@ class TestWhatItImports:
             if r.status is ReviewStatus.ACTIVE
         )
         assert len(counts) == EXPECTED_CATEGORIES
-        assert set(counts.values()) == {EXPECTED_MEMBERS_EACH}
+        assert min(counts.values()) >= MINIMUM_MEMBERS_EACH
 
     def test_entity_ids_are_lemma_derived_so_a_lexical_import_merges(
         self, imported, document
@@ -242,7 +248,7 @@ class TestWhatItImports:
             for r in imported.relationships.by_object(color.id, MEMBERSHIP_PREDICATE)
             if r.status is ReviewStatus.ACTIVE
         ]
-        assert len(members) == EXPECTED_MEMBERS_EACH
+        assert len(members) >= MINIMUM_MEMBERS_EACH
         assert all(imported.entities.require(r.subject_id).is_usable() for r in members)
 
 
@@ -274,7 +280,7 @@ class TestItIsTheProposersInputFormat:
         for category in categories:
             assert (
                 len(module.existing_members(imported, category.id))
-                == EXPECTED_MEMBERS_EACH
+                >= MINIMUM_MEMBERS_EACH
             )
 
     def test_the_proposer_proposes_nothing_from_the_seed_alone(self, imported):
@@ -388,7 +394,7 @@ class TestRetiredCategories:
         entry = next(e for e in self.retired(document) if e["key"] == "overlay.wheels")
 
         assert entry["name"] == "thing with wheels"
-        assert len(entry["members"]) == EXPECTED_MEMBERS_EACH
+        assert len(entry["members"]) >= MINIMUM_MEMBERS_EACH
 
     def test_a_retired_category_is_not_a_live_one(self, document):
         live = {c["key"] for c in document["categories"]}
@@ -418,3 +424,54 @@ class TestRetiredCategories:
 
         assert "thing with wheels" not in names
         assert len(names) == EXPECTED_CATEGORIES
+
+
+class TestTheVerbCategoryCanBuildABoard:
+    """The four words added so one category reaches four unnested parents.
+
+    Measured: with these, "word that is also a verb" is the hidden group of a
+    board whose visible groups are boat, oscine, airplane and percussion
+    instrument. Without them its placeable words reach two parents and no
+    board exists at any size.
+    """
+
+    ADDED = ("drum", "jet", "ferry", "tug")
+
+    def verb_members(self, document) -> list[str]:
+        return members_of(document)["overlay.verb"]
+
+    def test_the_four_are_members(self, document):
+        assert set(self.ADDED) <= set(self.verb_members(document))
+
+    def test_the_category_now_holds_fourteen(self, document):
+        assert len(self.verb_members(document)) == 14
+
+    def test_nothing_was_removed_to_make_room(self, document):
+        """The original ten are still there; the absent ones become usable
+        when their roots are exported."""
+        original = {"fly", "swallow", "crane", "ram", "hop", "rush", "dock",
+                    "poke", "squash", "drill"}
+        assert original <= set(self.verb_members(document))
+
+    def test_the_shared_words_keep_their_other_categories(self, document):
+        """jet, ferry and tug were already in the seed under other axes, and a
+        word in two overlay categories is the richer material, not a clash."""
+        by_name = {e["name"]: e for e in document["entities"]}
+
+        assert "overlay.wings" in by_name["jet"]["categories"]
+        assert "overlay.floats" in by_name["ferry"]["categories"]
+        assert "overlay.floats" in by_name["tug"]["categories"]
+
+    def test_they_activate_like_any_other_member(self, imported):
+        verb = next(
+            c
+            for c in imported.categories.live(OVERLAY_TAXONOMY)
+            if c.canonical_name == "word that is also a verb"
+        )
+        members = [
+            r
+            for r in imported.relationships.by_object(verb.id, MEMBERSHIP_PREDICATE)
+            if r.status is ReviewStatus.ACTIVE
+        ]
+
+        assert len(members) == 14
