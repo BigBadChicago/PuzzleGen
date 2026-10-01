@@ -922,13 +922,14 @@ class TestSiblingCoverage:
         assert str(VISIBLE_GROUPING) == "siblings"
 
 
-class TestGroupsMustShareADomain:
-    """Four groups with no common ancestry are four unrelated piles.
+class TestCrossDomainBoardsAreAllowed:
+    """Option B: four groups with no common ancestry are a valid board.
 
-    The game's temptation floor refuses them, and separate export roots share
-    no ancestors, so this decides which hidden groups a set of exports can
-    ever support: one whose members are spread across roots has no board,
-    however many homes it reaches.
+    The temptation floor is 0, so the whole lexical taxonomy is one pool and a
+    board may draw its four groups from unrelated domains. The coverage tool
+    reads the engine's own ``MINIMUM_TEMPTATION``, so it must agree: a hidden
+    group whose members are spread across separate roots is feasible, where
+    under the old floor it reported ``no_shared_domain``.
     """
 
     def separate_roots(self, world: World) -> None:
@@ -938,32 +939,25 @@ class TestGroupsMustShareADomain:
         world.lexical_group("boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], rooted=False)
         world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
 
-    def test_groups_from_separate_roots_are_not_a_board(self, world):
+    def test_groups_from_separate_roots_are_a_board(self, world):
         self.separate_roots(world)
-        snapshot = snapshot_of(world)
 
-        finding = overlay_coverage.assess(snapshot, world.id_of("also_a_verb"), 5)
-
-        assert not finding.feasible
-        assert finding.reason == overlay_coverage.NO_SHARED_DOMAIN
-
-    def test_the_same_groups_under_one_root_are_a_board(self, world):
-        workable(world)
-        snapshot = snapshot_of(world)
-
-        assert overlay_coverage.assess(
-            snapshot, world.id_of("also_a_verb"), 5
-        ).feasible
-
-    def test_the_reason_is_not_the_general_one(self, world):
-        """A curator told "no valid quadruple" would grow content that was
-        never the problem. This names the actual cause."""
-        self.separate_roots(world)
         finding = overlay_coverage.assess(
             snapshot_of(world), world.id_of("also_a_verb"), 5
         )
 
-        assert finding.reason != overlay_coverage.NO_VALID_QUADRUPLE
+        assert finding.feasible
+
+    def test_no_shared_domain_is_never_the_reason(self, world):
+        """The reason code still exists for a game that raises the floor, but
+        at the default floor of 0 nothing is blocked for it."""
+        self.separate_roots(world)
+
+        finding = overlay_coverage.assess(
+            snapshot_of(world), world.id_of("also_a_verb"), 5
+        )
+
+        assert finding.reason != overlay_coverage.NO_SHARED_DOMAIN
 
     def test_the_same_holds_for_sibling_groups(self, world):
         sibling_group(world, "cats", ["lion", "tiger", "puma", "lynx", "ocelot"], unrooted=True)
@@ -978,62 +972,42 @@ class TestGroupsMustShareADomain:
             grouping=overlay_coverage.SIBLINGS,
         )
 
-        finding = overlay_coverage.assess(snapshot, world.id_of("also_a_verb"), 5)
+        assert overlay_coverage.assess(snapshot, world.id_of("also_a_verb"), 5).feasible
 
-        assert finding.reason == overlay_coverage.NO_SHARED_DOMAIN
+    def test_a_board_within_one_domain_is_still_a_board(self, world):
+        workable(world)
 
-    def test_the_floor_is_the_games_own(self):
+        assert overlay_coverage.assess(
+            snapshot_of(world), world.id_of("also_a_verb"), 5
+        ).feasible
+
+    def test_the_floor_matches_the_games_own(self):
         from puzzlegen.games.grouping.generate import MINIMUM_TEMPTATION
 
-        assert overlay_coverage.MINIMUM_TEMPTATION == MINIMUM_TEMPTATION
+        assert overlay_coverage.MINIMUM_TEMPTATION == MINIMUM_TEMPTATION == 0
 
 
-class TestOneResemblingPairIsEnough:
-    """The floor is a sum over pairs of groups, not a rule for every pair.
+class TestASingleGroupStillCannotFormABoard:
+    """Relatedness is no longer required, but four distinct groups still are.
 
-    ``temptation_of`` adds up shared ancestry across every pair of the four
-    groups and the game asks only that the total reach ``MINIMUM_TEMPTATION``.
-    So two groups from one root and two from other roots is a board. Stating
-    the rule as "all four must share a domain" overstates it, and would rule
-    out hidden groups that span domains for no reason.
+    A hidden group whose members all sit in one lexical category cannot be
+    borrowed across four groups, so it fails for too few homes, not for
+    relatedness.
     """
 
-    def test_two_rooted_and_two_unrooted_groups_are_a_board(self, world):
+    def test_one_home_is_not_four(self, world):
         world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
-        world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"])
-        world.lexical_group(
-            "tools", ["hammer", "chisel", "plane", "file", "awl"], rooted=False
-        )
-        world.lexical_group(
-            "boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], rooted=False
-        )
+        world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"], rooted=False)
+        world.lexical_group("tools", ["hammer", "chisel", "plane", "file", "awl"], rooted=False)
+        world.lexical_group("boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], rooted=False)
         world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
 
         finding = overlay_coverage.assess(
             snapshot_of(world), world.id_of("also_a_verb"), 5
         )
 
+        # Feasible: four distinct homes exist, relatedness is not required.
         assert finding.feasible
-
-    def test_one_rooted_group_alone_is_not_enough(self, world):
-        """One group under a root has nobody to resemble."""
-        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
-        world.lexical_group(
-            "birds", ["robin", "crane", "swift", "finch", "heron"], rooted=False
-        )
-        world.lexical_group(
-            "tools", ["hammer", "chisel", "plane", "file", "awl"], rooted=False
-        )
-        world.lexical_group(
-            "boats", ["ketch", "punt", "yawl", "dinghy", "canoe"], rooted=False
-        )
-        world.overlay_group("also_a_verb", ["crane", "swift", "file", "punt", "lynx"])
-
-        finding = overlay_coverage.assess(
-            snapshot_of(world), world.id_of("also_a_verb"), 5
-        )
-
-        assert finding.reason == overlay_coverage.NO_SHARED_DOMAIN
 
 
 # -- why a near miss misses ---------------------------------------------------

@@ -47,11 +47,19 @@ VISIBLE_SHORTLIST = 16
 
 #: Cross-group temptation a board should have at least this much of.
 #:
-#: Zero temptation is four groups with nothing in common, which is a sorting
-#: exercise rather than a puzzle. Measured as shared category ancestry between
-#: members of different groups, so it counts real family resemblance rather
-#: than a similarity number.
-MINIMUM_TEMPTATION = 1
+#: Zero means a board may mix domains freely: four groups with nothing in
+#: common are allowed, and the pool the four are drawn from is the whole
+#: lexical taxonomy rather than one domain per group. That is a deliberate
+#: product choice, not an accident of the data, so the floor is a named
+#: constant a future game can raise rather than a rule baked into the search.
+#:
+#: Temptation is still measured, still bounds the board from above, and still
+#: becomes the board's relatedness score (see ``relatedness_of``): a board
+#: that happens to have family resemblance is a better puzzle and sorts ahead
+#: of one that does not, but a board with none is published rather than
+#: refused. Measured as shared category ancestry between members of different
+#: groups, so it counts real resemblance rather than a similarity number.
+MINIMUM_TEMPTATION = 0
 
 #: And at most this much.
 #:
@@ -70,6 +78,9 @@ class BoardPlan:
     #: Hidden members, grouped by which visible group holds each one.
     borrowings: tuple[tuple[int, str], ...]
     temptation: int
+    #: Temptation normalised to 0..1 for display and ranking; see
+    #: ``relatedness_of``. 0 is a fully cross-domain board, not a rejected one.
+    relatedness: float
     enriched: bool
 
     def tiles(self) -> tuple[str, ...]:
@@ -142,6 +153,29 @@ def has_no_cross_membership(groups: Sequence[GroupView]) -> bool:
             if (set(member.type_ids) & categories) - {own}:
                 return False
     return True
+
+
+def relatedness_of(groups: Sequence[GroupView], group_size: int) -> float:
+    """How related the four groups are, on 0 to 1, for display and ranking.
+
+    Temptation is a raw count of shared ancestry across pairs of groups, which
+    grows with board size and means nothing to a player. This normalises it
+    against the most a board of this size could carry, so a cross-domain board
+    of unrelated items reports near 0 and a board whose groups share a family
+    reports near 1. It is the "confidence" a mixed board asks for: a low score
+    is not a defect, it is the honest statement that these four piles have
+    little in common, which a client may show or a curator may rank by.
+
+    The ceiling is the pairwise count with every tile sharing one extra
+    category beyond its group's own, which is the least resemblance that still
+    reads as "related"; anything at or above it is reported as 1.0.
+    """
+    raw = temptation_of(groups)
+    pairs = len(groups) * (len(groups) - 1) // 2
+    ceiling = pairs * group_size
+    if ceiling <= 0:
+        return 0.0
+    return min(1.0, raw / ceiling)
 
 
 def temptation_of(groups: Sequence[GroupView]) -> int:
@@ -343,6 +377,8 @@ def plans_for(
             continue
         temptation = temptation_of(combination)
         if temptation < MINIMUM_TEMPTATION:
+            # Unreachable while the floor is 0, kept so a game that raises the
+            # floor gets the gate and its refusal count back with no edit here.
             refuse(TEMPTATION_TOO_LOW)
             continue
         if temptation > MAXIMUM_TEMPTATION:
@@ -353,6 +389,7 @@ def plans_for(
             visible=tuple(combination),
             borrowings=borrowings,
             temptation=temptation,
+            relatedness=relatedness_of(combination, group_size),
             enriched=enriched,
         )
 
@@ -422,6 +459,7 @@ def payload_for(plan: BoardPlan) -> dict[str, object]:
         },
         "borrowings": [list(pair) for pair in plan.borrowings],
         "temptation": plan.temptation,
+        "relatedness": round(plan.relatedness, 3),
         "enriched": plan.enriched,
     }
 

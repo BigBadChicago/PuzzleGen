@@ -238,6 +238,7 @@ class TestPlans:
             visible=tuple(made["visible"]),
             borrowings=(),
             temptation=1,
+            relatedness=0.1,
             enriched=False,
         )
         backward = BoardPlan(
@@ -245,18 +246,28 @@ class TestPlans:
             visible=tuple(reversed(made["visible"])),
             borrowings=(),
             temptation=1,
+            relatedness=0.1,
             enriched=False,
         )
         assert forward.candidate_id() == backward.candidate_id()
 
-    def test_a_board_with_no_temptation_is_rejected(self):
-        """Four unrelated piles sort themselves."""
+    def test_a_cross_domain_board_is_published_with_a_low_score(self):
+        """Four unrelated piles are a valid board under Option B.
+
+        The floor is 0, so a board whose groups share nothing is published
+        rather than refused, and its relatedness score says plainly that the
+        groups have little in common. A client may show that number and a
+        curator may rank by it; it is a confidence, not a defect.
+        """
         visible = [visible_group(i, extra="") for i in range(VISIBLE_GROUPS)]
         borrowed = [(i, 0) for i in range(VISIBLE_GROUPS)] + [(0, 1)]
         hidden = hidden_group(borrowed)
-        assert (
-            list(plans_for(hidden, visible, SIZE, enriched=False, budget=100)) == []
-        )
+
+        plans = list(plans_for(hidden, visible, SIZE, enriched=False, budget=100))
+
+        assert plans
+        assert plans[0].temptation == 0
+        assert plans[0].relatedness == 0.0
 
     def test_the_budget_bounds_the_search(self):
         made = board()
@@ -693,8 +704,12 @@ class TestTheShortlistSpansParents:
         assert useless not in shortlist
 
 
-class TestTheFloorIsASumOverPairs:
-    """The game's own function, agreeing with the coverage tool's model of it."""
+class TestRelatednessScoresTheBoard:
+    """Temptation is still measured; it is now a 0..1 score, not a gate.
+
+    Under Option B a board is published whatever its relatedness, and the score
+    ranks the related ahead of the unrelated rather than refusing the latter.
+    """
 
     def visible(self, name: str, *shared: str):
         return group(
@@ -702,23 +717,32 @@ class TestTheFloorIsASumOverPairs:
             [entity(f"{name}{i}", f"category:{name}", *shared) for i in range(SIZE)],
         )
 
-    def test_one_pair_sharing_a_root_meets_the_floor(self):
-        groups = [
+    def test_shared_ancestry_raises_the_score(self):
+        related = [
             self.visible("a", "category:root"),
             self.visible("b", "category:root"),
-            self.visible("c"),
-            self.visible("d"),
+            self.visible("c", "category:root"),
+            self.visible("d", "category:root"),
         ]
+        unrelated = [self.visible(n) for n in "abcd"]
 
-        assert temptation_of(groups) >= generate_module.MINIMUM_TEMPTATION
+        assert generate_module.relatedness_of(
+            related, SIZE
+        ) > generate_module.relatedness_of(unrelated, SIZE)
 
-    def test_four_unrelated_groups_do_not(self):
+    def test_four_unrelated_groups_score_zero(self):
         groups = [self.visible(n) for n in "abcd"]
 
-        assert temptation_of(groups) < generate_module.MINIMUM_TEMPTATION
+        assert generate_module.relatedness_of(groups, SIZE) == 0.0
 
-    def test_the_defining_categories_themselves_do_not_count(self):
-        """Two groups whose only shared category is one of the four chosen."""
+    def test_the_score_is_bounded_to_one(self):
+        shared = [f"category:s{n}" for n in range(40)]
+        groups = [self.visible(name, *shared) for name in "abcd"]
+
+        assert generate_module.relatedness_of(groups, SIZE) == 1.0
+
+    def test_a_defining_category_does_not_raise_the_score(self):
+        """A category one group is built on is not resemblance to another."""
         groups = [
             self.visible("a", "category:c"),
             self.visible("b", "category:c"),
@@ -726,7 +750,10 @@ class TestTheFloorIsASumOverPairs:
             self.visible("d"),
         ]
 
-        assert temptation_of(groups) < generate_module.MINIMUM_TEMPTATION
+        assert generate_module.relatedness_of(groups, SIZE) == 0.0
+
+    def test_the_floor_is_zero_so_nothing_is_refused_for_relatedness(self):
+        assert generate_module.MINIMUM_TEMPTATION == 0
 
 
 class TestRejectionsDoNotLeakBetweenDays:

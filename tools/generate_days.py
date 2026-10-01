@@ -112,9 +112,20 @@ def describe_failure(outcome) -> str:
     if staged:
         parts.append("; ".join(f"{label} ({n})" for n, label in sorted(staged, reverse=True)[:3]))
 
-    game = Counter(last_rejections())
+    game = last_rejections()
     if game:
-        parts.append("game: " + ", ".join(f"{r} {n}" for r, n in game.most_common(3)))
+        # The game keys its refusals by size ("size 5: not_disjoint"). A day
+        # tries its own size first and the others as fallback, and the day's
+        # own size is the one worth reading: the fallbacks failing is expected
+        # and drowns it out under a plain most-common sort. So the day's size
+        # leads, then the rest by count.
+        own = group_size_for(outcome.trace.day_key)
+        prefix = f"size {own}:"
+        own_first = sorted(
+            game.items(),
+            key=lambda kv: (not kv[0].startswith(prefix), -kv[1]),
+        )
+        parts.append("game: " + ", ".join(f"{r} {n}" for r, n in own_first[:4]))
 
     content = Counter(trace.content_rejections)
     if content:

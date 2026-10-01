@@ -188,6 +188,7 @@ class TestDescribingAFailure:
 
         return SimpleNamespace(
             trace=SimpleNamespace(
+                day_key="2026-10-05",
                 failure_reason=failure,
                 candidates_rejected=tuple(
                     RejectionTally(stage=stage, reasons=reasons) for stage, reasons in tallies
@@ -235,11 +236,16 @@ class TestDescribingAFailure:
         assert "content: NO_SECOND_AXIS 24" in text
 
     def test_the_games_own_refusals_are_included(self, monkeypatch):
-        monkeypatch.setattr(tool, "last_rejections", lambda: {"not_disjoint": 90, "thin": 2})
+        # The game keys refusals by size, as the real generator does.
+        monkeypatch.setattr(
+            tool,
+            "last_rejections",
+            lambda: {"size 5: not_disjoint": 90, "size 5: thin": 2},
+        )
 
         text = tool.describe_failure(self.outcome())
 
-        assert "game: not_disjoint 90, thin 2" in text
+        assert "game: size 5: not_disjoint 90, size 5: thin 2" in text
 
     def test_nothing_recorded_leaves_just_the_reason(self):
         assert tool.describe_failure(self.outcome()) == "no candidates"
@@ -404,3 +410,38 @@ class TestTheCommandLine:
         document = json.loads(out.read_text())
         assert len(document) == 2
         assert {"day", "group_size", "generated", "solutions"} <= set(document[0])
+
+
+class TestTheDaysOwnSizeLeadsTheReason:
+    """A day tries its own size first, then the rest. The fallbacks failing is
+    expected, so the day's own size has to lead the reason or it is buried."""
+
+    def outcome(self, day_key, game):
+        return SimpleNamespace(
+            trace=SimpleNamespace(
+                day_key=day_key,
+                failure_reason="no candidates",
+                candidates_rejected=(),
+                content_rejections={},
+            )
+        )
+
+    def test_the_days_size_is_shown_even_when_a_fallback_has_more(self, monkeypatch):
+        day = "2026-10-05"
+        own = group_size_for(day)
+        other = next(s for s in GROUP_SIZES if s != own)
+        monkeypatch.setattr(
+            tool,
+            "last_rejections",
+            lambda: {
+                f"size {own}: not_disjoint": 5,
+                f"size {other}: hidden_word_on_no_visible_group": 900,
+            },
+        )
+
+        text = tool.describe_failure(self.outcome(day, None))
+
+        assert f"size {own}: not_disjoint" in text
+        own_pos = text.index(f"size {own}:")
+        other_pos = text.index(f"size {other}:")
+        assert own_pos < other_pos
