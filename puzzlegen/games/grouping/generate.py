@@ -25,6 +25,7 @@ from ...content.query import ContentResult, GroupView
 from ...core.rng import DeterministicRng
 from ...engine.plugin import GenerationContext, PuzzleCandidate
 from . import content as content_module
+from . import descriptor as descriptor_module
 from .descriptor import GAME_ID, VISIBLE_GROUPS, group_size_for
 
 #: Chosen visible-group combinations examined per hidden group.
@@ -294,7 +295,9 @@ def plans_for(
         )
 
 
-def hidden_candidates(context: GenerationContext) -> list[tuple[GroupView, bool]]:
+def hidden_candidates(
+    context: GenerationContext, group_size: int | None = None
+) -> list[tuple[GroupView, bool]]:
     """Hidden groups to try, richer ones first.
 
     A group that also shares a second overlay category gives the hint system
@@ -304,9 +307,11 @@ def hidden_candidates(context: GenerationContext) -> list[tuple[GroupView, bool]
     """
     ordered: list[tuple[GroupView, bool]] = []
     seen: set[frozenset[str]] = set()
+    if group_size is None:
+        group_size = group_size_for(context.day_key)
     for name, enriched in (
-        (content_module.HIDDEN_ENRICHED, True),
-        (content_module.HIDDEN, False),
+        (content_module.sized(content_module.HIDDEN_ENRICHED, group_size), True),
+        (content_module.sized(content_module.HIDDEN, group_size), False),
     ):
         result = context.content.get(name)
         if result is None:
@@ -378,15 +383,37 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     # Cleared first, so a run that returns early cannot leave the previous
     # day's refusals to be reported as its own.
     _LAST_REJECTIONS.clear()
-    group_size = group_size_for(context.day_key)
-    visible_result: ContentResult | None = context.content.get(content_module.VISIBLE)
+    candidates: list[PuzzleCandidate] = []
+    rejected: dict[str, int] = {}
+    for group_size in descriptor_module.group_sizes_for(context.day_key):
+        candidates = _candidates_at(context, group_size, rejected)
+        if candidates:
+            break
+    _LAST_REJECTIONS.clear()
+    _LAST_REJECTIONS.update(rejected)
+    # A tuple, as the protocol's return type says: the sequence a plugin hands
+    # back is not the engine's to mutate.
+    return tuple(_ordered(candidates))
+
+
+def _candidates_at(
+    context: GenerationContext, group_size: int, rejected: dict[str, int]
+) -> list[PuzzleCandidate]:
+    """Boards at one size, from that size's own content.
+
+    Refusals accumulate across sizes into one mapping, keyed by size, because
+    "nothing worked" is only diagnosable if each size says what stopped it.
+    """
+    visible_result: ContentResult | None = context.content.get(
+        content_module.sized(content_module.VISIBLE, group_size)
+    )
     if visible_result is None or not visible_result.groups:
-        return ()
+        rejected[f"size {group_size}: no visible groups"] = 1
+        return []
 
     pool = list(visible_result.groups)
     candidates: list[PuzzleCandidate] = []
     seen: set[str] = set()
-    rejected: dict[str, int] = {}
 
     # Every hidden word must be a tile in at least one visible group, or it can
     # never be on the board. Checked once here rather than discovered inside a
@@ -395,18 +422,18 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     # missing.
     tiles: frozenset[str] = frozenset().union(*(member_ids(g) for g in pool))
     placeable = []
-    for hidden, enriched in hidden_candidates(context):
+    for hidden, enriched in hidden_candidates(context, group_size):
         if len(hidden.members) != group_size:
             # The hidden group is exactly as large as a visible one, so it
             # cannot be identified by counting.
             continue
         if not member_ids(hidden) <= tiles:
-            rejected["hidden_word_on_no_visible_group"] = (
-                rejected.get("hidden_word_on_no_visible_group", 0) + 1
-            )
+            key = f"size {group_size}: hidden_word_on_no_visible_group"
+            rejected[key] = rejected.get(key, 0) + 1
             continue
         placeable.append((hidden, enriched))
     budget = max(1, COMBINATION_BUDGET // max(1, len(placeable)))
+    at_size: dict[str, int] = {}
 
     for hidden, enriched in placeable:
         for plan in plans_for(
@@ -415,7 +442,7 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
             group_size,
             enriched=enriched,
             budget=budget,
-            rejected=rejected,
+            rejected=at_size,
         ):
             candidate_id = plan.candidate_id()
             if candidate_id in seen:
@@ -430,10 +457,10 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
                 )
             )
             if len(candidates) >= context.candidate_budget:
-                return _ordered(candidates)
-    _LAST_REJECTIONS.clear()
-    _LAST_REJECTIONS.update(rejected)
-    return _ordered(candidates)
+                return candidates
+    for reason, count in at_size.items():
+        rejected[f"size {group_size}: {reason}"] = count
+    return candidates
 
 
 #: Why the last generation run found nothing. Module state, and deliberately
@@ -470,19 +497,22 @@ def unusable_reason(context: GenerationContext) -> str | None:
     of the game's own requirements went unmet, which is the part no engine gate
     can know.
     """
+    # Reported for the day's own size. The fallbacks are visible in the
+    # refusal counts, which are keyed by size; repeating this narrative five
+    # times would bury the day's actual shape.
     group_size = group_size_for(context.day_key)
-    visible = context.content.get(content_module.VISIBLE)
+    visible = context.content.get(content_module.sized(content_module.VISIBLE, group_size))
     if visible is None or not visible.groups:
-        return "no visible groups returned"
+        return f"no visible groups returned at size {group_size}"
     sized = [g for g in visible.groups if len(g.members) == group_size]
     if len(sized) < VISIBLE_GROUPS:
         return (
             f"{len(sized)} visible groups of size {group_size}, need "
             f"{VISIBLE_GROUPS}"
         )
-    hidden = hidden_candidates(context)
+    hidden = hidden_candidates(context, group_size)
     if not hidden:
-        return "no overlay groups returned"
+        return f"no overlay groups returned at size {group_size}"
     if not any(len(group.members) == group_size for group, _ in hidden):
         return f"no overlay group has exactly {group_size} members"
 

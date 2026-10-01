@@ -23,7 +23,15 @@ from puzzlegen.games.grouping.assemble import (
     solution_groups,
     tile_order,
 )
-from puzzlegen.games.grouping.descriptor import GAME_ID, VISIBLE_GROUPS, group_size_for
+import datetime as dt
+
+from puzzlegen.games.grouping.descriptor import (
+    GAME_ID,
+    group_sizes_for,
+    GROUP_SIZES,
+    VISIBLE_GROUPS,
+    group_size_for,
+)
 from puzzlegen.games.grouping.generate import (
     BoardPlan,
     borrowings_for,
@@ -97,14 +105,19 @@ def board(size: int = SIZE, *, extra: str = "category:shared") -> dict:
 def context_for(
     visible, hidden, *, enriched=(), day_key: str = DAY, budget: int = 64
 ) -> GenerationContext:
+    # Content is keyed by size, because a day asks for every supported size in
+    # an order of preference and takes the first that works. These fixtures
+    # supply only the day's own size, which is what they are about; the
+    # fallback order has its own tests.
+    size = group_size_for(day_key)
     content = {
-        content_module.VISIBLE: ContentResult(
+        content_module.sized(content_module.VISIBLE, size): ContentResult(
             operation=Operation.FIND_GROUPS, groups=tuple(visible)
         ),
-        content_module.HIDDEN: ContentResult(
+        content_module.sized(content_module.HIDDEN, size): ContentResult(
             operation=Operation.FIND_GROUPS, groups=tuple(hidden)
         ),
-        content_module.HIDDEN_ENRICHED: ContentResult(
+        content_module.sized(content_module.HIDDEN_ENRICHED, size): ContentResult(
             operation=Operation.FIND_INTERSECTING_GROUPS, groups=tuple(enriched)
         ),
     }
@@ -336,11 +349,22 @@ class TestGenerateCandidates:
         short = hidden_group([(i, 0) for i in range(VISIBLE_GROUPS)])
         assert generate_candidates(
             context_for(made["visible"], [short], day_key=day)
-        ) == []
+        ) == ()
 
     def test_no_visible_groups_produce_nothing(self, day):
         made = board()
         assert generate_candidates(context_for([], [made["hidden"]], day_key=day)) == ()
+
+    def test_every_size_tried_is_named_in_the_refusals(self, day):
+        """A day tries each supported size, so "nothing worked" has to say what
+        stopped each one rather than reporting only the first."""
+        made = board()
+
+        generate_candidates(context_for([], [made["hidden"]], day_key=day))
+
+        reasons = generate_module.last_rejections()
+        assert len(reasons) == len(GROUP_SIZES)
+        assert all(key.startswith("size ") for key in reasons)
 
     def test_generation_draws_no_randomness(self, day):
         """The day's shape is already decided and the choice among candidates
@@ -719,4 +743,129 @@ class TestRejectionsDoNotLeakBetweenDays:
         )
 
         assert result == ()
-        assert generate_module.last_rejections() == {}
+        # The previous day's count is gone. What remains is this day's own
+        # record of trying every size and finding no content for any of them.
+        assert "not_disjoint" not in generate_module.last_rejections()
+        assert set(generate_module.last_rejections()) == {
+            f"size {size}: no visible groups" for size in GROUP_SIZES
+        }
+
+
+class TestFallingBackToAnotherSize:
+    """A day names an order of sizes and takes the first the content serves.
+
+    Measured on the real snapshot, 164 parents can supply five tiles and 62 can
+    supply nine, so a day that draws 9 and fails is a day with no puzzle. A
+    daily game that has a board one day in five is not a daily game.
+    """
+
+    def sized_content(self, sizes: dict[int, list], day_key: str) -> dict:
+        content = {}
+        for size, groups in sizes.items():
+            made = board(size)
+            content[content_module.sized(content_module.VISIBLE, size)] = ContentResult(
+                operation=Operation.FIND_GROUPS, groups=tuple(groups)
+            )
+            content[content_module.sized(content_module.HIDDEN, size)] = ContentResult(
+                operation=Operation.FIND_GROUPS,
+                groups=(made["hidden"],) if groups else (),
+            )
+        return content
+
+    def context(self, content: dict, day_key: str) -> GenerationContext:
+        return GenerationContext(
+            day_key=day_key,
+            game_version="1.0.0",
+            difficulty_target=DifficultyBand.MEDIUM,
+            locale="en",
+            rng=DeterministicRng(b"0123456789abcdef"),
+            content=content,
+            candidate_budget=64,
+        )
+
+    #: Enough consecutive days to contain one of every supported size.
+    DAYS = tuple(
+        (dt.date(2026, 10, 1) + dt.timedelta(days=n)).isoformat() for n in range(60)
+    )
+
+    def day_of(self, size: int) -> str:
+        for day in self.DAYS:
+            if group_size_for(day) == size:
+                return day
+        raise AssertionError(f"no day of size {size} in the fixtures")
+
+    def test_the_days_own_size_is_used_when_it_works(self):
+        day = self.day_of(SIZE)
+        made = board(SIZE)
+        content = self.sized_content({SIZE: made["visible"]}, day)
+        content[content_module.sized(content_module.HIDDEN, SIZE)] = ContentResult(
+            operation=Operation.FIND_GROUPS, groups=(made["hidden"],)
+        )
+
+        candidates = generate_candidates(self.context(content, day))
+
+        assert candidates
+        assert candidates[0].payload["group_size"] == SIZE
+
+    def test_a_day_whose_own_size_has_no_content_falls_back(self):
+        day = self.day_of(SIZE)
+        other = next(s for s in GROUP_SIZES if s != SIZE)
+        made = board(other)
+        content = self.sized_content({SIZE: [], other: made["visible"]}, day)
+
+        candidates = generate_candidates(self.context(content, day))
+
+        assert candidates
+        assert candidates[0].payload["group_size"] == other
+
+    def test_the_fallback_order_is_the_days_size_then_ascending(self):
+        day = self.day_of(7)
+
+        assert group_sizes_for(day)[0] == 7
+        assert list(group_sizes_for(day)[1:]) == sorted(
+            s for s in GROUP_SIZES if s != 7
+        )
+
+    def test_the_order_is_a_pure_function_of_the_day(self):
+        day = self.day_of(SIZE)
+
+        assert group_sizes_for(day) == group_sizes_for(day)
+
+    def test_every_supported_size_appears_exactly_once(self):
+        for day in self.DAYS:
+            order = group_sizes_for(day)
+            assert sorted(order) == sorted(GROUP_SIZES)
+            assert len(set(order)) == len(order)
+
+    def test_the_earliest_workable_size_wins_not_the_smallest(self):
+        """Two sizes can both work; the day's own preference decides."""
+        day = self.day_of(SIZE)
+        bigger = next(s for s in GROUP_SIZES if s > SIZE)
+        content = self.sized_content(
+            {SIZE: board(SIZE)["visible"], bigger: board(bigger)["visible"]}, day
+        )
+
+        candidates = generate_candidates(self.context(content, day))
+
+        assert candidates[0].payload["group_size"] == SIZE
+
+    def test_no_size_working_reports_each_one(self):
+        day = self.day_of(SIZE)
+        content = self.sized_content({size: [] for size in GROUP_SIZES}, day)
+
+        assert generate_candidates(self.context(content, day)) == ()
+        reasons = generate_module.last_rejections()
+        assert {int(k.split()[1].rstrip(":")) for k in reasons} == set(GROUP_SIZES)
+
+    def test_a_fallback_board_is_internally_consistent(self):
+        """The hidden group must match the size actually built, not the day's."""
+        day = self.day_of(SIZE)
+        other = next(s for s in GROUP_SIZES if s != SIZE)
+        content = self.sized_content({SIZE: [], other: board(other)["visible"]}, day)
+
+        payload = generate_candidates(self.context(content, day))[0].payload
+
+        assert payload["group_size"] == other
+        assert all(len(g["members"]) == other for g in payload["visible"])
+        tiles = {m for g in payload["visible"] for m in g["members"]}
+        assert len(tiles) == other * VISIBLE_GROUPS

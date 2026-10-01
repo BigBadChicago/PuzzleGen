@@ -23,7 +23,7 @@ from collections.abc import Sequence
 
 from ...content.query import ContentQuery, ContentRequirement, GroupingMode, Operation
 from ...core.types import DifficultyBand
-from .descriptor import GAME_ID, VISIBLE_GROUPS, group_size_for
+from .descriptor import GAME_ID, VISIBLE_GROUPS, group_size_for, group_sizes_for
 
 #: Taxonomy the four visible groups are drawn from. The lexical import writes
 #: here, so a visible group is always something a dictionary would recognise.
@@ -201,6 +201,11 @@ def enriched_hidden_group_query(*, group_size: int, locale: str) -> ContentQuery
     )
 
 
+def sized(name: str, group_size: int) -> str:
+    """The requirement name for one size, since a day asks for several."""
+    return f"{name}:{group_size}"
+
+
 def content_requirements(
     *,
     difficulty_target: DifficultyBand,
@@ -221,29 +226,42 @@ def content_requirements(
     rejection during selection, and failing here with "not enough content" is
     a far better day than failing during assembly with a half-built board.
     """
-    group_size = group_size_for(day_key, salt)
-    return (
-        ContentRequirement(
-            name=VISIBLE,
-            query=visible_group_query(
-                group_size=group_size,
-                difficulty_target=difficulty_target,
-                locale=locale,
-            ),
-            minimum=VISIBLE_GROUPS * 2,
-        ),
-        ContentRequirement(
-            name=HIDDEN,
-            query=hidden_group_query(group_size=group_size, locale=locale),
-            minimum=1,
-        ),
-        ContentRequirement(
-            name=HIDDEN_ENRICHED,
-            query=enriched_hidden_group_query(group_size=group_size, locale=locale),
-            minimum=1,
-            optional=True,
-        ),
-    )
+    requirements: list[ContentRequirement] = []
+    for position, group_size in enumerate(group_sizes_for(day_key, salt)):
+        # Only the day's own size is required. The rest are optional, so a day
+        # whose preferred size the content cannot serve falls back instead of
+        # failing a requirement, and a day where nothing can be served still
+        # reports one honest unmet requirement rather than five.
+        optional = position > 0
+        requirements.extend(
+            (
+                ContentRequirement(
+                    name=sized(VISIBLE, group_size),
+                    query=visible_group_query(
+                        group_size=group_size,
+                        difficulty_target=difficulty_target,
+                        locale=locale,
+                    ),
+                    minimum=VISIBLE_GROUPS * 2,
+                    optional=optional,
+                ),
+                ContentRequirement(
+                    name=sized(HIDDEN, group_size),
+                    query=hidden_group_query(group_size=group_size, locale=locale),
+                    minimum=1,
+                    optional=optional,
+                ),
+                ContentRequirement(
+                    name=sized(HIDDEN_ENRICHED, group_size),
+                    query=enriched_hidden_group_query(
+                        group_size=group_size, locale=locale
+                    ),
+                    minimum=1,
+                    optional=True,
+                ),
+            )
+        )
+    return tuple(requirements)
 
 
 def describe_requirements(
@@ -257,6 +275,7 @@ def describe_requirements(
         "locale": locale,
         "difficulty_target": str(difficulty_target),
         "group_size": group_size,
+        "group_sizes_tried": list(group_sizes_for(day_key)),
         "board_size": group_size * VISIBLE_GROUPS,
         "hidden_group_size": group_size,
         "requirements": [

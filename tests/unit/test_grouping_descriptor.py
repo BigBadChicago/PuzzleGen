@@ -363,67 +363,82 @@ class TestContentRequirements:
     def named(self, day_key: str = "2026-09-28") -> dict[str, ContentRequirement]:
         return {r.name: r for r in self.requirements(day_key)}
 
-    def test_three_requirements_are_declared(self):
-        assert len(self.requirements()) == 3
+    def test_three_requirements_are_declared_per_supported_size(self):
+        """A day names an order of sizes and takes the first the content can
+        serve, so it declares a set for each rather than one for the day."""
+        assert len(self.requirements()) == 3 * len(GROUP_SIZES)
 
     def test_their_names_are_unique_and_resolvable(self):
         assert set(resolve_queries(self.requirements())) == {
-            content_module.VISIBLE,
-            content_module.HIDDEN,
-            content_module.HIDDEN_ENRICHED,
+            content_module.sized(name, size)
+            for size in GROUP_SIZES
+            for name in (
+                content_module.VISIBLE,
+                content_module.HIDDEN,
+                content_module.HIDDEN_ENRICHED,
+            )
         }
 
     def test_the_visible_groups_come_from_the_lexical_taxonomy(self):
-        query = self.named()[content_module.VISIBLE].query
+        query = self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))].query
         assert query.taxonomy == content_module.LEXICAL_TAXONOMY
         assert query.operation is Operation.FIND_GROUPS
 
     def test_the_hidden_group_comes_from_the_overlay(self):
-        query = self.named()[content_module.HIDDEN].query
+        query = self.named()[content_module.sized(content_module.HIDDEN, group_size_for('2026-09-28'))].query
         assert query.taxonomy == content_module.OVERLAY_TAXONOMY
 
-    def test_every_query_asks_for_the_days_group_size(self):
-        size = group_size_for("2026-09-28")
+    def test_every_query_asks_for_the_size_its_name_declares(self):
+        """A day declares a set per size, so a query's size must match the
+        name it is filed under, or the generator would fetch one size's
+        content and build a board of another."""
         for requirement in self.requirements():
-            assert requirement.query.group_size == size
+            name, _, size = requirement.name.rpartition(":")
+            assert requirement.query.group_size == int(size)
+
+    def test_the_days_own_size_is_the_only_required_one(self):
+        size = group_size_for("2026-09-28")
+        required = [r for r in self.requirements() if not r.optional]
+
+        assert {int(r.name.rpartition(":")[2]) for r in required} == {size}
 
     def test_the_group_size_follows_the_day(self):
         sizes = {
-            day: self.named(day)[content_module.VISIBLE].query.group_size
+            day: self.named(day)[content_module.sized(content_module.VISIBLE, group_size_for(day))].query.group_size
             for day in DAYS
         }
         assert sizes == {day: group_size_for(day) for day in DAYS}
 
     def test_the_visible_pool_is_larger_than_a_board_needs(self):
         """A pool of exactly four cannot survive one rejection."""
-        requirement = self.named()[content_module.VISIBLE]
+        requirement = self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))]
         assert requirement.query.limit > VISIBLE_GROUPS
         assert requirement.minimum > VISIBLE_GROUPS
 
     def test_the_visible_requirement_is_not_optional(self):
-        assert not self.named()[content_module.VISIBLE].optional
+        assert not self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))].optional
 
     def test_the_hidden_requirement_is_not_optional(self):
         """No hidden group is no game, only four piles."""
-        assert not self.named()[content_module.HIDDEN].optional
+        assert not self.named()[content_module.sized(content_module.HIDDEN, group_size_for('2026-09-28'))].optional
 
     def test_the_enriched_hidden_requirement_is_optional(self):
         """It can only find overlay-to-overlay intersections, and most overlay
         groups have none: six of 144 seed members sit in two categories."""
-        requirement = self.named()[content_module.HIDDEN_ENRICHED]
+        requirement = self.named()[content_module.sized(content_module.HIDDEN_ENRICHED, group_size_for('2026-09-28'))]
         assert requirement.optional
         assert requirement.query.operation is Operation.FIND_INTERSECTING_GROUPS
 
     def test_an_unmet_optional_requirement_still_counts_as_met(self):
         from puzzlegen.content.query import ContentResult
 
-        requirement = self.named()[content_module.HIDDEN_ENRICHED]
+        requirement = self.named()[content_module.sized(content_module.HIDDEN_ENRICHED, group_size_for('2026-09-28'))]
         assert requirement.is_met(ContentResult(operation=requirement.query.operation))
 
     def test_an_unmet_required_requirement_does_not(self):
         from puzzlegen.content.query import ContentResult
 
-        requirement = self.named()[content_module.VISIBLE]
+        requirement = self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))]
         assert not requirement.is_met(
             ContentResult(operation=requirement.query.operation)
         )
@@ -505,14 +520,18 @@ class TestDiagnostics:
 
     def test_the_summary_lists_every_requirement(self):
         summary = content_module.describe_requirements(
-            difficulty_target=DifficultyBand.EASY, locale="en", day_key="2026-09-28"
+            difficulty_target=DifficultyBand.MEDIUM, locale="en", day_key="2026-09-28"
         )
-        assert len(summary["requirements"]) == 3
-        assert {r["name"] for r in summary["requirements"]} == {
-            content_module.VISIBLE,
-            content_module.HIDDEN,
-            content_module.HIDDEN_ENRICHED,
-        }
+
+        assert len(summary["requirements"]) == 3 * len(GROUP_SIZES)
+
+    def test_the_summary_names_the_sizes_the_day_will_try(self):
+        summary = content_module.describe_requirements(
+            difficulty_target=DifficultyBand.MEDIUM, locale="en", day_key="2026-09-28"
+        )
+
+        assert summary["group_sizes_tried"][0] == summary["group_size"]
+        assert sorted(summary["group_sizes_tried"]) == sorted(GROUP_SIZES)
 
     def test_the_summary_is_json_shaped(self):
         import json

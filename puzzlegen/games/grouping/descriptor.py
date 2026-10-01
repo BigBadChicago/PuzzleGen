@@ -83,6 +83,29 @@ def group_size_for(day_key: str, salt: str = "") -> int:
     return GROUP_SIZES[board_rng(day_key, salt).randbelow(len(GROUP_SIZES))]
 
 
+def group_sizes_for(day_key: str, salt: str = "") -> tuple[int, ...]:
+    """Every supported size, the day's own first, then the rest.
+
+    A board needs enough kinds under four unnested parents, and how many the
+    content has falls away steeply with size: on the real snapshot 164 parents
+    can supply five tiles and 62 can supply nine. Drawing one size and failing
+    when the content cannot serve it loses the day, and a daily game with a
+    board four days in five is not a daily game.
+
+    So the day names an order of preference rather than a single size, and
+    generation takes the first that works. Still a pure function of public
+    inputs, so the content layer, the generator and any later audit agree
+    without telling each other; the manifest records which size was used.
+
+    The rest follow in ascending order rather than by another draw. Smaller
+    boards are likelier to be servable, so a day that cannot have its own size
+    should fall to the one most likely to work, and an audit reading this
+    should not need a second seed to follow it.
+    """
+    first = group_size_for(day_key, salt)
+    return (first, *(size for size in GROUP_SIZES if size != first))
+
+
 def board_size_for(day_key: str, salt: str = "") -> int:
     return group_size_for(day_key, salt) * VISIBLE_GROUPS
 
