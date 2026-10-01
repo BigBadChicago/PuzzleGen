@@ -1,0 +1,1708 @@
+{
+  "exported": "2026-10-01",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-03626258-n",
+  "senses": [
+    {
+      "definition": "a tube with a rubber bulb used to take up and release melted fat or gravy in order to moisten roasting meat",
+      "forms": [],
+      "id": "oewn-baster__1.06.00..",
+      "lang": "en",
+      "lemma": "baster",
+      "synset": "oewn-02808468-n"
+    },
+    {
+      "definition": "an electrically powered mixer with whirling blades that mix or chop or liquefy foods",
+      "forms": [],
+      "id": "oewn-blender__1.06.00..",
+      "lang": "en",
+      "lemma": "blender",
+      "synset": "oewn-02853991-n"
+    },
+    {
+      "definition": "an electrically powered mixer with whirling blades that mix or chop or liquefy foods",
+      "forms": [],
+      "id": "oewn-liquidizer__1.06.00..",
+      "lang": "en",
+      "lemma": "liquidizer",
+      "synset": "oewn-02853991-n"
+    },
+    {
+      "definition": "an electrically powered mixer with whirling blades that mix or chop or liquefy foods",
+      "forms": [],
+      "id": "oewn-liquidiser__1.06.00..",
+      "lang": "en",
+      "lemma": "liquidiser",
+      "synset": "oewn-02853991-n"
+    },
+    {
+      "definition": "a very large pot that is used for boiling",
+      "forms": [],
+      "id": "oewn-caldron__1.06.00..",
+      "lang": "en",
+      "lemma": "caldron",
+      "synset": "oewn-02942602-n"
+    },
+    {
+      "definition": "a very large pot that is used for boiling",
+      "forms": [],
+      "id": "oewn-cauldron__1.06.00..",
+      "lang": "en",
+      "lemma": "cauldron",
+      "synset": "oewn-02942602-n"
+    },
+    {
+      "definition": "a metal pan over a heater; used to cook or to keep things warm at the table",
+      "forms": [],
+      "id": "oewn-chafing_dish__1.06.00..",
+      "lang": "en",
+      "lemma": "chafing dish",
+      "synset": "oewn-03002745-n"
+    },
+    {
+      "definition": "a kitchen utensil (board or handle) with a wire for cutting cheese",
+      "forms": [],
+      "id": "oewn-cheese_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "cheese cutter",
+      "synset": "oewn-03016153-n"
+    },
+    {
+      "definition": "enamelware in which colored areas are separated by thin metal strips",
+      "forms": [],
+      "id": "oewn-cloisonne__1.06.00..",
+      "lang": "en",
+      "lemma": "cloisonne",
+      "synset": "oewn-03051784-n"
+    },
+    {
+      "definition": "tall pot in which coffee is brewed",
+      "forms": [],
+      "id": "oewn-coffeepot__1.06.00..",
+      "lang": "en",
+      "lemma": "coffeepot",
+      "synset": "oewn-03067692-n"
+    },
+    {
+      "definition": "an urn in which coffee is made and kept hot",
+      "forms": [],
+      "id": "oewn-coffee_urn__1.06.00..",
+      "lang": "en",
+      "lemma": "coffee urn",
+      "synset": "oewn-03068253-n"
+    },
+    {
+      "definition": "a utensil for cooking",
+      "forms": [],
+      "id": "oewn-cooker__1.06.00..",
+      "lang": "en",
+      "lemma": "cooker",
+      "synset": "oewn-03105807-n"
+    },
+    {
+      "definition": "a kitchen utensil used to cut a sheet of cookie dough into desired shapes before baking",
+      "forms": [],
+      "id": "oewn-cookie_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "cookie cutter",
+      "synset": "oewn-03106168-n"
+    },
+    {
+      "definition": "a cooking utensil consisting of a flat rectangular metal sheet used for baking cookies or biscuits",
+      "forms": [],
+      "id": "oewn-cookie_sheet__1.06.00..",
+      "lang": "en",
+      "lemma": "cookie sheet",
+      "synset": "oewn-03106447-n"
+    },
+    {
+      "definition": "a cooking utensil consisting of a flat rectangular metal sheet used for baking cookies or biscuits",
+      "forms": [],
+      "id": "oewn-baking_tray__1.06.00..",
+      "lang": "en",
+      "lemma": "baking tray",
+      "synset": "oewn-03106447-n"
+    },
+    {
+      "definition": "a kitchen utensil made of material that does not melt easily; used for cooking",
+      "forms": [],
+      "id": "oewn-cooking_utensil__1.06.00..",
+      "lang": "en",
+      "lemma": "cooking utensil",
+      "synset": "oewn-03106637-n"
+    },
+    {
+      "definition": "a kitchen utensil made of material that does not melt easily; used for cooking",
+      "forms": [],
+      "id": "oewn-cookware__1.06.00..",
+      "lang": "en",
+      "lemma": "cookware",
+      "synset": "oewn-03106637-n"
+    },
+    {
+      "definition": "an electric cooker that maintains a relatively low temperature",
+      "forms": [],
+      "id": "oewn-crock_pot__1.06.00..",
+      "lang": "en",
+      "lemma": "Crock Pot",
+      "synset": "oewn-03138529-n"
+    },
+    {
+      "definition": "a large metal pot (12 gallon camp kettle) for cooking; used in military camps",
+      "forms": [],
+      "id": "oewn-dixie__1.06.00..",
+      "lang": "en",
+      "lemma": "dixie",
+      "synset": "oewn-03221265-n"
+    },
+    {
+      "definition": "two saucepans, one fitting inside the other",
+      "forms": [],
+      "id": "oewn-double_boiler__1.06.00..",
+      "lang": "en",
+      "lemma": "double boiler",
+      "synset": "oewn-03230957-n"
+    },
+    {
+      "definition": "two saucepans, one fitting inside the other",
+      "forms": [],
+      "id": "oewn-double_saucepan__1.06.00..",
+      "lang": "en",
+      "lemma": "double saucepan",
+      "synset": "oewn-03230957-n"
+    },
+    {
+      "definition": "pan for catching drippings under roasting meat",
+      "forms": [],
+      "id": "oewn-dripping_pan__1.06.00..",
+      "lang": "en",
+      "lemma": "dripping pan",
+      "synset": "oewn-03247093-n"
+    },
+    {
+      "definition": "pan for catching drippings under roasting meat",
+      "forms": [],
+      "id": "oewn-drip_pan__1.06.01..",
+      "lang": "en",
+      "lemma": "drip pan",
+      "synset": "oewn-03247093-n"
+    },
+    {
+      "definition": "a coffeepot for making drip coffee",
+      "forms": [],
+      "id": "oewn-drip_pot__1.06.00..",
+      "lang": "en",
+      "lemma": "drip pot",
+      "synset": "oewn-03247209-n"
+    },
+    {
+      "definition": "iron or earthenware cooking pot; used for stews",
+      "forms": [],
+      "id": "oewn-dutch_oven__1.06.01..",
+      "lang": "en",
+      "lemma": "Dutch oven",
+      "synset": "oewn-03264104-n"
+    },
+    {
+      "definition": "a mixer for beating eggs or whipping cream",
+      "forms": [],
+      "id": "oewn-eggbeater__1.06.00..",
+      "lang": "en",
+      "lemma": "eggbeater",
+      "synset": "oewn-03271282-n"
+    },
+    {
+      "definition": "a mixer for beating eggs or whipping cream",
+      "forms": [],
+      "id": "oewn-eggwhisk__1.06.00..",
+      "lang": "en",
+      "lemma": "eggwhisk",
+      "synset": "oewn-03271282-n"
+    },
+    {
+      "definition": "a frying pan heated by electricity",
+      "forms": [],
+      "id": "oewn-electric_frying_pan__1.06.00..",
+      "lang": "en",
+      "lemma": "electric frying pan",
+      "synset": "oewn-03276676-n"
+    },
+    {
+      "definition": "a food mixer powered by an electric motor",
+      "forms": [],
+      "id": "oewn-electric_mixer__1.06.00..",
+      "lang": "en",
+      "lemma": "electric mixer",
+      "synset": "oewn-03277851-n"
+    },
+    {
+      "definition": "cooking utensil of enameled iron",
+      "forms": [],
+      "id": "oewn-enamelware__1.06.00..",
+      "lang": "en",
+      "lemma": "enamelware",
+      "synset": "oewn-03289892-n"
+    },
+    {
+      "definition": "a food turner with a broad blade used for turning or serving fish or other food that is cooked in a frying pan",
+      "forms": [],
+      "id": "oewn-fish_slice__1.06.00..",
+      "lang": "en",
+      "lemma": "fish slice",
+      "synset": "oewn-03357807-n"
+    },
+    {
+      "definition": "a pan used for frying foods",
+      "forms": [],
+      "id": "oewn-frying_pan__1.06.00..",
+      "lang": "en",
+      "lemma": "frying pan",
+      "synset": "oewn-03405146-n"
+    },
+    {
+      "definition": "a pan used for frying foods",
+      "forms": [],
+      "id": "oewn-frypan__1.06.00..",
+      "lang": "en",
+      "lemma": "frypan",
+      "synset": "oewn-03405146-n"
+    },
+    {
+      "definition": "a pan used for frying foods",
+      "forms": [],
+      "id": "oewn-skillet__1.06.00..",
+      "lang": "en",
+      "lemma": "skillet",
+      "synset": "oewn-03405146-n"
+    },
+    {
+      "definition": "a kind of stone-grey enamelware",
+      "forms": [],
+      "id": "oewn-graniteware__1.06.00..",
+      "lang": "en",
+      "lemma": "graniteware",
+      "synset": "oewn-03458175-n"
+    },
+    {
+      "definition": "utensil with sharp perforations for shredding foods (as vegetables or cheese)",
+      "forms": [],
+      "id": "oewn-grater__1.06.00..",
+      "lang": "en",
+      "lemma": "grater",
+      "synset": "oewn-03459829-n"
+    },
+    {
+      "definition": "a cooking utensil of parallel metal bars; used to grill fish or meat",
+      "forms": [],
+      "id": "oewn-grid__1.06.00..",
+      "lang": "en",
+      "lemma": "grid",
+      "synset": "oewn-03463354-n"
+    },
+    {
+      "definition": "a cooking utensil of parallel metal bars; used to grill fish or meat",
+      "forms": [],
+      "id": "oewn-gridiron__1.06.00..",
+      "lang": "en",
+      "lemma": "gridiron",
+      "synset": "oewn-03463354-n"
+    },
+    {
+      "definition": "cooking utensil consisting of a flat heated surface (as on top of a stove) on which food is cooked",
+      "forms": [],
+      "id": "oewn-griddle__1.06.00..",
+      "lang": "en",
+      "lemma": "griddle",
+      "synset": "oewn-03464260-n"
+    },
+    {
+      "definition": "a metal pot for stewing or boiling; usually has a lid",
+      "forms": [],
+      "id": "oewn-kettle__1.06.00..",
+      "lang": "en",
+      "lemma": "kettle",
+      "synset": "oewn-03618023-n"
+    },
+    {
+      "definition": "a metal pot for stewing or boiling; usually has a lid",
+      "forms": [],
+      "id": "oewn-boiler__1.06.01..",
+      "lang": "en",
+      "lemma": "boiler",
+      "synset": "oewn-03618023-n"
+    },
+    {
+      "definition": "a utensil used in preparing food",
+      "forms": [],
+      "id": "oewn-kitchen_utensil__1.06.00..",
+      "lang": "en",
+      "lemma": "kitchen utensil",
+      "synset": "oewn-03626258-n"
+    },
+    {
+      "definition": "hardware utensils for use in a kitchen",
+      "forms": [],
+      "id": "oewn-kitchenware__1.06.00..",
+      "lang": "en",
+      "lemma": "kitchenware",
+      "synset": "oewn-03626586-n"
+    },
+    {
+      "definition": "a large pot especially one with legs used e.g. for cooking soup",
+      "forms": [],
+      "id": "oewn-marmite__1.06.00..",
+      "lang": "en",
+      "lemma": "marmite",
+      "synset": "oewn-03728318-n"
+    },
+    {
+      "definition": "a kitchen utensil used for mashing (e.g. potatoes)",
+      "forms": [],
+      "id": "oewn-masher__1.06.00..",
+      "lang": "en",
+      "lemma": "masher",
+      "synset": "oewn-03729908-n"
+    },
+    {
+      "definition": "a kitchen utensil that cuts or chops food (especially meat) into small pieces",
+      "forms": [],
+      "id": "oewn-mincer__1.06.00..",
+      "lang": "en",
+      "lemma": "mincer",
+      "synset": "oewn-03773501-n"
+    },
+    {
+      "definition": "a kitchen utensil that cuts or chops food (especially meat) into small pieces",
+      "forms": [],
+      "id": "oewn-mincing_machine__1.06.00..",
+      "lang": "en",
+      "lemma": "mincing machine",
+      "synset": "oewn-03773501-n"
+    },
+    {
+      "definition": "a kitchen utensil that is used for mixing foods",
+      "forms": [],
+      "id": "oewn-mixer__1.06.00..",
+      "lang": "en",
+      "lemma": "mixer",
+      "synset": "oewn-03780732-n"
+    },
+    {
+      "definition": "pan for cooking omelets",
+      "forms": [],
+      "id": "oewn-omelet_pan__1.06.00..",
+      "lang": "en",
+      "lemma": "omelet pan",
+      "synset": "oewn-03852197-n"
+    },
+    {
+      "definition": "pan for cooking omelets",
+      "forms": [],
+      "id": "oewn-omelette_pan__1.06.00..",
+      "lang": "en",
+      "lemma": "omelette pan",
+      "synset": "oewn-03852197-n"
+    },
+    {
+      "definition": "cooking utensil consisting of a wide metal vessel",
+      "forms": [],
+      "id": "oewn-pan__1.06.01..",
+      "lang": "en",
+      "lemma": "pan",
+      "synset": "oewn-03886228-n"
+    },
+    {
+      "definition": "cooking utensil consisting of a wide metal vessel",
+      "forms": [],
+      "id": "oewn-cooking_pan__1.06.00..",
+      "lang": "en",
+      "lemma": "cooking pan",
+      "synset": "oewn-03886228-n"
+    },
+    {
+      "definition": "turner for serving or turning pancakes",
+      "forms": [],
+      "id": "oewn-pancake_turner__1.06.00..",
+      "lang": "en",
+      "lemma": "pancake turner",
+      "synset": "oewn-03887002-n"
+    },
+    {
+      "definition": "a pan for cooking patties or pasties",
+      "forms": [],
+      "id": "oewn-patty-pan__1.06.00..",
+      "lang": "en",
+      "lemma": "patty-pan",
+      "synset": "oewn-03906379-n"
+    },
+    {
+      "definition": "a coffeepot in which boiling water ascends through a central tube and filters back down through a basket of ground coffee beans",
+      "forms": [],
+      "id": "oewn-percolator__1.06.00..",
+      "lang": "en",
+      "lemma": "percolator",
+      "synset": "oewn-03921237-n"
+    },
+    {
+      "definition": "a cooking vessel designed to poach food (such as fish or eggs)",
+      "forms": [],
+      "id": "oewn-poacher__1.06.00..",
+      "lang": "en",
+      "lemma": "poacher",
+      "synset": "oewn-03978730-n"
+    },
+    {
+      "definition": "a container for cooking popcorn",
+      "forms": [],
+      "id": "oewn-popper__1.06.00..",
+      "lang": "en",
+      "lemma": "popper",
+      "synset": "oewn-03990070-n"
+    },
+    {
+      "definition": "metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid",
+      "forms": [],
+      "id": "oewn-pot__1.06.00..",
+      "lang": "en",
+      "lemma": "pot",
+      "synset": "oewn-03996832-n"
+    },
+    {
+      "definition": "a pot that holds 2 quarts",
+      "forms": [],
+      "id": "oewn-pottle__1.06.00..",
+      "lang": "en",
+      "lemma": "pottle",
+      "synset": "oewn-03999333-n"
+    },
+    {
+      "definition": "a squeezer with a conical ridged center that is used for squeezing juice from citrus fruit",
+      "forms": [],
+      "id": "oewn-reamer__1.06.01..",
+      "lang": "en",
+      "lemma": "reamer",
+      "synset": "oewn-04066628-n"
+    },
+    {
+      "definition": "a squeezer with a conical ridged center that is used for squeezing juice from citrus fruit",
+      "forms": [],
+      "id": "oewn-juicer__1.06.00..",
+      "lang": "en",
+      "lemma": "juicer",
+      "synset": "oewn-04066628-n"
+    },
+    {
+      "definition": "a squeezer with a conical ridged center that is used for squeezing juice from citrus fruit",
+      "forms": [],
+      "id": "oewn-juice_reamer__1.06.00..",
+      "lang": "en",
+      "lemma": "juice reamer",
+      "synset": "oewn-04066628-n"
+    },
+    {
+      "definition": "a kitchen utensil used for ricing soft foods by extruding them through small holes",
+      "forms": [],
+      "id": "oewn-ricer__1.06.00..",
+      "lang": "en",
+      "lemma": "ricer",
+      "synset": "oewn-04095553-n"
+    },
+    {
+      "definition": "a special cooking pan for roasting",
+      "forms": [],
+      "id": "oewn-roaster__1.06.00..",
+      "lang": "en",
+      "lemma": "roaster",
+      "synset": "oewn-04104854-n"
+    },
+    {
+      "definition": "utensil consisting of a cylinder (usually of wood) with a handle at each end; used to roll out dough",
+      "forms": [],
+      "id": "oewn-rolling_pin__1.06.00..",
+      "lang": "en",
+      "lemma": "rolling pin",
+      "synset": "oewn-04110300-n"
+    },
+    {
+      "definition": "a metal urn with a spigot at the base; used in Russia to boil water for tea",
+      "forms": [],
+      "id": "oewn-samovar__1.06.00..",
+      "lang": "en",
+      "lemma": "samovar",
+      "synset": "oewn-04140068-n"
+    },
+    {
+      "definition": "a deep pan with a handle; used for stewing or boiling",
+      "forms": [],
+      "id": "oewn-saucepan__1.06.00..",
+      "lang": "en",
+      "lemma": "saucepan",
+      "synset": "oewn-04146060-n"
+    },
+    {
+      "definition": "a cooking pot that has handles on either side and tight fitting lid; used for stewing or boiling",
+      "forms": [],
+      "id": "oewn-saucepot__1.06.00..",
+      "lang": "en",
+      "lemma": "saucepot",
+      "synset": "oewn-04146223-n"
+    },
+    {
+      "definition": "a kitchen utensil that removes seeds from fruit",
+      "forms": [],
+      "id": "oewn-seeder__1.06.00..",
+      "lang": "en",
+      "lemma": "seeder",
+      "synset": "oewn-04174289-n"
+    },
+    {
+      "definition": "a cooking utensil used to skim fat from the surface of liquids",
+      "forms": [],
+      "id": "oewn-skimmer__1.06.01..",
+      "lang": "en",
+      "lemma": "skimmer",
+      "synset": "oewn-04237021-n"
+    },
+    {
+      "definition": "a turner with a narrow flexible blade",
+      "forms": [],
+      "id": "oewn-spatula__1.06.01..",
+      "lang": "en",
+      "lemma": "spatula",
+      "synset": "oewn-04277257-n"
+    },
+    {
+      "definition": "a skillet made of cast iron",
+      "forms": [],
+      "id": "oewn-spider__1.06.00..",
+      "lang": "en",
+      "lemma": "spider",
+      "synset": "oewn-04282402-n"
+    },
+    {
+      "definition": "a kitchen utensil for squeezing juice from fruit",
+      "forms": [],
+      "id": "oewn-squeezer__1.06.00..",
+      "lang": "en",
+      "lemma": "squeezer",
+      "synset": "oewn-04300257-n"
+    },
+    {
+      "definition": "a cooking utensil that can be used to cook food by steaming it",
+      "forms": [],
+      "id": "oewn-steamer__1.06.01..",
+      "lang": "en",
+      "lemma": "steamer",
+      "synset": "oewn-04316686-n"
+    },
+    {
+      "definition": "a saucepan used for stewing",
+      "forms": [],
+      "id": "oewn-stewing_pan__1.06.00..",
+      "lang": "en",
+      "lemma": "stewing pan",
+      "synset": "oewn-04324463-n"
+    },
+    {
+      "definition": "a saucepan used for stewing",
+      "forms": [],
+      "id": "oewn-stewpan__1.06.00..",
+      "lang": "en",
+      "lemma": "stewpan",
+      "synset": "oewn-04324463-n"
+    },
+    {
+      "definition": "a pot used for preparing soup stock",
+      "forms": [],
+      "id": "oewn-stockpot__1.06.00..",
+      "lang": "en",
+      "lemma": "stockpot",
+      "synset": "oewn-04331435-n"
+    },
+    {
+      "definition": "a kitchen utensil consisting of a perforated metal ball for making tea",
+      "forms": [],
+      "id": "oewn-tea_ball__1.06.00..",
+      "lang": "en",
+      "lemma": "tea ball",
+      "synset": "oewn-04404037-n"
+    },
+    {
+      "definition": "kettle for boiling water to make tea",
+      "forms": [],
+      "id": "oewn-teakettle__1.06.00..",
+      "lang": "en",
+      "lemma": "teakettle",
+      "synset": "oewn-04404903-n"
+    },
+    {
+      "definition": "pot for brewing tea; usually has a spout and handle",
+      "forms": [],
+      "id": "oewn-teapot__1.06.00..",
+      "lang": "en",
+      "lemma": "teapot",
+      "synset": "oewn-04405179-n"
+    },
+    {
+      "definition": "an urn in which tea is brewed and from which it is served",
+      "forms": [],
+      "id": "oewn-tea_urn__1.06.00..",
+      "lang": "en",
+      "lemma": "tea urn",
+      "synset": "oewn-04406293-n"
+    },
+    {
+      "definition": "cooking utensil having a flat flexible part and a long handle; used for turning or serving food",
+      "forms": [],
+      "id": "oewn-turner__1.06.00..",
+      "lang": "en",
+      "lemma": "turner",
+      "synset": "oewn-04507355-n"
+    },
+    {
+      "definition": "cooking utensil having a flat flexible part and a long handle; used for turning or serving food",
+      "forms": [],
+      "id": "oewn-food_turner__1.06.00..",
+      "lang": "en",
+      "lemma": "food turner",
+      "synset": "oewn-04507355-n"
+    },
+    {
+      "definition": "a large pot for making coffee or tea",
+      "forms": [],
+      "id": "oewn-urn__1.06.01..",
+      "lang": "en",
+      "lemma": "urn",
+      "synset": "oewn-04523509-n"
+    },
+    {
+      "definition": "a mixer incorporating a coil of wires; used for whipping eggs or cream",
+      "forms": [],
+      "id": "oewn-whisk__1.06.01..",
+      "lang": "en",
+      "lemma": "whisk",
+      "synset": "oewn-04586220-n"
+    },
+    {
+      "definition": "pan with a convex bottom; used for frying in Chinese cooking",
+      "forms": [],
+      "id": "oewn-wok__1.06.00..",
+      "lang": "en",
+      "lemma": "wok",
+      "synset": "oewn-04604069-n"
+    },
+    {
+      "definition": "A kitchen appliance that opens eggs and separates egg whites from yolks.",
+      "forms": [],
+      "id": "oewn-egg_cracker__1.06.01..",
+      "lang": "en",
+      "lemma": "egg cracker",
+      "synset": "oewn-92448976-n"
+    },
+    {
+      "definition": "a steamer for heat treatment of feeds before feeding them to farm animals, no longer used.",
+      "forms": [],
+      "id": "oewn-feed_steamer__1.06.01..",
+      "lang": "en",
+      "lemma": "feed steamer",
+      "synset": "oewn-92459181-n"
+    },
+    {
+      "definition": "a round sheet of paper, foil, or silicone with scallop-pressed edges, giving the muffin a round cup shape.",
+      "forms": [],
+      "id": "oewn-muffin_case__1.06.01..",
+      "lang": "en",
+      "lemma": "muffin case",
+      "synset": "oewn-92459601-n"
+    },
+    {
+      "definition": "a round sheet of paper, foil, or silicone with scallop-pressed edges, giving the muffin a round cup shape.",
+      "forms": [],
+      "id": "oewn-muffin_cup__1.06.01..",
+      "lang": "en",
+      "lemma": "muffin cup",
+      "synset": "oewn-92459601-n"
+    },
+    {
+      "definition": "molds or pans used to make baked items that come in a variety of shapes and sizes.",
+      "forms": [],
+      "id": "oewn-baking_mold__1.06.01..",
+      "lang": "en",
+      "lemma": "baking mold",
+      "synset": "oewn-92459603-n"
+    },
+    {
+      "definition": "molds or pans used to make baked items that come in a variety of shapes and sizes.",
+      "forms": [],
+      "id": "oewn-baking_mould__1.06.01..",
+      "lang": "en",
+      "lemma": "baking mould",
+      "synset": "oewn-92459603-n"
+    },
+    {
+      "definition": "molds or pans used to make baked items that come in a variety of shapes and sizes.",
+      "forms": [],
+      "id": "oewn-cake_mold__1.06.01..",
+      "lang": "en",
+      "lemma": "cake mold",
+      "synset": "oewn-92459603-n"
+    },
+    {
+      "definition": "molds or pans used to make baked items that come in a variety of shapes and sizes.",
+      "forms": [],
+      "id": "oewn-baking_form__1.06.01..",
+      "lang": "en",
+      "lemma": "baking form",
+      "synset": "oewn-92459603-n"
+    },
+    {
+      "definition": "molds or pans used to make baked items that come in a variety of shapes and sizes.",
+      "forms": [],
+      "id": "oewn-cake_mould__1.06.01..",
+      "lang": "en",
+      "lemma": "cake mould",
+      "synset": "oewn-92459603-n"
+    },
+    {
+      "definition": "molds or pans used to make baked items that come in a variety of shapes and sizes.",
+      "forms": [],
+      "id": "oewn-cake_tin__1.06.01..",
+      "lang": "en",
+      "lemma": "cake tin",
+      "synset": "oewn-92459603-n"
+    },
+    {
+      "definition": "a small hand press used to force sausage into a casing.",
+      "forms": [],
+      "id": "oewn-sausage_stuffer__1.06.01..",
+      "lang": "en",
+      "lemma": "sausage stuffer",
+      "synset": "oewn-92459633-n"
+    },
+    {
+      "definition": "a small hand press used to force sausage into a casing.",
+      "forms": [],
+      "id": "oewn-sausage_maker__1.06.01..",
+      "lang": "en",
+      "lemma": "sausage maker",
+      "synset": "oewn-92459633-n"
+    },
+    {
+      "definition": "a utensil consisting of a steel tank and mixing paddles, used for preparing meat for sausages.",
+      "forms": [],
+      "id": "oewn-meat_mixer__1.06.01..",
+      "lang": "en",
+      "lemma": "meat mixer",
+      "synset": "oewn-92460252-n"
+    },
+    {
+      "definition": "a multi-function baking pan used for barbecue, pie, tortillas, frying fish, grilling prawns, etc.",
+      "forms": [],
+      "id": "oewn-electric_baking_pan__1.06.01..",
+      "lang": "en",
+      "lemma": "electric baking pan",
+      "synset": "oewn-92461230-n"
+    },
+    {
+      "definition": "a mixer consisting of a bowl and an agitator that is rapidly moved around the bowl to mix its contents.",
+      "forms": [],
+      "id": "oewn-planetary_mixer__1.06.01..",
+      "lang": "en",
+      "lemma": "planetary mixer",
+      "synset": "oewn-92463051-n"
+    },
+    {
+      "definition": "a hand-held mixing device used to prepare food.",
+      "forms": [],
+      "id": "oewn-hand_mixer__1.06.01..",
+      "lang": "en",
+      "lemma": "hand mixer",
+      "synset": "oewn-92463052-n"
+    },
+    {
+      "definition": "a mixer in which the motor driving the rotary action is mounted in a frame or stand which bears the weight of the device.",
+      "forms": [],
+      "id": "oewn-stand_mixer__1.06.01..",
+      "lang": "en",
+      "lemma": "stand mixer",
+      "synset": "oewn-92463053-n"
+    },
+    {
+      "definition": "a plastic or metal utensil used for cake and pastry decoration, similar in principle to a pastry bag.",
+      "forms": [],
+      "id": "oewn-icing_syringe__1.06.01..",
+      "lang": "en",
+      "lemma": "icing syringe",
+      "synset": "oewn-92465666-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a tube with a rubber bulb used to take up and release melted fat or gravy in order to moisten roasting meat",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-02808468-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "baster"
+    },
+    {
+      "definition": "an electrically powered mixer with whirling blades that mix or chop or liquefy foods",
+      "hypernyms": [
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-02853991-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "blender"
+    },
+    {
+      "definition": "a very large pot that is used for boiling",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-02942602-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "caldron"
+    },
+    {
+      "definition": "a metal pan over a heater; used to cook or to keep things warm at the table",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-03002745-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "chafing dish"
+    },
+    {
+      "definition": "a kitchen utensil (board or handle) with a wire for cutting cheese",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03016153-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cheese cutter"
+    },
+    {
+      "definition": "enamelware in which colored areas are separated by thin metal strips",
+      "hypernyms": [
+        "oewn-03289892-n"
+      ],
+      "id": "oewn-03051784-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "cloisonne"
+    },
+    {
+      "definition": "tall pot in which coffee is brewed",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-03067692-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "coffeepot"
+    },
+    {
+      "definition": "an urn in which coffee is made and kept hot",
+      "hypernyms": [
+        "oewn-04523509-n"
+      ],
+      "id": "oewn-03068253-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "coffee urn"
+    },
+    {
+      "definition": "a utensil for cooking",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-03105807-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cooker"
+    },
+    {
+      "definition": "a kitchen utensil used to cut a sheet of cookie dough into desired shapes before baking",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03106168-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cookie cutter"
+    },
+    {
+      "definition": "a cooking utensil consisting of a flat rectangular metal sheet used for baking cookies or biscuits",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-03106447-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cookie sheet"
+    },
+    {
+      "definition": "a kitchen utensil made of material that does not melt easily; used for cooking",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03106637-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cooking utensil"
+    },
+    {
+      "definition": "an electric cooker that maintains a relatively low temperature",
+      "hypernyms": [
+        "oewn-03105807-n"
+      ],
+      "id": "oewn-03138529-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "Crock Pot"
+    },
+    {
+      "definition": "a large metal pot (12 gallon camp kettle) for cooking; used in military camps",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-03221265-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "dixie"
+    },
+    {
+      "definition": "two saucepans, one fitting inside the other",
+      "hypernyms": [
+        "oewn-04146060-n"
+      ],
+      "id": "oewn-03230957-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "double boiler"
+    },
+    {
+      "definition": "pan for catching drippings under roasting meat",
+      "hypernyms": [
+        "oewn-03886228-n"
+      ],
+      "id": "oewn-03247093-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "dripping pan"
+    },
+    {
+      "definition": "a coffeepot for making drip coffee",
+      "hypernyms": [
+        "oewn-03067692-n"
+      ],
+      "id": "oewn-03247209-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "drip pot"
+    },
+    {
+      "definition": "iron or earthenware cooking pot; used for stews",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-03264104-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Dutch oven"
+    },
+    {
+      "definition": "a mixer for beating eggs or whipping cream",
+      "hypernyms": [
+        "oewn-02820785-n",
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-03271282-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "eggbeater"
+    },
+    {
+      "definition": "a frying pan heated by electricity",
+      "hypernyms": [
+        "oewn-03405146-n"
+      ],
+      "id": "oewn-03276676-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "electric frying pan"
+    },
+    {
+      "definition": "a food mixer powered by an electric motor",
+      "hypernyms": [
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-03277851-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "electric mixer"
+    },
+    {
+      "definition": "cooking utensil of enameled iron",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-03289892-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "enamelware"
+    },
+    {
+      "definition": "a food turner with a broad blade used for turning or serving fish or other food that is cooked in a frying pan",
+      "hypernyms": [
+        "oewn-04507355-n"
+      ],
+      "id": "oewn-03357807-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "fish slice"
+    },
+    {
+      "definition": "a pan used for frying foods",
+      "hypernyms": [
+        "oewn-03886228-n"
+      ],
+      "id": "oewn-03405146-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "frying pan"
+    },
+    {
+      "definition": "a kind of stone-grey enamelware",
+      "hypernyms": [
+        "oewn-03289892-n"
+      ],
+      "id": "oewn-03458175-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "graniteware"
+    },
+    {
+      "definition": "utensil with sharp perforations for shredding foods (as vegetables or cheese)",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03459829-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "grater"
+    },
+    {
+      "definition": "a cooking utensil of parallel metal bars; used to grill fish or meat",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-03463354-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "grid"
+    },
+    {
+      "definition": "cooking utensil consisting of a flat heated surface (as on top of a stove) on which food is cooked",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-03464260-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "griddle"
+    },
+    {
+      "definition": "a metal pot for stewing or boiling; usually has a lid",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-03618023-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "kettle"
+    },
+    {
+      "definition": "a utensil used in preparing food",
+      "hypernyms": [
+        "oewn-04523967-n"
+      ],
+      "id": "oewn-03626258-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "kitchen utensil"
+    },
+    {
+      "definition": "hardware utensils for use in a kitchen",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03626586-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "kitchenware"
+    },
+    {
+      "definition": "a large pot especially one with legs used e.g. for cooking soup",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-03728318-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "marmite"
+    },
+    {
+      "definition": "a kitchen utensil used for mashing (e.g. potatoes)",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03729908-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "masher"
+    },
+    {
+      "definition": "a kitchen utensil that cuts or chops food (especially meat) into small pieces",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03773501-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "mincer"
+    },
+    {
+      "definition": "a kitchen utensil that is used for mixing foods",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-03780732-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "mixer"
+    },
+    {
+      "definition": "pan for cooking omelets",
+      "hypernyms": [
+        "oewn-03886228-n"
+      ],
+      "id": "oewn-03852197-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "omelet pan"
+    },
+    {
+      "definition": "cooking utensil consisting of a wide metal vessel",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-03886228-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "pan"
+    },
+    {
+      "definition": "turner for serving or turning pancakes",
+      "hypernyms": [
+        "oewn-04507355-n"
+      ],
+      "id": "oewn-03887002-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "pancake turner"
+    },
+    {
+      "definition": "a pan for cooking patties or pasties",
+      "hypernyms": [
+        "oewn-03886228-n"
+      ],
+      "id": "oewn-03906379-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "patty-pan"
+    },
+    {
+      "definition": "a coffeepot in which boiling water ascends through a central tube and filters back down through a basket of ground coffee beans",
+      "hypernyms": [
+        "oewn-03067692-n"
+      ],
+      "id": "oewn-03921237-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "percolator"
+    },
+    {
+      "definition": "a cooking vessel designed to poach food (such as fish or eggs)",
+      "hypernyms": [
+        "oewn-03106637-n",
+        "oewn-04538393-n"
+      ],
+      "id": "oewn-03978730-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "poacher"
+    },
+    {
+      "definition": "a container for cooking popcorn",
+      "hypernyms": [
+        "oewn-03105807-n"
+      ],
+      "id": "oewn-03990070-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "popper"
+    },
+    {
+      "definition": "metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid",
+      "hypernyms": [
+        "oewn-03106637-n",
+        "oewn-04538393-n"
+      ],
+      "id": "oewn-03996832-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "pot"
+    },
+    {
+      "definition": "a pot that holds 2 quarts",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-03999333-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "pottle"
+    },
+    {
+      "definition": "a squeezer with a conical ridged center that is used for squeezing juice from citrus fruit",
+      "hypernyms": [
+        "oewn-04300257-n"
+      ],
+      "id": "oewn-04066628-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "reamer"
+    },
+    {
+      "definition": "a kitchen utensil used for ricing soft foods by extruding them through small holes",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-04095553-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "ricer"
+    },
+    {
+      "definition": "a special cooking pan for roasting",
+      "hypernyms": [
+        "oewn-03886228-n"
+      ],
+      "id": "oewn-04104854-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "roaster"
+    },
+    {
+      "definition": "utensil consisting of a cylinder (usually of wood) with a handle at each end; used to roll out dough",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-04110300-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "rolling pin"
+    },
+    {
+      "definition": "a metal urn with a spigot at the base; used in Russia to boil water for tea",
+      "hypernyms": [
+        "oewn-04523509-n"
+      ],
+      "id": "oewn-04140068-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "samovar"
+    },
+    {
+      "definition": "a deep pan with a handle; used for stewing or boiling",
+      "hypernyms": [
+        "oewn-03886228-n"
+      ],
+      "id": "oewn-04146060-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "saucepan"
+    },
+    {
+      "definition": "a cooking pot that has handles on either side and tight fitting lid; used for stewing or boiling",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-04146223-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "saucepot"
+    },
+    {
+      "definition": "a kitchen utensil that removes seeds from fruit",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-04174289-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "seeder"
+    },
+    {
+      "definition": "a cooking utensil used to skim fat from the surface of liquids",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-04237021-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "skimmer"
+    },
+    {
+      "definition": "a turner with a narrow flexible blade",
+      "hypernyms": [
+        "oewn-04507355-n"
+      ],
+      "id": "oewn-04277257-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "spatula"
+    },
+    {
+      "definition": "a skillet made of cast iron",
+      "hypernyms": [
+        "oewn-03405146-n"
+      ],
+      "id": "oewn-04282402-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "spider"
+    },
+    {
+      "definition": "a kitchen utensil for squeezing juice from fruit",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-04300257-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "squeezer"
+    },
+    {
+      "definition": "a cooking utensil that can be used to cook food by steaming it",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-04316686-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "steamer"
+    },
+    {
+      "definition": "a saucepan used for stewing",
+      "hypernyms": [
+        "oewn-04146060-n"
+      ],
+      "id": "oewn-04324463-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "stewing pan"
+    },
+    {
+      "definition": "a pot used for preparing soup stock",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-04331435-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "stockpot"
+    },
+    {
+      "definition": "a kitchen utensil consisting of a perforated metal ball for making tea",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-04404037-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "tea ball"
+    },
+    {
+      "definition": "kettle for boiling water to make tea",
+      "hypernyms": [
+        "oewn-03618023-n"
+      ],
+      "id": "oewn-04404903-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "teakettle"
+    },
+    {
+      "definition": "pot for brewing tea; usually has a spout and handle",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-04405179-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "teapot"
+    },
+    {
+      "definition": "an urn in which tea is brewed and from which it is served",
+      "hypernyms": [
+        "oewn-04523509-n"
+      ],
+      "id": "oewn-04406293-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "tea urn"
+    },
+    {
+      "definition": "cooking utensil having a flat flexible part and a long handle; used for turning or serving food",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-04507355-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "turner"
+    },
+    {
+      "definition": "a large pot for making coffee or tea",
+      "hypernyms": [
+        "oewn-03996832-n"
+      ],
+      "id": "oewn-04523509-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "urn"
+    },
+    {
+      "definition": "a mixer incorporating a coil of wires; used for whipping eggs or cream",
+      "hypernyms": [
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-04586220-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "whisk"
+    },
+    {
+      "definition": "pan with a convex bottom; used for frying in Chinese cooking",
+      "hypernyms": [
+        "oewn-03886228-n"
+      ],
+      "id": "oewn-04604069-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "wok"
+    },
+    {
+      "definition": "A kitchen appliance that opens eggs and separates egg whites from yolks.",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-92448976-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "egg cracker"
+    },
+    {
+      "definition": "a steamer for heat treatment of feeds before feeding them to farm animals, no longer used.",
+      "hypernyms": [
+        "oewn-04316686-n"
+      ],
+      "id": "oewn-92459181-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "feed steamer"
+    },
+    {
+      "definition": "a round sheet of paper, foil, or silicone with scallop-pressed edges, giving the muffin a round cup shape.",
+      "hypernyms": [
+        "oewn-03106637-n",
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-92459601-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "muffin case"
+    },
+    {
+      "definition": "molds or pans used to make baked items that come in a variety of shapes and sizes.",
+      "hypernyms": [
+        "oewn-03106637-n"
+      ],
+      "id": "oewn-92459603-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "baking mold"
+    },
+    {
+      "definition": "a small hand press used to force sausage into a casing.",
+      "hypernyms": [
+        "oewn-03626258-n",
+        "oewn-03741555-n",
+        "oewn-04006350-n"
+      ],
+      "id": "oewn-92459633-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "sausage stuffer"
+    },
+    {
+      "definition": "a utensil consisting of a steel tank and mixing paddles, used for preparing meat for sausages.",
+      "hypernyms": [
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-92460252-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "meat mixer"
+    },
+    {
+      "definition": "a multi-function baking pan used for barbecue, pie, tortillas, frying fish, grilling prawns, etc.",
+      "hypernyms": [
+        "oewn-03105807-n"
+      ],
+      "id": "oewn-92461230-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "electric baking pan"
+    },
+    {
+      "definition": "a mixer consisting of a bowl and an agitator that is rapidly moved around the bowl to mix its contents.",
+      "hypernyms": [
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-92463051-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "planetary mixer"
+    },
+    {
+      "definition": "a hand-held mixing device used to prepare food.",
+      "hypernyms": [
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-92463052-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "hand mixer"
+    },
+    {
+      "definition": "a mixer in which the motor driving the rotary action is mounted in a frame or stand which bears the weight of the device.",
+      "hypernyms": [
+        "oewn-03780732-n"
+      ],
+      "id": "oewn-92463053-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "stand mixer"
+    },
+    {
+      "definition": "a plastic or metal utensil used for cake and pastry decoration, similar in principle to a pastry bag.",
+      "hypernyms": [
+        "oewn-03626258-n"
+      ],
+      "id": "oewn-92465666-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "icing syringe"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

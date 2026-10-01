@@ -1,0 +1,4141 @@
+{
+  "exported": "2026-10-01",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-00524569-n",
+  "senses": [
+    {
+      "definition": "a batted or served ball that skims along close to the ground",
+      "forms": [],
+      "id": "oewn-daisy_cutter__1.04.00..",
+      "lang": "en",
+      "lemma": "daisy cutter",
+      "synset": "oewn-00132167-n"
+    },
+    {
+      "definition": "maneuvers of a horse in response to body signals by the rider",
+      "forms": [],
+      "id": "oewn-dressage__1.04.00..",
+      "lang": "en",
+      "lemma": "dressage",
+      "synset": "oewn-00288844-n"
+    },
+    {
+      "definition": "a light leap by a horse in which both hind legs leave the ground before the forelegs come down",
+      "forms": [],
+      "id": "oewn-curvet__1.04.00..",
+      "lang": "en",
+      "lemma": "curvet",
+      "synset": "oewn-00289034-n"
+    },
+    {
+      "definition": "a light leap by a horse in which both hind legs leave the ground before the forelegs come down",
+      "forms": [],
+      "id": "oewn-vaulting__1.04.00..",
+      "lang": "en",
+      "lemma": "vaulting",
+      "synset": "oewn-00289034-n"
+    },
+    {
+      "definition": "a cadenced trot executed by the horse in one spot",
+      "forms": [],
+      "id": "oewn-piaffe__1.04.00..",
+      "lang": "en",
+      "lemma": "piaffe",
+      "synset": "oewn-00289228-n"
+    },
+    {
+      "definition": "walking on a tightrope or slack rope",
+      "forms": [],
+      "id": "oewn-funambulism__1.04.00..",
+      "lang": "en",
+      "lemma": "funambulism",
+      "synset": "oewn-00325804-n"
+    },
+    {
+      "definition": "walking on a tightrope or slack rope",
+      "forms": [],
+      "id": "oewn-tightrope_walking__1.04.00..",
+      "lang": "en",
+      "lemma": "tightrope walking",
+      "synset": "oewn-00325804-n"
+    },
+    {
+      "definition": "the sport or pastime of scaling rock masses on mountain sides (especially with the help of ropes and special equipment)",
+      "forms": [],
+      "id": "oewn-rock_climbing__1.04.00..",
+      "lang": "en",
+      "lemma": "rock climbing",
+      "synset": "oewn-00326920-n"
+    },
+    {
+      "definition": "a sport that necessarily involves body contact between opposing players",
+      "forms": [],
+      "id": "oewn-contact_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "contact sport",
+      "synset": "oewn-00434398-n"
+    },
+    {
+      "definition": "a sport that is played outdoors",
+      "forms": [],
+      "id": "oewn-outdoor_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "outdoor sport",
+      "synset": "oewn-00434601-n"
+    },
+    {
+      "definition": "a sport that is played outdoors",
+      "forms": [],
+      "id": "oewn-field_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "field sport",
+      "synset": "oewn-00434601-n"
+    },
+    {
+      "definition": "a sport that involves exercises intended to display strength and balance and agility",
+      "forms": [],
+      "id": "oewn-gymnastics__1.04.00..",
+      "lang": "en",
+      "lemma": "gymnastics",
+      "synset": "oewn-00434742-n"
+    },
+    {
+      "definition": "a sport that involves exercises intended to display strength and balance and agility",
+      "forms": [],
+      "id": "oewn-gymnastic_exercise__1.04.01..",
+      "lang": "en",
+      "lemma": "gymnastic exercise",
+      "synset": "oewn-00434742-n"
+    },
+    {
+      "definition": "the gymnastic moves of an acrobat",
+      "forms": [],
+      "id": "oewn-acrobatics__1.04.00..",
+      "lang": "en",
+      "lemma": "acrobatics",
+      "synset": "oewn-00435015-n"
+    },
+    {
+      "definition": "the gymnastic moves of an acrobat",
+      "forms": [],
+      "id": "oewn-tumbling__1.04.00..",
+      "lang": "en",
+      "lemma": "tumbling",
+      "synset": "oewn-00435015-n"
+    },
+    {
+      "definition": "participating in athletic sports performed on a running track or on the field associated with it",
+      "forms": [],
+      "id": "oewn-track_and_field__1.04.00..",
+      "lang": "en",
+      "lemma": "track and field",
+      "synset": "oewn-00440766-n"
+    },
+    {
+      "definition": "the act of participating in an athletic competition involving running on a track",
+      "forms": [],
+      "id": "oewn-track__1.04.00..",
+      "lang": "en",
+      "lemma": "track",
+      "synset": "oewn-00440979-n"
+    },
+    {
+      "definition": "the act of participating in an athletic competition involving running on a track",
+      "forms": [],
+      "id": "oewn-running__1.04.00..",
+      "lang": "en",
+      "lemma": "running",
+      "synset": "oewn-00440979-n"
+    },
+    {
+      "definition": "the act of participating in an athletic competition in which you must jump",
+      "forms": [],
+      "id": "oewn-jumping__1.04.00..",
+      "lang": "en",
+      "lemma": "jumping",
+      "synset": "oewn-00441158-n"
+    },
+    {
+      "definition": "the act of jumping as far as possible from a running start",
+      "forms": [],
+      "id": "oewn-broad_jump__1.04.00..",
+      "lang": "en",
+      "lemma": "broad jump",
+      "synset": "oewn-00441322-n"
+    },
+    {
+      "definition": "the act of jumping as far as possible from a running start",
+      "forms": [],
+      "id": "oewn-long_jump__1.04.00..",
+      "lang": "en",
+      "lemma": "long jump",
+      "synset": "oewn-00441322-n"
+    },
+    {
+      "definition": "the act of jumping as high as possible over a horizontal bar",
+      "forms": [],
+      "id": "oewn-high_jump__1.04.00..",
+      "lang": "en",
+      "lemma": "high jump",
+      "synset": "oewn-00441449-n"
+    },
+    {
+      "definition": "jumping over the bar backwards and head first",
+      "forms": [],
+      "id": "oewn-fosbury_flop__1.04.00..",
+      "lang": "en",
+      "lemma": "Fosbury flop",
+      "synset": "oewn-00441583-n"
+    },
+    {
+      "definition": "a sport in which participants must travel on skis",
+      "forms": [],
+      "id": "oewn-skiing__1.04.00..",
+      "lang": "en",
+      "lemma": "skiing",
+      "synset": "oewn-00441687-n"
+    },
+    {
+      "definition": "the sport of skiing across the countryside (rather than downhill)",
+      "forms": [],
+      "id": "oewn-cross-country_skiing__1.04.00..",
+      "lang": "en",
+      "lemma": "cross-country skiing",
+      "synset": "oewn-00441881-n"
+    },
+    {
+      "definition": "the act of performing a jump on skis from a high ramp overhanging a snow covered slope",
+      "forms": [],
+      "id": "oewn-ski_jumping__1.04.00..",
+      "lang": "en",
+      "lemma": "ski jumping",
+      "synset": "oewn-00442013-n"
+    },
+    {
+      "definition": "sports that involve bodies of water",
+      "forms": [],
+      "id": "oewn-water_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "water sport",
+      "synset": "oewn-00442764-n"
+    },
+    {
+      "definition": "sports that involve bodies of water",
+      "forms": [],
+      "id": "oewn-aquatics__1.04.00..",
+      "lang": "en",
+      "lemma": "aquatics",
+      "synset": "oewn-00442764-n"
+    },
+    {
+      "definition": "the act of swimming",
+      "forms": [],
+      "id": "oewn-swimming__1.04.00..",
+      "lang": "en",
+      "lemma": "swimming",
+      "synset": "oewn-00443055-n"
+    },
+    {
+      "definition": "the act of swimming",
+      "forms": [],
+      "id": "oewn-swim__1.04.00..",
+      "lang": "en",
+      "lemma": "swim",
+      "synset": "oewn-00443055-n"
+    },
+    {
+      "definition": "the act of swimming for pleasure or recreation",
+      "forms": [],
+      "id": "oewn-bathe__1.04.00..",
+      "lang": "en",
+      "lemma": "bathe",
+      "synset": "oewn-00443377-n"
+    },
+    {
+      "definition": "a naked swim",
+      "forms": [],
+      "id": "oewn-skinny-dip__1.04.00..",
+      "lang": "en",
+      "lemma": "skinny-dip",
+      "synset": "oewn-00443639-n"
+    },
+    {
+      "definition": "a brief swim in water",
+      "forms": [],
+      "id": "oewn-dip__1.04.00..",
+      "lang": "en",
+      "lemma": "dip",
+      "synset": "oewn-00443832-n"
+    },
+    {
+      "definition": "a brief swim in water",
+      "forms": [],
+      "id": "oewn-plunge__1.04.00..",
+      "lang": "en",
+      "lemma": "plunge",
+      "synset": "oewn-00443832-n"
+    },
+    {
+      "definition": "a headlong plunge into water",
+      "forms": [],
+      "id": "oewn-dive__1.04.01..",
+      "lang": "en",
+      "lemma": "dive",
+      "synset": "oewn-00443966-n"
+    },
+    {
+      "definition": "a headlong plunge into water",
+      "forms": [],
+      "id": "oewn-diving__1.04.00..",
+      "lang": "en",
+      "lemma": "diving",
+      "synset": "oewn-00443966-n"
+    },
+    {
+      "definition": "the act of someone who floats on the water",
+      "forms": [],
+      "id": "oewn-floating__1.04.00..",
+      "lang": "en",
+      "lemma": "floating",
+      "synset": "oewn-00444216-n"
+    },
+    {
+      "definition": "the act of someone who floats on the water",
+      "forms": [],
+      "id": "oewn-natation__1.04.00..",
+      "lang": "en",
+      "lemma": "natation",
+      "synset": "oewn-00444216-n"
+    },
+    {
+      "definition": "a floating position with the face down and arms stretched forward",
+      "forms": [],
+      "id": "oewn-dead-man-ap-s_float__1.04.00..",
+      "lang": "en",
+      "lemma": "dead-man's float",
+      "synset": "oewn-00444360-n"
+    },
+    {
+      "definition": "a floating position with the face down and arms stretched forward",
+      "forms": [],
+      "id": "oewn-prone_float__1.04.00..",
+      "lang": "en",
+      "lemma": "prone float",
+      "synset": "oewn-00444360-n"
+    },
+    {
+      "definition": "a dive in which the abdomen bears the main force of impact with the water",
+      "forms": [],
+      "id": "oewn-belly_flop__1.04.00..",
+      "lang": "en",
+      "lemma": "belly flop",
+      "synset": "oewn-00444502-n"
+    },
+    {
+      "definition": "a dive in which the abdomen bears the main force of impact with the water",
+      "forms": [],
+      "id": "oewn-belly_flopper__1.04.00..",
+      "lang": "en",
+      "lemma": "belly flopper",
+      "synset": "oewn-00444502-n"
+    },
+    {
+      "definition": "a dive in which the abdomen bears the main force of impact with the water",
+      "forms": [],
+      "id": "oewn-belly_whop__1.04.00..",
+      "lang": "en",
+      "lemma": "belly whop",
+      "synset": "oewn-00444502-n"
+    },
+    {
+      "definition": "a dive in which the abdomen bears the main force of impact with the water",
+      "forms": [],
+      "id": "oewn-belly_whopper__1.04.00..",
+      "lang": "en",
+      "lemma": "belly whopper",
+      "synset": "oewn-00444502-n"
+    },
+    {
+      "definition": "diving into the water from a steep overhanging cliff",
+      "forms": [],
+      "id": "oewn-cliff_diving__1.04.00..",
+      "lang": "en",
+      "lemma": "cliff diving",
+      "synset": "oewn-00444677-n"
+    },
+    {
+      "definition": "a dive in which the diver somersaults before entering the water",
+      "forms": [],
+      "id": "oewn-flip__1.04.02..",
+      "lang": "en",
+      "lemma": "flip",
+      "synset": "oewn-00444788-n"
+    },
+    {
+      "definition": "a dive in which the diver throws the feet forward to complete a full backward somersault and enters the water feet first and facing away from the diving board",
+      "forms": [],
+      "id": "oewn-gainer__1.04.00..",
+      "lang": "en",
+      "lemma": "gainer",
+      "synset": "oewn-00444902-n"
+    },
+    {
+      "definition": "a dive in which the diver throws the feet forward to complete a full backward somersault and enters the water feet first and facing away from the diving board",
+      "forms": [],
+      "id": "oewn-full_gainer__1.04.00..",
+      "lang": "en",
+      "lemma": "full gainer",
+      "synset": "oewn-00444902-n"
+    },
+    {
+      "definition": "a dive in which the diver throws the feet forward and up to complete a half backward somersault and enters the water facing the diving board",
+      "forms": [],
+      "id": "oewn-half_gainer__1.04.00..",
+      "lang": "en",
+      "lemma": "half gainer",
+      "synset": "oewn-00445127-n"
+    },
+    {
+      "definition": "a dive in which the diver bends to touch the ankles before straightening out",
+      "forms": [
+        "jackknives"
+      ],
+      "id": "oewn-jackknife__1.04.00..",
+      "lang": "en",
+      "lemma": "jackknife",
+      "synset": "oewn-00445325-n"
+    },
+    {
+      "definition": "a dive in which the diver arches the back with arms outstretched before entering the water",
+      "forms": [],
+      "id": "oewn-swan_dive__1.04.00..",
+      "lang": "en",
+      "lemma": "swan dive",
+      "synset": "oewn-00445475-n"
+    },
+    {
+      "definition": "a dive in which the diver arches the back with arms outstretched before entering the water",
+      "forms": [],
+      "id": "oewn-swallow_dive__1.04.00..",
+      "lang": "en",
+      "lemma": "swallow dive",
+      "synset": "oewn-00445475-n"
+    },
+    {
+      "definition": "underwater swimming without any more breathing equipment than a snorkel",
+      "forms": [],
+      "id": "oewn-skin_diving__1.04.00..",
+      "lang": "en",
+      "lemma": "skin diving",
+      "synset": "oewn-00445636-n"
+    },
+    {
+      "definition": "underwater swimming without any more breathing equipment than a snorkel",
+      "forms": [],
+      "id": "oewn-skin-dive__1.04.00..",
+      "lang": "en",
+      "lemma": "skin-dive",
+      "synset": "oewn-00445636-n"
+    },
+    {
+      "definition": "skin diving with scuba apparatus",
+      "forms": [],
+      "id": "oewn-scuba_diving__1.04.00..",
+      "lang": "en",
+      "lemma": "scuba diving",
+      "synset": "oewn-00445831-n"
+    },
+    {
+      "definition": "skin diving with a snorkel",
+      "forms": [],
+      "id": "oewn-snorkeling__1.04.00..",
+      "lang": "en",
+      "lemma": "snorkeling",
+      "synset": "oewn-00445922-n"
+    },
+    {
+      "definition": "skin diving with a snorkel",
+      "forms": [],
+      "id": "oewn-snorkel_diving__1.04.00..",
+      "lang": "en",
+      "lemma": "snorkel diving",
+      "synset": "oewn-00445922-n"
+    },
+    {
+      "definition": "the sport of riding a surfboard toward the shore on the crest of a wave",
+      "forms": [],
+      "id": "oewn-surfing__1.04.00..",
+      "lang": "en",
+      "lemma": "surfing",
+      "synset": "oewn-00446040-n"
+    },
+    {
+      "definition": "the sport of riding a surfboard toward the shore on the crest of a wave",
+      "forms": [],
+      "id": "oewn-surfboarding__1.04.00..",
+      "lang": "en",
+      "lemma": "surfboarding",
+      "synset": "oewn-00446040-n"
+    },
+    {
+      "definition": "the sport of riding a surfboard toward the shore on the crest of a wave",
+      "forms": [],
+      "id": "oewn-surfriding__1.04.00..",
+      "lang": "en",
+      "lemma": "surfriding",
+      "synset": "oewn-00446040-n"
+    },
+    {
+      "definition": "skiing on water while being towed by a motorboat",
+      "forms": [],
+      "id": "oewn-water-skiing__1.04.00..",
+      "lang": "en",
+      "lemma": "water-skiing",
+      "synset": "oewn-00446211-n"
+    },
+    {
+      "definition": "the act of rowing as a sport",
+      "forms": [],
+      "id": "oewn-rowing__1.04.00..",
+      "lang": "en",
+      "lemma": "rowing",
+      "synset": "oewn-00446336-n"
+    },
+    {
+      "definition": "the act of rowing as a sport",
+      "forms": [],
+      "id": "oewn-row__1.04.00..",
+      "lang": "en",
+      "lemma": "row",
+      "synset": "oewn-00446336-n"
+    },
+    {
+      "definition": "a stroke of the oar that either misses the water or digs too deeply",
+      "forms": [],
+      "id": "oewn-crab__1.04.00..",
+      "lang": "en",
+      "lemma": "crab",
+      "synset": "oewn-00446514-n"
+    },
+    {
+      "definition": "rowing by a single oarsman in a racing shell",
+      "forms": [],
+      "id": "oewn-sculling__1.04.00..",
+      "lang": "en",
+      "lemma": "sculling",
+      "synset": "oewn-00446670-n"
+    },
+    {
+      "definition": "fighting with the fists",
+      "forms": [],
+      "id": "oewn-boxing__1.04.00..",
+      "lang": "en",
+      "lemma": "boxing",
+      "synset": "oewn-00446787-n"
+    },
+    {
+      "definition": "fighting with the fists",
+      "forms": [],
+      "id": "oewn-pugilism__1.04.00..",
+      "lang": "en",
+      "lemma": "pugilism",
+      "synset": "oewn-00446787-n"
+    },
+    {
+      "definition": "fighting with the fists",
+      "forms": [],
+      "id": "oewn-fisticuffs__1.04.00..",
+      "lang": "en",
+      "lemma": "fisticuffs",
+      "synset": "oewn-00446787-n"
+    },
+    {
+      "definition": "boxing for money",
+      "forms": [],
+      "id": "oewn-professional_boxing__1.04.00..",
+      "lang": "en",
+      "lemma": "professional boxing",
+      "synset": "oewn-00447296-n"
+    },
+    {
+      "definition": "boxing at close quarters",
+      "forms": [],
+      "id": "oewn-infighting__1.04.00..",
+      "lang": "en",
+      "lemma": "infighting",
+      "synset": "oewn-00447396-n"
+    },
+    {
+      "definition": "a boxing or wrestling match",
+      "forms": [],
+      "id": "oewn-fight__1.04.03..",
+      "lang": "en",
+      "lemma": "fight",
+      "synset": "oewn-00447478-n"
+    },
+    {
+      "definition": "a boxing tactic: pretending to be trapped against the ropes while your opponent wears themself out throwing punches",
+      "forms": [],
+      "id": "oewn-rope-a-dope__1.04.00..",
+      "lang": "en",
+      "lemma": "rope-a-dope",
+      "synset": "oewn-00447617-n"
+    },
+    {
+      "definition": "making the motions of attack and defense with the fists and arms; a part of training for a boxer",
+      "forms": [],
+      "id": "oewn-spar__1.04.00..",
+      "lang": "en",
+      "lemma": "spar",
+      "synset": "oewn-00447789-n"
+    },
+    {
+      "definition": "making the motions of attack and defense with the fists and arms; a part of training for a boxer",
+      "forms": [],
+      "id": "oewn-sparring__1.04.00..",
+      "lang": "en",
+      "lemma": "sparring",
+      "synset": "oewn-00447789-n"
+    },
+    {
+      "definition": "the sport of shooting arrows with a bow",
+      "forms": [],
+      "id": "oewn-archery__1.04.00..",
+      "lang": "en",
+      "lemma": "archery",
+      "synset": "oewn-00447965-n"
+    },
+    {
+      "definition": "the sport of riding on a sled or sleigh",
+      "forms": [],
+      "id": "oewn-sledding__1.04.00..",
+      "lang": "en",
+      "lemma": "sledding",
+      "synset": "oewn-00448058-n"
+    },
+    {
+      "definition": "riding on a long light sled with low handrails",
+      "forms": [],
+      "id": "oewn-tobogganing__1.04.00..",
+      "lang": "en",
+      "lemma": "tobogganing",
+      "synset": "oewn-00448206-n"
+    },
+    {
+      "definition": "riding a light one-man toboggan",
+      "forms": [],
+      "id": "oewn-luging__1.04.00..",
+      "lang": "en",
+      "lemma": "luging",
+      "synset": "oewn-00448346-n"
+    },
+    {
+      "definition": "riding on a bobsled",
+      "forms": [],
+      "id": "oewn-bobsledding__1.04.00..",
+      "lang": "en",
+      "lemma": "bobsledding",
+      "synset": "oewn-00448448-n"
+    },
+    {
+      "definition": "the sport of hand-to-hand struggle between unarmed contestants who try to throw each other down",
+      "forms": [],
+      "id": "oewn-wrestling__1.04.00..",
+      "lang": "en",
+      "lemma": "wrestling",
+      "synset": "oewn-00448525-n"
+    },
+    {
+      "definition": "the sport of hand-to-hand struggle between unarmed contestants who try to throw each other down",
+      "forms": [],
+      "id": "oewn-rassling__1.04.00..",
+      "lang": "en",
+      "lemma": "rassling",
+      "synset": "oewn-00448525-n"
+    },
+    {
+      "definition": "the sport of hand-to-hand struggle between unarmed contestants who try to throw each other down",
+      "forms": [],
+      "id": "oewn-grappling__1.04.01..",
+      "lang": "en",
+      "lemma": "grappling",
+      "synset": "oewn-00448525-n"
+    },
+    {
+      "definition": "a wrestling maneuver",
+      "forms": [],
+      "id": "oewn-flying_mare__1.04.00..",
+      "lang": "en",
+      "lemma": "flying mare",
+      "synset": "oewn-00448864-n"
+    },
+    {
+      "definition": "a style of wrestling where the wrestlers are forbidden to tackle or trip or use holds below the waist",
+      "forms": [],
+      "id": "oewn-greco-roman_wrestling__1.04.00..",
+      "lang": "en",
+      "lemma": "Greco-Roman wrestling",
+      "synset": "oewn-00448942-n"
+    },
+    {
+      "definition": "a style of wrestling where the wrestlers are forbidden to tackle or trip or use holds below the waist",
+      "forms": [],
+      "id": "oewn-graeco-roman_wrestling__1.04.00..",
+      "lang": "en",
+      "lemma": "Graeco-Roman wrestling",
+      "synset": "oewn-00448942-n"
+    },
+    {
+      "definition": "wrestling for money",
+      "forms": [],
+      "id": "oewn-professional_wrestling__1.04.00..",
+      "lang": "en",
+      "lemma": "professional wrestling",
+      "synset": "oewn-00449111-n"
+    },
+    {
+      "definition": "a Japanese form of wrestling; you lose if you are forced out of a small ring or if any part of your body (other than your feet) touches the ground",
+      "forms": [],
+      "id": "oewn-sumo__1.04.00..",
+      "lang": "en",
+      "lemma": "sumo",
+      "synset": "oewn-00449217-n"
+    },
+    {
+      "definition": "the sport of gliding on skates",
+      "forms": [],
+      "id": "oewn-skating__1.04.00..",
+      "lang": "en",
+      "lemma": "skating",
+      "synset": "oewn-00449451-n"
+    },
+    {
+      "definition": "skating on ice",
+      "forms": [],
+      "id": "oewn-ice_skating__1.04.00..",
+      "lang": "en",
+      "lemma": "ice skating",
+      "synset": "oewn-00449625-n"
+    },
+    {
+      "definition": "ice skating where the skates trace outlines of selected figures",
+      "forms": [],
+      "id": "oewn-figure_skating__1.04.00..",
+      "lang": "en",
+      "lemma": "figure skating",
+      "synset": "oewn-00449733-n"
+    },
+    {
+      "definition": "skating using Rollerblades",
+      "forms": [],
+      "id": "oewn-rollerblading__1.04.00..",
+      "lang": "en",
+      "lemma": "rollerblading",
+      "synset": "oewn-00449857-n"
+    },
+    {
+      "definition": "skating on wheels",
+      "forms": [],
+      "id": "oewn-roller_skating__1.04.00..",
+      "lang": "en",
+      "lemma": "roller skating",
+      "synset": "oewn-00449943-n"
+    },
+    {
+      "definition": "the sport of skating on a skateboard",
+      "forms": [],
+      "id": "oewn-skateboarding__1.04.00..",
+      "lang": "en",
+      "lemma": "skateboarding",
+      "synset": "oewn-00450039-n"
+    },
+    {
+      "definition": "competitive skating on speed skates (usually around an oval course)",
+      "forms": [],
+      "id": "oewn-speed_skating__1.04.00..",
+      "lang": "en",
+      "lemma": "speed skating",
+      "synset": "oewn-00450153-n"
+    },
+    {
+      "definition": "the sport of engaging in contests of speed",
+      "forms": [],
+      "id": "oewn-racing__1.04.00..",
+      "lang": "en",
+      "lemma": "racing",
+      "synset": "oewn-00450280-n"
+    },
+    {
+      "definition": "the sport of racing automobiles",
+      "forms": [],
+      "id": "oewn-auto_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "auto racing",
+      "synset": "oewn-00450502-n"
+    },
+    {
+      "definition": "the sport of racing automobiles",
+      "forms": [],
+      "id": "oewn-car_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "car racing",
+      "synset": "oewn-00450502-n"
+    },
+    {
+      "definition": "the sport of racing boats",
+      "forms": [],
+      "id": "oewn-boat_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "boat racing",
+      "synset": "oewn-00450680-n"
+    },
+    {
+      "definition": "racing in high-speed motor boats",
+      "forms": [],
+      "id": "oewn-hydroplane_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "hydroplane racing",
+      "synset": "oewn-00450781-n"
+    },
+    {
+      "definition": "the sport of racing camels",
+      "forms": [],
+      "id": "oewn-camel_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "camel racing",
+      "synset": "oewn-00450877-n"
+    },
+    {
+      "definition": "the sport of racing greyhounds",
+      "forms": [],
+      "id": "oewn-greyhound_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "greyhound racing",
+      "synset": "oewn-00450962-n"
+    },
+    {
+      "definition": "the sport of racing horses",
+      "forms": [],
+      "id": "oewn-horse_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "horse racing",
+      "synset": "oewn-00451055-n"
+    },
+    {
+      "definition": "the sport of racing thoroughbred horses",
+      "forms": [],
+      "id": "oewn-thoroughbred_racing__1.04.00..",
+      "lang": "en",
+      "lemma": "thoroughbred racing",
+      "synset": "oewn-00451215-n"
+    },
+    {
+      "definition": "the sport of sitting on the back of a horse while controlling its movements",
+      "forms": [],
+      "id": "oewn-riding__1.04.01..",
+      "lang": "en",
+      "lemma": "riding",
+      "synset": "oewn-00451320-n"
+    },
+    {
+      "definition": "the sport of sitting on the back of a horse while controlling its movements",
+      "forms": [],
+      "id": "oewn-horseback_riding__1.04.01..",
+      "lang": "en",
+      "lemma": "horseback riding",
+      "synset": "oewn-00451320-n"
+    },
+    {
+      "definition": "the sport of sitting on the back of a horse while controlling its movements",
+      "forms": [],
+      "id": "oewn-equitation__1.04.00..",
+      "lang": "en",
+      "lemma": "equitation",
+      "synset": "oewn-00451320-n"
+    },
+    {
+      "definition": "a sport that tests horsemanship",
+      "forms": [],
+      "id": "oewn-equestrian_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "equestrian sport",
+      "synset": "oewn-00451686-n"
+    },
+    {
+      "definition": "a sport in which people ride across country on ponies",
+      "forms": [],
+      "id": "oewn-pony-trekking__1.04.00..",
+      "lang": "en",
+      "lemma": "pony-trekking",
+      "synset": "oewn-00451852-n"
+    },
+    {
+      "definition": "riding horses in competitions over set courses to demonstrate skill in jumping over obstacles",
+      "forms": [],
+      "id": "oewn-showjumping__1.04.00..",
+      "lang": "en",
+      "lemma": "showjumping",
+      "synset": "oewn-00451984-n"
+    },
+    {
+      "definition": "riding horses in competitions over set courses to demonstrate skill in jumping over obstacles",
+      "forms": [],
+      "id": "oewn-stadium_jumping__1.04.00..",
+      "lang": "en",
+      "lemma": "stadium jumping",
+      "synset": "oewn-00451984-n"
+    },
+    {
+      "definition": "riding horses across country over obstructions to demonstrate horsemanship",
+      "forms": [],
+      "id": "oewn-cross-country_riding__1.04.00..",
+      "lang": "en",
+      "lemma": "cross-country riding",
+      "synset": "oewn-00452172-n"
+    },
+    {
+      "definition": "riding horses across country over obstructions to demonstrate horsemanship",
+      "forms": [],
+      "id": "oewn-cross-country_jumping__1.04.00..",
+      "lang": "en",
+      "lemma": "cross-country jumping",
+      "synset": "oewn-00452172-n"
+    },
+    {
+      "definition": "the sport of traveling on a bicycle or motorcycle",
+      "forms": [],
+      "id": "oewn-cycling__1.04.00..",
+      "lang": "en",
+      "lemma": "cycling",
+      "synset": "oewn-00452356-n"
+    },
+    {
+      "definition": "riding a bicycle",
+      "forms": [],
+      "id": "oewn-bicycling__1.04.00..",
+      "lang": "en",
+      "lemma": "bicycling",
+      "synset": "oewn-00452549-n"
+    },
+    {
+      "definition": "riding a motorcycle",
+      "forms": [],
+      "id": "oewn-motorcycling__1.04.01..",
+      "lang": "en",
+      "lemma": "motorcycling",
+      "synset": "oewn-00452621-n"
+    },
+    {
+      "definition": "bicycling or motorcycling on sand dunes",
+      "forms": [],
+      "id": "oewn-dune_cycling__1.04.00..",
+      "lang": "en",
+      "lemma": "dune cycling",
+      "synset": "oewn-00452754-n"
+    },
+    {
+      "definition": "sport that involves killing animals (especially hunting)",
+      "forms": [],
+      "id": "oewn-blood_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "blood sport",
+      "synset": "oewn-00452852-n"
+    },
+    {
+      "definition": "the activity at a bullfight",
+      "forms": [],
+      "id": "oewn-bullfighting__1.04.00..",
+      "lang": "en",
+      "lemma": "bullfighting",
+      "synset": "oewn-00453020-n"
+    },
+    {
+      "definition": "the activity at a bullfight",
+      "forms": [],
+      "id": "oewn-tauromachy__1.04.00..",
+      "lang": "en",
+      "lemma": "tauromachy",
+      "synset": "oewn-00453020-n"
+    },
+    {
+      "definition": "participation in the sport of matching gamecocks in a cockfight",
+      "forms": [],
+      "id": "oewn-cockfighting__1.04.00..",
+      "lang": "en",
+      "lemma": "cockfighting",
+      "synset": "oewn-00453138-n"
+    },
+    {
+      "definition": "the pursuit and killing or capture of wild animals regarded as a sport",
+      "forms": [],
+      "id": "oewn-hunt__1.04.01..",
+      "lang": "en",
+      "lemma": "hunt",
+      "synset": "oewn-00453279-n"
+    },
+    {
+      "definition": "the pursuit and killing or capture of wild animals regarded as a sport",
+      "forms": [],
+      "id": "oewn-hunting__1.04.01..",
+      "lang": "en",
+      "lemma": "hunting",
+      "synset": "oewn-00453279-n"
+    },
+    {
+      "definition": "a hunt in which beaters force the game to flee in the direction of the hunter",
+      "forms": [],
+      "id": "oewn-battue__1.04.00..",
+      "lang": "en",
+      "lemma": "battue",
+      "synset": "oewn-00453758-n"
+    },
+    {
+      "definition": "hunting rabbits with beagles",
+      "forms": [],
+      "id": "oewn-beagling__1.04.00..",
+      "lang": "en",
+      "lemma": "beagling",
+      "synset": "oewn-00453888-n"
+    },
+    {
+      "definition": "hunting with dogs (usually greyhounds) that are trained to chase game (such as hares) by sight instead of by scent",
+      "forms": [],
+      "id": "oewn-coursing__1.04.00..",
+      "lang": "en",
+      "lemma": "coursing",
+      "synset": "oewn-00454150-n"
+    },
+    {
+      "definition": "hunting deer",
+      "forms": [],
+      "id": "oewn-deer_hunting__1.04.00..",
+      "lang": "en",
+      "lemma": "deer hunting",
+      "synset": "oewn-00454337-n"
+    },
+    {
+      "definition": "hunting deer",
+      "forms": [],
+      "id": "oewn-deer_hunt__1.04.00..",
+      "lang": "en",
+      "lemma": "deer hunt",
+      "synset": "oewn-00454337-n"
+    },
+    {
+      "definition": "hunting ducks",
+      "forms": [],
+      "id": "oewn-ducking__1.04.01..",
+      "lang": "en",
+      "lemma": "ducking",
+      "synset": "oewn-00454420-n"
+    },
+    {
+      "definition": "hunting ducks",
+      "forms": [],
+      "id": "oewn-duck_hunting__1.04.00..",
+      "lang": "en",
+      "lemma": "duck hunting",
+      "synset": "oewn-00454420-n"
+    },
+    {
+      "definition": "mounted hunters follow hounds in pursuit of a fox",
+      "forms": [],
+      "id": "oewn-fox_hunting__1.04.00..",
+      "lang": "en",
+      "lemma": "fox hunting",
+      "synset": "oewn-00454502-n"
+    },
+    {
+      "definition": "mounted hunters follow hounds in pursuit of a fox",
+      "forms": [],
+      "id": "oewn-foxhunt__1.04.00..",
+      "lang": "en",
+      "lemma": "foxhunt",
+      "synset": "oewn-00454502-n"
+    },
+    {
+      "definition": "the sport of hunting wild boar with spears",
+      "forms": [],
+      "id": "oewn-pigsticking__1.04.00..",
+      "lang": "en",
+      "lemma": "pigsticking",
+      "synset": "oewn-00454655-n"
+    },
+    {
+      "definition": "the act of someone who fishes as a diversion",
+      "forms": [],
+      "id": "oewn-fishing__1.04.00..",
+      "lang": "en",
+      "lemma": "fishing",
+      "synset": "oewn-00454959-n"
+    },
+    {
+      "definition": "the act of someone who fishes as a diversion",
+      "forms": [],
+      "id": "oewn-sportfishing__1.04.00..",
+      "lang": "en",
+      "lemma": "sportfishing",
+      "synset": "oewn-00454959-n"
+    },
+    {
+      "definition": "fishing with a hook and line (and usually a pole)",
+      "forms": [],
+      "id": "oewn-angling__1.04.00..",
+      "lang": "en",
+      "lemma": "angling",
+      "synset": "oewn-00455261-n"
+    },
+    {
+      "definition": "angling with an artificial fly as a lure",
+      "forms": [],
+      "id": "oewn-fly-fishing__1.04.00..",
+      "lang": "en",
+      "lemma": "fly-fishing",
+      "synset": "oewn-00455419-n"
+    },
+    {
+      "definition": "angling by drawing a baited line through the water",
+      "forms": [],
+      "id": "oewn-troll__1.04.00..",
+      "lang": "en",
+      "lemma": "troll",
+      "synset": "oewn-00455517-n"
+    },
+    {
+      "definition": "angling by drawing a baited line through the water",
+      "forms": [],
+      "id": "oewn-trolling__1.04.00..",
+      "lang": "en",
+      "lemma": "trolling",
+      "synset": "oewn-00455517-n"
+    },
+    {
+      "definition": "the act of throwing a fishing line out over the water by means of a rod and reel",
+      "forms": [],
+      "id": "oewn-casting__1.04.02..",
+      "lang": "en",
+      "lemma": "casting",
+      "synset": "oewn-00455648-n"
+    },
+    {
+      "definition": "the act of throwing a fishing line out over the water by means of a rod and reel",
+      "forms": [],
+      "id": "oewn-cast__1.04.02..",
+      "lang": "en",
+      "lemma": "cast",
+      "synset": "oewn-00455648-n"
+    },
+    {
+      "definition": "the single-handed rod casting of a relatively heavy (artificial) bait",
+      "forms": [],
+      "id": "oewn-bait_casting__1.04.00..",
+      "lang": "en",
+      "lemma": "bait casting",
+      "synset": "oewn-00455879-n"
+    },
+    {
+      "definition": "casting an artificial fly as a lure",
+      "forms": [],
+      "id": "oewn-fly_casting__1.04.00..",
+      "lang": "en",
+      "lemma": "fly casting",
+      "synset": "oewn-00456007-n"
+    },
+    {
+      "definition": "a cast that falls beyond the intended spot",
+      "forms": [],
+      "id": "oewn-overcast__1.04.00..",
+      "lang": "en",
+      "lemma": "overcast",
+      "synset": "oewn-00456100-n"
+    },
+    {
+      "definition": "casting (artificial) bait far out into the ocean (up to 200 yards) with the waves breaking around you",
+      "forms": [],
+      "id": "oewn-surf_casting__1.04.00..",
+      "lang": "en",
+      "lemma": "surf casting",
+      "synset": "oewn-00456197-n"
+    },
+    {
+      "definition": "casting (artificial) bait far out into the ocean (up to 200 yards) with the waves breaking around you",
+      "forms": [],
+      "id": "oewn-surf_fishing__1.04.00..",
+      "lang": "en",
+      "lemma": "surf fishing",
+      "synset": "oewn-00456197-n"
+    },
+    {
+      "definition": "a game played in daylight",
+      "forms": [],
+      "id": "oewn-day_game__1.04.00..",
+      "lang": "en",
+      "lemma": "day game",
+      "synset": "oewn-00457489-n"
+    },
+    {
+      "definition": "a game played under artificial illumination at night",
+      "forms": [],
+      "id": "oewn-night_game__1.04.00..",
+      "lang": "en",
+      "lemma": "night game",
+      "synset": "oewn-00457587-n"
+    },
+    {
+      "definition": "a game involving athletic activity",
+      "forms": [],
+      "id": "oewn-athletic_game__1.04.00..",
+      "lang": "en",
+      "lemma": "athletic game",
+      "synset": "oewn-00464307-n"
+    },
+    {
+      "definition": "a game played on an ice rink by two opposing teams of six skaters each who try to knock a flat round puck into the opponents' goal with angled hockey sticks",
+      "forms": [],
+      "id": "oewn-ice_hockey__1.04.00..",
+      "lang": "en",
+      "lemma": "ice hockey",
+      "synset": "oewn-00464604-n"
+    },
+    {
+      "definition": "a game played on an ice rink by two opposing teams of six skaters each who try to knock a flat round puck into the opponents' goal with angled hockey sticks",
+      "forms": [],
+      "id": "oewn-hockey__1.04.01..",
+      "lang": "en",
+      "lemma": "hockey",
+      "synset": "oewn-00464604-n"
+    },
+    {
+      "definition": "a game played on an ice rink by two opposing teams of six skaters each who try to knock a flat round puck into the opponents' goal with angled hockey sticks",
+      "forms": [],
+      "id": "oewn-hockey_game__1.04.00..",
+      "lang": "en",
+      "lemma": "hockey game",
+      "synset": "oewn-00464604-n"
+    },
+    {
+      "definition": "a game with two players who use rackets to strike a ball that is tethered to the top of a pole; the object is to wrap the string around the pole",
+      "forms": [],
+      "id": "oewn-tetherball__1.04.00..",
+      "lang": "en",
+      "lemma": "tetherball",
+      "synset": "oewn-00465345-n"
+    },
+    {
+      "definition": "a game played in a swimming pool by two teams of swimmers who try to throw an inflated ball into the opponents' goal",
+      "forms": [],
+      "id": "oewn-water_polo__1.04.00..",
+      "lang": "en",
+      "lemma": "water polo",
+      "synset": "oewn-00465546-n"
+    },
+    {
+      "definition": "an athletic game that is played outdoors",
+      "forms": [],
+      "id": "oewn-outdoor_game__1.04.00..",
+      "lang": "en",
+      "lemma": "outdoor game",
+      "synset": "oewn-00465719-n"
+    },
+    {
+      "definition": "a game played on a large open course with 9 or 18 holes; the object is use as few strokes as possible in playing all the holes",
+      "forms": [],
+      "id": "oewn-golf__1.04.00..",
+      "lang": "en",
+      "lemma": "golf",
+      "synset": "oewn-00465962-n"
+    },
+    {
+      "definition": "a game played on a large open course with 9 or 18 holes; the object is use as few strokes as possible in playing all the holes",
+      "forms": [],
+      "id": "oewn-golf_game__1.04.00..",
+      "lang": "en",
+      "lemma": "golf game",
+      "synset": "oewn-00465962-n"
+    },
+    {
+      "definition": "playing golf for money",
+      "forms": [],
+      "id": "oewn-professional_golf__1.04.00..",
+      "lang": "en",
+      "lemma": "professional golf",
+      "synset": "oewn-00467341-n"
+    },
+    {
+      "definition": "the activity of playing 18 holes of golf",
+      "forms": [],
+      "id": "oewn-round_of_golf__1.04.00..",
+      "lang": "en",
+      "lemma": "round of golf",
+      "synset": "oewn-00467445-n"
+    },
+    {
+      "definition": "the activity of playing 18 holes of golf",
+      "forms": [],
+      "id": "oewn-round__1.04.03..",
+      "lang": "en",
+      "lemma": "round",
+      "synset": "oewn-00467445-n"
+    },
+    {
+      "definition": "golf scoring by total strokes taken",
+      "forms": [],
+      "id": "oewn-medal_play__1.04.00..",
+      "lang": "en",
+      "lemma": "medal play",
+      "synset": "oewn-00467592-n"
+    },
+    {
+      "definition": "golf scoring by total strokes taken",
+      "forms": [],
+      "id": "oewn-stroke_play__1.04.00..",
+      "lang": "en",
+      "lemma": "stroke play",
+      "synset": "oewn-00467592-n"
+    },
+    {
+      "definition": "golf scoring by holes won",
+      "forms": [],
+      "id": "oewn-match_play__1.04.00..",
+      "lang": "en",
+      "lemma": "match play",
+      "synset": "oewn-00467698-n"
+    },
+    {
+      "definition": "a novelty version of golf played with golf balls and putters on a miniature course featuring many obstacles",
+      "forms": [],
+      "id": "oewn-miniature_golf__1.04.00..",
+      "lang": "en",
+      "lemma": "miniature golf",
+      "synset": "oewn-00467780-n"
+    },
+    {
+      "definition": "a game in which players hit a wooden ball through a series of hoops; the winner is the first to traverse all the hoops and hit a peg",
+      "forms": [],
+      "id": "oewn-croquet__1.04.00..",
+      "lang": "en",
+      "lemma": "croquet",
+      "synset": "oewn-00467948-n"
+    },
+    {
+      "definition": "a game that simulates military combat; players on one team try to eliminate players on the opposing team by shooting capsules of paint at them",
+      "forms": [],
+      "id": "oewn-paintball__1.04.00..",
+      "lang": "en",
+      "lemma": "paintball",
+      "synset": "oewn-00468190-n"
+    },
+    {
+      "definition": "a game in which iron rings (or open iron rings) are thrown at a stake in the ground in the hope of encircling it",
+      "forms": [],
+      "id": "oewn-quoits__1.04.00..",
+      "lang": "en",
+      "lemma": "quoits",
+      "synset": "oewn-00468388-n"
+    },
+    {
+      "definition": "a game in which iron rings (or open iron rings) are thrown at a stake in the ground in the hope of encircling it",
+      "forms": [],
+      "id": "oewn-horseshoes__1.04.00..",
+      "lang": "en",
+      "lemma": "horseshoes",
+      "synset": "oewn-00468388-n"
+    },
+    {
+      "definition": "a game in which players use long sticks to shove wooden disks onto the scoring area marked on a smooth surface",
+      "forms": [],
+      "id": "oewn-shuffleboard__1.04.00..",
+      "lang": "en",
+      "lemma": "shuffleboard",
+      "synset": "oewn-00468604-n"
+    },
+    {
+      "definition": "a game in which players use long sticks to shove wooden disks onto the scoring area marked on a smooth surface",
+      "forms": [],
+      "id": "oewn-shovelboard__1.04.00..",
+      "lang": "en",
+      "lemma": "shovelboard",
+      "synset": "oewn-00468604-n"
+    },
+    {
+      "definition": "an outdoor game played on a field of specified dimensions",
+      "forms": [],
+      "id": "oewn-field_game__1.04.00..",
+      "lang": "en",
+      "lemma": "field game",
+      "synset": "oewn-00468787-n"
+    },
+    {
+      "definition": "a game resembling ice hockey that is played on an open field; two opposing teams use curved hockey sticks try to drive a ball into the opponents' net",
+      "forms": [],
+      "id": "oewn-field_hockey__1.04.00..",
+      "lang": "en",
+      "lemma": "field hockey",
+      "synset": "oewn-00469063-n"
+    },
+    {
+      "definition": "a game resembling ice hockey that is played on an open field; two opposing teams use curved hockey sticks try to drive a ball into the opponents' net",
+      "forms": [],
+      "id": "oewn-hockey__1.04.00..",
+      "lang": "en",
+      "lemma": "hockey",
+      "synset": "oewn-00469063-n"
+    },
+    {
+      "definition": "a simple version of hockey played by children on the streets (or on ice or on a field) using a ball or can as the puck",
+      "forms": [],
+      "id": "oewn-shinny__1.04.00..",
+      "lang": "en",
+      "lemma": "shinny",
+      "synset": "oewn-00469374-n"
+    },
+    {
+      "definition": "a simple version of hockey played by children on the streets (or on ice or on a field) using a ball or can as the puck",
+      "forms": [],
+      "id": "oewn-shinney__1.04.00..",
+      "lang": "en",
+      "lemma": "shinney",
+      "synset": "oewn-00469374-n"
+    },
+    {
+      "definition": "any of various games played with a ball (round or oval) in which two teams try to kick or carry or propel the ball into each other's goal",
+      "forms": [],
+      "id": "oewn-football__1.04.00..",
+      "lang": "en",
+      "lemma": "football",
+      "synset": "oewn-00469555-n"
+    },
+    {
+      "definition": "any of various games played with a ball (round or oval) in which two teams try to kick or carry or propel the ball into each other's goal",
+      "forms": [],
+      "id": "oewn-football_game__1.04.00..",
+      "lang": "en",
+      "lemma": "football game",
+      "synset": "oewn-00469555-n"
+    },
+    {
+      "definition": "a game played by two teams of 11 players on a rectangular field 100 yards long; teams try to get possession of the ball and advance it across the opponents goal line in a series of (running or passing) plays",
+      "forms": [],
+      "id": "oewn-american_football__1.04.00..",
+      "lang": "en",
+      "lemma": "American football",
+      "synset": "oewn-00470726-n"
+    },
+    {
+      "definition": "a game played by two teams of 11 players on a rectangular field 100 yards long; teams try to get possession of the ball and advance it across the opponents goal line in a series of (running or passing) plays",
+      "forms": [],
+      "id": "oewn-american_football_game__1.04.00..",
+      "lang": "en",
+      "lemma": "American football game",
+      "synset": "oewn-00470726-n"
+    },
+    {
+      "definition": "football played for pay",
+      "forms": [],
+      "id": "oewn-professional_football__1.04.00..",
+      "lang": "en",
+      "lemma": "professional football",
+      "synset": "oewn-00471629-n"
+    },
+    {
+      "definition": "a version of American football in which the ball carrier is touched rather than tackled",
+      "forms": [],
+      "id": "oewn-touch_football__1.04.00..",
+      "lang": "en",
+      "lemma": "touch football",
+      "synset": "oewn-00471757-n"
+    },
+    {
+      "definition": "a traditional Irish game resembling hockey; played by two teams of 15 players each",
+      "forms": [],
+      "id": "oewn-hurling__1.04.00..",
+      "lang": "en",
+      "lemma": "hurling",
+      "synset": "oewn-00471905-n"
+    },
+    {
+      "definition": "a form of football played with an oval ball",
+      "forms": [],
+      "id": "oewn-rugby__1.04.00..",
+      "lang": "en",
+      "lemma": "rugby",
+      "synset": "oewn-00472041-n"
+    },
+    {
+      "definition": "a form of football played with an oval ball",
+      "forms": [],
+      "id": "oewn-rugby_football__1.04.00..",
+      "lang": "en",
+      "lemma": "rugby football",
+      "synset": "oewn-00472041-n"
+    },
+    {
+      "definition": "a form of football played with an oval ball",
+      "forms": [],
+      "id": "oewn-rugger__1.04.00..",
+      "lang": "en",
+      "lemma": "rugger",
+      "synset": "oewn-00472041-n"
+    },
+    {
+      "definition": "a field game played with a ball (especially baseball)",
+      "forms": [],
+      "id": "oewn-ball_game__1.04.00..",
+      "lang": "en",
+      "lemma": "ball game",
+      "synset": "oewn-00472512-n"
+    },
+    {
+      "definition": "a field game played with a ball (especially baseball)",
+      "forms": [],
+      "id": "oewn-ballgame__1.04.00..",
+      "lang": "en",
+      "lemma": "ballgame",
+      "synset": "oewn-00472512-n"
+    },
+    {
+      "definition": "a ball game played with a bat and ball between two teams of nine players; teams take turns at bat trying to score runs",
+      "forms": [],
+      "id": "oewn-baseball__1.04.00..",
+      "lang": "en",
+      "lemma": "baseball",
+      "synset": "oewn-00472688-n"
+    },
+    {
+      "definition": "a ball game played with a bat and ball between two teams of nine players; teams take turns at bat trying to score runs",
+      "forms": [],
+      "id": "oewn-baseball_game__1.04.00..",
+      "lang": "en",
+      "lemma": "baseball game",
+      "synset": "oewn-00472688-n"
+    },
+    {
+      "definition": "a ball game played with a bat and ball between two teams of nine players; teams take turns at bat trying to score runs",
+      "forms": [],
+      "id": "oewn-ball__1.04.01..",
+      "lang": "en",
+      "lemma": "ball",
+      "synset": "oewn-00472688-n"
+    },
+    {
+      "definition": "baseball played for money",
+      "forms": [],
+      "id": "oewn-professional_baseball__1.04.00..",
+      "lang": "en",
+      "lemma": "professional baseball",
+      "synset": "oewn-00475668-n"
+    },
+    {
+      "definition": "baseball as distinguished from softball",
+      "forms": [],
+      "id": "oewn-hardball__1.04.00..",
+      "lang": "en",
+      "lemma": "hardball",
+      "synset": "oewn-00475780-n"
+    },
+    {
+      "definition": "a game in which a pitcher does not allow any opposing player to reach base",
+      "forms": [],
+      "id": "oewn-perfect_game__1.04.00..",
+      "lang": "en",
+      "lemma": "perfect game",
+      "synset": "oewn-00475892-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team no hits",
+      "forms": [],
+      "id": "oewn-no-hit_game__1.04.00..",
+      "lang": "en",
+      "lemma": "no-hit game",
+      "synset": "oewn-00476025-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team no hits",
+      "forms": [],
+      "id": "oewn-no-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "no-hitter",
+      "synset": "oewn-00476025-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only one hit",
+      "forms": [],
+      "id": "oewn-one-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "one-hitter",
+      "synset": "oewn-00476153-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only one hit",
+      "forms": [],
+      "id": "oewn-1-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "1-hitter",
+      "synset": "oewn-00476153-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only 2 hits",
+      "forms": [],
+      "id": "oewn-two-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "two-hitter",
+      "synset": "oewn-00476284-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only 2 hits",
+      "forms": [],
+      "id": "oewn-2-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "2-hitter",
+      "synset": "oewn-00476284-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only 3 hits",
+      "forms": [],
+      "id": "oewn-three-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "three-hitter",
+      "synset": "oewn-00476414-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only 3 hits",
+      "forms": [],
+      "id": "oewn-3-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "3-hitter",
+      "synset": "oewn-00476414-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team 4 hits",
+      "forms": [],
+      "id": "oewn-four-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "four-hitter",
+      "synset": "oewn-00476546-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team 4 hits",
+      "forms": [],
+      "id": "oewn-4-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "4-hitter",
+      "synset": "oewn-00476546-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team 5 hits",
+      "forms": [],
+      "id": "oewn-five-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "five-hitter",
+      "synset": "oewn-00476672-n"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team 5 hits",
+      "forms": [],
+      "id": "oewn-5-hitter__1.04.00..",
+      "lang": "en",
+      "lemma": "5-hitter",
+      "synset": "oewn-00476672-n"
+    },
+    {
+      "definition": "a game closely resembling baseball that is played on a smaller diamond and with a ball that is larger",
+      "forms": [],
+      "id": "oewn-softball__1.04.00..",
+      "lang": "en",
+      "lemma": "softball",
+      "synset": "oewn-00476798-n"
+    },
+    {
+      "definition": "a game closely resembling baseball that is played on a smaller diamond and with a ball that is larger",
+      "forms": [],
+      "id": "oewn-softball_game__1.04.00..",
+      "lang": "en",
+      "lemma": "softball game",
+      "synset": "oewn-00476798-n"
+    },
+    {
+      "definition": "an English ball game similar to baseball",
+      "forms": [],
+      "id": "oewn-rounders__1.04.00..",
+      "lang": "en",
+      "lemma": "rounders",
+      "synset": "oewn-00477151-n"
+    },
+    {
+      "definition": "a form of baseball played in the streets with a rubber ball and broomstick handle",
+      "forms": [],
+      "id": "oewn-stickball__1.04.00..",
+      "lang": "en",
+      "lemma": "stickball",
+      "synset": "oewn-00477246-n"
+    },
+    {
+      "definition": "a form of baseball played in the streets with a rubber ball and broomstick handle",
+      "forms": [],
+      "id": "oewn-stickball_game__1.04.00..",
+      "lang": "en",
+      "lemma": "stickball game",
+      "synset": "oewn-00477246-n"
+    },
+    {
+      "definition": "a game played with a ball and bat by two teams of 11 players; teams take turns trying to score runs",
+      "forms": [],
+      "id": "oewn-cricket__1.04.00..",
+      "lang": "en",
+      "lemma": "cricket",
+      "synset": "oewn-00477400-n"
+    },
+    {
+      "definition": "a game invented by American Indians; now played by two teams who use long-handled rackets to catch and carry and throw the ball toward the opponents' goal",
+      "forms": [],
+      "id": "oewn-lacrosse__1.04.00..",
+      "lang": "en",
+      "lemma": "lacrosse",
+      "synset": "oewn-00478403-n"
+    },
+    {
+      "definition": "a game similar to field hockey but played on horseback using long-handled mallets and a wooden ball",
+      "forms": [],
+      "id": "oewn-polo__1.04.00..",
+      "lang": "en",
+      "lemma": "polo",
+      "synset": "oewn-00478650-n"
+    },
+    {
+      "definition": "a game using a leather ball six feet in diameter; the two side try to push it across the opponents' goal",
+      "forms": [],
+      "id": "oewn-pushball__1.04.00..",
+      "lang": "en",
+      "lemma": "pushball",
+      "synset": "oewn-00478838-n"
+    },
+    {
+      "definition": "a game between two teams whose players try to toss a Frisbee to one another until they cross the opponents goal; possession changes hands when the Frisbee is intercepted or touches the ground or goes out of bounds",
+      "forms": [],
+      "id": "oewn-ultimate_frisbee__1.04.00..",
+      "lang": "en",
+      "lemma": "ultimate frisbee",
+      "synset": "oewn-00478997-n"
+    },
+    {
+      "definition": "a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal",
+      "forms": [],
+      "id": "oewn-soccer__1.04.00..",
+      "lang": "en",
+      "lemma": "soccer",
+      "synset": "oewn-00479273-n"
+    },
+    {
+      "definition": "a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal",
+      "forms": [],
+      "id": "oewn-association_football__1.04.00..",
+      "lang": "en",
+      "lemma": "association football",
+      "synset": "oewn-00479273-n"
+    },
+    {
+      "definition": "an athletic game played on a court",
+      "forms": [],
+      "id": "oewn-court_game__1.04.00..",
+      "lang": "en",
+      "lemma": "court game",
+      "synset": "oewn-00480087-n"
+    },
+    {
+      "definition": "a game played in a walled court or against a single wall by two or four players who strike a rubber ball with their hands",
+      "forms": [],
+      "id": "oewn-handball__1.04.00..",
+      "lang": "en",
+      "lemma": "handball",
+      "synset": "oewn-00480451-n"
+    },
+    {
+      "definition": "a game played on a handball court with short-handled rackets",
+      "forms": [],
+      "id": "oewn-racquetball__1.04.00..",
+      "lang": "en",
+      "lemma": "racquetball",
+      "synset": "oewn-00480627-n"
+    },
+    {
+      "definition": "a game resembling handball; played on a court with a front wall and two side walls",
+      "forms": [],
+      "id": "oewn-fives__1.04.00..",
+      "lang": "en",
+      "lemma": "fives",
+      "synset": "oewn-00480745-n"
+    },
+    {
+      "definition": "a game played in an enclosed court by two or four players who strike the ball with long-handled rackets",
+      "forms": [
+        "squashes"
+      ],
+      "id": "oewn-squash__1.04.00..",
+      "lang": "en",
+      "lemma": "squash",
+      "synset": "oewn-00480898-n"
+    },
+    {
+      "definition": "a game played in an enclosed court by two or four players who strike the ball with long-handled rackets",
+      "forms": [],
+      "id": "oewn-squash_racquets__1.04.00..",
+      "lang": "en",
+      "lemma": "squash racquets",
+      "synset": "oewn-00480898-n"
+    },
+    {
+      "definition": "a game played in an enclosed court by two or four players who strike the ball with long-handled rackets",
+      "forms": [],
+      "id": "oewn-squash_rackets__1.04.00..",
+      "lang": "en",
+      "lemma": "squash rackets",
+      "synset": "oewn-00480898-n"
+    },
+    {
+      "definition": "a game in which two teams hit an inflated ball over a high net using their hands",
+      "forms": [],
+      "id": "oewn-volleyball__1.04.00..",
+      "lang": "en",
+      "lemma": "volleyball",
+      "synset": "oewn-00481222-n"
+    },
+    {
+      "definition": "a game in which two teams hit an inflated ball over a high net using their hands",
+      "forms": [],
+      "id": "oewn-volleyball_game__1.04.00..",
+      "lang": "en",
+      "lemma": "volleyball game",
+      "synset": "oewn-00481222-n"
+    },
+    {
+      "definition": "a game in which two teams hit an inflated ball over a high net using their hands",
+      "forms": [],
+      "id": "oewn-volley_ball__1.04.01..",
+      "lang": "en",
+      "lemma": "volley ball",
+      "synset": "oewn-00481222-n"
+    },
+    {
+      "definition": "a Basque or Spanish game played in a court with a ball and a wickerwork racket",
+      "forms": [],
+      "id": "oewn-jai_alai__1.04.00..",
+      "lang": "en",
+      "lemma": "jai alai",
+      "synset": "oewn-00481377-n"
+    },
+    {
+      "definition": "a Basque or Spanish game played in a court with a ball and a wickerwork racket",
+      "forms": [],
+      "id": "oewn-pelota__1.04.00..",
+      "lang": "en",
+      "lemma": "pelota",
+      "synset": "oewn-00481377-n"
+    },
+    {
+      "definition": "a game played on a court with light long-handled rackets used to volley a shuttlecock over a net",
+      "forms": [],
+      "id": "oewn-badminton__1.04.00..",
+      "lang": "en",
+      "lemma": "badminton",
+      "synset": "oewn-00481519-n"
+    },
+    {
+      "definition": "an ancient racket game",
+      "forms": [],
+      "id": "oewn-battledore__1.04.00..",
+      "lang": "en",
+      "lemma": "battledore",
+      "synset": "oewn-00481896-n"
+    },
+    {
+      "definition": "an ancient racket game",
+      "forms": [],
+      "id": "oewn-battledore_and_shuttlecock__1.04.00..",
+      "lang": "en",
+      "lemma": "battledore and shuttlecock",
+      "synset": "oewn-00481896-n"
+    },
+    {
+      "definition": "a game played on a court by two opposing teams of 5 players; points are scored by throwing the ball through an elevated horizontal hoop",
+      "forms": [],
+      "id": "oewn-basketball__1.04.00..",
+      "lang": "en",
+      "lemma": "basketball",
+      "synset": "oewn-00482004-n"
+    },
+    {
+      "definition": "a game played on a court by two opposing teams of 5 players; points are scored by throwing the ball through an elevated horizontal hoop",
+      "forms": [],
+      "id": "oewn-basketball_game__1.04.00..",
+      "lang": "en",
+      "lemma": "basketball game",
+      "synset": "oewn-00482004-n"
+    },
+    {
+      "definition": "a game played on a court by two opposing teams of 5 players; points are scored by throwing the ball through an elevated horizontal hoop",
+      "forms": [],
+      "id": "oewn-hoops__1.04.00..",
+      "lang": "en",
+      "lemma": "hoops",
+      "synset": "oewn-00482004-n"
+    },
+    {
+      "definition": "playing basketball for money",
+      "forms": [],
+      "id": "oewn-professional_basketball__1.04.00..",
+      "lang": "en",
+      "lemma": "professional basketball",
+      "synset": "oewn-00482814-n"
+    },
+    {
+      "definition": "game played mainly on board ocean liners; players toss a ring back and forth over a net that is stretched across a small court",
+      "forms": [],
+      "id": "oewn-deck_tennis__1.04.00..",
+      "lang": "en",
+      "lemma": "deck tennis",
+      "synset": "oewn-00482949-n"
+    },
+    {
+      "definition": "a team game that resembles basketball; a soccer ball is to be thrown so that it passes through a ring on the top of a post",
+      "forms": [],
+      "id": "oewn-netball__1.04.00..",
+      "lang": "en",
+      "lemma": "netball",
+      "synset": "oewn-00483133-n"
+    },
+    {
+      "definition": "a game played with rackets by two or four players who hit a ball back and forth over a net that divides the court",
+      "forms": [],
+      "id": "oewn-tennis__1.04.00..",
+      "lang": "en",
+      "lemma": "tennis",
+      "synset": "oewn-00483309-n"
+    },
+    {
+      "definition": "a game played with rackets by two or four players who hit a ball back and forth over a net that divides the court",
+      "forms": [],
+      "id": "oewn-lawn_tennis__1.04.00..",
+      "lang": "en",
+      "lemma": "lawn tennis",
+      "synset": "oewn-00483309-n"
+    },
+    {
+      "definition": "playing tennis for money",
+      "forms": [],
+      "id": "oewn-professional_tennis__1.04.00..",
+      "lang": "en",
+      "lemma": "professional tennis",
+      "synset": "oewn-00484216-n"
+    },
+    {
+      "definition": "tennis played with one person on each side",
+      "forms": [],
+      "id": "oewn-singles__1.04.00..",
+      "lang": "en",
+      "lemma": "singles",
+      "synset": "oewn-00484324-n"
+    },
+    {
+      "definition": "badminton played with one person on each side",
+      "forms": [],
+      "id": "oewn-singles__1.04.01..",
+      "lang": "en",
+      "lemma": "singles",
+      "synset": "oewn-00484420-n"
+    },
+    {
+      "definition": "tennis played with two players on each side",
+      "forms": [],
+      "id": "oewn-doubles__1.04.00..",
+      "lang": "en",
+      "lemma": "doubles",
+      "synset": "oewn-00484519-n"
+    },
+    {
+      "definition": "badminton played with two players on each side",
+      "forms": [],
+      "id": "oewn-doubles__1.04.01..",
+      "lang": "en",
+      "lemma": "doubles",
+      "synset": "oewn-00484616-n"
+    },
+    {
+      "definition": "an ancient form of tennis played in a four-walled court",
+      "forms": [],
+      "id": "oewn-royal_tennis__1.04.00..",
+      "lang": "en",
+      "lemma": "royal tennis",
+      "synset": "oewn-00484716-n"
+    },
+    {
+      "definition": "an ancient form of tennis played in a four-walled court",
+      "forms": [],
+      "id": "oewn-real_tennis__1.04.00..",
+      "lang": "en",
+      "lemma": "real tennis",
+      "synset": "oewn-00484716-n"
+    },
+    {
+      "definition": "an ancient form of tennis played in a four-walled court",
+      "forms": [],
+      "id": "oewn-court_tennis__1.04.00..",
+      "lang": "en",
+      "lemma": "court tennis",
+      "synset": "oewn-00484716-n"
+    },
+    {
+      "definition": "an Italian game similar to tennis",
+      "forms": [],
+      "id": "oewn-pallone__1.04.00..",
+      "lang": "en",
+      "lemma": "pallone",
+      "synset": "oewn-00484859-n"
+    },
+    {
+      "definition": "an active diversion requiring physical exertion and competition",
+      "forms": [],
+      "id": "oewn-sport__1.04.00..",
+      "lang": "en",
+      "lemma": "sport",
+      "synset": "oewn-00524569-n"
+    },
+    {
+      "definition": "an active diversion requiring physical exertion and competition",
+      "forms": [],
+      "id": "oewn-athletics__1.04.00..",
+      "lang": "en",
+      "lemma": "athletics",
+      "synset": "oewn-00524569-n"
+    },
+    {
+      "definition": "a form of golf in which you putt from positions arranged on the circumference of a circle around the hole",
+      "forms": [],
+      "id": "oewn-clock_golf__1.04.00..",
+      "lang": "en",
+      "lemma": "clock golf",
+      "synset": "oewn-00574143-n"
+    },
+    {
+      "definition": "a stolen base; an instance in which a base runner advances safely during the delivery of a pitch (without the help of a hit or walk or passed ball or wild pitch)",
+      "forms": [],
+      "id": "oewn-steal__1.04.00..",
+      "lang": "en",
+      "lemma": "steal",
+      "synset": "oewn-00726403-n"
+    },
+    {
+      "definition": "a sport adapted from jujitsu (using principles of not resisting) and similar to wrestling; developed in Japan",
+      "forms": [],
+      "id": "oewn-judo__1.04.00..",
+      "lang": "en",
+      "lemma": "judo",
+      "synset": "oewn-00827434-n"
+    },
+    {
+      "definition": "a sport that many people find entertaining to watch",
+      "forms": [],
+      "id": "oewn-spectator_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "spectator sport",
+      "synset": "oewn-00888646-n"
+    },
+    {
+      "definition": "a sport that involves competition between teams of players",
+      "forms": [],
+      "id": "oewn-team_sport__1.04.00..",
+      "lang": "en",
+      "lemma": "team sport",
+      "synset": "oewn-00889222-n"
+    },
+    {
+      "definition": "an equestrian competition; the first day is dressage; the second is cross-country jumping; the third is stadium jumping",
+      "forms": [],
+      "id": "oewn-three-day_event__1.11.00..",
+      "lang": "en",
+      "lemma": "three-day event",
+      "synset": "oewn-07476007-n"
+    },
+    {
+      "definition": "a real-life version of the game of Quidditch from the Harry Potter series",
+      "forms": [],
+      "id": "oewn-quadball__1.04.00..",
+      "lang": "en",
+      "lemma": "quadball",
+      "synset": "oewn-82439697-n"
+    },
+    {
+      "definition": "a real-life version of the game of Quidditch from the Harry Potter series",
+      "forms": [],
+      "id": "oewn-quidditch__1.04.01..",
+      "lang": "en",
+      "lemma": "quidditch",
+      "synset": "oewn-82439697-n"
+    },
+    {
+      "definition": "a real-life version of the game of Quidditch from the Harry Potter series",
+      "forms": [],
+      "id": "oewn-muggle_quidditch__1.04.00..",
+      "lang": "en",
+      "lemma": "muggle quidditch",
+      "synset": "oewn-82439697-n"
+    },
+    {
+      "definition": "sport of riding on skis, while being pulled by a boat",
+      "forms": [],
+      "id": "oewn-water_skiing__1.04.01..",
+      "lang": "en",
+      "lemma": "water skiing",
+      "synset": "oewn-88363152-n"
+    },
+    {
+      "definition": "sport of riding on skis, while being pulled by a boat",
+      "forms": [],
+      "id": "oewn-water-skiing__1.04.01..",
+      "lang": "en",
+      "lemma": "water-skiing",
+      "synset": "oewn-88363152-n"
+    },
+    {
+      "definition": "sport of riding on skis, while being pulled by a boat",
+      "forms": [],
+      "id": "oewn-waterskiing__1.04.01..",
+      "lang": "en",
+      "lemma": "waterskiing",
+      "synset": "oewn-88363152-n"
+    },
+    {
+      "definition": "a game played on broomsticks in the Harry Potter series",
+      "forms": [],
+      "id": "oewn-quidditch__1.04.00..",
+      "lang": "en",
+      "lemma": "Quidditch",
+      "synset": "oewn-88820628-n"
+    },
+    {
+      "definition": "An athletic discipline, in which practitioners traverse any environment in the most efficient way possible using their physical abilities, and which commonly involves running, jumping, vaulting, rolling, and other similar physical movements.",
+      "forms": [],
+      "id": "oewn-parkour__1.04.01..",
+      "lang": "en",
+      "lemma": "parkour",
+      "synset": "oewn-91001581-n"
+    },
+    {
+      "definition": "a form of mind sports where the primary aspects of the sport are facilitated by video games",
+      "forms": [],
+      "id": "oewn-electronic_sports__1.04.01..",
+      "lang": "en",
+      "lemma": "electronic sports",
+      "synset": "oewn-91001611-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a batted or served ball that skims along close to the ground",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00132167-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "daisy cutter"
+    },
+    {
+      "definition": "maneuvers of a horse in response to body signals by the rider",
+      "hypernyms": [
+        "oewn-00451686-n"
+      ],
+      "id": "oewn-00288844-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "dressage"
+    },
+    {
+      "definition": "a light leap by a horse in which both hind legs leave the ground before the forelegs come down",
+      "hypernyms": [
+        "oewn-00288844-n"
+      ],
+      "id": "oewn-00289034-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "curvet"
+    },
+    {
+      "definition": "a cadenced trot executed by the horse in one spot",
+      "hypernyms": [
+        "oewn-00288844-n"
+      ],
+      "id": "oewn-00289228-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "piaffe"
+    },
+    {
+      "definition": "walking on a tightrope or slack rope",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00325804-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "funambulism"
+    },
+    {
+      "definition": "the sport or pastime of scaling rock masses on mountain sides (especially with the help of ropes and special equipment)",
+      "hypernyms": [
+        "oewn-00325936-n",
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00326920-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "rock climbing"
+    },
+    {
+      "definition": "a sport that necessarily involves body contact between opposing players",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00434398-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "contact sport"
+    },
+    {
+      "definition": "a sport that is played outdoors",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00434601-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "outdoor sport"
+    },
+    {
+      "definition": "a sport that involves exercises intended to display strength and balance and agility",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00434742-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "gymnastics"
+    },
+    {
+      "definition": "the gymnastic moves of an acrobat",
+      "hypernyms": [
+        "oewn-00434742-n"
+      ],
+      "id": "oewn-00435015-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "acrobatics"
+    },
+    {
+      "definition": "participating in athletic sports performed on a running track or on the field associated with it",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00440766-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "track and field"
+    },
+    {
+      "definition": "the act of participating in an athletic competition involving running on a track",
+      "hypernyms": [
+        "oewn-00440766-n"
+      ],
+      "id": "oewn-00440979-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "track"
+    },
+    {
+      "definition": "the act of participating in an athletic competition in which you must jump",
+      "hypernyms": [
+        "oewn-00440766-n"
+      ],
+      "id": "oewn-00441158-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "jumping"
+    },
+    {
+      "definition": "the act of jumping as far as possible from a running start",
+      "hypernyms": [
+        "oewn-00441158-n"
+      ],
+      "id": "oewn-00441322-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "broad jump"
+    },
+    {
+      "definition": "the act of jumping as high as possible over a horizontal bar",
+      "hypernyms": [
+        "oewn-00441158-n"
+      ],
+      "id": "oewn-00441449-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "high jump"
+    },
+    {
+      "definition": "jumping over the bar backwards and head first",
+      "hypernyms": [
+        "oewn-00441449-n"
+      ],
+      "id": "oewn-00441583-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "Fosbury flop"
+    },
+    {
+      "definition": "a sport in which participants must travel on skis",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00441687-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "skiing"
+    },
+    {
+      "definition": "the sport of skiing across the countryside (rather than downhill)",
+      "hypernyms": [
+        "oewn-00441687-n"
+      ],
+      "id": "oewn-00441881-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cross-country skiing"
+    },
+    {
+      "definition": "the act of performing a jump on skis from a high ramp overhanging a snow covered slope",
+      "hypernyms": [
+        "oewn-00441687-n"
+      ],
+      "id": "oewn-00442013-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "ski jumping"
+    },
+    {
+      "definition": "sports that involve bodies of water",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00442764-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "water sport"
+    },
+    {
+      "definition": "the act of swimming",
+      "hypernyms": [
+        "oewn-00442764-n"
+      ],
+      "id": "oewn-00443055-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "swimming"
+    },
+    {
+      "definition": "the act of swimming for pleasure or recreation",
+      "hypernyms": [
+        "oewn-00443055-n"
+      ],
+      "id": "oewn-00443377-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bathe"
+    },
+    {
+      "definition": "a naked swim",
+      "hypernyms": [
+        "oewn-00443055-n"
+      ],
+      "id": "oewn-00443639-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "skinny-dip"
+    },
+    {
+      "definition": "a brief swim in water",
+      "hypernyms": [
+        "oewn-00443055-n"
+      ],
+      "id": "oewn-00443832-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "dip"
+    },
+    {
+      "definition": "a headlong plunge into water",
+      "hypernyms": [
+        "oewn-00443055-n"
+      ],
+      "id": "oewn-00443966-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "dive"
+    },
+    {
+      "definition": "the act of someone who floats on the water",
+      "hypernyms": [
+        "oewn-00443055-n"
+      ],
+      "id": "oewn-00444216-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "floating"
+    },
+    {
+      "definition": "a floating position with the face down and arms stretched forward",
+      "hypernyms": [
+        "oewn-00444216-n"
+      ],
+      "id": "oewn-00444360-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "dead-man's float"
+    },
+    {
+      "definition": "a dive in which the abdomen bears the main force of impact with the water",
+      "hypernyms": [
+        "oewn-00443966-n"
+      ],
+      "id": "oewn-00444502-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "belly flop"
+    },
+    {
+      "definition": "diving into the water from a steep overhanging cliff",
+      "hypernyms": [
+        "oewn-00443966-n"
+      ],
+      "id": "oewn-00444677-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cliff diving"
+    },
+    {
+      "definition": "a dive in which the diver somersaults before entering the water",
+      "hypernyms": [
+        "oewn-00443966-n"
+      ],
+      "id": "oewn-00444788-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "flip"
+    },
+    {
+      "definition": "a dive in which the diver throws the feet forward to complete a full backward somersault and enters the water feet first and facing away from the diving board",
+      "hypernyms": [
+        "oewn-00443966-n"
+      ],
+      "id": "oewn-00444902-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "gainer"
+    },
+    {
+      "definition": "a dive in which the diver throws the feet forward and up to complete a half backward somersault and enters the water facing the diving board",
+      "hypernyms": [
+        "oewn-00443966-n"
+      ],
+      "id": "oewn-00445127-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "half gainer"
+    },
+    {
+      "definition": "a dive in which the diver bends to touch the ankles before straightening out",
+      "hypernyms": [
+        "oewn-00443966-n"
+      ],
+      "id": "oewn-00445325-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "jackknife"
+    },
+    {
+      "definition": "a dive in which the diver arches the back with arms outstretched before entering the water",
+      "hypernyms": [
+        "oewn-00443966-n"
+      ],
+      "id": "oewn-00445475-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "swan dive"
+    },
+    {
+      "definition": "underwater swimming without any more breathing equipment than a snorkel",
+      "hypernyms": [
+        "oewn-00443055-n"
+      ],
+      "id": "oewn-00445636-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "skin diving"
+    },
+    {
+      "definition": "skin diving with scuba apparatus",
+      "hypernyms": [
+        "oewn-00445636-n"
+      ],
+      "id": "oewn-00445831-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "scuba diving"
+    },
+    {
+      "definition": "skin diving with a snorkel",
+      "hypernyms": [
+        "oewn-00445636-n"
+      ],
+      "id": "oewn-00445922-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "snorkeling"
+    },
+    {
+      "definition": "the sport of riding a surfboard toward the shore on the crest of a wave",
+      "hypernyms": [
+        "oewn-00442764-n"
+      ],
+      "id": "oewn-00446040-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "surfing"
+    },
+    {
+      "definition": "skiing on water while being towed by a motorboat",
+      "hypernyms": [
+        "oewn-00442764-n"
+      ],
+      "id": "oewn-00446211-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "water-skiing"
+    },
+    {
+      "definition": "the act of rowing as a sport",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00446336-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "rowing"
+    },
+    {
+      "definition": "a stroke of the oar that either misses the water or digs too deeply",
+      "hypernyms": [
+        "oewn-00446336-n"
+      ],
+      "id": "oewn-00446514-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "crab"
+    },
+    {
+      "definition": "rowing by a single oarsman in a racing shell",
+      "hypernyms": [
+        "oewn-00446336-n"
+      ],
+      "id": "oewn-00446670-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "sculling"
+    },
+    {
+      "definition": "fighting with the fists",
+      "hypernyms": [
+        "oewn-00434398-n"
+      ],
+      "id": "oewn-00446787-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "boxing"
+    },
+    {
+      "definition": "boxing for money",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00446787-n"
+      ],
+      "id": "oewn-00447296-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "professional boxing"
+    },
+    {
+      "definition": "boxing at close quarters",
+      "hypernyms": [
+        "oewn-00446787-n"
+      ],
+      "id": "oewn-00447396-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "infighting"
+    },
+    {
+      "definition": "a boxing or wrestling match",
+      "hypernyms": [
+        "oewn-00446787-n"
+      ],
+      "id": "oewn-00447478-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "fight"
+    },
+    {
+      "definition": "a boxing tactic: pretending to be trapped against the ropes while your opponent wears themself out throwing punches",
+      "hypernyms": [
+        "oewn-00446787-n"
+      ],
+      "id": "oewn-00447617-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "rope-a-dope"
+    },
+    {
+      "definition": "making the motions of attack and defense with the fists and arms; a part of training for a boxer",
+      "hypernyms": [
+        "oewn-00446787-n"
+      ],
+      "id": "oewn-00447789-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "spar"
+    },
+    {
+      "definition": "the sport of shooting arrows with a bow",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00447965-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "archery"
+    },
+    {
+      "definition": "the sport of riding on a sled or sleigh",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00448058-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "sledding"
+    },
+    {
+      "definition": "riding on a long light sled with low handrails",
+      "hypernyms": [
+        "oewn-00448058-n"
+      ],
+      "id": "oewn-00448206-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "tobogganing"
+    },
+    {
+      "definition": "riding a light one-man toboggan",
+      "hypernyms": [
+        "oewn-00448206-n"
+      ],
+      "id": "oewn-00448346-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "luging"
+    },
+    {
+      "definition": "riding on a bobsled",
+      "hypernyms": [
+        "oewn-00448058-n"
+      ],
+      "id": "oewn-00448448-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bobsledding"
+    },
+    {
+      "definition": "the sport of hand-to-hand struggle between unarmed contestants who try to throw each other down",
+      "hypernyms": [
+        "oewn-00434398-n"
+      ],
+      "id": "oewn-00448525-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "wrestling"
+    },
+    {
+      "definition": "a wrestling maneuver",
+      "hypernyms": [
+        "oewn-00448525-n"
+      ],
+      "id": "oewn-00448864-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "flying mare"
+    },
+    {
+      "definition": "a style of wrestling where the wrestlers are forbidden to tackle or trip or use holds below the waist",
+      "hypernyms": [
+        "oewn-00448525-n"
+      ],
+      "id": "oewn-00448942-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "Greco-Roman wrestling"
+    },
+    {
+      "definition": "wrestling for money",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00448525-n"
+      ],
+      "id": "oewn-00449111-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "professional wrestling"
+    },
+    {
+      "definition": "a Japanese form of wrestling; you lose if you are forced out of a small ring or if any part of your body (other than your feet) touches the ground",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00448525-n"
+      ],
+      "id": "oewn-00449217-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "sumo"
+    },
+    {
+      "definition": "the sport of gliding on skates",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00449451-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "skating"
+    },
+    {
+      "definition": "skating on ice",
+      "hypernyms": [
+        "oewn-00449451-n"
+      ],
+      "id": "oewn-00449625-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "ice skating"
+    },
+    {
+      "definition": "ice skating where the skates trace outlines of selected figures",
+      "hypernyms": [
+        "oewn-00449625-n"
+      ],
+      "id": "oewn-00449733-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "figure skating"
+    },
+    {
+      "definition": "skating using Rollerblades",
+      "hypernyms": [
+        "oewn-00449943-n"
+      ],
+      "id": "oewn-00449857-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "rollerblading"
+    },
+    {
+      "definition": "skating on wheels",
+      "hypernyms": [
+        "oewn-00449451-n"
+      ],
+      "id": "oewn-00449943-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "roller skating"
+    },
+    {
+      "definition": "the sport of skating on a skateboard",
+      "hypernyms": [
+        "oewn-00449451-n"
+      ],
+      "id": "oewn-00450039-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "skateboarding"
+    },
+    {
+      "definition": "competitive skating on speed skates (usually around an oval course)",
+      "hypernyms": [
+        "oewn-00449451-n"
+      ],
+      "id": "oewn-00450153-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "speed skating"
+    },
+    {
+      "definition": "the sport of engaging in contests of speed",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00450280-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "racing"
+    },
+    {
+      "definition": "the sport of racing automobiles",
+      "hypernyms": [
+        "oewn-00450280-n"
+      ],
+      "id": "oewn-00450502-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "auto racing"
+    },
+    {
+      "definition": "the sport of racing boats",
+      "hypernyms": [
+        "oewn-00450280-n"
+      ],
+      "id": "oewn-00450680-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "boat racing"
+    },
+    {
+      "definition": "racing in high-speed motor boats",
+      "hypernyms": [
+        "oewn-00450680-n"
+      ],
+      "id": "oewn-00450781-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "hydroplane racing"
+    },
+    {
+      "definition": "the sport of racing camels",
+      "hypernyms": [
+        "oewn-00450280-n"
+      ],
+      "id": "oewn-00450877-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "camel racing"
+    },
+    {
+      "definition": "the sport of racing greyhounds",
+      "hypernyms": [
+        "oewn-00450280-n"
+      ],
+      "id": "oewn-00450962-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "greyhound racing"
+    },
+    {
+      "definition": "the sport of racing horses",
+      "hypernyms": [
+        "oewn-00450280-n"
+      ],
+      "id": "oewn-00451055-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "horse racing"
+    },
+    {
+      "definition": "the sport of racing thoroughbred horses",
+      "hypernyms": [
+        "oewn-00451055-n"
+      ],
+      "id": "oewn-00451215-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "thoroughbred racing"
+    },
+    {
+      "definition": "the sport of sitting on the back of a horse while controlling its movements",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00451320-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "riding"
+    },
+    {
+      "definition": "a sport that tests horsemanship",
+      "hypernyms": [
+        "oewn-00451320-n"
+      ],
+      "id": "oewn-00451686-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "equestrian sport"
+    },
+    {
+      "definition": "a sport in which people ride across country on ponies",
+      "hypernyms": [
+        "oewn-00451320-n"
+      ],
+      "id": "oewn-00451852-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "pony-trekking"
+    },
+    {
+      "definition": "riding horses in competitions over set courses to demonstrate skill in jumping over obstacles",
+      "hypernyms": [
+        "oewn-00451686-n"
+      ],
+      "id": "oewn-00451984-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "showjumping"
+    },
+    {
+      "definition": "riding horses across country over obstructions to demonstrate horsemanship",
+      "hypernyms": [
+        "oewn-00451686-n"
+      ],
+      "id": "oewn-00452172-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cross-country riding"
+    },
+    {
+      "definition": "the sport of traveling on a bicycle or motorcycle",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00452356-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "cycling"
+    },
+    {
+      "definition": "riding a bicycle",
+      "hypernyms": [
+        "oewn-00452356-n"
+      ],
+      "id": "oewn-00452549-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bicycling"
+    },
+    {
+      "definition": "riding a motorcycle",
+      "hypernyms": [
+        "oewn-00452356-n"
+      ],
+      "id": "oewn-00452621-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "motorcycling"
+    },
+    {
+      "definition": "bicycling or motorcycling on sand dunes",
+      "hypernyms": [
+        "oewn-00452356-n"
+      ],
+      "id": "oewn-00452754-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "dune cycling"
+    },
+    {
+      "definition": "sport that involves killing animals (especially hunting)",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00452852-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "blood sport"
+    },
+    {
+      "definition": "the activity at a bullfight",
+      "hypernyms": [
+        "oewn-00452852-n"
+      ],
+      "id": "oewn-00453020-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bullfighting"
+    },
+    {
+      "definition": "participation in the sport of matching gamecocks in a cockfight",
+      "hypernyms": [
+        "oewn-00452852-n"
+      ],
+      "id": "oewn-00453138-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cockfighting"
+    },
+    {
+      "definition": "the pursuit and killing or capture of wild animals regarded as a sport",
+      "hypernyms": [
+        "oewn-00434601-n",
+        "oewn-00452852-n"
+      ],
+      "id": "oewn-00453279-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "hunt"
+    },
+    {
+      "definition": "a hunt in which beaters force the game to flee in the direction of the hunter",
+      "hypernyms": [
+        "oewn-00453279-n"
+      ],
+      "id": "oewn-00453758-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "battue"
+    },
+    {
+      "definition": "hunting rabbits with beagles",
+      "hypernyms": [
+        "oewn-00453279-n"
+      ],
+      "id": "oewn-00453888-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "beagling"
+    },
+    {
+      "definition": "hunting with dogs (usually greyhounds) that are trained to chase game (such as hares) by sight instead of by scent",
+      "hypernyms": [
+        "oewn-00453279-n"
+      ],
+      "id": "oewn-00454150-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "coursing"
+    },
+    {
+      "definition": "hunting deer",
+      "hypernyms": [
+        "oewn-00453279-n"
+      ],
+      "id": "oewn-00454337-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "deer hunting"
+    },
+    {
+      "definition": "hunting ducks",
+      "hypernyms": [
+        "oewn-00453279-n"
+      ],
+      "id": "oewn-00454420-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "ducking"
+    },
+    {
+      "definition": "mounted hunters follow hounds in pursuit of a fox",
+      "hypernyms": [
+        "oewn-00453279-n"
+      ],
+      "id": "oewn-00454502-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "fox hunting"
+    },
+    {
+      "definition": "the sport of hunting wild boar with spears",
+      "hypernyms": [
+        "oewn-00453279-n"
+      ],
+      "id": "oewn-00454655-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "pigsticking"
+    },
+    {
+      "definition": "the act of someone who fishes as a diversion",
+      "hypernyms": [
+        "oewn-00434601-n"
+      ],
+      "id": "oewn-00454959-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "fishing"
+    },
+    {
+      "definition": "fishing with a hook and line (and usually a pole)",
+      "hypernyms": [
+        "oewn-00454959-n"
+      ],
+      "id": "oewn-00455261-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "angling"
+    },
+    {
+      "definition": "angling with an artificial fly as a lure",
+      "hypernyms": [
+        "oewn-00455261-n"
+      ],
+      "id": "oewn-00455419-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "fly-fishing"
+    },
+    {
+      "definition": "angling by drawing a baited line through the water",
+      "hypernyms": [
+        "oewn-00455261-n"
+      ],
+      "id": "oewn-00455517-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "troll"
+    },
+    {
+      "definition": "the act of throwing a fishing line out over the water by means of a rod and reel",
+      "hypernyms": [
+        "oewn-00454959-n"
+      ],
+      "id": "oewn-00455648-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "casting"
+    },
+    {
+      "definition": "the single-handed rod casting of a relatively heavy (artificial) bait",
+      "hypernyms": [
+        "oewn-00455648-n"
+      ],
+      "id": "oewn-00455879-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bait casting"
+    },
+    {
+      "definition": "casting an artificial fly as a lure",
+      "hypernyms": [
+        "oewn-00455648-n"
+      ],
+      "id": "oewn-00456007-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "fly casting"
+    },
+    {
+      "definition": "a cast that falls beyond the intended spot",
+      "hypernyms": [
+        "oewn-00455648-n"
+      ],
+      "id": "oewn-00456100-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "overcast"
+    },
+    {
+      "definition": "casting (artificial) bait far out into the ocean (up to 200 yards) with the waves breaking around you",
+      "hypernyms": [
+        "oewn-00455648-n"
+      ],
+      "id": "oewn-00456197-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "surf casting"
+    },
+    {
+      "definition": "a game played in daylight",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00457489-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "day game"
+    },
+    {
+      "definition": "a game played under artificial illumination at night",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00457587-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "night game"
+    },
+    {
+      "definition": "a game involving athletic activity",
+      "hypernyms": [
+        "oewn-00456623-n",
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00464307-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 6,
+      "name": "athletic game"
+    },
+    {
+      "definition": "a game played on an ice rink by two opposing teams of six skaters each who try to knock a flat round puck into the opponents' goal with angled hockey sticks",
+      "hypernyms": [
+        "oewn-00434398-n",
+        "oewn-00464307-n"
+      ],
+      "id": "oewn-00464604-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "ice hockey"
+    },
+    {
+      "definition": "a game with two players who use rackets to strike a ball that is tethered to the top of a pole; the object is to wrap the string around the pole",
+      "hypernyms": [
+        "oewn-00464307-n"
+      ],
+      "id": "oewn-00465345-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "tetherball"
+    },
+    {
+      "definition": "a game played in a swimming pool by two teams of swimmers who try to throw an inflated ball into the opponents' goal",
+      "hypernyms": [
+        "oewn-00464307-n"
+      ],
+      "id": "oewn-00465546-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "water polo"
+    },
+    {
+      "definition": "an athletic game that is played outdoors",
+      "hypernyms": [
+        "oewn-00464307-n"
+      ],
+      "id": "oewn-00465719-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "outdoor game"
+    },
+    {
+      "definition": "a game played on a large open course with 9 or 18 holes; the object is use as few strokes as possible in playing all the holes",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00465962-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "golf"
+    },
+    {
+      "definition": "playing golf for money",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00465962-n"
+      ],
+      "id": "oewn-00467341-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "professional golf"
+    },
+    {
+      "definition": "the activity of playing 18 holes of golf",
+      "hypernyms": [
+        "oewn-00465962-n"
+      ],
+      "id": "oewn-00467445-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "round of golf"
+    },
+    {
+      "definition": "golf scoring by total strokes taken",
+      "hypernyms": [
+        "oewn-00465962-n"
+      ],
+      "id": "oewn-00467592-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "medal play"
+    },
+    {
+      "definition": "golf scoring by holes won",
+      "hypernyms": [
+        "oewn-00465962-n"
+      ],
+      "id": "oewn-00467698-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "match play"
+    },
+    {
+      "definition": "a novelty version of golf played with golf balls and putters on a miniature course featuring many obstacles",
+      "hypernyms": [
+        "oewn-00465962-n"
+      ],
+      "id": "oewn-00467780-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "miniature golf"
+    },
+    {
+      "definition": "a game in which players hit a wooden ball through a series of hoops; the winner is the first to traverse all the hoops and hit a peg",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00467948-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "croquet"
+    },
+    {
+      "definition": "a game that simulates military combat; players on one team try to eliminate players on the opposing team by shooting capsules of paint at them",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00468190-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "paintball"
+    },
+    {
+      "definition": "a game in which iron rings (or open iron rings) are thrown at a stake in the ground in the hope of encircling it",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00468388-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "quoits"
+    },
+    {
+      "definition": "a game in which players use long sticks to shove wooden disks onto the scoring area marked on a smooth surface",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00468604-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "shuffleboard"
+    },
+    {
+      "definition": "an outdoor game played on a field of specified dimensions",
+      "hypernyms": [
+        "oewn-00465719-n"
+      ],
+      "id": "oewn-00468787-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "field game"
+    },
+    {
+      "definition": "a game resembling ice hockey that is played on an open field; two opposing teams use curved hockey sticks try to drive a ball into the opponents' net",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00469063-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "field hockey"
+    },
+    {
+      "definition": "a simple version of hockey played by children on the streets (or on ice or on a field) using a ball or can as the puck",
+      "hypernyms": [
+        "oewn-00469063-n"
+      ],
+      "id": "oewn-00469374-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "shinny"
+    },
+    {
+      "definition": "any of various games played with a ball (round or oval) in which two teams try to kick or carry or propel the ball into each other's goal",
+      "hypernyms": [
+        "oewn-00434398-n",
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00469555-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "football"
+    },
+    {
+      "definition": "a game played by two teams of 11 players on a rectangular field 100 yards long; teams try to get possession of the ball and advance it across the opponents goal line in a series of (running or passing) plays",
+      "hypernyms": [
+        "oewn-00469555-n"
+      ],
+      "id": "oewn-00470726-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "American football"
+    },
+    {
+      "definition": "football played for pay",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00469555-n"
+      ],
+      "id": "oewn-00471629-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 7,
+      "name": "professional football"
+    },
+    {
+      "definition": "a version of American football in which the ball carrier is touched rather than tackled",
+      "hypernyms": [
+        "oewn-00470726-n"
+      ],
+      "id": "oewn-00471757-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "touch football"
+    },
+    {
+      "definition": "a traditional Irish game resembling hockey; played by two teams of 15 players each",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00471905-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "hurling"
+    },
+    {
+      "definition": "a form of football played with an oval ball",
+      "hypernyms": [
+        "oewn-00469555-n"
+      ],
+      "id": "oewn-00472041-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "rugby"
+    },
+    {
+      "definition": "a field game played with a ball (especially baseball)",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00472512-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "ball game"
+    },
+    {
+      "definition": "a ball game played with a bat and ball between two teams of nine players; teams take turns at bat trying to score runs",
+      "hypernyms": [
+        "oewn-00472512-n"
+      ],
+      "id": "oewn-00472688-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "baseball"
+    },
+    {
+      "definition": "baseball played for money",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00475668-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 7,
+      "name": "professional baseball"
+    },
+    {
+      "definition": "baseball as distinguished from softball",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00475780-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "hardball"
+    },
+    {
+      "definition": "a game in which a pitcher does not allow any opposing player to reach base",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00475892-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "perfect game"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team no hits",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00476025-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "no-hit game"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only one hit",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00476153-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "one-hitter"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only 2 hits",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00476284-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "two-hitter"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team only 3 hits",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00476414-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "three-hitter"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team 4 hits",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00476546-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "four-hitter"
+    },
+    {
+      "definition": "a game in which a pitcher allows the opposing team 5 hits",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00476672-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "five-hitter"
+    },
+    {
+      "definition": "a game closely resembling baseball that is played on a smaller diamond and with a ball that is larger",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00476798-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "softball"
+    },
+    {
+      "definition": "an English ball game similar to baseball",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00477151-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "rounders"
+    },
+    {
+      "definition": "a form of baseball played in the streets with a rubber ball and broomstick handle",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00477246-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "stickball"
+    },
+    {
+      "definition": "a game played with a ball and bat by two teams of 11 players; teams take turns trying to score runs",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00477400-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "cricket"
+    },
+    {
+      "definition": "a game invented by American Indians; now played by two teams who use long-handled rackets to catch and carry and throw the ball toward the opponents' goal",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00478403-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lacrosse"
+    },
+    {
+      "definition": "a game similar to field hockey but played on horseback using long-handled mallets and a wooden ball",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00478650-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "polo"
+    },
+    {
+      "definition": "a game using a leather ball six feet in diameter; the two side try to push it across the opponents' goal",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00478838-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "pushball"
+    },
+    {
+      "definition": "a game between two teams whose players try to toss a Frisbee to one another until they cross the opponents goal; possession changes hands when the Frisbee is intercepted or touches the ground or goes out of bounds",
+      "hypernyms": [
+        "oewn-00468787-n"
+      ],
+      "id": "oewn-00478997-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "ultimate frisbee"
+    },
+    {
+      "definition": "a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal",
+      "hypernyms": [
+        "oewn-00469555-n"
+      ],
+      "id": "oewn-00479273-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "soccer"
+    },
+    {
+      "definition": "an athletic game played on a court",
+      "hypernyms": [
+        "oewn-00464307-n"
+      ],
+      "id": "oewn-00480087-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "court game"
+    },
+    {
+      "definition": "a game played in a walled court or against a single wall by two or four players who strike a rubber ball with their hands",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00480451-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "handball"
+    },
+    {
+      "definition": "a game played on a handball court with short-handled rackets",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00480627-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "racquetball"
+    },
+    {
+      "definition": "a game resembling handball; played on a court with a front wall and two side walls",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00480745-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "fives"
+    },
+    {
+      "definition": "a game played in an enclosed court by two or four players who strike the ball with long-handled rackets",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00480898-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "squash"
+    },
+    {
+      "definition": "a game in which two teams hit an inflated ball over a high net using their hands",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00481222-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "volleyball"
+    },
+    {
+      "definition": "a Basque or Spanish game played in a court with a ball and a wickerwork racket",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00481377-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "jai alai"
+    },
+    {
+      "definition": "a game played on a court with light long-handled rackets used to volley a shuttlecock over a net",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00481519-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "badminton"
+    },
+    {
+      "definition": "an ancient racket game",
+      "hypernyms": [
+        "oewn-00481519-n"
+      ],
+      "id": "oewn-00481896-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "battledore"
+    },
+    {
+      "definition": "a game played on a court by two opposing teams of 5 players; points are scored by throwing the ball through an elevated horizontal hoop",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00482004-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "basketball"
+    },
+    {
+      "definition": "playing basketball for money",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00482004-n"
+      ],
+      "id": "oewn-00482814-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "professional basketball"
+    },
+    {
+      "definition": "game played mainly on board ocean liners; players toss a ring back and forth over a net that is stretched across a small court",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00482949-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "deck tennis"
+    },
+    {
+      "definition": "a team game that resembles basketball; a soccer ball is to be thrown so that it passes through a ring on the top of a post",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00483133-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "netball"
+    },
+    {
+      "definition": "a game played with rackets by two or four players who hit a ball back and forth over a net that divides the court",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00483309-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "tennis"
+    },
+    {
+      "definition": "playing tennis for money",
+      "hypernyms": [
+        "oewn-00434156-n",
+        "oewn-00483309-n"
+      ],
+      "id": "oewn-00484216-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "professional tennis"
+    },
+    {
+      "definition": "tennis played with one person on each side",
+      "hypernyms": [
+        "oewn-00483309-n"
+      ],
+      "id": "oewn-00484324-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "singles"
+    },
+    {
+      "definition": "badminton played with one person on each side",
+      "hypernyms": [
+        "oewn-00481519-n"
+      ],
+      "id": "oewn-00484420-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "singles"
+    },
+    {
+      "definition": "tennis played with two players on each side",
+      "hypernyms": [
+        "oewn-00483309-n"
+      ],
+      "id": "oewn-00484519-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "doubles"
+    },
+    {
+      "definition": "badminton played with two players on each side",
+      "hypernyms": [
+        "oewn-00481519-n"
+      ],
+      "id": "oewn-00484616-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "doubles"
+    },
+    {
+      "definition": "an ancient form of tennis played in a four-walled court",
+      "hypernyms": [
+        "oewn-00483309-n"
+      ],
+      "id": "oewn-00484716-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "royal tennis"
+    },
+    {
+      "definition": "an Italian game similar to tennis",
+      "hypernyms": [
+        "oewn-00480087-n"
+      ],
+      "id": "oewn-00484859-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "pallone"
+    },
+    {
+      "definition": "an active diversion requiring physical exertion and competition",
+      "hypernyms": [
+        "oewn-00427931-n"
+      ],
+      "id": "oewn-00524569-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "sport"
+    },
+    {
+      "definition": "a form of golf in which you putt from positions arranged on the circumference of a circle around the hole",
+      "hypernyms": [
+        "oewn-00465962-n"
+      ],
+      "id": "oewn-00574143-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "clock golf"
+    },
+    {
+      "definition": "a stolen base; an instance in which a base runner advances safely during the delivery of a pitch (without the help of a hit or walk or passed ball or wild pitch)",
+      "hypernyms": [
+        "oewn-00472688-n"
+      ],
+      "id": "oewn-00726403-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "steal"
+    },
+    {
+      "definition": "a sport adapted from jujitsu (using principles of not resisting) and similar to wrestling; developed in Japan",
+      "hypernyms": [
+        "oewn-00524569-n",
+        "oewn-00827104-n"
+      ],
+      "id": "oewn-00827434-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "judo"
+    },
+    {
+      "definition": "a sport that many people find entertaining to watch",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00888646-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "spectator sport"
+    },
+    {
+      "definition": "a sport that involves competition between teams of players",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-00889222-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "team sport"
+    },
+    {
+      "definition": "an equestrian competition; the first day is dressage; the second is cross-country jumping; the third is stadium jumping",
+      "hypernyms": [
+        "oewn-00451686-n"
+      ],
+      "id": "oewn-07476007-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "three-day event"
+    },
+    {
+      "definition": "a real-life version of the game of Quidditch from the Harry Potter series",
+      "hypernyms": [
+        "oewn-00464307-n"
+      ],
+      "id": "oewn-82439697-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "quadball"
+    },
+    {
+      "definition": "sport of riding on skis, while being pulled by a boat",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-88363152-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "water skiing"
+    },
+    {
+      "definition": "a game played on broomsticks in the Harry Potter series",
+      "hypernyms": [
+        "oewn-00464307-n"
+      ],
+      "id": "oewn-88820628-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "Quidditch"
+    },
+    {
+      "definition": "An athletic discipline, in which practitioners traverse any environment in the most efficient way possible using their physical abilities, and which commonly involves running, jumping, vaulting, rolling, and other similar physical movements.",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-91001581-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "parkour"
+    },
+    {
+      "definition": "a form of mind sports where the primary aspects of the sport are facilitated by video games",
+      "hypernyms": [
+        "oewn-00524569-n"
+      ],
+      "id": "oewn-91001611-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "electronic sports"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

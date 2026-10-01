@@ -1,0 +1,6160 @@
+{
+  "exported": "2026-10-01",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-07825344-n",
+  "senses": [
+    {
+      "definition": "a substance such that one to three tablespoons dissolved in a glass of warm water is a homemade emetic",
+      "forms": [],
+      "id": "oewn-powdered_mustard__1.06.00..",
+      "lang": "en",
+      "lemma": "powdered mustard",
+      "synset": "oewn-04000775-n"
+    },
+    {
+      "definition": "a substance such that one to three tablespoons dissolved in a glass of warm water is a homemade emetic",
+      "forms": [],
+      "id": "oewn-dry_mustard__1.06.00..",
+      "lang": "en",
+      "lemma": "dry mustard",
+      "synset": "oewn-04000775-n"
+    },
+    {
+      "definition": "spicy or savory condiment",
+      "forms": [],
+      "id": "oewn-relish__1.13.00..",
+      "lang": "en",
+      "lemma": "relish",
+      "synset": "oewn-07598006-n"
+    },
+    {
+      "definition": "tasty mixture or liquid into which bite-sized foods are dipped",
+      "forms": [],
+      "id": "oewn-dip__1.13.00..",
+      "lang": "en",
+      "lemma": "dip",
+      "synset": "oewn-07598174-n"
+    },
+    {
+      "definition": "a dip made of cooked beans",
+      "forms": [],
+      "id": "oewn-bean_dip__1.13.00..",
+      "lang": "en",
+      "lemma": "bean dip",
+      "synset": "oewn-07598376-n"
+    },
+    {
+      "definition": "a dip made of cheeses",
+      "forms": [],
+      "id": "oewn-cheese_dip__1.13.00..",
+      "lang": "en",
+      "lemma": "cheese dip",
+      "synset": "oewn-07598457-n"
+    },
+    {
+      "definition": "a dip made of clams and soft cream cheese",
+      "forms": [],
+      "id": "oewn-clam_dip__1.13.00..",
+      "lang": "en",
+      "lemma": "clam dip",
+      "synset": "oewn-07598535-n"
+    },
+    {
+      "definition": "a dip made of mashed avocado mixed with chopped onions and other seasonings",
+      "forms": [],
+      "id": "oewn-guacamole__1.13.00..",
+      "lang": "en",
+      "lemma": "guacamole",
+      "synset": "oewn-07598631-n"
+    },
+    {
+      "definition": "burnt sugar; used to color and flavor food",
+      "forms": [],
+      "id": "oewn-caramel__1.13.01..",
+      "lang": "en",
+      "lemma": "caramel",
+      "synset": "oewn-07610751-n"
+    },
+    {
+      "definition": "burnt sugar; used to color and flavor food",
+      "forms": [],
+      "id": "oewn-caramelized_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "caramelized sugar",
+      "synset": "oewn-07610751-n"
+    },
+    {
+      "definition": "refined sugar molded into rectangular shapes convenient as single servings",
+      "forms": [],
+      "id": "oewn-lump_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "lump sugar",
+      "synset": "oewn-07610939-n"
+    },
+    {
+      "definition": "a large conical loaf of concentrated refined sugar",
+      "forms": [],
+      "id": "oewn-sugarloaf__1.13.00..",
+      "lang": "en",
+      "lemma": "sugarloaf",
+      "synset": "oewn-07611070-n"
+    },
+    {
+      "definition": "a large conical loaf of concentrated refined sugar",
+      "forms": [],
+      "id": "oewn-sugar_loaf__1.13.00..",
+      "lang": "en",
+      "lemma": "sugar loaf",
+      "synset": "oewn-07611070-n"
+    },
+    {
+      "definition": "a large conical loaf of concentrated refined sugar",
+      "forms": [],
+      "id": "oewn-loaf_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "loaf sugar",
+      "synset": "oewn-07611070-n"
+    },
+    {
+      "definition": "sugar from sugarcane used as sweetening agent",
+      "forms": [],
+      "id": "oewn-cane_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "cane sugar",
+      "synset": "oewn-07611220-n"
+    },
+    {
+      "definition": "very finely granulated sugar that was formerly sprinkled from a castor",
+      "forms": [],
+      "id": "oewn-castor_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "castor sugar",
+      "synset": "oewn-07611322-n"
+    },
+    {
+      "definition": "very finely granulated sugar that was formerly sprinkled from a castor",
+      "forms": [],
+      "id": "oewn-caster_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "caster sugar",
+      "synset": "oewn-07611322-n"
+    },
+    {
+      "definition": "sugar granulated into a fine powder",
+      "forms": [],
+      "id": "oewn-powdered_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "powdered sugar",
+      "synset": "oewn-07611485-n"
+    },
+    {
+      "definition": "sugar in the form of small grains",
+      "forms": [],
+      "id": "oewn-granulated_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "granulated sugar",
+      "synset": "oewn-07611617-n"
+    },
+    {
+      "definition": "finely powdered sugar used to make icing",
+      "forms": [],
+      "id": "oewn-icing_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "icing sugar",
+      "synset": "oewn-07611731-n"
+    },
+    {
+      "definition": "sugar from sugar beets used as sweetening agent",
+      "forms": [],
+      "id": "oewn-beet_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "beet sugar",
+      "synset": "oewn-07611829-n"
+    },
+    {
+      "definition": "dextrose used as sweetening agent",
+      "forms": [],
+      "id": "oewn-corn_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "corn sugar",
+      "synset": "oewn-07611933-n"
+    },
+    {
+      "definition": "unrefined or only partly refined sugar",
+      "forms": [],
+      "id": "oewn-brown_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "brown sugar",
+      "synset": "oewn-07612023-n"
+    },
+    {
+      "definition": "light brown cane sugar; originally from Guyana",
+      "forms": [],
+      "id": "oewn-demerara__1.13.00..",
+      "lang": "en",
+      "lemma": "demerara",
+      "synset": "oewn-07612137-n"
+    },
+    {
+      "definition": "light brown cane sugar; originally from Guyana",
+      "forms": [],
+      "id": "oewn-demerara_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "demerara sugar",
+      "synset": "oewn-07612137-n"
+    },
+    {
+      "definition": "a spread made chiefly from vegetable oils and used as a substitute for butter",
+      "forms": [],
+      "id": "oewn-margarine__1.13.00..",
+      "lang": "en",
+      "lemma": "margarine",
+      "synset": "oewn-07688659-n"
+    },
+    {
+      "definition": "a spread made chiefly from vegetable oils and used as a substitute for butter",
+      "forms": [],
+      "id": "oewn-margarin__1.13.00..",
+      "lang": "en",
+      "lemma": "margarin",
+      "synset": "oewn-07688659-n"
+    },
+    {
+      "definition": "a spread made chiefly from vegetable oils and used as a substitute for butter",
+      "forms": [],
+      "id": "oewn-oleo__1.13.00..",
+      "lang": "en",
+      "lemma": "oleo",
+      "synset": "oewn-07688659-n"
+    },
+    {
+      "definition": "a spread made chiefly from vegetable oils and used as a substitute for butter",
+      "forms": [],
+      "id": "oewn-oleomargarine__1.13.00..",
+      "lang": "en",
+      "lemma": "oleomargarine",
+      "synset": "oewn-07688659-n"
+    },
+    {
+      "definition": "a spread made chiefly from vegetable oils and used as a substitute for butter",
+      "forms": [],
+      "id": "oewn-marge__1.13.00..",
+      "lang": "en",
+      "lemma": "marge",
+      "synset": "oewn-07688659-n"
+    },
+    {
+      "definition": "any of various small cucumbers pickled whole",
+      "forms": [],
+      "id": "oewn-gherkin__1.13.02..",
+      "lang": "en",
+      "lemma": "gherkin",
+      "synset": "oewn-07774558-n"
+    },
+    {
+      "definition": "one-seeded fruit of the European olive tree usually pickled and used as a relish",
+      "forms": [],
+      "id": "oewn-olive__1.13.00..",
+      "lang": "en",
+      "lemma": "olive",
+      "synset": "oewn-07783320-n"
+    },
+    {
+      "definition": "olives picked ripe and cured in brine then dried or pickled or preserved canned or in oil",
+      "forms": [],
+      "id": "oewn-black_olive__1.13.00..",
+      "lang": "en",
+      "lemma": "black olive",
+      "synset": "oewn-07783525-n"
+    },
+    {
+      "definition": "olives picked ripe and cured in brine then dried or pickled or preserved canned or in oil",
+      "forms": [],
+      "id": "oewn-ripe_olive__1.13.00..",
+      "lang": "en",
+      "lemma": "ripe olive",
+      "synset": "oewn-07783525-n"
+    },
+    {
+      "definition": "olives picked green and pickled in brine; infrequently stuffed with e.g. pimento",
+      "forms": [],
+      "id": "oewn-green_olive__1.13.00..",
+      "lang": "en",
+      "lemma": "green olive",
+      "synset": "oewn-07783685-n"
+    },
+    {
+      "definition": "a flavoring extracted from the kola nut",
+      "forms": [],
+      "id": "oewn-cola_extract__1.13.00..",
+      "lang": "en",
+      "lemma": "cola extract",
+      "synset": "oewn-07790455-n"
+    },
+    {
+      "definition": "paste made primarily of anchovies; used in sauces and spreads",
+      "forms": [],
+      "id": "oewn-anchovy_paste__1.13.00..",
+      "lang": "en",
+      "lemma": "anchovy paste",
+      "synset": "oewn-07799803-n"
+    },
+    {
+      "definition": "something added to food primarily for the savor it imparts",
+      "forms": [],
+      "id": "oewn-flavorer__1.13.00..",
+      "lang": "en",
+      "lemma": "flavorer",
+      "synset": "oewn-07825344-n"
+    },
+    {
+      "definition": "something added to food primarily for the savor it imparts",
+      "forms": [],
+      "id": "oewn-flavourer__1.13.00..",
+      "lang": "en",
+      "lemma": "flavourer",
+      "synset": "oewn-07825344-n"
+    },
+    {
+      "definition": "something added to food primarily for the savor it imparts",
+      "forms": [],
+      "id": "oewn-flavoring__1.13.00..",
+      "lang": "en",
+      "lemma": "flavoring",
+      "synset": "oewn-07825344-n"
+    },
+    {
+      "definition": "something added to food primarily for the savor it imparts",
+      "forms": [],
+      "id": "oewn-flavouring__1.13.00..",
+      "lang": "en",
+      "lemma": "flavouring",
+      "synset": "oewn-07825344-n"
+    },
+    {
+      "definition": "something added to food primarily for the savor it imparts",
+      "forms": [],
+      "id": "oewn-seasoner__1.13.00..",
+      "lang": "en",
+      "lemma": "seasoner",
+      "synset": "oewn-07825344-n"
+    },
+    {
+      "definition": "something added to food primarily for the savor it imparts",
+      "forms": [],
+      "id": "oewn-seasoning__1.13.00..",
+      "lang": "en",
+      "lemma": "seasoning",
+      "synset": "oewn-07825344-n"
+    },
+    {
+      "definition": "a cube of evaporated seasoned meat extract",
+      "forms": [],
+      "id": "oewn-bouillon_cube__1.13.00..",
+      "lang": "en",
+      "lemma": "bouillon cube",
+      "synset": "oewn-07826507-n"
+    },
+    {
+      "definition": "a preparation (a sauce or relish or spice) to enhance flavor or enjoyment",
+      "forms": [],
+      "id": "oewn-condiment__1.13.00..",
+      "lang": "en",
+      "lemma": "condiment",
+      "synset": "oewn-07826883-n"
+    },
+    {
+      "definition": "aromatic potherb used in cookery for its savory qualities",
+      "forms": [],
+      "id": "oewn-herb__1.13.00..",
+      "lang": "en",
+      "lemma": "herb",
+      "synset": "oewn-07827392-n"
+    },
+    {
+      "definition": "a mixture of finely chopped fresh herbs",
+      "forms": [],
+      "id": "oewn-fines_herbes__1.13.00..",
+      "lang": "en",
+      "lemma": "fines herbes",
+      "synset": "oewn-07828022-n"
+    },
+    {
+      "definition": "any of a variety of pungent aromatic vegetable substances used for flavoring food",
+      "forms": [],
+      "id": "oewn-spice__1.13.00..",
+      "lang": "en",
+      "lemma": "spice",
+      "synset": "oewn-07828160-n"
+    },
+    {
+      "definition": "oil from the peppermint plant used as flavoring",
+      "forms": [],
+      "id": "oewn-peppermint_oil__1.13.00..",
+      "lang": "en",
+      "lemma": "peppermint oil",
+      "synset": "oewn-07828473-n"
+    },
+    {
+      "definition": "an aromatic oil obtained from the spearmint plant",
+      "forms": [],
+      "id": "oewn-spearmint_oil__1.13.00..",
+      "lang": "en",
+      "lemma": "spearmint oil",
+      "synset": "oewn-07828638-n"
+    },
+    {
+      "definition": "fragrant yellow oil obtained from the lemon peel",
+      "forms": [],
+      "id": "oewn-lemon_oil__1.13.00..",
+      "lang": "en",
+      "lemma": "lemon oil",
+      "synset": "oewn-07828766-n"
+    },
+    {
+      "definition": "oil or flavoring obtained from the creeping wintergreen or teaberry plant",
+      "forms": [],
+      "id": "oewn-wintergreen_oil__1.13.00..",
+      "lang": "en",
+      "lemma": "wintergreen oil",
+      "synset": "oewn-07828889-n"
+    },
+    {
+      "definition": "oil or flavoring obtained from the creeping wintergreen or teaberry plant",
+      "forms": [],
+      "id": "oewn-oil_of_wintergreen__1.13.00..",
+      "lang": "en",
+      "lemma": "oil of wintergreen",
+      "synset": "oewn-07828889-n"
+    },
+    {
+      "definition": "white crystalline form of especially sodium chloride used to season and preserve food",
+      "forms": [],
+      "id": "oewn-salt__1.13.00..",
+      "lang": "en",
+      "lemma": "salt",
+      "synset": "oewn-07829083-n"
+    },
+    {
+      "definition": "white crystalline form of especially sodium chloride used to season and preserve food",
+      "forms": [],
+      "id": "oewn-table_salt__1.13.00..",
+      "lang": "en",
+      "lemma": "table salt",
+      "synset": "oewn-07829083-n"
+    },
+    {
+      "definition": "white crystalline form of especially sodium chloride used to season and preserve food",
+      "forms": [],
+      "id": "oewn-common_salt__1.13.00..",
+      "lang": "en",
+      "lemma": "common salt",
+      "synset": "oewn-07829083-n"
+    },
+    {
+      "definition": "ground celery seed and salt",
+      "forms": [],
+      "id": "oewn-celery_salt__1.13.00..",
+      "lang": "en",
+      "lemma": "celery salt",
+      "synset": "oewn-07829300-n"
+    },
+    {
+      "definition": "ground dried garlic and salt",
+      "forms": [],
+      "id": "oewn-garlic_salt__1.13.00..",
+      "lang": "en",
+      "lemma": "garlic salt",
+      "synset": "oewn-07829385-n"
+    },
+    {
+      "definition": "ground dried onion and salt",
+      "forms": [],
+      "id": "oewn-onion_salt__1.13.00..",
+      "lang": "en",
+      "lemma": "onion salt",
+      "synset": "oewn-07829471-n"
+    },
+    {
+      "definition": "combination of salt and vegetable extracts and spices and monosodium glutamate",
+      "forms": [],
+      "id": "oewn-seasoned_salt__1.13.00..",
+      "lang": "en",
+      "lemma": "seasoned salt",
+      "synset": "oewn-07829555-n"
+    },
+    {
+      "definition": "crystals of citric acid used as seasoning",
+      "forms": [],
+      "id": "oewn-sour_salt__1.13.00..",
+      "lang": "en",
+      "lemma": "sour salt",
+      "synset": "oewn-07829693-n"
+    },
+    {
+      "definition": "Chinese seasoning made by grinding star anise and fennel and pepper and cloves and cinnamon",
+      "forms": [],
+      "id": "oewn-five_spice_powder__1.13.00..",
+      "lang": "en",
+      "lemma": "five spice powder",
+      "synset": "oewn-07829809-n"
+    },
+    {
+      "definition": "ground dried berrylike fruit of a West Indian allspice tree; suggesting combined flavors of cinnamon and nutmeg and cloves",
+      "forms": [],
+      "id": "oewn-allspice__1.13.00..",
+      "lang": "en",
+      "lemma": "allspice",
+      "synset": "oewn-07829983-n"
+    },
+    {
+      "definition": "spice from the dried aromatic bark of the Ceylon cinnamon tree; used as rolled strips or ground",
+      "forms": [],
+      "id": "oewn-cinnamon__1.13.00..",
+      "lang": "en",
+      "lemma": "cinnamon",
+      "synset": "oewn-07830179-n"
+    },
+    {
+      "definition": "dried rolled strips of cinnamon bark",
+      "forms": [],
+      "id": "oewn-stick_cinnamon__1.13.00..",
+      "lang": "en",
+      "lemma": "stick cinnamon",
+      "synset": "oewn-07830366-n"
+    },
+    {
+      "definition": "spice from dried unopened flower bud of the clove tree; used whole or ground",
+      "forms": [],
+      "id": "oewn-clove__1.13.00..",
+      "lang": "en",
+      "lemma": "clove",
+      "synset": "oewn-07830463-n"
+    },
+    {
+      "definition": "fennel seeds are ground and used as a spice or as an ingredient of a spice mixture",
+      "forms": [],
+      "id": "oewn-fennel__1.13.00..",
+      "lang": "en",
+      "lemma": "fennel",
+      "synset": "oewn-07830766-n"
+    },
+    {
+      "definition": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cookery",
+      "forms": [],
+      "id": "oewn-ginger__1.13.02..",
+      "lang": "en",
+      "lemma": "ginger",
+      "synset": "oewn-07830901-n"
+    },
+    {
+      "definition": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cookery",
+      "forms": [],
+      "id": "oewn-gingerroot__1.13.00..",
+      "lang": "en",
+      "lemma": "gingerroot",
+      "synset": "oewn-07830901-n"
+    },
+    {
+      "definition": "dried ground gingerroot",
+      "forms": [],
+      "id": "oewn-ginger__1.13.00..",
+      "lang": "en",
+      "lemma": "ginger",
+      "synset": "oewn-07831139-n"
+    },
+    {
+      "definition": "dried ground gingerroot",
+      "forms": [],
+      "id": "oewn-powdered_ginger__1.13.00..",
+      "lang": "en",
+      "lemma": "powdered ginger",
+      "synset": "oewn-07831139-n"
+    },
+    {
+      "definition": "spice made from the dried fleshy covering of the nutmeg seed",
+      "forms": [],
+      "id": "oewn-mace__1.13.00..",
+      "lang": "en",
+      "lemma": "mace",
+      "synset": "oewn-07831270-n"
+    },
+    {
+      "definition": "hard aromatic seed of the nutmeg tree used as spice when grated or ground",
+      "forms": [],
+      "id": "oewn-nutmeg__1.13.00..",
+      "lang": "en",
+      "lemma": "nutmeg",
+      "synset": "oewn-07831400-n"
+    },
+    {
+      "definition": "pungent seasoning from the berry of the common pepper plant of East India; use whole or ground",
+      "forms": [],
+      "id": "oewn-pepper__1.13.01..",
+      "lang": "en",
+      "lemma": "pepper",
+      "synset": "oewn-07831564-n"
+    },
+    {
+      "definition": "pungent seasoning from the berry of the common pepper plant of East India; use whole or ground",
+      "forms": [],
+      "id": "oewn-peppercorn__1.13.00..",
+      "lang": "en",
+      "lemma": "peppercorn",
+      "synset": "oewn-07831564-n"
+    },
+    {
+      "definition": "pepper that is ground from whole peppercorns with husks on",
+      "forms": [],
+      "id": "oewn-black_pepper__1.13.00..",
+      "lang": "en",
+      "lemma": "black pepper",
+      "synset": "oewn-07831815-n"
+    },
+    {
+      "definition": "pepper ground from husked peppercorns",
+      "forms": [],
+      "id": "oewn-white_pepper__1.13.00..",
+      "lang": "en",
+      "lemma": "white pepper",
+      "synset": "oewn-07831932-n"
+    },
+    {
+      "definition": "dried root bark of the sassafras tree",
+      "forms": [],
+      "id": "oewn-sassafras__1.13.00..",
+      "lang": "en",
+      "lemma": "sassafras",
+      "synset": "oewn-07832028-n"
+    },
+    {
+      "definition": "leaves of the common basil; used fresh or dried",
+      "forms": [],
+      "id": "oewn-basil__1.13.00..",
+      "lang": "en",
+      "lemma": "basil",
+      "synset": "oewn-07832140-n"
+    },
+    {
+      "definition": "leaves of the common basil; used fresh or dried",
+      "forms": [],
+      "id": "oewn-sweet_basil__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet basil",
+      "synset": "oewn-07832140-n"
+    },
+    {
+      "definition": "dried leaf of the bay laurel",
+      "forms": [],
+      "id": "oewn-bay_leaf__1.13.00..",
+      "lang": "en",
+      "lemma": "bay leaf",
+      "synset": "oewn-07832272-n"
+    },
+    {
+      "definition": "an herb whose leaves are used to flavor sauces and punches; young leaves can be eaten in salads or cooked",
+      "forms": [],
+      "id": "oewn-borage__1.13.00..",
+      "lang": "en",
+      "lemma": "borage",
+      "synset": "oewn-07832374-n"
+    },
+    {
+      "definition": "bitter leaves used sparingly in salads; dried flowers used in soups and tisanes",
+      "forms": [],
+      "id": "oewn-hyssop__1.13.00..",
+      "lang": "en",
+      "lemma": "hyssop",
+      "synset": "oewn-07832551-n"
+    },
+    {
+      "definition": "leaves used sparingly in soups and stews",
+      "forms": [],
+      "id": "oewn-caraway__1.13.00..",
+      "lang": "en",
+      "lemma": "caraway",
+      "synset": "oewn-07832702-n"
+    },
+    {
+      "definition": "fresh ferny parsley-like leaves used as a garnish with chicken and veal and omelets and green salads and spinach",
+      "forms": [],
+      "id": "oewn-chervil__1.13.00..",
+      "lang": "en",
+      "lemma": "chervil",
+      "synset": "oewn-07832815-n"
+    },
+    {
+      "definition": "cylindrical leaves used fresh as a mild onion-flavored seasoning",
+      "forms": [],
+      "id": "oewn-chives__1.13.00..",
+      "lang": "en",
+      "lemma": "chives",
+      "synset": "oewn-07833000-n"
+    },
+    {
+      "definition": "leaves make a popular tisane; young leaves used in salads or cooked",
+      "forms": [],
+      "id": "oewn-comfrey__1.13.00..",
+      "lang": "en",
+      "lemma": "comfrey",
+      "synset": "oewn-07833136-n"
+    },
+    {
+      "definition": "leaves make a popular tisane; young leaves used in salads or cooked",
+      "forms": [],
+      "id": "oewn-healing_herb__1.13.00..",
+      "lang": "en",
+      "lemma": "healing herb",
+      "synset": "oewn-07833136-n"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "forms": [],
+      "id": "oewn-coriander__1.13.00..",
+      "lang": "en",
+      "lemma": "coriander",
+      "synset": "oewn-07833291-n"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "forms": [],
+      "id": "oewn-chinese_parsley__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese parsley",
+      "synset": "oewn-07833291-n"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "forms": [],
+      "id": "oewn-cilantro__1.13.00..",
+      "lang": "en",
+      "lemma": "cilantro",
+      "synset": "oewn-07833291-n"
+    },
+    {
+      "definition": "dried coriander seeds used whole or ground",
+      "forms": [],
+      "id": "oewn-coriander__1.13.02..",
+      "lang": "en",
+      "lemma": "coriander",
+      "synset": "oewn-07833441-n"
+    },
+    {
+      "definition": "dried coriander seeds used whole or ground",
+      "forms": [],
+      "id": "oewn-coriander_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "coriander seed",
+      "synset": "oewn-07833441-n"
+    },
+    {
+      "definition": "leaves used sparingly (because of bitter overtones) in sauces and soups and stuffings",
+      "forms": [],
+      "id": "oewn-costmary__1.13.00..",
+      "lang": "en",
+      "lemma": "costmary",
+      "synset": "oewn-07833575-n"
+    },
+    {
+      "definition": "leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-fennel__1.13.01..",
+      "lang": "en",
+      "lemma": "fennel",
+      "synset": "oewn-07833734-n"
+    },
+    {
+      "definition": "leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-common_fennel__1.13.00..",
+      "lang": "en",
+      "lemma": "common fennel",
+      "synset": "oewn-07833734-n"
+    },
+    {
+      "definition": "aromatic anis-scented seeds",
+      "forms": [],
+      "id": "oewn-fennel_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "fennel seed",
+      "synset": "oewn-07834005-n"
+    },
+    {
+      "definition": "aromatic seeds used as seasoning especially in curry",
+      "forms": [],
+      "id": "oewn-fenugreek__1.13.00..",
+      "lang": "en",
+      "lemma": "fenugreek",
+      "synset": "oewn-07834109-n"
+    },
+    {
+      "definition": "aromatic seeds used as seasoning especially in curry",
+      "forms": [],
+      "id": "oewn-fenugreek_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "fenugreek seed",
+      "synset": "oewn-07834109-n"
+    },
+    {
+      "definition": "aromatic bulb used as seasoning",
+      "forms": [],
+      "id": "oewn-garlic__1.13.00..",
+      "lang": "en",
+      "lemma": "garlic",
+      "synset": "oewn-07834253-n"
+    },
+    {
+      "definition": "aromatic bulb used as seasoning",
+      "forms": [],
+      "id": "oewn-ail__1.13.00..",
+      "lang": "en",
+      "lemma": "ail",
+      "synset": "oewn-07834253-n"
+    },
+    {
+      "definition": "one of the small bulblets that can be split off of the axis of a larger garlic bulb",
+      "forms": [],
+      "id": "oewn-clove__1.13.01..",
+      "lang": "en",
+      "lemma": "clove",
+      "synset": "oewn-07834398-n"
+    },
+    {
+      "definition": "one of the small bulblets that can be split off of the axis of a larger garlic bulb",
+      "forms": [],
+      "id": "oewn-garlic_clove__1.13.00..",
+      "lang": "en",
+      "lemma": "garlic clove",
+      "synset": "oewn-07834398-n"
+    },
+    {
+      "definition": "large flat leaves used as chive is used",
+      "forms": [],
+      "id": "oewn-garlic_chive__1.13.00..",
+      "lang": "en",
+      "lemma": "garlic chive",
+      "synset": "oewn-07834548-n"
+    },
+    {
+      "definition": "lemony leaves used for a tisane or in soups or fruit punches",
+      "forms": [],
+      "id": "oewn-lemon_balm__1.13.00..",
+      "lang": "en",
+      "lemma": "lemon balm",
+      "synset": "oewn-07834665-n"
+    },
+    {
+      "definition": "stalks eaten like celery or candied like angelica; seeds used for flavoring or pickled like capers",
+      "forms": [],
+      "id": "oewn-lovage__1.13.00..",
+      "lang": "en",
+      "lemma": "lovage",
+      "synset": "oewn-07834801-n"
+    },
+    {
+      "definition": "pungent leaves used as seasoning with meats and fowl and in stews and soups and omelets",
+      "forms": [],
+      "id": "oewn-marjoram__1.13.00..",
+      "lang": "en",
+      "lemma": "marjoram",
+      "synset": "oewn-07834971-n"
+    },
+    {
+      "definition": "pungent leaves used as seasoning with meats and fowl and in stews and soups and omelets",
+      "forms": [],
+      "id": "oewn-oregano__1.13.00..",
+      "lang": "en",
+      "lemma": "oregano",
+      "synset": "oewn-07834971-n"
+    },
+    {
+      "definition": "the leaves of a mint plant used fresh or candied",
+      "forms": [],
+      "id": "oewn-mint__1.13.01..",
+      "lang": "en",
+      "lemma": "mint",
+      "synset": "oewn-07835142-n"
+    },
+    {
+      "definition": "black or white seeds ground to make mustard pastes or powders",
+      "forms": [],
+      "id": "oewn-mustard_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "mustard seed",
+      "synset": "oewn-07835279-n"
+    },
+    {
+      "definition": "pungent powder or paste prepared from ground mustard seeds",
+      "forms": [],
+      "id": "oewn-mustard__1.13.00..",
+      "lang": "en",
+      "lemma": "mustard",
+      "synset": "oewn-07835456-n"
+    },
+    {
+      "definition": "pungent powder or paste prepared from ground mustard seeds",
+      "forms": [],
+      "id": "oewn-table_mustard__1.13.00..",
+      "lang": "en",
+      "lemma": "table mustard",
+      "synset": "oewn-07835456-n"
+    },
+    {
+      "definition": "very hot prepared mustard",
+      "forms": [],
+      "id": "oewn-chinese_mustard__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese mustard",
+      "synset": "oewn-07835658-n"
+    },
+    {
+      "definition": "flowers and seeds and leaves all used as flavorings",
+      "forms": [],
+      "id": "oewn-nasturtium__1.13.00..",
+      "lang": "en",
+      "lemma": "nasturtium",
+      "synset": "oewn-07835745-n"
+    },
+    {
+      "definition": "aromatic herb with flat or crinkly leaves that are cut finely and used to garnish food",
+      "forms": [],
+      "id": "oewn-parsley__1.13.00..",
+      "lang": "en",
+      "lemma": "parsley",
+      "synset": "oewn-07835872-n"
+    },
+    {
+      "definition": "extremely pungent leaves used fresh or dried as seasoning for especially meats",
+      "forms": [],
+      "id": "oewn-rosemary__1.13.00..",
+      "lang": "en",
+      "lemma": "rosemary",
+      "synset": "oewn-07836121-n"
+    },
+    {
+      "definition": "leaves sometimes used for flavoring fruit or claret cup but should be used with great caution: can cause irritation like poison ivy",
+      "forms": [],
+      "id": "oewn-rue__1.13.00..",
+      "lang": "en",
+      "lemma": "rue",
+      "synset": "oewn-07836273-n"
+    },
+    {
+      "definition": "aromatic fresh or dried grey-green leaves used widely as seasoning for meats and fowl and game etc",
+      "forms": [],
+      "id": "oewn-sage__1.13.00..",
+      "lang": "en",
+      "lemma": "sage",
+      "synset": "oewn-07836473-n"
+    },
+    {
+      "definition": "fresh leaves used in omelets and fritters and with lamb",
+      "forms": [],
+      "id": "oewn-clary_sage__1.13.00..",
+      "lang": "en",
+      "lemma": "clary sage",
+      "synset": "oewn-07836659-n"
+    },
+    {
+      "definition": "either of two aromatic herbs of the mint family",
+      "forms": [],
+      "id": "oewn-savory__1.13.00..",
+      "lang": "en",
+      "lemma": "savory",
+      "synset": "oewn-07836790-n"
+    },
+    {
+      "definition": "either of two aromatic herbs of the mint family",
+      "forms": [],
+      "id": "oewn-savoury__1.13.00..",
+      "lang": "en",
+      "lemma": "savoury",
+      "synset": "oewn-07836790-n"
+    },
+    {
+      "definition": "herb with delicately flavored leaves with many uses",
+      "forms": [],
+      "id": "oewn-summer_savory__1.13.00..",
+      "lang": "en",
+      "lemma": "summer savory",
+      "synset": "oewn-07836936-n"
+    },
+    {
+      "definition": "herb with delicately flavored leaves with many uses",
+      "forms": [],
+      "id": "oewn-summer_savoury__1.13.00..",
+      "lang": "en",
+      "lemma": "summer savoury",
+      "synset": "oewn-07836936-n"
+    },
+    {
+      "definition": "resinous leaves used in stews and stuffings and meat loaf",
+      "forms": [],
+      "id": "oewn-winter_savory__1.13.00..",
+      "lang": "en",
+      "lemma": "winter savory",
+      "synset": "oewn-07837083-n"
+    },
+    {
+      "definition": "resinous leaves used in stews and stuffings and meat loaf",
+      "forms": [],
+      "id": "oewn-winter_savoury__1.13.00..",
+      "lang": "en",
+      "lemma": "winter savoury",
+      "synset": "oewn-07837083-n"
+    },
+    {
+      "definition": "fragrant dark green leaves used to flavor May wine",
+      "forms": [],
+      "id": "oewn-sweet_woodruff__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet woodruff",
+      "synset": "oewn-07837236-n"
+    },
+    {
+      "definition": "fragrant dark green leaves used to flavor May wine",
+      "forms": [],
+      "id": "oewn-waldmeister__1.13.00..",
+      "lang": "en",
+      "lemma": "waldmeister",
+      "synset": "oewn-07837236-n"
+    },
+    {
+      "definition": "fresh ferny leaves and green seeds used as garnish in salads and cold vegetables; dried seeds used in confectionery and liqueurs",
+      "forms": [],
+      "id": "oewn-sweet_cicely__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet cicely",
+      "synset": "oewn-07837380-n"
+    },
+    {
+      "definition": "fresh leaves (or leaves preserved in vinegar) used as seasoning",
+      "forms": [],
+      "id": "oewn-tarragon__1.13.00..",
+      "lang": "en",
+      "lemma": "tarragon",
+      "synset": "oewn-07837586-n"
+    },
+    {
+      "definition": "fresh leaves (or leaves preserved in vinegar) used as seasoning",
+      "forms": [],
+      "id": "oewn-estragon__1.13.00..",
+      "lang": "en",
+      "lemma": "estragon",
+      "synset": "oewn-07837586-n"
+    },
+    {
+      "definition": "leaves can be used as seasoning for almost any meat and stews and stuffings and vegetables",
+      "forms": [],
+      "id": "oewn-thyme__1.13.00..",
+      "lang": "en",
+      "lemma": "thyme",
+      "synset": "oewn-07837734-n"
+    },
+    {
+      "definition": "ground dried rhizome of the turmeric plant used as seasoning",
+      "forms": [],
+      "id": "oewn-turmeric__1.13.00..",
+      "lang": "en",
+      "lemma": "turmeric",
+      "synset": "oewn-07837895-n"
+    },
+    {
+      "definition": "pickled flower buds used as a pungent relish in various dishes and sauces",
+      "forms": [],
+      "id": "oewn-caper__1.13.00..",
+      "lang": "en",
+      "lemma": "caper",
+      "synset": "oewn-07838029-n"
+    },
+    {
+      "definition": "thick spicy sauce made from tomatoes",
+      "forms": [],
+      "id": "oewn-catsup__1.13.00..",
+      "lang": "en",
+      "lemma": "catsup",
+      "synset": "oewn-07838173-n"
+    },
+    {
+      "definition": "thick spicy sauce made from tomatoes",
+      "forms": [],
+      "id": "oewn-ketchup__1.13.00..",
+      "lang": "en",
+      "lemma": "ketchup",
+      "synset": "oewn-07838173-n"
+    },
+    {
+      "definition": "thick spicy sauce made from tomatoes",
+      "forms": [],
+      "id": "oewn-cetchup__1.13.00..",
+      "lang": "en",
+      "lemma": "cetchup",
+      "synset": "oewn-07838173-n"
+    },
+    {
+      "definition": "thick spicy sauce made from tomatoes",
+      "forms": [],
+      "id": "oewn-tomato_ketchup__1.13.00..",
+      "lang": "en",
+      "lemma": "tomato ketchup",
+      "synset": "oewn-07838173-n"
+    },
+    {
+      "definition": "aromatic seeds used as seasoning like cinnamon and cloves especially in pickles and barbecue sauces",
+      "forms": [],
+      "id": "oewn-cardamom__1.13.00..",
+      "lang": "en",
+      "lemma": "cardamom",
+      "synset": "oewn-07838299-n"
+    },
+    {
+      "definition": "aromatic seeds used as seasoning like cinnamon and cloves especially in pickles and barbecue sauces",
+      "forms": [],
+      "id": "oewn-cardamon__1.13.00..",
+      "lang": "en",
+      "lemma": "cardamon",
+      "synset": "oewn-07838299-n"
+    },
+    {
+      "definition": "aromatic seeds used as seasoning like cinnamon and cloves especially in pickles and barbecue sauces",
+      "forms": [],
+      "id": "oewn-cardamum__1.13.00..",
+      "lang": "en",
+      "lemma": "cardamum",
+      "synset": "oewn-07838299-n"
+    },
+    {
+      "definition": "ground pods and seeds of pungent red peppers of the genus Capsicum",
+      "forms": [],
+      "id": "oewn-cayenne__1.13.00..",
+      "lang": "en",
+      "lemma": "cayenne",
+      "synset": "oewn-07838494-n"
+    },
+    {
+      "definition": "ground pods and seeds of pungent red peppers of the genus Capsicum",
+      "forms": [],
+      "id": "oewn-cayenne_pepper__1.13.00..",
+      "lang": "en",
+      "lemma": "cayenne pepper",
+      "synset": "oewn-07838494-n"
+    },
+    {
+      "definition": "ground pods and seeds of pungent red peppers of the genus Capsicum",
+      "forms": [],
+      "id": "oewn-red_pepper__1.13.00..",
+      "lang": "en",
+      "lemma": "red pepper",
+      "synset": "oewn-07838494-n"
+    },
+    {
+      "definition": "powder made of ground chili peppers mixed with e.g. cumin and garlic and oregano",
+      "forms": [],
+      "id": "oewn-chili_powder__1.13.00..",
+      "lang": "en",
+      "lemma": "chili powder",
+      "synset": "oewn-07838663-n"
+    },
+    {
+      "definition": "tomatoes and onions and peppers (sweet or hot) simmered with vinegar and sugar and various seasonings",
+      "forms": [],
+      "id": "oewn-chili_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "chili sauce",
+      "synset": "oewn-07838821-n"
+    },
+    {
+      "definition": "fiery vinegar flavored with chili peppers",
+      "forms": [],
+      "id": "oewn-chili_vinegar__1.13.00..",
+      "lang": "en",
+      "lemma": "chili vinegar",
+      "synset": "oewn-07838980-n"
+    },
+    {
+      "definition": "a spicy condiment made of chopped fruits or vegetables cooked in vinegar and sugar with ginger and spices",
+      "forms": [],
+      "id": "oewn-chutney__1.13.00..",
+      "lang": "en",
+      "lemma": "chutney",
+      "synset": "oewn-07839081-n"
+    },
+    {
+      "definition": "a spicy condiment made of chopped fruits or vegetables cooked in vinegar and sugar with ginger and spices",
+      "forms": [],
+      "id": "oewn-indian_relish__1.13.00..",
+      "lang": "en",
+      "lemma": "Indian relish",
+      "synset": "oewn-07839081-n"
+    },
+    {
+      "definition": "pungent bottled sauce for steak",
+      "forms": [],
+      "id": "oewn-steak_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "steak sauce",
+      "synset": "oewn-07839256-n"
+    },
+    {
+      "definition": "spicy tomato-based sauce for tacos",
+      "forms": [],
+      "id": "oewn-taco_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "taco sauce",
+      "synset": "oewn-07839345-n"
+    },
+    {
+      "definition": "spicy sauce of tomatoes and onions and chili peppers to accompany Mexican foods",
+      "forms": [],
+      "id": "oewn-salsa__1.13.00..",
+      "lang": "en",
+      "lemma": "salsa",
+      "synset": "oewn-07839436-n"
+    },
+    {
+      "definition": "sweetened diluted vinegar with chopped mint leaves",
+      "forms": [],
+      "id": "oewn-mint_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "mint sauce",
+      "synset": "oewn-07839567-n"
+    },
+    {
+      "definition": "sauce made of cranberries and sugar",
+      "forms": [],
+      "id": "oewn-cranberry_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "cranberry sauce",
+      "synset": "oewn-07839674-n"
+    },
+    {
+      "definition": "pungent blend of cumin and ground coriander seed and turmeric and other spices",
+      "forms": [],
+      "id": "oewn-curry_powder__1.13.00..",
+      "lang": "en",
+      "lemma": "curry powder",
+      "synset": "oewn-07839790-n"
+    },
+    {
+      "definition": "a thick sweet and pungent Chinese condiment",
+      "forms": [],
+      "id": "oewn-duck_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "duck sauce",
+      "synset": "oewn-07840244-n"
+    },
+    {
+      "definition": "a thick sweet and pungent Chinese condiment",
+      "forms": [],
+      "id": "oewn-hoisin_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "hoisin sauce",
+      "synset": "oewn-07840244-n"
+    },
+    {
+      "definition": "grated horseradish root",
+      "forms": [],
+      "id": "oewn-horseradish__1.13.00..",
+      "lang": "en",
+      "lemma": "horseradish",
+      "synset": "oewn-07840359-n"
+    },
+    {
+      "definition": "mixtures of vinegar or wine and oil with various spices and seasonings; used for soaking foods before cooking",
+      "forms": [],
+      "id": "oewn-marinade__1.13.00..",
+      "lang": "en",
+      "lemma": "marinade",
+      "synset": "oewn-07840478-n"
+    },
+    {
+      "definition": "a mild powdered seasoning made from dried pimientos",
+      "forms": [],
+      "id": "oewn-paprika__1.13.00..",
+      "lang": "en",
+      "lemma": "paprika",
+      "synset": "oewn-07840678-n"
+    },
+    {
+      "definition": "a mild seasoning made from a variety of pimiento grown in Spain",
+      "forms": [],
+      "id": "oewn-spanish_paprika__1.13.00..",
+      "lang": "en",
+      "lemma": "Spanish paprika",
+      "synset": "oewn-07840839-n"
+    },
+    {
+      "definition": "vegetables (especially cucumbers) preserved in brine or vinegar",
+      "forms": [],
+      "id": "oewn-pickle__1.13.00..",
+      "lang": "en",
+      "lemma": "pickle",
+      "synset": "oewn-07840964-n"
+    },
+    {
+      "definition": "pickle preserved in brine or vinegar flavored with dill seed",
+      "forms": [],
+      "id": "oewn-dill_pickle__1.13.00..",
+      "lang": "en",
+      "lemma": "dill pickle",
+      "synset": "oewn-07841170-n"
+    },
+    {
+      "definition": "chopped pickles in mustard sauce",
+      "forms": [],
+      "id": "oewn-chowchow__1.13.02..",
+      "lang": "en",
+      "lemma": "chowchow",
+      "synset": "oewn-07841288-n"
+    },
+    {
+      "definition": "thinly sliced sweet pickles",
+      "forms": [],
+      "id": "oewn-bread_and_butter_pickle__1.13.00..",
+      "lang": "en",
+      "lemma": "bread and butter pickle",
+      "synset": "oewn-07841375-n"
+    },
+    {
+      "definition": "relish of chopped (usually sweet) pickles",
+      "forms": [],
+      "id": "oewn-pickle_relish__1.13.00..",
+      "lang": "en",
+      "lemma": "pickle relish",
+      "synset": "oewn-07841472-n"
+    },
+    {
+      "definition": "relish of chopped pickled cucumbers and green peppers and onion",
+      "forms": [],
+      "id": "oewn-piccalilli__1.13.00..",
+      "lang": "en",
+      "lemma": "piccalilli",
+      "synset": "oewn-07841573-n"
+    },
+    {
+      "definition": "pickle cured in brine and preserved in sugar and vinegar",
+      "forms": [],
+      "id": "oewn-sweet_pickle__1.13.00..",
+      "lang": "en",
+      "lemma": "sweet pickle",
+      "synset": "oewn-07841693-n"
+    },
+    {
+      "definition": "thin sauce made of fermented soy beans",
+      "forms": [],
+      "id": "oewn-soy_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "soy sauce",
+      "synset": "oewn-07841948-n"
+    },
+    {
+      "definition": "thin sauce made of fermented soy beans",
+      "forms": [],
+      "id": "oewn-soy__1.13.01..",
+      "lang": "en",
+      "lemma": "soy",
+      "synset": "oewn-07841948-n"
+    },
+    {
+      "definition": "very spicy sauce (trade name Tabasco) made from fully-aged red peppers",
+      "forms": [],
+      "id": "oewn-tabasco__1.13.01..",
+      "lang": "en",
+      "lemma": "Tabasco",
+      "synset": "oewn-07842067-n"
+    },
+    {
+      "definition": "very spicy sauce (trade name Tabasco) made from fully-aged red peppers",
+      "forms": [],
+      "id": "oewn-tabasco_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Tabasco sauce",
+      "synset": "oewn-07842067-n"
+    },
+    {
+      "definition": "aromatic stems or leaves or roots of Angelica Archangelica",
+      "forms": [],
+      "id": "oewn-angelica__1.13.01..",
+      "lang": "en",
+      "lemma": "angelica",
+      "synset": "oewn-07842316-n"
+    },
+    {
+      "definition": "candied stalks of the angelica plant",
+      "forms": [],
+      "id": "oewn-angelica__1.13.02..",
+      "lang": "en",
+      "lemma": "angelica",
+      "synset": "oewn-07842429-n"
+    },
+    {
+      "definition": "flavoring made from almonds macerated in alcohol",
+      "forms": [],
+      "id": "oewn-almond_extract__1.13.00..",
+      "lang": "en",
+      "lemma": "almond extract",
+      "synset": "oewn-07842520-n"
+    },
+    {
+      "definition": "liquorice-flavored seeds, used medicinally and in cooking and liquors",
+      "forms": [],
+      "id": "oewn-anise__1.13.00..",
+      "lang": "en",
+      "lemma": "anise",
+      "synset": "oewn-07842629-n"
+    },
+    {
+      "definition": "liquorice-flavored seeds, used medicinally and in cooking and liquors",
+      "forms": [],
+      "id": "oewn-aniseed__1.13.00..",
+      "lang": "en",
+      "lemma": "aniseed",
+      "synset": "oewn-07842629-n"
+    },
+    {
+      "definition": "liquorice-flavored seeds, used medicinally and in cooking and liquors",
+      "forms": [],
+      "id": "oewn-anise_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "anise seed",
+      "synset": "oewn-07842629-n"
+    },
+    {
+      "definition": "anise-scented star-shaped fruit or seed used in Asian cooking and medicine",
+      "forms": [],
+      "id": "oewn-chinese_anise__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese anise",
+      "synset": "oewn-07842906-n"
+    },
+    {
+      "definition": "anise-scented star-shaped fruit or seed used in Asian cooking and medicine",
+      "forms": [],
+      "id": "oewn-star_anise__1.13.00..",
+      "lang": "en",
+      "lemma": "star anise",
+      "synset": "oewn-07842906-n"
+    },
+    {
+      "definition": "anise-scented star-shaped fruit or seed used in Asian cooking and medicine",
+      "forms": [],
+      "id": "oewn-star_aniseed__1.13.00..",
+      "lang": "en",
+      "lemma": "star aniseed",
+      "synset": "oewn-07842906-n"
+    },
+    {
+      "definition": "berrylike cone of a common juniper; used in making gin",
+      "forms": [],
+      "id": "oewn-juniper_berries__1.13.00..",
+      "lang": "en",
+      "lemma": "juniper berries",
+      "synset": "oewn-07843106-n"
+    },
+    {
+      "definition": "dried pungent stigmas of the Old World saffron crocus",
+      "forms": [],
+      "id": "oewn-saffron__1.13.00..",
+      "lang": "en",
+      "lemma": "saffron",
+      "synset": "oewn-07843260-n"
+    },
+    {
+      "definition": "small oval seeds of the sesame plant",
+      "forms": [],
+      "id": "oewn-sesame_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "sesame seed",
+      "synset": "oewn-07843386-n"
+    },
+    {
+      "definition": "small oval seeds of the sesame plant",
+      "forms": [],
+      "id": "oewn-benniseed__1.13.00..",
+      "lang": "en",
+      "lemma": "benniseed",
+      "synset": "oewn-07843386-n"
+    },
+    {
+      "definition": "aromatic seeds of the caraway plant; used widely as seasoning",
+      "forms": [],
+      "id": "oewn-caraway_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "caraway seed",
+      "synset": "oewn-07843530-n"
+    },
+    {
+      "definition": "small grey seed of a poppy flower; used whole or ground in baked items",
+      "forms": [],
+      "id": "oewn-poppy_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "poppy seed",
+      "synset": "oewn-07843726-n"
+    },
+    {
+      "definition": "aromatic threadlike foliage of the dill plant used as seasoning",
+      "forms": [],
+      "id": "oewn-dill__1.13.00..",
+      "lang": "en",
+      "lemma": "dill",
+      "synset": "oewn-07843872-n"
+    },
+    {
+      "definition": "aromatic threadlike foliage of the dill plant used as seasoning",
+      "forms": [],
+      "id": "oewn-dill_weed__1.13.00..",
+      "lang": "en",
+      "lemma": "dill weed",
+      "synset": "oewn-07843872-n"
+    },
+    {
+      "definition": "seed of the dill plant used as seasoning",
+      "forms": [],
+      "id": "oewn-dill_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "dill seed",
+      "synset": "oewn-07844017-n"
+    },
+    {
+      "definition": "seed of the celery plant used as seasoning",
+      "forms": [],
+      "id": "oewn-celery_seed__1.13.00..",
+      "lang": "en",
+      "lemma": "celery seed",
+      "synset": "oewn-07844132-n"
+    },
+    {
+      "definition": "a flavoring made from (or imitating) lemons",
+      "forms": [],
+      "id": "oewn-lemon_extract__1.13.00..",
+      "lang": "en",
+      "lemma": "lemon extract",
+      "synset": "oewn-07844251-n"
+    },
+    {
+      "definition": "white crystalline compound used as a food additive to enhance flavor; often used in Chinese cooking",
+      "forms": [],
+      "id": "oewn-monosodium_glutamate__1.13.00..",
+      "lang": "en",
+      "lemma": "monosodium glutamate",
+      "synset": "oewn-07844354-n"
+    },
+    {
+      "definition": "white crystalline compound used as a food additive to enhance flavor; often used in Chinese cooking",
+      "forms": [],
+      "id": "oewn-msg__1.13.00..",
+      "lang": "en",
+      "lemma": "MSG",
+      "synset": "oewn-07844354-n"
+    },
+    {
+      "definition": "long bean-like fruit; seeds are used as flavoring",
+      "forms": [],
+      "id": "oewn-vanilla_bean__1.13.00..",
+      "lang": "en",
+      "lemma": "vanilla bean",
+      "synset": "oewn-07844618-n"
+    },
+    {
+      "definition": "a flavoring prepared from vanilla beans macerated in alcohol (or imitating vanilla beans)",
+      "forms": [],
+      "id": "oewn-vanilla__1.13.00..",
+      "lang": "en",
+      "lemma": "vanilla",
+      "synset": "oewn-07844783-n"
+    },
+    {
+      "definition": "a flavoring prepared from vanilla beans macerated in alcohol (or imitating vanilla beans)",
+      "forms": [],
+      "id": "oewn-vanilla_extract__1.13.00..",
+      "lang": "en",
+      "lemma": "vanilla extract",
+      "synset": "oewn-07844783-n"
+    },
+    {
+      "definition": "sour-tasting liquid produced usually by oxidation of the alcohol in wine or cider and used as a condiment or food preservative",
+      "forms": [],
+      "id": "oewn-vinegar__1.13.00..",
+      "lang": "en",
+      "lemma": "vinegar",
+      "synset": "oewn-07844963-n"
+    },
+    {
+      "definition": "sour-tasting liquid produced usually by oxidation of the alcohol in wine or cider and used as a condiment or food preservative",
+      "forms": [],
+      "id": "oewn-acetum__1.13.00..",
+      "lang": "en",
+      "lemma": "acetum",
+      "synset": "oewn-07844963-n"
+    },
+    {
+      "definition": "vinegar made from cider",
+      "forms": [],
+      "id": "oewn-cider_vinegar__1.13.00..",
+      "lang": "en",
+      "lemma": "cider vinegar",
+      "synset": "oewn-07845224-n"
+    },
+    {
+      "definition": "vinegar made from wine",
+      "forms": [],
+      "id": "oewn-wine_vinegar__1.13.00..",
+      "lang": "en",
+      "lemma": "wine vinegar",
+      "synset": "oewn-07845307-n"
+    },
+    {
+      "definition": "flavorful relish or dressing or topping served as an accompaniment to food",
+      "forms": [],
+      "id": "oewn-sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "sauce",
+      "synset": "oewn-07845388-n"
+    },
+    {
+      "definition": "made of white sauce and mashed anchovies",
+      "forms": [],
+      "id": "oewn-anchovy_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "anchovy sauce",
+      "synset": "oewn-07846469-n"
+    },
+    {
+      "definition": "a pungent peppery sauce",
+      "forms": [],
+      "id": "oewn-hot_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "hot sauce",
+      "synset": "oewn-07846569-n"
+    },
+    {
+      "definition": "butter and sugar creamed together with brandy or other flavoring and served with rich puddings",
+      "forms": [],
+      "id": "oewn-hard_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "hard sauce",
+      "synset": "oewn-07846666-n"
+    },
+    {
+      "definition": "creamy white sauce with horseradish and mustard",
+      "forms": [],
+      "id": "oewn-horseradish_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "horseradish sauce",
+      "synset": "oewn-07846817-n"
+    },
+    {
+      "definition": "creamy white sauce with horseradish and mustard",
+      "forms": [],
+      "id": "oewn-sauce_albert__1.13.00..",
+      "lang": "en",
+      "lemma": "sauce Albert",
+      "synset": "oewn-07846817-n"
+    },
+    {
+      "definition": "sauce for pasta; contains mushrooms and ham and chopped vegetables and beef and tomato paste",
+      "forms": [],
+      "id": "oewn-bolognese_pasta_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "bolognese pasta sauce",
+      "synset": "oewn-07846962-n"
+    },
+    {
+      "definition": "sauce for pasta; contains eggs and bacon or ham and grated cheese",
+      "forms": [],
+      "id": "oewn-carbonara__1.13.00..",
+      "lang": "en",
+      "lemma": "carbonara",
+      "synset": "oewn-07847122-n"
+    },
+    {
+      "definition": "sauce made with a puree of tomatoes (or strained tomatoes) with savory vegetables and other seasonings; can be used on pasta",
+      "forms": [],
+      "id": "oewn-tomato_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "tomato sauce",
+      "synset": "oewn-07847243-n"
+    },
+    {
+      "definition": "mayonnaise with chopped pickles and sometimes capers and shallots and parsley and hard-cooked egg; sauce for seafood especially fried fish",
+      "forms": [],
+      "id": "oewn-tartare_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "tartare sauce",
+      "synset": "oewn-07847426-n"
+    },
+    {
+      "definition": "mayonnaise with chopped pickles and sometimes capers and shallots and parsley and hard-cooked egg; sauce for seafood especially fried fish",
+      "forms": [],
+      "id": "oewn-tartar_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "tartar sauce",
+      "synset": "oewn-07847426-n"
+    },
+    {
+      "definition": "white or veloute sauce with wine and stock variously seasoned with onions and herbs; for fish or meat",
+      "forms": [],
+      "id": "oewn-wine_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "wine sauce",
+      "synset": "oewn-07847639-n"
+    },
+    {
+      "definition": "brown sauce with mushrooms and red wine or Madeira",
+      "forms": [],
+      "id": "oewn-marchand_de_vin__1.13.00..",
+      "lang": "en",
+      "lemma": "marchand de vin",
+      "synset": "oewn-07847797-n"
+    },
+    {
+      "definition": "brown sauce with mushrooms and red wine or Madeira",
+      "forms": [],
+      "id": "oewn-mushroom_wine_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "mushroom wine sauce",
+      "synset": "oewn-07847797-n"
+    },
+    {
+      "definition": "creamy white sauce made with bread instead of flour and seasoned with cloves and onion",
+      "forms": [],
+      "id": "oewn-bread_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "bread sauce",
+      "synset": "oewn-07847931-n"
+    },
+    {
+      "definition": "for Chinese dishes: plum preserves and chutney",
+      "forms": [],
+      "id": "oewn-plum_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "plum sauce",
+      "synset": "oewn-07848075-n"
+    },
+    {
+      "definition": "for Chinese dishes: peach preserves and chutney",
+      "forms": [],
+      "id": "oewn-peach_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "peach sauce",
+      "synset": "oewn-07848178-n"
+    },
+    {
+      "definition": "for Chinese dishes: apricot preserves and chutney",
+      "forms": [],
+      "id": "oewn-apricot_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "apricot sauce",
+      "synset": "oewn-07848283-n"
+    },
+    {
+      "definition": "a sauce typically served with pasta; contains crushed basil leaves and garlic and pine nuts and Parmesan cheese in olive oil",
+      "forms": [],
+      "id": "oewn-pesto__1.13.00..",
+      "lang": "en",
+      "lemma": "pesto",
+      "synset": "oewn-07848392-n"
+    },
+    {
+      "definition": "veloute sauce seasoned with chopped chervil, chives, tarragon, shallots and capers",
+      "forms": [],
+      "id": "oewn-ravigote__1.13.00..",
+      "lang": "en",
+      "lemma": "ravigote",
+      "synset": "oewn-07848568-n"
+    },
+    {
+      "definition": "veloute sauce seasoned with chopped chervil, chives, tarragon, shallots and capers",
+      "forms": [],
+      "id": "oewn-ravigotte__1.13.00..",
+      "lang": "en",
+      "lemma": "ravigotte",
+      "synset": "oewn-07848568-n"
+    },
+    {
+      "definition": "a mayonnaise sauce flavored with herbs and mustard and capers; served with e.g. salad and cold meat",
+      "forms": [],
+      "id": "oewn-remoulade_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "remoulade sauce",
+      "synset": "oewn-07848717-n"
+    },
+    {
+      "definition": "savory dressings for salads; basically of two kinds: either the thin French or vinaigrette type or the creamy mayonnaise type",
+      "forms": [],
+      "id": "oewn-dressing__1.13.01..",
+      "lang": "en",
+      "lemma": "dressing",
+      "synset": "oewn-07848878-n"
+    },
+    {
+      "definition": "savory dressings for salads; basically of two kinds: either the thin French or vinaigrette type or the creamy mayonnaise type",
+      "forms": [],
+      "id": "oewn-salad_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "salad dressing",
+      "synset": "oewn-07848878-n"
+    },
+    {
+      "definition": "mayonnaise and heavy cream combined with chopped green pepper and green onion seasoned with chili sauce and Worcestershire sauce and lemon juice",
+      "forms": [],
+      "id": "oewn-sauce_louis__1.13.00..",
+      "lang": "en",
+      "lemma": "sauce Louis",
+      "synset": "oewn-07849309-n"
+    },
+    {
+      "definition": "creamy dressing containing crumbled blue cheese",
+      "forms": [],
+      "id": "oewn-bleu_cheese_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "bleu cheese dressing",
+      "synset": "oewn-07849511-n"
+    },
+    {
+      "definition": "creamy dressing containing crumbled blue cheese",
+      "forms": [],
+      "id": "oewn-blue_cheese_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "blue cheese dressing",
+      "synset": "oewn-07849511-n"
+    },
+    {
+      "definition": "vinaigrette containing crumbled Roquefort or blue cheese",
+      "forms": [],
+      "id": "oewn-blue_cheese_dressing__1.13.02..",
+      "lang": "en",
+      "lemma": "blue cheese dressing",
+      "synset": "oewn-07849648-n"
+    },
+    {
+      "definition": "vinaigrette containing crumbled Roquefort or blue cheese",
+      "forms": [],
+      "id": "oewn-roquefort_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "Roquefort dressing",
+      "synset": "oewn-07849648-n"
+    },
+    {
+      "definition": "oil and vinegar with mustard and garlic",
+      "forms": [],
+      "id": "oewn-french_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "French dressing",
+      "synset": "oewn-07849792-n"
+    },
+    {
+      "definition": "oil and vinegar with mustard and garlic",
+      "forms": [],
+      "id": "oewn-vinaigrette__1.13.00..",
+      "lang": "en",
+      "lemma": "vinaigrette",
+      "synset": "oewn-07849792-n"
+    },
+    {
+      "definition": "oil and vinegar with mustard and garlic",
+      "forms": [],
+      "id": "oewn-sauce_vinaigrette__1.13.00..",
+      "lang": "en",
+      "lemma": "sauce vinaigrette",
+      "synset": "oewn-07849792-n"
+    },
+    {
+      "definition": "vinaigrette with chili sauce and chopped watercress",
+      "forms": [],
+      "id": "oewn-lorenzo_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "Lorenzo dressing",
+      "synset": "oewn-07849927-n"
+    },
+    {
+      "definition": "vinaigrette and mashed anchovies",
+      "forms": [],
+      "id": "oewn-anchovy_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "anchovy dressing",
+      "synset": "oewn-07850041-n"
+    },
+    {
+      "definition": "a vinaigrette with garlic and herbs: oregano and basil and dill",
+      "forms": [],
+      "id": "oewn-italian_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "Italian dressing",
+      "synset": "oewn-07850136-n"
+    },
+    {
+      "definition": "half mayonnaise and half vinaigrette seasoned with minced garlic and mashed anchovies and grated Parmesan cheese; especially good for combination salads",
+      "forms": [],
+      "id": "oewn-half-and-half_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "half-and-half dressing",
+      "synset": "oewn-07850262-n"
+    },
+    {
+      "definition": "egg yolks and oil and vinegar",
+      "forms": [],
+      "id": "oewn-mayonnaise__1.13.00..",
+      "lang": "en",
+      "lemma": "mayonnaise",
+      "synset": "oewn-07850483-n"
+    },
+    {
+      "definition": "egg yolks and oil and vinegar",
+      "forms": [],
+      "id": "oewn-mayo__1.13.00..",
+      "lang": "en",
+      "lemma": "mayo",
+      "synset": "oewn-07850483-n"
+    },
+    {
+      "definition": "mayonnaise with tarragon or dill and chopped watercress and spinach or cucumber",
+      "forms": [],
+      "id": "oewn-green_mayonnaise__1.13.00..",
+      "lang": "en",
+      "lemma": "green mayonnaise",
+      "synset": "oewn-07850594-n"
+    },
+    {
+      "definition": "mayonnaise with tarragon or dill and chopped watercress and spinach or cucumber",
+      "forms": [],
+      "id": "oewn-sauce_verte__1.13.00..",
+      "lang": "en",
+      "lemma": "sauce verte",
+      "synset": "oewn-07850594-n"
+    },
+    {
+      "definition": "garlic mayonnaise",
+      "forms": [],
+      "id": "oewn-aioli__1.13.00..",
+      "lang": "en",
+      "lemma": "aioli",
+      "synset": "oewn-07850750-n"
+    },
+    {
+      "definition": "garlic mayonnaise",
+      "forms": [],
+      "id": "oewn-aioli_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "aioli sauce",
+      "synset": "oewn-07850750-n"
+    },
+    {
+      "definition": "garlic mayonnaise",
+      "forms": [],
+      "id": "oewn-garlic_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "garlic sauce",
+      "synset": "oewn-07850750-n"
+    },
+    {
+      "definition": "mayonnaise with horseradish grated onion and chili sauce or catsup; sometimes with caviar added",
+      "forms": [],
+      "id": "oewn-russian_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "Russian dressing",
+      "synset": "oewn-07850848-n"
+    },
+    {
+      "definition": "mayonnaise with horseradish grated onion and chili sauce or catsup; sometimes with caviar added",
+      "forms": [],
+      "id": "oewn-russian_mayonnaise__1.13.00..",
+      "lang": "en",
+      "lemma": "Russian mayonnaise",
+      "synset": "oewn-07850848-n"
+    },
+    {
+      "definition": "a creamy salad dressing resembling mayonnaise",
+      "forms": [],
+      "id": "oewn-salad_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "salad cream",
+      "synset": "oewn-07851027-n"
+    },
+    {
+      "definition": "mayonnaise with chili sauce or catsup and minced olives and peppers and hard-cooked egg",
+      "forms": [],
+      "id": "oewn-thousand_island_dressing__1.13.00..",
+      "lang": "en",
+      "lemma": "Thousand Island dressing",
+      "synset": "oewn-07851149-n"
+    },
+    {
+      "definition": "spicy sweet and sour sauce usually based on catsup or chili sauce",
+      "forms": [],
+      "id": "oewn-barbecue_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "barbecue sauce",
+      "synset": "oewn-07851307-n"
+    },
+    {
+      "definition": "eggs and butter with lemon juice",
+      "forms": [],
+      "id": "oewn-hollandaise__1.13.00..",
+      "lang": "en",
+      "lemma": "hollandaise",
+      "synset": "oewn-07851433-n"
+    },
+    {
+      "definition": "a sauce like hollandaise but made with white wine and tarragon and shallots instead of lemon juice",
+      "forms": [],
+      "id": "oewn-bearnaise__1.13.00..",
+      "lang": "en",
+      "lemma": "bearnaise",
+      "synset": "oewn-07851523-n"
+    },
+    {
+      "definition": "butter creamed with white wine and shallots and parsley",
+      "forms": [],
+      "id": "oewn-bercy__1.13.00..",
+      "lang": "en",
+      "lemma": "Bercy",
+      "synset": "oewn-07851677-n"
+    },
+    {
+      "definition": "butter creamed with white wine and shallots and parsley",
+      "forms": [],
+      "id": "oewn-bercy_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "Bercy butter",
+      "synset": "oewn-07851677-n"
+    },
+    {
+      "definition": "brown sauce with beef marrow and red wine",
+      "forms": [],
+      "id": "oewn-bordelaise__1.13.00..",
+      "lang": "en",
+      "lemma": "bordelaise",
+      "synset": "oewn-07851799-n"
+    },
+    {
+      "definition": "reduced red wine with onions and parsley and thyme and butter",
+      "forms": [],
+      "id": "oewn-bourguignon__1.13.00..",
+      "lang": "en",
+      "lemma": "bourguignon",
+      "synset": "oewn-07851897-n"
+    },
+    {
+      "definition": "reduced red wine with onions and parsley and thyme and butter",
+      "forms": [],
+      "id": "oewn-bourguignon_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "bourguignon sauce",
+      "synset": "oewn-07851897-n"
+    },
+    {
+      "definition": "reduced red wine with onions and parsley and thyme and butter",
+      "forms": [],
+      "id": "oewn-burgundy_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Burgundy sauce",
+      "synset": "oewn-07851897-n"
+    },
+    {
+      "definition": "bouillon or beef stock thickened with butter and flour roux and variously seasoned with herbs or Worcestershire etc.",
+      "forms": [],
+      "id": "oewn-brown_sauce__1.13.01..",
+      "lang": "en",
+      "lemma": "brown sauce",
+      "synset": "oewn-07852053-n"
+    },
+    {
+      "definition": "bouillon or beef stock thickened with butter and flour roux and variously seasoned with herbs or Worcestershire etc.",
+      "forms": [],
+      "id": "oewn-sauce_espagnole__1.13.00..",
+      "lang": "en",
+      "lemma": "sauce Espagnole",
+      "synset": "oewn-07852053-n"
+    },
+    {
+      "definition": "brown sauce with tomatoes and a caramelized mixture of minced carrots and onions and celery seasoned with Madeira",
+      "forms": [],
+      "id": "oewn-espagnole__1.13.00..",
+      "lang": "en",
+      "lemma": "Espagnole",
+      "synset": "oewn-07852245-n"
+    },
+    {
+      "definition": "brown sauce with tomatoes and a caramelized mixture of minced carrots and onions and celery seasoned with Madeira",
+      "forms": [],
+      "id": "oewn-sauce_espagnole__1.13.01..",
+      "lang": "en",
+      "lemma": "sauce Espagnole",
+      "synset": "oewn-07852245-n"
+    },
+    {
+      "definition": "a sauce based on soy sauce",
+      "forms": [],
+      "id": "oewn-chinese_brown_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Chinese brown sauce",
+      "synset": "oewn-07852432-n"
+    },
+    {
+      "definition": "a sauce based on soy sauce",
+      "forms": [],
+      "id": "oewn-brown_sauce__1.13.02..",
+      "lang": "en",
+      "lemma": "brown sauce",
+      "synset": "oewn-07852432-n"
+    },
+    {
+      "definition": "a white sauce of fat, broth, and vegetables (used especially with braised meat)",
+      "forms": [],
+      "id": "oewn-blanc__1.13.00..",
+      "lang": "en",
+      "lemma": "blanc",
+      "synset": "oewn-07852576-n"
+    },
+    {
+      "definition": "white sauce with grated cheese",
+      "forms": [],
+      "id": "oewn-cheese_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "cheese sauce",
+      "synset": "oewn-07852707-n"
+    },
+    {
+      "definition": "sauce made with unsweetened chocolate or cocoa and sugar and water",
+      "forms": [],
+      "id": "oewn-chocolate_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "chocolate sauce",
+      "synset": "oewn-07852814-n"
+    },
+    {
+      "definition": "sauce made with unsweetened chocolate or cocoa and sugar and water",
+      "forms": [],
+      "id": "oewn-chocolate_syrup__1.13.00..",
+      "lang": "en",
+      "lemma": "chocolate syrup",
+      "synset": "oewn-07852814-n"
+    },
+    {
+      "definition": "thick chocolate sauce served hot",
+      "forms": [],
+      "id": "oewn-hot-fudge_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "hot-fudge sauce",
+      "synset": "oewn-07852978-n"
+    },
+    {
+      "definition": "thick chocolate sauce served hot",
+      "forms": [],
+      "id": "oewn-fudge_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "fudge sauce",
+      "synset": "oewn-07852978-n"
+    },
+    {
+      "definition": "usually catsup with horseradish and lemon juice",
+      "forms": [],
+      "id": "oewn-cocktail_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "cocktail sauce",
+      "synset": "oewn-07853086-n"
+    },
+    {
+      "definition": "usually catsup with horseradish and lemon juice",
+      "forms": [],
+      "id": "oewn-seafood_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "seafood sauce",
+      "synset": "oewn-07853086-n"
+    },
+    {
+      "definition": "butter creamed with parsley and tarragon and beef extract",
+      "forms": [],
+      "id": "oewn-colbert__1.13.00..",
+      "lang": "en",
+      "lemma": "Colbert",
+      "synset": "oewn-07853210-n"
+    },
+    {
+      "definition": "butter creamed with parsley and tarragon and beef extract",
+      "forms": [],
+      "id": "oewn-colbert_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "Colbert butter",
+      "synset": "oewn-07853210-n"
+    },
+    {
+      "definition": "milk thickened with a butter and flour roux",
+      "forms": [],
+      "id": "oewn-white_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "white sauce",
+      "synset": "oewn-07853338-n"
+    },
+    {
+      "definition": "milk thickened with a butter and flour roux",
+      "forms": [],
+      "id": "oewn-bechamel_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "bechamel sauce",
+      "synset": "oewn-07853338-n"
+    },
+    {
+      "definition": "milk thickened with a butter and flour roux",
+      "forms": [],
+      "id": "oewn-bechamel__1.13.00..",
+      "lang": "en",
+      "lemma": "bechamel",
+      "synset": "oewn-07853338-n"
+    },
+    {
+      "definition": "white sauce made with cream",
+      "forms": [],
+      "id": "oewn-cream_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "cream sauce",
+      "synset": "oewn-07853521-n"
+    },
+    {
+      "definition": "onion-flavored creamy cheese sauce with egg yolk and grated cheese",
+      "forms": [],
+      "id": "oewn-mornay_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Mornay sauce",
+      "synset": "oewn-07853606-n"
+    },
+    {
+      "definition": "sauce Espagnole with extra beef stock simmered down and seasoned with dry wine or sherry",
+      "forms": [],
+      "id": "oewn-demiglace__1.13.00..",
+      "lang": "en",
+      "lemma": "demiglace",
+      "synset": "oewn-07853731-n"
+    },
+    {
+      "definition": "sauce Espagnole with extra beef stock simmered down and seasoned with dry wine or sherry",
+      "forms": [],
+      "id": "oewn-demi-glaze__1.13.00..",
+      "lang": "en",
+      "lemma": "demi-glaze",
+      "synset": "oewn-07853731-n"
+    },
+    {
+      "definition": "a sauce made by adding stock, flour, or other ingredients to the juice and fat that drips from cooking meats",
+      "forms": [],
+      "id": "oewn-gravy__1.13.01..",
+      "lang": "en",
+      "lemma": "gravy",
+      "synset": "oewn-07854049-n"
+    },
+    {
+      "definition": "any of numerous sauces for spaghetti or other kinds of pasta",
+      "forms": [],
+      "id": "oewn-spaghetti_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "spaghetti sauce",
+      "synset": "oewn-07854209-n"
+    },
+    {
+      "definition": "any of numerous sauces for spaghetti or other kinds of pasta",
+      "forms": [],
+      "id": "oewn-pasta_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "pasta sauce",
+      "synset": "oewn-07854209-n"
+    },
+    {
+      "definition": "sauce for pasta; contains tomatoes and garlic and herbs",
+      "forms": [],
+      "id": "oewn-marinara__1.13.00..",
+      "lang": "en",
+      "lemma": "marinara",
+      "synset": "oewn-07854417-n"
+    },
+    {
+      "definition": "spicy sauce often containing chocolate",
+      "forms": [],
+      "id": "oewn-mole__1.13.00..",
+      "lang": "en",
+      "lemma": "mole",
+      "synset": "oewn-07854527-n"
+    },
+    {
+      "definition": "brown sauce and tomato puree with onions and mushrooms and dry white wine",
+      "forms": [],
+      "id": "oewn-hunter-ap-s_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "hunter's sauce",
+      "synset": "oewn-07854635-n"
+    },
+    {
+      "definition": "brown sauce and tomato puree with onions and mushrooms and dry white wine",
+      "forms": [],
+      "id": "oewn-sauce_chausseur__1.13.00..",
+      "lang": "en",
+      "lemma": "sauce chausseur",
+      "synset": "oewn-07854635-n"
+    },
+    {
+      "definition": "brown sauce and sauteed mushrooms",
+      "forms": [],
+      "id": "oewn-mushroom_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "mushroom sauce",
+      "synset": "oewn-07854787-n"
+    },
+    {
+      "definition": "sauce of prepared mustard thinned with vinegar and vegetable oil with sugar and seasonings",
+      "forms": [],
+      "id": "oewn-mustard_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "mustard sauce",
+      "synset": "oewn-07854881-n"
+    },
+    {
+      "definition": "white sauce with whipping cream and shrimp butter",
+      "forms": [],
+      "id": "oewn-nantua__1.13.00..",
+      "lang": "en",
+      "lemma": "Nantua",
+      "synset": "oewn-07855031-n"
+    },
+    {
+      "definition": "white sauce with whipping cream and shrimp butter",
+      "forms": [],
+      "id": "oewn-shrimp_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "shrimp sauce",
+      "synset": "oewn-07855031-n"
+    },
+    {
+      "definition": "veloute sauce with sauteed chopped onion and paprika and cream",
+      "forms": [],
+      "id": "oewn-hungarian_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Hungarian sauce",
+      "synset": "oewn-07855148-n"
+    },
+    {
+      "definition": "veloute sauce with sauteed chopped onion and paprika and cream",
+      "forms": [],
+      "id": "oewn-paprika_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "paprika sauce",
+      "synset": "oewn-07855148-n"
+    },
+    {
+      "definition": "for venison: brown sauce with sauteed vegetables and trimmings and marinade and plenty of pepper",
+      "forms": [],
+      "id": "oewn-pepper_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "pepper sauce",
+      "synset": "oewn-07855288-n"
+    },
+    {
+      "definition": "for venison: brown sauce with sauteed vegetables and trimmings and marinade and plenty of pepper",
+      "forms": [],
+      "id": "oewn-poivrade__1.13.00..",
+      "lang": "en",
+      "lemma": "Poivrade",
+      "synset": "oewn-07855288-n"
+    },
+    {
+      "definition": "veloute or brown sauce with sauteed chopped onion and dry white wine and sour cream",
+      "forms": [],
+      "id": "oewn-smitane__1.13.00..",
+      "lang": "en",
+      "lemma": "Smitane",
+      "synset": "oewn-07855569-n"
+    },
+    {
+      "definition": "veloute sauce with sauteed chopped onions and whipping cream",
+      "forms": [],
+      "id": "oewn-soubise__1.13.00..",
+      "lang": "en",
+      "lemma": "Soubise",
+      "synset": "oewn-07855706-n"
+    },
+    {
+      "definition": "veloute sauce with sauteed chopped onions and whipping cream",
+      "forms": [],
+      "id": "oewn-white_onion_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "white onion sauce",
+      "synset": "oewn-07855706-n"
+    },
+    {
+      "definition": "brown sauce with sauteed chopped onions and parsley and dry white wine or vinegar",
+      "forms": [],
+      "id": "oewn-lyonnaise_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Lyonnaise sauce",
+      "synset": "oewn-07855840-n"
+    },
+    {
+      "definition": "brown sauce with sauteed chopped onions and parsley and dry white wine or vinegar",
+      "forms": [],
+      "id": "oewn-brown_onion_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "brown onion sauce",
+      "synset": "oewn-07855840-n"
+    },
+    {
+      "definition": "white sauce made with stock instead of milk",
+      "forms": [],
+      "id": "oewn-veloute__1.13.00..",
+      "lang": "en",
+      "lemma": "veloute",
+      "synset": "oewn-07856003-n"
+    },
+    {
+      "definition": "egg-thickened veloute",
+      "forms": [],
+      "id": "oewn-allemande__1.13.00..",
+      "lang": "en",
+      "lemma": "allemande",
+      "synset": "oewn-07856100-n"
+    },
+    {
+      "definition": "egg-thickened veloute",
+      "forms": [],
+      "id": "oewn-allemande_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "allemande sauce",
+      "synset": "oewn-07856100-n"
+    },
+    {
+      "definition": "allemande sauce with capers",
+      "forms": [],
+      "id": "oewn-caper_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "caper sauce",
+      "synset": "oewn-07856195-n"
+    },
+    {
+      "definition": "allemande sauce with chopped parsley",
+      "forms": [],
+      "id": "oewn-poulette__1.13.00..",
+      "lang": "en",
+      "lemma": "poulette",
+      "synset": "oewn-07856280-n"
+    },
+    {
+      "definition": "allemande sauce with curry powder and coconut milk instead of stock",
+      "forms": [],
+      "id": "oewn-curry_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "curry sauce",
+      "synset": "oewn-07856371-n"
+    },
+    {
+      "definition": "a savory sauce of vinegar and soy sauce and spices",
+      "forms": [],
+      "id": "oewn-worcester_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Worcester sauce",
+      "synset": "oewn-07856496-n"
+    },
+    {
+      "definition": "a savory sauce of vinegar and soy sauce and spices",
+      "forms": [],
+      "id": "oewn-worcestershire__1.13.00..",
+      "lang": "en",
+      "lemma": "Worcestershire",
+      "synset": "oewn-07856496-n"
+    },
+    {
+      "definition": "a savory sauce of vinegar and soy sauce and spices",
+      "forms": [],
+      "id": "oewn-worcestershire_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Worcestershire sauce",
+      "synset": "oewn-07856496-n"
+    },
+    {
+      "definition": "a rectangular quarter pound block of butter or margarine",
+      "forms": [],
+      "id": "oewn-stick__1.13.00..",
+      "lang": "en",
+      "lemma": "stick",
+      "synset": "oewn-07864621-n"
+    },
+    {
+      "definition": "ground nuts blended with a little butter",
+      "forms": [],
+      "id": "oewn-nut_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "nut butter",
+      "synset": "oewn-07871389-n"
+    },
+    {
+      "definition": "a spread made from ground peanuts",
+      "forms": [],
+      "id": "oewn-peanut_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "peanut butter",
+      "synset": "oewn-07871486-n"
+    },
+    {
+      "definition": "a very sweet white spread resembling marshmallow candy",
+      "forms": [],
+      "id": "oewn-marshmallow_fluff__1.13.00..",
+      "lang": "en",
+      "lemma": "marshmallow fluff",
+      "synset": "oewn-07871579-n"
+    },
+    {
+      "definition": "butter blended with minced onion",
+      "forms": [],
+      "id": "oewn-onion_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "onion butter",
+      "synset": "oewn-07871697-n"
+    },
+    {
+      "definition": "butter blended with mashed pimento",
+      "forms": [],
+      "id": "oewn-pimento_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "pimento butter",
+      "synset": "oewn-07871788-n"
+    },
+    {
+      "definition": "butter blended with chopped shrimp or seasoned with essence from shrimp shells",
+      "forms": [],
+      "id": "oewn-shrimp_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "shrimp butter",
+      "synset": "oewn-07871883-n"
+    },
+    {
+      "definition": "butter blended with chopped lobster or seasoned with essence from lobster shells",
+      "forms": [],
+      "id": "oewn-lobster_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "lobster butter",
+      "synset": "oewn-07872021-n"
+    },
+    {
+      "definition": "a tasty mixture to be spread on bread or crackers or used in preparing other dishes",
+      "forms": [],
+      "id": "oewn-spread__1.13.00..",
+      "lang": "en",
+      "lemma": "spread",
+      "synset": "oewn-07872246-n"
+    },
+    {
+      "definition": "a tasty mixture to be spread on bread or crackers or used in preparing other dishes",
+      "forms": [],
+      "id": "oewn-paste__1.13.01..",
+      "lang": "en",
+      "lemma": "paste",
+      "synset": "oewn-07872246-n"
+    },
+    {
+      "definition": "spread made of cheese mixed with butter or cream or cream cheese and seasonings",
+      "forms": [],
+      "id": "oewn-cheese_spread__1.13.00..",
+      "lang": "en",
+      "lemma": "cheese spread",
+      "synset": "oewn-07872732-n"
+    },
+    {
+      "definition": "butter blended with mashed anchovies",
+      "forms": [],
+      "id": "oewn-anchovy_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "anchovy butter",
+      "synset": "oewn-07872871-n"
+    },
+    {
+      "definition": "a paste of fish or shellfish",
+      "forms": [],
+      "id": "oewn-fishpaste__1.13.00..",
+      "lang": "en",
+      "lemma": "fishpaste",
+      "synset": "oewn-07872968-n"
+    },
+    {
+      "definition": "butter seasoned with mashed garlic",
+      "forms": [],
+      "id": "oewn-garlic_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "garlic butter",
+      "synset": "oewn-07873052-n"
+    },
+    {
+      "definition": "a thick paste made from fermented soybeans and barley or rice malt; used in Japanese cooking to make soups or sauces",
+      "forms": [],
+      "id": "oewn-miso__1.13.00..",
+      "lang": "en",
+      "lemma": "miso",
+      "synset": "oewn-07873146-n"
+    },
+    {
+      "definition": "the thick green root of the wasabi plant that the Japanese use in cooking and that tastes like strong horseradish; in powder or paste form it is often eaten with raw fish",
+      "forms": [],
+      "id": "oewn-wasabi__1.13.00..",
+      "lang": "en",
+      "lemma": "wasabi",
+      "synset": "oewn-07873332-n"
+    },
+    {
+      "definition": "for preparing snails: butter seasoned with shallots and garlic and parsley",
+      "forms": [],
+      "id": "oewn-snail_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "snail butter",
+      "synset": "oewn-07873574-n"
+    },
+    {
+      "definition": "a thick spread made from mashed chickpeas, tahini, lemon juice and garlic; used especially as a dip for pita; originated in the Middle East",
+      "forms": [],
+      "id": "oewn-hummus__1.13.00..",
+      "lang": "en",
+      "lemma": "hummus",
+      "synset": "oewn-07873707-n"
+    },
+    {
+      "definition": "a thick spread made from mashed chickpeas, tahini, lemon juice and garlic; used especially as a dip for pita; originated in the Middle East",
+      "forms": [],
+      "id": "oewn-humus__1.13.00..",
+      "lang": "en",
+      "lemma": "humus",
+      "synset": "oewn-07873707-n"
+    },
+    {
+      "definition": "a thick spread made from mashed chickpeas, tahini, lemon juice and garlic; used especially as a dip for pita; originated in the Middle East",
+      "forms": [],
+      "id": "oewn-hommos__1.13.00..",
+      "lang": "en",
+      "lemma": "hommos",
+      "synset": "oewn-07873707-n"
+    },
+    {
+      "definition": "a thick spread made from mashed chickpeas, tahini, lemon juice and garlic; used especially as a dip for pita; originated in the Middle East",
+      "forms": [],
+      "id": "oewn-hoummos__1.13.00..",
+      "lang": "en",
+      "lemma": "hoummos",
+      "synset": "oewn-07873707-n"
+    },
+    {
+      "definition": "a thick spread made from mashed chickpeas, tahini, lemon juice and garlic; used especially as a dip for pita; originated in the Middle East",
+      "forms": [],
+      "id": "oewn-humous__1.13.00..",
+      "lang": "en",
+      "lemma": "humous",
+      "synset": "oewn-07873707-n"
+    },
+    {
+      "definition": "liver or meat or fowl finely minced or ground and variously seasoned",
+      "forms": [],
+      "id": "oewn-pate__1.13.00..",
+      "lang": "en",
+      "lemma": "pate",
+      "synset": "oewn-07873935-n"
+    },
+    {
+      "definition": "a pate made from duck liver",
+      "forms": [],
+      "id": "oewn-duck_pate__1.13.00..",
+      "lang": "en",
+      "lemma": "duck pate",
+      "synset": "oewn-07874090-n"
+    },
+    {
+      "definition": "a pate made from goose liver (marinated in Cognac) and truffles",
+      "forms": [],
+      "id": "oewn-foie_gras__1.13.00..",
+      "lang": "en",
+      "lemma": "foie gras",
+      "synset": "oewn-07874173-n"
+    },
+    {
+      "definition": "a pate made from goose liver (marinated in Cognac) and truffles",
+      "forms": [],
+      "id": "oewn-pate_de_foie_gras__1.13.00..",
+      "lang": "en",
+      "lemma": "pate de foie gras",
+      "synset": "oewn-07874173-n"
+    },
+    {
+      "definition": "a spread consisting of capers and black olives and anchovies made into a puree with olive oil",
+      "forms": [],
+      "id": "oewn-tapenade__1.13.00..",
+      "lang": "en",
+      "lemma": "tapenade",
+      "synset": "oewn-07874312-n"
+    },
+    {
+      "definition": "a thick Middle Eastern paste made from ground sesame seeds",
+      "forms": [],
+      "id": "oewn-tahini__1.13.00..",
+      "lang": "en",
+      "lemma": "tahini",
+      "synset": "oewn-07874460-n"
+    },
+    {
+      "definition": "something added to foods to make them taste sweeter",
+      "forms": [],
+      "id": "oewn-sweetening__1.13.00..",
+      "lang": "en",
+      "lemma": "sweetening",
+      "synset": "oewn-07874571-n"
+    },
+    {
+      "definition": "something added to foods to make them taste sweeter",
+      "forms": [],
+      "id": "oewn-sweetener__1.13.00..",
+      "lang": "en",
+      "lemma": "sweetener",
+      "synset": "oewn-07874571-n"
+    },
+    {
+      "definition": "an artificial sweetener made from aspartic acid; used as a calorie-free sweetener",
+      "forms": [],
+      "id": "oewn-aspartame__1.13.00..",
+      "lang": "en",
+      "lemma": "aspartame",
+      "synset": "oewn-07874817-n"
+    },
+    {
+      "definition": "a sweet yellow liquid produced by bees",
+      "forms": [],
+      "id": "oewn-honey__1.13.00..",
+      "lang": "en",
+      "lemma": "honey",
+      "synset": "oewn-07874954-n"
+    },
+    {
+      "definition": "a crystalline substance 500 times sweeter than sugar; used as a calorie-free sweetener",
+      "forms": [],
+      "id": "oewn-saccharin__1.13.00..",
+      "lang": "en",
+      "lemma": "saccharin",
+      "synset": "oewn-07875118-n"
+    },
+    {
+      "definition": "a white crystalline carbohydrate used as a sweetener and preservative",
+      "forms": [],
+      "id": "oewn-sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "sugar",
+      "synset": "oewn-07875260-n"
+    },
+    {
+      "definition": "a white crystalline carbohydrate used as a sweetener and preservative",
+      "forms": [],
+      "id": "oewn-refined_sugar__1.13.00..",
+      "lang": "en",
+      "lemma": "refined sugar",
+      "synset": "oewn-07875260-n"
+    },
+    {
+      "definition": "a thick sweet sticky liquid",
+      "forms": [],
+      "id": "oewn-syrup__1.13.00..",
+      "lang": "en",
+      "lemma": "syrup",
+      "synset": "oewn-07875559-n"
+    },
+    {
+      "definition": "a thick sweet sticky liquid",
+      "forms": [],
+      "id": "oewn-sirup__1.13.00..",
+      "lang": "en",
+      "lemma": "sirup",
+      "synset": "oewn-07875559-n"
+    },
+    {
+      "definition": "sugar and water and sometimes corn syrup boiled together; used as sweetening especially in drinks",
+      "forms": [],
+      "id": "oewn-sugar_syrup__1.13.00..",
+      "lang": "en",
+      "lemma": "sugar syrup",
+      "synset": "oewn-07875772-n"
+    },
+    {
+      "definition": "thick dark syrup produced by boiling down juice from sugar cane; especially during sugar refining",
+      "forms": [],
+      "id": "oewn-molasses__1.13.00..",
+      "lang": "en",
+      "lemma": "molasses",
+      "synset": "oewn-07875927-n"
+    },
+    {
+      "definition": "made from juice of sweet sorghum",
+      "forms": [],
+      "id": "oewn-sorghum__1.13.00..",
+      "lang": "en",
+      "lemma": "sorghum",
+      "synset": "oewn-07876079-n"
+    },
+    {
+      "definition": "made from juice of sweet sorghum",
+      "forms": [],
+      "id": "oewn-sorghum_molasses__1.13.00..",
+      "lang": "en",
+      "lemma": "sorghum molasses",
+      "synset": "oewn-07876079-n"
+    },
+    {
+      "definition": "a pale cane syrup",
+      "forms": [],
+      "id": "oewn-treacle__1.13.00..",
+      "lang": "en",
+      "lemma": "treacle",
+      "synset": "oewn-07876184-n"
+    },
+    {
+      "definition": "a pale cane syrup",
+      "forms": [],
+      "id": "oewn-golden_syrup__1.13.00..",
+      "lang": "en",
+      "lemma": "golden syrup",
+      "synset": "oewn-07876184-n"
+    },
+    {
+      "definition": "thin syrup made from pomegranate juice; used in mixed drinks",
+      "forms": [],
+      "id": "oewn-grenadine__1.13.00..",
+      "lang": "en",
+      "lemma": "grenadine",
+      "synset": "oewn-07876307-n"
+    },
+    {
+      "definition": "made by concentrating sap from sugar maples",
+      "forms": [],
+      "id": "oewn-maple_syrup__1.13.00..",
+      "lang": "en",
+      "lemma": "maple syrup",
+      "synset": "oewn-07876423-n"
+    },
+    {
+      "definition": "syrup prepared from corn",
+      "forms": [],
+      "id": "oewn-corn_syrup__1.13.00..",
+      "lang": "en",
+      "lemma": "corn syrup",
+      "synset": "oewn-07876524-n"
+    },
+    {
+      "definition": "lobster butter and cream and egg yolks seasoned with onions and sherry or Madeira",
+      "forms": [],
+      "id": "oewn-newburg_sauce__1.13.00..",
+      "lang": "en",
+      "lemma": "Newburg sauce",
+      "synset": "oewn-07886710-n"
+    },
+    {
+      "definition": "a flavoring made from coffee mixed with chocolate",
+      "forms": [],
+      "id": "oewn-mocha__1.13.02..",
+      "lang": "en",
+      "lemma": "mocha",
+      "synset": "oewn-07937229-n"
+    },
+    {
+      "definition": "a flavoring made by boiling down the juice of the bitter cassava; used in West Indian cooking",
+      "forms": [],
+      "id": "oewn-cassareep__1.13.00..",
+      "lang": "en",
+      "lemma": "cassareep",
+      "synset": "oewn-07937330-n"
+    },
+    {
+      "definition": "dried leaves of the tea shrub; used to make tea",
+      "forms": [],
+      "id": "oewn-tea__1.13.02..",
+      "lang": "en",
+      "lemma": "tea",
+      "synset": "oewn-07949081-n"
+    },
+    {
+      "definition": "dried leaves of the tea shrub; used to make tea",
+      "forms": [],
+      "id": "oewn-tea_leaf__1.13.00..",
+      "lang": "en",
+      "lemma": "tea leaf",
+      "synset": "oewn-07949081-n"
+    },
+    {
+      "definition": "a measured amount of tea in a bag for an individual serving of tea",
+      "forms": [],
+      "id": "oewn-tea_bag__1.13.00..",
+      "lang": "en",
+      "lemma": "tea bag",
+      "synset": "oewn-07949394-n"
+    },
+    {
+      "definition": "fermented tea leaves",
+      "forms": [],
+      "id": "oewn-black_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "black tea",
+      "synset": "oewn-07950770-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-congou__1.13.00..",
+      "lang": "en",
+      "lemma": "congou",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-congo__1.13.00..",
+      "lang": "en",
+      "lemma": "congo",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-congou_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "congou tea",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "black tea grown in China",
+      "forms": [],
+      "id": "oewn-english_breakfast_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "English breakfast tea",
+      "synset": "oewn-07950918-n"
+    },
+    {
+      "definition": "a fine variety of black tea grown in northern India",
+      "forms": [],
+      "id": "oewn-darjeeling__1.13.00..",
+      "lang": "en",
+      "lemma": "Darjeeling",
+      "synset": "oewn-07951040-n"
+    },
+    {
+      "definition": "a superior grade of black tea; grown in India and Sri Lanka and Java",
+      "forms": [],
+      "id": "oewn-orange_pekoe__1.13.00..",
+      "lang": "en",
+      "lemma": "orange pekoe",
+      "synset": "oewn-07951148-n"
+    },
+    {
+      "definition": "a superior grade of black tea; grown in India and Sri Lanka and Java",
+      "forms": [],
+      "id": "oewn-pekoe__1.13.00..",
+      "lang": "en",
+      "lemma": "pekoe",
+      "synset": "oewn-07951148-n"
+    },
+    {
+      "definition": "a fine quality of black tea native to China",
+      "forms": [],
+      "id": "oewn-souchong__1.13.00..",
+      "lang": "en",
+      "lemma": "souchong",
+      "synset": "oewn-07951283-n"
+    },
+    {
+      "definition": "a fine quality of black tea native to China",
+      "forms": [],
+      "id": "oewn-soochong__1.13.00..",
+      "lang": "en",
+      "lemma": "soochong",
+      "synset": "oewn-07951283-n"
+    },
+    {
+      "definition": "tea leaves that have been steamed and dried without fermenting",
+      "forms": [],
+      "id": "oewn-green_tea__1.13.00..",
+      "lang": "en",
+      "lemma": "green tea",
+      "synset": "oewn-07951392-n"
+    },
+    {
+      "definition": "a Chinese green tea with twisted leaves",
+      "forms": [],
+      "id": "oewn-hyson__1.13.00..",
+      "lang": "en",
+      "lemma": "hyson",
+      "synset": "oewn-07951528-n"
+    },
+    {
+      "definition": "Chinese tea leaves that have been partially fermented before being dried",
+      "forms": [],
+      "id": "oewn-oolong__1.13.00..",
+      "lang": "en",
+      "lemma": "oolong",
+      "synset": "oewn-07951619-n"
+    },
+    {
+      "definition": "A sauce made from pureed garlic and chilis named after the town of Si Racha in Thailand",
+      "forms": [],
+      "id": "oewn-sriracha__1.13.01..",
+      "lang": "en",
+      "lemma": "Sriracha",
+      "synset": "oewn-91000021-n"
+    },
+    {
+      "definition": "a type of tea that is more oxidized than oolong, green and white teas.",
+      "forms": [],
+      "id": "oewn-ceylon_black_tea__1.13.01..",
+      "lang": "en",
+      "lemma": "ceylon black tea",
+      "synset": "oewn-92406449-n"
+    },
+    {
+      "definition": "a slightly spicy mustard originating from Russia.",
+      "forms": [],
+      "id": "oewn-sarepta_mustard__1.13.01..",
+      "lang": "en",
+      "lemma": "sarepta mustard",
+      "synset": "oewn-92411169-n"
+    },
+    {
+      "definition": "fragrant leaves of Cymbopogon citratus, used in cooking, in traditional medicine and are often found in herbal supplements and teas.",
+      "forms": [],
+      "id": "oewn-lemon_grass__1.13.01..",
+      "lang": "en",
+      "lemma": "lemon grass",
+      "synset": "oewn-92411529-n"
+    },
+    {
+      "definition": "sugar in the form of large crystals, often used for decoration.",
+      "forms": [],
+      "id": "oewn-rock_sugar__1.13.01..",
+      "lang": "en",
+      "lemma": "rock sugar",
+      "synset": "oewn-92411554-n"
+    },
+    {
+      "definition": "a dark, strong honey with a rich fragrance of stewed fruit or fig jam, not as sweet as nectar honeys.",
+      "forms": [],
+      "id": "oewn-honeydew_honey__1.13.01..",
+      "lang": "en",
+      "lemma": "honeydew honey",
+      "synset": "oewn-92412090-n"
+    },
+    {
+      "definition": "honey in which some of the glucose content has spontaneously crystallized from solution as the monohydrate.",
+      "forms": [],
+      "id": "oewn-crystallized_honey__1.13.01..",
+      "lang": "en",
+      "lemma": "crystallized honey",
+      "synset": "oewn-92413641-n"
+    },
+    {
+      "definition": "a famous Middle Eastern condiment made from dried hyssop leaves, mixed with sesame seeds, dried sumac, and often salt, as well as other spices.",
+      "forms": [],
+      "id": "oewn-zaatar__1.13.01..",
+      "lang": "en",
+      "lemma": "zaatar",
+      "synset": "oewn-92413787-n"
+    },
+    {
+      "definition": "a dried rhizome or its powdered form of Kaempferia galanga, used in cooking in Indonesia.",
+      "forms": [],
+      "id": "oewn-kencur__1.13.01..",
+      "lang": "en",
+      "lemma": "kencur",
+      "synset": "oewn-92413825-n"
+    },
+    {
+      "definition": "seasoning that consists of a mix of pepper and various herbs (usually basil, marjoram, oregano, sage, parsley, thyme and pepper).",
+      "forms": [],
+      "id": "oewn-herb_pepper__1.13.01..",
+      "lang": "en",
+      "lemma": "herb pepper",
+      "synset": "oewn-92414331-n"
+    },
+    {
+      "definition": "a leaf from the curry tree, valued as seasoning in southern and west-coast Indian and Sri Lankan cooking.",
+      "forms": [],
+      "id": "oewn-curry_leaf__1.13.01..",
+      "lang": "en",
+      "lemma": "curry leaf",
+      "synset": "oewn-92414452-n"
+    },
+    {
+      "definition": "a mix of water, sugar, and various ingredients (such as alcohol), used to infuse cakes.",
+      "forms": [],
+      "id": "oewn-soaking_syrup__1.13.01..",
+      "lang": "en",
+      "lemma": "soaking syrup",
+      "synset": "oewn-92414723-n"
+    },
+    {
+      "definition": "a sauce similar to Worcestershire sauce, manufactured by John Burgess & Son and Crosse & Blackwell; used for meat.",
+      "forms": [],
+      "id": "oewn-mogul_sauce__1.13.01..",
+      "lang": "en",
+      "lemma": "mogul sauce",
+      "synset": "oewn-92416278-n"
+    },
+    {
+      "definition": "a beverage prepared by infusion of sage leaves.",
+      "forms": [],
+      "id": "oewn-sage_tea__1.13.01..",
+      "lang": "en",
+      "lemma": "sage tea",
+      "synset": "oewn-92426796-n"
+    },
+    {
+      "definition": "any salt or ester of cyclamic acid.",
+      "forms": [],
+      "id": "oewn-cyclamate__1.13.01..",
+      "lang": "en",
+      "lemma": "cyclamate",
+      "synset": "oewn-92465922-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a substance such that one to three tablespoons dissolved in a glass of warm water is a homemade emetic",
+      "hypernyms": [
+        "oewn-03288430-n",
+        "oewn-07835456-n"
+      ],
+      "id": "oewn-04000775-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "powdered mustard"
+    },
+    {
+      "definition": "spicy or savory condiment",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07598006-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "relish"
+    },
+    {
+      "definition": "tasty mixture or liquid into which bite-sized foods are dipped",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07598174-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "dip"
+    },
+    {
+      "definition": "a dip made of cooked beans",
+      "hypernyms": [
+        "oewn-07598174-n"
+      ],
+      "id": "oewn-07598376-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bean dip"
+    },
+    {
+      "definition": "a dip made of cheeses",
+      "hypernyms": [
+        "oewn-07598174-n"
+      ],
+      "id": "oewn-07598457-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cheese dip"
+    },
+    {
+      "definition": "a dip made of clams and soft cream cheese",
+      "hypernyms": [
+        "oewn-07598174-n"
+      ],
+      "id": "oewn-07598535-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "clam dip"
+    },
+    {
+      "definition": "a dip made of mashed avocado mixed with chopped onions and other seasonings",
+      "hypernyms": [
+        "oewn-07598174-n"
+      ],
+      "id": "oewn-07598631-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "guacamole"
+    },
+    {
+      "definition": "burnt sugar; used to color and flavor food",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07610751-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "caramel"
+    },
+    {
+      "definition": "refined sugar molded into rectangular shapes convenient as single servings",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07610939-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "lump sugar"
+    },
+    {
+      "definition": "a large conical loaf of concentrated refined sugar",
+      "hypernyms": [
+        "oewn-07665191-n",
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07611070-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 6,
+      "name": "sugarloaf"
+    },
+    {
+      "definition": "sugar from sugarcane used as sweetening agent",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07611220-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cane sugar"
+    },
+    {
+      "definition": "very finely granulated sugar that was formerly sprinkled from a castor",
+      "hypernyms": [
+        "oewn-07611485-n"
+      ],
+      "id": "oewn-07611322-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "castor sugar"
+    },
+    {
+      "definition": "sugar granulated into a fine powder",
+      "hypernyms": [
+        "oewn-07611617-n"
+      ],
+      "id": "oewn-07611485-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "powdered sugar"
+    },
+    {
+      "definition": "sugar in the form of small grains",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07611617-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "granulated sugar"
+    },
+    {
+      "definition": "finely powdered sugar used to make icing",
+      "hypernyms": [
+        "oewn-07611485-n"
+      ],
+      "id": "oewn-07611731-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "icing sugar"
+    },
+    {
+      "definition": "sugar from sugar beets used as sweetening agent",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07611829-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "beet sugar"
+    },
+    {
+      "definition": "dextrose used as sweetening agent",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07611933-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "corn sugar"
+    },
+    {
+      "definition": "unrefined or only partly refined sugar",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-07612023-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "brown sugar"
+    },
+    {
+      "definition": "light brown cane sugar; originally from Guyana",
+      "hypernyms": [
+        "oewn-07612023-n"
+      ],
+      "id": "oewn-07612137-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "demerara"
+    },
+    {
+      "definition": "a spread made chiefly from vegetable oils and used as a substitute for butter",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07688659-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "margarine"
+    },
+    {
+      "definition": "any of various small cucumbers pickled whole",
+      "hypernyms": [
+        "oewn-07840964-n"
+      ],
+      "id": "oewn-07774558-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "gherkin"
+    },
+    {
+      "definition": "one-seeded fruit of the European olive tree usually pickled and used as a relish",
+      "hypernyms": [
+        "oewn-07598006-n",
+        "oewn-13159085-n"
+      ],
+      "id": "oewn-07783320-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "olive"
+    },
+    {
+      "definition": "olives picked ripe and cured in brine then dried or pickled or preserved canned or in oil",
+      "hypernyms": [
+        "oewn-07783320-n"
+      ],
+      "id": "oewn-07783525-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "black olive"
+    },
+    {
+      "definition": "olives picked green and pickled in brine; infrequently stuffed with e.g. pimento",
+      "hypernyms": [
+        "oewn-07783320-n"
+      ],
+      "id": "oewn-07783685-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "green olive"
+    },
+    {
+      "definition": "a flavoring extracted from the kola nut",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07790455-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "cola extract"
+    },
+    {
+      "definition": "paste made primarily of anchovies; used in sauces and spreads",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07799803-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "anchovy paste"
+    },
+    {
+      "definition": "something added to food primarily for the savor it imparts",
+      "hypernyms": [
+        "oewn-07825072-n"
+      ],
+      "id": "oewn-07825344-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "flavorer"
+    },
+    {
+      "definition": "a cube of evaporated seasoned meat extract",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07826507-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "bouillon cube"
+    },
+    {
+      "definition": "a preparation (a sauce or relish or spice) to enhance flavor or enjoyment",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07826883-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "condiment"
+    },
+    {
+      "definition": "aromatic potherb used in cookery for its savory qualities",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07827392-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "herb"
+    },
+    {
+      "definition": "a mixture of finely chopped fresh herbs",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07828022-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "fines herbes"
+    },
+    {
+      "definition": "any of a variety of pungent aromatic vegetable substances used for flavoring food",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07828160-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "spice"
+    },
+    {
+      "definition": "oil from the peppermint plant used as flavoring",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07828473-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "peppermint oil"
+    },
+    {
+      "definition": "an aromatic oil obtained from the spearmint plant",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07828638-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "spearmint oil"
+    },
+    {
+      "definition": "fragrant yellow oil obtained from the lemon peel",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07828766-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "lemon oil"
+    },
+    {
+      "definition": "oil or flavoring obtained from the creeping wintergreen or teaberry plant",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07828889-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "wintergreen oil"
+    },
+    {
+      "definition": "white crystalline form of especially sodium chloride used to season and preserve food",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07829083-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "salt"
+    },
+    {
+      "definition": "ground celery seed and salt",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07829300-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "celery salt"
+    },
+    {
+      "definition": "ground dried garlic and salt",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07829385-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "garlic salt"
+    },
+    {
+      "definition": "ground dried onion and salt",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07829471-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "onion salt"
+    },
+    {
+      "definition": "combination of salt and vegetable extracts and spices and monosodium glutamate",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07829555-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "seasoned salt"
+    },
+    {
+      "definition": "crystals of citric acid used as seasoning",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07829693-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sour salt"
+    },
+    {
+      "definition": "Chinese seasoning made by grinding star anise and fennel and pepper and cloves and cinnamon",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07829809-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "five spice powder"
+    },
+    {
+      "definition": "ground dried berrylike fruit of a West Indian allspice tree; suggesting combined flavors of cinnamon and nutmeg and cloves",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07829983-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "allspice"
+    },
+    {
+      "definition": "spice from the dried aromatic bark of the Ceylon cinnamon tree; used as rolled strips or ground",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07830179-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "cinnamon"
+    },
+    {
+      "definition": "dried rolled strips of cinnamon bark",
+      "hypernyms": [
+        "oewn-07830179-n"
+      ],
+      "id": "oewn-07830366-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "stick cinnamon"
+    },
+    {
+      "definition": "spice from dried unopened flower bud of the clove tree; used whole or ground",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07830463-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "clove"
+    },
+    {
+      "definition": "fennel seeds are ground and used as a spice or as an ingredient of a spice mixture",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07830766-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "fennel"
+    },
+    {
+      "definition": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cookery",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07830901-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "ginger"
+    },
+    {
+      "definition": "dried ground gingerroot",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07831139-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "ginger"
+    },
+    {
+      "definition": "spice made from the dried fleshy covering of the nutmeg seed",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07831270-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "mace"
+    },
+    {
+      "definition": "hard aromatic seed of the nutmeg tree used as spice when grated or ground",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07831400-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "nutmeg"
+    },
+    {
+      "definition": "pungent seasoning from the berry of the common pepper plant of East India; use whole or ground",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07831564-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "pepper"
+    },
+    {
+      "definition": "pepper that is ground from whole peppercorns with husks on",
+      "hypernyms": [
+        "oewn-07831564-n"
+      ],
+      "id": "oewn-07831815-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "black pepper"
+    },
+    {
+      "definition": "pepper ground from husked peppercorns",
+      "hypernyms": [
+        "oewn-07831564-n"
+      ],
+      "id": "oewn-07831932-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "white pepper"
+    },
+    {
+      "definition": "dried root bark of the sassafras tree",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07832028-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sassafras"
+    },
+    {
+      "definition": "leaves of the common basil; used fresh or dried",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832140-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "basil"
+    },
+    {
+      "definition": "dried leaf of the bay laurel",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832272-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "bay leaf"
+    },
+    {
+      "definition": "an herb whose leaves are used to flavor sauces and punches; young leaves can be eaten in salads or cooked",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832374-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "borage"
+    },
+    {
+      "definition": "bitter leaves used sparingly in salads; dried flowers used in soups and tisanes",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832551-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "hyssop"
+    },
+    {
+      "definition": "leaves used sparingly in soups and stews",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832702-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "caraway"
+    },
+    {
+      "definition": "fresh ferny parsley-like leaves used as a garnish with chicken and veal and omelets and green salads and spinach",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07832815-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chervil"
+    },
+    {
+      "definition": "cylindrical leaves used fresh as a mild onion-flavored seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833000-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chives"
+    },
+    {
+      "definition": "leaves make a popular tisane; young leaves used in salads or cooked",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833136-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "comfrey"
+    },
+    {
+      "definition": "parsley-like herb used as seasoning or garnish",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833291-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "coriander"
+    },
+    {
+      "definition": "dried coriander seeds used whole or ground",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07833441-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "coriander"
+    },
+    {
+      "definition": "leaves used sparingly (because of bitter overtones) in sauces and soups and stuffings",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833575-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "costmary"
+    },
+    {
+      "definition": "leaves used for seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07833734-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "fennel"
+    },
+    {
+      "definition": "aromatic anis-scented seeds",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07834005-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "fennel seed"
+    },
+    {
+      "definition": "aromatic seeds used as seasoning especially in curry",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07834109-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "fenugreek"
+    },
+    {
+      "definition": "aromatic bulb used as seasoning",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07834253-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "garlic"
+    },
+    {
+      "definition": "one of the small bulblets that can be split off of the axis of a larger garlic bulb",
+      "hypernyms": [
+        "oewn-07834253-n"
+      ],
+      "id": "oewn-07834398-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "clove"
+    },
+    {
+      "definition": "large flat leaves used as chive is used",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07834548-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "garlic chive"
+    },
+    {
+      "definition": "lemony leaves used for a tisane or in soups or fruit punches",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07834665-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lemon balm"
+    },
+    {
+      "definition": "stalks eaten like celery or candied like angelica; seeds used for flavoring or pickled like capers",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07834801-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "lovage"
+    },
+    {
+      "definition": "pungent leaves used as seasoning with meats and fowl and in stews and soups and omelets",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07834971-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "marjoram"
+    },
+    {
+      "definition": "the leaves of a mint plant used fresh or candied",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07835142-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "mint"
+    },
+    {
+      "definition": "black or white seeds ground to make mustard pastes or powders",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07835279-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "mustard seed"
+    },
+    {
+      "definition": "pungent powder or paste prepared from ground mustard seeds",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07835456-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "mustard"
+    },
+    {
+      "definition": "very hot prepared mustard",
+      "hypernyms": [
+        "oewn-07835456-n"
+      ],
+      "id": "oewn-07835658-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Chinese mustard"
+    },
+    {
+      "definition": "flowers and seeds and leaves all used as flavorings",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07835745-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "nasturtium"
+    },
+    {
+      "definition": "aromatic herb with flat or crinkly leaves that are cut finely and used to garnish food",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07835872-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "parsley"
+    },
+    {
+      "definition": "extremely pungent leaves used fresh or dried as seasoning for especially meats",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836121-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "rosemary"
+    },
+    {
+      "definition": "leaves sometimes used for flavoring fruit or claret cup but should be used with great caution: can cause irritation like poison ivy",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836273-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "rue"
+    },
+    {
+      "definition": "aromatic fresh or dried grey-green leaves used widely as seasoning for meats and fowl and game etc",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836473-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sage"
+    },
+    {
+      "definition": "fresh leaves used in omelets and fritters and with lamb",
+      "hypernyms": [
+        "oewn-07836473-n"
+      ],
+      "id": "oewn-07836659-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "clary sage"
+    },
+    {
+      "definition": "either of two aromatic herbs of the mint family",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07836790-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "savory"
+    },
+    {
+      "definition": "herb with delicately flavored leaves with many uses",
+      "hypernyms": [
+        "oewn-07836790-n"
+      ],
+      "id": "oewn-07836936-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "summer savory"
+    },
+    {
+      "definition": "resinous leaves used in stews and stuffings and meat loaf",
+      "hypernyms": [
+        "oewn-07836790-n"
+      ],
+      "id": "oewn-07837083-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "winter savory"
+    },
+    {
+      "definition": "fragrant dark green leaves used to flavor May wine",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837236-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sweet woodruff"
+    },
+    {
+      "definition": "fresh ferny leaves and green seeds used as garnish in salads and cold vegetables; dried seeds used in confectionery and liqueurs",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837380-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sweet cicely"
+    },
+    {
+      "definition": "fresh leaves (or leaves preserved in vinegar) used as seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837586-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "tarragon"
+    },
+    {
+      "definition": "leaves can be used as seasoning for almost any meat and stews and stuffings and vegetables",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07837734-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "thyme"
+    },
+    {
+      "definition": "ground dried rhizome of the turmeric plant used as seasoning",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07837895-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "turmeric"
+    },
+    {
+      "definition": "pickled flower buds used as a pungent relish in various dishes and sauces",
+      "hypernyms": [
+        "oewn-07840964-n"
+      ],
+      "id": "oewn-07838029-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "caper"
+    },
+    {
+      "definition": "thick spicy sauce made from tomatoes",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07838173-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "catsup"
+    },
+    {
+      "definition": "aromatic seeds used as seasoning like cinnamon and cloves especially in pickles and barbecue sauces",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07838299-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "cardamom"
+    },
+    {
+      "definition": "ground pods and seeds of pungent red peppers of the genus Capsicum",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07838494-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "cayenne"
+    },
+    {
+      "definition": "powder made of ground chili peppers mixed with e.g. cumin and garlic and oregano",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07838663-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "chili powder"
+    },
+    {
+      "definition": "tomatoes and onions and peppers (sweet or hot) simmered with vinegar and sugar and various seasonings",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07838821-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chili sauce"
+    },
+    {
+      "definition": "fiery vinegar flavored with chili peppers",
+      "hypernyms": [
+        "oewn-07844963-n"
+      ],
+      "id": "oewn-07838980-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "chili vinegar"
+    },
+    {
+      "definition": "a spicy condiment made of chopped fruits or vegetables cooked in vinegar and sugar with ginger and spices",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07839081-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "chutney"
+    },
+    {
+      "definition": "pungent bottled sauce for steak",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07839256-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "steak sauce"
+    },
+    {
+      "definition": "spicy tomato-based sauce for tacos",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07839345-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "taco sauce"
+    },
+    {
+      "definition": "spicy sauce of tomatoes and onions and chili peppers to accompany Mexican foods",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07839436-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "salsa"
+    },
+    {
+      "definition": "sweetened diluted vinegar with chopped mint leaves",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07839567-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "mint sauce"
+    },
+    {
+      "definition": "sauce made of cranberries and sugar",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07839674-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "cranberry sauce"
+    },
+    {
+      "definition": "pungent blend of cumin and ground coriander seed and turmeric and other spices",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07839790-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "curry powder"
+    },
+    {
+      "definition": "a thick sweet and pungent Chinese condiment",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07840244-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "duck sauce"
+    },
+    {
+      "definition": "grated horseradish root",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07840359-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "horseradish"
+    },
+    {
+      "definition": "mixtures of vinegar or wine and oil with various spices and seasonings; used for soaking foods before cooking",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07840478-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "marinade"
+    },
+    {
+      "definition": "a mild powdered seasoning made from dried pimientos",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07840678-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "paprika"
+    },
+    {
+      "definition": "a mild seasoning made from a variety of pimiento grown in Spain",
+      "hypernyms": [
+        "oewn-07840678-n"
+      ],
+      "id": "oewn-07840839-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "Spanish paprika"
+    },
+    {
+      "definition": "vegetables (especially cucumbers) preserved in brine or vinegar",
+      "hypernyms": [
+        "oewn-07598006-n"
+      ],
+      "id": "oewn-07840964-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pickle"
+    },
+    {
+      "definition": "pickle preserved in brine or vinegar flavored with dill seed",
+      "hypernyms": [
+        "oewn-07840964-n"
+      ],
+      "id": "oewn-07841170-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "dill pickle"
+    },
+    {
+      "definition": "chopped pickles in mustard sauce",
+      "hypernyms": [
+        "oewn-07598006-n"
+      ],
+      "id": "oewn-07841288-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "chowchow"
+    },
+    {
+      "definition": "thinly sliced sweet pickles",
+      "hypernyms": [
+        "oewn-07841693-n"
+      ],
+      "id": "oewn-07841375-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "bread and butter pickle"
+    },
+    {
+      "definition": "relish of chopped (usually sweet) pickles",
+      "hypernyms": [
+        "oewn-07598006-n"
+      ],
+      "id": "oewn-07841472-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pickle relish"
+    },
+    {
+      "definition": "relish of chopped pickled cucumbers and green peppers and onion",
+      "hypernyms": [
+        "oewn-07598006-n"
+      ],
+      "id": "oewn-07841573-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "piccalilli"
+    },
+    {
+      "definition": "pickle cured in brine and preserved in sugar and vinegar",
+      "hypernyms": [
+        "oewn-07840964-n"
+      ],
+      "id": "oewn-07841693-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "sweet pickle"
+    },
+    {
+      "definition": "thin sauce made of fermented soy beans",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07841948-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "soy sauce"
+    },
+    {
+      "definition": "very spicy sauce (trade name Tabasco) made from fully-aged red peppers",
+      "hypernyms": [
+        "oewn-07846569-n"
+      ],
+      "id": "oewn-07842067-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Tabasco"
+    },
+    {
+      "definition": "aromatic stems or leaves or roots of Angelica Archangelica",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07842316-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "angelica"
+    },
+    {
+      "definition": "candied stalks of the angelica plant",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07842429-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "angelica"
+    },
+    {
+      "definition": "flavoring made from almonds macerated in alcohol",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07842520-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "almond extract"
+    },
+    {
+      "definition": "liquorice-flavored seeds, used medicinally and in cooking and liquors",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07842629-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "anise"
+    },
+    {
+      "definition": "anise-scented star-shaped fruit or seed used in Asian cooking and medicine",
+      "hypernyms": [
+        "oewn-07828160-n"
+      ],
+      "id": "oewn-07842906-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "Chinese anise"
+    },
+    {
+      "definition": "berrylike cone of a common juniper; used in making gin",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07843106-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "juniper berries"
+    },
+    {
+      "definition": "dried pungent stigmas of the Old World saffron crocus",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07843260-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "saffron"
+    },
+    {
+      "definition": "small oval seeds of the sesame plant",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07843386-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sesame seed"
+    },
+    {
+      "definition": "aromatic seeds of the caraway plant; used widely as seasoning",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07843530-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "caraway seed"
+    },
+    {
+      "definition": "small grey seed of a poppy flower; used whole or ground in baked items",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07843726-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "poppy seed"
+    },
+    {
+      "definition": "aromatic threadlike foliage of the dill plant used as seasoning",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07843872-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "dill"
+    },
+    {
+      "definition": "seed of the dill plant used as seasoning",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07844017-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "dill seed"
+    },
+    {
+      "definition": "seed of the celery plant used as seasoning",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07844132-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "celery seed"
+    },
+    {
+      "definition": "a flavoring made from (or imitating) lemons",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07844251-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "lemon extract"
+    },
+    {
+      "definition": "white crystalline compound used as a food additive to enhance flavor; often used in Chinese cooking",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07844354-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "monosodium glutamate"
+    },
+    {
+      "definition": "long bean-like fruit; seeds are used as flavoring",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07844618-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "vanilla bean"
+    },
+    {
+      "definition": "a flavoring prepared from vanilla beans macerated in alcohol (or imitating vanilla beans)",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07844783-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "vanilla"
+    },
+    {
+      "definition": "sour-tasting liquid produced usually by oxidation of the alcohol in wine or cider and used as a condiment or food preservative",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07844963-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "vinegar"
+    },
+    {
+      "definition": "vinegar made from cider",
+      "hypernyms": [
+        "oewn-07844963-n"
+      ],
+      "id": "oewn-07845224-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cider vinegar"
+    },
+    {
+      "definition": "vinegar made from wine",
+      "hypernyms": [
+        "oewn-07844963-n"
+      ],
+      "id": "oewn-07845307-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "wine vinegar"
+    },
+    {
+      "definition": "flavorful relish or dressing or topping served as an accompaniment to food",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07845388-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sauce"
+    },
+    {
+      "definition": "made of white sauce and mashed anchovies",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07846469-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "anchovy sauce"
+    },
+    {
+      "definition": "a pungent peppery sauce",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07846569-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "hot sauce"
+    },
+    {
+      "definition": "butter and sugar creamed together with brandy or other flavoring and served with rich puddings",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07846666-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "hard sauce"
+    },
+    {
+      "definition": "creamy white sauce with horseradish and mustard",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07846817-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "horseradish sauce"
+    },
+    {
+      "definition": "sauce for pasta; contains mushrooms and ham and chopped vegetables and beef and tomato paste",
+      "hypernyms": [
+        "oewn-07854209-n"
+      ],
+      "id": "oewn-07846962-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "bolognese pasta sauce"
+    },
+    {
+      "definition": "sauce for pasta; contains eggs and bacon or ham and grated cheese",
+      "hypernyms": [
+        "oewn-07854209-n"
+      ],
+      "id": "oewn-07847122-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "carbonara"
+    },
+    {
+      "definition": "sauce made with a puree of tomatoes (or strained tomatoes) with savory vegetables and other seasonings; can be used on pasta",
+      "hypernyms": [
+        "oewn-07854209-n"
+      ],
+      "id": "oewn-07847243-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "tomato sauce"
+    },
+    {
+      "definition": "mayonnaise with chopped pickles and sometimes capers and shallots and parsley and hard-cooked egg; sauce for seafood especially fried fish",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07847426-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "tartare sauce"
+    },
+    {
+      "definition": "white or veloute sauce with wine and stock variously seasoned with onions and herbs; for fish or meat",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07847639-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "wine sauce"
+    },
+    {
+      "definition": "brown sauce with mushrooms and red wine or Madeira",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07847797-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "marchand de vin"
+    },
+    {
+      "definition": "creamy white sauce made with bread instead of flour and seasoned with cloves and onion",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07847931-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bread sauce"
+    },
+    {
+      "definition": "for Chinese dishes: plum preserves and chutney",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07848075-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "plum sauce"
+    },
+    {
+      "definition": "for Chinese dishes: peach preserves and chutney",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07848178-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "peach sauce"
+    },
+    {
+      "definition": "for Chinese dishes: apricot preserves and chutney",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07848283-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "apricot sauce"
+    },
+    {
+      "definition": "a sauce typically served with pasta; contains crushed basil leaves and garlic and pine nuts and Parmesan cheese in olive oil",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07848392-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pesto"
+    },
+    {
+      "definition": "veloute sauce seasoned with chopped chervil, chives, tarragon, shallots and capers",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07848568-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "ravigote"
+    },
+    {
+      "definition": "a mayonnaise sauce flavored with herbs and mustard and capers; served with e.g. salad and cold meat",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07848717-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "remoulade sauce"
+    },
+    {
+      "definition": "savory dressings for salads; basically of two kinds: either the thin French or vinaigrette type or the creamy mayonnaise type",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07848878-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "dressing"
+    },
+    {
+      "definition": "mayonnaise and heavy cream combined with chopped green pepper and green onion seasoned with chili sauce and Worcestershire sauce and lemon juice",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07849309-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "sauce Louis"
+    },
+    {
+      "definition": "creamy dressing containing crumbled blue cheese",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07849511-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "bleu cheese dressing"
+    },
+    {
+      "definition": "vinaigrette containing crumbled Roquefort or blue cheese",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07849648-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "blue cheese dressing"
+    },
+    {
+      "definition": "oil and vinegar with mustard and garlic",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07849792-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "French dressing"
+    },
+    {
+      "definition": "vinaigrette with chili sauce and chopped watercress",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07849927-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Lorenzo dressing"
+    },
+    {
+      "definition": "vinaigrette and mashed anchovies",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07850041-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "anchovy dressing"
+    },
+    {
+      "definition": "a vinaigrette with garlic and herbs: oregano and basil and dill",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07850136-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Italian dressing"
+    },
+    {
+      "definition": "half mayonnaise and half vinaigrette seasoned with minced garlic and mashed anchovies and grated Parmesan cheese; especially good for combination salads",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07850262-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "half-and-half dressing"
+    },
+    {
+      "definition": "egg yolks and oil and vinegar",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07850483-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "mayonnaise"
+    },
+    {
+      "definition": "mayonnaise with tarragon or dill and chopped watercress and spinach or cucumber",
+      "hypernyms": [
+        "oewn-07850483-n"
+      ],
+      "id": "oewn-07850594-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "green mayonnaise"
+    },
+    {
+      "definition": "garlic mayonnaise",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07850750-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "aioli"
+    },
+    {
+      "definition": "mayonnaise with horseradish grated onion and chili sauce or catsup; sometimes with caviar added",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07850848-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Russian dressing"
+    },
+    {
+      "definition": "a creamy salad dressing resembling mayonnaise",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07851027-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "salad cream"
+    },
+    {
+      "definition": "mayonnaise with chili sauce or catsup and minced olives and peppers and hard-cooked egg",
+      "hypernyms": [
+        "oewn-07848878-n"
+      ],
+      "id": "oewn-07851149-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Thousand Island dressing"
+    },
+    {
+      "definition": "spicy sweet and sour sauce usually based on catsup or chili sauce",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07851307-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "barbecue sauce"
+    },
+    {
+      "definition": "eggs and butter with lemon juice",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07851433-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "hollandaise"
+    },
+    {
+      "definition": "a sauce like hollandaise but made with white wine and tarragon and shallots instead of lemon juice",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07851523-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bearnaise"
+    },
+    {
+      "definition": "butter creamed with white wine and shallots and parsley",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07851677-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Bercy"
+    },
+    {
+      "definition": "brown sauce with beef marrow and red wine",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07851799-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bordelaise"
+    },
+    {
+      "definition": "reduced red wine with onions and parsley and thyme and butter",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07851897-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "bourguignon"
+    },
+    {
+      "definition": "bouillon or beef stock thickened with butter and flour roux and variously seasoned with herbs or Worcestershire etc.",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07852053-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "brown sauce"
+    },
+    {
+      "definition": "brown sauce with tomatoes and a caramelized mixture of minced carrots and onions and celery seasoned with Madeira",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07852245-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Espagnole"
+    },
+    {
+      "definition": "a sauce based on soy sauce",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07852432-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Chinese brown sauce"
+    },
+    {
+      "definition": "a white sauce of fat, broth, and vegetables (used especially with braised meat)",
+      "hypernyms": [
+        "oewn-07853338-n"
+      ],
+      "id": "oewn-07852576-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "blanc"
+    },
+    {
+      "definition": "white sauce with grated cheese",
+      "hypernyms": [
+        "oewn-07853338-n"
+      ],
+      "id": "oewn-07852707-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "cheese sauce"
+    },
+    {
+      "definition": "sauce made with unsweetened chocolate or cocoa and sugar and water",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07852814-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "chocolate sauce"
+    },
+    {
+      "definition": "thick chocolate sauce served hot",
+      "hypernyms": [
+        "oewn-07852814-n"
+      ],
+      "id": "oewn-07852978-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "hot-fudge sauce"
+    },
+    {
+      "definition": "usually catsup with horseradish and lemon juice",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07853086-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cocktail sauce"
+    },
+    {
+      "definition": "butter creamed with parsley and tarragon and beef extract",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07853210-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Colbert"
+    },
+    {
+      "definition": "milk thickened with a butter and flour roux",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07853338-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "white sauce"
+    },
+    {
+      "definition": "white sauce made with cream",
+      "hypernyms": [
+        "oewn-07853338-n"
+      ],
+      "id": "oewn-07853521-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "cream sauce"
+    },
+    {
+      "definition": "onion-flavored creamy cheese sauce with egg yolk and grated cheese",
+      "hypernyms": [
+        "oewn-07852707-n"
+      ],
+      "id": "oewn-07853606-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "Mornay sauce"
+    },
+    {
+      "definition": "sauce Espagnole with extra beef stock simmered down and seasoned with dry wine or sherry",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07853731-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "demiglace"
+    },
+    {
+      "definition": "a sauce made by adding stock, flour, or other ingredients to the juice and fat that drips from cooking meats",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07854049-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "gravy"
+    },
+    {
+      "definition": "any of numerous sauces for spaghetti or other kinds of pasta",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07854209-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "spaghetti sauce"
+    },
+    {
+      "definition": "sauce for pasta; contains tomatoes and garlic and herbs",
+      "hypernyms": [
+        "oewn-07854209-n"
+      ],
+      "id": "oewn-07854417-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "marinara"
+    },
+    {
+      "definition": "spicy sauce often containing chocolate",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07854527-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "mole"
+    },
+    {
+      "definition": "brown sauce and tomato puree with onions and mushrooms and dry white wine",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07854635-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "hunter's sauce"
+    },
+    {
+      "definition": "brown sauce and sauteed mushrooms",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07854787-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "mushroom sauce"
+    },
+    {
+      "definition": "sauce of prepared mustard thinned with vinegar and vegetable oil with sugar and seasonings",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07854881-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "mustard sauce"
+    },
+    {
+      "definition": "white sauce with whipping cream and shrimp butter",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07855031-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Nantua"
+    },
+    {
+      "definition": "veloute sauce with sauteed chopped onion and paprika and cream",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07855148-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Hungarian sauce"
+    },
+    {
+      "definition": "for venison: brown sauce with sauteed vegetables and trimmings and marinade and plenty of pepper",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07855288-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pepper sauce"
+    },
+    {
+      "definition": "veloute or brown sauce with sauteed chopped onion and dry white wine and sour cream",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07855569-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Smitane"
+    },
+    {
+      "definition": "veloute sauce with sauteed chopped onions and whipping cream",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07855706-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Soubise"
+    },
+    {
+      "definition": "brown sauce with sauteed chopped onions and parsley and dry white wine or vinegar",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07855840-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Lyonnaise sauce"
+    },
+    {
+      "definition": "white sauce made with stock instead of milk",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07856003-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "veloute"
+    },
+    {
+      "definition": "egg-thickened veloute",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07856100-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "allemande"
+    },
+    {
+      "definition": "allemande sauce with capers",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07856195-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "caper sauce"
+    },
+    {
+      "definition": "allemande sauce with chopped parsley",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07856280-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "poulette"
+    },
+    {
+      "definition": "allemande sauce with curry powder and coconut milk instead of stock",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07856371-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "curry sauce"
+    },
+    {
+      "definition": "a savory sauce of vinegar and soy sauce and spices",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07856496-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Worcester sauce"
+    },
+    {
+      "definition": "a rectangular quarter pound block of butter or margarine",
+      "hypernyms": [
+        "oewn-07688659-n",
+        "oewn-07864314-n"
+      ],
+      "id": "oewn-07864621-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 6,
+      "name": "stick"
+    },
+    {
+      "definition": "ground nuts blended with a little butter",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07871389-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "nut butter"
+    },
+    {
+      "definition": "a spread made from ground peanuts",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07871486-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "peanut butter"
+    },
+    {
+      "definition": "a very sweet white spread resembling marshmallow candy",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07871579-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "marshmallow fluff"
+    },
+    {
+      "definition": "butter blended with minced onion",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07871697-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "onion butter"
+    },
+    {
+      "definition": "butter blended with mashed pimento",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07871788-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pimento butter"
+    },
+    {
+      "definition": "butter blended with chopped shrimp or seasoned with essence from shrimp shells",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07871883-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "shrimp butter"
+    },
+    {
+      "definition": "butter blended with chopped lobster or seasoned with essence from lobster shells",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07872021-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "lobster butter"
+    },
+    {
+      "definition": "a tasty mixture to be spread on bread or crackers or used in preparing other dishes",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07872246-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "spread"
+    },
+    {
+      "definition": "spread made of cheese mixed with butter or cream or cream cheese and seasonings",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07872732-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "cheese spread"
+    },
+    {
+      "definition": "butter blended with mashed anchovies",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07872871-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "anchovy butter"
+    },
+    {
+      "definition": "a paste of fish or shellfish",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07872968-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "fishpaste"
+    },
+    {
+      "definition": "butter seasoned with mashed garlic",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07873052-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "garlic butter"
+    },
+    {
+      "definition": "a thick paste made from fermented soybeans and barley or rice malt; used in Japanese cooking to make soups or sauces",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07873146-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "miso"
+    },
+    {
+      "definition": "the thick green root of the wasabi plant that the Japanese use in cooking and that tastes like strong horseradish; in powder or paste form it is often eaten with raw fish",
+      "hypernyms": [
+        "oewn-07826883-n"
+      ],
+      "id": "oewn-07873332-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "wasabi"
+    },
+    {
+      "definition": "for preparing snails: butter seasoned with shallots and garlic and parsley",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07873574-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "snail butter"
+    },
+    {
+      "definition": "a thick spread made from mashed chickpeas, tahini, lemon juice and garlic; used especially as a dip for pita; originated in the Middle East",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07873707-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "hummus"
+    },
+    {
+      "definition": "liver or meat or fowl finely minced or ground and variously seasoned",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07873935-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "pate"
+    },
+    {
+      "definition": "a pate made from duck liver",
+      "hypernyms": [
+        "oewn-07873935-n"
+      ],
+      "id": "oewn-07874090-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "duck pate"
+    },
+    {
+      "definition": "a pate made from goose liver (marinated in Cognac) and truffles",
+      "hypernyms": [
+        "oewn-07873935-n"
+      ],
+      "id": "oewn-07874173-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "foie gras"
+    },
+    {
+      "definition": "a spread consisting of capers and black olives and anchovies made into a puree with olive oil",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07874312-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "tapenade"
+    },
+    {
+      "definition": "a thick Middle Eastern paste made from ground sesame seeds",
+      "hypernyms": [
+        "oewn-07872246-n"
+      ],
+      "id": "oewn-07874460-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "tahini"
+    },
+    {
+      "definition": "something added to foods to make them taste sweeter",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07874571-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sweetening"
+    },
+    {
+      "definition": "an artificial sweetener made from aspartic acid; used as a calorie-free sweetener",
+      "hypernyms": [
+        "oewn-07874571-n"
+      ],
+      "id": "oewn-07874817-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "aspartame"
+    },
+    {
+      "definition": "a sweet yellow liquid produced by bees",
+      "hypernyms": [
+        "oewn-07874571-n"
+      ],
+      "id": "oewn-07874954-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "honey"
+    },
+    {
+      "definition": "a crystalline substance 500 times sweeter than sugar; used as a calorie-free sweetener",
+      "hypernyms": [
+        "oewn-07874571-n"
+      ],
+      "id": "oewn-07875118-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "saccharin"
+    },
+    {
+      "definition": "a white crystalline carbohydrate used as a sweetener and preservative",
+      "hypernyms": [
+        "oewn-07874571-n"
+      ],
+      "id": "oewn-07875260-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "sugar"
+    },
+    {
+      "definition": "a thick sweet sticky liquid",
+      "hypernyms": [
+        "oewn-07874571-n"
+      ],
+      "id": "oewn-07875559-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "syrup"
+    },
+    {
+      "definition": "sugar and water and sometimes corn syrup boiled together; used as sweetening especially in drinks",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-07875772-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "sugar syrup"
+    },
+    {
+      "definition": "thick dark syrup produced by boiling down juice from sugar cane; especially during sugar refining",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-07875927-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "molasses"
+    },
+    {
+      "definition": "made from juice of sweet sorghum",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-07876079-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "sorghum"
+    },
+    {
+      "definition": "a pale cane syrup",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-07876184-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "treacle"
+    },
+    {
+      "definition": "thin syrup made from pomegranate juice; used in mixed drinks",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-07876307-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "grenadine"
+    },
+    {
+      "definition": "made by concentrating sap from sugar maples",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-07876423-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "maple syrup"
+    },
+    {
+      "definition": "syrup prepared from corn",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-07876524-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "corn syrup"
+    },
+    {
+      "definition": "lobster butter and cream and egg yolks seasoned with onions and sherry or Madeira",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-07886710-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "Newburg sauce"
+    },
+    {
+      "definition": "a flavoring made from coffee mixed with chocolate",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07937229-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "mocha"
+    },
+    {
+      "definition": "a flavoring made by boiling down the juice of the bitter cassava; used in West Indian cooking",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-07937330-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "cassareep"
+    },
+    {
+      "definition": "dried leaves of the tea shrub; used to make tea",
+      "hypernyms": [
+        "oewn-07827392-n"
+      ],
+      "id": "oewn-07949081-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "tea"
+    },
+    {
+      "definition": "a measured amount of tea in a bag for an individual serving of tea",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07949394-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "tea bag"
+    },
+    {
+      "definition": "fermented tea leaves",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07950770-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "black tea"
+    },
+    {
+      "definition": "black tea grown in China",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07950918-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "congou"
+    },
+    {
+      "definition": "a fine variety of black tea grown in northern India",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07951040-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Darjeeling"
+    },
+    {
+      "definition": "a superior grade of black tea; grown in India and Sri Lanka and Java",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07951148-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "orange pekoe"
+    },
+    {
+      "definition": "a fine quality of black tea native to China",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-07951283-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "souchong"
+    },
+    {
+      "definition": "tea leaves that have been steamed and dried without fermenting",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07951392-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "green tea"
+    },
+    {
+      "definition": "a Chinese green tea with twisted leaves",
+      "hypernyms": [
+        "oewn-07951392-n"
+      ],
+      "id": "oewn-07951528-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "hyson"
+    },
+    {
+      "definition": "Chinese tea leaves that have been partially fermented before being dried",
+      "hypernyms": [
+        "oewn-07949081-n"
+      ],
+      "id": "oewn-07951619-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "oolong"
+    },
+    {
+      "definition": "A sauce made from pureed garlic and chilis named after the town of Si Racha in Thailand",
+      "hypernyms": [
+        "oewn-07846569-n"
+      ],
+      "id": "oewn-91000021-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "Sriracha"
+    },
+    {
+      "definition": "a type of tea that is more oxidized than oolong, green and white teas.",
+      "hypernyms": [
+        "oewn-07950770-n"
+      ],
+      "id": "oewn-92406449-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "ceylon black tea"
+    },
+    {
+      "definition": "a slightly spicy mustard originating from Russia.",
+      "hypernyms": [
+        "oewn-07835456-n"
+      ],
+      "id": "oewn-92411169-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "sarepta mustard"
+    },
+    {
+      "definition": "fragrant leaves of Cymbopogon citratus, used in cooking, in traditional medicine and are often found in herbal supplements and teas.",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-92411529-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "lemon grass"
+    },
+    {
+      "definition": "sugar in the form of large crystals, often used for decoration.",
+      "hypernyms": [
+        "oewn-07875260-n"
+      ],
+      "id": "oewn-92411554-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "rock sugar"
+    },
+    {
+      "definition": "a dark, strong honey with a rich fragrance of stewed fruit or fig jam, not as sweet as nectar honeys.",
+      "hypernyms": [
+        "oewn-07874954-n"
+      ],
+      "id": "oewn-92412090-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "honeydew honey"
+    },
+    {
+      "definition": "honey in which some of the glucose content has spontaneously crystallized from solution as the monohydrate.",
+      "hypernyms": [
+        "oewn-07874954-n"
+      ],
+      "id": "oewn-92413641-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "crystallized honey"
+    },
+    {
+      "definition": "a famous Middle Eastern condiment made from dried hyssop leaves, mixed with sesame seeds, dried sumac, and often salt, as well as other spices.",
+      "hypernyms": [
+        "oewn-07825344-n",
+        "oewn-14610438-n"
+      ],
+      "id": "oewn-92413787-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 5,
+      "name": "zaatar"
+    },
+    {
+      "definition": "a dried rhizome or its powdered form of Kaempferia galanga, used in cooking in Indonesia.",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-92413825-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "kencur"
+    },
+    {
+      "definition": "seasoning that consists of a mix of pepper and various herbs (usually basil, marjoram, oregano, sage, parsley, thyme and pepper).",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-92414331-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "herb pepper"
+    },
+    {
+      "definition": "a leaf from the curry tree, valued as seasoning in southern and west-coast Indian and Sri Lankan cooking.",
+      "hypernyms": [
+        "oewn-07825344-n"
+      ],
+      "id": "oewn-92414452-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "curry leaf"
+    },
+    {
+      "definition": "a mix of water, sugar, and various ingredients (such as alcohol), used to infuse cakes.",
+      "hypernyms": [
+        "oewn-07875559-n"
+      ],
+      "id": "oewn-92414723-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "soaking syrup"
+    },
+    {
+      "definition": "a sauce similar to Worcestershire sauce, manufactured by John Burgess & Son and Crosse & Blackwell; used for meat.",
+      "hypernyms": [
+        "oewn-07845388-n"
+      ],
+      "id": "oewn-92416278-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "mogul sauce"
+    },
+    {
+      "definition": "a beverage prepared by infusion of sage leaves.",
+      "hypernyms": [
+        "oewn-07836473-n",
+        "oewn-07950131-n"
+      ],
+      "id": "oewn-92426796-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 8,
+      "name": "sage tea"
+    },
+    {
+      "definition": "any salt or ester of cyclamic acid.",
+      "hypernyms": [
+        "oewn-07874571-n",
+        "oewn-14751849-n",
+        "oewn-15035270-n"
+      ],
+      "id": "oewn-92465922-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "cyclamate"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}
