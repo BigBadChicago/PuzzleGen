@@ -636,23 +636,34 @@ class ContentService:
         # them overlap. A game that needs four disjoint groups then has
         # nothing to work with, which is exactly what happened on the first
         # real day: 120 combinations offered, 120 refused for overlap.
+        # Spread within a category as well as across them. Round robin alone
+        # fixes the wrong half: a caller taking the first N combinations of one
+        # category gets N that differ only in their last member, because that
+        # is the order `itertools.combinations` produces. A fourteen member
+        # overlay category has 2,002 combinations of five and a pool of 200
+        # takes the first tenth, every one of them containing the same four
+        # earliest members. The one subset a board needed was never offered,
+        # and the day failed reporting overlap rather than an unseen answer.
         streams = {
-            category_id: itertools.combinations(
-                sorted(by_category[category_id], key=lambda e: e.id), size
+            category_id: self._spread_combinations(
+                [e.id for e in sorted(by_category[category_id], key=lambda e: e.id)],
+                size,
             )
             for category_id in ordered
         }
+        by_id = {entity.id: entity for entity in pool}
         seen: set[frozenset[str]] = set()
         while streams:
             for category_id in list(ordered):
                 stream = streams.get(category_id)
                 if stream is None:
                     continue
-                combination = next(stream, None)
-                if combination is None:
+                chosen = next(stream, None)
+                if chosen is None:
                     del streams[category_id]
                     continue
-                key = frozenset(e.id for e in combination)
+                combination = tuple(by_id[entity_id] for entity_id in chosen)
+                key = frozenset(chosen)
                 if key in seen:
                     # The same members can share several categories. Assessing
                     # them once is enough: the assessor picks the most

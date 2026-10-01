@@ -10,6 +10,8 @@ have, and the category whose valid subset came late was never offered at all.
 
 from __future__ import annotations
 
+import itertools
+
 import pytest
 
 from puzzlegen.content.query import ContentQuery, GroupingMode, Operation
@@ -170,3 +172,82 @@ class TestTheGateStillRuns:
         assert all(
             not ({m.name for m in g.members} & set(ABSENT)) for g in result.groups
         )
+
+
+class TestCombinationsSpreadWithinACategory:
+    """Round robin fixed the wrong half of the problem.
+
+    Across categories it stopped a limit filling with one category's variants.
+    Within a category ``itertools.combinations`` still varies only the last
+    member, so the first N offers of a large category all share their earliest
+    members and no two of them are disjoint. A game needing four disjoint
+    groups then has nothing to work with, which is the same failure round robin
+    was introduced to fix, one level down.
+    """
+
+    def big_category(self, repos, tmp_path, count=20):
+        words = [f"w{n:02d}" for n in range(count)]
+        categories = [category("kinds")]
+        entities = [entity(word, "kinds") for word in words]
+        return build(repos, tmp_path, categories, entities), words
+
+    def offered(self, service, limit, size=5):
+        result = service.execute(
+            ContentQuery(
+                operation=Operation.FIND_GROUPS,
+                taxonomy=TAXONOMY,
+                group_size=size,
+                limit=limit,
+            )
+        )
+        return [frozenset(m.name for m in g.members) for g in result.groups]
+
+    def test_two_early_offers_are_disjoint(self, repos, tmp_path):
+        """The property the game needs and the old order could not give."""
+        service, _ = self.big_category(repos, tmp_path)
+
+        groups = self.offered(service, 10)
+
+        assert any(
+            not (first & second) for first, second in itertools.combinations(groups, 2)
+        )
+
+    def test_four_early_offers_are_mutually_disjoint(self, repos, tmp_path):
+        """A board needs four, not two."""
+        service, _ = self.big_category(repos, tmp_path)
+
+        groups = self.offered(service, 20)
+
+        assert any(
+            all(not (a & b) for a, b in itertools.combinations(four, 2))
+            for four in itertools.combinations(groups, 4)
+        )
+
+    def test_no_single_word_is_in_every_early_offer(self, repos, tmp_path):
+        service, words = self.big_category(repos, tmp_path)
+
+        groups = self.offered(service, 10)
+
+        assert not any(all(word in group for group in groups) for word in words)
+
+    def test_the_whole_enumeration_is_still_reachable(self, repos, tmp_path):
+        """Spreading reorders; it withholds nothing. Eight members, groups of
+        five, is 56 subsets and all 56 are still offered."""
+        service, _ = self.big_category(repos, tmp_path, count=8)
+
+        groups = self.offered(service, 500)
+
+        assert len(groups) == 56
+
+    def test_the_offers_are_distinct_and_the_right_size(self, repos, tmp_path):
+        service, _ = self.big_category(repos, tmp_path)
+
+        groups = self.offered(service, 40)
+
+        assert len(set(groups)) == len(groups)
+        assert all(len(group) == 5 for group in groups)
+
+    def test_results_are_deterministic(self, repos, tmp_path):
+        service, _ = self.big_category(repos, tmp_path)
+
+        assert self.offered(service, 20) == self.offered(service, 20)
