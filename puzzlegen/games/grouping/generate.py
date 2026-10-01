@@ -375,6 +375,9 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     still fail verification, and one it likes less can be the only one that
     survives. Ordering costs nothing and throwing away costs a day.
     """
+    # Cleared first, so a run that returns early cannot leave the previous
+    # day's refusals to be reported as its own.
+    _LAST_REJECTIONS.clear()
     group_size = group_size_for(context.day_key)
     visible_result: ContentResult | None = context.content.get(content_module.VISIBLE)
     if visible_result is None or not visible_result.groups:
@@ -384,13 +387,28 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     candidates: list[PuzzleCandidate] = []
     seen: set[str] = set()
     rejected: dict[str, int] = {}
-    budget = max(1, COMBINATION_BUDGET // max(1, len(hidden_candidates(context))))
 
+    # Every hidden word must be a tile in at least one visible group, or it can
+    # never be on the board. Checked once here rather than discovered inside a
+    # combination search, where it shows up as thousands of identical
+    # "shortlist too small" refusals that say nothing about which word was
+    # missing.
+    tiles: frozenset[str] = frozenset().union(*(member_ids(g) for g in pool))
+    placeable = []
     for hidden, enriched in hidden_candidates(context):
         if len(hidden.members) != group_size:
             # The hidden group is exactly as large as a visible one, so it
             # cannot be identified by counting.
             continue
+        if not member_ids(hidden) <= tiles:
+            rejected["hidden_word_on_no_visible_group"] = (
+                rejected.get("hidden_word_on_no_visible_group", 0) + 1
+            )
+            continue
+        placeable.append((hidden, enriched))
+    budget = max(1, COMBINATION_BUDGET // max(1, len(placeable)))
+
+    for hidden, enriched in placeable:
         for plan in plans_for(
             hidden,
             pool,

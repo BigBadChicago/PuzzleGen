@@ -176,59 +176,76 @@ class TestARealDay:
 
 
 class TestDescribingAFailure:
-    """Built on the record's own flattening, and checked against a real trace.
+    """Built from the record's real tally type.
 
-    The first version walked the tallies itself and read one as though it were
-    a single reason. The fixture's failing day records no tallies, so nothing
-    caught it until a real day did.
+    The first version read a tally as though it were one reason and raised on
+    the first real day that recorded one. Stubs hid it, so these use the real
+    ``RejectionTally`` and only stub the parts that need a whole pipeline.
     """
 
-    def outcome(self, summary, failure="no candidates"):
+    def outcome(self, *, tallies=(), content=None, failure="no candidates"):
+        from puzzlegen.engine.records import RejectionTally
+
         return SimpleNamespace(
             trace=SimpleNamespace(
-                failure_reason=failure, rejection_summary=lambda: summary
+                failure_reason=failure,
+                candidates_rejected=tuple(
+                    RejectionTally(stage=stage, reasons=reasons) for stage, reasons in tallies
+                ),
+                content_rejections=content or {},
             )
         )
 
+    @pytest.fixture(autouse=True)
+    def no_game_state(self, monkeypatch):
+        monkeypatch.setattr(tool, "last_rejections", lambda: {})
+
     def test_the_stated_reason_comes_first(self):
-        text = tool.describe_failure(self.outcome({"not_disjoint": 4}))
+        text = tool.describe_failure(self.outcome(tallies=[("assembly", {"x": 1})]))
 
         assert text.startswith("no candidates")
 
-    def test_the_commonest_reasons_lead(self):
+    def test_a_late_stage_is_shown_before_the_content_counts(self):
+        """The failure that cost an afternoon: 126 solutions behind 2844 words."""
         text = tool.describe_failure(
-            self.outcome({"rare": 1, "common": 9, "middling": 5})
+            self.outcome(
+                tallies=[("assembly", {"MULTIPLE_SOLUTIONS: 126 distinct": 1})],
+                content={"WORD_FREQUENCY_MISMATCH": 2844},
+            )
         )
 
-        assert text.index("common 9") < text.index("middling 5") < text.index("rare 1")
+        assert text.index("MULTIPLE_SOLUTIONS") < text.index("WORD_FREQUENCY_MISMATCH")
 
-    def test_only_three_reasons_are_shown(self):
-        text = tool.describe_failure(self.outcome({f"r{n}": 10 - n for n in range(6)}))
+    def test_the_stage_is_named(self):
+        text = tool.describe_failure(self.outcome(tallies=[("assembly", {"thin": 2})]))
 
-        assert text.count(",") == 2
+        assert "assembly: thin (2)" in text
 
-    def test_no_rejections_leaves_just_the_reason(self):
-        assert tool.describe_failure(self.outcome({})) == "no candidates"
+    def test_the_commonest_stage_reasons_lead_and_three_are_shown(self):
+        text = tool.describe_failure(
+            self.outcome(tallies=[("assembly", {f"r{n}": n + 1 for n in range(6)})])
+        )
+
+        assert text.index("r5") < text.index("r4") < text.index("r3")
+        assert "r2" not in text
+
+    def test_content_counts_are_labelled(self):
+        text = tool.describe_failure(self.outcome(content={"NO_SECOND_AXIS": 24}))
+
+        assert "content: NO_SECOND_AXIS 24" in text
+
+    def test_the_games_own_refusals_are_included(self, monkeypatch):
+        monkeypatch.setattr(tool, "last_rejections", lambda: {"not_disjoint": 90, "thin": 2})
+
+        text = tool.describe_failure(self.outcome())
+
+        assert "game: not_disjoint 90, thin 2" in text
+
+    def test_nothing_recorded_leaves_just_the_reason(self):
+        assert tool.describe_failure(self.outcome()) == "no candidates"
 
     def test_a_missing_reason_still_reads(self):
-        assert "no reason recorded" in tool.describe_failure(self.outcome({}, failure=None))
-
-    def test_a_real_trace_flattens_its_tallies(self):
-        """The contract the stub above stands in for.
-
-        A tally is a stage with a mapping of reason to count, and the summary
-        is what turns several of them into one mapping. If this shape changes,
-        the stub is wrong and this fails alongside it.
-        """
-        from puzzlegen.engine.records import RejectionTally
-
-        tallies = (
-            RejectionTally(stage="content", reasons={"not_disjoint": 3}),
-            RejectionTally(stage="assembly", reasons={"not_disjoint": 4, "thin": 1}),
-        )
-
-        assert sum(t.total for t in tallies) == 8
-        assert tallies[1].reasons["not_disjoint"] == 4
+        assert "no reason recorded" in tool.describe_failure(self.outcome(failure=None))
 
     def test_a_real_failing_day_describes_itself(self, world):
         db, _ = world

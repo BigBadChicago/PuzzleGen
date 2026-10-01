@@ -41,6 +41,7 @@ from puzzlegen.engine.registry import GameRegistry
 from puzzlegen.engine.storage import EngineRepositories
 from puzzlegen.engine.verifier import PuzzleVerifier
 from puzzlegen.games.grouping.descriptor import GAME_ID, GROUP_SIZES, group_size_for
+from puzzlegen.games.grouping.generate import last_rejections
 from puzzlegen.games.grouping.plugin import GroupingGame
 from puzzlegen.graph import GraphRepositories, InMemoryDocumentStore, SqliteDocumentStore
 
@@ -91,18 +92,33 @@ def pick_snapshot(repos: GraphRepositories, label: str | None):
 
 
 def describe_failure(outcome) -> str:
-    """The stated reason, then the commonest rejections behind it.
+    """Why a day failed, latest stage first.
 
-    ``GenerationTrace.rejection_summary`` already flattens content rejections
-    and every stage's tally into one mapping, which is the shape this wants.
-    Reimplementing that walk here read a tally as though it were a single
-    reason, which raised on the first real day that recorded one.
+    The stages run in order (content, the game's own assembly, the engine's
+    screening, verification), and the late ones are the ones worth reading: a
+    content count of several thousand words dropped for frequency is true on
+    every day and explains nothing about why this one failed. Showing only the
+    commonest reasons overall put that number first and hid a verification
+    refusal of "126 distinct solutions" behind it.
     """
     trace = outcome.trace
     parts = [trace.failure_reason or "no reason recorded"]
-    counts = Counter(trace.rejection_summary())
-    if counts:
-        parts.append(", ".join(f"{reason} {n}" for reason, n in counts.most_common(3)))
+
+    staged = [
+        (count, f"{tally.stage}: {reason}")
+        for tally in trace.candidates_rejected
+        for reason, count in tally.reasons.items()
+    ]
+    if staged:
+        parts.append("; ".join(f"{label} ({n})" for n, label in sorted(staged, reverse=True)[:3]))
+
+    game = Counter(last_rejections())
+    if game:
+        parts.append("game: " + ", ".join(f"{r} {n}" for r, n in game.most_common(3)))
+
+    content = Counter(trace.content_rejections)
+    if content:
+        parts.append("content: " + ", ".join(f"{r} {n}" for r, n in content.most_common(3)))
     return "; ".join(parts)
 
 

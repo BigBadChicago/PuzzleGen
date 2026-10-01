@@ -58,7 +58,7 @@ VISIBLE_POOL = 40
 #: Candidate hidden groups. Far fewer, because the overlay is small by design
 #: and a day only needs one, but more than one so a hidden group that cannot
 #: take a tile from each visible group can be replaced rather than fatal.
-HIDDEN_POOL = 24
+HIDDEN_POOL = 200
 
 #: Similarity floor inside a visible group.
 #:
@@ -159,6 +159,14 @@ def hidden_group_query(*, group_size: int, locale: str) -> ContentQuery:
         fresh_only=True,
         lang=locale,
         limit=HIDDEN_POOL,
+        # Every member must also be in the lexical taxonomy. A hidden group is
+        # found by being borrowed from the visible ones, so a word the lexicon
+        # does not have can never be on a board. Asked for as the first five
+        # members of a category in alphabetical order, the offered groups were
+        # mostly such words: a real day was handed "crane, dock, drill, drum,
+        # ferry" while three of the five could not be placed.
+        intersects_taxonomy=LEXICAL_TAXONOMY,
+        minimum_intersecting_members=group_size,
     )
 
 
@@ -188,6 +196,8 @@ def enriched_hidden_group_query(*, group_size: int, locale: str) -> ContentQuery
         fresh_only=True,
         lang=locale,
         limit=HIDDEN_POOL,
+        intersects_taxonomy=LEXICAL_TAXONOMY,
+        minimum_intersecting_members=group_size,
     )
 
 

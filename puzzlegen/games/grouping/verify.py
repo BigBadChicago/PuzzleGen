@@ -89,11 +89,31 @@ def partition_validator(
 ):
     """Constraints that cannot be judged one group at a time.
 
-    A partition is rejected when two of its groups are justified by the same
-    category. Four groups all reading "these are birds" is one group split
-    four ways, and a player who found it would be right in a way the board
-    cannot mark.
+    A partition is valid only if its groups can be given labels that do not
+    mean the same thing on this board. Four groups all reading "these are
+    birds" is one group split four ways, and a player who found it would be
+    right in a way the board cannot mark.
+
+    "The same thing" is judged by extension, not by name. Two labels are
+    comparable when the tiles carrying one are all among the tiles carrying the
+    other, which is what nesting looks like once only this board is in view:
+    ``craft`` and ``vehicle`` are different words and, on a board whose only
+    vehicles are craft, exactly the same tiles. Tiles carry their whole
+    ancestry, so a group is almost never justified by a single category, and
+    a rule that only compared single justifications let ten craft tiles be
+    split into two arbitrary groups of five in 126 ways, each "justified" by
+    ``{craft, vehicle}`` twice over.
+
+    A partition therefore needs one label per group, taken from that group's
+    shared categories, with every pair of labels incomparable. The intended
+    partition always has one: each visible group is the kinds of a parent, the
+    parents are chosen not to be nested, and no tile carries another chosen
+    parent, so each parent's extension is exactly its own group.
     """
+    extension: dict[str, set[str]] = {}
+    for tile, categories in memberships.items():
+        for category in categories - universal:
+            extension.setdefault(category, set()).add(tile)
 
     def reasons(group: tuple[str, ...]) -> frozenset[str]:
         shared: frozenset[str] | None = None
@@ -102,13 +122,28 @@ def partition_validator(
             shared = categories if shared is None else shared & categories
         return (shared or frozenset()) - universal
 
+    def incomparable(first: str, second: str) -> bool:
+        a, b = extension[first], extension[second]
+        return not (a <= b or b <= a)
+
+    def labelable(options: list[list[str]], chosen: tuple[str, ...] = ()) -> bool:
+        if not options:
+            return True
+        head, rest = options[0], options[1:]
+        return any(
+            all(incomparable(label, taken) for taken in chosen)
+            and labelable(rest, (*chosen, label))
+            for label in head
+        )
+
     def is_valid(partition: tuple[tuple[str, ...], ...]) -> bool:
-        claimed: list[frozenset[str]] = [reasons(group) for group in partition]
-        for index, first in enumerate(claimed):
-            for second in claimed[index + 1 :]:
-                if len(first) == 1 and first == second:
-                    return False
-        return True
+        claimed = [sorted(reasons(group)) for group in partition]
+        if any(not options for options in claimed):
+            # A group with no shared category is refused by the group level
+            # check; nothing here can make it labelable.
+            return False
+        # Fewest options first, so the search fails early when it is going to.
+        return labelable(sorted(claimed, key=len))
 
     return is_valid
 

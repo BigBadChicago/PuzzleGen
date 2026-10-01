@@ -703,3 +703,20 @@ class TestTheFloorIsASumOverPairs:
         ]
 
         assert temptation_of(groups) < generate_module.MINIMUM_TEMPTATION
+
+
+class TestRejectionsDoNotLeakBetweenDays:
+    """Module state read by ``unusable_reason``. A run that returns early used
+    to leave the previous run's refusals in place to be reported as its own."""
+
+    def test_an_early_return_clears_the_last_days_refusals(self):
+        from types import SimpleNamespace
+
+        generate_module._LAST_REJECTIONS.update({"not_disjoint": 99})
+
+        result = generate_module.generate_candidates(
+            SimpleNamespace(day_key="2026-10-05", content={})
+        )
+
+        assert result == ()
+        assert generate_module.last_rejections() == {}

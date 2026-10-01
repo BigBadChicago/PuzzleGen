@@ -87,8 +87,17 @@ class World:
         repos.sources.put(source)
         self.categories: dict[str, Category] = {}
 
-    def entity(self, name: str) -> str:
+    def entity(self, name: str, band="default") -> str:
+        """``band`` is left at the shared fixture's COMMON unless given.
+
+        ``None`` means unscored, and has to be asked for by name: it is the
+        state a word is in when no frequency list has it, which is a third of
+        the real snapshot, and a helper that quietly made every test word
+        COMMON hid the case.
+        """
         entity = make_entity(name, self.source)
+        if band != "default":
+            entity = entity.model_copy(update={"frequency_band": band})
         self.repos.entities.put(entity)
         return entity.id
 
@@ -765,7 +774,12 @@ class TestCandidateBatch:
 
 
 def sibling_group(
-    world: World, parent: str, kids: list[str], *, unrooted: bool = False
+    world: World,
+    parent: str,
+    kids: list[str],
+    *,
+    unrooted: bool = False,
+    bands: dict | None = None,
 ) -> None:
     """A parent whose children each carry an entity named like themselves.
 
@@ -776,7 +790,7 @@ def sibling_group(
     world.category(parent, taxonomy=LEXICAL, parent=None if unrooted else world.domain())
     for kid in kids:
         world.category(kid, taxonomy=LEXICAL, parent=parent)
-        world.entity(kid)
+        world.entity(kid, (bands or {}).get(kid, "default"))
         world.member(kid, kid)
 
 
@@ -1757,3 +1771,233 @@ class TestTheCapacityColumn:
         sizes = {s["group_size"]: s for s in json.loads(out.read_text())["summary"]["sizes"]}
         assert sizes[5]["parents_able"] == 4
         assert sizes[6]["parents_able"] == 0
+
+
+# -- the game's frequency filter ---------------------------------------------
+
+from puzzlegen.core.types import FrequencyBand  # noqa: E402
+
+MEDIUM = frozenset({"COMMON", "UNCOMMON"})
+COMMON = FrequencyBand.COMMON
+RARE = FrequencyBand.RARE
+
+
+def filtered(world: World, allowed=MEDIUM, difficulty="medium"):
+    return overlay_coverage.load(
+        world.repos,
+        lexical_taxonomy=LEXICAL,
+        overlay_taxonomy=OVERLAY,
+        grouping=overlay_coverage.SIBLINGS,
+        allowed_bands=allowed,
+        difficulty=difficulty,
+    )
+
+
+class TestTheGamesFrequencyFilter:
+    """The game drops every tile outside the difficulty's bands, and a coverage
+    model that ignores that reports boards the game can never build.
+
+    On the real snapshot the structural model said a size 5 board existed while
+    all thirty days failed, because the kinds that would have made the groups
+    were too rare for MEDIUM. Nothing was wrong with either tool: one answered
+    a question the game never asks.
+    """
+
+    def kinds(self, n=5, rare=()):
+        names = [f"k{i}" for i in range(n)]
+        return names, {k: (RARE if k in rare else COMMON) for k in names}
+
+    def test_no_filter_counts_every_word_even_unscored_ones(self, world):
+        names, _ = self.kinds()
+        sibling_group(world, "p", names, bands={k: None for k in names})
+
+        assert len(siblings_snapshot(world).lexical_members[world.id_of("p")]) == 5
+
+    def test_a_rare_kind_is_not_a_tile_at_medium(self, world):
+        names, bands = self.kinds(5, rare=("k0",))
+        sibling_group(world, "p", names, bands=bands)
+
+        tiles = filtered(world).lexical_members[world.id_of("p")]
+
+        assert eid("k0") not in tiles and len(tiles) == 4
+
+    def test_so_a_parent_that_was_big_enough_no_longer_is(self, world):
+        names, bands = self.kinds(5, rare=("k0",))
+        sibling_group(world, "p", names, bands=bands)
+
+        assert siblings_snapshot(world).usable_lexical(5) != []
+        assert filtered(world).usable_lexical(5) == []
+
+    def test_an_unscored_word_is_never_a_tile_under_a_filter(self, world):
+        names, _ = self.kinds()
+        sibling_group(world, "p", names, bands={k: None for k in names})
+
+        assert filtered(world).lexical_members.get(world.id_of("p"), frozenset()) == frozenset()
+
+    def test_a_common_parent_still_supplies_a_group(self, world):
+        names, bands = self.kinds()
+        sibling_group(world, "p", names, bands=bands)
+
+        assert filtered(world).usable_lexical(5) == [world.id_of("p")]
+
+    def test_overlay_membership_is_not_filtered(self, world):
+        """The hidden words are found by noticing a second meaning, so the game
+        does not filter them by frequency. Only tiles are."""
+        names, bands = self.kinds(5, rare=("k0",))
+        sibling_group(world, "p", names, bands=bands)
+        world.overlay_group("axis", ["k0", "k1"])
+
+        snapshot = filtered(world)
+
+        assert eid("k0") in snapshot.overlay_members[world.id_of("axis")]
+        assert eid("k0") not in snapshot.lexical_members[world.id_of("p")]
+
+    def test_a_rare_tagged_synonym_does_not_take_the_tile(self, world):
+        """Preferring the tagged word must not promote a word the filter removes."""
+        sibling_group(
+            world, "strings", ["violin", "viola", "cello", "bass", "harp"],
+            bands={k: COMMON for k in ("violin", "viola", "cello", "bass", "harp")},
+        )
+        world.entity("fiddle", RARE)
+        world.member("fiddle", "violin")
+        world.overlay_group("axis", ["fiddle"])
+
+        tiles = filtered(world).lexical_members[world.id_of("strings")]
+
+        assert eid("violin") in tiles and eid("fiddle") not in tiles
+
+    def test_a_rare_overlay_word_is_explained_as_too_uncommon(self, world):
+        names, bands = self.kinds(5, rare=("k0",))
+        sibling_group(world, "p", names, bands=bands)
+        world.overlay_group("axis", ["k0"])
+
+        why = overlay_coverage.explain_homeless(filtered(world), eid("k0"), 5)
+
+        assert "too uncommon for medium" in why
+        assert "RARE" in why and "COMMON, UNCOMMON" in why
+
+    def test_an_unscored_word_says_so(self, world):
+        names, _ = self.kinds()
+        sibling_group(world, "p", names, bands={k: None for k in names})
+        world.overlay_group("axis", ["k0"])
+
+        why = overlay_coverage.explain_homeless(filtered(world), eid("k0"), 5)
+
+        assert "frequency band is unscored" in why
+
+    def test_a_word_the_lexicon_lacks_is_still_not_called_uncommon(self, world):
+        world.entity("garlic")
+        world.overlay_group("axis", ["garlic"])
+
+        why = overlay_coverage.explain_homeless(filtered(world), eid("garlic"), 5)
+
+        assert "not in the lexicon" in why
+
+    def test_a_parent_that_shrank_says_how_much_was_the_filter(self, world):
+        """Rarity's doing and WordNet's are fixed in different places."""
+        names, bands = self.kinds(6, rare=("k5",))
+        sibling_group(world, "p", names, bands=bands)
+        world.overlay_group("axis", ["k0"])
+
+        why = overlay_coverage.explain_homeless(filtered(world), eid("k0"), 6)
+
+        assert "has 5 kinds (6 before the frequency filter) and needs 6" in why
+
+    def test_a_parent_that_was_always_small_makes_no_such_claim(self, world):
+        names, bands = self.kinds(4)
+        sibling_group(world, "p", names, bands=bands)
+        world.overlay_group("axis", ["k0"])
+
+        why = overlay_coverage.explain_homeless(filtered(world), eid("k0"), 5)
+
+        assert "before the frequency filter" not in why
+        assert "has 4 kinds and needs 5" in why
+
+    def test_a_what_if_keeps_the_filter(self, world):
+        names, bands = self.kinds()
+        sibling_group(world, "p", names, bands=bands)
+        world.overlay_group("axis", ["k0"])
+        snapshot = filtered(world)
+
+        after = snapshot.with_membership(eid("k1"), world.id_of("axis"))
+
+        assert after.allowed_bands == MEDIUM and after.difficulty == "medium"
+        assert after.kinds_before_filter == snapshot.kinds_before_filter
+
+
+class TestTheDifficultyFlag:
+    def build(self, tmp_path, curated_source, rare_one=False):
+        db = tmp_path / "graph.sqlite"
+        repos = GraphRepositories(SqliteDocumentStore(db))
+        try:
+            world = World(repos, curated_source)
+            names = [f"k{i}" for i in range(5)]
+            bands = {k: (RARE if rare_one and k == "k0" else COMMON) for k in names}
+            sibling_group(world, "p", names, bands=bands)
+            for other in ("q", "r", "s"):
+                sibling_group(world, other, [f"{other}{i}" for i in range(5)],
+                              bands={f"{other}{i}": COMMON for i in range(5)})
+            world.overlay_group("axis", ["k1", "q1", "r1", "s1", "k2"])
+        finally:
+            repos.close()
+        return db
+
+    def test_medium_builds_a_board_from_common_words(self, tmp_path, curated_source, capsys):
+        db = self.build(tmp_path, curated_source)
+
+        code = measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--difficulty", "medium"]
+        )
+
+        assert code == 0
+        assert "generatable: yes" in capsys.readouterr().out
+
+    def test_one_rare_kind_removes_the_board(self, tmp_path, curated_source, capsys):
+        db = self.build(tmp_path, curated_source, rare_one=True)
+
+        with_filter = measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--difficulty", "medium"]
+        )
+        capsys.readouterr()
+        without = measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--difficulty", "any"]
+        )
+
+        assert with_filter == 1 and without == 0
+
+    def test_the_header_states_what_is_being_filtered(self, tmp_path, curated_source, capsys):
+        db = self.build(tmp_path, curated_source)
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5", "--difficulty", "medium"])
+
+        out = capsys.readouterr().out
+        assert "difficulty medium: only words in bands COMMON, UNCOMMON can be tiles" in out
+
+    def test_any_says_it_is_an_upper_bound(self, tmp_path, curated_source, capsys):
+        db = self.build(tmp_path, curated_source)
+
+        measure_coverage.main(["--db", str(db), "--group-size", "5"])
+
+        out = capsys.readouterr().out
+        assert "difficulty any: no frequency filter" in out
+        assert "upper bound" in out
+
+    def test_the_json_records_the_filter(self, tmp_path, curated_source, capsys):
+        db = self.build(tmp_path, curated_source)
+        out = tmp_path / "c.json"
+
+        measure_coverage.main(
+            ["--db", str(db), "--group-size", "5", "--difficulty", "hard", "--json", str(out)]
+        )
+        capsys.readouterr()
+
+        summary = json.loads(out.read_text())["summary"]
+        assert summary["difficulty"] == "hard"
+        assert summary["allowed_bands"] == ["RARE", "UNCOMMON"]
+        assert summary["entities_usable_as_tiles"] == 0
+
+    def test_an_unknown_difficulty_is_refused(self, tmp_path, curated_source):
+        db = self.build(tmp_path, curated_source)
+
+        with pytest.raises(SystemExit):
+            measure_coverage.main(["--db", str(db), "--difficulty", "expert"])

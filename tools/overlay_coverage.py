@@ -95,6 +95,16 @@ class Snapshot:
     #: because tagging a word can change which word stands for its child, and
     #: a what-if has to rebuild the groups from these rather than reuse them.
     direct_members: dict[str, frozenset[str]] = field(default_factory=dict)
+    #: Frequency band name per entity, None when unscored. The game applies a
+    #: band filter to every tile, and a coverage model that ignores it reports
+    #: boards the game can never build.
+    bands: dict[str, str | None] = field(default_factory=dict)
+    #: Kinds each parent would have with no frequency filter, so a parent that
+    #: shrank can be told from one WordNet made small.
+    kinds_before_filter: dict[str, int] = field(default_factory=dict)
+    #: Bands a tile may have, or None for no filter.
+    allowed_bands: frozenset[str] | None = None
+    difficulty: str = "any"
 
     def usable_lexical(self, group_size: int) -> list[str]:
         """Categories large enough to supply one visible group."""
@@ -145,6 +155,10 @@ class Snapshot:
             parents=self.parents,
             grouping=self.grouping,
             direct_members=self.direct_members,
+            bands=self.bands,
+            kinds_before_filter=self.kinds_before_filter,
+            allowed_bands=self.allowed_bands,
+            difficulty=self.difficulty,
         )
 
 
@@ -242,6 +256,8 @@ def load(
     lexical_taxonomy: str = LEXICAL_TAXONOMY,
     overlay_taxonomy: str = OVERLAY_TAXONOMY,
     grouping: str = SHARED_CATEGORY,
+    allowed_bands: frozenset[str] | None = None,
+    difficulty: str = "any",
 ) -> Snapshot:
     """Read the active graph into the shape the precondition needs.
 
@@ -254,7 +270,17 @@ def load(
     same question asked of a different set of sets, which is why the mode
     changes only what ``lexical_members`` holds.
     """
-    active_entities = {e.id: e.canonical_name for e in repos.entities.active()}
+    entities = list(repos.entities.active())
+    active_entities = {e.id: e.canonical_name for e in entities}
+    bands = {
+        e.id: (e.frequency_band.name if e.frequency_band is not None else None)
+        for e in entities
+    }
+
+    def usable_as_tile(entity_id: str) -> bool:
+        """The game's frequency filter: an unscored word is never a tile."""
+        return allowed_bands is None or bands.get(entity_id) in allowed_bands
+
 
     lexical = [
         c
@@ -272,23 +298,28 @@ def load(
 
     lexical_members: dict[str, frozenset[str]] = {}
     types_of: dict[str, set[str]] = {}
+    in_lexicon: dict[str, list[str]] = {}
+    all_direct: dict[str, frozenset[str]] = {}
     for category in lexical:
-        members = {
+        everyone = {
             rel.subject_id
             for rel in repos.relationships.by_object(
                 category.id, MEMBERSHIP_PREDICATE
             )
             if rel.status is ReviewStatus.ACTIVE and rel.subject_id in active_entities
         }
+        all_direct[category.id] = frozenset(everyone)
+        for entity_id in everyone:
+            in_lexicon.setdefault(entity_id, []).append(category.id)
+        members = {e for e in everyone if usable_as_tile(e)}
         lexical_members[category.id] = frozenset(members)
         for entity_id in members:
             types_of.setdefault(entity_id, set()).add(category.id)
             types_of[entity_id] |= ancestry[category.id]
 
-    direct_categories: dict[str, list[str]] = {}
-    for category_id, members in lexical_members.items():
-        for member_id in members:
-            direct_categories.setdefault(member_id, []).append(category_id)
+    # Unfiltered on purpose: explaining why a word has no home needs to know
+    # the lexicon has it, so that "too rare" can be told from "not there".
+    direct_categories = in_lexicon
 
     representative: dict[str, str] = {}
     direct_members = dict(lexical_members)
@@ -307,6 +338,12 @@ def load(
 
     lexical_names = {c.id: c.canonical_name for c in lexical}
     parents = {c.id: tuple(c.parent_ids) for c in lexical}
+    kinds_before: dict[str, int] = {}
+    if grouping == SIBLINGS and allowed_bands is not None:
+        unfiltered, _ = _sibling_members(
+            lexical_names, parents, all_direct, active_entities, _carrying(overlay_members)
+        )
+        kinds_before = {pid: len(found) for pid, found in unfiltered.items()}
     if grouping == SIBLINGS:
         lexical_members, representative = _sibling_members(
             lexical_names, parents, direct_members, active_entities, _carrying(overlay_members)
@@ -324,6 +361,10 @@ def load(
         parents=parents,
         grouping=grouping,
         direct_members=direct_members,
+        bands=bands,
+        kinds_before_filter=kinds_before,
+        allowed_bands=allowed_bands,
+        difficulty=difficulty,
     )
 
 
@@ -668,6 +709,13 @@ def explain_homeless(snapshot: Snapshot, entity_id: str, group_size: int) -> str
     categories = snapshot.direct_categories.get(entity_id, ())
     if not categories:
         return "not in the lexicon, so only the overlay knows this word"
+    if snapshot.allowed_bands is not None and snapshot.bands.get(entity_id) not in snapshot.allowed_bands:
+        band = snapshot.bands.get(entity_id) or "unscored"
+        allowed = ", ".join(sorted(snapshot.allowed_bands))
+        return (
+            f"too uncommon for {snapshot.difficulty}: its frequency band is "
+            f"{band} and only {allowed} can be tiles"
+        )
 
     reasons: list[str] = []
     for category_id in categories:
@@ -688,10 +736,21 @@ def explain_homeless(snapshot: Snapshot, entity_id: str, group_size: int) -> str
             if not parent_ids:
                 reasons.append(f"{name} has no parent, so it is the top of its tree")
                 continue
-            kinds = max(len(snapshot.lexical_members.get(p, ())) for p in parent_ids)
+            kinds, best = max(
+                (len(snapshot.lexical_members.get(p, ())), p) for p in parent_ids
+            )
             parent_names = ", ".join(snapshot.lexical_names.get(p, p) for p in parent_ids)
+            before = snapshot.kinds_before_filter.get(best)
+            # Said only when the filter actually removed some: a parent that
+            # was always small is WordNet's doing, and one that shrank is
+            # rarity's, and the two are fixed in different places.
+            note = (
+                f" ({before} before the frequency filter)"
+                if before is not None and before > kinds
+                else ""
+            )
             reasons.append(
-                f"a kind of {parent_names}, which has {kinds} kinds and needs {group_size}"
+                f"a kind of {parent_names}, which has {kinds} kinds{note} and needs {group_size}"
             )
     return "; ".join(reasons)
 

@@ -39,6 +39,8 @@ from overlay_coverage import (
     survey,
 )
 
+from puzzlegen.content.service import DIFFICULTY_TO_FREQUENCY
+from puzzlegen.core.types import DifficultyBand
 from puzzlegen.games.grouping.content import VISIBLE_GROUPING
 from puzzlegen.games.grouping.descriptor import GROUP_SIZES, VISIBLE_GROUPS
 from puzzlegen.graph import GraphRepositories, SqliteDocumentStore
@@ -88,7 +90,11 @@ def summarise(snapshot: Snapshot, report: Report) -> dict:
                 ],
             }
         )
+    tiles = {e for members in snapshot.direct_members.values() for e in members}
     return {
+        "difficulty": snapshot.difficulty,
+        "allowed_bands": sorted(snapshot.allowed_bands) if snapshot.allowed_bands else None,
+        "entities_usable_as_tiles": len(tiles),
         "generatable": report.any_feasible(),
         "visible_groups": VISIBLE_GROUPS,
         "overlay_categories": len(snapshot.overlay_members),
@@ -215,6 +221,14 @@ def render(summary: dict, targets: dict[int, list[dict]]) -> str:
         "overlay coverage against the generator's actual precondition",
         "",
         "parents = groups able to supply a group of that size, whether or not any overlay word sits in them",
+        (
+            f"difficulty {summary['difficulty']}: only words in bands "
+            f"{', '.join(summary['allowed_bands'])} can be tiles "
+            f"({summary['entities_usable_as_tiles']} of {summary['entities']} entities)"
+            if summary["allowed_bands"]
+            else "difficulty any: no frequency filter. The game always applies one, so this is an "
+            "upper bound; pass --difficulty medium to see what it can use."
+        ),
         "",
         f"entities {summary['entities']}, "
         f"lexical categories {summary['lexical_categories']}, "
@@ -462,6 +476,17 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     parser.add_argument(
+        "--difficulty",
+        choices=("any", "easy", "medium", "hard"),
+        default="any",
+        help=(
+            "apply the game's frequency filter for this difficulty, so only "
+            "words in the bands it allows can be tiles. 'any' applies none: "
+            "a structural upper bound the game cannot reach, because it always "
+            "filters. Use medium to see what the game can actually build."
+        ),
+    )
+    parser.add_argument(
         "--candidates",
         type=Path,
         default=None,
@@ -484,7 +509,17 @@ def main(argv: list[str] | None = None) -> int:
 
     repos = GraphRepositories(SqliteDocumentStore(args.db))
     try:
-        snapshot = load(repos, grouping=args.grouping)
+        allowed = (
+            None
+            if args.difficulty == "any"
+            else frozenset(
+                band.name
+                for band in DIFFICULTY_TO_FREQUENCY[DifficultyBand[args.difficulty.upper()]]
+            )
+        )
+        snapshot = load(
+            repos, grouping=args.grouping, allowed_bands=allowed, difficulty=args.difficulty
+        )
     finally:
         # Python 3.13 and later report a collected-unclosed connection as a
         # warning, which the suite turns into a failure somewhere unrelated.

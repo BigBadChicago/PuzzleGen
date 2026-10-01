@@ -512,6 +512,26 @@ class ContentService:
         size = query.group_size or 4
         pool, memberships = self._pool(query, game_id, rejected)
 
+        # When every member of a group must also belong to a second taxonomy,
+        # that is a fact about each word, so it shrinks the pool instead of
+        # being checked on each combination. Checked afterwards it starves: the
+        # subsets are enumerated in a fixed order, the result limit fills with
+        # whatever categories have valid subsets early, and a category whose
+        # first valid subset comes hundreds of combinations in is never
+        # reached. The per group gate below stays, because a precise query is
+        # a performance property and the gate is the correctness proof.
+        if (
+            query.intersects_taxonomy is not None
+            and query.minimum_intersecting_members >= size
+        ):
+            other = self.taxonomy(query.intersects_taxonomy)
+            kept = [e for e in pool if any(cid in other for cid in memberships[e.id])]
+            dropped = len(pool) - len(kept)
+            if dropped:
+                key = RejectionReason.NOT_IN_REQUIRED_TAXONOMY.value
+                rejected[key] = rejected.get(key, 0) + dropped
+            pool = kept
+
         minimum = query.minimum_candidate_count or size
         if len(pool) < minimum:
             rejected[RejectionReason.INSUFFICIENT_CANDIDATES.value] = 1
