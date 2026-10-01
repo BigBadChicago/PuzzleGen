@@ -869,3 +869,121 @@ class TestFallingBackToAnotherSize:
         assert all(len(g["members"]) == other for g in payload["visible"])
         tiles = {m for g in payload["visible"] for m in g["members"]}
         assert len(tiles) == other * VISIBLE_GROUPS
+
+
+class TestCoveringQuadruples:
+    """The four groups are built from the hidden words, not searched for.
+
+    Sixteen shortlisted groups give 1,820 subsets of four and almost none can
+    work. The budget divided by 200 hidden candidates allowed 20 of them, and
+    because they were enumerated in index order all 20 shared their first two
+    groups. A real day reported 692 overlap refusals and never reached an
+    answer the coverage model could see.
+    """
+
+    def group_of(self, label: str, members: list[str]) -> GroupView:
+        """Every tile also carries a shared domain.
+
+        Real groups drawn from one export share ancestry, and the temptation
+        floor refuses four groups that resemble each other in nothing. A
+        fixture without it tests a board the game would never accept.
+        """
+        return group(
+            f"category:{label}",
+            [entity(m, f"category:{label}", "category:domain") for m in members],
+        )
+
+    def world(self):
+        """Four groups that hold the hidden words, and decoys that do not."""
+        hidden_words = ["h0", "h1", "h2", "h3", "h4"]
+        visible = [
+            self.group_of("a", ["h0", "a1", "a2", "a3", "a4"]),
+            self.group_of("b", ["h1", "b1", "b2", "b3", "b4"]),
+            self.group_of("c", ["h2", "c1", "c2", "c3", "c4"]),
+            self.group_of("d", ["h3", "h4", "d1", "d2", "d3"]),
+        ]
+        decoys = [
+            self.group_of(f"x{n}", [f"x{n}_{i}" for i in range(5)]) for n in range(12)
+        ]
+        hidden = group("category:hidden", [entity(w, "category:hidden") for w in hidden_words])
+        return hidden, visible, decoys
+
+    def test_the_answer_is_found(self):
+        hidden, visible, decoys = self.world()
+
+        found = list(generate_module.covering_quadruples(hidden, [*decoys, *visible]))
+
+        wanted = {g.shared_category_id for g in visible}
+        assert any({g.shared_category_id for g in quad} == wanted for quad in found)
+
+    def test_decoys_alone_are_never_offered(self):
+        """A set of four holding no hidden word cannot be a board, and the old
+        enumeration spent its whole budget on exactly those."""
+        hidden, visible, decoys = self.world()
+
+        found = list(generate_module.covering_quadruples(hidden, [*decoys, *visible]))
+
+        assert all(
+            any(member_ids(hidden) & member_ids(g) for g in quad) for quad in found
+        )
+
+    def test_it_is_found_early_even_with_the_answer_last(self):
+        """The property the budget needs: the answer is near the front."""
+        hidden, visible, decoys = self.world()
+
+        found = list(generate_module.covering_quadruples(hidden, [*decoys, *visible]))
+
+        assert len(found) <= 40
+
+    def test_every_offer_has_four_distinct_groups(self):
+        hidden, visible, decoys = self.world()
+
+        for quad in generate_module.covering_quadruples(hidden, [*decoys, *visible]):
+            assert len(quad) == VISIBLE_GROUPS
+            assert len({id(g) for g in quad}) == VISIBLE_GROUPS
+
+    def test_each_set_is_offered_once(self):
+        hidden, visible, decoys = self.world()
+
+        found = [
+            frozenset(g.shared_category_id for g in quad)
+            for quad in generate_module.covering_quadruples(hidden, [*decoys, *visible])
+        ]
+
+        assert len(found) == len(set(found))
+
+    def test_a_hidden_word_no_group_holds_yields_nothing(self):
+        hidden, visible, _ = self.world()
+        orphan = group(
+            "category:hidden",
+            [entity(w, "category:hidden") for w in ["h0", "h1", "h2", "h3", "nowhere"]],
+        )
+
+        assert list(generate_module.covering_quadruples(orphan, visible)) == []
+
+    def test_results_are_deterministic(self):
+        hidden, visible, decoys = self.world()
+        shortlist = [*decoys, *visible]
+
+        first = [tuple(g.shared_category_id for g in q)
+                 for q in generate_module.covering_quadruples(hidden, shortlist)]
+        second = [tuple(g.shared_category_id for g in q)
+                  for q in generate_module.covering_quadruples(hidden, shortlist)]
+
+        assert first == second
+
+    def test_a_plan_is_produced_where_the_old_budget_would_have_failed(self):
+        """End to end through plans_for, with a budget of 20: the number the
+        divided budget actually allowed on the day this came from."""
+        hidden, visible, decoys = self.world()
+
+        plans = list(
+            generate_module.plans_for(
+                hidden, [*decoys, *visible], 5, enriched=False, budget=20, rejected={}
+            )
+        )
+
+        assert plans
+        assert {g.shared_category_id for g in plans[0].visible} == {
+            g.shared_category_id for g in visible
+        }

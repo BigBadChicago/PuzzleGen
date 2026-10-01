@@ -243,6 +243,68 @@ TEMPTATION_TOO_HIGH = "temptation_too_high"
 BUDGET_EXHAUSTED = "budget_exhausted"
 
 
+def covering_quadruples(
+    hidden: GroupView, shortlist: Sequence[GroupView]
+) -> Iterable[tuple[GroupView, ...]]:
+    """Sets of four visible groups that could hold every hidden word.
+
+    Enumerating all C(16, 4) = 1,820 subsets of the shortlist and testing each
+    was the wrong way round, for the same reason the content service stopped
+    enumerating the whole pool: almost none of them can work, and the ones that
+    can are not near the front. Every hidden word has to sit in one of the four
+    groups, so the groups holding it are the only places that choice can come
+    from. Choosing per word and padding afterwards makes the search
+    proportional to the answers.
+
+    Scarcest word first, so a word only one group can supply settles the choice
+    before the search spends anything on a word many groups could.
+
+    Yields each distinct set once; order is deterministic.
+    """
+    wanted = member_ids(hidden)
+    holders = {
+        word: [group for group in shortlist if word in member_ids(group)]
+        for word in wanted
+    }
+    if any(not found for found in holders.values()):
+        return
+    scarcest = sorted(wanted, key=lambda word: (len(holders[word]), word))
+    positions = {id(group): index for index, group in enumerate(shortlist)}
+    seen: set[frozenset[int]] = set()
+
+    def pad(chosen: list[GroupView]):
+        """Fill out to four with groups that add no overlap."""
+        if len(chosen) == VISIBLE_GROUPS:
+            key = frozenset(positions[id(group)] for group in chosen)
+            if key not in seen:
+                seen.add(key)
+                yield tuple(chosen)
+            return
+        taken = {positions[id(group)] for group in chosen}
+        for group in shortlist:
+            if positions[id(group)] in taken:
+                continue
+            if positions[id(group)] < max(taken, default=-1) and len(chosen) > 1:
+                # Ascending, so one set of four is reached by one path.
+                continue
+            yield from pad([*chosen, group])
+
+    def walk(index: int, chosen: list[GroupView]):
+        if len(chosen) > VISIBLE_GROUPS:
+            return
+        if index == len(scarcest):
+            yield from pad(chosen)
+            return
+        word = scarcest[index]
+        if any(word in member_ids(group) for group in chosen):
+            yield from walk(index + 1, chosen)
+            return
+        for group in holders[word]:
+            yield from walk(index + 1, [*chosen, group])
+
+    yield from walk(0, [])
+
+
 def plans_for(
     hidden: GroupView,
     pool: Sequence[GroupView],
@@ -264,7 +326,7 @@ def plans_for(
         return
 
     examined = 0
-    for combination in itertools.combinations(shortlist, VISIBLE_GROUPS):
+    for combination in covering_quadruples(hidden, shortlist):
         examined += 1
         if examined > budget:
             refuse(BUDGET_EXHAUSTED)
