@@ -5,214 +5,259 @@ Universe project. It is the first thing a new conversation reads. It answers
 three questions: where things stand, what you need to do before the next
 conversation starts, and what the next conversation should do first.
 
-## Where things stand
+**You do not need to read the rest of this conversation's transcript to
+continue this work.** Everything a new conversation needs is in this file,
+plus `docs/decision-log.md`'s "Phase 7, continued" section (why each choice
+was made) and `docs/architecture.md`'s "Phase 7, continued" section (how each
+piece works). Read those two sections before re-deciding anything that looks
+unresolved below; the reasoning may already be settled.
 
-- **`docs/decision-log.md` records why, not just what.** Every real decision
-  point from this conversation (content pipeline choices, the overlay
-  re-authoring, the axis switch design, the tolerance rule, the game 2
-  ranking, both conceptual corrections) is there with its options and
-  reasoning. Read it before re-deciding something that looks unresolved; the
-  reasoning may already be settled.
-- Phases 1 through 6 are complete. Phase 7's code is complete: the batch list
-  (1b, 1c, 1d, 1a, 2 through 6), plus batch 7's content-service fixes. Phase 7's
-  *content* goal, a real board generating from real content, is not complete,
-  and cannot finish inside a conversation. See "The one thing left in phase 7"
-  below; it is an external, multi-day task, not a code task.
-- 1769 tests pass on Python 3.14 and 1759 on 3.12, with 7 and 17 skipped
-  respectively. The skips need `wn`, its lexicon data, or the built snapshot;
-  they run in the Codespace.
-- **A real snapshot exists and is committed.** Five WordNet roots at depth 6,
-  real MiniLM embeddings, real corpus frequencies: 14,720 entities, 6,526
-  categories, 10,219 frequency scores, 15,393 relationships, 36,639 records
-  activated. `docs/snapshot-build.md` is the runbook; its figures are measured.
-- The overlay seed was re-authored against that snapshot: 15 categories of 10,
-  144 unique entities, all 144 sitting in both a lexical and an overlay
-  category. This is still not enough for a board to generate; see below.
-- `puzzlegen/games/grouping/` is complete: descriptor, content, generate,
-  assemble, verify, difficulty, play, plugin. Five broken fixtures in
-  `tests/support/broken_grouping.py` fail by design, proving the engine's
-  gates actually reject bad games.
-- The content service now supports `intersects_taxonomy` /
-  `minimum_intersecting_members` on `ContentQuery`, and this is documented as
-  a general storage-and-query pattern, not a game-1-specific one. See "The
-  primary-plus-crosscutting storage pattern" near the top of phase 3 in
-  `architecture.md`, and the comment on `intersects_taxonomy` in
-  `content/query.py`. Read that section before designing game 2; it includes
-  a worked non-word example.
-- Python 3.14 is the Codespace's version and the suite is clean on it. Python
-  3.13+ turns an unclosed sqlite connection into a failure in an unrelated
-  test; `tests/unit/test_connection_hygiene.py` catches this at the command
-  that caused it, going forward.
+## Where things stand: phase 7's content goal is met, with two open gaps
 
-## The one thing left in phase 7: not enough words cluster together
+The handoff this file replaced said phase 7 closes when a real board
+generates end to end. **That happened.** On a snapshot built from this
+project's sixteen WordNet export roots, with real (non-development)
+embeddings covering the words involved, a real day's pipeline — the same
+`GenerationPipeline` production uses, verifier included — produced a board
+that was unique, COMPLETE, and scored on-target for its requested difficulty.
+The user independently confirmed 30 of 30 days generating a board across
+every supported size (5 through 9), committed to the repository, and pushed.
 
-A board needs four visible groups whose members, between them, hold all five
-members of one hidden overlay group. Measured directly against the real
-snapshot: a lexical category is usable at all only if it has at least
-`group_size` total members **and** at least one member also in the overlay.
+This was not a small fix. Getting here required a sequence of real
+discoveries, in order, each hiding the next:
 
-| group_size | usable categories |
-|---|---|
-| 5 | 10 |
-| 6 | 5 |
-| 7 | 3 |
-| 8 | 1 |
-| 9 | 0 |
+1. The original grouping rule (direct category membership) cannot produce a
+   good visible group from an imported dictionary hierarchy — it was
+   structurally guaranteed to find either "no groups" or "one word with many
+   names" (`synonym_density.py` demonstrates this is universal, not
+   occasional). Fixed by adding a second grouping mode, `SIBLINGS`
+   (distinct children of one parent), used for game 1's lexical queries.
+2. Picking which synonym represents a child needed a rule (Option R: the
+   overlay's own tagged word wins, else the category's own name).
+3. The uniqueness verifier's partition-validity check was nearly vacuous on
+   real ancestry-bearing tiles (ten "craft" tiles could be split 126 ways,
+   all silently "valid"). Fixed by requiring mutually incomparable group
+   labels, not just non-identical ones.
+4. Two separate search-order bugs (the same root cause, in two places): an
+   unspread `itertools.combinations` meant the first N offers of any large
+   pool never varied enough to be disjoint. Fixed in both the content
+   service's group search and the game's own four-group quadruple search
+   (`covering_quadruples`).
+5. The temptation floor (requiring the four visible groups to share family
+   resemblance) was blocking real, already-authored overlay categories. The
+   user chose **Option B**: lower the floor to zero, treat the whole lexical
+   taxonomy as one pool, and report a `relatedness` confidence (0 to 1) on
+   every board instead of refusing cross-domain ones.
+6. A category-merge bug was found and fixed: two senses of one word (e.g.
+   `viola` the plant vs. the instrument), exported under different roots,
+   were merging into one category that kept only the *first* import's
+   parent, silently discarding the other sense's ancestry. Fixed to union
+   both parents, which required adding a cycle check that did not previously
+   exist (parents could not be added after construction before this change).
+7. A day now tries every supported board size in order (its own drawn size
+   first, then the rest), not just one, so a day whose preferred size the
+   content cannot serve falls back instead of failing outright.
 
-Ten is not enough to assemble four disjoint ones, and it gets worse as group
-size grows. This is true with no frequency filtering at all; frequency is a
-small secondary factor (it drops the size-5 count from 10 to 3), not the
-cause. The cause is that the overlay's 144 words were each chosen for a single
-double meaning, one at a time, so they scatter across near-leaf WordNet
-categories (`violin`, `heather`) instead of clustering into categories that
-already hold five or more members.
+Full reasoning for every one of these is in the decision log; exact mechanics
+are in the architecture doc. **Do not re-derive any of this from scratch** —
+check those two files first.
 
-**The fix is to grow the overlay with words the proposer suggests from the
-lexicon itself**, because those land inside categories that already have
-members, which is exactly what the count above needs more of. This cannot be
-rushed: `puzzlegen/content/review.py`'s design requires ten accepts on ten
-separate days before a proposed word activates. That is a deliberate
-anti-abuse property of the review system, not a bug, and it is why this task
-has to happen outside a single conversation.
+## Two things are still open, and both are content/build-process work, not design work
 
-### External task checklist (do this between conversations, not in one)
+### Gap 1: the committed repository cannot reproduce the 30/30 result
 
-1. **Run the proposer**, once, now:
-   ```bash
-   python tools/propose_overlay.py --db content/graph.sqlite \
-       --batch overlay-2026-09-29 \
-       --manifest content/proposals/overlay-2026-09-29.json
-   ```
-2. **Review and accept**, using the manifest to see why each candidate was
-   suggested:
-   ```bash
-   python tools/review.py queue --db content/graph.sqlite \
-       --manifest content/proposals/overlay-2026-09-29.json
-   ```
-3. **Repeat step 1 with a new `--batch` id on nine more separate days**, each
-   time reviewing and accepting the candidates that genuinely belong. A word
-   needs ten accepted days to activate; a batch run twice in one day still
-   only counts as one day toward that count.
-4. **After the tenth day, rerun the category-count measurement** (the table
-   above) to check whether enough categories now have 5+ members. If not,
-   keep proposing; if so, rerun a day's generation end to end and confirm a
-   board actually assembles, verifies unique, and scores.
-5. **Only once a real board generates end to end**, phase 7 is actually done.
-   That is the trigger for phase 8, not the passage of ten days by itself.
+Checked directly, this session: `content/graph.sqlite` as committed is a
+24,576-byte stub, not a real database. `content/seeds/embeddings.json` does
+not cover every committed lexicon root — confirmed missing or incomplete for
+`planet`, `sport`, and parts of `fish`, `insect`, `reptile`, `flower`, `herb`,
+`flavorer`, `kitchen` at the point this was checked. The user's Codespace
+evidently had locally-regenerated derived files that were never fully
+committed at each push.
 
-### If the wait is unacceptable
+**Fix, to run in the Codespace, in order:**
 
-Two options exist if ten real days is too slow, both discussed and both
-carrying a real cost, not free shortcuts:
+```bash
+# 1. Confirm the exact, final list of lexicon roots to use. See "stray files"
+#    note below first -- several files in content/seeds/ are NOT meant to be
+#    part of a real build.
 
-- **Lower the accept threshold** (`ACCEPT_THRESHOLD` / `ReviewService`'s
-  `threshold` argument) for this one growth push, then restore it. Weakens the
-  anti-abuse property for whatever window it is lowered.
-- **Hand-author more overlay words directly** (skip the proposer, edit
-  `content/seeds/overlay.curated.json` the way the current 144 were chosen),
-  choosing words specifically for cluster size this time: check a candidate
-  word's lexical category size *before* adding it, not after. Faster, but
-  loses the "a human vetted this against real content" property the proposer
-  gives you.
+python tools/build_snapshot.py --write-inputs build/ \
+    --lexicon content/seeds/wordnet-<root1>.lexicon.json \
+    --lexicon content/seeds/wordnet-<root2>.lexicon.json \
+    ... \
+    --overlay content/seeds/overlay.curated.json
 
-Neither was chosen; both are recorded here so the choice is made deliberately
-rather than by default.
+python tools/export_frequency.py --terms build/terms.txt \
+    --out content/seeds/frequency.json
+python tools/export_embeddings.py --texts build/texts.txt \
+    --out content/seeds/embeddings.json
 
-## Game 2 candidates (decided: pursue in this order)
+rm content/graph.sqlite
+python tools/build_snapshot.py --db content/graph.sqlite --label <today's date> \
+    --now $(date -u +%Y-%m-%dT%H:%M:%S+00:00) \
+    --frequency content/seeds/frequency.json \
+    --embeddings content/seeds/embeddings.json \
+    --lexicon content/seeds/wordnet-<root1>.lexicon.json \
+    ... (the same exact list as step 1)
 
-Chosen specifically to pressure-test the "not only word games" requirement
-before four more word-shaped games make a schema change expensive.
+python tools/generate_days.py --db content/graph.sqlite --start 2026-10-01 \
+    --days 30 --json build/days-30.json
+git add content/graph.sqlite content/seeds/frequency.json \
+    content/seeds/embeddings.json build/days-30.json
+git commit -m "Regenerate derived files from the full lexicon set; reproducible 30/30"
+git push
+```
 
-| Order | Option | Why | Schema impact |
-|---|---|---|---|
-| 1 | **Symbol sorting** (glyphs, no dictionary meaning) | Best effort-to-signal ratio: cheapest way to find out whether `content/service.py`'s frequency/embedding machinery can genuinely go unused, not just unused by coincidence | None |
-| 2 | **Image matching** (real images as tiles) | Best pressure test, and the one explicitly required. Cannot be faked the way symbols can; forces a real answer on whether `Entity` needs an image reference field and what `PresentationModel` sends when there is no text | One new field: an image reference on `Entity` |
-| 3 | **Number grouping** (Connections-shape, numeric content) | Easiest to build: reuses `puzzlegen/games/grouping/` almost unchanged, content swapped | None |
-| 4 | **Math relationships** (`factor_of`, `multiple_of` as real edges, not category membership) | Tests a dimension none of the above touch: querying by relationship instead of by shared category, which nothing has done yet except `is_a` | Query layer: a new operation |
-| 5 | (open) | Whichever real word game makes sense once the graph has more content | — |
+**`content/graph.sqlite` must either be committed in full (verify it is not
+gitignored as `*.sqlite`; if it is, change the `.gitignore` rule from
+`*.sqlite3` to also exclude nothing broader than that, or use Git LFS) or not
+committed at all with the runbook corrected to say so.** A 24 KB stub
+masquerading as the real file is worse than no file, because it looks correct
+at a glance.
 
-This is the five-game validation set for the shared-graph thesis. Order 1 to
-4 is deliberate: cheapest non-word signal first, most required pressure test
-second while that signal is fresh, a safe generalization check third, and the
-one architectural gap (relationship-based querying) closed fourth, before
-calling the thesis validated.
+**Stray/duplicate lexicon files, found this session, should be removed before
+the rebuild above:** `content/seeds/` currently also contains
+`wordnet-bird1.lexicon.json` (exact duplicate of `wordnet-bird.lexicon.json`),
+`wordnet-bird3.lexicon.json` (root resolved to "dame," 1 synset — almost
+certainly a mis-resolved export, not bird-related), `wordnet-bird5.lexicon.json`
+(root "shuttlecock," 1 synset — same problem), `wordnet-carnivore1.lexicon.json`
+(exact duplicate of `wordnet-carnivore.lexicon.json`), and
+`wordnet-carnivore2.lexicon.json` (1 synset — broken/partial). The canonical,
+correctly-resolved files (`wordnet-bird.lexicon.json`,
+`wordnet-carnivore.lexicon.json`, `wordnet-herb.lexicon.json`, and presumably
+the rest) were checked and are intact. This is the third time this project has
+hit a "wrong file in the directory" incident (`architecture.md`'s "things
+phase 7 got wrong" section records the first two); it is worth adding a
+permanent habit — never glob `wordnet-*.lexicon.json`, always name the exact
+roots — rather than only cleaning up this instance:
+
+```bash
+git rm content/seeds/wordnet-bird1.lexicon.json \
+       content/seeds/wordnet-bird3.lexicon.json \
+       content/seeds/wordnet-bird5.lexicon.json \
+       content/seeds/wordnet-carnivore1.lexicon.json \
+       content/seeds/wordnet-carnivore2.lexicon.json
+```
+
+Confirm the exact current canonical list with:
+```bash
+for f in content/seeds/wordnet-*.lexicon.json; do
+  python -c "
+import json
+d = json.load(open('$f'))
+names = {s['id']: s['name'] for s in d['synsets']}
+print('$f', '->', names.get(d.get('root'), d.get('root')), len(names), 'synsets')
+"
+done
+```
+A row with a tiny synset count or a root name that doesn't match the
+filename is almost certainly another stray and should be investigated before
+inclusion.
+
+### Gap 2: every generated board is currently identical
+
+Confirmed against the user's own committed `build/days-30.json`: all 30 days
+produced the exact same hidden group (`word that is also a color`) and the
+exact same score. **This is not a bug in the day-to-day randomization** — it
+is correctly wired and was specifically checked. The cause, confirmed by
+direct measurement: the generator currently offers **exactly one candidate**
+on a real day, so there is nothing for the day's own RNG to choose among.
+
+This will resolve as more overlay categories become feasible — the
+`measure_coverage.py` output already shows this number rising across the
+session (1 → 4 feasible categories at size 5). It is a content problem, not a
+code problem. **Do not attempt to fix this by changing candidate selection or
+ordering logic** — the mechanism is correct and was verified correct; the
+input to it is thin.
+
+**What to close next, in order of apparent leverage** (from the most recent
+`measure_coverage.py --difficulty medium` output; re-run it fresh before
+trusting these specifics, since the lexicon set may have changed):
+
+1. **`thing with teeth`** — reaches 3 of 4 needed homes. Absent:
+   `beaver`, `chainsaw`, `comb`, `jigsaw`, `rake`, `rodent`. A `rodent` export
+   (for `beaver`, `rodent` itself) and checking whether `hand_tool`'s depth
+   reaches `chainsaw`/`jigsaw`/`comb`/`rake` (they may simply be deeper than
+   the current export depth, not absent from WordNet) are the two things to
+   check first.
+2. **`word that is also a person's name`** — reaches 3 of 4. Absent:
+   `erica`, `hazel`, `heather`, `holly`, `iris`. The `flower` root should
+   supply at least `iris` and `holly`; check why they didn't land (possibly a
+   depth or sense-resolution issue, the same class as the `herb.n.01` vs.
+   `herb.n.02` ambiguity resolved earlier this session).
+3. **`thing with strings`** — blocked by *small parents*, not missing words:
+   `bowed stringed instrument` has only 4 kinds (`cello`, `viola`, `violin`,
+   plus one more), one short of 5. This is the "kinds of kinds" idea the user
+   raised and the assistant set aside pending a decision — it was not built.
+   If closing this category matters, that idea needs to be revisited now that
+   real data shows exactly where it would help (a parent one or two kinds
+   short, not zero).
+4. **`thing that is blown`**, **`thing that floats`**, **`thing found in a
+   kitchen`** — each has `no_valid_quadruple` or `no_shared_domain` as its
+   blocker now (not missing words), meaning Option B's floor-of-zero should
+   already allow these; re-check with a fresh `measure_coverage.py` run
+   whether they are now feasible, since the coverage numbers above were
+   captured mid-session and may already be stale relative to the latest
+   commit.
+
+Run this to get a current, authoritative picture before doing anything else:
+```bash
+python tools/measure_coverage.py --db content/graph.sqlite --difficulty medium \
+    --json build/coverage-current.json
+```
 
 ## Manual steps required before the next conversation begins
 
-1. Work through the external task checklist above. This is the actual
-   blocker; nothing else is.
-2. If `content/graph.sqlite` needs rebuilding for any reason, delete it first.
-   A build merges into whatever the store already holds; `tools/build_snapshot.py`
-   refuses rather than silently mixing an old sense in.
-3. If any lexicon file changes, rerun the seven commands in
-   `docs/snapshot-build.md` in order; `terms.txt` and `texts.txt` are derived
-   from the merge, not from the files, so a stale pair breaks the last step.
+1. Work through Gap 1 (reproducibility) above. This is the actual blocker to
+   trusting anything else: until it's closed, no one — including a future
+   conversation — can verify any further claim against the real repository
+   state without rebuilding from scratch each time.
+2. Re-run `tools/report_lemma_collisions.py` over the final, cleaned lexicon
+   list (after removing the stray files above) and check its "overlay words
+   whose second meaning lost its parent in the merge" section. The merge fix
+   (union parents) means this should now report 0 affected overlay words
+   regardless of what it finds, but worth confirming directly rather than
+   assuming.
+3. Decide whether to pursue Gap 2's item 3 (small-parent categories needing
+   a "kinds of kinds" mechanism) now or defer it; it is the one open design
+   question from this session that was raised, discussed, and explicitly not
+   resolved.
 
 ## What the next conversation must do first
 
-Before any phase work: ask whether the manual steps above are complete.
-Accept exactly one of two replies:
+Before any further phase work: ask whether the manual steps above are
+complete. Accept exactly one of two replies:
 
-- **`Steps Complete`** — check whether a board now generates end to end
-  (external task checklist, step 5). If yes, phase 7 is closed; open phase 8
-  and start with game 2 candidate 1 (symbol sorting) from the table above. If
-  not yet, continue the external task checklist; do not start phase 8 work on
-  the strength of "some days have passed" alone.
-- **`Detour {filename.md}`** — stop, read the named file (must be attached to
-  the chat or a path under `docs/` in the repository), and ask what to do with
-  it before touching phase work. Do not resume phase work until the detour is
-  explicitly closed.
+- **`Steps Complete`** — run `tools/measure_coverage.py --difficulty medium`
+  and `tools/generate_days.py --days 30` fresh, from the just-rebuilt
+  snapshot. If `generate_days.py` shows more than one distinct hidden group
+  across 30 days, phase 7 is fully closed (reproducible, and no longer
+  single-board-only); open whatever the project's next phase is. If it is
+  still one board, continue closing Gap 2's categories above, in order.
+- **`Detour {filename.md}`** — stop, read the named file (must be attached
+  to the chat or a path under `docs/` in the repository), and ask what to do
+  with it before touching phase work. Do not resume phase work until the
+  detour is explicitly closed.
 
 If the reply is neither of these two forms, ask for it to be restated as one
 of them. Do not guess which was intended.
 
-## Also open, agreed, not built, not blocking phase 7
+## Reading order for this project (unchanged)
 
-- **A similarity opt-out on `ContentQuery`.** Agreed in conversation, not yet
-  implemented. Worth having before a game needs to say "these are deliberately
-  unrelated," but no longer urgent: the 20,000 rejections that originally
-  motivated this were mislabelled (they were `NO_SHARED_CATEGORY`, now its own
-  reason code, not a similarity gate).
-- **The embeddings file is 20.7 MB**, measured against the committed file, not
-  the 43 MB this document previously claimed. Compact format at four decimals
-  already halved it from indented JSON. A larger snapshot (from game 2's
-  content, or from growing the overlay) will need splitting or a binary format
-  before it reaches GitHub's 100 MB limit, but the headroom is roughly five
-  times what this entry assumed, so it is not near-term.
-- **`[project.scripts]` in `pyproject.toml` points at a module that does not
-  exist.** `pip install -e .` puts a `puzzlegen` command on the path that
-  fails on invocation. Remove the two lines or build the CLI.
-- **`search_cost` at weight 0.15** in `difficulty.py` is the least-trusted
-  difficulty feature. Revisit once a real board's score can be sanity-checked
-  by a person actually playing it.
-- **Client delivery is decided but unbuilt.** A rolling five days (current day
-  plus two past, two ahead), refreshed after a played game while connected or
-  on next connection. A corrected day always overwrites a cached one: a
-  correction is by definition more correct than what it replaces. Reconciling
-  a device offline more than two days is deferred deliberately and is not a
-  blocker for a first release.
+1. What the person says in the current conversation.
+2. Files attached to the current conversation.
+3. This project's own file context (memory).
+4. Files pulled from the connected GitHub repository
+   (`https://github.com/BigBadChicago/PuzzleGen`).
 
-## Things phase 7 got wrong that are worth not repeating
+A repository file is lowest priority because it can be stale relative to what
+the person and the conversation already know — and this session found exactly
+that kind of staleness twice (the committed `graph.sqlite` stub; the
+committed embeddings missing roots). Always verify a repository claim (file
+sizes, which roots a lexicon file actually resolves to, whether a build
+actually succeeds) rather than trusting a filename or a prior commit message.
 
-- A package that exports a function shadowing a submodule breaks
-  `from . import <name>` at the first call, with no error message that
-  mentions shadowing. `plugin.py` imports functions directly for this reason.
-- The engine's announcement events and placeholders are closed sets. A
-  descriptor that invents either is refused at registration; the test that
-  actually catches this runs the real gate, not a re-check of the properties
-  by hand.
-- Three separate incidents came from files landing in the wrong path, twice
-  because two batches shipped same-named files in different directories.
-  Copy by full path, always.
-- The storage pattern behind game 1's hidden group (an entity in categories
-  from more than one taxonomy at once) got described in game-1 language
-  several times before the framing was corrected. It is not a word-play
-  concept and it is not a game. It is a data model. See the phase 3 addition
-  in `architecture.md`. Read `intersects_taxonomy` and its comment in
-  `content/query.py` as the actual contract; treat "hidden group," "word
-  play," and "second meaning" anywhere else as game 1's specific use of it.
-
-## Standing project conventions (apply regardless of phase)
+## Standing project conventions (apply regardless of phase, unchanged)
 
 - No preamble, no recap, no filler; decisions and open questions stated in
   lists at the end of each response.
@@ -221,6 +266,14 @@ of them. Do not guess which was intended.
   weighing for each option, before any recommendation.
 - Files longer than ~300 lines: state what is about to be produced and wait
   for confirmation before generating it.
-- Reading order for any single reply: conversation, then attachments, then
-  this project's file context, then the connected repository, in that
-  priority order.
+- Never glob `wordnet-*.lexicon.json` or any other wildcard over
+  `content/seeds/`; name exact files. This project has hit stray/duplicate/
+  broken files in that directory three separate times.
+- When a diagnostic tool and the real engine could disagree about a number
+  (feasibility, candidate count, a rejection reason), make the tool import
+  the real constant or function rather than hand-copying its value — this
+  session found and fixed two cases where a hand-copied threshold had drifted
+  from the real one.
+- Before trusting any "it works" claim about committed content, check file
+  sizes and actually attempt a rebuild from the committed files alone. This
+  session's two open gaps were both found exactly this way.

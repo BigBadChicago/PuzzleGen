@@ -948,3 +948,240 @@ others.
 **There is no "one away" share token, though there is a state symbol.** A
 share is built from the move ledger with payloads stripped, so it can see
 that an attempt was wrong but never how wrong.
+
+## Phase 7, continued: two grouping modes, Option B, and the tools that measure them
+
+Everything below was added in the session that followed the one that produced
+the "Phase 7: Game one" section above. It does not replace anything in that
+section; where it changes a stated behavior, this section says so explicitly.
+
+### Two grouping modes, chosen per taxonomy's origin, not per game
+
+**`GroupingMode` (`puzzlegen/content/query.py`), set via `ContentQuery.grouping`:**
+
+- **`SHARED_CATEGORY`** (the default, and the original and only behavior
+  before this session): a group is drawn from one category's *direct*
+  members. Correct for a hand-authored taxonomy, where a category is filled
+  by a person with exactly the members it should have (a number game's
+  `even` category holding every even number).
+- **`SIBLINGS`**: a group is drawn from *distinct children* of one parent
+  category, one tile per child. Correct for a taxonomy imported from an is-a
+  hierarchy such as WordNet, where a category is one meaning and its direct
+  members are that meaning's synonyms, never a set of different things.
+
+**The deciding question for any future game or taxonomy is not "which game is
+this" but "how was this taxonomy made."** A game whose primary taxonomy is
+imported from an external is-a hierarchy the way WordNet was should use
+`SIBLINGS`. A game whose taxonomy is authored by hand the way
+`overlay.curated.json` is should use the default `SHARED_CATEGORY` — it never
+had the synonym-pile problem `SIBLINGS` exists to solve. Game 1 sets
+`VISIBLE_GROUPING = SIBLINGS` (`puzzlegen/games/grouping/content.py`) for its
+lexical (WordNet-derived) queries only; its overlay queries are unaffected
+(the overlay is hand-curated and uses the default).
+
+**Which word represents a child, under `SIBLINGS`, is decided by
+`puzzlegen/content/representatives.py`'s `choose_representatives`:**
+1. If the query requires membership in a second taxonomy (the overlay), the
+   word a curator tagged there wins, so a familiar synonym can be the tile
+   when the overlay says it should be (Option R, see decision log).
+2. Otherwise, the word carrying the child category's own canonical name (the
+   exporter's first lemma) wins.
+3. A word cannot represent two categories: a word filed as a synonym under
+   two different children keeps the child whose own name it carries, if any;
+   otherwise ties are broken deterministically by id.
+
+This function is called by both `ContentService._representatives` (building
+real boards) and `tools/overlay_coverage.py` (predicting them), so the two
+cannot silently disagree about which word is a tile.
+
+**`TaxonomyIndex.children(category_id)`** (`puzzlegen/content/similarity.py`)
+returns direct children only, the one new primitive `SIBLINGS` needed; it is
+built once per index alongside the existing ancestor/descendant maps.
+
+### Candidate generation under `SIBLINGS`
+
+`ContentService._candidate_sibling_groups` (`puzzlegen/content/service.py`)
+enumerates parents with at least `group_size` children, most specific first,
+round robin across parents exactly as the original `SHARED_CATEGORY` path
+does — and, within one parent, spreads combinations via
+`_spread_combinations` rather than plain `itertools.combinations`, for the
+reason in the decision log (an unspread enumeration's first N offers all
+share their earliest members and can be mutually non-disjoint). When a query
+requires a second-taxonomy intersection on every member
+(`minimum_intersecting_members >= group_size`), the pool is pre-filtered
+(`NOT_IN_REQUIRED_TAXONOMY` rejection) rather than checked per-subset, for the
+same starvation reason; the per-group gate in `_assess_group` still runs
+regardless, per phase 3's "every gate runs" rule.
+
+`_sibling_children` re-derives, per assessed group, which child each member
+actually stands for — accepting a representative chosen by tag (not just by
+name-match), and refusing a group where two members claim the same child or
+one child is an ancestor of another (`NOT_DISTINCT_SIBLINGS`).
+
+### The temptation floor is now a product choice, not a structural necessity (Option B)
+
+`MINIMUM_TEMPTATION` (`puzzlegen/games/grouping/generate.py`) is **0**,
+changed from its original value of 1. At 0, the four visible groups may share
+no ancestry at all; `temptation_of`'s result is still computed and still
+orders candidates (more related boards rank first), but nothing is refused
+for scoring 0. A future game, or a later change to this one, that wants the
+stricter single-domain behavior sets this constant back above 0 and regains
+the `TEMPTATION_TOO_LOW` gate and its refusal reporting with no other code
+change required.
+
+**`relatedness_of(groups, group_size)`** reports the same underlying
+measurement normalized to 0..1, as `BoardPlan.relatedness` and on every
+candidate's `payload["relatedness"]`. This is the confidence number a client
+or curator can read: near 0 means the four groups genuinely share nothing
+(a valid board under Option B, just not a thematically coherent one); near 1
+means they share a real family resemblance. It is computed against a ceiling
+of "every tile shares one extra category with every tile in every other
+group," which is the practical maximum for boards of the kind this game
+builds.
+
+`tools/overlay_coverage.py` imports `MINIMUM_TEMPTATION` directly from the
+game module, so the coverage model's notion of "feasible" and the engine's
+notion of "can generate" use the same floor value and cannot drift apart.
+
+### Partition validity: labels must be mutually incomparable, not merely distinct
+
+`partition_validator` (`puzzlegen/games/grouping/verify.py`) no longer judges
+two groups "the same" only when their single most-specific shared category
+matches. It instead asks whether the whole partition can be given one label
+per group — drawn from each group's own shared categories (all of them, not
+just the deepest) — such that no two chosen labels' *extensions* (the actual
+board tiles each category names, on this board) are comparable (neither a
+subset of the other). This is necessary because every tile carries its whole
+ancestry: a craft tile is simultaneously `airplane`, `craft`, and `vehicle`,
+so two groups can share two or three categories at once, and a rule checking
+only the single deepest one systematically under-rejected. The search is a
+small backtracking match (fewest-label-options group first), fast in
+practice because the intended partition's parents were chosen not to nest.
+
+### `covering_quadruples`: build the four groups from the hidden word, don't search for them
+
+`puzzlegen/games/grouping/generate.py`'s board search no longer enumerates
+every `C(shortlist, 4)` combination of the visible shortlist and tests each
+for coverage. `covering_quadruples(hidden, shortlist)` instead picks, for
+each hidden word (scarcest-first — the word with fewest eligible groups
+decided first), one group that holds it, and pads to four groups with
+non-overlapping choices afterward. This is the same "search proportional to
+the answers, not the pool" principle the content service's own group search
+already applied (phase 3); applying it here fixed a real failure where
+dividing the combination budget across many hidden candidates (after raising
+`HIDDEN_POOL`, below) left too few combinations per candidate for blind
+enumeration to ever find a working set.
+
+### A day tries every supported size, not just its own
+
+`descriptor.group_sizes_for(day_key)` returns an ordered tuple: the day's own
+drawn size first (from the existing `group_size_for`), then every other
+supported size ascending. `content_requirements` now declares a full set of
+visible/hidden/hidden-enriched requirements **per size**, named via
+`content.sized(name, group_size)` (e.g. `"visible:7"`); only the day's own
+size's requirements are non-optional, so a day whose preferred size the
+content cannot serve falls back rather than failing a requirement.
+`generate_candidates` tries each size in `group_sizes_for` order and returns
+the first that yields any candidate; refusal counts accumulate per size
+(`"size 7: not_disjoint"`) so a day that fails at every size reports what
+stopped each one, not just the first.
+
+This is a pure function of the day key alone, same as before: the content
+layer, the generator, and any later audit still agree on the order without
+communicating out of band, and `GenerationTrace`'s recorded
+`group_sizes_tried` makes the attempted order auditable after the fact.
+
+### A game's own taxonomy, brought alongside the shared ones, isolated per game
+
+`tools/build_snapshot.py --curated PATH:TAXONOMY` (repeatable) imports an
+additional curated JSON file under its own taxonomy name. `wordnet` and
+`overlay` are reserved and cannot be claimed this way; two `--curated` flags
+in one build must name distinct taxonomies. `CuratedJSONProvider`
+(`puzzlegen/providers/curated.py`) was already fully generic — nothing in it
+is WordNet- or overlay-specific — so this flag is the only piece that was
+actually missing. Category identity already includes the taxonomy
+(phase 2), so a new game's categories can never merge with another game's or
+with `wordnet`/`overlay` regardless of naming. Removing a `--curated`
+taxonomy from a future build removes its content and every group drawn from
+it; nothing elsewhere needs to change for that removal to take effect,
+because nothing outside that taxonomy ever referenced it directly (a game's
+own data never intermingles with another game's by construction, not by
+policy).
+
+### Retiring and reopening a piece of hand-authored content without losing it
+
+`tools/overlay_seed.py` (`list` / `retire` / `reopen`) moves a curated
+category out of `categories` and into a new top-level `retired` list in the
+same JSON file, carrying its members, a required reason, a required
+reopen-when condition, and the date. `CuratedJSONProvider.retired_categories()`
+reports them for inspection; the normal import path never sees them, so a
+retired category contributes nothing to a build. `dumps()` reproduces the
+file's existing one-object-per-line layout exactly (verified byte-for-byte
+against the committed file), so a retirement is a small, readable diff.
+`overlay.wheels` ("thing with wheels") is retired as of this session: its
+reachable homes (`motor vehicle`, `self-propelled vehicle`, `wheeled
+vehicle`, `car`, `wagon`) nest under one another, so no four non-nested peers
+exist for it regardless of further content growth under the current export
+roots; its reopen condition names what would have to change.
+
+### `MINIMUM_MEMBERS_EACH` replaces the overlay seed's old exact-ten-per-category pin
+
+The original seed's design was "exactly 10 members per category." That is
+now a floor (`MINIMUM_MEMBERS_EACH = 10` in the test suite, matching
+"at least as many members as the day's group size" already stated earlier in
+this file), not a ceiling: a category may hold more once placeable words are
+added to it, and doing so must not fail a test designed around the old exact
+count. `word that is also a verb` holds 14 as of this session.
+
+### New diagnostic tools, all read-only against a snapshot unless stated otherwise
+
+- **`tools/overlay_coverage.py`** — the structural feasibility model:
+  "could a board exist at all," ignoring the similarity/frequency gates a
+  real day also applies (an explicit, documented upper bound). Supports both
+  grouping modes, the `MINIMUM_TEMPTATION` floor (imported live from the game
+  module), a `--difficulty` flag that applies the game's own frequency-band
+  filter so the reported number matches what a real day can actually use,
+  and per-word explanations (`explain_homeless`) distinguishing "not in the
+  lexicon" from "a synonym that lost the tile" from "its parent has too few
+  kinds" from "too uncommon for this difficulty" — each needing a different
+  fix. Reports which specific overlay categories can currently be built, with
+  their four visible-group parents, and which reached-but-nested homes
+  (`nested homes:`) explain a `no_valid_quadruple`/`no_shared_domain` result
+  that a bare count cannot.
+- **`tools/measure_coverage.py`** — the CLI around the above, plus
+  `--candidates FILE.json --exact`: given a list of `{"entity", "category"}`
+  pairs, reports each one's structural gain (new lexical homes reached, and,
+  with `--exact`, which specific board sizes it would newly unblock) without
+  requiring a rebuild.
+- **`tools/generate_days.py`** — the end-to-end check: drives the real
+  `GenerationPipeline` (the same one production uses, verifier included) over
+  a run of consecutive days, against an in-memory engine store so nothing is
+  published. Reports per day whether a board came out, its uniqueness/
+  completeness/states-examined, its measured difficulty band against the
+  requested one, and the hidden/visible groups used; summarizes by size; and
+  on failure, names the day's own size's refusal reasons first (not whichever
+  reason happens to have the highest count across all five attempted sizes,
+  which buries the size that actually matters under expected fallback noise).
+- **`tools/synonym_density.py`** — reports, per synset, how many lemmas it
+  has of its own, flagging rows that look like one concept with many names.
+  Exists to demonstrate directly that `SHARED_CATEGORY` grouping against an
+  imported hierarchy cannot ever produce a good visible group: every row this
+  tool can produce is, definitionally, synonyms of one thing.
+- **`tools/report_lemma_collisions.py`**, extended this session: reports,
+  per name collision, which synsets' parents were kept versus lost in the
+  merge (now fixed to union rather than lose, see decision log), matched
+  case-sensitively against how category ids are actually minted (a prior
+  version's lowercase grouping reported collisions, such as `Cardigan`/
+  `cardigan`, that the graph does not actually have).
+
+### A reproducibility gap and a content-starvation gap, both currently open
+
+Recorded in the decision log in detail; stated here for the architectural
+record: the repository's committed `content/graph.sqlite` does not match the
+real database a working build produces, and the committed
+`embeddings.json`/`frequency.json` do not cover every committed lexicon root.
+Separately, the generator currently offers exactly one candidate per day in
+practice (confirmed against a real 30-day run), so the day-level
+randomization that already exists correctly has nothing to select among yet.
+Neither is a defect in the mechanisms described above; both are closed by
+content and build-process work, detailed in `docs/handoff.md`.

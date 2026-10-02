@@ -596,3 +596,310 @@ weighed again, the reasoning above should either still hold, in which case it
 is worth citing rather than re-deriving, or it should have a stated reason it
 no longer applies, which is itself worth recording as a new entry rather than
 silently overwriting this one.
+
+## Phase 7, continued: sibling grouping, Option R, Option B, and a reproducibility gap
+
+A second session picked up phase 7 after the handoff below was written for the
+first one. This section records everything decided since: it does not
+replace anything above, and the guidance at "How to use this file" applies to
+all of it exactly as it does to the first session's entries.
+
+### Direct membership was the wrong grouping rule for an imported hierarchy
+
+**Decision:** how a "visible group" should be defined, once measurement
+showed the existing rule produced almost nothing usable.
+
+**The finding that forced this:** `_group_combinations` grouped entities by
+*direct* `is_a` membership in one category. Measured against the real
+snapshot, this works only when a single WordNet synset has five or more
+lemmas of its own. Two tools were built to check this and both confirmed the
+same thing: `boat` has one lemma ("boat"); `canoe`, `kayak`, `dory` are each
+their own sibling synset, not members of `boat`. The handful of categories
+that did clear five members were synonym piles (`baby buggy` with nine names
+for one pram) or merge-collision artifacts (`jackal` with four species merged
+onto one name). Neither is a usable "five different things" visible group.
+`synonym_density.py` was built specifically to prove this is universal, not
+occasional: every row it can ever produce is one concept with many names, by
+definition of what a WordNet synset is.
+
+**Options considered:**
+- Keep direct membership, and only ever use hand-curated taxonomies (number
+  games, symbol games) for future content.
+- Change grouping to **sibling-hyponymy**: a group is "distinct children of
+  one parent" rather than "direct members of one category." `fish` becomes a
+  usable parent because `salmon`, `trout`, `herring` are its children, each
+  contributing one tile.
+- Grow the overlay and lexicon indefinitely under the old rule, accepting
+  that usable categories would always be rare synonym clusters.
+
+**Chosen:** sibling-hyponymy, added as a second mode (`GroupingMode.SIBLINGS`)
+alongside the original (`GroupingMode.SHARED_CATEGORY`), which stays the
+default. `ContentQuery.grouping` selects between them. Game 1 now sets
+`VISIBLE_GROUPING = SIBLINGS` for its lexical queries; any future game whose
+taxonomy is hand-authored (a number game's `parity`/`prime` categories, built
+the way `overlay.curated.json` already is) keeps the default, because a
+hand-curated category never had the synonym-pile problem in the first place —
+a human filling "even numbers" by hand produces exactly the right shape on
+the first try. This boundary condition (import-derived vs. hand-curated) is
+the one to re-check before assuming the fix generalizes to a new game.
+
+**Why:** measured directly, the sibling rule turns categories with three to
+four own-lemmas into categories with dozens of children: `stringed instrument`
+went from one unusable direct-member count to 13 direct children. The fix is
+general — it lives in the shared `ContentService`, not in game 1's code — so
+any future game reading an imported hierarchy inherits it automatically.
+
+### Which word stands for a child: first lemma, overridable by the overlay's own tag (Option R)
+
+**Decision:** under sibling grouping, a parent's "children" are categories,
+not words. Something has to pick the one word shown as the tile for each
+child.
+
+**Options considered:**
+- **First lemma** (the exporter's own first-listed synonym) always wins. Zero
+  new data, but loses overlay words that happen to be a second-listed synonym:
+  `fiddle` (synonym of `violin`), `uke` (not `ukulele`), `tugboat` (not `tug`).
+  Measured: nine of the original 144 overlay words were lost this way.
+- **Most frequent word** wins. Measured and rejected: `car`'s most frequent
+  synonym is `machine`, which is a worse tile than `car`, and about 31 percent
+  of entities have no frequency score to rank by at all.
+- **Option R: the word the curator tagged in the overlay wins**, falling back
+  to first lemma when nothing is tagged. A word filed under two children of
+  one parent (`horn` under both `cornet` and `French horn`) stands for at most
+  one; the category whose own name the word carries is reserved for it, so
+  tagging a synonym elsewhere can never cost another category its tile.
+
+**Chosen:** Option R, approved by the user explicitly. Implemented once, in
+`puzzlegen/content/representatives.py`'s `choose_representatives`, called by
+both the content service (to build real boards) and `tools/overlay_coverage.py`
+(to predict them), so the two can no longer disagree about which word is a
+tile — which they had, silently, before this was centralized.
+
+**Why:** the overlay already exists to name the word whose second meaning is
+the hidden group; a curator tagging `fiddle` as "the word that stands for the
+violin category, for this board's purposes" is the overlay doing exactly its
+stated job, not a special case.
+
+### The partition-validity rule was almost vacuous on real ancestry-bearing tiles
+
+**Decision/finding:** `partition_validator` claimed to refuse two groups
+"justified by the same category," but it compared only each group's single
+most-specific shared category. On real content, where every tile carries its
+whole ancestry (a craft tile is simultaneously `airplane`, `craft`, and
+`vehicle`), two differently-labeled groups routinely share two or three
+categories, and the old check missed this entirely. Measured on a real
+generation attempt: ten "craft" tiles split arbitrarily into two groups of
+five produced 126 "distinct solutions," because every such split was
+"justified" by `{craft, vehicle}` twice over. This silently blocked every
+real day (`MULTIPLE_SOLUTIONS: 126 distinct`), hidden behind a much larger
+`WORD_FREQUENCY_MISMATCH` count in the failure report until the reporting
+itself was fixed to show later pipeline stages first.
+
+**Chosen fix:** a partition is valid only if its groups can be given labels,
+one per group, drawn from each group's own shared categories, such that no
+two labels' extensions (the actual tile sets they name, on this board) are
+comparable — neither a subset of the other. This is a real constraint
+satisfaction search (backtracking, fewest-option groups first for speed), not
+a single-category comparison. Verified both ways: five new tests fail against
+the old rule and all pass against the new one; the intended partition (one
+label per group, from each group's defining parent) always has a valid
+labeling because the parents were chosen not to nest in the first place.
+
+**Why this had to be fixed rather than worked around:** it is the uniqueness
+guarantee itself. A rule that under-rejects here means a published board can
+be "solved" 126 different ways, which is the single most dangerous failure
+mode phase 5's own decisions already named.
+
+### Two search-order bugs, both the same shape, found by generating real days
+
+**Finding, twice:** `itertools.combinations` varies only its last element, so
+the first N offers of any large pool share almost all their earliest members.
+This bit the project in two different places, discovered in sequence:
+
+1. **Within one lexical category**, in the content service's shared-category
+   candidate generator. A hidden overlay category with 14 members has 2,002
+   subsets of five; the first 200 (the hidden-pool limit) all shared the same
+   four earliest words, so the one subset a board needed was never offered,
+   and generation failed reporting `not_disjoint` — which looks exactly like
+   "no answer exists" from inside the search, when the real cause was "the
+   answer was never looked at."
+2. **Across the four-group quadruple search**, in `plans_for`. Raising the
+   hidden-pool limit from 24 to 200 (to fix a different starvation problem,
+   below) divided the per-candidate combination budget from about 166 down to
+   20, and those 20 were the worst 20 by the same ordering defect.
+
+**Chosen fix for (1):** `_spread_combinations` — cyclic windows over the
+sorted pool before falling through to full enumeration, so every member leads
+at least one early window and a small limit still reaches a representative
+spread rather than one corner of the space. Six new tests assert mutual
+disjointness among early offers, which the old order could never provide;
+confirmed to fail against the old code and pass against the new.
+
+**Chosen fix for (2):** replaced brute-force enumeration of the shortlist's
+`C(16,4)` quadruples with `covering_quadruples`, which builds the four groups
+*from* the hidden word that needs placing (scarcest word first) instead of
+searching blindly and testing each guess. This is the same "search
+proportional to the answers, not the pool" principle phase 3 already applied
+to the content service's own group search. Verified against the exact failure
+shape: a test reproduces the real day's budget of 20 and confirms a plan is
+found, where the old enumerator needed thousands.
+
+**Why both are recorded together:** they are the same defect recurring at two
+layers, which is itself the lesson — an ordering assumption baked into one
+shared Python idiom (`itertools.combinations`) will resurface anywhere a
+limited "take the first N" is applied to its output, and should be checked
+for on sight rather than rediscovered per call site.
+
+### The hidden group must actually be placeable, checked once rather than discovered by search
+
+**Finding:** the hidden-group query could return candidates containing words
+the lexical taxonomy does not have at all (a word only the overlay knows).
+Such a candidate can never become a board, but nothing said so until the
+four-group search exhausted its budget trying anyway.
+
+**Chosen fix:** two checks, both applied before any quadruple search starts,
+not per-combination:
+- The hidden query now requires `intersects_taxonomy=LEXICAL_TAXONOMY,
+  minimum_intersecting_members=group_size` — every hidden word must also be
+  a lexicon word. Applied as a pool pre-filter in the content service, not a
+  per-subset check, because per-subset checking starves a category whose
+  first valid subset comes late in enumeration order (the same shape as the
+  combinations bug above).
+- `generate_candidates` separately checks that every hidden word is a tile
+  somewhere in the day's actual visible pool (a word can be in the lexicon
+  generally but not survive that day's frequency/similarity gates), before
+  spending any search budget on that hidden candidate.
+
+**Why both and not one:** "in the lexicon" and "a tile today" are genuinely
+different facts — the first is permanent, the second depends on the day's
+difficulty band — and conflating them would either reject a word forever or
+search for a word that can never appear today.
+
+### The temptation floor: Option A vs. Option B, and Option B was chosen
+
+**Decision:** whether the four visible groups must share family resemblance
+(the "temptation" floor, `MINIMUM_TEMPTATION`), once `no_shared_domain`
+started appearing as a real, measured blocker on actual overlay categories
+(`word that is also a color`, `thing found in a kitchen`) rather than a
+theoretical one.
+
+**Options considered, explained to the user in plain terms with a diagram:**
+- **Option A — keep the floor; author hidden groups within one domain.**
+  Boards stay thematically coherent (the documented reason the seven-root,
+  single-domain design existed). Cost: a curator must choose words whose
+  homes share ancestry, which is extra authoring work and shrinks which
+  overlay categories are usable until that work is done.
+- **Option B — lower the floor to zero; treat the whole lexical taxonomy as
+  one pool.** Any four groups, from any domains, are a valid board. Cost:
+  "four unrelated piles" is a real board shape under this rule, which the
+  difficulty model was not designed around, and which needs its own signal
+  if a product wants to show "how related is this board" to a player or a
+  curator.
+
+**Chosen:** Option B, the user's explicit choice, with an explicit follow-on
+requirement: report a relatedness confidence instead of silently publishing
+unrelated boards without comment.
+
+**What was built:** `MINIMUM_TEMPTATION` is now `0` (previously `1`),
+documented as a product choice a future game can raise, not a structural
+necessity. `temptation_of` (the raw pairwise-shared-ancestry count) is still
+computed and still orders candidates, but a new `relatedness_of` normalizes it
+to 0..1 against the most a board of that size could carry, and travels on
+every candidate's payload as `relatedness`. 0 is an honest "these four piles
+share nothing," not a defect; it is a ranking signal and a possible
+player/curator-facing number, never a gate at the current floor value.
+`tools/overlay_coverage.py` imports the same `MINIMUM_TEMPTATION` constant
+the engine uses, so the coverage model and the real generator cannot disagree
+about which boards the floor would allow.
+
+**Why Option B over A:** stated by the user directly — mixing domains is the
+intended design, and a confidence number is the right way to surface the
+cost of that rather than refusing the content. Recorded here rather than
+re-litigated: if a future conversation wants to reconsider the floor, the
+diagrammed tradeoff above is the one that was weighed, and the data that
+tipped it was that `no_shared_domain` was blocking multiple real,
+already-authored overlay categories by the time the choice was made, not a
+hypothetical one.
+
+### The category-merge rule was changed from "first import wins" to "union the parents," with a new cycle check this requires
+
+**Finding:** two senses of one word, exported under different roots, become
+one category (category identity is the name). The first import to name that
+category kept its parents; a later import of the same name added none. This
+silently homed one sense in the wrong family: `viola` the plant (under
+`herb`) and `viola` the instrument (under `bowed stringed instrument`) merged
+into one category whose parent was whichever synset was processed first,
+discarding the other sense's ancestry entirely. Measured on the real seven
+(then sixteen) root export: this affected no overlay word on the committed
+seven-root set purely by chance (no plant root was in that set yet), but
+measured on a wider combination it affects `viola`, a word already in the
+seed's `thing with strings` category.
+
+**Chosen fix:** `SnapshotBuilder._merge_category` now unions a merging
+category's parents rather than keeping only the first-seen set.
+
+**The cost, paid explicitly rather than left implicit:**
+- `CategoryRepository.put` refusing a category naming an absent parent was
+  previously the *entire* cycle-prevention mechanism (architecture.md, phase
+  1), with no traversal-based checker anywhere, because a parent reference
+  was fixed at construction and could never be added later. That stopped
+  being true: a parent can now be added to an *existing* stored category, so
+  both records already exist and the existence check cannot see a cycle. One
+  new traversal (`CategoryRepository.ancestor_ids` / `descendant_ids`) checks
+  every added parent against the merging category's own descendants before
+  writing it; a parent that would close a loop is refused and named in the
+  import's warnings rather than silently written or silently dropped.
+- Depth is denormalized onto every category and read by Wu-Palmer similarity
+  and the "most specific shared category" rule. A category that gains a
+  deeper parent changes its own depth and that of everything beneath it;
+  `_repair_depths` recomputes nearest-first after any merge that adds a
+  parent.
+
+**Why this one change, not a bigger restructuring:** the alternative
+(sense-based category identity instead of name-based) was considered and
+rejected as out of scope — it would change every category id already minted
+and require re-tagging the whole overlay seed, for a problem the union fix
+solves with a much smaller, well-contained change.
+
+### A separate rejection reason for `NOT_IN_REQUIRED_TAXONOMY` applied as a pool filter, not a per-group gate
+
+Folded into the fixes above but worth naming on its own: when a group query's
+`intersects_taxonomy` requirement is for *every* member
+(`minimum_intersecting_members >= group_size`), it is now applied once, to
+shrink the candidate pool, rather than checked per enumerated subset. The
+per-group gate inside `_assess_group` was kept in addition (defence in depth,
+per phase 3's existing rule that every gate runs even when a precise query
+should already guarantee its result), proven non-redundant by a test that
+disables the pool filter and confirms the per-group gate alone still refuses
+an invalid subset.
+
+### A known, currently unresolved reproducibility gap
+
+**Finding, not yet fixed:** the committed `content/graph.sqlite` in the
+repository is a 24,576-byte stub, not the real multi-ten-megabyte database a
+real build produces — `*.sqlite` was never actually committed in full. The
+committed `content/seeds/embeddings.json` does not cover every committed
+lexicon root (confirmed missing: `planet`, `sport`, and parts of `fish`,
+`insect`, `reptile`, `flower`, `herb`, `flavorer`, `kitchen` at various
+points across this session, since lexicons were added over several pushes
+without the embeddings/frequency regeneration step being re-run each time).
+A from-scratch clone of the repository cannot currently reproduce the 30/30
+board-generation result the user achieved in their Codespace, because the
+Codespace's local `embeddings.json`/`frequency.json` were evidently ahead of
+what was committed at each push. This is recorded as open, not resolved; see
+the handoff for the exact regeneration sequence required.
+
+### A known, currently unresolved content-starvation gap: every generated day is the same board
+
+**Finding, not yet fixed:** confirmed directly against the user's own
+committed `build/days-30.json`: all 30 generated days have the identical
+hidden group (`word that is also a color`) and identical score. Traced to its
+cause: the generator offered exactly **one** candidate on every day checked,
+not several among which the day's own randomness could choose. The
+day-to-day variety mechanism (the per-day deterministic RNG) is correctly
+wired and was never the problem; it has nothing to select among because only
+one overlay category is currently feasible at each board size in practice.
+This is expected to resolve as more overlay categories cross the feasibility
+line (the coverage tool already shows the count rising: 1 to 4 feasible
+categories at size 5 across this session), not as a code change. See the
+handoff for the specific categories closest to becoming feasible next.
