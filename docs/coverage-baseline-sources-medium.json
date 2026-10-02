@@ -1,0 +1,3778 @@
+{
+  "summary": {
+    "allowed_bands": [
+      "COMMON",
+      "UNCOMMON"
+    ],
+    "difficulty": "medium",
+    "entities": 11496,
+    "entities_usable_as_tiles": 3110,
+    "generatable": true,
+    "lexical_categories": 681,
+    "overlay_categories": 14,
+    "sizes": [
+      {
+        "board_size": 20,
+        "bounded_searches": 0,
+        "feasible_boards": [
+          {
+            "hidden_group": "word that is also a color",
+            "parents": [
+              "flower",
+              "airplane",
+              "finch",
+              "citrus"
+            ]
+          },
+          {
+            "hidden_group": "thing found in a kitchen",
+            "parents": [
+              "percussion instrument",
+              "edible fruit",
+              "flavorer",
+              "hand tool"
+            ]
+          },
+          {
+            "hidden_group": "word that is also a verb",
+            "parents": [
+              "airplane",
+              "percussion instrument",
+              "dipterous insect",
+              "boat"
+            ]
+          },
+          {
+            "hidden_group": "thing that can be smoked",
+            "parents": [
+              "food fish",
+              "passenger car",
+              "herb",
+              "wind instrument"
+            ]
+          },
+          {
+            "hidden_group": "thing with wings",
+            "parents": [
+              "oscine",
+              "airplane",
+              "insect",
+              "bird of prey"
+            ]
+          }
+        ],
+        "feasible_examples": [
+          "word that is also a color",
+          "thing found in a kitchen",
+          "word that is also a verb",
+          "thing that can be smoked",
+          "thing with wings"
+        ],
+        "feasible_hidden_groups": 5,
+        "group_size": 5,
+        "hidden_groups_examined": 14,
+        "parents_able": 104,
+        "proxy_usable_categories": 25,
+        "reasons": {
+          "members_without_home": 5,
+          "no_valid_quadruple": 1,
+          "too_few_distinct_homes": 3
+        }
+      },
+      {
+        "board_size": 24,
+        "bounded_searches": 0,
+        "feasible_boards": [
+          {
+            "hidden_group": "word that is also a color",
+            "parents": [
+              "flower",
+              "airplane",
+              "finch",
+              "edible fruit"
+            ]
+          }
+        ],
+        "feasible_examples": [
+          "word that is also a color"
+        ],
+        "feasible_hidden_groups": 1,
+        "group_size": 6,
+        "hidden_groups_examined": 14,
+        "parents_able": 81,
+        "proxy_usable_categories": 19,
+        "reasons": {
+          "members_without_home": 10,
+          "no_valid_quadruple": 2,
+          "too_few_distinct_homes": 1
+        }
+      },
+      {
+        "board_size": 28,
+        "bounded_searches": 0,
+        "feasible_boards": [],
+        "feasible_examples": [],
+        "feasible_hidden_groups": 0,
+        "group_size": 7,
+        "hidden_groups_examined": 14,
+        "parents_able": 63,
+        "proxy_usable_categories": 16,
+        "reasons": {
+          "members_without_home": 12,
+          "no_valid_quadruple": 1,
+          "too_few_distinct_homes": 1
+        }
+      },
+      {
+        "board_size": 32,
+        "bounded_searches": 0,
+        "feasible_boards": [],
+        "feasible_examples": [],
+        "feasible_hidden_groups": 0,
+        "group_size": 8,
+        "hidden_groups_examined": 14,
+        "parents_able": 47,
+        "proxy_usable_categories": 13,
+        "reasons": {
+          "members_without_home": 14
+        }
+      },
+      {
+        "board_size": 36,
+        "bounded_searches": 0,
+        "feasible_boards": [],
+        "feasible_examples": [],
+        "feasible_hidden_groups": 0,
+        "group_size": 9,
+        "hidden_groups_examined": 14,
+        "parents_able": 39,
+        "proxy_usable_categories": 12,
+        "reasons": {
+          "members_without_home": 14
+        }
+      }
+    ],
+    "visible_groups": 4
+  },
+  "targets": {
+    "5": [
+      {
+        "ceilings": {
+          "barrow": 5,
+          "broom": 0,
+          "cart": 7,
+          "hammer": 17,
+          "hoe": 0,
+          "kettle": 10,
+          "mallet": 2,
+          "pitchfork": 17,
+          "scoop": 2,
+          "screwdriver": 17,
+          "shovel": 17,
+          "spade": 2,
+          "wagon": 11,
+          "wrench": 17
+        },
+        "failure_examples": [
+          {
+            "cause": "hidden_member_also_in_another_chosen_parent",
+            "example": "cart is under handcart as well as wagon"
+          }
+        ],
+        "hidden_group": "thing with a handle",
+        "hidden_group_id": "category:8acef96bc4a7e6972216",
+        "home_names": [
+          "hand tool",
+          "handcart",
+          "percussion instrument",
+          "wagon",
+          "wheeled vehicle"
+        ],
+        "homeless_members": [
+          "broom",
+          "hoe",
+          "mallet",
+          "scoop",
+          "spade"
+        ],
+        "homeless_reasons": {
+          "broom": "not in the lexicon, so only the overlay knows this word",
+          "hoe": "not in the lexicon, so only the overlay knows this word",
+          "mallet": "a kind of hammer, which has 2 kinds (7 before the frequency filter) and needs 5",
+          "scoop": "a kind of shovel, which has 2 kinds (3 before the frequency filter) and needs 5",
+          "spade": "a kind of hand shovel, which has 2 kinds (4 before the frequency filter) and needs 5"
+        },
+        "homes_needed": 4,
+        "homes_reached": 5,
+        "members": 14,
+        "nested_homes": [
+          "handcart is under wheeled vehicle",
+          "wagon is under wheeled vehicle"
+        ],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "no_valid_quadruple",
+        "why_no_quadruple": [
+          {
+            "cause": "hidden_member_also_in_another_chosen_parent",
+            "count": 40
+          }
+        ]
+      },
+      {
+        "ceilings": {
+          "banjo": 3,
+          "cello": 3,
+          "fiddle": 0,
+          "guitar": 3,
+          "harp": 1,
+          "kite": 5,
+          "piano": 10,
+          "ukulele": 4,
+          "viola": 54,
+          "violin": 3
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with strings",
+        "hidden_group_id": "category:90c3195cc686fc33a4ba",
+        "home_names": [
+          "hawk",
+          "herb",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "banjo",
+          "cello",
+          "fiddle",
+          "guitar",
+          "harp",
+          "ukulele",
+          "violin"
+        ],
+        "homeless_reasons": {
+          "banjo": "a kind of stringed instrument, which has 3 kinds (13 before the frequency filter) and needs 5",
+          "cello": "a kind of bowed stringed instrument, which has 3 kinds (4 before the frequency filter) and needs 5",
+          "fiddle": "a synonym of violin, which is the word that stands for violin",
+          "guitar": "a kind of stringed instrument, which has 3 kinds (13 before the frequency filter) and needs 5",
+          "harp": "in harmonica, which has no word carrying its own name; a kind of chordophone, which has 1 kinds (4 before the frequency filter) and needs 5",
+          "ukulele": "a kind of guitar, which has 4 kinds (5 before the frequency filter) and needs 5",
+          "violin": "a kind of bowed stringed instrument, which has 3 kinds (4 before the frequency filter) and needs 5"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 10,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "angelica": 54,
+          "basil": 54,
+          "daisy": 40,
+          "erica": 0,
+          "hazel": 0,
+          "heather": 0,
+          "holly": 0,
+          "iris": 0,
+          "rosemary": 54,
+          "veronica": 40
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a person's name",
+        "hidden_group_id": "category:5d29b52070771375dbee",
+        "home_names": [
+          "flavorer",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "erica",
+          "hazel",
+          "heather",
+          "holly",
+          "iris"
+        ],
+        "homeless_reasons": {
+          "erica": "not in the lexicon, so only the overlay knows this word",
+          "hazel": "not in the lexicon, so only the overlay knows this word",
+          "heather": "not in the lexicon, so only the overlay knows this word",
+          "holly": "not in the lexicon, so only the overlay knows this word",
+          "iris": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "too_few_distinct_homes",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barley": 0,
+          "coffee": 0,
+          "ginger": 54,
+          "hops": 0,
+          "jasmine": 0,
+          "mate": 0,
+          "mint": 54,
+          "rosemary": 54,
+          "sage": 54,
+          "tea": 54
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that can be brewed",
+        "hidden_group_id": "category:df5e66eed32413667b0c",
+        "home_names": [
+          "flavorer",
+          "herb"
+        ],
+        "homeless_members": [
+          "barley",
+          "coffee",
+          "hops",
+          "jasmine",
+          "mate"
+        ],
+        "homeless_reasons": {
+          "barley": "not in the lexicon, so only the overlay knows this word",
+          "coffee": "not in the lexicon, so only the overlay knows this word",
+          "hops": "not in the lexicon, so only the overlay knows this word",
+          "jasmine": "not in the lexicon, so only the overlay knows this word",
+          "mate": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "too_few_distinct_homes",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barge": 14,
+          "boat": 9,
+          "canoe": 2,
+          "dory": 3,
+          "ferry": 14,
+          "kayak": 1,
+          "punt": 14,
+          "ship": 9,
+          "tug": 14,
+          "yacht": 9
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that floats",
+        "hidden_group_id": "category:f6f54b542513a7585846",
+        "home_names": [
+          "boat",
+          "vessel"
+        ],
+        "homeless_members": [
+          "canoe",
+          "dory",
+          "kayak"
+        ],
+        "homeless_reasons": {
+          "canoe": "a kind of small boat, which has 2 kinds (6 before the frequency filter) and needs 5",
+          "dory": "a kind of spiny-finned fish, which has 3 kinds (20 before the frequency filter) and needs 5; in dinghy, which has no word carrying its own name",
+          "kayak": "a kind of canoe, which has 1 kinds (4 before the frequency filter) and needs 5"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "boat is under vessel"
+        ],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "too_few_distinct_homes",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "alligator": 2,
+          "beaver": 0,
+          "chainsaw": 0,
+          "comb": 0,
+          "crocodile": 2,
+          "file": 17,
+          "jigsaw": 0,
+          "lion": 6,
+          "rake": 0,
+          "rodent": 0,
+          "saw": 0,
+          "tiger": 6
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with teeth",
+        "hidden_group_id": "category:e8d89879000a0773d6eb",
+        "home_names": [
+          "big cat",
+          "hand tool"
+        ],
+        "homeless_members": [
+          "alligator",
+          "beaver",
+          "chainsaw",
+          "comb",
+          "crocodile",
+          "jigsaw",
+          "rake",
+          "rodent",
+          "saw"
+        ],
+        "homeless_reasons": {
+          "alligator": "a kind of crocodilian reptile, which has 2 kinds (5 before the frequency filter) and needs 5",
+          "beaver": "not in the lexicon, so only the overlay knows this word",
+          "chainsaw": "not in the lexicon, so only the overlay knows this word",
+          "comb": "not in the lexicon, so only the overlay knows this word",
+          "crocodile": "a kind of crocodilian reptile, which has 2 kinds (5 before the frequency filter) and needs 5",
+          "jigsaw": "not in the lexicon, so only the overlay knows this word",
+          "rake": "not in the lexicon, so only the overlay knows this word",
+          "rodent": "not in the lexicon, so only the overlay knows this word",
+          "saw": "too uncommon for medium: its frequency band is VERY_COMMON and only COMMON, UNCOMMON can be tiles"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 12,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "fife": 4,
+          "flute": 2,
+          "horn": 2,
+          "organ": 7,
+          "piccolo": 4,
+          "pipe": 7,
+          "recorder": 3,
+          "saxophone": 2,
+          "trumpet": 2,
+          "whistle": 7
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that is blown",
+        "hidden_group_id": "category:187211dfc6372576072f",
+        "home_names": [
+          "wind instrument"
+        ],
+        "homeless_members": [
+          "fife",
+          "flute",
+          "horn",
+          "piccolo",
+          "recorder",
+          "saxophone",
+          "trumpet"
+        ],
+        "homeless_reasons": {
+          "fife": "a kind of flute, which has 4 kinds and needs 5",
+          "flute": "a kind of woodwind, which has 2 kinds and needs 5",
+          "horn": "a synonym of trumpet, which is the word that stands for cornet; a kind of brass, which has 2 kinds (8 before the frequency filter) and needs 5",
+          "piccolo": "a kind of flute, which has 4 kinds and needs 5",
+          "recorder": "a kind of pipe, which has 3 kinds (6 before the frequency filter) and needs 5",
+          "saxophone": "a kind of single-reed instrument, which has 2 kinds (3 before the frequency filter) and needs 5",
+          "trumpet": "a kind of brass, which has 2 kinds (8 before the frequency filter) and needs 5"
+        },
+        "homes_needed": 4,
+        "homes_reached": 1,
+        "members": 10,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "clam": 0,
+          "coconut": 0,
+          "crab": 1,
+          "lobster": 0,
+          "oyster": 0,
+          "peanut": 8,
+          "shrimp": 0,
+          "snail": 0,
+          "turtle": 1,
+          "walnut": 0
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with a shell",
+        "hidden_group_id": "category:01ddf2e7e3c5968b5936",
+        "home_names": [
+          "legume"
+        ],
+        "homeless_members": [
+          "clam",
+          "coconut",
+          "crab",
+          "lobster",
+          "oyster",
+          "shrimp",
+          "snail",
+          "turtle",
+          "walnut"
+        ],
+        "homeless_reasons": {
+          "clam": "not in the lexicon, so only the overlay knows this word",
+          "coconut": "not in the lexicon, so only the overlay knows this word",
+          "crab": "in crab louse, which has no word carrying its own name; a kind of rowing, which has 1 kinds (2 before the frequency filter) and needs 5",
+          "lobster": "not in the lexicon, so only the overlay knows this word",
+          "oyster": "not in the lexicon, so only the overlay knows this word",
+          "shrimp": "not in the lexicon, so only the overlay knows this word",
+          "snail": "not in the lexicon, so only the overlay knows this word",
+          "turtle": "a kind of chelonian, which has 1 kinds and needs 5; in turtleneck, which has no word carrying its own name",
+          "walnut": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 1,
+        "members": 10,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      }
+    ],
+    "6": [
+      {
+        "ceilings": {
+          "crane": 4,
+          "dock": 0,
+          "drill": 0,
+          "drum": 10,
+          "ferry": 14,
+          "fly": 5,
+          "hop": 0,
+          "jet": 10,
+          "poke": 0,
+          "ram": 0,
+          "rush": 0,
+          "squash": 9,
+          "swallow": 9,
+          "tug": 14
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a verb",
+        "hidden_group_id": "category:d3fbd66085678a361a82",
+        "home_names": [
+          "airplane",
+          "boat",
+          "court game",
+          "oscine",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "crane",
+          "dock",
+          "drill",
+          "fly",
+          "hop",
+          "poke",
+          "ram",
+          "rush"
+        ],
+        "homeless_reasons": {
+          "crane": "a kind of wading bird, which has 4 kinds (16 before the frequency filter) and needs 6",
+          "dock": "not in the lexicon, so only the overlay knows this word",
+          "drill": "not in the lexicon, so only the overlay knows this word",
+          "fly": "a kind of dipterous insect, which has 5 kinds (9 before the frequency filter) and needs 6",
+          "hop": "not in the lexicon, so only the overlay knows this word",
+          "poke": "not in the lexicon, so only the overlay knows this word",
+          "ram": "not in the lexicon, so only the overlay knows this word",
+          "rush": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 5,
+        "members": 14,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "no_valid_quadruple",
+        "why_no_quadruple": [
+          {
+            "cause": "hidden_member_on_no_chosen_group",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "ceilings": {
+          "apple": 23,
+          "cheese": 0,
+          "cutlery": 0,
+          "fork": 0,
+          "garlic": 31,
+          "kettle": 10,
+          "knife": 0,
+          "lemon": 5,
+          "onion": 0,
+          "opener": 17,
+          "orange": 5,
+          "pepper": 31,
+          "scissors": 0
+        },
+        "failure_examples": [],
+        "hidden_group": "thing found in a kitchen",
+        "hidden_group_id": "category:a71ae5cb498a91764f54",
+        "home_names": [
+          "edible fruit",
+          "flavorer",
+          "hand tool",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "cheese",
+          "cutlery",
+          "fork",
+          "knife",
+          "lemon",
+          "onion",
+          "orange",
+          "scissors"
+        ],
+        "homeless_reasons": {
+          "cheese": "not in the lexicon, so only the overlay knows this word",
+          "cutlery": "not in the lexicon, so only the overlay knows this word",
+          "fork": "not in the lexicon, so only the overlay knows this word",
+          "knife": "not in the lexicon, so only the overlay knows this word",
+          "lemon": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 6",
+          "onion": "not in the lexicon, so only the overlay knows this word",
+          "orange": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 6",
+          "scissors": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 13,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barrow": 5,
+          "broom": 0,
+          "cart": 7,
+          "hammer": 17,
+          "hoe": 0,
+          "kettle": 10,
+          "mallet": 2,
+          "pitchfork": 17,
+          "scoop": 2,
+          "screwdriver": 17,
+          "shovel": 17,
+          "spade": 2,
+          "wagon": 11,
+          "wrench": 17
+        },
+        "failure_examples": [
+          {
+            "cause": "hidden_member_also_in_another_chosen_parent",
+            "example": "cart is under wheeled vehicle as well as wagon"
+          }
+        ],
+        "hidden_group": "thing with a handle",
+        "hidden_group_id": "category:8acef96bc4a7e6972216",
+        "home_names": [
+          "hand tool",
+          "percussion instrument",
+          "wagon",
+          "wheeled vehicle"
+        ],
+        "homeless_members": [
+          "barrow",
+          "broom",
+          "hoe",
+          "mallet",
+          "scoop",
+          "spade"
+        ],
+        "homeless_reasons": {
+          "barrow": "a kind of handcart, which has 5 kinds (7 before the frequency filter) and needs 6",
+          "broom": "not in the lexicon, so only the overlay knows this word",
+          "hoe": "not in the lexicon, so only the overlay knows this word",
+          "mallet": "a kind of hammer, which has 2 kinds (7 before the frequency filter) and needs 6",
+          "scoop": "a kind of shovel, which has 2 kinds (3 before the frequency filter) and needs 6",
+          "spade": "a kind of hand shovel, which has 2 kinds (4 before the frequency filter) and needs 6"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 14,
+        "nested_homes": [
+          "wagon is under wheeled vehicle"
+        ],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "no_valid_quadruple",
+        "why_no_quadruple": [
+          {
+            "cause": "hidden_member_also_in_another_chosen_parent",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "ceilings": {
+          "cannabis": 0,
+          "cheese": 0,
+          "hemp": 0,
+          "herring": 6,
+          "marijuana": 0,
+          "pipe": 7,
+          "salmon": 6,
+          "smoker": 5,
+          "tobacco": 54,
+          "trout": 6
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that can be smoked",
+        "hidden_group_id": "category:ec9d773227d359e54592",
+        "home_names": [
+          "food fish",
+          "herb",
+          "wind instrument"
+        ],
+        "homeless_members": [
+          "cannabis",
+          "cheese",
+          "hemp",
+          "marijuana",
+          "smoker"
+        ],
+        "homeless_reasons": {
+          "cannabis": "not in the lexicon, so only the overlay knows this word",
+          "cheese": "not in the lexicon, so only the overlay knows this word",
+          "hemp": "not in the lexicon, so only the overlay knows this word",
+          "marijuana": "not in the lexicon, so only the overlay knows this word",
+          "smoker": "a kind of passenger car, which has 5 kinds (6 before the frequency filter) and needs 6"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 10,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "aircraft": 4,
+          "bee": 3,
+          "beetle": 7,
+          "bird": 0,
+          "butterfly": 2,
+          "eagle": 5,
+          "falcon": 5,
+          "jet": 10,
+          "moth": 2,
+          "owl": 5,
+          "swallow": 9,
+          "wasp": 3
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with wings",
+        "hidden_group_id": "category:f83eb9ce3512a8a53dd9",
+        "home_names": [
+          "airplane",
+          "insect",
+          "oscine"
+        ],
+        "homeless_members": [
+          "aircraft",
+          "bee",
+          "bird",
+          "butterfly",
+          "eagle",
+          "falcon",
+          "moth",
+          "owl",
+          "wasp"
+        ],
+        "homeless_reasons": {
+          "aircraft": "a kind of craft, which has 4 kinds (5 before the frequency filter) and needs 6",
+          "bee": "a kind of hymenopterous insect, which has 3 kinds (7 before the frequency filter) and needs 6",
+          "bird": "bird has no parent, so it is the top of its tree",
+          "butterfly": "a kind of lepidopterous insect, which has 2 kinds and needs 6",
+          "eagle": "a kind of bird of prey, which has 5 kinds (6 before the frequency filter) and needs 6",
+          "falcon": "a kind of hawk, which has 5 kinds (17 before the frequency filter) and needs 6",
+          "moth": "a kind of lepidopterous insect, which has 2 kinds and needs 6",
+          "owl": "a kind of bird of prey, which has 5 kinds (6 before the frequency filter) and needs 6",
+          "wasp": "a kind of hymenopterous insect, which has 3 kinds (7 before the frequency filter) and needs 6"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 12,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "angelica": 54,
+          "basil": 54,
+          "daisy": 40,
+          "erica": 0,
+          "hazel": 0,
+          "heather": 0,
+          "holly": 0,
+          "iris": 0,
+          "rosemary": 54,
+          "veronica": 40
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a person's name",
+        "hidden_group_id": "category:5d29b52070771375dbee",
+        "home_names": [
+          "flavorer",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "erica",
+          "hazel",
+          "heather",
+          "holly",
+          "iris"
+        ],
+        "homeless_reasons": {
+          "erica": "not in the lexicon, so only the overlay knows this word",
+          "hazel": "not in the lexicon, so only the overlay knows this word",
+          "heather": "not in the lexicon, so only the overlay knows this word",
+          "holly": "not in the lexicon, so only the overlay knows this word",
+          "iris": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barley": 0,
+          "coffee": 0,
+          "ginger": 54,
+          "hops": 0,
+          "jasmine": 0,
+          "mate": 0,
+          "mint": 54,
+          "rosemary": 54,
+          "sage": 54,
+          "tea": 54
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that can be brewed",
+        "hidden_group_id": "category:df5e66eed32413667b0c",
+        "home_names": [
+          "flavorer",
+          "herb"
+        ],
+        "homeless_members": [
+          "barley",
+          "coffee",
+          "hops",
+          "jasmine",
+          "mate"
+        ],
+        "homeless_reasons": {
+          "barley": "not in the lexicon, so only the overlay knows this word",
+          "coffee": "not in the lexicon, so only the overlay knows this word",
+          "hops": "not in the lexicon, so only the overlay knows this word",
+          "jasmine": "not in the lexicon, so only the overlay knows this word",
+          "mate": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barge": 14,
+          "boat": 9,
+          "canoe": 2,
+          "dory": 3,
+          "ferry": 14,
+          "kayak": 1,
+          "punt": 14,
+          "ship": 9,
+          "tug": 14,
+          "yacht": 9
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that floats",
+        "hidden_group_id": "category:f6f54b542513a7585846",
+        "home_names": [
+          "boat",
+          "vessel"
+        ],
+        "homeless_members": [
+          "canoe",
+          "dory",
+          "kayak"
+        ],
+        "homeless_reasons": {
+          "canoe": "a kind of small boat, which has 2 kinds (6 before the frequency filter) and needs 6",
+          "dory": "a kind of spiny-finned fish, which has 3 kinds (20 before the frequency filter) and needs 6; in dinghy, which has no word carrying its own name",
+          "kayak": "a kind of canoe, which has 1 kinds (4 before the frequency filter) and needs 6"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "boat is under vessel"
+        ],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "too_few_distinct_homes",
+        "why_no_quadruple": []
+      }
+    ],
+    "7": [
+      {
+        "ceilings": {
+          "crane": 4,
+          "dock": 0,
+          "drill": 0,
+          "drum": 10,
+          "ferry": 14,
+          "fly": 5,
+          "hop": 0,
+          "jet": 10,
+          "poke": 0,
+          "ram": 0,
+          "rush": 0,
+          "squash": 9,
+          "swallow": 9,
+          "tug": 14
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a verb",
+        "hidden_group_id": "category:d3fbd66085678a361a82",
+        "home_names": [
+          "airplane",
+          "boat",
+          "court game",
+          "oscine",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "crane",
+          "dock",
+          "drill",
+          "fly",
+          "hop",
+          "poke",
+          "ram",
+          "rush"
+        ],
+        "homeless_reasons": {
+          "crane": "a kind of wading bird, which has 4 kinds (16 before the frequency filter) and needs 7",
+          "dock": "not in the lexicon, so only the overlay knows this word",
+          "drill": "not in the lexicon, so only the overlay knows this word",
+          "fly": "a kind of dipterous insect, which has 5 kinds (9 before the frequency filter) and needs 7",
+          "hop": "not in the lexicon, so only the overlay knows this word",
+          "poke": "not in the lexicon, so only the overlay knows this word",
+          "ram": "not in the lexicon, so only the overlay knows this word",
+          "rush": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 5,
+        "members": 14,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "apple": 23,
+          "cheese": 0,
+          "cutlery": 0,
+          "fork": 0,
+          "garlic": 31,
+          "kettle": 10,
+          "knife": 0,
+          "lemon": 5,
+          "onion": 0,
+          "opener": 17,
+          "orange": 5,
+          "pepper": 31,
+          "scissors": 0
+        },
+        "failure_examples": [],
+        "hidden_group": "thing found in a kitchen",
+        "hidden_group_id": "category:a71ae5cb498a91764f54",
+        "home_names": [
+          "edible fruit",
+          "flavorer",
+          "hand tool",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "cheese",
+          "cutlery",
+          "fork",
+          "knife",
+          "lemon",
+          "onion",
+          "orange",
+          "scissors"
+        ],
+        "homeless_reasons": {
+          "cheese": "not in the lexicon, so only the overlay knows this word",
+          "cutlery": "not in the lexicon, so only the overlay knows this word",
+          "fork": "not in the lexicon, so only the overlay knows this word",
+          "knife": "not in the lexicon, so only the overlay knows this word",
+          "lemon": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 7",
+          "onion": "not in the lexicon, so only the overlay knows this word",
+          "orange": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 7",
+          "scissors": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 13,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barrow": 5,
+          "broom": 0,
+          "cart": 7,
+          "hammer": 17,
+          "hoe": 0,
+          "kettle": 10,
+          "mallet": 2,
+          "pitchfork": 17,
+          "scoop": 2,
+          "screwdriver": 17,
+          "shovel": 17,
+          "spade": 2,
+          "wagon": 11,
+          "wrench": 17
+        },
+        "failure_examples": [
+          {
+            "cause": "hidden_member_also_in_another_chosen_parent",
+            "example": "cart is under wheeled vehicle as well as wagon"
+          }
+        ],
+        "hidden_group": "thing with a handle",
+        "hidden_group_id": "category:8acef96bc4a7e6972216",
+        "home_names": [
+          "hand tool",
+          "percussion instrument",
+          "wagon",
+          "wheeled vehicle"
+        ],
+        "homeless_members": [
+          "barrow",
+          "broom",
+          "hoe",
+          "mallet",
+          "scoop",
+          "spade"
+        ],
+        "homeless_reasons": {
+          "barrow": "a kind of handcart, which has 5 kinds (7 before the frequency filter) and needs 7",
+          "broom": "not in the lexicon, so only the overlay knows this word",
+          "hoe": "not in the lexicon, so only the overlay knows this word",
+          "mallet": "a kind of hammer, which has 2 kinds (7 before the frequency filter) and needs 7",
+          "scoop": "a kind of shovel, which has 2 kinds (3 before the frequency filter) and needs 7",
+          "spade": "a kind of hand shovel, which has 2 kinds (4 before the frequency filter) and needs 7"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 14,
+        "nested_homes": [
+          "wagon is under wheeled vehicle"
+        ],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "no_valid_quadruple",
+        "why_no_quadruple": [
+          {
+            "cause": "hidden_member_also_in_another_chosen_parent",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "ceilings": {
+          "canary": 6,
+          "cardinal": 6,
+          "coral": 0,
+          "indigo": 0,
+          "jet": 10,
+          "lime": 5,
+          "peach": 23,
+          "pink": 40,
+          "plum": 23,
+          "rose": 40,
+          "sage": 54,
+          "salmon": 6,
+          "violet": 1
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a color",
+        "hidden_group_id": "category:90f3cde6fe351836d7e3",
+        "home_names": [
+          "airplane",
+          "edible fruit",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "canary",
+          "cardinal",
+          "coral",
+          "indigo",
+          "lime",
+          "salmon",
+          "violet"
+        ],
+        "homeless_reasons": {
+          "canary": "a kind of finch, which has 6 kinds (22 before the frequency filter) and needs 7",
+          "cardinal": "a kind of finch, which has 6 kinds (22 before the frequency filter) and needs 7",
+          "coral": "not in the lexicon, so only the overlay knows this word",
+          "indigo": "not in the lexicon, so only the overlay knows this word",
+          "lime": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 7",
+          "salmon": "a kind of food fish, salmonid, which has 6 kinds (11 before the frequency filter) and needs 7",
+          "violet": "a kind of viola, which has 1 kinds (5 before the frequency filter) and needs 7"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 13,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "aircraft": 4,
+          "bee": 3,
+          "beetle": 7,
+          "bird": 0,
+          "butterfly": 2,
+          "eagle": 5,
+          "falcon": 5,
+          "jet": 10,
+          "moth": 2,
+          "owl": 5,
+          "swallow": 9,
+          "wasp": 3
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with wings",
+        "hidden_group_id": "category:f83eb9ce3512a8a53dd9",
+        "home_names": [
+          "airplane",
+          "insect",
+          "oscine"
+        ],
+        "homeless_members": [
+          "aircraft",
+          "bee",
+          "bird",
+          "butterfly",
+          "eagle",
+          "falcon",
+          "moth",
+          "owl",
+          "wasp"
+        ],
+        "homeless_reasons": {
+          "aircraft": "a kind of craft, which has 4 kinds (5 before the frequency filter) and needs 7",
+          "bee": "a kind of hymenopterous insect, which has 3 kinds (7 before the frequency filter) and needs 7",
+          "bird": "bird has no parent, so it is the top of its tree",
+          "butterfly": "a kind of lepidopterous insect, which has 2 kinds and needs 7",
+          "eagle": "a kind of bird of prey, which has 5 kinds (6 before the frequency filter) and needs 7",
+          "falcon": "a kind of hawk, which has 5 kinds (17 before the frequency filter) and needs 7",
+          "moth": "a kind of lepidopterous insect, which has 2 kinds and needs 7",
+          "owl": "a kind of bird of prey, which has 5 kinds (6 before the frequency filter) and needs 7",
+          "wasp": "a kind of hymenopterous insect, which has 3 kinds (7 before the frequency filter) and needs 7"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 12,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "angelica": 54,
+          "basil": 54,
+          "daisy": 40,
+          "erica": 0,
+          "hazel": 0,
+          "heather": 0,
+          "holly": 0,
+          "iris": 0,
+          "rosemary": 54,
+          "veronica": 40
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a person's name",
+        "hidden_group_id": "category:5d29b52070771375dbee",
+        "home_names": [
+          "flavorer",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "erica",
+          "hazel",
+          "heather",
+          "holly",
+          "iris"
+        ],
+        "homeless_reasons": {
+          "erica": "not in the lexicon, so only the overlay knows this word",
+          "hazel": "not in the lexicon, so only the overlay knows this word",
+          "heather": "not in the lexicon, so only the overlay knows this word",
+          "holly": "not in the lexicon, so only the overlay knows this word",
+          "iris": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barley": 0,
+          "coffee": 0,
+          "ginger": 54,
+          "hops": 0,
+          "jasmine": 0,
+          "mate": 0,
+          "mint": 54,
+          "rosemary": 54,
+          "sage": 54,
+          "tea": 54
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that can be brewed",
+        "hidden_group_id": "category:df5e66eed32413667b0c",
+        "home_names": [
+          "flavorer",
+          "herb"
+        ],
+        "homeless_members": [
+          "barley",
+          "coffee",
+          "hops",
+          "jasmine",
+          "mate"
+        ],
+        "homeless_reasons": {
+          "barley": "not in the lexicon, so only the overlay knows this word",
+          "coffee": "not in the lexicon, so only the overlay knows this word",
+          "hops": "not in the lexicon, so only the overlay knows this word",
+          "jasmine": "not in the lexicon, so only the overlay knows this word",
+          "mate": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "cannabis": 0,
+          "cheese": 0,
+          "hemp": 0,
+          "herring": 6,
+          "marijuana": 0,
+          "pipe": 7,
+          "salmon": 6,
+          "smoker": 5,
+          "tobacco": 54,
+          "trout": 6
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that can be smoked",
+        "hidden_group_id": "category:ec9d773227d359e54592",
+        "home_names": [
+          "herb",
+          "wind instrument"
+        ],
+        "homeless_members": [
+          "cannabis",
+          "cheese",
+          "hemp",
+          "herring",
+          "marijuana",
+          "salmon",
+          "smoker",
+          "trout"
+        ],
+        "homeless_reasons": {
+          "cannabis": "not in the lexicon, so only the overlay knows this word",
+          "cheese": "not in the lexicon, so only the overlay knows this word",
+          "hemp": "not in the lexicon, so only the overlay knows this word",
+          "herring": "a kind of food fish, clupeid fish, which has 6 kinds (11 before the frequency filter) and needs 7",
+          "marijuana": "not in the lexicon, so only the overlay knows this word",
+          "salmon": "a kind of food fish, salmonid, which has 6 kinds (11 before the frequency filter) and needs 7",
+          "smoker": "a kind of passenger car, which has 5 kinds (6 before the frequency filter) and needs 7",
+          "trout": "a kind of food fish, salmonid, which has 6 kinds (11 before the frequency filter) and needs 7"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      }
+    ],
+    "8": [
+      {
+        "ceilings": {
+          "crane": 4,
+          "dock": 0,
+          "drill": 0,
+          "drum": 10,
+          "ferry": 14,
+          "fly": 5,
+          "hop": 0,
+          "jet": 10,
+          "poke": 0,
+          "ram": 0,
+          "rush": 0,
+          "squash": 9,
+          "swallow": 9,
+          "tug": 14
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a verb",
+        "hidden_group_id": "category:d3fbd66085678a361a82",
+        "home_names": [
+          "airplane",
+          "boat",
+          "court game",
+          "oscine",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "crane",
+          "dock",
+          "drill",
+          "fly",
+          "hop",
+          "poke",
+          "ram",
+          "rush"
+        ],
+        "homeless_reasons": {
+          "crane": "a kind of wading bird, which has 4 kinds (16 before the frequency filter) and needs 8",
+          "dock": "not in the lexicon, so only the overlay knows this word",
+          "drill": "not in the lexicon, so only the overlay knows this word",
+          "fly": "a kind of dipterous insect, which has 5 kinds (9 before the frequency filter) and needs 8",
+          "hop": "not in the lexicon, so only the overlay knows this word",
+          "poke": "not in the lexicon, so only the overlay knows this word",
+          "ram": "not in the lexicon, so only the overlay knows this word",
+          "rush": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 5,
+        "members": 14,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "apple": 23,
+          "cheese": 0,
+          "cutlery": 0,
+          "fork": 0,
+          "garlic": 31,
+          "kettle": 10,
+          "knife": 0,
+          "lemon": 5,
+          "onion": 0,
+          "opener": 17,
+          "orange": 5,
+          "pepper": 31,
+          "scissors": 0
+        },
+        "failure_examples": [],
+        "hidden_group": "thing found in a kitchen",
+        "hidden_group_id": "category:a71ae5cb498a91764f54",
+        "home_names": [
+          "edible fruit",
+          "flavorer",
+          "hand tool",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "cheese",
+          "cutlery",
+          "fork",
+          "knife",
+          "lemon",
+          "onion",
+          "orange",
+          "scissors"
+        ],
+        "homeless_reasons": {
+          "cheese": "not in the lexicon, so only the overlay knows this word",
+          "cutlery": "not in the lexicon, so only the overlay knows this word",
+          "fork": "not in the lexicon, so only the overlay knows this word",
+          "knife": "not in the lexicon, so only the overlay knows this word",
+          "lemon": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 8",
+          "onion": "not in the lexicon, so only the overlay knows this word",
+          "orange": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 8",
+          "scissors": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 13,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "canary": 6,
+          "cardinal": 6,
+          "coral": 0,
+          "indigo": 0,
+          "jet": 10,
+          "lime": 5,
+          "peach": 23,
+          "pink": 40,
+          "plum": 23,
+          "rose": 40,
+          "sage": 54,
+          "salmon": 6,
+          "violet": 1
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a color",
+        "hidden_group_id": "category:90f3cde6fe351836d7e3",
+        "home_names": [
+          "airplane",
+          "edible fruit",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "canary",
+          "cardinal",
+          "coral",
+          "indigo",
+          "lime",
+          "salmon",
+          "violet"
+        ],
+        "homeless_reasons": {
+          "canary": "a kind of finch, which has 6 kinds (22 before the frequency filter) and needs 8",
+          "cardinal": "a kind of finch, which has 6 kinds (22 before the frequency filter) and needs 8",
+          "coral": "not in the lexicon, so only the overlay knows this word",
+          "indigo": "not in the lexicon, so only the overlay knows this word",
+          "lime": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 8",
+          "salmon": "a kind of food fish, salmonid, which has 6 kinds (11 before the frequency filter) and needs 8",
+          "violet": "a kind of viola, which has 1 kinds (5 before the frequency filter) and needs 8"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 13,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barrow": 5,
+          "broom": 0,
+          "cart": 7,
+          "hammer": 17,
+          "hoe": 0,
+          "kettle": 10,
+          "mallet": 2,
+          "pitchfork": 17,
+          "scoop": 2,
+          "screwdriver": 17,
+          "shovel": 17,
+          "spade": 2,
+          "wagon": 11,
+          "wrench": 17
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with a handle",
+        "hidden_group_id": "category:8acef96bc4a7e6972216",
+        "home_names": [
+          "hand tool",
+          "percussion instrument",
+          "wheeled vehicle"
+        ],
+        "homeless_members": [
+          "barrow",
+          "broom",
+          "cart",
+          "hoe",
+          "mallet",
+          "scoop",
+          "spade"
+        ],
+        "homeless_reasons": {
+          "barrow": "a kind of handcart, which has 5 kinds (7 before the frequency filter) and needs 8",
+          "broom": "not in the lexicon, so only the overlay knows this word",
+          "cart": "in handcart, which has no word carrying its own name; a kind of wagon, which has 7 kinds (9 before the frequency filter) and needs 8",
+          "hoe": "not in the lexicon, so only the overlay knows this word",
+          "mallet": "a kind of hammer, which has 2 kinds (7 before the frequency filter) and needs 8",
+          "scoop": "a kind of shovel, which has 2 kinds (3 before the frequency filter) and needs 8",
+          "spade": "a kind of hand shovel, which has 2 kinds (4 before the frequency filter) and needs 8"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 14,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "angelica": 54,
+          "basil": 54,
+          "daisy": 40,
+          "erica": 0,
+          "hazel": 0,
+          "heather": 0,
+          "holly": 0,
+          "iris": 0,
+          "rosemary": 54,
+          "veronica": 40
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a person's name",
+        "hidden_group_id": "category:5d29b52070771375dbee",
+        "home_names": [
+          "flavorer",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "erica",
+          "hazel",
+          "heather",
+          "holly",
+          "iris"
+        ],
+        "homeless_reasons": {
+          "erica": "not in the lexicon, so only the overlay knows this word",
+          "hazel": "not in the lexicon, so only the overlay knows this word",
+          "heather": "not in the lexicon, so only the overlay knows this word",
+          "holly": "not in the lexicon, so only the overlay knows this word",
+          "iris": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barley": 0,
+          "coffee": 0,
+          "ginger": 54,
+          "hops": 0,
+          "jasmine": 0,
+          "mate": 0,
+          "mint": 54,
+          "rosemary": 54,
+          "sage": 54,
+          "tea": 54
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that can be brewed",
+        "hidden_group_id": "category:df5e66eed32413667b0c",
+        "home_names": [
+          "flavorer",
+          "herb"
+        ],
+        "homeless_members": [
+          "barley",
+          "coffee",
+          "hops",
+          "jasmine",
+          "mate"
+        ],
+        "homeless_reasons": {
+          "barley": "not in the lexicon, so only the overlay knows this word",
+          "coffee": "not in the lexicon, so only the overlay knows this word",
+          "hops": "not in the lexicon, so only the overlay knows this word",
+          "jasmine": "not in the lexicon, so only the overlay knows this word",
+          "mate": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barge": 14,
+          "boat": 9,
+          "canoe": 2,
+          "dory": 3,
+          "ferry": 14,
+          "kayak": 1,
+          "punt": 14,
+          "ship": 9,
+          "tug": 14,
+          "yacht": 9
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that floats",
+        "hidden_group_id": "category:f6f54b542513a7585846",
+        "home_names": [
+          "boat",
+          "vessel"
+        ],
+        "homeless_members": [
+          "canoe",
+          "dory",
+          "kayak"
+        ],
+        "homeless_reasons": {
+          "canoe": "a kind of small boat, which has 2 kinds (6 before the frequency filter) and needs 8",
+          "dory": "a kind of spiny-finned fish, which has 3 kinds (20 before the frequency filter) and needs 8; in dinghy, which has no word carrying its own name",
+          "kayak": "a kind of canoe, which has 1 kinds (4 before the frequency filter) and needs 8"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "boat is under vessel"
+        ],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "banjo": 3,
+          "cello": 3,
+          "fiddle": 0,
+          "guitar": 3,
+          "harp": 1,
+          "kite": 5,
+          "piano": 10,
+          "ukulele": 4,
+          "viola": 54,
+          "violin": 3
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with strings",
+        "hidden_group_id": "category:90c3195cc686fc33a4ba",
+        "home_names": [
+          "herb",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "banjo",
+          "cello",
+          "fiddle",
+          "guitar",
+          "harp",
+          "kite",
+          "ukulele",
+          "violin"
+        ],
+        "homeless_reasons": {
+          "banjo": "a kind of stringed instrument, which has 3 kinds (13 before the frequency filter) and needs 8",
+          "cello": "a kind of bowed stringed instrument, which has 3 kinds (4 before the frequency filter) and needs 8",
+          "fiddle": "a synonym of violin, which is the word that stands for violin",
+          "guitar": "a kind of stringed instrument, which has 3 kinds (13 before the frequency filter) and needs 8",
+          "harp": "in harmonica, which has no word carrying its own name; a kind of chordophone, which has 1 kinds (4 before the frequency filter) and needs 8",
+          "kite": "a kind of hawk, which has 5 kinds (17 before the frequency filter) and needs 8",
+          "ukulele": "a kind of guitar, which has 4 kinds (5 before the frequency filter) and needs 8",
+          "violin": "a kind of bowed stringed instrument, which has 3 kinds (4 before the frequency filter) and needs 8"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      }
+    ],
+    "9": [
+      {
+        "ceilings": {
+          "crane": 4,
+          "dock": 0,
+          "drill": 0,
+          "drum": 10,
+          "ferry": 14,
+          "fly": 5,
+          "hop": 0,
+          "jet": 10,
+          "poke": 0,
+          "ram": 0,
+          "rush": 0,
+          "squash": 9,
+          "swallow": 9,
+          "tug": 14
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a verb",
+        "hidden_group_id": "category:d3fbd66085678a361a82",
+        "home_names": [
+          "airplane",
+          "boat",
+          "court game",
+          "oscine",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "crane",
+          "dock",
+          "drill",
+          "fly",
+          "hop",
+          "poke",
+          "ram",
+          "rush"
+        ],
+        "homeless_reasons": {
+          "crane": "a kind of wading bird, which has 4 kinds (16 before the frequency filter) and needs 9",
+          "dock": "not in the lexicon, so only the overlay knows this word",
+          "drill": "not in the lexicon, so only the overlay knows this word",
+          "fly": "a kind of dipterous insect, which has 5 kinds (9 before the frequency filter) and needs 9",
+          "hop": "not in the lexicon, so only the overlay knows this word",
+          "poke": "not in the lexicon, so only the overlay knows this word",
+          "ram": "not in the lexicon, so only the overlay knows this word",
+          "rush": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 5,
+        "members": 14,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "apple": 23,
+          "cheese": 0,
+          "cutlery": 0,
+          "fork": 0,
+          "garlic": 31,
+          "kettle": 10,
+          "knife": 0,
+          "lemon": 5,
+          "onion": 0,
+          "opener": 17,
+          "orange": 5,
+          "pepper": 31,
+          "scissors": 0
+        },
+        "failure_examples": [],
+        "hidden_group": "thing found in a kitchen",
+        "hidden_group_id": "category:a71ae5cb498a91764f54",
+        "home_names": [
+          "edible fruit",
+          "flavorer",
+          "hand tool",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "cheese",
+          "cutlery",
+          "fork",
+          "knife",
+          "lemon",
+          "onion",
+          "orange",
+          "scissors"
+        ],
+        "homeless_reasons": {
+          "cheese": "not in the lexicon, so only the overlay knows this word",
+          "cutlery": "not in the lexicon, so only the overlay knows this word",
+          "fork": "not in the lexicon, so only the overlay knows this word",
+          "knife": "not in the lexicon, so only the overlay knows this word",
+          "lemon": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 9",
+          "onion": "not in the lexicon, so only the overlay knows this word",
+          "orange": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 9",
+          "scissors": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 13,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "canary": 6,
+          "cardinal": 6,
+          "coral": 0,
+          "indigo": 0,
+          "jet": 10,
+          "lime": 5,
+          "peach": 23,
+          "pink": 40,
+          "plum": 23,
+          "rose": 40,
+          "sage": 54,
+          "salmon": 6,
+          "violet": 1
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a color",
+        "hidden_group_id": "category:90f3cde6fe351836d7e3",
+        "home_names": [
+          "airplane",
+          "edible fruit",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "canary",
+          "cardinal",
+          "coral",
+          "indigo",
+          "lime",
+          "salmon",
+          "violet"
+        ],
+        "homeless_reasons": {
+          "canary": "a kind of finch, which has 6 kinds (22 before the frequency filter) and needs 9",
+          "cardinal": "a kind of finch, which has 6 kinds (22 before the frequency filter) and needs 9",
+          "coral": "not in the lexicon, so only the overlay knows this word",
+          "indigo": "not in the lexicon, so only the overlay knows this word",
+          "lime": "a kind of citrus, which has 5 kinds (10 before the frequency filter) and needs 9",
+          "salmon": "a kind of food fish, salmonid, which has 6 kinds (11 before the frequency filter) and needs 9",
+          "violet": "a kind of viola, which has 1 kinds (5 before the frequency filter) and needs 9"
+        },
+        "homes_needed": 4,
+        "homes_reached": 4,
+        "members": 13,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barrow": 5,
+          "broom": 0,
+          "cart": 7,
+          "hammer": 17,
+          "hoe": 0,
+          "kettle": 10,
+          "mallet": 2,
+          "pitchfork": 17,
+          "scoop": 2,
+          "screwdriver": 17,
+          "shovel": 17,
+          "spade": 2,
+          "wagon": 11,
+          "wrench": 17
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with a handle",
+        "hidden_group_id": "category:8acef96bc4a7e6972216",
+        "home_names": [
+          "hand tool",
+          "percussion instrument",
+          "wheeled vehicle"
+        ],
+        "homeless_members": [
+          "barrow",
+          "broom",
+          "cart",
+          "hoe",
+          "mallet",
+          "scoop",
+          "spade"
+        ],
+        "homeless_reasons": {
+          "barrow": "a kind of handcart, which has 5 kinds (7 before the frequency filter) and needs 9",
+          "broom": "not in the lexicon, so only the overlay knows this word",
+          "cart": "in handcart, which has no word carrying its own name; a kind of wagon, which has 7 kinds (9 before the frequency filter) and needs 9",
+          "hoe": "not in the lexicon, so only the overlay knows this word",
+          "mallet": "a kind of hammer, which has 2 kinds (7 before the frequency filter) and needs 9",
+          "scoop": "a kind of shovel, which has 2 kinds (3 before the frequency filter) and needs 9",
+          "spade": "a kind of hand shovel, which has 2 kinds (4 before the frequency filter) and needs 9"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 14,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "angelica": 54,
+          "basil": 54,
+          "daisy": 40,
+          "erica": 0,
+          "hazel": 0,
+          "heather": 0,
+          "holly": 0,
+          "iris": 0,
+          "rosemary": 54,
+          "veronica": 40
+        },
+        "failure_examples": [],
+        "hidden_group": "word that is also a person's name",
+        "hidden_group_id": "category:5d29b52070771375dbee",
+        "home_names": [
+          "flavorer",
+          "flower",
+          "herb"
+        ],
+        "homeless_members": [
+          "erica",
+          "hazel",
+          "heather",
+          "holly",
+          "iris"
+        ],
+        "homeless_reasons": {
+          "erica": "not in the lexicon, so only the overlay knows this word",
+          "hazel": "not in the lexicon, so only the overlay knows this word",
+          "heather": "not in the lexicon, so only the overlay knows this word",
+          "holly": "not in the lexicon, so only the overlay knows this word",
+          "iris": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 3,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          },
+          {
+            "category": "colubrid snake",
+            "category_id": "category:48085ca03f176a39a7be",
+            "members": 18
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barley": 0,
+          "coffee": 0,
+          "ginger": 54,
+          "hops": 0,
+          "jasmine": 0,
+          "mate": 0,
+          "mint": 54,
+          "rosemary": 54,
+          "sage": 54,
+          "tea": 54
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that can be brewed",
+        "hidden_group_id": "category:df5e66eed32413667b0c",
+        "home_names": [
+          "flavorer",
+          "herb"
+        ],
+        "homeless_members": [
+          "barley",
+          "coffee",
+          "hops",
+          "jasmine",
+          "mate"
+        ],
+        "homeless_reasons": {
+          "barley": "not in the lexicon, so only the overlay knows this word",
+          "coffee": "not in the lexicon, so only the overlay knows this word",
+          "hops": "not in the lexicon, so only the overlay knows this word",
+          "jasmine": "not in the lexicon, so only the overlay knows this word",
+          "mate": "not in the lexicon, so only the overlay knows this word"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "herb is under flavorer"
+        ],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          },
+          {
+            "category": "sport",
+            "category_id": "category:9920d9a515fc75ccc2fb",
+            "members": 19
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "barge": 14,
+          "boat": 9,
+          "canoe": 2,
+          "dory": 3,
+          "ferry": 14,
+          "kayak": 1,
+          "punt": 14,
+          "ship": 9,
+          "tug": 14,
+          "yacht": 9
+        },
+        "failure_examples": [],
+        "hidden_group": "thing that floats",
+        "hidden_group_id": "category:f6f54b542513a7585846",
+        "home_names": [
+          "boat",
+          "vessel"
+        ],
+        "homeless_members": [
+          "canoe",
+          "dory",
+          "kayak"
+        ],
+        "homeless_reasons": {
+          "canoe": "a kind of small boat, which has 2 kinds (6 before the frequency filter) and needs 9",
+          "dory": "a kind of spiny-finned fish, which has 3 kinds (20 before the frequency filter) and needs 9; in dinghy, which has no word carrying its own name",
+          "kayak": "a kind of canoe, which has 1 kinds (4 before the frequency filter) and needs 9"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [
+          "boat is under vessel"
+        ],
+        "propose_from": [
+          {
+            "category": "herb",
+            "category_id": "category:aab68a7ad88171b08a0f",
+            "members": 54
+          },
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      },
+      {
+        "ceilings": {
+          "banjo": 3,
+          "cello": 3,
+          "fiddle": 0,
+          "guitar": 3,
+          "harp": 1,
+          "kite": 5,
+          "piano": 10,
+          "ukulele": 4,
+          "viola": 54,
+          "violin": 3
+        },
+        "failure_examples": [],
+        "hidden_group": "thing with strings",
+        "hidden_group_id": "category:90c3195cc686fc33a4ba",
+        "home_names": [
+          "herb",
+          "percussion instrument"
+        ],
+        "homeless_members": [
+          "banjo",
+          "cello",
+          "fiddle",
+          "guitar",
+          "harp",
+          "kite",
+          "ukulele",
+          "violin"
+        ],
+        "homeless_reasons": {
+          "banjo": "a kind of stringed instrument, which has 3 kinds (13 before the frequency filter) and needs 9",
+          "cello": "a kind of bowed stringed instrument, which has 3 kinds (4 before the frequency filter) and needs 9",
+          "fiddle": "a synonym of violin, which is the word that stands for violin",
+          "guitar": "a kind of stringed instrument, which has 3 kinds (13 before the frequency filter) and needs 9",
+          "harp": "in harmonica, which has no word carrying its own name; a kind of chordophone, which has 1 kinds (4 before the frequency filter) and needs 9",
+          "kite": "a kind of hawk, which has 5 kinds (17 before the frequency filter) and needs 9",
+          "ukulele": "a kind of guitar, which has 4 kinds (5 before the frequency filter) and needs 9",
+          "violin": "a kind of bowed stringed instrument, which has 3 kinds (4 before the frequency filter) and needs 9"
+        },
+        "homes_needed": 4,
+        "homes_reached": 2,
+        "members": 10,
+        "nested_homes": [],
+        "propose_from": [
+          {
+            "category": "flower",
+            "category_id": "category:0be180425034c805eaba",
+            "members": 40
+          },
+          {
+            "category": "flavorer",
+            "category_id": "category:b2405ea4e7f941127168",
+            "members": 31
+          },
+          {
+            "category": "car",
+            "category_id": "category:37147b6deaa3f788e655",
+            "members": 28
+          },
+          {
+            "category": "sauce",
+            "category_id": "category:6a07cafc23cb4636463a",
+            "members": 26
+          },
+          {
+            "category": "edible fruit",
+            "category_id": "category:926ca02bcfdd8aee8d5e",
+            "members": 23
+          },
+          {
+            "category": "orchid",
+            "category_id": "category:f3fd7b1bea93626c9402",
+            "members": 23
+          },
+          {
+            "category": "garment",
+            "category_id": "category:f82505adc92e1ab5cd6e",
+            "members": 23
+          },
+          {
+            "category": "ship",
+            "category_id": "category:7cc7b71b6a6872e4812e",
+            "members": 22
+          }
+        ],
+        "reason": "members_without_home",
+        "why_no_quadruple": []
+      }
+    ]
+  }
+}
