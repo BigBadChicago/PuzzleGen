@@ -343,7 +343,11 @@ class TestTheReport:
         text = tool.render(self.results(world))
 
         assert "days generated a board" in text
-        assert "size  days  boards" in text
+        # "drew" and "served" are counted separately now. The old single
+        # "boards" column was filled from the size each day drew rather than
+        # the size it was served, which reported boards at sizes the content
+        # could not build.
+        assert "size  drew  served" in text
 
     def test_failures_are_grouped_by_reason(self, world):
         text = tool.render(self.results(world))

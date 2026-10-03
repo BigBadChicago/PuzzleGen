@@ -54,8 +54,15 @@ PLATFORM_CONFIDENCE = 0.7
 @dataclass(frozen=True)
 class DayResult:
     day: str
+    #: The size the board was actually built at. Not the size the day drew:
+    #: a day tries its drawn size first and every other size after it, and
+    #: reporting the draw here let five days claim sizes 5 through 9 while
+    #: every one of them examined the same 5005 states.
     group_size: int
     generated: bool
+    #: The size the day drew, kept so the gap between asked and served stays
+    #: visible in the JSON rather than being silently corrected away.
+    drawn_size: int = 0
     solutions: int | None = None
     completeness: str | None = None
     states: int | None = None
@@ -133,16 +140,39 @@ def describe_failure(outcome) -> str:
     return "; ".join(parts)
 
 
-def result_of(day: str, size: int, outcome) -> DayResult:
+def served_size(outcome, drawn: int) -> int:
+    """The size the board was built at, read from the board itself.
+
+    The engine already carries it; recomputing the draw instead is the same
+    recompute-rather-than-read mistake the architecture warns about, and it is
+    what made a diagnostic disagree with the engine it was measuring.
+    """
+    payload = getattr(getattr(outcome, "puzzle", None), "payload", None)
+    if payload is None:
+        return drawn
+    return int(payload.get("group_size", drawn))
+
+
+def result_of(day: str, outcome) -> DayResult:
+    drawn = group_size_for(day)
     if not outcome.succeeded:
-        return DayResult(day=day, group_size=size, generated=False, reason=describe_failure(outcome))
+        # Nothing was built, so no size was served; the draw is the only honest
+        # number and the failure is attributable to it.
+        return DayResult(
+            day=day,
+            group_size=drawn,
+            generated=False,
+            drawn_size=drawn,
+            reason=describe_failure(outcome),
+        )
     evaluation = outcome.evaluation
     verification = evaluation.verification if evaluation else None
     solution = outcome.puzzle.solution
     return DayResult(
         day=day,
-        group_size=size,
+        group_size=served_size(outcome, drawn),
         generated=True,
+        drawn_size=drawn,
         solutions=getattr(verification, "solution_count", None),
         completeness=getattr(getattr(verification, "completeness", None), "name", None),
         states=getattr(verification, "states_examined", None),
@@ -193,19 +223,26 @@ def run(
         for offset in range(days):
             day = (start + dt.timedelta(days=offset)).isoformat()
             outcome = pipeline.generate(GAME_ID, day, difficulty_target=difficulty)
-            results.append(result_of(day, group_size_for(day), outcome))
+            results.append(result_of(day, outcome))
         return results
     finally:
         repos.close()
 
 
 def by_size(results: list[DayResult]) -> dict[int, tuple[int, int]]:
-    """Size to (generated, total), for every size the game can draw."""
-    tally = {size: [0, 0] for size in GROUP_SIZES}
+    """Size to (boards served at it, days that drew it).
+
+    Two axes, deliberately. "How many days drew size 9" and "how many size 9
+    boards exist" are different questions, and conflating them is what let a
+    snapshot serving no board above size 6 report boards at every size.
+    """
+    served = {size: 0 for size in GROUP_SIZES}
+    drawn = {size: 0 for size in GROUP_SIZES}
     for result in results:
-        tally[result.group_size][1] += 1
-        tally[result.group_size][0] += result.generated
-    return {size: (made, total) for size, (made, total) in tally.items()}
+        drawn[result.drawn_size or result.group_size] += 1
+        if result.generated:
+            served[result.group_size] += 1
+    return {size: (served[size], drawn[size]) for size in GROUP_SIZES}
 
 
 def render(results: list[DayResult]) -> str:
@@ -214,9 +251,18 @@ def render(results: list[DayResult]) -> str:
         if r.generated:
             unique = "unique" if r.solutions == 1 else f"{r.solutions} solutions"
             target = "" if r.on_target else " OFF TARGET"
+            # The draw is shown only when it differs, so a run that served
+            # every day at its own size reads exactly as it did before and a
+            # run leaning on the fallback cannot be mistaken for one.
+            fell_back = (
+                f" (drew {r.drawn_size})"
+                if r.drawn_size and r.drawn_size != r.group_size
+                else ""
+            )
             lines.append(
-                f"{r.day}  size {r.group_size}  BOARD  {unique}, {r.completeness}, "
-                f"{r.states} states  difficulty {r.difficulty} ({r.measured_band}){target}"
+                f"{r.day}  size {r.group_size}{fell_back}  BOARD  {unique}, "
+                f"{r.completeness}, {r.states} states  "
+                f"difficulty {r.difficulty} ({r.measured_band}){target}"
             )
             lines.append(f"    hidden: {r.hidden}")
             lines.append(f"    groups: {', '.join(r.visible)}")
@@ -226,9 +272,14 @@ def render(results: list[DayResult]) -> str:
     made = sum(r.generated for r in results)
     lines.append("")
     lines.append(f"{made} of {len(results)} days generated a board")
-    lines.append("size  days  boards")
+    lines.append("size  drew  served")
     for size, (built, total) in by_size(results).items():
         lines.append(f"{size:>4}  {total:>4}  {built:>6}")
+    lines.append(
+        "drew = days whose date chose that size; served = boards actually "
+        "built at it. A size with draws and no boards is one the content "
+        "cannot currently supply."
+    )
     failures = Counter(r.reason.split(";")[0] for r in results if not r.generated)
     if failures:
         lines.append("")

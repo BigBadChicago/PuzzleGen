@@ -765,8 +765,17 @@ class TestRejectionsDoNotLeakBetweenDays:
 
         generate_module._LAST_REJECTIONS.update({"not_disjoint": 99})
 
+        day = "2026-10-05"
         result = generate_module.generate_candidates(
-            SimpleNamespace(day_key="2026-10-05", content={})
+            # Carries an rng because candidate ordering now draws one. The
+            # stand-in stays a SimpleNamespace rather than a real context: the
+            # point of this test is the path where no content exists at all,
+            # and a real context would need content to build.
+            SimpleNamespace(
+                day_key=day,
+                content={},
+                rng=DeterministicRng(derive_seed(day, GAME_ID)),
+            )
         )
 
         assert result == ()

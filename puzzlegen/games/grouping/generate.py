@@ -18,7 +18,7 @@ could have rejected.
 from __future__ import annotations
 
 import itertools
-from collections.abc import Iterable, Sequence
+from collections.abc import Iterable, Iterator, Sequence
 from dataclasses import dataclass
 
 from ...content.query import ContentResult, GroupView
@@ -493,7 +493,7 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     _LAST_REJECTIONS.update(rejected)
     # A tuple, as the protocol's return type says: the sequence a plugin hands
     # back is not the engine's to mutate.
-    return tuple(_ordered(candidates))
+    return tuple(_ordered(candidates, context.rng))
 
 
 def _candidates_at(
@@ -535,19 +535,49 @@ def _candidates_at(
     budget = max(1, COMBINATION_BUDGET // max(1, len(placeable)))
     at_size: dict[str, int] = {}
 
-    for hidden, enriched in placeable:
-        for plan in plans_for(
-            hidden,
-            pool,
-            group_size,
-            enriched=enriched,
-            budget=budget,
-            rejected=at_size,
-        ):
+    # One lazy stream per hidden group, drained round-robin rather than in
+    # turn. Draining in turn let the first hidden group spend the whole
+    # candidate budget and return from inside the inner loop, so every other
+    # hidden group went unrepresented: five feasible hidden groups at size 5
+    # produced boards from exactly one of them. Hidden-first ordering was
+    # never the problem; exhausting it one group at a time was.
+    streams: list[tuple[str, Iterator[BoardPlan]]] = [
+        (
+            hidden.shared_category_id or hidden.shared_category or str(index),
+            plans_for(
+                hidden,
+                pool,
+                group_size,
+                enriched=enriched,
+                budget=budget,
+                rejected=at_size,
+            ),
+        )
+        for index, (hidden, enriched) in enumerate(placeable)
+    ]
+    # Per-group ceiling as well as round-robin. Round-robin alone still lets a
+    # prolific hidden group dominate once the others are exhausted, and an even
+    # share is what makes the day's choice a choice between hidden groups
+    # rather than between boards wearing the same hidden group.
+    share = max(1, context.candidate_budget // max(1, len(streams)))
+    taken: dict[str, int] = {}
+
+    while streams and len(candidates) < context.candidate_budget:
+        still_open: list[tuple[str, Iterator[BoardPlan]]] = []
+        for key, stream in streams:
+            if taken.get(key, 0) >= share:
+                continue
+            plan = next(stream, None)
+            if plan is None:
+                # Exhausted, not merely skipped: dropping it from the next
+                # round is what stops the loop spinning on dead streams.
+                continue
+            still_open.append((key, stream))
             candidate_id = plan.candidate_id()
             if candidate_id in seen:
                 continue
             seen.add(candidate_id)
+            taken[key] = taken.get(key, 0) + 1
             candidates.append(
                 PuzzleCandidate(
                     candidate_id=candidate_id,
@@ -557,7 +587,9 @@ def _candidates_at(
                 )
             )
             if len(candidates) >= context.candidate_budget:
-                return candidates
+                break
+        streams = still_open
+
     for reason, count in at_size.items():
         rejected[f"size {group_size}: {reason}"] = count
     return candidates
@@ -574,18 +606,36 @@ def last_rejections() -> dict[str, int]:
     return dict(_LAST_REJECTIONS)
 
 
-def _ordered(candidates: list[PuzzleCandidate]) -> list[PuzzleCandidate]:
-    """Two-axis hidden groups first, then more tempting boards.
+def _ordered(
+    candidates: list[PuzzleCandidate], rng: DeterministicRng
+) -> list[PuzzleCandidate]:
+    """Two-axis hidden groups first, then a day-dependent order within rank.
 
-    Ties broken by candidate id so two runs offer the same list in the same
-    order, which the engine's day-level reproducibility depends on.
+    The previous key was a total order over content properties alone, with
+    candidate id as the final tie-break. Nothing in it varied by day, and the
+    engine takes the first candidate that verifies, so every day served at the
+    same group size produced a byte-identical board no matter how many hidden
+    groups the content supported. That, not content thinness, is why thirty
+    days ran one board.
+
+    Randomness lives here rather than in the engine because the engine does not
+    choose: it verifies in list order and keeps the first survivor, which is a
+    lookup, not a selection. Putting the draw in the only place that actually
+    selects keeps one source of randomness responsible for one board, which is
+    what the previous no-randomness rule was protecting.
+
+    Shuffling happens before the sort and the sort is stable, so the shuffle
+    survives inside each equal-key run: enrichment still leads and temptation
+    still ranks, while the tie-break stops being alphabetical. The substream is
+    derived by label, so adding a draw elsewhere in generation cannot move this
+    one, and the same day still produces the same list.
     """
+    shuffled = rng.derive("candidate-order").shuffled(candidates)
     return sorted(
-        candidates,
+        shuffled,
         key=lambda c: (
             not c.payload.get("enriched", False),
             -int(c.payload.get("temptation", 0)),
-            c.candidate_id,
         ),
     )
 
@@ -627,16 +677,6 @@ def unusable_reason(context: GenerationContext) -> str | None:
             f"{total} combinations refused, mostly {cause} ({count}); {detail}"
         )
     return None
-
-
-def _unused(rng: DeterministicRng) -> None:  # pragma: no cover - documentation
-    """Generation draws no randomness.
-
-    The day's shape is already decided by the day key, and the choice among
-    candidates belongs to the engine, which verifies them in order. A generator
-    that also sampled would make two sources of randomness responsible for one
-    board.
-    """
 
 
 __all__ = [
