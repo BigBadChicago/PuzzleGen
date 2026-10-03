@@ -1241,15 +1241,18 @@ class TestBuildingIntoAPopulatedDatabase:
         assert all(count > 0 for count in held.values())
 
 
-class TestParentsLostInAMerge:
+class TestParentsInAMerge:
     """Two senses of one word, exported under different roots, become one
-    category, and only the first import's parents survive.
+    category, and the builder keeps the parents of both.
 
     ``viola`` the plant sits under ``herb`` and ``viola`` the instrument under
-    ``bowed stringed instrument``. In the graph there is one ``viola`` and its
-    only parent is whichever came first, so the other sense is homed in the
-    wrong family. For a game built on words with two meanings this is the case
-    that matters most, and nothing said so.
+    ``bowed stringed instrument``; the one ``viola`` in the graph ends up under
+    both. An earlier version of these tests, and of the report, believed only
+    the first import's parents survived and listed the rest as lost. The
+    builder unions them and refuses only an edge that would make the category
+    its own ancestor, so that belief produced fourteen false alarms on the real
+    exports. ``test_collision_report_matches_builder`` now checks the report
+    against the builder directly.
     """
 
     def files(self, tmp_path):
@@ -1274,22 +1277,53 @@ class TestParentsLostInAMerge:
     def viola(self, paths):
         return next(r for r in collisions.category_collisions(paths) if r["name"] == "viola")
 
-    def test_the_first_file_keeps_its_parent_and_the_later_one_loses_its_own(self, tmp_path):
+    def test_both_senses_keep_their_parents(self, tmp_path):
         plant, instrument = self.files(tmp_path)
 
         row = self.viola([plant, instrument])
 
         assert row["first_file"] == "plant.lexicon.json"
-        assert row["parents_kept"] == ["herb"]
-        assert row["parents_lost"] == ["bowed stringed instrument"]
+        assert row["parents_kept"] == ["bowed stringed instrument", "herb"]
+        assert row["parents_lost"] == []
 
-    def test_the_order_decides_which_sense_is_lost(self, tmp_path):
+    def test_the_order_does_not_change_what_is_kept(self, tmp_path):
         plant, instrument = self.files(tmp_path)
 
         row = self.viola([instrument, plant])
 
-        assert row["parents_kept"] == ["bowed stringed instrument"]
-        assert row["parents_lost"] == ["herb"]
+        assert row["parents_kept"] == ["bowed stringed instrument", "herb"]
+        assert row["parents_lost"] == []
+
+    def cycle_files(self, tmp_path):
+        """A later cup whose parent already sits below the first cup."""
+        first = write_lexicon(
+            tmp_path / "first.lexicon.json",
+            [sense("cup", "s.cup1")],
+            synsets=[
+                {"id": "s.thing", "name": "thing", "definition": "d", "hypernyms": []},
+                {"id": "s.cup1", "name": "cup", "definition": "a vessel", "hypernyms": ["s.thing"]},
+                {"id": "s.teacup", "name": "teacup", "definition": "a small cup", "hypernyms": ["s.cup1"]},
+            ],
+        )
+        second = write_lexicon(
+            tmp_path / "second.lexicon.json",
+            [sense("cup", "s.cup2")],
+            synsets=[
+                {"id": "s.teacup", "name": "teacup", "definition": "a small cup", "hypernyms": []},
+                {"id": "s.cup2", "name": "cup", "definition": "a trophy", "hypernyms": ["s.teacup"]},
+            ],
+        )
+        return [first, second]
+
+    def test_only_a_parent_that_would_close_a_loop_is_refused(self, tmp_path):
+        row = next(
+            r
+            for r in collisions.category_collisions(self.cycle_files(tmp_path))
+            if r["name"] == "cup"
+        )
+
+        assert row["parents_kept"] == ["thing"]
+        assert row["parents_lost"] == ["teacup"]
 
     def test_identical_parents_lose_nothing(self, tmp_path):
         one = write_lexicon(
@@ -1320,7 +1354,7 @@ class TestParentsLostInAMerge:
 
         assert all(not r["parents_lost"] for r in rows)
 
-    def test_the_count_and_the_overlay_words_reach_the_report(self, tmp_path):
+    def test_a_clean_merge_reports_no_overlay_word_as_losing_a_parent(self, tmp_path):
         plant, instrument = self.files(tmp_path)
         paths = [plant, instrument]
 
@@ -1330,43 +1364,55 @@ class TestParentsLostInAMerge:
             categories=collisions.category_collisions(paths),
         )
 
+        assert report["counts"]["merged_categories_losing_parents"] == 0
+        assert report["counts"]["overlay_words_losing_parents"] == 0
+        assert report["overlay_words_losing_parents"] == []
+
+    def test_the_count_and_the_overlay_words_reach_the_report(self, tmp_path):
+        paths = self.cycle_files(tmp_path)
+
+        report = collisions.build_report(
+            collisions.collect(paths),
+            {"cup": ["thing found in a kitchen"], "cello": ["thing with strings"]},
+            categories=collisions.category_collisions(paths),
+        )
+
         assert report["counts"]["merged_categories_losing_parents"] == 1
         assert report["counts"]["overlay_words_losing_parents"] == 1
         assert report["overlay_words_losing_parents"] == [
             {
-                "lemma": "viola",
-                "overlay_categories": ["thing with strings"],
-                "kept": ["herb"],
-                "lost": ["bowed stringed instrument"],
+                "lemma": "cup",
+                "overlay_categories": ["thing found in a kitchen"],
+                "kept": ["thing"],
+                "lost": ["teacup"],
             }
         ]
 
-    def test_the_report_says_what_was_lost(self, tmp_path):
-        plant, instrument = self.files(tmp_path)
-        paths = [plant, instrument]
+    def test_the_report_says_what_was_refused(self, tmp_path):
+        paths = self.cycle_files(tmp_path)
 
         text = collisions.render(
             collisions.build_report(
                 collisions.collect(paths),
-                {"viola": ["thing with strings"]},
+                {"cup": ["thing found in a kitchen"]},
                 categories=collisions.category_collisions(paths),
             )
         )
 
-        assert "parents lost in the merge: bowed stringed instrument (kept from plant.lexicon.json: herb)" in text
-        assert "overlay words whose second meaning lost its parent in the merge:" in text
-        assert "viola" in text.split("overlay words whose second meaning lost its parent")[1]
+        assert "parents refused (would make it its own ancestor): teacup (kept: thing)" in text
+        assert "overlay words whose second meaning had a parent refused in the merge:" in text
+        assert "cup" in text.split("overlay words whose second meaning had a parent refused")[1]
         assert "losing a parent     : 1 (1 are overlay words)" in text
 
-    def test_the_real_pair_shows_viola(self):
-        seeds = SEEDS
-        plant, instrument = seeds / "wordnet-plant.lexicon.json", seeds / "wordnet-instrument.lexicon.json"
-        if not (plant.exists() and instrument.exists()):
+    def test_the_real_pair_keeps_both_viola_parents(self):
+        herb, instrument = SEEDS / "wordnet-herb.lexicon.json", SEEDS / "wordnet-instrument.lexicon.json"
+        if not (herb.exists() and instrument.exists()):
             pytest.skip("the committed exports are not present")
 
-        row = self.viola([plant, instrument])
+        row = self.viola([herb, instrument])
 
-        assert row["parents_lost"] == ["bowed stringed instrument"]
+        assert row["parents_lost"] == []
+        assert {"herb", "bowed stringed instrument"} <= set(row["parents_kept"])
 
 
 class TestCollisionsAreCaseSensitive:
@@ -1420,8 +1466,8 @@ class TestCollisionsAreCaseSensitive:
         rows = collisions.category_collisions([*paths, same])
 
         row = next(r for r in rows if r["name"] == "cardigan")
-        assert row["parents_kept"] == ["sweater"]
-        assert row["parents_lost"] == ["knitwear"]
+        assert row["parents_kept"] == ["knitwear", "sweater"]
+        assert row["parents_lost"] == []
 
     def test_the_import_agrees_with_the_report(self, tmp_path):
         """The report and the graph must not disagree about what merges."""

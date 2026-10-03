@@ -304,20 +304,49 @@ class TestItIsTheProposersInputFormat:
         assert module.propose(imported, reviews) == []
 
 
-#: The five real exports the runbook produces. Named rather than globbed,
-#: because ``wordnet-mini.lexicon.json`` is an 8 synset test fixture and a glob
-#: would quietly run these tests against it and fail for the wrong reason.
+#: The exports a build imports. Named rather than globbed, because
+#: ``wordnet-mini.lexicon.json`` is an 8 synset test fixture and a glob would
+#: quietly run these tests against it and fail for the wrong reason.
+#:
+#: This list went stale at seven roots while the build grew to sixteen, so the
+#: tests reported 78 overlay words as unsupplied when 46 were. Keep it equal to
+#: the roots in docs/snapshot-build.md.
 LEXICON_ROOTS = (
-    "carnivore",
     "bird",
+    "carnivore",
+    "fish",
+    "flavorer",
+    "flower",
     "fruit",
-    "instrument",
-    "vehicle",
     "garment",
+    "herb",
+    "insect",
+    "instrument",
+    "kitchen",
+    "planet",
+    "reptile",
+    "sport",
     "tool",
+    "vehicle",
+)
+
+#: Roots added to close the remaining gap. Counted only once their export is in
+#: the repository, so committing one starts measuring it with no further edit.
+PENDING_ROOTS = (
+    "mollusk",
+    "crustacean",
+    "cutting_implement",
+    "tableware",
+    "power_tool",
+    "color",
+    "drug_of_abuse",
 )
 LEXICONS = [
-    SEED.parent / f"wordnet-{root}.lexicon.json" for root in LEXICON_ROOTS
+    SEED.parent / f"wordnet-{root}.lexicon.json"
+    for root in (
+        *LEXICON_ROOTS,
+        *(r for r in PENDING_ROOTS if (SEED.parent / f"wordnet-{r}.lexicon.json").exists()),
+    )
 ]
 
 

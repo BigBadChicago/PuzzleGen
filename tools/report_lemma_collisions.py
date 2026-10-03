@@ -89,25 +89,38 @@ def collect(paths: list[Path]) -> dict[str, LemmaUse]:
 
 
 def _hypernym_edges(paths: list[Path]) -> dict[str, tuple[str, ...]]:
+    # Unioned across files, as the builder unions a category's parents. A
+    # synset exported under two roots keeps only the hypernyms inside each root's
+    # subtree, so letting the later file overwrite the earlier one dropped edges
+    # and hid exactly the loops this report exists to show.
     edges: dict[str, tuple[str, ...]] = {}
     for path in paths:
         for synset in read_lexicon(path).get("synsets", ()):
-            edges[synset["id"]] = tuple(synset.get("hypernyms", ()))
+            known = edges.get(synset["id"], ())
+            edges[synset["id"]] = known + tuple(
+                h for h in synset.get("hypernyms", ()) if h not in known
+            )
     return edges
 
 
 def _reaches(edges: dict[str, tuple[str, ...]], start: str, targets: set[str]) -> str | None:
     """The first of ``targets`` reachable by walking hypernyms from ``start``.
 
-    Depth-bounded by the graph itself: WordNet's hypernym edges are acyclic
-    upstream, so this always terminates without a visited-set guard, the same
-    trust the exporter already places in that property.
+    WordNet's hypernym edges are acyclic upstream, so the walk ends on real
+    data; the visited set below only keeps a malformed file from looping.
     """
     frontier = list(edges.get(start, ()))
+    # A visited set costs nothing on the acyclic input WordNet guarantees, and
+    # turns a malformed or hand-edited lexicon that does contain a loop into a
+    # finished report instead of a process that never returns.
+    seen: set[str] = set()
     while frontier:
         current = frontier.pop()
         if current in targets:
             return current
+        if current in seen:
+            continue
+        seen.add(current)
         frontier.extend(edges.get(current, ()))
     return None
 
@@ -151,6 +164,10 @@ def category_collisions(paths: list[Path]) -> list[dict]:
                 "parents": sorted(
                     {in_file[h] for h in synset.get("hypernyms", ()) if h in in_file}
                 ),
+                "parent_ids": [h for h in synset.get("hypernyms", ()) if h in in_file],
+                "parent_names": {
+                    h: in_file[h] for h in synset.get("hypernyms", ()) if h in in_file
+                },
             }
 
     edges = _hypernym_edges(paths)
@@ -174,23 +191,43 @@ def category_collisions(paths: list[Path]) -> list[dict]:
                     {"descendant": descendant, "ancestor": ancestor}
                 )
 
-        # The first import to name a category decides its parents, and a later
-        # import of the same name is merged into it without adding any: a
-        # category's parents are fixed when it is made. So the sense exported
-        # first keeps its ancestry and a same-named sense from a later file
-        # loses its own. Exact across files, in the order they are given here,
-        # which must be the order the build imports them. Two same-named
-        # synsets inside one file are ordered by the importer and are not
-        # reported here.
+        # Mirrors ``SnapshotBuilder._merge_category``: a category's parents are
+        # the union of every same-named sense's parents, and the only parent
+        # refused is one that would make the category its own ancestor, which
+        # is the category itself or anything already below it. An earlier
+        # version of this report claimed the first import fixes a category's
+        # parents and listed every later sense's parents as lost. The builder
+        # does not do that, so every "lost" line it printed was a false alarm,
+        # and tests/unit/test_collision_report_matches_builder.py now fails if
+        # the two ever disagree again.
+        #
+        # Order follows the files as given, which must be the order the build
+        # imports them. Senses inside one file are ordered by the importer and
+        # are not simulated; they are treated as already merged.
         order = [path.name for path in paths]
         first_file = min({g["file"] for g in group.values()}, key=order.index)
-        kept = {par for g in group.values() if g["file"] == first_file for par in g["parents"]}
-        later = {
-            par
-            for g in group.values()
-            if g["file"] != first_file
-            for par in g["parents"]
+        merged_ids = {k for k, g in group.items() if g["file"] == first_file}
+        kept = {
+            name_of
+            for k in merged_ids
+            for name_of in group[k]["parent_names"].values()
         }
+        refused: set[str] = set()
+        for later_file in sorted(
+            {g["file"] for g in group.values()} - {first_file}, key=order.index
+        ):
+            arriving = {k for k, g in group.items() if g["file"] == later_file}
+            for k in sorted(arriving):
+                for parent_id, parent_name in group[k]["parent_names"].items():
+                    below = parent_id in ids or _reaches(edges, parent_id, merged_ids)
+                    if below:
+                        refused.add(parent_name)
+                    else:
+                        kept.add(parent_name)
+            merged_ids |= arriving
+        # A name both kept through one sense and refused through another is
+        # kept: the builder only refuses an edge it has not already written.
+        refused -= kept
         merged.append(
             {
                 "name": name,
@@ -199,7 +236,7 @@ def category_collisions(paths: list[Path]) -> list[dict]:
                 "self_ancestor_pairs": self_ancestor_pairs,
                 "first_file": first_file,
                 "parents_kept": sorted(kept),
-                "parents_lost": sorted(later - kept),
+                "parents_lost": sorted(refused),
             }
         )
     return merged
@@ -332,8 +369,9 @@ def render(report: dict) -> str:
                 lines.append(f"    {synset['id']}  {synset['definition'][:70]}")
             if row.get("parents_lost"):
                 lines.append(
-                    f"    parents lost in the merge: {', '.join(row['parents_lost'])}"
-                    f" (kept from {row['first_file']}: {', '.join(row['parents_kept'])})"
+                    f"    parents refused (would make it its own ancestor): "
+                    f"{', '.join(row['parents_lost'])}"
+                    f" (kept: {', '.join(row['parents_kept'])})"
                 )
             if row["children_inheriting_it_twice"]:
                 lines.append(
@@ -350,7 +388,7 @@ def render(report: dict) -> str:
                 )
     if report.get("overlay_words_losing_parents"):
         lines.append("")
-        lines.append("overlay words whose second meaning lost its parent in the merge:")
+        lines.append("overlay words whose second meaning had a parent refused in the merge:")
         for row in report["overlay_words_losing_parents"]:
             lines.append(
                 f"  {row['lemma']:<16} kept: {', '.join(row['kept'])}; "
