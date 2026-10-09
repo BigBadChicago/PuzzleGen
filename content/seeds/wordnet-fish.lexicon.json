@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-02",
+  "exported": "2026-10-09",
   "lexicon": "oewn",
   "lexicon_schema": 1,
   "root": "oewn-02514684-n",
@@ -101,6 +101,54 @@
       "synset": "oewn-01442155-n"
     },
     {
+      "definition": "large Old World freshwater bottom-feeding fish introduced into Europe from Asia; inhabits ponds and sluggish streams and often raised for food; introduced into United States where it has become a pest",
+      "forms": [],
+      "id": "oewn-domestic_carp__1.05.00..",
+      "lang": "en",
+      "lemma": "domestic carp",
+      "synset": "oewn-01442449-n"
+    },
+    {
+      "definition": "large Old World freshwater bottom-feeding fish introduced into Europe from Asia; inhabits ponds and sluggish streams and often raised for food; introduced into United States where it has become a pest",
+      "forms": [],
+      "id": "oewn-cyprinus_carpio__1.05.00..",
+      "lang": "en",
+      "lemma": "Cyprinus carpio",
+      "synset": "oewn-01442449-n"
+    },
+    {
+      "definition": "scaleless domestic carp",
+      "forms": [],
+      "id": "oewn-leather_carp__1.05.00..",
+      "lang": "en",
+      "lemma": "leather carp",
+      "synset": "oewn-01442801-n"
+    },
+    {
+      "definition": "domestic carp with some large shining scales",
+      "forms": [],
+      "id": "oewn-mirror_carp__1.05.00..",
+      "lang": "en",
+      "lemma": "mirror carp",
+      "synset": "oewn-01442883-n"
+    },
+    {
+      "definition": "European freshwater fish having a flattened body and silvery scales; of little value as food",
+      "forms": [],
+      "id": "oewn-european_bream__1.05.00..",
+      "lang": "en",
+      "lemma": "European bream",
+      "synset": "oewn-01443108-n"
+    },
+    {
+      "definition": "European freshwater fish having a flattened body and silvery scales; of little value as food",
+      "forms": [],
+      "id": "oewn-abramis_brama__1.05.00..",
+      "lang": "en",
+      "lemma": "Abramis brama",
+      "synset": "oewn-01443108-n"
+    },
+    {
       "definition": "freshwater dace-like game fish of Europe and western Asia noted for ability to survive outside water",
       "forms": [],
       "id": "oewn-tench__1.05.00..",
@@ -155,6 +203,62 @@
       "lang": "en",
       "lemma": "shiner",
       "synset": "oewn-01444066-n"
+    },
+    {
+      "definition": "small blunt-nosed fish of Great Lakes and Mississippi valley with a greenish luster",
+      "forms": [],
+      "id": "oewn-emerald_shiner__1.05.00..",
+      "lang": "en",
+      "lemma": "emerald shiner",
+      "synset": "oewn-01444383-n"
+    },
+    {
+      "definition": "small blunt-nosed fish of Great Lakes and Mississippi valley with a greenish luster",
+      "forms": [],
+      "id": "oewn-notropis_atherinoides__1.05.00..",
+      "lang": "en",
+      "lemma": "Notropis atherinoides",
+      "synset": "oewn-01444383-n"
+    },
+    {
+      "definition": "the common North American shiner",
+      "forms": [],
+      "id": "oewn-common_shiner__1.05.00..",
+      "lang": "en",
+      "lemma": "common shiner",
+      "synset": "oewn-01444551-n"
+    },
+    {
+      "definition": "the common North American shiner",
+      "forms": [],
+      "id": "oewn-silversides__1.05.02..",
+      "lang": "en",
+      "lemma": "silversides",
+      "synset": "oewn-01444551-n"
+    },
+    {
+      "definition": "the common North American shiner",
+      "forms": [],
+      "id": "oewn-notropis_cornutus__1.05.00..",
+      "lang": "en",
+      "lemma": "Notropis cornutus",
+      "synset": "oewn-01444551-n"
+    },
+    {
+      "definition": "shiner of eastern North America having golden glints; sometimes also called \u2018bream\u2019",
+      "forms": [],
+      "id": "oewn-golden_shiner__1.05.00..",
+      "lang": "en",
+      "lemma": "golden shiner",
+      "synset": "oewn-01444807-n"
+    },
+    {
+      "definition": "shiner of eastern North America having golden glints; sometimes also called \u2018bream\u2019",
+      "forms": [],
+      "id": "oewn-notemigonus_crysoleucas__1.05.00..",
+      "lang": "en",
+      "lemma": "Notemigonus crysoleucas",
+      "synset": "oewn-01444807-n"
     },
     {
       "definition": "European freshwater food fish having a greenish back",
@@ -239,6 +343,16 @@
       "synset": "oewn-01446178-n"
     },
     {
+      "definition": "a silvery variety of Carassius auratus",
+      "forms": [
+        "silverfishes"
+      ],
+      "id": "oewn-silverfish__1.05.00..",
+      "lang": "en",
+      "lemma": "silverfish",
+      "synset": "oewn-01446377-n"
+    },
+    {
       "definition": "European carp closely resembling wild goldfish",
       "forms": [],
       "id": "oewn-crucian_carp__1.05.00..",
@@ -295,6 +409,78 @@
       "synset": "oewn-01447563-n"
     },
     {
+      "definition": "any of several large suckers of the Mississippi valley",
+      "forms": [],
+      "id": "oewn-buffalo_fish__1.05.00..",
+      "lang": "en",
+      "lemma": "buffalo fish",
+      "synset": "oewn-01448070-n"
+    },
+    {
+      "definition": "any of several large suckers of the Mississippi valley",
+      "forms": [],
+      "id": "oewn-buffalofish__1.05.00..",
+      "lang": "en",
+      "lemma": "buffalofish",
+      "synset": "oewn-01448070-n"
+    },
+    {
+      "definition": "fish of the lower Mississippi",
+      "forms": [],
+      "id": "oewn-black_buffalo__1.05.00..",
+      "lang": "en",
+      "lemma": "black buffalo",
+      "synset": "oewn-01448234-n"
+    },
+    {
+      "definition": "fish of the lower Mississippi",
+      "forms": [],
+      "id": "oewn-ictiobus_niger__1.05.00..",
+      "lang": "en",
+      "lemma": "Ictiobus niger",
+      "synset": "oewn-01448234-n"
+    },
+    {
+      "definition": "widely distributed in warm clear shallow streams",
+      "forms": [],
+      "id": "oewn-hog_sucker__1.05.00..",
+      "lang": "en",
+      "lemma": "hog sucker",
+      "synset": "oewn-01448498-n"
+    },
+    {
+      "definition": "widely distributed in warm clear shallow streams",
+      "forms": [],
+      "id": "oewn-hog_molly__1.05.00..",
+      "lang": "en",
+      "lemma": "hog molly",
+      "synset": "oewn-01448498-n"
+    },
+    {
+      "definition": "widely distributed in warm clear shallow streams",
+      "forms": [],
+      "id": "oewn-hypentelium_nigricans__1.05.00..",
+      "lang": "en",
+      "lemma": "Hypentelium nigricans",
+      "synset": "oewn-01448498-n"
+    },
+    {
+      "definition": "North American sucker with reddish fins",
+      "forms": [],
+      "id": "oewn-redhorse__1.05.00..",
+      "lang": "en",
+      "lemma": "redhorse",
+      "synset": "oewn-01448793-n"
+    },
+    {
+      "definition": "North American sucker with reddish fins",
+      "forms": [],
+      "id": "oewn-redhorse_sucker__1.05.00..",
+      "lang": "en",
+      "lemma": "redhorse sucker",
+      "synset": "oewn-01448793-n"
+    },
+    {
       "definition": "any member of the family Cyprinodontidae",
       "forms": [],
       "id": "oewn-cyprinodont__1.05.00..",
@@ -311,6 +497,86 @@
       "lang": "en",
       "lemma": "killifish",
       "synset": "oewn-01449401-n"
+    },
+    {
+      "definition": "silver-and-black killifish of saltwater marshes along the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-mummichog__1.05.00..",
+      "lang": "en",
+      "lemma": "mummichog",
+      "synset": "oewn-01449780-n"
+    },
+    {
+      "definition": "silver-and-black killifish of saltwater marshes along the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-fundulus_heteroclitus__1.05.00..",
+      "lang": "en",
+      "lemma": "Fundulus heteroclitus",
+      "synset": "oewn-01449780-n"
+    },
+    {
+      "definition": "black-barred fish of bays and coastal marshes of the Atlantic and Gulf Coast of the United States",
+      "forms": [],
+      "id": "oewn-striped_killifish__1.05.00..",
+      "lang": "en",
+      "lemma": "striped killifish",
+      "synset": "oewn-01449972-n"
+    },
+    {
+      "definition": "black-barred fish of bays and coastal marshes of the Atlantic and Gulf Coast of the United States",
+      "forms": [],
+      "id": "oewn-mayfish__1.05.00..",
+      "lang": "en",
+      "lemma": "mayfish",
+      "synset": "oewn-01449972-n"
+    },
+    {
+      "definition": "black-barred fish of bays and coastal marshes of the Atlantic and Gulf Coast of the United States",
+      "forms": [],
+      "id": "oewn-may_fish__1.05.00..",
+      "lang": "en",
+      "lemma": "may fish",
+      "synset": "oewn-01449972-n"
+    },
+    {
+      "definition": "black-barred fish of bays and coastal marshes of the Atlantic and Gulf Coast of the United States",
+      "forms": [],
+      "id": "oewn-fundulus_majalis__1.05.00..",
+      "lang": "en",
+      "lemma": "Fundulus majalis",
+      "synset": "oewn-01449972-n"
+    },
+    {
+      "definition": "found in small streams of tropical America; often kept in aquariums; usually hermaphroditic",
+      "forms": [],
+      "id": "oewn-rivulus__1.05.00..",
+      "lang": "en",
+      "lemma": "rivulus",
+      "synset": "oewn-01450299-n"
+    },
+    {
+      "definition": "a fish with a dark-blue back and whitish sides with red stripes; found in swamps and streams of Florida",
+      "forms": [],
+      "id": "oewn-flagfish__1.05.00..",
+      "lang": "en",
+      "lemma": "flagfish",
+      "synset": "oewn-01450587-n"
+    },
+    {
+      "definition": "a fish with a dark-blue back and whitish sides with red stripes; found in swamps and streams of Florida",
+      "forms": [],
+      "id": "oewn-american_flagfish__1.05.00..",
+      "lang": "en",
+      "lemma": "American flagfish",
+      "synset": "oewn-01450587-n"
+    },
+    {
+      "definition": "a fish with a dark-blue back and whitish sides with red stripes; found in swamps and streams of Florida",
+      "forms": [],
+      "id": "oewn-jordanella_floridae__1.05.00..",
+      "lang": "en",
+      "lemma": "Jordanella floridae",
+      "synset": "oewn-01450587-n"
     },
     {
       "definition": "freshwater fish of Central America having a long swordlike tail; popular aquarium fish",
@@ -3183,6 +3449,22 @@
       "synset": "oewn-02538168-n"
     },
     {
+      "definition": "Atlantic salmon confined to lakes of New England and southeastern Canada",
+      "forms": [],
+      "id": "oewn-landlocked_salmon__1.05.00..",
+      "lang": "en",
+      "lemma": "landlocked salmon",
+      "synset": "oewn-02538390-n"
+    },
+    {
+      "definition": "Atlantic salmon confined to lakes of New England and southeastern Canada",
+      "forms": [],
+      "id": "oewn-lake_salmon__1.05.00..",
+      "lang": "en",
+      "lemma": "lake salmon",
+      "synset": "oewn-02538390-n"
+    },
+    {
       "definition": "small salmon with red flesh; found in rivers and tributaries of the northern Pacific and valued as food; adults die after spawning",
       "forms": [],
       "id": "oewn-sockeye__1.05.00..",
@@ -3381,6 +3663,14 @@
       "lang": "en",
       "lemma": "Salmo gairdneri",
       "synset": "oewn-02540156-n"
+    },
+    {
+      "definition": "silvery marine variety of brown trout that migrates to fresh water to spawn",
+      "forms": [],
+      "id": "oewn-sea_trout__1.05.01..",
+      "lang": "en",
+      "lemma": "sea trout",
+      "synset": "oewn-02540347-n"
     },
     {
       "definition": "large fork-tailed trout of lakes of Canada and the northern United States",
@@ -4265,6 +4555,86 @@
       "synset": "oewn-02560222-n"
     },
     {
+      "definition": "pike-like freshwater perches",
+      "forms": [],
+      "id": "oewn-walleye__1.05.00..",
+      "lang": "en",
+      "lemma": "walleye",
+      "synset": "oewn-02560380-n"
+    },
+    {
+      "definition": "pike-like freshwater perches",
+      "forms": [],
+      "id": "oewn-walleyed_pike__1.05.00..",
+      "lang": "en",
+      "lemma": "walleyed pike",
+      "synset": "oewn-02560380-n"
+    },
+    {
+      "definition": "pike-like freshwater perches",
+      "forms": [],
+      "id": "oewn-jack_salmon__1.05.00..",
+      "lang": "en",
+      "lemma": "jack salmon",
+      "synset": "oewn-02560380-n"
+    },
+    {
+      "definition": "pike-like freshwater perches",
+      "forms": [],
+      "id": "oewn-dory__1.05.01..",
+      "lang": "en",
+      "lemma": "dory",
+      "synset": "oewn-02560380-n"
+    },
+    {
+      "definition": "pike-like freshwater perches",
+      "forms": [],
+      "id": "oewn-stizostedion_vitreum__1.05.00..",
+      "lang": "en",
+      "lemma": "Stizostedion vitreum",
+      "synset": "oewn-02560380-n"
+    },
+    {
+      "definition": "variety inhabiting the Great Lakes",
+      "forms": [],
+      "id": "oewn-blue_pike__1.05.00..",
+      "lang": "en",
+      "lemma": "blue pike",
+      "synset": "oewn-02560540-n"
+    },
+    {
+      "definition": "variety inhabiting the Great Lakes",
+      "forms": [],
+      "id": "oewn-blue_pickerel__1.05.00..",
+      "lang": "en",
+      "lemma": "blue pickerel",
+      "synset": "oewn-02560540-n"
+    },
+    {
+      "definition": "variety inhabiting the Great Lakes",
+      "forms": [],
+      "id": "oewn-blue_pikeperch__1.05.00..",
+      "lang": "en",
+      "lemma": "blue pikeperch",
+      "synset": "oewn-02560540-n"
+    },
+    {
+      "definition": "variety inhabiting the Great Lakes",
+      "forms": [],
+      "id": "oewn-blue_walleye__1.05.00..",
+      "lang": "en",
+      "lemma": "blue walleye",
+      "synset": "oewn-02560540-n"
+    },
+    {
+      "definition": "variety inhabiting the Great Lakes",
+      "forms": [],
+      "id": "oewn-strizostedion_vitreum_glaucum__1.05.00..",
+      "lang": "en",
+      "lemma": "Strizostedion vitreum glaucum",
+      "synset": "oewn-02560540-n"
+    },
+    {
       "definition": "a small snail-eating perch of the Tennessee River",
       "forms": [],
       "id": "oewn-snail_darter__1.05.00..",
@@ -4387,6 +4757,54 @@
       "synset": "oewn-02564292-n"
     },
     {
+      "definition": "common in quiet waters of eastern United States",
+      "forms": [],
+      "id": "oewn-chain_pickerel__1.05.00..",
+      "lang": "en",
+      "lemma": "chain pickerel",
+      "synset": "oewn-02564434-n"
+    },
+    {
+      "definition": "common in quiet waters of eastern United States",
+      "forms": [],
+      "id": "oewn-chain_pike__1.05.00..",
+      "lang": "en",
+      "lemma": "chain pike",
+      "synset": "oewn-02564434-n"
+    },
+    {
+      "definition": "common in quiet waters of eastern United States",
+      "forms": [],
+      "id": "oewn-esox_niger__1.05.00..",
+      "lang": "en",
+      "lemma": "Esox niger",
+      "synset": "oewn-02564434-n"
+    },
+    {
+      "definition": "small but gamy pickerel of Atlantic coastal states",
+      "forms": [],
+      "id": "oewn-redfin_pickerel__1.05.00..",
+      "lang": "en",
+      "lemma": "redfin pickerel",
+      "synset": "oewn-02564568-n"
+    },
+    {
+      "definition": "small but gamy pickerel of Atlantic coastal states",
+      "forms": [],
+      "id": "oewn-barred_pickerel__1.05.00..",
+      "lang": "en",
+      "lemma": "barred pickerel",
+      "synset": "oewn-02564568-n"
+    },
+    {
+      "definition": "small but gamy pickerel of Atlantic coastal states",
+      "forms": [],
+      "id": "oewn-esox_americanus__1.05.00..",
+      "lang": "en",
+      "lemma": "Esox americanus",
+      "synset": "oewn-02564568-n"
+    },
+    {
       "definition": "small carnivorous freshwater percoid fishes of North America usually having a laterally compressed body and metallic luster: crappies, black bass, bluegills, pumpkinseed",
       "forms": [
         "sunfishes"
@@ -4411,6 +4829,38 @@
       "lang": "en",
       "lemma": "crappie",
       "synset": "oewn-02565427-n"
+    },
+    {
+      "definition": "a crappie that is black",
+      "forms": [],
+      "id": "oewn-black_crappie__1.05.00..",
+      "lang": "en",
+      "lemma": "black crappie",
+      "synset": "oewn-02565602-n"
+    },
+    {
+      "definition": "a crappie that is black",
+      "forms": [],
+      "id": "oewn-pomoxis_nigromaculatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Pomoxis nigromaculatus",
+      "synset": "oewn-02565602-n"
+    },
+    {
+      "definition": "a crappie that is white",
+      "forms": [],
+      "id": "oewn-white_crappie__1.05.00..",
+      "lang": "en",
+      "lemma": "white crappie",
+      "synset": "oewn-02565710-n"
+    },
+    {
+      "definition": "a crappie that is white",
+      "forms": [],
+      "id": "oewn-pomoxis_annularis__1.05.00..",
+      "lang": "en",
+      "lemma": "Pomoxis annularis",
+      "synset": "oewn-02565710-n"
     },
     {
       "definition": "any of various usually edible freshwater percoid fishes having compressed bodies and shiny scales; especially (but not exclusively) of the genus Lepomis",
@@ -4443,6 +4893,46 @@
       "lang": "en",
       "lemma": "Lepomis gibbosus",
       "synset": "oewn-02566279-n"
+    },
+    {
+      "definition": "important edible sunfish of eastern and central United States",
+      "forms": [],
+      "id": "oewn-bluegill__1.05.00..",
+      "lang": "en",
+      "lemma": "bluegill",
+      "synset": "oewn-02566423-n"
+    },
+    {
+      "definition": "important edible sunfish of eastern and central United States",
+      "forms": [],
+      "id": "oewn-lepomis_macrochirus__1.05.00..",
+      "lang": "en",
+      "lemma": "Lepomis macrochirus",
+      "synset": "oewn-02566423-n"
+    },
+    {
+      "definition": "inhabits streams from South Carolina to Florida; esteemed panfish",
+      "forms": [],
+      "id": "oewn-spotted_sunfish__1.05.00..",
+      "lang": "en",
+      "lemma": "spotted sunfish",
+      "synset": "oewn-02566580-n"
+    },
+    {
+      "definition": "inhabits streams from South Carolina to Florida; esteemed panfish",
+      "forms": [],
+      "id": "oewn-stumpknocker__1.05.00..",
+      "lang": "en",
+      "lemma": "stumpknocker",
+      "synset": "oewn-02566580-n"
+    },
+    {
+      "definition": "inhabits streams from South Carolina to Florida; esteemed panfish",
+      "forms": [],
+      "id": "oewn-lepomis_punctatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Lepomis punctatus",
+      "synset": "oewn-02566580-n"
     },
     {
       "definition": "North American food and game fish",
@@ -4483,6 +4973,126 @@
       "lang": "en",
       "lemma": "black bass",
       "synset": "oewn-02567351-n"
+    },
+    {
+      "definition": "a variety of black bass",
+      "forms": [],
+      "id": "oewn-kentucky_black_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "Kentucky black bass",
+      "synset": "oewn-02567566-n"
+    },
+    {
+      "definition": "a variety of black bass",
+      "forms": [],
+      "id": "oewn-spotted_black_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "spotted black bass",
+      "synset": "oewn-02567566-n"
+    },
+    {
+      "definition": "a variety of black bass",
+      "forms": [],
+      "id": "oewn-micropterus_pseudoplites__1.05.00..",
+      "lang": "en",
+      "lemma": "Micropterus pseudoplites",
+      "synset": "oewn-02567566-n"
+    },
+    {
+      "definition": "a variety of black bass; the angle of the jaw falls below the eye",
+      "forms": [],
+      "id": "oewn-smallmouth__1.05.00..",
+      "lang": "en",
+      "lemma": "smallmouth",
+      "synset": "oewn-02567703-n"
+    },
+    {
+      "definition": "a variety of black bass; the angle of the jaw falls below the eye",
+      "forms": [],
+      "id": "oewn-smallmouth_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "smallmouth bass",
+      "synset": "oewn-02567703-n"
+    },
+    {
+      "definition": "a variety of black bass; the angle of the jaw falls below the eye",
+      "forms": [],
+      "id": "oewn-smallmouthed_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "smallmouthed bass",
+      "synset": "oewn-02567703-n"
+    },
+    {
+      "definition": "a variety of black bass; the angle of the jaw falls below the eye",
+      "forms": [],
+      "id": "oewn-smallmouth_black_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "smallmouth black bass",
+      "synset": "oewn-02567703-n"
+    },
+    {
+      "definition": "a variety of black bass; the angle of the jaw falls below the eye",
+      "forms": [],
+      "id": "oewn-smallmouthed_black_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "smallmouthed black bass",
+      "synset": "oewn-02567703-n"
+    },
+    {
+      "definition": "a variety of black bass; the angle of the jaw falls below the eye",
+      "forms": [],
+      "id": "oewn-micropterus_dolomieu__1.05.00..",
+      "lang": "en",
+      "lemma": "Micropterus dolomieu",
+      "synset": "oewn-02567703-n"
+    },
+    {
+      "definition": "a large black bass; the angle of the jaw falls behind the eye",
+      "forms": [],
+      "id": "oewn-largemouth__1.05.00..",
+      "lang": "en",
+      "lemma": "largemouth",
+      "synset": "oewn-02567955-n"
+    },
+    {
+      "definition": "a large black bass; the angle of the jaw falls behind the eye",
+      "forms": [],
+      "id": "oewn-largemouth_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "largemouth bass",
+      "synset": "oewn-02567955-n"
+    },
+    {
+      "definition": "a large black bass; the angle of the jaw falls behind the eye",
+      "forms": [],
+      "id": "oewn-largemouthed_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "largemouthed bass",
+      "synset": "oewn-02567955-n"
+    },
+    {
+      "definition": "a large black bass; the angle of the jaw falls behind the eye",
+      "forms": [],
+      "id": "oewn-largemouth_black_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "largemouth black bass",
+      "synset": "oewn-02567955-n"
+    },
+    {
+      "definition": "a large black bass; the angle of the jaw falls behind the eye",
+      "forms": [],
+      "id": "oewn-largemouthed_black_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "largemouthed black bass",
+      "synset": "oewn-02567955-n"
+    },
+    {
+      "definition": "a large black bass; the angle of the jaw falls behind the eye",
+      "forms": [],
+      "id": "oewn-micropterus_salmoides__1.05.00..",
+      "lang": "en",
+      "lemma": "Micropterus salmoides",
+      "synset": "oewn-02567955-n"
     },
     {
       "definition": "nontechnical name for any of numerous edible marine and freshwater spiny-finned fishes",
@@ -4555,6 +5165,212 @@
       "lang": "en",
       "lemma": "sea bass",
       "synset": "oewn-02569465-n"
+    },
+    {
+      "definition": "small marine fish with black mouth and gill cavity",
+      "forms": [],
+      "id": "oewn-blackmouth_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "blackmouth bass",
+      "synset": "oewn-02569965-n"
+    },
+    {
+      "definition": "small marine fish with black mouth and gill cavity",
+      "forms": [],
+      "id": "oewn-synagrops_bellus__1.05.00..",
+      "lang": "en",
+      "lemma": "Synagrops bellus",
+      "synset": "oewn-02569965-n"
+    },
+    {
+      "definition": "a kind of sea bass",
+      "forms": [],
+      "id": "oewn-rock_sea_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "rock sea bass",
+      "synset": "oewn-02570264-n"
+    },
+    {
+      "definition": "a kind of sea bass",
+      "forms": [],
+      "id": "oewn-rock_bass__1.05.02..",
+      "lang": "en",
+      "lemma": "rock bass",
+      "synset": "oewn-02570264-n"
+    },
+    {
+      "definition": "a kind of sea bass",
+      "forms": [],
+      "id": "oewn-centropristis_philadelphica__1.05.00..",
+      "lang": "en",
+      "lemma": "Centropristis philadelphica",
+      "synset": "oewn-02570264-n"
+    },
+    {
+      "definition": "bluish black-striped sea bass of the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-black_sea_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "black sea bass",
+      "synset": "oewn-02570403-n"
+    },
+    {
+      "definition": "bluish black-striped sea bass of the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-black_bass__1.05.02..",
+      "lang": "en",
+      "lemma": "black bass",
+      "synset": "oewn-02570403-n"
+    },
+    {
+      "definition": "bluish black-striped sea bass of the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-centropistes_striata__1.05.00..",
+      "lang": "en",
+      "lemma": "Centropistes striata",
+      "synset": "oewn-02570403-n"
+    },
+    {
+      "definition": "marine food and game fish with dark longitudinal stripes; migrates upriver to spawn; sometimes placed in the genus Morone",
+      "forms": [],
+      "id": "oewn-striped_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "striped bass",
+      "synset": "oewn-02570718-n"
+    },
+    {
+      "definition": "marine food and game fish with dark longitudinal stripes; migrates upriver to spawn; sometimes placed in the genus Morone",
+      "forms": [],
+      "id": "oewn-striper__1.05.00..",
+      "lang": "en",
+      "lemma": "striper",
+      "synset": "oewn-02570718-n"
+    },
+    {
+      "definition": "marine food and game fish with dark longitudinal stripes; migrates upriver to spawn; sometimes placed in the genus Morone",
+      "forms": [],
+      "id": "oewn-roccus_saxatilis__1.05.00..",
+      "lang": "en",
+      "lemma": "Roccus saxatilis",
+      "synset": "oewn-02570718-n"
+    },
+    {
+      "definition": "marine food and game fish with dark longitudinal stripes; migrates upriver to spawn; sometimes placed in the genus Morone",
+      "forms": [
+        "rockfishes"
+      ],
+      "id": "oewn-rockfish__1.05.02..",
+      "lang": "en",
+      "lemma": "rockfish",
+      "synset": "oewn-02570718-n"
+    },
+    {
+      "definition": "brown fish of the Atlantic and Mediterranean found around rocks and shipwrecks",
+      "forms": [],
+      "id": "oewn-stone_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "stone bass",
+      "synset": "oewn-02571078-n"
+    },
+    {
+      "definition": "brown fish of the Atlantic and Mediterranean found around rocks and shipwrecks",
+      "forms": [
+        "wreckfishes"
+      ],
+      "id": "oewn-wreckfish__1.05.00..",
+      "lang": "en",
+      "lemma": "wreckfish",
+      "synset": "oewn-02571078-n"
+    },
+    {
+      "definition": "brown fish of the Atlantic and Mediterranean found around rocks and shipwrecks",
+      "forms": [],
+      "id": "oewn-polyprion_americanus__1.05.00..",
+      "lang": "en",
+      "lemma": "Polyprion americanus",
+      "synset": "oewn-02571078-n"
+    },
+    {
+      "definition": "found in warm shallow waters of western Atlantic",
+      "forms": [],
+      "id": "oewn-belted_sandfish__1.05.00..",
+      "lang": "en",
+      "lemma": "belted sandfish",
+      "synset": "oewn-02571438-n"
+    },
+    {
+      "definition": "found in warm shallow waters of western Atlantic",
+      "forms": [],
+      "id": "oewn-serranus_subligarius__1.05.00..",
+      "lang": "en",
+      "lemma": "Serranus subligarius",
+      "synset": "oewn-02571438-n"
+    },
+    {
+      "definition": "usually solitary bottom sea basses of warm seas",
+      "forms": [],
+      "id": "oewn-grouper__1.05.00..",
+      "lang": "en",
+      "lemma": "grouper",
+      "synset": "oewn-02571590-n"
+    },
+    {
+      "definition": "black-spotted usually dusky-colored fish with reddish fins",
+      "forms": [],
+      "id": "oewn-coney__1.05.00..",
+      "lang": "en",
+      "lemma": "coney",
+      "synset": "oewn-02571965-n"
+    },
+    {
+      "definition": "black-spotted usually dusky-colored fish with reddish fins",
+      "forms": [],
+      "id": "oewn-epinephelus_fulvus__1.05.00..",
+      "lang": "en",
+      "lemma": "Epinephelus fulvus",
+      "synset": "oewn-02571965-n"
+    },
+    {
+      "definition": "any of several mostly spotted fishes that resemble groupers",
+      "forms": [],
+      "id": "oewn-hind__1.05.01..",
+      "lang": "en",
+      "lemma": "hind",
+      "synset": "oewn-02572115-n"
+    },
+    {
+      "definition": "deep-sea fish of tropical Atlantic",
+      "forms": [],
+      "id": "oewn-creole-fish__1.05.00..",
+      "lang": "en",
+      "lemma": "creole-fish",
+      "synset": "oewn-02572536-n"
+    },
+    {
+      "definition": "deep-sea fish of tropical Atlantic",
+      "forms": [],
+      "id": "oewn-paranthias_furcifer__1.05.00..",
+      "lang": "en",
+      "lemma": "Paranthias furcifer",
+      "synset": "oewn-02572536-n"
+    },
+    {
+      "definition": "large dark grouper with a thick head and rough scales",
+      "forms": [
+        "jewfishes"
+      ],
+      "id": "oewn-jewfish__1.05.00..",
+      "lang": "en",
+      "lemma": "jewfish",
+      "synset": "oewn-02572795-n"
+    },
+    {
+      "definition": "large dark grouper with a thick head and rough scales",
+      "forms": [],
+      "id": "oewn-mycteroperca_bonaci__1.05.00..",
+      "lang": "en",
+      "lemma": "Mycteroperca bonaci",
+      "synset": "oewn-02572795-n"
     },
     {
       "definition": "fishes with slimy mucus-covered skin; found in the warm Atlantic coastal waters of America",
@@ -4835,6 +5651,126 @@
       "synset": "oewn-02579206-n"
     },
     {
+      "definition": "fish of western Atlantic and Gulf of Mexico, also known as the common jack, black-tailed trevally, couvalli jack, black cavalli and yellow cavalli (Caranx hippos)",
+      "forms": [],
+      "id": "oewn-crevalle_jack__1.05.00..",
+      "lang": "en",
+      "lemma": "crevalle jack",
+      "synset": "oewn-02579537-n"
+    },
+    {
+      "definition": "fish of western Atlantic and Gulf of Mexico, also known as the common jack, black-tailed trevally, couvalli jack, black cavalli and yellow cavalli (Caranx hippos)",
+      "forms": [],
+      "id": "oewn-jack_crevalle__1.05.00..",
+      "lang": "en",
+      "lemma": "jack crevalle",
+      "synset": "oewn-02579537-n"
+    },
+    {
+      "definition": "fish of western Atlantic and Gulf of Mexico, also known as the common jack, black-tailed trevally, couvalli jack, black cavalli and yellow cavalli (Caranx hippos)",
+      "forms": [],
+      "id": "oewn-caranx_hippos__1.05.00..",
+      "lang": "en",
+      "lemma": "Caranx hippos",
+      "synset": "oewn-02579537-n"
+    },
+    {
+      "definition": "fish of western Atlantic and Gulf of Mexico, also known as the coolihoo (Caranx bartholomaei)",
+      "forms": [],
+      "id": "oewn-yellow_jack__1.05.00..",
+      "lang": "en",
+      "lemma": "yellow jack",
+      "synset": "oewn-02579672-n"
+    },
+    {
+      "definition": "fish of western Atlantic and Gulf of Mexico, also known as the coolihoo (Caranx bartholomaei)",
+      "forms": [],
+      "id": "oewn-caranx_bartholomaei__1.05.00..",
+      "lang": "en",
+      "lemma": "Caranx bartholomaei",
+      "synset": "oewn-02579672-n"
+    },
+    {
+      "definition": "fish of western Atlantic: Cape Cod to Brazil",
+      "forms": [],
+      "id": "oewn-runner__1.05.00..",
+      "lang": "en",
+      "lemma": "runner",
+      "synset": "oewn-02579795-n"
+    },
+    {
+      "definition": "fish of western Atlantic: Cape Cod to Brazil",
+      "forms": [],
+      "id": "oewn-blue_runner__1.05.00..",
+      "lang": "en",
+      "lemma": "blue runner",
+      "synset": "oewn-02579795-n"
+    },
+    {
+      "definition": "fish of western Atlantic: Cape Cod to Brazil",
+      "forms": [],
+      "id": "oewn-caranx_crysos__1.05.00..",
+      "lang": "en",
+      "lemma": "Caranx crysos",
+      "synset": "oewn-02579795-n"
+    },
+    {
+      "definition": "streamlined cigar-shaped jack; good game fish",
+      "forms": [],
+      "id": "oewn-rainbow_runner__1.05.00..",
+      "lang": "en",
+      "lemma": "rainbow runner",
+      "synset": "oewn-02580034-n"
+    },
+    {
+      "definition": "streamlined cigar-shaped jack; good game fish",
+      "forms": [],
+      "id": "oewn-elagatis_bipinnulata__1.05.00..",
+      "lang": "en",
+      "lemma": "Elagatis bipinnulata",
+      "synset": "oewn-02580034-n"
+    },
+    {
+      "definition": "any of several New World tropical fishes having tiny embedded scales",
+      "forms": [],
+      "id": "oewn-leatherjacket__1.05.02..",
+      "lang": "en",
+      "lemma": "leatherjacket",
+      "synset": "oewn-02580293-n"
+    },
+    {
+      "definition": "any of several New World tropical fishes having tiny embedded scales",
+      "forms": [],
+      "id": "oewn-leatherjack__1.05.00..",
+      "lang": "en",
+      "lemma": "leatherjack",
+      "synset": "oewn-02580293-n"
+    },
+    {
+      "definition": "fish having greatly elongated front rays on dorsal and anal fins",
+      "forms": [],
+      "id": "oewn-threadfish__1.05.00..",
+      "lang": "en",
+      "lemma": "threadfish",
+      "synset": "oewn-02580583-n"
+    },
+    {
+      "definition": "fish having greatly elongated front rays on dorsal and anal fins",
+      "forms": [],
+      "id": "oewn-thread-fish__1.05.00..",
+      "lang": "en",
+      "lemma": "thread-fish",
+      "synset": "oewn-02580583-n"
+    },
+    {
+      "definition": "fish having greatly elongated front rays on dorsal and anal fins",
+      "forms": [],
+      "id": "oewn-alectis_ciliaris__1.05.00..",
+      "lang": "en",
+      "lemma": "Alectis ciliaris",
+      "synset": "oewn-02580583-n"
+    },
+    {
       "definition": "any of several silvery marine fishes with very flat bodies",
       "forms": [
         "moonfishes"
@@ -4895,12 +5831,142 @@
       "synset": "oewn-02580864-n"
     },
     {
+      "definition": "similar to moonfish but with eyes high on the truncated forehead",
+      "forms": [],
+      "id": "oewn-lookdown__1.05.00..",
+      "lang": "en",
+      "lemma": "lookdown",
+      "synset": "oewn-02581085-n"
+    },
+    {
+      "definition": "similar to moonfish but with eyes high on the truncated forehead",
+      "forms": [],
+      "id": "oewn-lookdown_fish__1.05.00..",
+      "lang": "en",
+      "lemma": "lookdown fish",
+      "synset": "oewn-02581085-n"
+    },
+    {
+      "definition": "similar to moonfish but with eyes high on the truncated forehead",
+      "forms": [],
+      "id": "oewn-selene_vomer__1.05.00..",
+      "lang": "en",
+      "lemma": "Selene vomer",
+      "synset": "oewn-02581085-n"
+    },
+    {
+      "definition": "any of several amber to coppery fork-tailed warm-water carangid fishes",
+      "forms": [],
+      "id": "oewn-amberjack__1.05.00..",
+      "lang": "en",
+      "lemma": "amberjack",
+      "synset": "oewn-02581402-n"
+    },
+    {
+      "definition": "any of several amber to coppery fork-tailed warm-water carangid fishes",
+      "forms": [],
+      "id": "oewn-amberfish__1.05.00..",
+      "lang": "en",
+      "lemma": "amberfish",
+      "synset": "oewn-02581402-n"
+    },
+    {
+      "definition": "game fish of southern California and Mexico having a yellow tail fin",
+      "forms": [],
+      "id": "oewn-yellowtail__1.05.03..",
+      "lang": "en",
+      "lemma": "yellowtail",
+      "synset": "oewn-02581559-n"
+    },
+    {
+      "definition": "game fish of southern California and Mexico having a yellow tail fin",
+      "forms": [],
+      "id": "oewn-seriola_dorsalis__1.05.00..",
+      "lang": "en",
+      "lemma": "Seriola dorsalis",
+      "synset": "oewn-02581559-n"
+    },
+    {
+      "definition": "fish having the habit of following ships; found in North American and South American coastal waters",
+      "forms": [],
+      "id": "oewn-rudderfish__1.05.01..",
+      "lang": "en",
+      "lemma": "rudderfish",
+      "synset": "oewn-02581722-n"
+    },
+    {
+      "definition": "fish having the habit of following ships; found in North American and South American coastal waters",
+      "forms": [],
+      "id": "oewn-banded_rudderfish__1.05.00..",
+      "lang": "en",
+      "lemma": "banded rudderfish",
+      "synset": "oewn-02581722-n"
+    },
+    {
+      "definition": "fish having the habit of following ships; found in North American and South American coastal waters",
+      "forms": [],
+      "id": "oewn-seriola_zonata__1.05.00..",
+      "lang": "en",
+      "lemma": "Seriola zonata",
+      "synset": "oewn-02581722-n"
+    },
+    {
+      "definition": "large game fish of Australia and New Zealand",
+      "forms": [
+        "kingfishes"
+      ],
+      "id": "oewn-kingfish__1.05.04..",
+      "lang": "en",
+      "lemma": "kingfish",
+      "synset": "oewn-02581934-n"
+    },
+    {
+      "definition": "large game fish of Australia and New Zealand",
+      "forms": [],
+      "id": "oewn-seriola_grandis__1.05.00..",
+      "lang": "en",
+      "lemma": "Seriola grandis",
+      "synset": "oewn-02581934-n"
+    },
+    {
       "definition": "any of several deep-bodied food fishes of western Atlantic and Gulf of Mexico",
       "forms": [],
       "id": "oewn-pompano__1.05.00..",
       "lang": "en",
       "lemma": "pompano",
       "synset": "oewn-02582188-n"
+    },
+    {
+      "definition": "found in coastal waters New England to Brazil except clear waters of West Indies",
+      "forms": [],
+      "id": "oewn-florida_pompano__1.05.00..",
+      "lang": "en",
+      "lemma": "Florida pompano",
+      "synset": "oewn-02582393-n"
+    },
+    {
+      "definition": "found in coastal waters New England to Brazil except clear waters of West Indies",
+      "forms": [],
+      "id": "oewn-trachinotus_carolinus__1.05.00..",
+      "lang": "en",
+      "lemma": "Trachinotus carolinus",
+      "synset": "oewn-02582393-n"
+    },
+    {
+      "definition": "large game fish; found in waters of the West Indies",
+      "forms": [],
+      "id": "oewn-permit__1.05.00..",
+      "lang": "en",
+      "lemma": "permit",
+      "synset": "oewn-02582559-n"
+    },
+    {
+      "definition": "large game fish; found in waters of the West Indies",
+      "forms": [],
+      "id": "oewn-trachinotus_falcatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Trachinotus falcatus",
+      "synset": "oewn-02582559-n"
     },
     {
       "definition": "small pelagic fish often accompanying sharks or mantas",
@@ -4925,6 +5991,158 @@
       "lang": "en",
       "lemma": "scad",
       "synset": "oewn-02582967-n"
+    },
+    {
+      "definition": "a California food fish",
+      "forms": [],
+      "id": "oewn-horse_mackerel__1.05.01..",
+      "lang": "en",
+      "lemma": "horse mackerel",
+      "synset": "oewn-02583310-n"
+    },
+    {
+      "definition": "a California food fish",
+      "forms": [],
+      "id": "oewn-jack_mackerel__1.05.00..",
+      "lang": "en",
+      "lemma": "jack mackerel",
+      "synset": "oewn-02583310-n"
+    },
+    {
+      "definition": "a California food fish",
+      "forms": [],
+      "id": "oewn-spanish_mackerel__1.05.03..",
+      "lang": "en",
+      "lemma": "Spanish mackerel",
+      "synset": "oewn-02583310-n"
+    },
+    {
+      "definition": "a California food fish",
+      "forms": [],
+      "id": "oewn-saurel__1.05.02..",
+      "lang": "en",
+      "lemma": "saurel",
+      "synset": "oewn-02583310-n"
+    },
+    {
+      "definition": "a California food fish",
+      "forms": [],
+      "id": "oewn-trachurus_symmetricus__1.05.00..",
+      "lang": "en",
+      "lemma": "Trachurus symmetricus",
+      "synset": "oewn-02583310-n"
+    },
+    {
+      "definition": "large elongated compressed food fish of the Atlantic waters of Europe",
+      "forms": [],
+      "id": "oewn-horse_mackerel__1.05.02..",
+      "lang": "en",
+      "lemma": "horse mackerel",
+      "synset": "oewn-02583461-n"
+    },
+    {
+      "definition": "large elongated compressed food fish of the Atlantic waters of Europe",
+      "forms": [],
+      "id": "oewn-saurel__1.05.01..",
+      "lang": "en",
+      "lemma": "saurel",
+      "synset": "oewn-02583461-n"
+    },
+    {
+      "definition": "large elongated compressed food fish of the Atlantic waters of Europe",
+      "forms": [],
+      "id": "oewn-trachurus_trachurus__1.05.00..",
+      "lang": "en",
+      "lemma": "Trachurus trachurus",
+      "synset": "oewn-02583461-n"
+    },
+    {
+      "definition": "of Atlantic coastal waters; commonly used for bait",
+      "forms": [],
+      "id": "oewn-bigeye_scad__1.05.00..",
+      "lang": "en",
+      "lemma": "bigeye scad",
+      "synset": "oewn-02583739-n"
+    },
+    {
+      "definition": "of Atlantic coastal waters; commonly used for bait",
+      "forms": [],
+      "id": "oewn-big-eyed_scad__1.05.00..",
+      "lang": "en",
+      "lemma": "big-eyed scad",
+      "synset": "oewn-02583739-n"
+    },
+    {
+      "definition": "of Atlantic coastal waters; commonly used for bait",
+      "forms": [],
+      "id": "oewn-goggle-eye__1.05.00..",
+      "lang": "en",
+      "lemma": "goggle-eye",
+      "synset": "oewn-02583739-n"
+    },
+    {
+      "definition": "of Atlantic coastal waters; commonly used for bait",
+      "forms": [],
+      "id": "oewn-selar_crumenophthalmus__1.05.00..",
+      "lang": "en",
+      "lemma": "Selar crumenophthalmus",
+      "synset": "oewn-02583739-n"
+    },
+    {
+      "definition": "small silvery fish; Nova Scotia to Brazil",
+      "forms": [],
+      "id": "oewn-mackerel_scad__1.05.00..",
+      "lang": "en",
+      "lemma": "mackerel scad",
+      "synset": "oewn-02584113-n"
+    },
+    {
+      "definition": "small silvery fish; Nova Scotia to Brazil",
+      "forms": [],
+      "id": "oewn-mackerel_shad__1.05.00..",
+      "lang": "en",
+      "lemma": "mackerel shad",
+      "synset": "oewn-02584113-n"
+    },
+    {
+      "definition": "small silvery fish; Nova Scotia to Brazil",
+      "forms": [],
+      "id": "oewn-decapterus_macarellus__1.05.00..",
+      "lang": "en",
+      "lemma": "Decapterus macarellus",
+      "synset": "oewn-02584113-n"
+    },
+    {
+      "definition": "small fusiform fish of western Atlantic",
+      "forms": [],
+      "id": "oewn-round_scad__1.05.00..",
+      "lang": "en",
+      "lemma": "round scad",
+      "synset": "oewn-02584273-n"
+    },
+    {
+      "definition": "small fusiform fish of western Atlantic",
+      "forms": [],
+      "id": "oewn-cigarfish__1.05.00..",
+      "lang": "en",
+      "lemma": "cigarfish",
+      "synset": "oewn-02584273-n"
+    },
+    {
+      "definition": "small fusiform fish of western Atlantic",
+      "forms": [],
+      "id": "oewn-quiaquia__1.05.00..",
+      "lang": "en",
+      "lemma": "quiaquia",
+      "synset": "oewn-02584273-n"
+    },
+    {
+      "definition": "small fusiform fish of western Atlantic",
+      "forms": [],
+      "id": "oewn-decapterus_punctatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Decapterus punctatus",
+      "synset": "oewn-02584273-n"
     },
     {
       "definition": "large slender food and game fish widely distributed in warm seas (especially around Hawaii)",
@@ -5437,6 +6655,22 @@
       "synset": "oewn-02593617-n"
     },
     {
+      "definition": "food fish of the Mediterranean and Atlantic coasts of Europe and America",
+      "forms": [],
+      "id": "oewn-red_porgy__1.05.00..",
+      "lang": "en",
+      "lemma": "red porgy",
+      "synset": "oewn-02593960-n"
+    },
+    {
+      "definition": "food fish of the Mediterranean and Atlantic coasts of Europe and America",
+      "forms": [],
+      "id": "oewn-pagrus_pagrus__1.05.00..",
+      "lang": "en",
+      "lemma": "Pagrus pagrus",
+      "synset": "oewn-02593960-n"
+    },
+    {
       "definition": "food fish of European coastal waters",
       "forms": [],
       "id": "oewn-european_sea_bream__1.05.00..",
@@ -5521,6 +6755,22 @@
       "synset": "oewn-02595001-n"
     },
     {
+      "definition": "from Florida and Bahamas to Brazil",
+      "forms": [],
+      "id": "oewn-sheepshead_porgy__1.05.00..",
+      "lang": "en",
+      "lemma": "sheepshead porgy",
+      "synset": "oewn-02595364-n"
+    },
+    {
+      "definition": "from Florida and Bahamas to Brazil",
+      "forms": [],
+      "id": "oewn-calamus_penna__1.05.00..",
+      "lang": "en",
+      "lemma": "Calamus penna",
+      "synset": "oewn-02595364-n"
+    },
+    {
       "definition": "Australian food fish having a pinkish body with blue spots",
       "forms": [],
       "id": "oewn-snapper__1.05.02..",
@@ -5551,6 +6801,70 @@
       "lang": "en",
       "lemma": "Chrysophrys australis",
       "synset": "oewn-02595821-n"
+    },
+    {
+      "definition": "found in Atlantic coastal waters of North America from South Carolina to Maine; esteemed as a panfish",
+      "forms": [],
+      "id": "oewn-scup__1.05.02..",
+      "lang": "en",
+      "lemma": "scup",
+      "synset": "oewn-02596083-n"
+    },
+    {
+      "definition": "found in Atlantic coastal waters of North America from South Carolina to Maine; esteemed as a panfish",
+      "forms": [],
+      "id": "oewn-northern_porgy__1.05.00..",
+      "lang": "en",
+      "lemma": "northern porgy",
+      "synset": "oewn-02596083-n"
+    },
+    {
+      "definition": "found in Atlantic coastal waters of North America from South Carolina to Maine; esteemed as a panfish",
+      "forms": [],
+      "id": "oewn-northern_scup__1.05.00..",
+      "lang": "en",
+      "lemma": "northern scup",
+      "synset": "oewn-02596083-n"
+    },
+    {
+      "definition": "found in Atlantic coastal waters of North America from South Carolina to Maine; esteemed as a panfish",
+      "forms": [],
+      "id": "oewn-stenotomus_chrysops__1.05.00..",
+      "lang": "en",
+      "lemma": "Stenotomus chrysops",
+      "synset": "oewn-02596083-n"
+    },
+    {
+      "definition": "porgy of southern Atlantic coastal waters of North America",
+      "forms": [],
+      "id": "oewn-scup__1.05.01..",
+      "lang": "en",
+      "lemma": "scup",
+      "synset": "oewn-02596309-n"
+    },
+    {
+      "definition": "porgy of southern Atlantic coastal waters of North America",
+      "forms": [],
+      "id": "oewn-southern_porgy__1.05.00..",
+      "lang": "en",
+      "lemma": "southern porgy",
+      "synset": "oewn-02596309-n"
+    },
+    {
+      "definition": "porgy of southern Atlantic coastal waters of North America",
+      "forms": [],
+      "id": "oewn-southern_scup__1.05.00..",
+      "lang": "en",
+      "lemma": "southern scup",
+      "synset": "oewn-02596309-n"
+    },
+    {
+      "definition": "porgy of southern Atlantic coastal waters of North America",
+      "forms": [],
+      "id": "oewn-stenotomus_aculeatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Stenotomus aculeatus",
+      "synset": "oewn-02596309-n"
     },
     {
       "definition": "widely distributed family of carnivorous percoid fishes having a large air bladder used to produce sound",
@@ -5585,6 +6899,98 @@
       "lang": "en",
       "lemma": "drumfish",
       "synset": "oewn-02597182-n"
+    },
+    {
+      "definition": "a kind of drumfish",
+      "forms": [],
+      "id": "oewn-striped_drum__1.05.00..",
+      "lang": "en",
+      "lemma": "striped drum",
+      "synset": "oewn-02597572-n"
+    },
+    {
+      "definition": "a kind of drumfish",
+      "forms": [],
+      "id": "oewn-equetus_pulcher__1.05.00..",
+      "lang": "en",
+      "lemma": "Equetus pulcher",
+      "synset": "oewn-02597572-n"
+    },
+    {
+      "definition": "black-and-white drumfish with an erect elongated dorsal fin",
+      "forms": [],
+      "id": "oewn-jackknife-fish__1.05.00..",
+      "lang": "en",
+      "lemma": "jackknife-fish",
+      "synset": "oewn-02597686-n"
+    },
+    {
+      "definition": "black-and-white drumfish with an erect elongated dorsal fin",
+      "forms": [],
+      "id": "oewn-equetus_lanceolatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Equetus lanceolatus",
+      "synset": "oewn-02597686-n"
+    },
+    {
+      "definition": "small silvery drumfish often mistaken for white perch; found along coasts of United States from New York to Mexico",
+      "forms": [],
+      "id": "oewn-silver_perch__1.05.02..",
+      "lang": "en",
+      "lemma": "silver perch",
+      "synset": "oewn-02597969-n"
+    },
+    {
+      "definition": "small silvery drumfish often mistaken for white perch; found along coasts of United States from New York to Mexico",
+      "forms": [
+        "mesdemoiselles"
+      ],
+      "id": "oewn-mademoiselle__1.05.00..",
+      "lang": "en",
+      "lemma": "mademoiselle",
+      "synset": "oewn-02597969-n"
+    },
+    {
+      "definition": "small silvery drumfish often mistaken for white perch; found along coasts of United States from New York to Mexico",
+      "forms": [],
+      "id": "oewn-bairdiella_chrysoura__1.05.00..",
+      "lang": "en",
+      "lemma": "Bairdiella chrysoura",
+      "synset": "oewn-02597969-n"
+    },
+    {
+      "definition": "large edible fish found off coast of United States from Massachusetts to Mexico",
+      "forms": [],
+      "id": "oewn-red_drum__1.05.00..",
+      "lang": "en",
+      "lemma": "red drum",
+      "synset": "oewn-02598332-n"
+    },
+    {
+      "definition": "large edible fish found off coast of United States from Massachusetts to Mexico",
+      "forms": [],
+      "id": "oewn-channel_bass__1.05.00..",
+      "lang": "en",
+      "lemma": "channel bass",
+      "synset": "oewn-02598332-n"
+    },
+    {
+      "definition": "large edible fish found off coast of United States from Massachusetts to Mexico",
+      "forms": [
+        "redfishes"
+      ],
+      "id": "oewn-redfish__1.05.02..",
+      "lang": "en",
+      "lemma": "redfish",
+      "synset": "oewn-02598332-n"
+    },
+    {
+      "definition": "large edible fish found off coast of United States from Massachusetts to Mexico",
+      "forms": [],
+      "id": "oewn-sciaenops_ocellatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sciaenops ocellatus",
+      "synset": "oewn-02598332-n"
     },
     {
       "definition": "large important food fish of Australia; almost indistinguishable from the maigre",
@@ -5645,6 +7051,54 @@
       "synset": "oewn-02599011-n"
     },
     {
+      "definition": "a silvery-bodied croaker with dark markings and tiny barbels",
+      "forms": [],
+      "id": "oewn-atlantic_croaker__1.05.00..",
+      "lang": "en",
+      "lemma": "Atlantic croaker",
+      "synset": "oewn-02599350-n"
+    },
+    {
+      "definition": "a silvery-bodied croaker with dark markings and tiny barbels",
+      "forms": [],
+      "id": "oewn-micropogonias_undulatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Micropogonias undulatus",
+      "synset": "oewn-02599350-n"
+    },
+    {
+      "definition": "a fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-yellowfin_croaker__1.05.00..",
+      "lang": "en",
+      "lemma": "yellowfin croaker",
+      "synset": "oewn-02599634-n"
+    },
+    {
+      "definition": "a fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-surffish__1.05.02..",
+      "lang": "en",
+      "lemma": "surffish",
+      "synset": "oewn-02599634-n"
+    },
+    {
+      "definition": "a fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-surf_fish__1.05.02..",
+      "lang": "en",
+      "lemma": "surf fish",
+      "synset": "oewn-02599634-n"
+    },
+    {
+      "definition": "a fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-umbrina_roncador__1.05.00..",
+      "lang": "en",
+      "lemma": "Umbrina roncador",
+      "synset": "oewn-02599634-n"
+    },
+    {
       "definition": "any of several food fishes of North American coastal waters",
       "forms": [],
       "id": "oewn-whiting__1.05.01..",
@@ -5653,12 +7107,194 @@
       "synset": "oewn-02599997-n"
     },
     {
+      "definition": "any of several food and game fishes of the drum family indigenous to warm Atlantic waters of the North American coast",
+      "forms": [
+        "kingfishes"
+      ],
+      "id": "oewn-kingfish__1.05.01..",
+      "lang": "en",
+      "lemma": "kingfish",
+      "synset": "oewn-02600238-n"
+    },
+    {
+      "definition": "whiting of the southeastern coast of North America",
+      "forms": [],
+      "id": "oewn-king_whiting__1.05.00..",
+      "lang": "en",
+      "lemma": "king whiting",
+      "synset": "oewn-02600448-n"
+    },
+    {
+      "definition": "whiting of the southeastern coast of North America",
+      "forms": [],
+      "id": "oewn-menticirrhus_americanus__1.05.00..",
+      "lang": "en",
+      "lemma": "Menticirrhus americanus",
+      "synset": "oewn-02600448-n"
+    },
+    {
+      "definition": "whiting of the east coast of United States; closely resembles king whiting",
+      "forms": [],
+      "id": "oewn-northern_whiting__1.05.00..",
+      "lang": "en",
+      "lemma": "northern whiting",
+      "synset": "oewn-02600602-n"
+    },
+    {
+      "definition": "whiting of the east coast of United States; closely resembles king whiting",
+      "forms": [],
+      "id": "oewn-menticirrhus_saxatilis__1.05.00..",
+      "lang": "en",
+      "lemma": "Menticirrhus saxatilis",
+      "synset": "oewn-02600602-n"
+    },
+    {
+      "definition": "bluish-grey whiting of California coast",
+      "forms": [],
+      "id": "oewn-corbina__1.05.00..",
+      "lang": "en",
+      "lemma": "corbina",
+      "synset": "oewn-02600764-n"
+    },
+    {
+      "definition": "bluish-grey whiting of California coast",
+      "forms": [],
+      "id": "oewn-menticirrhus_undulatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Menticirrhus undulatus",
+      "synset": "oewn-02600764-n"
+    },
+    {
+      "definition": "a dull silvery whiting of southern Atlantic and Gulf Coasts of the United States",
+      "forms": [],
+      "id": "oewn-silver_whiting__1.05.00..",
+      "lang": "en",
+      "lemma": "silver whiting",
+      "synset": "oewn-02600882-n"
+    },
+    {
+      "definition": "a dull silvery whiting of southern Atlantic and Gulf Coasts of the United States",
+      "forms": [],
+      "id": "oewn-menticirrhus_littoralis__1.05.00..",
+      "lang": "en",
+      "lemma": "Menticirrhus littoralis",
+      "synset": "oewn-02600882-n"
+    },
+    {
+      "definition": "small silvery marine food fish found off California",
+      "forms": [],
+      "id": "oewn-white_croaker__1.05.01..",
+      "lang": "en",
+      "lemma": "white croaker",
+      "synset": "oewn-02601203-n"
+    },
+    {
+      "definition": "small silvery marine food fish found off California",
+      "forms": [],
+      "id": "oewn-chenfish__1.05.00..",
+      "lang": "en",
+      "lemma": "chenfish",
+      "synset": "oewn-02601203-n"
+    },
+    {
+      "definition": "small silvery marine food fish found off California",
+      "forms": [
+        "kingfishes"
+      ],
+      "id": "oewn-kingfish__1.05.03..",
+      "lang": "en",
+      "lemma": "kingfish",
+      "synset": "oewn-02601203-n"
+    },
+    {
+      "definition": "small silvery marine food fish found off California",
+      "forms": [],
+      "id": "oewn-genyonemus_lineatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Genyonemus lineatus",
+      "synset": "oewn-02601203-n"
+    },
+    {
+      "definition": "silvery and bluish drumfish of shallow California coastal waters",
+      "forms": [],
+      "id": "oewn-white_croaker__1.05.02..",
+      "lang": "en",
+      "lemma": "white croaker",
+      "synset": "oewn-02601508-n"
+    },
+    {
+      "definition": "silvery and bluish drumfish of shallow California coastal waters",
+      "forms": [],
+      "id": "oewn-queenfish__1.05.00..",
+      "lang": "en",
+      "lemma": "queenfish",
+      "synset": "oewn-02601508-n"
+    },
+    {
+      "definition": "silvery and bluish drumfish of shallow California coastal waters",
+      "forms": [],
+      "id": "oewn-seriphus_politus__1.05.00..",
+      "lang": "en",
+      "lemma": "Seriphus politus",
+      "synset": "oewn-02601508-n"
+    },
+    {
       "definition": "any of several sciaenid fishes of North American coastal waters",
       "forms": [],
       "id": "oewn-sea_trout__1.05.02..",
       "lang": "en",
       "lemma": "sea trout",
       "synset": "oewn-02601682-n"
+    },
+    {
+      "definition": "food and game fish of North American coastal waters with a mouth from which hooks easily tear out",
+      "forms": [
+        "weakfishes"
+      ],
+      "id": "oewn-weakfish__1.05.00..",
+      "lang": "en",
+      "lemma": "weakfish",
+      "synset": "oewn-02601977-n"
+    },
+    {
+      "definition": "food and game fish of North American coastal waters with a mouth from which hooks easily tear out",
+      "forms": [],
+      "id": "oewn-cynoscion_regalis__1.05.00..",
+      "lang": "en",
+      "lemma": "Cynoscion regalis",
+      "synset": "oewn-02601977-n"
+    },
+    {
+      "definition": "weakfish of southern Atlantic and Gulf Coasts of United States",
+      "forms": [],
+      "id": "oewn-spotted_weakfish__1.05.00..",
+      "lang": "en",
+      "lemma": "spotted weakfish",
+      "synset": "oewn-02602187-n"
+    },
+    {
+      "definition": "weakfish of southern Atlantic and Gulf Coasts of United States",
+      "forms": [],
+      "id": "oewn-spotted_sea_trout__1.05.00..",
+      "lang": "en",
+      "lemma": "spotted sea trout",
+      "synset": "oewn-02602187-n"
+    },
+    {
+      "definition": "weakfish of southern Atlantic and Gulf Coasts of United States",
+      "forms": [],
+      "id": "oewn-spotted_squeateague__1.05.00..",
+      "lang": "en",
+      "lemma": "spotted squeateague",
+      "synset": "oewn-02602187-n"
+    },
+    {
+      "definition": "weakfish of southern Atlantic and Gulf Coasts of United States",
+      "forms": [],
+      "id": "oewn-cynoscion_nebulosus__1.05.00..",
+      "lang": "en",
+      "lemma": "Cynoscion nebulosus",
+      "synset": "oewn-02602187-n"
     },
     {
       "definition": "bottom dwelling marine warm water fishes with two barbels on the chin",
@@ -5701,6 +7337,38 @@
       "lang": "en",
       "lemma": "Mullus surmuletus",
       "synset": "oewn-02602928-n"
+    },
+    {
+      "definition": "body bright scarlet with 2 yellow to reddish strips on side",
+      "forms": [],
+      "id": "oewn-red_goatfish__1.05.00..",
+      "lang": "en",
+      "lemma": "red goatfish",
+      "synset": "oewn-02603133-n"
+    },
+    {
+      "definition": "body bright scarlet with 2 yellow to reddish strips on side",
+      "forms": [],
+      "id": "oewn-mullus_auratus__1.05.00..",
+      "lang": "en",
+      "lemma": "Mullus auratus",
+      "synset": "oewn-02603133-n"
+    },
+    {
+      "definition": "schooling goatfish; greyish with yellow stripe",
+      "forms": [],
+      "id": "oewn-yellow_goatfish__1.05.00..",
+      "lang": "en",
+      "lemma": "yellow goatfish",
+      "synset": "oewn-02603428-n"
+    },
+    {
+      "definition": "schooling goatfish; greyish with yellow stripe",
+      "forms": [],
+      "id": "oewn-mulloidichthys_martinicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Mulloidichthys martinicus",
+      "synset": "oewn-02603428-n"
     },
     {
       "definition": "freshwater or coastal food fishes a spindle-shaped body; found worldwide",
@@ -5983,6 +7651,22 @@
       "synset": "oewn-02609702-n"
     },
     {
+      "definition": "an anemone fish of the genus Amphiprion",
+      "forms": [],
+      "id": "oewn-clown_anemone_fish__1.05.00..",
+      "lang": "en",
+      "lemma": "clown anemone fish",
+      "synset": "oewn-02609831-n"
+    },
+    {
+      "definition": "an anemone fish of the genus Amphiprion",
+      "forms": [],
+      "id": "oewn-amphiprion_percula__1.05.00..",
+      "lang": "en",
+      "lemma": "Amphiprion percula",
+      "synset": "oewn-02609831-n"
+    },
+    {
       "definition": "large blue-grey black-striped damselfish; nearly worldwide",
       "forms": [],
       "id": "oewn-sergeant_major__1.05.00..",
@@ -6129,6 +7813,22 @@
       "lang": "en",
       "lemma": "razor-fish",
       "synset": "oewn-02612247-n"
+    },
+    {
+      "definition": "a kind of razor fish",
+      "forms": [],
+      "id": "oewn-pearly_razorfish__1.05.00..",
+      "lang": "en",
+      "lemma": "pearly razorfish",
+      "synset": "oewn-02612453-n"
+    },
+    {
+      "definition": "a kind of razor fish",
+      "forms": [],
+      "id": "oewn-hemipteronatus_novacula__1.05.00..",
+      "lang": "en",
+      "lemma": "Hemipteronatus novacula",
+      "synset": "oewn-02612453-n"
     },
     {
       "definition": "large dark-colored food fish of the Atlantic coast of North America",
@@ -6287,6 +7987,38 @@
       "synset": "oewn-02615811-n"
     },
     {
+      "definition": "European scaleless blenny",
+      "forms": [],
+      "id": "oewn-shanny__1.05.00..",
+      "lang": "en",
+      "lemma": "shanny",
+      "synset": "oewn-02616202-n"
+    },
+    {
+      "definition": "European scaleless blenny",
+      "forms": [],
+      "id": "oewn-blennius_pholis__1.05.00..",
+      "lang": "en",
+      "lemma": "Blennius pholis",
+      "synset": "oewn-02616202-n"
+    },
+    {
+      "definition": "inhabits both coasts of tropical Atlantic",
+      "forms": [],
+      "id": "oewn-molly_miller__1.05.00..",
+      "lang": "en",
+      "lemma": "Molly Miller",
+      "synset": "oewn-02616450-n"
+    },
+    {
+      "definition": "inhabits both coasts of tropical Atlantic",
+      "forms": [],
+      "id": "oewn-scartella_cristata__1.05.00..",
+      "lang": "en",
+      "lemma": "Scartella cristata",
+      "synset": "oewn-02616450-n"
+    },
+    {
       "definition": "mostly small blennioid fishes of coral reefs and seagrass beds",
       "forms": [],
       "id": "oewn-clinid__1.05.00..",
@@ -6311,6 +8043,22 @@
       "synset": "oewn-02617112-n"
     },
     {
+      "definition": "found from Florida to Cuba",
+      "forms": [],
+      "id": "oewn-bluethroat_pikeblenny__1.05.00..",
+      "lang": "en",
+      "lemma": "bluethroat pikeblenny",
+      "synset": "oewn-02617283-n"
+    },
+    {
+      "definition": "found from Florida to Cuba",
+      "forms": [],
+      "id": "oewn-chaenopsis_ocellata__1.05.00..",
+      "lang": "en",
+      "lemma": "Chaenopsis ocellata",
+      "synset": "oewn-02617283-n"
+    },
+    {
       "definition": "small eellike fishes common in shallow waters of the northern Atlantic",
       "forms": [],
       "id": "oewn-gunnel__1.05.00..",
@@ -6327,12 +8075,62 @@
       "synset": "oewn-02617608-n"
     },
     {
+      "definition": "slippery scaleless food fish of the northern Atlantic coastal waters",
+      "forms": [],
+      "id": "oewn-rock_gunnel__1.05.00..",
+      "lang": "en",
+      "lemma": "rock gunnel",
+      "synset": "oewn-02617928-n"
+    },
+    {
+      "definition": "slippery scaleless food fish of the northern Atlantic coastal waters",
+      "forms": [
+        "butterfishes"
+      ],
+      "id": "oewn-butterfish__1.05.02..",
+      "lang": "en",
+      "lemma": "butterfish",
+      "synset": "oewn-02617928-n"
+    },
+    {
+      "definition": "slippery scaleless food fish of the northern Atlantic coastal waters",
+      "forms": [],
+      "id": "oewn-pholis_gunnellus__1.05.00..",
+      "lang": "en",
+      "lemma": "Pholis gunnellus",
+      "synset": "oewn-02617928-n"
+    },
+    {
       "definition": "small elongate fishes of shallow northern seas; a long dorsal fin consists entirely of spines",
       "forms": [],
       "id": "oewn-prickleback__1.05.00..",
       "lang": "en",
       "lemma": "prickleback",
       "synset": "oewn-02618272-n"
+    },
+    {
+      "definition": "found in Arctic and northern Atlantic waters",
+      "forms": [],
+      "id": "oewn-snakeblenny__1.05.00..",
+      "lang": "en",
+      "lemma": "snakeblenny",
+      "synset": "oewn-02618610-n"
+    },
+    {
+      "definition": "found in Arctic and northern Atlantic waters",
+      "forms": [],
+      "id": "oewn-lumpenus_lumpretaeformis__1.05.00..",
+      "lang": "en",
+      "lemma": "Lumpenus lumpretaeformis",
+      "synset": "oewn-02618610-n"
+    },
+    {
+      "definition": "eellike fishes found in subarctic coastal waters",
+      "forms": [],
+      "id": "oewn-eelblenny__1.05.00..",
+      "lang": "en",
+      "lemma": "eelblenny",
+      "synset": "oewn-02618758-n"
     },
     {
       "definition": "eellike Atlantic bottom fish with large almost vertical mouth",
@@ -6401,6 +8199,54 @@
       "lang": "en",
       "lemma": "pout",
       "synset": "oewn-02619837-n"
+    },
+    {
+      "definition": "an eelpout of northern Europe that is viviparous",
+      "forms": [],
+      "id": "oewn-viviparous_eelpout__1.05.00..",
+      "lang": "en",
+      "lemma": "viviparous eelpout",
+      "synset": "oewn-02620167-n"
+    },
+    {
+      "definition": "an eelpout of northern Europe that is viviparous",
+      "forms": [],
+      "id": "oewn-zoarces_viviparus__1.05.00..",
+      "lang": "en",
+      "lemma": "Zoarces viviparus",
+      "synset": "oewn-02620167-n"
+    },
+    {
+      "definition": "brightly colored scaleless Arctic eelpout",
+      "forms": [],
+      "id": "oewn-fish_doctor__1.05.00..",
+      "lang": "en",
+      "lemma": "fish doctor",
+      "synset": "oewn-02620449-n"
+    },
+    {
+      "definition": "brightly colored scaleless Arctic eelpout",
+      "forms": [],
+      "id": "oewn-gymnelis_viridis__1.05.00..",
+      "lang": "en",
+      "lemma": "Gymnelis viridis",
+      "synset": "oewn-02620449-n"
+    },
+    {
+      "definition": "common along northeastern coast of North America",
+      "forms": [],
+      "id": "oewn-ocean_pout__1.05.00..",
+      "lang": "en",
+      "lemma": "ocean pout",
+      "synset": "oewn-02620724-n"
+    },
+    {
+      "definition": "common along northeastern coast of North America",
+      "forms": [],
+      "id": "oewn-macrozoarces_americanus__1.05.00..",
+      "lang": "en",
+      "lemma": "Macrozoarces americanus",
+      "synset": "oewn-02620724-n"
     },
     {
       "definition": "very small silvery eellike schooling fishes that burrow into sandy beaches",
@@ -6663,6 +8509,184 @@
       "synset": "oewn-02626797-n"
     },
     {
+      "definition": "important food fish of the northern Atlantic and Mediterranean; its body is greenish-blue with dark bars and small if any scales",
+      "forms": [],
+      "id": "oewn-common_mackerel__1.05.00..",
+      "lang": "en",
+      "lemma": "common mackerel",
+      "synset": "oewn-02627181-n"
+    },
+    {
+      "definition": "important food fish of the northern Atlantic and Mediterranean; its body is greenish-blue with dark bars and small if any scales",
+      "forms": [],
+      "id": "oewn-shiner__1.05.02..",
+      "lang": "en",
+      "lemma": "shiner",
+      "synset": "oewn-02627181-n"
+    },
+    {
+      "definition": "important food fish of the northern Atlantic and Mediterranean; its body is greenish-blue with dark bars and small if any scales",
+      "forms": [],
+      "id": "oewn-scomber_scombrus__1.05.00..",
+      "lang": "en",
+      "lemma": "Scomber scombrus",
+      "synset": "oewn-02627181-n"
+    },
+    {
+      "definition": "medium-sized mackerel of temperate Atlantic and Gulf of Mexico",
+      "forms": [],
+      "id": "oewn-spanish_mackerel__1.05.02..",
+      "lang": "en",
+      "lemma": "Spanish mackerel",
+      "synset": "oewn-02627437-n"
+    },
+    {
+      "definition": "medium-sized mackerel of temperate Atlantic and Gulf of Mexico",
+      "forms": [],
+      "id": "oewn-scomber_colias__1.05.00..",
+      "lang": "en",
+      "lemma": "Scomber colias",
+      "synset": "oewn-02627437-n"
+    },
+    {
+      "definition": "small mackerel found nearly worldwide",
+      "forms": [],
+      "id": "oewn-chub_mackerel__1.05.00..",
+      "lang": "en",
+      "lemma": "chub mackerel",
+      "synset": "oewn-02627617-n"
+    },
+    {
+      "definition": "small mackerel found nearly worldwide",
+      "forms": [],
+      "id": "oewn-tinker__1.05.00..",
+      "lang": "en",
+      "lemma": "tinker",
+      "synset": "oewn-02627617-n"
+    },
+    {
+      "definition": "small mackerel found nearly worldwide",
+      "forms": [],
+      "id": "oewn-scomber_japonicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Scomber japonicus",
+      "synset": "oewn-02627617-n"
+    },
+    {
+      "definition": "large fast-moving predacious food and game fish; found worldwide",
+      "forms": [],
+      "id": "oewn-wahoo__1.05.00..",
+      "lang": "en",
+      "lemma": "wahoo",
+      "synset": "oewn-02627888-n"
+    },
+    {
+      "definition": "large fast-moving predacious food and game fish; found worldwide",
+      "forms": [],
+      "id": "oewn-acanthocybium_solandri__1.05.00..",
+      "lang": "en",
+      "lemma": "Acanthocybium solandri",
+      "synset": "oewn-02627888-n"
+    },
+    {
+      "definition": "any of several large marine food fishes of the genus Scomberomorus",
+      "forms": [],
+      "id": "oewn-spanish_mackerel__1.05.00..",
+      "lang": "en",
+      "lemma": "Spanish mackerel",
+      "synset": "oewn-02628242-n"
+    },
+    {
+      "definition": "large mackerel with long pointed snout; important food and game fish of the eastern Atlantic coast southward to Brazil",
+      "forms": [],
+      "id": "oewn-king_mackerel__1.05.00..",
+      "lang": "en",
+      "lemma": "king mackerel",
+      "synset": "oewn-02628481-n"
+    },
+    {
+      "definition": "large mackerel with long pointed snout; important food and game fish of the eastern Atlantic coast southward to Brazil",
+      "forms": [],
+      "id": "oewn-cavalla__1.05.00..",
+      "lang": "en",
+      "lemma": "cavalla",
+      "synset": "oewn-02628481-n"
+    },
+    {
+      "definition": "large mackerel with long pointed snout; important food and game fish of the eastern Atlantic coast southward to Brazil",
+      "forms": [],
+      "id": "oewn-cero__1.05.02..",
+      "lang": "en",
+      "lemma": "cero",
+      "synset": "oewn-02628481-n"
+    },
+    {
+      "definition": "large mackerel with long pointed snout; important food and game fish of the eastern Atlantic coast southward to Brazil",
+      "forms": [],
+      "id": "oewn-scomberomorus_cavalla__1.05.00..",
+      "lang": "en",
+      "lemma": "Scomberomorus cavalla",
+      "synset": "oewn-02628481-n"
+    },
+    {
+      "definition": "a large commercially important mackerel of the Atlantic coastal waters of North America",
+      "forms": [],
+      "id": "oewn-scomberomorus_maculatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Scomberomorus maculatus",
+      "synset": "oewn-02628719-n"
+    },
+    {
+      "definition": "large edible mackerel of temperate United States coastal Atlantic waters",
+      "forms": [],
+      "id": "oewn-cero__1.05.00..",
+      "lang": "en",
+      "lemma": "cero",
+      "synset": "oewn-02628895-n"
+    },
+    {
+      "definition": "large edible mackerel of temperate United States coastal Atlantic waters",
+      "forms": [],
+      "id": "oewn-pintado__1.05.00..",
+      "lang": "en",
+      "lemma": "pintado",
+      "synset": "oewn-02628895-n"
+    },
+    {
+      "definition": "large edible mackerel of temperate United States coastal Atlantic waters",
+      "forms": [
+        "kingfishes"
+      ],
+      "id": "oewn-kingfish__1.05.02..",
+      "lang": "en",
+      "lemma": "kingfish",
+      "synset": "oewn-02628895-n"
+    },
+    {
+      "definition": "large edible mackerel of temperate United States coastal Atlantic waters",
+      "forms": [],
+      "id": "oewn-scomberomorus_regalis__1.05.00..",
+      "lang": "en",
+      "lemma": "Scomberomorus regalis",
+      "synset": "oewn-02628895-n"
+    },
+    {
+      "definition": "a Spanish mackerel of western North America",
+      "forms": [],
+      "id": "oewn-sierra__1.05.00..",
+      "lang": "en",
+      "lemma": "sierra",
+      "synset": "oewn-02629101-n"
+    },
+    {
+      "definition": "a Spanish mackerel of western North America",
+      "forms": [],
+      "id": "oewn-scomberomorus_sierra__1.05.00..",
+      "lang": "en",
+      "lemma": "Scomberomorus sierra",
+      "synset": "oewn-02629101-n"
+    },
+    {
       "definition": "any very large marine food and game fish of the genus Thunnus; related to mackerel; chiefly of warm waters",
       "forms": [],
       "id": "oewn-tuna__1.05.01..",
@@ -6679,6 +8703,86 @@
       "synset": "oewn-02629392-n"
     },
     {
+      "definition": "large pelagic tuna the source of most canned tuna; reaches 93 pounds and has long pectoral fins; found worldwide in tropical and temperate waters",
+      "forms": [],
+      "id": "oewn-albacore__1.05.00..",
+      "lang": "en",
+      "lemma": "albacore",
+      "synset": "oewn-02629667-n"
+    },
+    {
+      "definition": "large pelagic tuna the source of most canned tuna; reaches 93 pounds and has long pectoral fins; found worldwide in tropical and temperate waters",
+      "forms": [],
+      "id": "oewn-long-fin_tunny__1.05.00..",
+      "lang": "en",
+      "lemma": "long-fin tunny",
+      "synset": "oewn-02629667-n"
+    },
+    {
+      "definition": "large pelagic tuna the source of most canned tuna; reaches 93 pounds and has long pectoral fins; found worldwide in tropical and temperate waters",
+      "forms": [],
+      "id": "oewn-thunnus_alalunga__1.05.00..",
+      "lang": "en",
+      "lemma": "Thunnus alalunga",
+      "synset": "oewn-02629667-n"
+    },
+    {
+      "definition": "largest tuna; to 1500 pounds; of mostly temperate seas: feed in polar regions but breed in tropics",
+      "forms": [],
+      "id": "oewn-bluefin__1.05.00..",
+      "lang": "en",
+      "lemma": "bluefin",
+      "synset": "oewn-02629922-n"
+    },
+    {
+      "definition": "largest tuna; to 1500 pounds; of mostly temperate seas: feed in polar regions but breed in tropics",
+      "forms": [],
+      "id": "oewn-bluefin_tuna__1.05.00..",
+      "lang": "en",
+      "lemma": "bluefin tuna",
+      "synset": "oewn-02629922-n"
+    },
+    {
+      "definition": "largest tuna; to 1500 pounds; of mostly temperate seas: feed in polar regions but breed in tropics",
+      "forms": [],
+      "id": "oewn-horse_mackerel__1.05.03..",
+      "lang": "en",
+      "lemma": "horse mackerel",
+      "synset": "oewn-02629922-n"
+    },
+    {
+      "definition": "largest tuna; to 1500 pounds; of mostly temperate seas: feed in polar regions but breed in tropics",
+      "forms": [],
+      "id": "oewn-thunnus_thynnus__1.05.00..",
+      "lang": "en",
+      "lemma": "Thunnus thynnus",
+      "synset": "oewn-02629922-n"
+    },
+    {
+      "definition": "may reach 400 pounds; worldwide in tropics",
+      "forms": [],
+      "id": "oewn-yellowfin__1.05.00..",
+      "lang": "en",
+      "lemma": "yellowfin",
+      "synset": "oewn-02630162-n"
+    },
+    {
+      "definition": "may reach 400 pounds; worldwide in tropics",
+      "forms": [],
+      "id": "oewn-yellowfin_tuna__1.05.00..",
+      "lang": "en",
+      "lemma": "yellowfin tuna",
+      "synset": "oewn-02630162-n"
+    },
+    {
+      "definition": "may reach 400 pounds; worldwide in tropics",
+      "forms": [],
+      "id": "oewn-thunnus_albacares__1.05.00..",
+      "lang": "en",
+      "lemma": "Thunnus albacares",
+      "synset": "oewn-02630162-n"
+    },
+    {
       "definition": "any of various scombroid fishes intermediate in size and characteristics between mackerels and tunas",
       "forms": [
         "bonitoes"
@@ -6687,6 +8791,62 @@
       "lang": "en",
       "lemma": "bonito",
       "synset": "oewn-02630465-n"
+    },
+    {
+      "definition": "medium-sized tuna-like food fish of warm Atlantic and Pacific waters; less valued than tuna",
+      "forms": [],
+      "id": "oewn-skipjack__1.05.02..",
+      "lang": "en",
+      "lemma": "skipjack",
+      "synset": "oewn-02630692-n"
+    },
+    {
+      "definition": "medium-sized tuna-like food fish of warm Atlantic and Pacific waters; less valued than tuna",
+      "forms": [],
+      "id": "oewn-atlantic_bonito__1.05.00..",
+      "lang": "en",
+      "lemma": "Atlantic bonito",
+      "synset": "oewn-02630692-n"
+    },
+    {
+      "definition": "medium-sized tuna-like food fish of warm Atlantic and Pacific waters; less valued than tuna",
+      "forms": [],
+      "id": "oewn-sarda_sarda__1.05.00..",
+      "lang": "en",
+      "lemma": "Sarda sarda",
+      "synset": "oewn-02630692-n"
+    },
+    {
+      "definition": "common bonito of Pacific coast of the Americas; its dark oily flesh cans well",
+      "forms": [],
+      "id": "oewn-chile_bonito__1.05.00..",
+      "lang": "en",
+      "lemma": "Chile bonito",
+      "synset": "oewn-02630889-n"
+    },
+    {
+      "definition": "common bonito of Pacific coast of the Americas; its dark oily flesh cans well",
+      "forms": [],
+      "id": "oewn-chilean_bonito__1.05.00..",
+      "lang": "en",
+      "lemma": "Chilean bonito",
+      "synset": "oewn-02630889-n"
+    },
+    {
+      "definition": "common bonito of Pacific coast of the Americas; its dark oily flesh cans well",
+      "forms": [],
+      "id": "oewn-pacific_bonito__1.05.00..",
+      "lang": "en",
+      "lemma": "Pacific bonito",
+      "synset": "oewn-02630889-n"
+    },
+    {
+      "definition": "common bonito of Pacific coast of the Americas; its dark oily flesh cans well",
+      "forms": [],
+      "id": "oewn-sarda_chiliensis__1.05.00..",
+      "lang": "en",
+      "lemma": "Sarda chiliensis",
+      "synset": "oewn-02630889-n"
     },
     {
       "definition": "oceanic schooling tuna of considerable value in Pacific but less in Atlantic; reaches 75 pounds; very similar to if not the same as oceanic bonito",
@@ -6767,6 +8927,22 @@
       "synset": "oewn-02632911-n"
     },
     {
+      "definition": "a kind of sailfish",
+      "forms": [],
+      "id": "oewn-atlantic_sailfish__1.05.00..",
+      "lang": "en",
+      "lemma": "Atlantic sailfish",
+      "synset": "oewn-02633245-n"
+    },
+    {
+      "definition": "a kind of sailfish",
+      "forms": [],
+      "id": "oewn-istiophorus_albicans__1.05.00..",
+      "lang": "en",
+      "lemma": "Istiophorus albicans",
+      "synset": "oewn-02633245-n"
+    },
+    {
       "definition": "giant warm-water game fish having a prolonged and rounded toothless upper jaw",
       "forms": [
         "billfishes"
@@ -6775,6 +8951,96 @@
       "lang": "en",
       "lemma": "billfish",
       "synset": "oewn-02633369-n"
+    },
+    {
+      "definition": "large long-jawed oceanic sport fishes; related to sailfishes and spearfishes; not completely cold-blooded i.e. able to warm their brains and eyes",
+      "forms": [],
+      "id": "oewn-marlin__1.05.00..",
+      "lang": "en",
+      "lemma": "marlin",
+      "synset": "oewn-02633671-n"
+    },
+    {
+      "definition": "largest marlin; may reach 2000 pounds; found worldwide in warm seas",
+      "forms": [],
+      "id": "oewn-blue_marlin__1.05.00..",
+      "lang": "en",
+      "lemma": "blue marlin",
+      "synset": "oewn-02633960-n"
+    },
+    {
+      "definition": "largest marlin; may reach 2000 pounds; found worldwide in warm seas",
+      "forms": [],
+      "id": "oewn-makaira_nigricans__1.05.00..",
+      "lang": "en",
+      "lemma": "Makaira nigricans",
+      "synset": "oewn-02633960-n"
+    },
+    {
+      "definition": "large game fish in the Pacific Ocean; may reach 1000 pounds",
+      "forms": [],
+      "id": "oewn-black_marlin__1.05.00..",
+      "lang": "en",
+      "lemma": "black marlin",
+      "synset": "oewn-02634105-n"
+    },
+    {
+      "definition": "large game fish in the Pacific Ocean; may reach 1000 pounds",
+      "forms": [],
+      "id": "oewn-makaira_mazara__1.05.00..",
+      "lang": "en",
+      "lemma": "Makaira mazara",
+      "synset": "oewn-02634105-n"
+    },
+    {
+      "definition": "large game fish in the Pacific Ocean; may reach 1000 pounds",
+      "forms": [],
+      "id": "oewn-makaira_marlina__1.05.00..",
+      "lang": "en",
+      "lemma": "Makaira marlina",
+      "synset": "oewn-02634105-n"
+    },
+    {
+      "definition": "Pacific food and game fish marked with dark blue vertical stripes",
+      "forms": [],
+      "id": "oewn-striped_marlin__1.05.00..",
+      "lang": "en",
+      "lemma": "striped marlin",
+      "synset": "oewn-02634258-n"
+    },
+    {
+      "definition": "Pacific food and game fish marked with dark blue vertical stripes",
+      "forms": [],
+      "id": "oewn-makaira_mitsukurii__1.05.00..",
+      "lang": "en",
+      "lemma": "Makaira mitsukurii",
+      "synset": "oewn-02634258-n"
+    },
+    {
+      "definition": "small marlin (to 180 pounds) of western Atlantic",
+      "forms": [],
+      "id": "oewn-white_marlin__1.05.00..",
+      "lang": "en",
+      "lemma": "white marlin",
+      "synset": "oewn-02634405-n"
+    },
+    {
+      "definition": "small marlin (to 180 pounds) of western Atlantic",
+      "forms": [],
+      "id": "oewn-makaira_albida__1.05.00..",
+      "lang": "en",
+      "lemma": "Makaira albida",
+      "synset": "oewn-02634405-n"
+    },
+    {
+      "definition": "any of several large vigorous pelagic fishes resembling sailfishes but with first dorsal fin much reduced; worldwide but rare",
+      "forms": [
+        "spearfishes"
+      ],
+      "id": "oewn-spearfish__1.05.01..",
+      "lang": "en",
+      "lemma": "spearfish",
+      "synset": "oewn-02634669-n"
     },
     {
       "definition": "large silvery fish found worldwide in warm seas but nowhere common; resembles a whale and feeds on plankton",
@@ -7311,6 +9577,22 @@
       "synset": "oewn-02645742-n"
     },
     {
+      "definition": "a kind of scorpionfish",
+      "forms": [],
+      "id": "oewn-plumed_scorpionfish__1.05.00..",
+      "lang": "en",
+      "lemma": "plumed scorpionfish",
+      "synset": "oewn-02645946-n"
+    },
+    {
+      "definition": "a kind of scorpionfish",
+      "forms": [],
+      "id": "oewn-scorpaena_grandicornis__1.05.00..",
+      "lang": "en",
+      "lemma": "Scorpaena grandicornis",
+      "synset": "oewn-02645946-n"
+    },
+    {
       "definition": "brightly striped fish of the tropical Pacific having elongated spiny fins",
       "forms": [
         "lionfishes"
@@ -7347,6 +9629,88 @@
       "lang": "en",
       "lemma": "rockfish",
       "synset": "oewn-02646743-n"
+    },
+    {
+      "definition": "a rockfish of the Pacific coastal waters of North America",
+      "forms": [],
+      "id": "oewn-copper_rockfish__1.05.00..",
+      "lang": "en",
+      "lemma": "copper rockfish",
+      "synset": "oewn-02646990-n"
+    },
+    {
+      "definition": "a rockfish of the Pacific coastal waters of North America",
+      "forms": [],
+      "id": "oewn-sebastes_caurinus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sebastes caurinus",
+      "synset": "oewn-02646990-n"
+    },
+    {
+      "definition": "a commercially important fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-vermillion_rockfish__1.05.00..",
+      "lang": "en",
+      "lemma": "vermillion rockfish",
+      "synset": "oewn-02647131-n"
+    },
+    {
+      "definition": "a commercially important fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-rasher__1.05.00..",
+      "lang": "en",
+      "lemma": "rasher",
+      "synset": "oewn-02647131-n"
+    },
+    {
+      "definition": "a commercially important fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-sebastes_miniatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sebastes miniatus",
+      "synset": "oewn-02647131-n"
+    },
+    {
+      "definition": "a large fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-red_rockfish__1.05.00..",
+      "lang": "en",
+      "lemma": "red rockfish",
+      "synset": "oewn-02647295-n"
+    },
+    {
+      "definition": "a large fish of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-sebastes_ruberrimus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sebastes ruberrimus",
+      "synset": "oewn-02647295-n"
+    },
+    {
+      "definition": "large fish of northern Atlantic coasts of America and Europe",
+      "forms": [
+        "rosefishes"
+      ],
+      "id": "oewn-rosefish__1.05.00..",
+      "lang": "en",
+      "lemma": "rosefish",
+      "synset": "oewn-02647447-n"
+    },
+    {
+      "definition": "large fish of northern Atlantic coasts of America and Europe",
+      "forms": [],
+      "id": "oewn-ocean_perch__1.05.00..",
+      "lang": "en",
+      "lemma": "ocean perch",
+      "synset": "oewn-02647447-n"
+    },
+    {
+      "definition": "large fish of northern Atlantic coasts of America and Europe",
+      "forms": [],
+      "id": "oewn-sebastes_marinus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sebastes marinus",
+      "synset": "oewn-02647447-n"
     },
     {
       "definition": "any of numerous spiny large-headed usually scaleless scorpaenoid fishes with broad mouths",
@@ -7641,6 +10005,46 @@
       "lang": "en",
       "lemma": "searobin",
       "synset": "oewn-02653171-n"
+    },
+    {
+      "definition": "large searobin; found from Nova Scotia to Florida",
+      "forms": [],
+      "id": "oewn-northern_sea_robin__1.05.00..",
+      "lang": "en",
+      "lemma": "northern sea robin",
+      "synset": "oewn-02653690-n"
+    },
+    {
+      "definition": "large searobin; found from Nova Scotia to Florida",
+      "forms": [],
+      "id": "oewn-prionotus_carolinus__1.05.00..",
+      "lang": "en",
+      "lemma": "Prionotus carolinus",
+      "synset": "oewn-02653690-n"
+    },
+    {
+      "definition": "sea robins having bony scutes on the body and barbels on the chin; found mostly on the continental slope",
+      "forms": [],
+      "id": "oewn-armored_searobin__1.05.00..",
+      "lang": "en",
+      "lemma": "armored searobin",
+      "synset": "oewn-02654247-n"
+    },
+    {
+      "definition": "sea robins having bony scutes on the body and barbels on the chin; found mostly on the continental slope",
+      "forms": [],
+      "id": "oewn-armored_sea_robin__1.05.00..",
+      "lang": "en",
+      "lemma": "armored sea robin",
+      "synset": "oewn-02654247-n"
+    },
+    {
+      "definition": "sea robins having bony scutes on the body and barbels on the chin; found mostly on the continental slope",
+      "forms": [],
+      "id": "oewn-peristedion_miniatum__1.05.00..",
+      "lang": "en",
+      "lemma": "Peristedion miniatum",
+      "synset": "oewn-02654247-n"
     },
     {
       "definition": "tropical fish with huge fanlike pectoral fins for underwater gliding; unrelated to searobins",
@@ -8215,6 +10619,22 @@
       "synset": "oewn-02664869-n"
     },
     {
+      "definition": "a whiff found in waters from the Bahamas and northern Gulf of Mexico to Brazil",
+      "forms": [],
+      "id": "oewn-horned_whiff__1.05.00..",
+      "lang": "en",
+      "lemma": "horned whiff",
+      "synset": "oewn-02665027-n"
+    },
+    {
+      "definition": "a whiff found in waters from the Bahamas and northern Gulf of Mexico to Brazil",
+      "forms": [],
+      "id": "oewn-citharichthys_cornutus__1.05.00..",
+      "lang": "en",
+      "lemma": "Citharichthys cornutus",
+      "synset": "oewn-02665027-n"
+    },
+    {
       "definition": "small food fishes of the Pacific coast of North America",
       "forms": [],
       "id": "oewn-sand_dab__1.05.00..",
@@ -8475,6 +10895,50 @@
       "name": "carp"
     },
     {
+      "definition": "large Old World freshwater bottom-feeding fish introduced into Europe from Asia; inhabits ponds and sluggish streams and often raised for food; introduced into United States where it has become a pest",
+      "hypernyms": [
+        "oewn-01442155-n"
+      ],
+      "id": "oewn-01442449-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "domestic carp"
+    },
+    {
+      "definition": "scaleless domestic carp",
+      "hypernyms": [
+        "oewn-01442449-n"
+      ],
+      "id": "oewn-01442801-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "leather carp"
+    },
+    {
+      "definition": "domestic carp with some large shining scales",
+      "hypernyms": [
+        "oewn-01442449-n"
+      ],
+      "id": "oewn-01442883-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "mirror carp"
+    },
+    {
+      "definition": "European freshwater fish having a flattened body and silvery scales; of little value as food",
+      "hypernyms": [
+        "oewn-02565813-n"
+      ],
+      "id": "oewn-01443108-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "European bream"
+    },
+    {
       "definition": "freshwater dace-like game fish of Europe and western Asia noted for ability to survive outside water",
       "hypernyms": [
         "oewn-01441762-n"
@@ -8517,6 +10981,39 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "shiner"
+    },
+    {
+      "definition": "small blunt-nosed fish of Great Lakes and Mississippi valley with a greenish luster",
+      "hypernyms": [
+        "oewn-01444066-n"
+      ],
+      "id": "oewn-01444383-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "emerald shiner"
+    },
+    {
+      "definition": "the common North American shiner",
+      "hypernyms": [
+        "oewn-01444066-n"
+      ],
+      "id": "oewn-01444551-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "common shiner"
+    },
+    {
+      "definition": "shiner of eastern North America having golden glints; sometimes also called \u2018bream\u2019",
+      "hypernyms": [
+        "oewn-01444066-n"
+      ],
+      "id": "oewn-01444807-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "golden shiner"
     },
     {
       "definition": "European freshwater food fish having a greenish back",
@@ -8574,6 +11071,17 @@
       "name": "goldfish"
     },
     {
+      "definition": "a silvery variety of Carassius auratus",
+      "hypernyms": [
+        "oewn-01446178-n"
+      ],
+      "id": "oewn-01446377-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "silverfish"
+    },
+    {
       "definition": "European carp closely resembling wild goldfish",
       "hypernyms": [
         "oewn-01441762-n"
@@ -8618,6 +11126,50 @@
       "name": "sucker"
     },
     {
+      "definition": "any of several large suckers of the Mississippi valley",
+      "hypernyms": [
+        "oewn-01447563-n"
+      ],
+      "id": "oewn-01448070-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "buffalo fish"
+    },
+    {
+      "definition": "fish of the lower Mississippi",
+      "hypernyms": [
+        "oewn-01448070-n"
+      ],
+      "id": "oewn-01448234-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "black buffalo"
+    },
+    {
+      "definition": "widely distributed in warm clear shallow streams",
+      "hypernyms": [
+        "oewn-01447563-n"
+      ],
+      "id": "oewn-01448498-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "hog sucker"
+    },
+    {
+      "definition": "North American sucker with reddish fins",
+      "hypernyms": [
+        "oewn-01447563-n"
+      ],
+      "id": "oewn-01448793-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "redhorse"
+    },
+    {
       "definition": "any member of the family Cyprinodontidae",
       "hypernyms": [
         "oewn-01440849-n"
@@ -8638,6 +11190,50 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "killifish"
+    },
+    {
+      "definition": "silver-and-black killifish of saltwater marshes along the Atlantic coast of the United States",
+      "hypernyms": [
+        "oewn-01449401-n"
+      ],
+      "id": "oewn-01449780-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "mummichog"
+    },
+    {
+      "definition": "black-barred fish of bays and coastal marshes of the Atlantic and Gulf Coast of the United States",
+      "hypernyms": [
+        "oewn-01449401-n"
+      ],
+      "id": "oewn-01449972-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "striped killifish"
+    },
+    {
+      "definition": "found in small streams of tropical America; often kept in aquariums; usually hermaphroditic",
+      "hypernyms": [
+        "oewn-01449401-n"
+      ],
+      "id": "oewn-01450299-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "rivulus"
+    },
+    {
+      "definition": "a fish with a dark-blue back and whitish sides with red stripes; found in swamps and streams of Florida",
+      "hypernyms": [
+        "oewn-01449401-n"
+      ],
+      "id": "oewn-01450587-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "flagfish"
     },
     {
       "definition": "freshwater fish of Central America having a long swordlike tail; popular aquarium fish",
@@ -10526,6 +13122,17 @@
       "name": "Atlantic salmon"
     },
     {
+      "definition": "Atlantic salmon confined to lakes of New England and southeastern Canada",
+      "hypernyms": [
+        "oewn-02538168-n"
+      ],
+      "id": "oewn-02538390-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 12,
+      "name": "landlocked salmon"
+    },
+    {
       "definition": "small salmon with red flesh; found in rivers and tributaries of the northern Pacific and valued as food; adults die after spawning",
       "hypernyms": [
         "oewn-02537365-n"
@@ -10602,6 +13209,17 @@
       "max_depth": 16,
       "min_depth": 11,
       "name": "rainbow trout"
+    },
+    {
+      "definition": "silvery marine variety of brown trout that migrates to fresh water to spawn",
+      "hypernyms": [
+        "oewn-02539950-n"
+      ],
+      "id": "oewn-02540347-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 12,
+      "name": "sea trout"
     },
     {
       "definition": "large fork-tailed trout of lakes of Canada and the northern United States",
@@ -11144,6 +13762,28 @@
       "name": "pike-perch"
     },
     {
+      "definition": "pike-like freshwater perches",
+      "hypernyms": [
+        "oewn-02560222-n"
+      ],
+      "id": "oewn-02560380-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "walleye"
+    },
+    {
+      "definition": "variety inhabiting the Great Lakes",
+      "hypernyms": [
+        "oewn-02560380-n"
+      ],
+      "id": "oewn-02560540-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "blue pike"
+    },
+    {
       "definition": "a small snail-eating perch of the Tennessee River",
       "hypernyms": [
         "oewn-02559477-n"
@@ -11265,6 +13905,28 @@
       "name": "pickerel"
     },
     {
+      "definition": "common in quiet waters of eastern United States",
+      "hypernyms": [
+        "oewn-02564292-n"
+      ],
+      "id": "oewn-02564434-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "chain pickerel"
+    },
+    {
+      "definition": "small but gamy pickerel of Atlantic coastal states",
+      "hypernyms": [
+        "oewn-02564292-n"
+      ],
+      "id": "oewn-02564568-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "redfin pickerel"
+    },
+    {
       "definition": "small carnivorous freshwater percoid fishes of North America usually having a laterally compressed body and metallic luster: crappies, black bass, bluegills, pumpkinseed",
       "hypernyms": [
         "oewn-02557361-n"
@@ -11287,6 +13949,28 @@
       "name": "crappie"
     },
     {
+      "definition": "a crappie that is black",
+      "hypernyms": [
+        "oewn-02565427-n"
+      ],
+      "id": "oewn-02565602-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "black crappie"
+    },
+    {
+      "definition": "a crappie that is white",
+      "hypernyms": [
+        "oewn-02565427-n"
+      ],
+      "id": "oewn-02565710-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "white crappie"
+    },
+    {
       "definition": "any of various usually edible freshwater percoid fishes having compressed bodies and shiny scales; especially (but not exclusively) of the genus Lepomis",
       "hypernyms": [
         "oewn-02564946-n"
@@ -11307,6 +13991,28 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "pumpkinseed"
+    },
+    {
+      "definition": "important edible sunfish of eastern and central United States",
+      "hypernyms": [
+        "oewn-02565813-n"
+      ],
+      "id": "oewn-02566423-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "bluegill"
+    },
+    {
+      "definition": "inhabits streams from South Carolina to Florida; esteemed panfish",
+      "hypernyms": [
+        "oewn-02565813-n"
+      ],
+      "id": "oewn-02566580-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "spotted sunfish"
     },
     {
       "definition": "North American food and game fish",
@@ -11340,6 +14046,39 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "black bass"
+    },
+    {
+      "definition": "a variety of black bass",
+      "hypernyms": [
+        "oewn-02567351-n"
+      ],
+      "id": "oewn-02567566-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Kentucky black bass"
+    },
+    {
+      "definition": "a variety of black bass; the angle of the jaw falls below the eye",
+      "hypernyms": [
+        "oewn-02567351-n"
+      ],
+      "id": "oewn-02567703-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "smallmouth"
+    },
+    {
+      "definition": "a large black bass; the angle of the jaw falls behind the eye",
+      "hypernyms": [
+        "oewn-02567351-n"
+      ],
+      "id": "oewn-02567955-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "largemouth"
     },
     {
       "definition": "nontechnical name for any of numerous edible marine and freshwater spiny-finned fishes",
@@ -11396,6 +14135,127 @@
       "max_depth": 16,
       "min_depth": 10,
       "name": "sea bass"
+    },
+    {
+      "definition": "small marine fish with black mouth and gill cavity",
+      "hypernyms": [
+        "oewn-02569465-n"
+      ],
+      "id": "oewn-02569965-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "blackmouth bass"
+    },
+    {
+      "definition": "a kind of sea bass",
+      "hypernyms": [
+        "oewn-02569465-n"
+      ],
+      "id": "oewn-02570264-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "rock sea bass"
+    },
+    {
+      "definition": "bluish black-striped sea bass of the Atlantic coast of the United States",
+      "hypernyms": [
+        "oewn-02569465-n"
+      ],
+      "id": "oewn-02570403-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "black sea bass"
+    },
+    {
+      "definition": "marine food and game fish with dark longitudinal stripes; migrates upriver to spawn; sometimes placed in the genus Morone",
+      "hypernyms": [
+        "oewn-02569465-n"
+      ],
+      "id": "oewn-02570718-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "striped bass"
+    },
+    {
+      "definition": "brown fish of the Atlantic and Mediterranean found around rocks and shipwrecks",
+      "hypernyms": [
+        "oewn-02569465-n"
+      ],
+      "id": "oewn-02571078-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "stone bass"
+    },
+    {
+      "definition": "found in warm shallow waters of western Atlantic",
+      "hypernyms": [
+        "oewn-02569465-n"
+      ],
+      "id": "oewn-02571438-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "belted sandfish"
+    },
+    {
+      "definition": "usually solitary bottom sea basses of warm seas",
+      "hypernyms": [
+        "oewn-02569465-n"
+      ],
+      "id": "oewn-02571590-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "grouper"
+    },
+    {
+      "definition": "black-spotted usually dusky-colored fish with reddish fins",
+      "hypernyms": [
+        "oewn-02571590-n"
+      ],
+      "id": "oewn-02571965-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 12,
+      "name": "coney"
+    },
+    {
+      "definition": "any of several mostly spotted fishes that resemble groupers",
+      "hypernyms": [
+        "oewn-02571590-n"
+      ],
+      "id": "oewn-02572115-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 12,
+      "name": "hind"
+    },
+    {
+      "definition": "deep-sea fish of tropical Atlantic",
+      "hypernyms": [
+        "oewn-02571590-n"
+      ],
+      "id": "oewn-02572536-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 12,
+      "name": "creole-fish"
+    },
+    {
+      "definition": "large dark grouper with a thick head and rough scales",
+      "hypernyms": [
+        "oewn-02571590-n"
+      ],
+      "id": "oewn-02572795-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 12,
+      "name": "jewfish"
     },
     {
       "definition": "fishes with slimy mucus-covered skin; found in the warm Atlantic coastal waters of America",
@@ -11574,6 +14434,72 @@
       "name": "jack"
     },
     {
+      "definition": "fish of western Atlantic and Gulf of Mexico, also known as the common jack, black-tailed trevally, couvalli jack, black cavalli and yellow cavalli (Caranx hippos)",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02579537-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "crevalle jack"
+    },
+    {
+      "definition": "fish of western Atlantic and Gulf of Mexico, also known as the coolihoo (Caranx bartholomaei)",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02579672-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "yellow jack"
+    },
+    {
+      "definition": "fish of western Atlantic: Cape Cod to Brazil",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02579795-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "runner"
+    },
+    {
+      "definition": "streamlined cigar-shaped jack; good game fish",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02580034-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "rainbow runner"
+    },
+    {
+      "definition": "any of several New World tropical fishes having tiny embedded scales",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02580293-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "leatherjacket"
+    },
+    {
+      "definition": "fish having greatly elongated front rays on dorsal and anal fins",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02580583-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "threadfish"
+    },
+    {
       "definition": "any of several silvery marine fishes with very flat bodies",
       "hypernyms": [
         "oewn-02578854-n"
@@ -11585,6 +14511,61 @@
       "name": "moonfish"
     },
     {
+      "definition": "similar to moonfish but with eyes high on the truncated forehead",
+      "hypernyms": [
+        "oewn-02580864-n"
+      ],
+      "id": "oewn-02581085-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "lookdown"
+    },
+    {
+      "definition": "any of several amber to coppery fork-tailed warm-water carangid fishes",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02581402-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "amberjack"
+    },
+    {
+      "definition": "game fish of southern California and Mexico having a yellow tail fin",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02581559-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "yellowtail"
+    },
+    {
+      "definition": "fish having the habit of following ships; found in North American and South American coastal waters",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02581722-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "rudderfish"
+    },
+    {
+      "definition": "large game fish of Australia and New Zealand",
+      "hypernyms": [
+        "oewn-02579206-n"
+      ],
+      "id": "oewn-02581934-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "kingfish"
+    },
+    {
       "definition": "any of several deep-bodied food fishes of western Atlantic and Gulf of Mexico",
       "hypernyms": [
         "oewn-02578854-n"
@@ -11594,6 +14575,28 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "pompano"
+    },
+    {
+      "definition": "found in coastal waters New England to Brazil except clear waters of West Indies",
+      "hypernyms": [
+        "oewn-02582188-n"
+      ],
+      "id": "oewn-02582393-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Florida pompano"
+    },
+    {
+      "definition": "large game fish; found in waters of the West Indies",
+      "hypernyms": [
+        "oewn-02582188-n"
+      ],
+      "id": "oewn-02582559-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "permit"
     },
     {
       "definition": "small pelagic fish often accompanying sharks or mantas",
@@ -11616,6 +14619,61 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "scad"
+    },
+    {
+      "definition": "a California food fish",
+      "hypernyms": [
+        "oewn-02582967-n"
+      ],
+      "id": "oewn-02583310-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "horse mackerel"
+    },
+    {
+      "definition": "large elongated compressed food fish of the Atlantic waters of Europe",
+      "hypernyms": [
+        "oewn-02582967-n"
+      ],
+      "id": "oewn-02583461-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "horse mackerel"
+    },
+    {
+      "definition": "of Atlantic coastal waters; commonly used for bait",
+      "hypernyms": [
+        "oewn-02582967-n"
+      ],
+      "id": "oewn-02583739-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "bigeye scad"
+    },
+    {
+      "definition": "small silvery fish; Nova Scotia to Brazil",
+      "hypernyms": [
+        "oewn-02582967-n"
+      ],
+      "id": "oewn-02584113-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "mackerel scad"
+    },
+    {
+      "definition": "small fusiform fish of western Atlantic",
+      "hypernyms": [
+        "oewn-02582967-n"
+      ],
+      "id": "oewn-02584273-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "round scad"
     },
     {
       "definition": "large slender food and game fish widely distributed in warm seas (especially around Hawaii)",
@@ -11938,6 +14996,17 @@
       "name": "porgy"
     },
     {
+      "definition": "food fish of the Mediterranean and Atlantic coasts of Europe and America",
+      "hypernyms": [
+        "oewn-02593617-n"
+      ],
+      "id": "oewn-02593960-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "red porgy"
+    },
+    {
       "definition": "food fish of European coastal waters",
       "hypernyms": [
         "oewn-02593332-n"
@@ -11982,6 +15051,17 @@
       "name": "pinfish"
     },
     {
+      "definition": "from Florida and Bahamas to Brazil",
+      "hypernyms": [
+        "oewn-02593617-n"
+      ],
+      "id": "oewn-02595364-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "sheepshead porgy"
+    },
+    {
       "definition": "Australian food fish having a pinkish body with blue spots",
       "hypernyms": [
         "oewn-02593125-n"
@@ -12004,6 +15084,28 @@
       "name": "black bream"
     },
     {
+      "definition": "found in Atlantic coastal waters of North America from South Carolina to Maine; esteemed as a panfish",
+      "hypernyms": [
+        "oewn-02593617-n"
+      ],
+      "id": "oewn-02596083-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "scup"
+    },
+    {
+      "definition": "porgy of southern Atlantic coastal waters of North America",
+      "hypernyms": [
+        "oewn-02593617-n"
+      ],
+      "id": "oewn-02596309-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "scup"
+    },
+    {
       "definition": "widely distributed family of carnivorous percoid fishes having a large air bladder used to produce sound",
       "hypernyms": [
         "oewn-02557361-n"
@@ -12024,6 +15126,50 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "drum"
+    },
+    {
+      "definition": "a kind of drumfish",
+      "hypernyms": [
+        "oewn-02597182-n"
+      ],
+      "id": "oewn-02597572-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "striped drum"
+    },
+    {
+      "definition": "black-and-white drumfish with an erect elongated dorsal fin",
+      "hypernyms": [
+        "oewn-02597182-n"
+      ],
+      "id": "oewn-02597686-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "jackknife-fish"
+    },
+    {
+      "definition": "small silvery drumfish often mistaken for white perch; found along coasts of United States from New York to Mexico",
+      "hypernyms": [
+        "oewn-02597182-n"
+      ],
+      "id": "oewn-02597969-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "silver perch"
+    },
+    {
+      "definition": "large edible fish found off coast of United States from Massachusetts to Mexico",
+      "hypernyms": [
+        "oewn-02597182-n"
+      ],
+      "id": "oewn-02598332-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "red drum"
     },
     {
       "definition": "large important food fish of Australia; almost indistinguishable from the maigre",
@@ -12059,6 +15205,28 @@
       "name": "croaker"
     },
     {
+      "definition": "a silvery-bodied croaker with dark markings and tiny barbels",
+      "hypernyms": [
+        "oewn-02599011-n"
+      ],
+      "id": "oewn-02599350-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Atlantic croaker"
+    },
+    {
+      "definition": "a fish of the Pacific coast of North America",
+      "hypernyms": [
+        "oewn-02599011-n"
+      ],
+      "id": "oewn-02599634-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "yellowfin croaker"
+    },
+    {
       "definition": "any of several food fishes of North American coastal waters",
       "hypernyms": [
         "oewn-02596880-n"
@@ -12070,6 +15238,83 @@
       "name": "whiting"
     },
     {
+      "definition": "any of several food and game fishes of the drum family indigenous to warm Atlantic waters of the North American coast",
+      "hypernyms": [
+        "oewn-02599997-n"
+      ],
+      "id": "oewn-02600238-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "kingfish"
+    },
+    {
+      "definition": "whiting of the southeastern coast of North America",
+      "hypernyms": [
+        "oewn-02599997-n"
+      ],
+      "id": "oewn-02600448-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "king whiting"
+    },
+    {
+      "definition": "whiting of the east coast of United States; closely resembles king whiting",
+      "hypernyms": [
+        "oewn-02599997-n"
+      ],
+      "id": "oewn-02600602-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "northern whiting"
+    },
+    {
+      "definition": "bluish-grey whiting of California coast",
+      "hypernyms": [
+        "oewn-02599997-n"
+      ],
+      "id": "oewn-02600764-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "corbina"
+    },
+    {
+      "definition": "a dull silvery whiting of southern Atlantic and Gulf Coasts of the United States",
+      "hypernyms": [
+        "oewn-02599997-n"
+      ],
+      "id": "oewn-02600882-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "silver whiting"
+    },
+    {
+      "definition": "small silvery marine food fish found off California",
+      "hypernyms": [
+        "oewn-02599011-n"
+      ],
+      "id": "oewn-02601203-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "white croaker"
+    },
+    {
+      "definition": "silvery and bluish drumfish of shallow California coastal waters",
+      "hypernyms": [
+        "oewn-02599011-n"
+      ],
+      "id": "oewn-02601508-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "white croaker"
+    },
+    {
       "definition": "any of several sciaenid fishes of North American coastal waters",
       "hypernyms": [
         "oewn-02596880-n"
@@ -12079,6 +15324,28 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "sea trout"
+    },
+    {
+      "definition": "food and game fish of North American coastal waters with a mouth from which hooks easily tear out",
+      "hypernyms": [
+        "oewn-02601682-n"
+      ],
+      "id": "oewn-02601977-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "weakfish"
+    },
+    {
+      "definition": "weakfish of southern Atlantic and Gulf Coasts of United States",
+      "hypernyms": [
+        "oewn-02601682-n"
+      ],
+      "id": "oewn-02602187-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "spotted weakfish"
     },
     {
       "definition": "bottom dwelling marine warm water fishes with two barbels on the chin",
@@ -12102,6 +15369,28 @@
       "max_depth": 16,
       "min_depth": 11,
       "name": "goatfish"
+    },
+    {
+      "definition": "body bright scarlet with 2 yellow to reddish strips on side",
+      "hypernyms": [
+        "oewn-02602928-n"
+      ],
+      "id": "oewn-02603133-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 12,
+      "name": "red goatfish"
+    },
+    {
+      "definition": "schooling goatfish; greyish with yellow stripe",
+      "hypernyms": [
+        "oewn-02602928-n"
+      ],
+      "id": "oewn-02603428-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 12,
+      "name": "yellow goatfish"
     },
     {
       "definition": "freshwater or coastal food fishes a spindle-shaped body; found worldwide",
@@ -12313,6 +15602,17 @@
       "name": "anemone fish"
     },
     {
+      "definition": "an anemone fish of the genus Amphiprion",
+      "hypernyms": [
+        "oewn-02609702-n"
+      ],
+      "id": "oewn-02609831-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "clown anemone fish"
+    },
+    {
       "definition": "large blue-grey black-striped damselfish; nearly worldwide",
       "hypernyms": [
         "oewn-02609014-n"
@@ -12399,6 +15699,17 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "razor fish"
+    },
+    {
+      "definition": "a kind of razor fish",
+      "hypernyms": [
+        "oewn-02612247-n"
+      ],
+      "id": "oewn-02612453-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "pearly razorfish"
     },
     {
       "definition": "large dark-colored food fish of the Atlantic coast of North America",
@@ -12511,6 +15822,28 @@
       "name": "blenny"
     },
     {
+      "definition": "European scaleless blenny",
+      "hypernyms": [
+        "oewn-02615811-n"
+      ],
+      "id": "oewn-02616202-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "shanny"
+    },
+    {
+      "definition": "inhabits both coasts of tropical Atlantic",
+      "hypernyms": [
+        "oewn-02615811-n"
+      ],
+      "id": "oewn-02616450-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Molly Miller"
+    },
+    {
       "definition": "mostly small blennioid fishes of coral reefs and seagrass beds",
       "hypernyms": [
         "oewn-02615287-n"
@@ -12533,6 +15866,17 @@
       "name": "pikeblenny"
     },
     {
+      "definition": "found from Florida to Cuba",
+      "hypernyms": [
+        "oewn-02617112-n"
+      ],
+      "id": "oewn-02617283-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "bluethroat pikeblenny"
+    },
+    {
       "definition": "small eellike fishes common in shallow waters of the northern Atlantic",
       "hypernyms": [
         "oewn-02615287-n"
@@ -12544,6 +15888,17 @@
       "name": "gunnel"
     },
     {
+      "definition": "slippery scaleless food fish of the northern Atlantic coastal waters",
+      "hypernyms": [
+        "oewn-02617608-n"
+      ],
+      "id": "oewn-02617928-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "rock gunnel"
+    },
+    {
       "definition": "small elongate fishes of shallow northern seas; a long dorsal fin consists entirely of spines",
       "hypernyms": [
         "oewn-02615287-n"
@@ -12553,6 +15908,28 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "prickleback"
+    },
+    {
+      "definition": "found in Arctic and northern Atlantic waters",
+      "hypernyms": [
+        "oewn-02618272-n"
+      ],
+      "id": "oewn-02618610-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "snakeblenny"
+    },
+    {
+      "definition": "eellike fishes found in subarctic coastal waters",
+      "hypernyms": [
+        "oewn-02618272-n"
+      ],
+      "id": "oewn-02618758-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "eelblenny"
     },
     {
       "definition": "eellike Atlantic bottom fish with large almost vertical mouth",
@@ -12586,6 +15963,39 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "eelpout"
+    },
+    {
+      "definition": "an eelpout of northern Europe that is viviparous",
+      "hypernyms": [
+        "oewn-02619837-n"
+      ],
+      "id": "oewn-02620167-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "viviparous eelpout"
+    },
+    {
+      "definition": "brightly colored scaleless Arctic eelpout",
+      "hypernyms": [
+        "oewn-02619837-n"
+      ],
+      "id": "oewn-02620449-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "fish doctor"
+    },
+    {
+      "definition": "common along northeastern coast of North America",
+      "hypernyms": [
+        "oewn-02619837-n"
+      ],
+      "id": "oewn-02620724-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "ocean pout"
     },
     {
       "definition": "very small silvery eellike schooling fishes that burrow into sandy beaches",
@@ -12775,6 +16185,105 @@
       "name": "mackerel"
     },
     {
+      "definition": "important food fish of the northern Atlantic and Mediterranean; its body is greenish-blue with dark bars and small if any scales",
+      "hypernyms": [
+        "oewn-02626797-n"
+      ],
+      "id": "oewn-02627181-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "common mackerel"
+    },
+    {
+      "definition": "medium-sized mackerel of temperate Atlantic and Gulf of Mexico",
+      "hypernyms": [
+        "oewn-02626797-n"
+      ],
+      "id": "oewn-02627437-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Spanish mackerel"
+    },
+    {
+      "definition": "small mackerel found nearly worldwide",
+      "hypernyms": [
+        "oewn-02626797-n"
+      ],
+      "id": "oewn-02627617-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "chub mackerel"
+    },
+    {
+      "definition": "large fast-moving predacious food and game fish; found worldwide",
+      "hypernyms": [
+        "oewn-02626797-n"
+      ],
+      "id": "oewn-02627888-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "wahoo"
+    },
+    {
+      "definition": "any of several large marine food fishes of the genus Scomberomorus",
+      "hypernyms": [
+        "oewn-02626797-n"
+      ],
+      "id": "oewn-02628242-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Spanish mackerel"
+    },
+    {
+      "definition": "large mackerel with long pointed snout; important food and game fish of the eastern Atlantic coast southward to Brazil",
+      "hypernyms": [
+        "oewn-02628242-n"
+      ],
+      "id": "oewn-02628481-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "king mackerel"
+    },
+    {
+      "definition": "a large commercially important mackerel of the Atlantic coastal waters of North America",
+      "hypernyms": [
+        "oewn-02628242-n"
+      ],
+      "id": "oewn-02628719-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "Scomberomorus maculatus"
+    },
+    {
+      "definition": "large edible mackerel of temperate United States coastal Atlantic waters",
+      "hypernyms": [
+        "oewn-02628242-n"
+      ],
+      "id": "oewn-02628895-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "cero"
+    },
+    {
+      "definition": "a Spanish mackerel of western North America",
+      "hypernyms": [
+        "oewn-02628242-n"
+      ],
+      "id": "oewn-02629101-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "sierra"
+    },
+    {
       "definition": "any very large marine food and game fish of the genus Thunnus; related to mackerel; chiefly of warm waters",
       "hypernyms": [
         "oewn-02515569-n",
@@ -12787,6 +16296,39 @@
       "name": "tuna"
     },
     {
+      "definition": "large pelagic tuna the source of most canned tuna; reaches 93 pounds and has long pectoral fins; found worldwide in tropical and temperate waters",
+      "hypernyms": [
+        "oewn-02629392-n"
+      ],
+      "id": "oewn-02629667-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "albacore"
+    },
+    {
+      "definition": "largest tuna; to 1500 pounds; of mostly temperate seas: feed in polar regions but breed in tropics",
+      "hypernyms": [
+        "oewn-02629392-n"
+      ],
+      "id": "oewn-02629922-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "bluefin"
+    },
+    {
+      "definition": "may reach 400 pounds; worldwide in tropics",
+      "hypernyms": [
+        "oewn-02629392-n"
+      ],
+      "id": "oewn-02630162-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 11,
+      "name": "yellowfin"
+    },
+    {
       "definition": "any of various scombroid fishes intermediate in size and characteristics between mackerels and tunas",
       "hypernyms": [
         "oewn-02626075-n"
@@ -12796,6 +16338,28 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "bonito"
+    },
+    {
+      "definition": "medium-sized tuna-like food fish of warm Atlantic and Pacific waters; less valued than tuna",
+      "hypernyms": [
+        "oewn-02630465-n"
+      ],
+      "id": "oewn-02630692-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "skipjack"
+    },
+    {
+      "definition": "common bonito of Pacific coast of the Americas; its dark oily flesh cans well",
+      "hypernyms": [
+        "oewn-02630465-n"
+      ],
+      "id": "oewn-02630889-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Chile bonito"
     },
     {
       "definition": "oceanic schooling tuna of considerable value in Pacific but less in Atlantic; reaches 75 pounds; very similar to if not the same as oceanic bonito",
@@ -12842,6 +16406,17 @@
       "name": "sailfish"
     },
     {
+      "definition": "a kind of sailfish",
+      "hypernyms": [
+        "oewn-02632911-n"
+      ],
+      "id": "oewn-02633245-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "Atlantic sailfish"
+    },
+    {
       "definition": "giant warm-water game fish having a prolonged and rounded toothless upper jaw",
       "hypernyms": [
         "oewn-02626075-n"
@@ -12851,6 +16426,72 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "billfish"
+    },
+    {
+      "definition": "large long-jawed oceanic sport fishes; related to sailfishes and spearfishes; not completely cold-blooded i.e. able to warm their brains and eyes",
+      "hypernyms": [
+        "oewn-02633369-n"
+      ],
+      "id": "oewn-02633671-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "marlin"
+    },
+    {
+      "definition": "largest marlin; may reach 2000 pounds; found worldwide in warm seas",
+      "hypernyms": [
+        "oewn-02633671-n"
+      ],
+      "id": "oewn-02633960-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "blue marlin"
+    },
+    {
+      "definition": "large game fish in the Pacific Ocean; may reach 1000 pounds",
+      "hypernyms": [
+        "oewn-02633671-n"
+      ],
+      "id": "oewn-02634105-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "black marlin"
+    },
+    {
+      "definition": "Pacific food and game fish marked with dark blue vertical stripes",
+      "hypernyms": [
+        "oewn-02633671-n"
+      ],
+      "id": "oewn-02634258-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "striped marlin"
+    },
+    {
+      "definition": "small marlin (to 180 pounds) of western Atlantic",
+      "hypernyms": [
+        "oewn-02633671-n"
+      ],
+      "id": "oewn-02634405-n",
+      "lang": "en",
+      "max_depth": 18,
+      "min_depth": 16,
+      "name": "white marlin"
+    },
+    {
+      "definition": "any of several large vigorous pelagic fishes resembling sailfishes but with first dorsal fin much reduced; worldwide but rare",
+      "hypernyms": [
+        "oewn-02633369-n"
+      ],
+      "id": "oewn-02634669-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "spearfish"
     },
     {
       "definition": "large silvery fish found worldwide in warm seas but nowhere common; resembles a whale and feeds on plankton",
@@ -13172,6 +16813,17 @@
       "name": "scorpionfish"
     },
     {
+      "definition": "a kind of scorpionfish",
+      "hypernyms": [
+        "oewn-02645742-n"
+      ],
+      "id": "oewn-02645946-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "plumed scorpionfish"
+    },
+    {
       "definition": "brightly striped fish of the tropical Pacific having elongated spiny fins",
       "hypernyms": [
         "oewn-02645274-n"
@@ -13203,6 +16855,50 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "rockfish"
+    },
+    {
+      "definition": "a rockfish of the Pacific coastal waters of North America",
+      "hypernyms": [
+        "oewn-02646743-n"
+      ],
+      "id": "oewn-02646990-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "copper rockfish"
+    },
+    {
+      "definition": "a commercially important fish of the Pacific coast of North America",
+      "hypernyms": [
+        "oewn-02646743-n"
+      ],
+      "id": "oewn-02647131-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "vermillion rockfish"
+    },
+    {
+      "definition": "a large fish of the Pacific coast of North America",
+      "hypernyms": [
+        "oewn-02646743-n"
+      ],
+      "id": "oewn-02647295-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "red rockfish"
+    },
+    {
+      "definition": "large fish of northern Atlantic coasts of America and Europe",
+      "hypernyms": [
+        "oewn-02646743-n"
+      ],
+      "id": "oewn-02647447-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "rosefish"
     },
     {
       "definition": "any of numerous spiny large-headed usually scaleless scorpaenoid fishes with broad mouths",
@@ -13401,6 +17097,28 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "sea robin"
+    },
+    {
+      "definition": "large searobin; found from Nova Scotia to Florida",
+      "hypernyms": [
+        "oewn-02653171-n"
+      ],
+      "id": "oewn-02653690-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "northern sea robin"
+    },
+    {
+      "definition": "sea robins having bony scutes on the body and barbels on the chin; found mostly on the continental slope",
+      "hypernyms": [
+        "oewn-02653171-n"
+      ],
+      "id": "oewn-02654247-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "armored searobin"
     },
     {
       "definition": "tropical fish with huge fanlike pectoral fins for underwater gliding; unrelated to searobins",
@@ -13753,6 +17471,17 @@
       "max_depth": 16,
       "min_depth": 14,
       "name": "whiff"
+    },
+    {
+      "definition": "a whiff found in waters from the Bahamas and northern Gulf of Mexico to Brazil",
+      "hypernyms": [
+        "oewn-02664869-n"
+      ],
+      "id": "oewn-02665027-n",
+      "lang": "en",
+      "max_depth": 17,
+      "min_depth": 15,
+      "name": "horned whiff"
     },
     {
       "definition": "small food fishes of the Pacific coast of North America",

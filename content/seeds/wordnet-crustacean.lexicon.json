@@ -1,0 +1,1768 @@
+{
+  "exported": "2026-10-09",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-01977414-n",
+  "senses": [
+    {
+      "definition": "any mainly aquatic arthropod usually having a segmented body and chitinous exoskeleton",
+      "forms": [],
+      "id": "oewn-crustacean__1.05.00..",
+      "lang": "en",
+      "lemma": "crustacean",
+      "synset": "oewn-01977414-n"
+    },
+    {
+      "definition": "a major subclass of crustaceans",
+      "forms": [],
+      "id": "oewn-malacostracan_crustacean__1.05.00..",
+      "lang": "en",
+      "lemma": "malacostracan crustacean",
+      "synset": "oewn-01978328-n"
+    },
+    {
+      "definition": "crustaceans characteristically having five pairs of locomotor appendages each joined to a segment of the thorax",
+      "forms": [],
+      "id": "oewn-decapod_crustacean__1.05.00..",
+      "lang": "en",
+      "lemma": "decapod crustacean",
+      "synset": "oewn-01978787-n"
+    },
+    {
+      "definition": "crustaceans characteristically having five pairs of locomotor appendages each joined to a segment of the thorax",
+      "forms": [],
+      "id": "oewn-decapod__1.05.01..",
+      "lang": "en",
+      "lemma": "decapod",
+      "synset": "oewn-01978787-n"
+    },
+    {
+      "definition": "typical crabs",
+      "forms": [],
+      "id": "oewn-brachyuran__1.05.00..",
+      "lang": "en",
+      "lemma": "brachyuran",
+      "synset": "oewn-01979509-n"
+    },
+    {
+      "definition": "decapod having eyes on short stalks and a broad flattened carapace with a small abdomen folded under the thorax and pincers",
+      "forms": [],
+      "id": "oewn-crab__1.05.00..",
+      "lang": "en",
+      "lemma": "crab",
+      "synset": "oewn-01979598-n"
+    },
+    {
+      "definition": "large edible crab of the southern coast of the United States (particularly Florida)",
+      "forms": [],
+      "id": "oewn-stone_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "stone crab",
+      "synset": "oewn-01980126-n"
+    },
+    {
+      "definition": "large edible crab of the southern coast of the United States (particularly Florida)",
+      "forms": [],
+      "id": "oewn-menippe_mercenaria__1.05.00..",
+      "lang": "en",
+      "lemma": "Menippe mercenaria",
+      "synset": "oewn-01980126-n"
+    },
+    {
+      "definition": "edible crab that has not recently molted and so has a hard shell",
+      "forms": [],
+      "id": "oewn-hard-shell_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "hard-shell crab",
+      "synset": "oewn-01980651-n"
+    },
+    {
+      "definition": "edible crab that has recently molted and not yet formed its new shell",
+      "forms": [],
+      "id": "oewn-soft-shell_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "soft-shell crab",
+      "synset": "oewn-01980777-n"
+    },
+    {
+      "definition": "edible crab that has recently molted and not yet formed its new shell",
+      "forms": [],
+      "id": "oewn-soft-shelled_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "soft-shelled crab",
+      "synset": "oewn-01980777-n"
+    },
+    {
+      "definition": "small edible crab of Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-dungeness_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "Dungeness crab",
+      "synset": "oewn-01980928-n"
+    },
+    {
+      "definition": "small edible crab of Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-cancer_magister__1.05.00..",
+      "lang": "en",
+      "lemma": "Cancer magister",
+      "synset": "oewn-01980928-n"
+    },
+    {
+      "definition": "crab of eastern coast of North America",
+      "forms": [],
+      "id": "oewn-rock_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "rock crab",
+      "synset": "oewn-01981096-n"
+    },
+    {
+      "definition": "crab of eastern coast of North America",
+      "forms": [],
+      "id": "oewn-cancer_irroratus__1.05.00..",
+      "lang": "en",
+      "lemma": "Cancer irroratus",
+      "synset": "oewn-01981096-n"
+    },
+    {
+      "definition": "large red deep-water crab of the eastern coast of North America",
+      "forms": [],
+      "id": "oewn-jonah_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "Jonah crab",
+      "synset": "oewn-01981228-n"
+    },
+    {
+      "definition": "large red deep-water crab of the eastern coast of North America",
+      "forms": [],
+      "id": "oewn-cancer_borealis__1.05.00..",
+      "lang": "en",
+      "lemma": "Cancer borealis",
+      "synset": "oewn-01981228-n"
+    },
+    {
+      "definition": "marine crab with some legs flattened and fringed for swimming",
+      "forms": [],
+      "id": "oewn-swimming_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "swimming crab",
+      "synset": "oewn-01981571-n"
+    },
+    {
+      "definition": "crab of the English coasts",
+      "forms": [],
+      "id": "oewn-english_lady_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "English lady crab",
+      "synset": "oewn-01981910-n"
+    },
+    {
+      "definition": "crab of the English coasts",
+      "forms": [],
+      "id": "oewn-portunus_puber__1.05.00..",
+      "lang": "en",
+      "lemma": "Portunus puber",
+      "synset": "oewn-01981910-n"
+    },
+    {
+      "definition": "brightly spotted crab of sandy beaches of the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-american_lady_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "American lady crab",
+      "synset": "oewn-01982167-n"
+    },
+    {
+      "definition": "brightly spotted crab of sandy beaches of the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-lady_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "lady crab",
+      "synset": "oewn-01982167-n"
+    },
+    {
+      "definition": "brightly spotted crab of sandy beaches of the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-calico_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "calico crab",
+      "synset": "oewn-01982167-n"
+    },
+    {
+      "definition": "brightly spotted crab of sandy beaches of the Atlantic coast of the United States",
+      "forms": [],
+      "id": "oewn-ovalipes_ocellatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Ovalipes ocellatus",
+      "synset": "oewn-01982167-n"
+    },
+    {
+      "definition": "bluish edible crab of Atlantic and Gulf Coasts of North America",
+      "forms": [],
+      "id": "oewn-blue_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "blue crab",
+      "synset": "oewn-01982515-n"
+    },
+    {
+      "definition": "bluish edible crab of Atlantic and Gulf Coasts of North America",
+      "forms": [],
+      "id": "oewn-callinectes_sapidus__1.05.00..",
+      "lang": "en",
+      "lemma": "Callinectes sapidus",
+      "synset": "oewn-01982515-n"
+    },
+    {
+      "definition": "burrowing crab of American coastal regions having one claw much enlarged in the male",
+      "forms": [],
+      "id": "oewn-fiddler_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "fiddler crab",
+      "synset": "oewn-01982807-n"
+    },
+    {
+      "definition": "tiny soft-bodied crab living commensally in the mantles of certain bivalve mollusks",
+      "forms": [],
+      "id": "oewn-pea_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "pea crab",
+      "synset": "oewn-01983296-n"
+    },
+    {
+      "definition": "tiny soft-bodied crab living within the mantle cavity of oysters",
+      "forms": [],
+      "id": "oewn-oyster_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "oyster crab",
+      "synset": "oewn-01983471-n"
+    },
+    {
+      "definition": "tiny soft-bodied crab living within the mantle cavity of oysters",
+      "forms": [],
+      "id": "oewn-pinnotheres_ostreum__1.05.00..",
+      "lang": "en",
+      "lemma": "Pinnotheres ostreum",
+      "synset": "oewn-01983471-n"
+    },
+    {
+      "definition": "large edible crab of northern Pacific waters especially along the coasts of Alaska and Japan",
+      "forms": [],
+      "id": "oewn-king_crab__1.05.01..",
+      "lang": "en",
+      "lemma": "king crab",
+      "synset": "oewn-01983917-n"
+    },
+    {
+      "definition": "large edible crab of northern Pacific waters especially along the coasts of Alaska and Japan",
+      "forms": [],
+      "id": "oewn-alaska_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "Alaska crab",
+      "synset": "oewn-01983917-n"
+    },
+    {
+      "definition": "large edible crab of northern Pacific waters especially along the coasts of Alaska and Japan",
+      "forms": [],
+      "id": "oewn-alaskan_king_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "Alaskan king crab",
+      "synset": "oewn-01983917-n"
+    },
+    {
+      "definition": "large edible crab of northern Pacific waters especially along the coasts of Alaska and Japan",
+      "forms": [],
+      "id": "oewn-alaska_king_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "Alaska king crab",
+      "synset": "oewn-01983917-n"
+    },
+    {
+      "definition": "large edible crab of northern Pacific waters especially along the coasts of Alaska and Japan",
+      "forms": [],
+      "id": "oewn-paralithodes_camtschatica__1.05.00..",
+      "lang": "en",
+      "lemma": "Paralithodes camtschatica",
+      "synset": "oewn-01983917-n"
+    },
+    {
+      "definition": "any of numerous crabs with very long legs and small triangular bodies",
+      "forms": [],
+      "id": "oewn-spider_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "spider crab",
+      "synset": "oewn-01984343-n"
+    },
+    {
+      "definition": "a large spider crab of Europe",
+      "forms": [],
+      "id": "oewn-european_spider_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "European spider crab",
+      "synset": "oewn-01984709-n"
+    },
+    {
+      "definition": "a large spider crab of Europe",
+      "forms": [],
+      "id": "oewn-king_crab__1.05.03..",
+      "lang": "en",
+      "lemma": "king crab",
+      "synset": "oewn-01984709-n"
+    },
+    {
+      "definition": "a large spider crab of Europe",
+      "forms": [],
+      "id": "oewn-maja_squinado__1.05.00..",
+      "lang": "en",
+      "lemma": "Maja squinado",
+      "synset": "oewn-01984709-n"
+    },
+    {
+      "definition": "very large deep-water Japanese crab",
+      "forms": [],
+      "id": "oewn-giant_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "giant crab",
+      "synset": "oewn-01984988-n"
+    },
+    {
+      "definition": "very large deep-water Japanese crab",
+      "forms": [],
+      "id": "oewn-macrocheira_kaempferi__1.05.00..",
+      "lang": "en",
+      "lemma": "Macrocheira kaempferi",
+      "synset": "oewn-01984988-n"
+    },
+    {
+      "definition": "any of several edible marine crustaceans of the families Homaridae and Nephropsidae and Palinuridae",
+      "forms": [],
+      "id": "oewn-lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "lobster",
+      "synset": "oewn-01985291-n"
+    },
+    {
+      "definition": "large edible marine crustaceans having large pincers on the first pair of legs",
+      "forms": [],
+      "id": "oewn-true_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "true lobster",
+      "synset": "oewn-01985689-n"
+    },
+    {
+      "definition": "lobster of Atlantic coast of America",
+      "forms": [],
+      "id": "oewn-american_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "American lobster",
+      "synset": "oewn-01986122-n"
+    },
+    {
+      "definition": "lobster of Atlantic coast of America",
+      "forms": [],
+      "id": "oewn-northern_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "Northern lobster",
+      "synset": "oewn-01986122-n"
+    },
+    {
+      "definition": "lobster of Atlantic coast of America",
+      "forms": [],
+      "id": "oewn-maine_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "Maine lobster",
+      "synset": "oewn-01986122-n"
+    },
+    {
+      "definition": "lobster of Atlantic coast of America",
+      "forms": [],
+      "id": "oewn-homarus_americanus__1.05.00..",
+      "lang": "en",
+      "lemma": "Homarus americanus",
+      "synset": "oewn-01986122-n"
+    },
+    {
+      "definition": "lobster of Atlantic coast of Europe",
+      "forms": [],
+      "id": "oewn-european_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "European lobster",
+      "synset": "oewn-01986315-n"
+    },
+    {
+      "definition": "lobster of Atlantic coast of Europe",
+      "forms": [],
+      "id": "oewn-homarus_vulgaris__1.05.00..",
+      "lang": "en",
+      "lemma": "Homarus vulgaris",
+      "synset": "oewn-01986315-n"
+    },
+    {
+      "definition": "small lobster of southern Africa",
+      "forms": [],
+      "id": "oewn-cape_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "Cape lobster",
+      "synset": "oewn-01986470-n"
+    },
+    {
+      "definition": "small lobster of southern Africa",
+      "forms": [],
+      "id": "oewn-homarus_capensis__1.05.00..",
+      "lang": "en",
+      "lemma": "Homarus capensis",
+      "synset": "oewn-01986470-n"
+    },
+    {
+      "definition": "edible European lobster resembling the American lobster but slenderer",
+      "forms": [],
+      "id": "oewn-norway_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "Norway lobster",
+      "synset": "oewn-01986886-n"
+    },
+    {
+      "definition": "edible European lobster resembling the American lobster but slenderer",
+      "forms": [],
+      "id": "oewn-nephrops_norvegicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Nephrops norvegicus",
+      "synset": "oewn-01986886-n"
+    },
+    {
+      "definition": "large edible marine crustacean having a spiny carapace but lacking the large pincers of true lobsters",
+      "forms": [],
+      "id": "oewn-spiny_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "spiny lobster",
+      "synset": "oewn-01987336-n"
+    },
+    {
+      "definition": "large edible marine crustacean having a spiny carapace but lacking the large pincers of true lobsters",
+      "forms": [],
+      "id": "oewn-langouste__1.05.00..",
+      "lang": "en",
+      "lemma": "langouste",
+      "synset": "oewn-01987336-n"
+    },
+    {
+      "definition": "large edible marine crustacean having a spiny carapace but lacking the large pincers of true lobsters",
+      "forms": [],
+      "id": "oewn-rock_lobster__1.05.00..",
+      "lang": "en",
+      "lemma": "rock lobster",
+      "synset": "oewn-01987336-n"
+    },
+    {
+      "definition": "large edible marine crustacean having a spiny carapace but lacking the large pincers of true lobsters",
+      "forms": [
+        "crawfishes"
+      ],
+      "id": "oewn-crawfish__1.05.01..",
+      "lang": "en",
+      "lemma": "crawfish",
+      "synset": "oewn-01987336-n"
+    },
+    {
+      "definition": "large edible marine crustacean having a spiny carapace but lacking the large pincers of true lobsters",
+      "forms": [
+        "crayfishes"
+      ],
+      "id": "oewn-crayfish__1.05.01..",
+      "lang": "en",
+      "lemma": "crayfish",
+      "synset": "oewn-01987336-n"
+    },
+    {
+      "definition": "large edible marine crustacean having a spiny carapace but lacking the large pincers of true lobsters",
+      "forms": [],
+      "id": "oewn-sea_crawfish__1.05.00..",
+      "lang": "en",
+      "lemma": "sea crawfish",
+      "synset": "oewn-01987336-n"
+    },
+    {
+      "definition": "small freshwater decapod crustacean that resembles a lobster",
+      "forms": [
+        "crayfishes"
+      ],
+      "id": "oewn-crayfish__1.05.02..",
+      "lang": "en",
+      "lemma": "crayfish",
+      "synset": "oewn-01987769-n"
+    },
+    {
+      "definition": "small freshwater decapod crustacean that resembles a lobster",
+      "forms": [
+        "crawfishes"
+      ],
+      "id": "oewn-crawfish__1.05.02..",
+      "lang": "en",
+      "lemma": "crawfish",
+      "synset": "oewn-01987769-n"
+    },
+    {
+      "definition": "small freshwater decapod crustacean that resembles a lobster",
+      "forms": [],
+      "id": "oewn-crawdad__1.05.00..",
+      "lang": "en",
+      "lemma": "crawdad",
+      "synset": "oewn-01987769-n"
+    },
+    {
+      "definition": "small freshwater decapod crustacean that resembles a lobster",
+      "forms": [],
+      "id": "oewn-crawdaddy__1.05.00..",
+      "lang": "en",
+      "lemma": "crawdaddy",
+      "synset": "oewn-01987769-n"
+    },
+    {
+      "definition": "small crayfish of Europe and Asia and western North America",
+      "forms": [],
+      "id": "oewn-old_world_crayfish__1.05.00..",
+      "lang": "en",
+      "lemma": "Old World crayfish",
+      "synset": "oewn-01988134-n"
+    },
+    {
+      "definition": "small crayfish of Europe and Asia and western North America",
+      "forms": [],
+      "id": "oewn-ecrevisse__1.05.00..",
+      "lang": "en",
+      "lemma": "ecrevisse",
+      "synset": "oewn-01988134-n"
+    },
+    {
+      "definition": "common large crayfishes of eastern North America",
+      "forms": [],
+      "id": "oewn-american_crayfish__1.05.00..",
+      "lang": "en",
+      "lemma": "American crayfish",
+      "synset": "oewn-01988438-n"
+    },
+    {
+      "definition": "small soft-bodied marine crustaceans living in cast-off shells of gastropods",
+      "forms": [],
+      "id": "oewn-hermit_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "hermit crab",
+      "synset": "oewn-01988855-n"
+    },
+    {
+      "definition": "small slender-bodied chiefly marine decapod crustaceans with a long tail and single pair of pincers; many species are edible",
+      "forms": [],
+      "id": "oewn-shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "shrimp",
+      "synset": "oewn-01989447-n"
+    },
+    {
+      "definition": "small shrimp that makes a snapping noise with one of their enlarged chelae",
+      "forms": [],
+      "id": "oewn-snapping_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "snapping shrimp",
+      "synset": "oewn-01989717-n"
+    },
+    {
+      "definition": "small shrimp that makes a snapping noise with one of their enlarged chelae",
+      "forms": [],
+      "id": "oewn-pistol_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "pistol shrimp",
+      "synset": "oewn-01989717-n"
+    },
+    {
+      "definition": "shrimp-like decapod crustacean having two pairs of pincers; most are edible",
+      "forms": [],
+      "id": "oewn-prawn__1.05.00..",
+      "lang": "en",
+      "lemma": "prawn",
+      "synset": "oewn-01990186-n"
+    },
+    {
+      "definition": "large (a foot or more) edible freshwater prawn common in Australian rivers",
+      "forms": [],
+      "id": "oewn-long-clawed_prawn__1.05.00..",
+      "lang": "en",
+      "lemma": "long-clawed prawn",
+      "synset": "oewn-01990368-n"
+    },
+    {
+      "definition": "large (a foot or more) edible freshwater prawn common in Australian rivers",
+      "forms": [],
+      "id": "oewn-river_prawn__1.05.00..",
+      "lang": "en",
+      "lemma": "river prawn",
+      "synset": "oewn-01990368-n"
+    },
+    {
+      "definition": "large (a foot or more) edible freshwater prawn common in Australian rivers",
+      "forms": [],
+      "id": "oewn-palaemon_australis__1.05.00..",
+      "lang": "en",
+      "lemma": "Palaemon australis",
+      "synset": "oewn-01990368-n"
+    },
+    {
+      "definition": "edible tropical and warm-water prawn",
+      "forms": [],
+      "id": "oewn-tropical_prawn__1.05.00..",
+      "lang": "en",
+      "lemma": "tropical prawn",
+      "synset": "oewn-01990844-n"
+    },
+    {
+      "definition": "shrimp-like planktonic crustaceans; major source of food for e.g. baleen whales",
+      "forms": [],
+      "id": "oewn-krill__1.05.00..",
+      "lang": "en",
+      "lemma": "krill",
+      "synset": "oewn-01991342-n"
+    },
+    {
+      "definition": "food for jellyfish",
+      "forms": [],
+      "id": "oewn-euphausia_pacifica__1.05.00..",
+      "lang": "en",
+      "lemma": "Euphausia pacifica",
+      "synset": "oewn-01991510-n"
+    },
+    {
+      "definition": "shrimp-like crustaceans whose females carry eggs and young in a pouch between the legs",
+      "forms": [],
+      "id": "oewn-opossum_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "opossum shrimp",
+      "synset": "oewn-01992157-n"
+    },
+    {
+      "definition": "a kind of crustacean",
+      "forms": [],
+      "id": "oewn-stomatopod__1.05.00..",
+      "lang": "en",
+      "lemma": "stomatopod",
+      "synset": "oewn-01992510-n"
+    },
+    {
+      "definition": "a kind of crustacean",
+      "forms": [],
+      "id": "oewn-stomatopod_crustacean__1.05.00..",
+      "lang": "en",
+      "lemma": "stomatopod crustacean",
+      "synset": "oewn-01992510-n"
+    },
+    {
+      "definition": "tropical marine burrowing crustaceans with large grasping appendages",
+      "forms": [],
+      "id": "oewn-mantis_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "mantis shrimp",
+      "synset": "oewn-01992648-n"
+    },
+    {
+      "definition": "tropical marine burrowing crustaceans with large grasping appendages",
+      "forms": [],
+      "id": "oewn-mantis_crab__1.05.00..",
+      "lang": "en",
+      "lemma": "mantis crab",
+      "synset": "oewn-01992648-n"
+    },
+    {
+      "definition": "a kind of mantis shrimp",
+      "forms": [
+        "squillae"
+      ],
+      "id": "oewn-squilla__1.05.00..",
+      "lang": "en",
+      "lemma": "squilla",
+      "synset": "oewn-01993157-n"
+    },
+    {
+      "definition": "a kind of mantis shrimp",
+      "forms": [],
+      "id": "oewn-mantis_prawn__1.05.00..",
+      "lang": "en",
+      "lemma": "mantis prawn",
+      "synset": "oewn-01993157-n"
+    },
+    {
+      "definition": "any of various small terrestrial or aquatic crustaceans with seven pairs of legs adapted for crawling",
+      "forms": [],
+      "id": "oewn-isopod__1.05.00..",
+      "lang": "en",
+      "lemma": "isopod",
+      "synset": "oewn-01993441-n"
+    },
+    {
+      "definition": "any of various small terrestrial isopods having a flat elliptical segmented body; found in damp habitats",
+      "forms": [
+        "woodlice"
+      ],
+      "id": "oewn-woodlouse__1.05.01..",
+      "lang": "en",
+      "lemma": "woodlouse",
+      "synset": "oewn-01993669-n"
+    },
+    {
+      "definition": "any of various small terrestrial isopods having a flat elliptical segmented body; found in damp habitats",
+      "forms": [],
+      "id": "oewn-wood_louse__1.05.00..",
+      "lang": "en",
+      "lemma": "wood louse",
+      "synset": "oewn-01993669-n"
+    },
+    {
+      "definition": "any of various small terrestrial isopods having a flat elliptical segmented body; found in damp habitats",
+      "forms": [],
+      "id": "oewn-slater__1.05.01..",
+      "lang": "en",
+      "lemma": "slater",
+      "synset": "oewn-01993669-n"
+    },
+    {
+      "definition": "small terrestrial isopod with a convex segmented body that can roll up into a ball",
+      "forms": [],
+      "id": "oewn-pill_bug__1.05.00..",
+      "lang": "en",
+      "lemma": "pill bug",
+      "synset": "oewn-01994174-n"
+    },
+    {
+      "definition": "terrestrial isopod having an oval segmented body (a shape like a sow)",
+      "forms": [],
+      "id": "oewn-sow_bug__1.05.00..",
+      "lang": "en",
+      "lemma": "sow bug",
+      "synset": "oewn-01994916-n"
+    },
+    {
+      "definition": "marine isopod crustacean",
+      "forms": [],
+      "id": "oewn-sea_louse__1.05.00..",
+      "lang": "en",
+      "lemma": "sea louse",
+      "synset": "oewn-01995077-n"
+    },
+    {
+      "definition": "marine isopod crustacean",
+      "forms": [],
+      "id": "oewn-sea_slater__1.05.00..",
+      "lang": "en",
+      "lemma": "sea slater",
+      "synset": "oewn-01995077-n"
+    },
+    {
+      "definition": "a kind of malacostracan crustacean",
+      "forms": [],
+      "id": "oewn-amphipod__1.05.00..",
+      "lang": "en",
+      "lemma": "amphipod",
+      "synset": "oewn-01995427-n"
+    },
+    {
+      "definition": "small amphipod crustaceans that hop like fleas; common on ocean beaches",
+      "forms": [],
+      "id": "oewn-beach_flea__1.05.00..",
+      "lang": "en",
+      "lemma": "beach flea",
+      "synset": "oewn-01995868-n"
+    },
+    {
+      "definition": "small amphipod crustaceans that hop like fleas; common on ocean beaches",
+      "forms": [],
+      "id": "oewn-sand_hopper__1.05.00..",
+      "lang": "en",
+      "lemma": "sand hopper",
+      "synset": "oewn-01995868-n"
+    },
+    {
+      "definition": "small amphipod crustaceans that hop like fleas; common on ocean beaches",
+      "forms": [],
+      "id": "oewn-sandhopper__1.05.00..",
+      "lang": "en",
+      "lemma": "sandhopper",
+      "synset": "oewn-01995868-n"
+    },
+    {
+      "definition": "small amphipod crustaceans that hop like fleas; common on ocean beaches",
+      "forms": [],
+      "id": "oewn-sand_flea__1.05.00..",
+      "lang": "en",
+      "lemma": "sand flea",
+      "synset": "oewn-01995868-n"
+    },
+    {
+      "definition": "small amphipod crustacean having a grotesque form suggestive of the praying mantis; found chiefly on seaweed",
+      "forms": [],
+      "id": "oewn-skeleton_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "skeleton shrimp",
+      "synset": "oewn-01996179-n"
+    },
+    {
+      "definition": "amphipod crustacean parasitic on cetaceans",
+      "forms": [],
+      "id": "oewn-whale_louse__1.05.00..",
+      "lang": "en",
+      "lemma": "whale louse",
+      "synset": "oewn-01996484-n"
+    },
+    {
+      "definition": "aquatic crustaceans typically having a carapace and many pairs of leaflike appendages used for swimming as well as respiration and feeding",
+      "forms": [],
+      "id": "oewn-branchiopod_crustacean__1.05.00..",
+      "lang": "en",
+      "lemma": "branchiopod crustacean",
+      "synset": "oewn-01997146-n"
+    },
+    {
+      "definition": "aquatic crustaceans typically having a carapace and many pairs of leaflike appendages used for swimming as well as respiration and feeding",
+      "forms": [],
+      "id": "oewn-branchiopod__1.05.00..",
+      "lang": "en",
+      "lemma": "branchiopod",
+      "synset": "oewn-01997146-n"
+    },
+    {
+      "definition": "aquatic crustaceans typically having a carapace and many pairs of leaflike appendages used for swimming as well as respiration and feeding",
+      "forms": [],
+      "id": "oewn-branchiopodan__1.05.00..",
+      "lang": "en",
+      "lemma": "branchiopodan",
+      "synset": "oewn-01997146-n"
+    },
+    {
+      "definition": "minute freshwater crustacean having a round body enclosed in a transparent shell; moves about like a flea by means of hairy branched antennae",
+      "forms": [],
+      "id": "oewn-daphnia__1.05.00..",
+      "lang": "en",
+      "lemma": "daphnia",
+      "synset": "oewn-01997564-n"
+    },
+    {
+      "definition": "minute freshwater crustacean having a round body enclosed in a transparent shell; moves about like a flea by means of hairy branched antennae",
+      "forms": [],
+      "id": "oewn-water_flea__1.05.01..",
+      "lang": "en",
+      "lemma": "water flea",
+      "synset": "oewn-01997564-n"
+    },
+    {
+      "definition": "small freshwater branchiopod having a transparent body with many appendages; swims on its back",
+      "forms": [],
+      "id": "oewn-fairy_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "fairy shrimp",
+      "synset": "oewn-01998168-n"
+    },
+    {
+      "definition": "common to saline lakes",
+      "forms": [],
+      "id": "oewn-brine_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "brine shrimp",
+      "synset": "oewn-01998340-n"
+    },
+    {
+      "definition": "common to saline lakes",
+      "forms": [],
+      "id": "oewn-artemia_salina__1.05.00..",
+      "lang": "en",
+      "lemma": "Artemia salina",
+      "synset": "oewn-01998340-n"
+    },
+    {
+      "definition": "a kind of branchiopod crustacean",
+      "forms": [],
+      "id": "oewn-tadpole_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "tadpole shrimp",
+      "synset": "oewn-01998934-n"
+    },
+    {
+      "definition": "minute marine or freshwater crustaceans usually having six pairs of limbs on the thorax; some abundant in plankton and others parasitic on fish",
+      "forms": [],
+      "id": "oewn-copepod__1.05.00..",
+      "lang": "en",
+      "lemma": "copepod",
+      "synset": "oewn-01999239-n"
+    },
+    {
+      "definition": "minute marine or freshwater crustaceans usually having six pairs of limbs on the thorax; some abundant in plankton and others parasitic on fish",
+      "forms": [],
+      "id": "oewn-copepod_crustacean__1.05.00..",
+      "lang": "en",
+      "lemma": "copepod crustacean",
+      "synset": "oewn-01999239-n"
+    },
+    {
+      "definition": "minute crustaceans forming food for right whales",
+      "forms": [],
+      "id": "oewn-brit__1.05.02..",
+      "lang": "en",
+      "lemma": "brit",
+      "synset": "oewn-01999549-n"
+    },
+    {
+      "definition": "minute crustaceans forming food for right whales",
+      "forms": [],
+      "id": "oewn-britt__1.05.02..",
+      "lang": "en",
+      "lemma": "britt",
+      "synset": "oewn-01999549-n"
+    },
+    {
+      "definition": "minute free-swimming freshwater copepod having a large median eye and pear-shaped body and long antennae used in swimming; important in some food chains and as intermediate hosts of parasitic worms that affect man e.g. Guinea worms",
+      "forms": [
+        "cyclopes"
+      ],
+      "id": "oewn-cyclops__1.05.00..",
+      "lang": "en",
+      "lemma": "cyclops",
+      "synset": "oewn-01999773-n"
+    },
+    {
+      "definition": "minute free-swimming freshwater copepod having a large median eye and pear-shaped body and long antennae used in swimming; important in some food chains and as intermediate hosts of parasitic worms that affect man e.g. Guinea worms",
+      "forms": [],
+      "id": "oewn-water_flea__1.05.02..",
+      "lang": "en",
+      "lemma": "water flea",
+      "synset": "oewn-01999773-n"
+    },
+    {
+      "definition": "a kind of copepod",
+      "forms": [],
+      "id": "oewn-fish_louse__1.05.00..",
+      "lang": "en",
+      "lemma": "fish louse",
+      "synset": "oewn-02000259-n"
+    },
+    {
+      "definition": "tiny marine and freshwater crustaceans with a shrimp-like body enclosed in a bivalve shell",
+      "forms": [],
+      "id": "oewn-seed_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "seed shrimp",
+      "synset": "oewn-02000479-n"
+    },
+    {
+      "definition": "tiny marine and freshwater crustaceans with a shrimp-like body enclosed in a bivalve shell",
+      "forms": [],
+      "id": "oewn-mussel_shrimp__1.05.00..",
+      "lang": "en",
+      "lemma": "mussel shrimp",
+      "synset": "oewn-02000479-n"
+    },
+    {
+      "definition": "tiny marine and freshwater crustaceans with a shrimp-like body enclosed in a bivalve shell",
+      "forms": [],
+      "id": "oewn-ostracod__1.05.00..",
+      "lang": "en",
+      "lemma": "ostracod",
+      "synset": "oewn-02000479-n"
+    },
+    {
+      "definition": "marine crustaceans with feathery food-catching appendages; free-swimming as larvae; as adults form a hard shell and live attached to submerged surfaces",
+      "forms": [],
+      "id": "oewn-barnacle__1.05.01..",
+      "lang": "en",
+      "lemma": "barnacle",
+      "synset": "oewn-02000837-n"
+    },
+    {
+      "definition": "marine crustaceans with feathery food-catching appendages; free-swimming as larvae; as adults form a hard shell and live attached to submerged surfaces",
+      "forms": [],
+      "id": "oewn-cirriped__1.05.00..",
+      "lang": "en",
+      "lemma": "cirriped",
+      "synset": "oewn-02000837-n"
+    },
+    {
+      "definition": "marine crustaceans with feathery food-catching appendages; free-swimming as larvae; as adults form a hard shell and live attached to submerged surfaces",
+      "forms": [],
+      "id": "oewn-cirripede__1.05.00..",
+      "lang": "en",
+      "lemma": "cirripede",
+      "synset": "oewn-02000837-n"
+    },
+    {
+      "definition": "barnacle that attaches to rocks especially in intertidal zones",
+      "forms": [],
+      "id": "oewn-acorn_barnacle__1.05.00..",
+      "lang": "en",
+      "lemma": "acorn barnacle",
+      "synset": "oewn-02001395-n"
+    },
+    {
+      "definition": "barnacle that attaches to rocks especially in intertidal zones",
+      "forms": [],
+      "id": "oewn-rock_barnacle__1.05.00..",
+      "lang": "en",
+      "lemma": "rock barnacle",
+      "synset": "oewn-02001395-n"
+    },
+    {
+      "definition": "barnacle that attaches to rocks especially in intertidal zones",
+      "forms": [],
+      "id": "oewn-balanus_balanoides__1.05.00..",
+      "lang": "en",
+      "lemma": "Balanus balanoides",
+      "synset": "oewn-02001395-n"
+    },
+    {
+      "definition": "stalked barnacle that attaches to ship bottoms or floating timbers",
+      "forms": [],
+      "id": "oewn-goose_barnacle__1.05.00..",
+      "lang": "en",
+      "lemma": "goose barnacle",
+      "synset": "oewn-02001840-n"
+    },
+    {
+      "definition": "stalked barnacle that attaches to ship bottoms or floating timbers",
+      "forms": [],
+      "id": "oewn-gooseneck_barnacle__1.05.00..",
+      "lang": "en",
+      "lemma": "gooseneck barnacle",
+      "synset": "oewn-02001840-n"
+    },
+    {
+      "definition": "stalked barnacle that attaches to ship bottoms or floating timbers",
+      "forms": [],
+      "id": "oewn-lepas_fascicularis__1.05.00..",
+      "lang": "en",
+      "lemma": "Lepas fascicularis",
+      "synset": "oewn-02001840-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "any mainly aquatic arthropod usually having a segmented body and chitinous exoskeleton",
+      "hypernyms": [
+        "oewn-01770302-n"
+      ],
+      "id": "oewn-01977414-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "crustacean"
+    },
+    {
+      "definition": "a major subclass of crustaceans",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-01978328-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "malacostracan crustacean"
+    },
+    {
+      "definition": "crustaceans characteristically having five pairs of locomotor appendages each joined to a segment of the thorax",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-01978787-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "decapod crustacean"
+    },
+    {
+      "definition": "typical crabs",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-01979509-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "brachyuran"
+    },
+    {
+      "definition": "decapod having eyes on short stalks and a broad flattened carapace with a small abdomen folded under the thorax and pincers",
+      "hypernyms": [
+        "oewn-01978787-n"
+      ],
+      "id": "oewn-01979598-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "crab"
+    },
+    {
+      "definition": "large edible crab of the southern coast of the United States (particularly Florida)",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01980126-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "stone crab"
+    },
+    {
+      "definition": "edible crab that has not recently molted and so has a hard shell",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01980651-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "hard-shell crab"
+    },
+    {
+      "definition": "edible crab that has recently molted and not yet formed its new shell",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01980777-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "soft-shell crab"
+    },
+    {
+      "definition": "small edible crab of Pacific coast of North America",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01980928-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Dungeness crab"
+    },
+    {
+      "definition": "crab of eastern coast of North America",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01981096-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "rock crab"
+    },
+    {
+      "definition": "large red deep-water crab of the eastern coast of North America",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01981228-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Jonah crab"
+    },
+    {
+      "definition": "marine crab with some legs flattened and fringed for swimming",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01981571-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "swimming crab"
+    },
+    {
+      "definition": "crab of the English coasts",
+      "hypernyms": [
+        "oewn-01981571-n"
+      ],
+      "id": "oewn-01981910-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "English lady crab"
+    },
+    {
+      "definition": "brightly spotted crab of sandy beaches of the Atlantic coast of the United States",
+      "hypernyms": [
+        "oewn-01981571-n"
+      ],
+      "id": "oewn-01982167-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "American lady crab"
+    },
+    {
+      "definition": "bluish edible crab of Atlantic and Gulf Coasts of North America",
+      "hypernyms": [
+        "oewn-01981571-n"
+      ],
+      "id": "oewn-01982515-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "blue crab"
+    },
+    {
+      "definition": "burrowing crab of American coastal regions having one claw much enlarged in the male",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01982807-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "fiddler crab"
+    },
+    {
+      "definition": "tiny soft-bodied crab living commensally in the mantles of certain bivalve mollusks",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01983296-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "pea crab"
+    },
+    {
+      "definition": "tiny soft-bodied crab living within the mantle cavity of oysters",
+      "hypernyms": [
+        "oewn-01983296-n"
+      ],
+      "id": "oewn-01983471-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "oyster crab"
+    },
+    {
+      "definition": "large edible crab of northern Pacific waters especially along the coasts of Alaska and Japan",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01983917-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "king crab"
+    },
+    {
+      "definition": "any of numerous crabs with very long legs and small triangular bodies",
+      "hypernyms": [
+        "oewn-01979598-n"
+      ],
+      "id": "oewn-01984343-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "spider crab"
+    },
+    {
+      "definition": "a large spider crab of Europe",
+      "hypernyms": [
+        "oewn-01984343-n"
+      ],
+      "id": "oewn-01984709-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "European spider crab"
+    },
+    {
+      "definition": "very large deep-water Japanese crab",
+      "hypernyms": [
+        "oewn-01984343-n"
+      ],
+      "id": "oewn-01984988-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "giant crab"
+    },
+    {
+      "definition": "any of several edible marine crustaceans of the families Homaridae and Nephropsidae and Palinuridae",
+      "hypernyms": [
+        "oewn-01978787-n"
+      ],
+      "id": "oewn-01985291-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "lobster"
+    },
+    {
+      "definition": "large edible marine crustaceans having large pincers on the first pair of legs",
+      "hypernyms": [
+        "oewn-01985291-n"
+      ],
+      "id": "oewn-01985689-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "true lobster"
+    },
+    {
+      "definition": "lobster of Atlantic coast of America",
+      "hypernyms": [
+        "oewn-01985689-n"
+      ],
+      "id": "oewn-01986122-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "American lobster"
+    },
+    {
+      "definition": "lobster of Atlantic coast of Europe",
+      "hypernyms": [
+        "oewn-01985689-n"
+      ],
+      "id": "oewn-01986315-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "European lobster"
+    },
+    {
+      "definition": "small lobster of southern Africa",
+      "hypernyms": [
+        "oewn-01985689-n"
+      ],
+      "id": "oewn-01986470-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "Cape lobster"
+    },
+    {
+      "definition": "edible European lobster resembling the American lobster but slenderer",
+      "hypernyms": [
+        "oewn-01985291-n"
+      ],
+      "id": "oewn-01986886-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Norway lobster"
+    },
+    {
+      "definition": "large edible marine crustacean having a spiny carapace but lacking the large pincers of true lobsters",
+      "hypernyms": [
+        "oewn-01985291-n"
+      ],
+      "id": "oewn-01987336-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "spiny lobster"
+    },
+    {
+      "definition": "small freshwater decapod crustacean that resembles a lobster",
+      "hypernyms": [
+        "oewn-01978787-n"
+      ],
+      "id": "oewn-01987769-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "crayfish"
+    },
+    {
+      "definition": "small crayfish of Europe and Asia and western North America",
+      "hypernyms": [
+        "oewn-01987769-n"
+      ],
+      "id": "oewn-01988134-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Old World crayfish"
+    },
+    {
+      "definition": "common large crayfishes of eastern North America",
+      "hypernyms": [
+        "oewn-01987769-n"
+      ],
+      "id": "oewn-01988438-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "American crayfish"
+    },
+    {
+      "definition": "small soft-bodied marine crustaceans living in cast-off shells of gastropods",
+      "hypernyms": [
+        "oewn-01978787-n"
+      ],
+      "id": "oewn-01988855-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "hermit crab"
+    },
+    {
+      "definition": "small slender-bodied chiefly marine decapod crustaceans with a long tail and single pair of pincers; many species are edible",
+      "hypernyms": [
+        "oewn-01978787-n"
+      ],
+      "id": "oewn-01989447-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "shrimp"
+    },
+    {
+      "definition": "small shrimp that makes a snapping noise with one of their enlarged chelae",
+      "hypernyms": [
+        "oewn-01989447-n"
+      ],
+      "id": "oewn-01989717-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "snapping shrimp"
+    },
+    {
+      "definition": "shrimp-like decapod crustacean having two pairs of pincers; most are edible",
+      "hypernyms": [
+        "oewn-01978787-n"
+      ],
+      "id": "oewn-01990186-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "prawn"
+    },
+    {
+      "definition": "large (a foot or more) edible freshwater prawn common in Australian rivers",
+      "hypernyms": [
+        "oewn-01990186-n"
+      ],
+      "id": "oewn-01990368-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "long-clawed prawn"
+    },
+    {
+      "definition": "edible tropical and warm-water prawn",
+      "hypernyms": [
+        "oewn-01978787-n"
+      ],
+      "id": "oewn-01990844-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tropical prawn"
+    },
+    {
+      "definition": "shrimp-like planktonic crustaceans; major source of food for e.g. baleen whales",
+      "hypernyms": [
+        "oewn-01978328-n"
+      ],
+      "id": "oewn-01991342-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "krill"
+    },
+    {
+      "definition": "food for jellyfish",
+      "hypernyms": [
+        "oewn-01991342-n"
+      ],
+      "id": "oewn-01991510-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Euphausia pacifica"
+    },
+    {
+      "definition": "shrimp-like crustaceans whose females carry eggs and young in a pouch between the legs",
+      "hypernyms": [
+        "oewn-01978328-n"
+      ],
+      "id": "oewn-01992157-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "opossum shrimp"
+    },
+    {
+      "definition": "a kind of crustacean",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-01992510-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "stomatopod"
+    },
+    {
+      "definition": "tropical marine burrowing crustaceans with large grasping appendages",
+      "hypernyms": [
+        "oewn-01992510-n"
+      ],
+      "id": "oewn-01992648-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "mantis shrimp"
+    },
+    {
+      "definition": "a kind of mantis shrimp",
+      "hypernyms": [
+        "oewn-01992648-n"
+      ],
+      "id": "oewn-01993157-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "squilla"
+    },
+    {
+      "definition": "any of various small terrestrial or aquatic crustaceans with seven pairs of legs adapted for crawling",
+      "hypernyms": [
+        "oewn-01978328-n"
+      ],
+      "id": "oewn-01993441-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "isopod"
+    },
+    {
+      "definition": "any of various small terrestrial isopods having a flat elliptical segmented body; found in damp habitats",
+      "hypernyms": [
+        "oewn-01993441-n"
+      ],
+      "id": "oewn-01993669-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "woodlouse"
+    },
+    {
+      "definition": "small terrestrial isopod with a convex segmented body that can roll up into a ball",
+      "hypernyms": [
+        "oewn-01993669-n"
+      ],
+      "id": "oewn-01994174-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "pill bug"
+    },
+    {
+      "definition": "terrestrial isopod having an oval segmented body (a shape like a sow)",
+      "hypernyms": [
+        "oewn-01993669-n"
+      ],
+      "id": "oewn-01994916-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "sow bug"
+    },
+    {
+      "definition": "marine isopod crustacean",
+      "hypernyms": [
+        "oewn-01993441-n"
+      ],
+      "id": "oewn-01995077-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "sea louse"
+    },
+    {
+      "definition": "a kind of malacostracan crustacean",
+      "hypernyms": [
+        "oewn-01978328-n"
+      ],
+      "id": "oewn-01995427-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "amphipod"
+    },
+    {
+      "definition": "small amphipod crustaceans that hop like fleas; common on ocean beaches",
+      "hypernyms": [
+        "oewn-01995427-n"
+      ],
+      "id": "oewn-01995868-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "beach flea"
+    },
+    {
+      "definition": "small amphipod crustacean having a grotesque form suggestive of the praying mantis; found chiefly on seaweed",
+      "hypernyms": [
+        "oewn-01995427-n"
+      ],
+      "id": "oewn-01996179-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "skeleton shrimp"
+    },
+    {
+      "definition": "amphipod crustacean parasitic on cetaceans",
+      "hypernyms": [
+        "oewn-01995427-n"
+      ],
+      "id": "oewn-01996484-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "whale louse"
+    },
+    {
+      "definition": "aquatic crustaceans typically having a carapace and many pairs of leaflike appendages used for swimming as well as respiration and feeding",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-01997146-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "branchiopod crustacean"
+    },
+    {
+      "definition": "minute freshwater crustacean having a round body enclosed in a transparent shell; moves about like a flea by means of hairy branched antennae",
+      "hypernyms": [
+        "oewn-01997146-n"
+      ],
+      "id": "oewn-01997564-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "daphnia"
+    },
+    {
+      "definition": "small freshwater branchiopod having a transparent body with many appendages; swims on its back",
+      "hypernyms": [
+        "oewn-01997146-n"
+      ],
+      "id": "oewn-01998168-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "fairy shrimp"
+    },
+    {
+      "definition": "common to saline lakes",
+      "hypernyms": [
+        "oewn-01997146-n"
+      ],
+      "id": "oewn-01998340-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "brine shrimp"
+    },
+    {
+      "definition": "a kind of branchiopod crustacean",
+      "hypernyms": [
+        "oewn-01997146-n"
+      ],
+      "id": "oewn-01998934-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tadpole shrimp"
+    },
+    {
+      "definition": "minute marine or freshwater crustaceans usually having six pairs of limbs on the thorax; some abundant in plankton and others parasitic on fish",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-01999239-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "copepod"
+    },
+    {
+      "definition": "minute crustaceans forming food for right whales",
+      "hypernyms": [
+        "oewn-01999239-n"
+      ],
+      "id": "oewn-01999549-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "brit"
+    },
+    {
+      "definition": "minute free-swimming freshwater copepod having a large median eye and pear-shaped body and long antennae used in swimming; important in some food chains and as intermediate hosts of parasitic worms that affect man e.g. Guinea worms",
+      "hypernyms": [
+        "oewn-01999239-n"
+      ],
+      "id": "oewn-01999773-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cyclops"
+    },
+    {
+      "definition": "a kind of copepod",
+      "hypernyms": [
+        "oewn-01999239-n"
+      ],
+      "id": "oewn-02000259-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "fish louse"
+    },
+    {
+      "definition": "tiny marine and freshwater crustaceans with a shrimp-like body enclosed in a bivalve shell",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-02000479-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "seed shrimp"
+    },
+    {
+      "definition": "marine crustaceans with feathery food-catching appendages; free-swimming as larvae; as adults form a hard shell and live attached to submerged surfaces",
+      "hypernyms": [
+        "oewn-01977414-n"
+      ],
+      "id": "oewn-02000837-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "barnacle"
+    },
+    {
+      "definition": "barnacle that attaches to rocks especially in intertidal zones",
+      "hypernyms": [
+        "oewn-02000837-n"
+      ],
+      "id": "oewn-02001395-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "acorn barnacle"
+    },
+    {
+      "definition": "stalked barnacle that attaches to ship bottoms or floating timbers",
+      "hypernyms": [
+        "oewn-02000837-n"
+      ],
+      "id": "oewn-02001840-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "goose barnacle"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

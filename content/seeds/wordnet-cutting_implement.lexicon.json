@@ -1,0 +1,2944 @@
+{
+  "exported": "2026-10-09",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-03159112-n",
+  "senses": [
+    {
+      "definition": "an edge tool used to cut and shape wood",
+      "forms": [],
+      "id": "oewn-adz__1.06.00..",
+      "lang": "en",
+      "lemma": "adz",
+      "synset": "oewn-02685165-n"
+    },
+    {
+      "definition": "an edge tool used to cut and shape wood",
+      "forms": [],
+      "id": "oewn-adze__1.06.00..",
+      "lang": "en",
+      "lemma": "adze",
+      "synset": "oewn-02685165-n"
+    },
+    {
+      "definition": "an edge tool with a heavy bladed head mounted across a handle",
+      "forms": [
+        "axes"
+      ],
+      "id": "oewn-ax__1.06.00..",
+      "lang": "en",
+      "lemma": "ax",
+      "synset": "oewn-02767049-n"
+    },
+    {
+      "definition": "an edge tool with a heavy bladed head mounted across a handle",
+      "forms": [],
+      "id": "oewn-axe__1.06.00..",
+      "lang": "en",
+      "lemma": "axe",
+      "synset": "oewn-02767049-n"
+    },
+    {
+      "definition": "a knife resembling a cleaver; used in the Philippines",
+      "forms": [],
+      "id": "oewn-barong__1.06.00..",
+      "lang": "en",
+      "lemma": "barong",
+      "synset": "oewn-02797391-n"
+    },
+    {
+      "definition": "a broadax used as a weapon",
+      "forms": [],
+      "id": "oewn-battle-ax__1.06.00..",
+      "lang": "en",
+      "lemma": "battle-ax",
+      "synset": "oewn-02814603-n"
+    },
+    {
+      "definition": "a broadax used as a weapon",
+      "forms": [],
+      "id": "oewn-battle-axe__1.06.00..",
+      "lang": "en",
+      "lemma": "battle-axe",
+      "synset": "oewn-02814603-n"
+    },
+    {
+      "definition": "a plane with a concave blade for making moulding with beadwork",
+      "forms": [],
+      "id": "oewn-beading_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "beading plane",
+      "synset": "oewn-02818613-n"
+    },
+    {
+      "definition": "the cutting part of a drill; usually pointed and threaded and is replaceable in a brace or bitstock or drill press",
+      "forms": [],
+      "id": "oewn-bit__1.06.00..",
+      "lang": "en",
+      "lemma": "bit",
+      "synset": "oewn-02847545-n"
+    },
+    {
+      "definition": "the flat part of a tool or weapon that (usually) has a cutting edge",
+      "forms": [],
+      "id": "oewn-blade__1.06.00..",
+      "lang": "en",
+      "lemma": "blade",
+      "synset": "oewn-02851454-n"
+    },
+    {
+      "definition": "a small plane used on end grains of wood",
+      "forms": [],
+      "id": "oewn-block_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "block plane",
+      "synset": "oewn-02857791-n"
+    },
+    {
+      "definition": "long heavy knife with a single edge; of Philippine origin",
+      "forms": [],
+      "id": "oewn-bolo__1.06.00..",
+      "lang": "en",
+      "lemma": "bolo",
+      "synset": "oewn-02868327-n"
+    },
+    {
+      "definition": "long heavy knife with a single edge; of Philippine origin",
+      "forms": [],
+      "id": "oewn-bolo_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "bolo knife",
+      "synset": "oewn-02868327-n"
+    },
+    {
+      "definition": "an implement for cutting bolts",
+      "forms": [],
+      "id": "oewn-bolt_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "bolt cutter",
+      "synset": "oewn-02869726-n"
+    },
+    {
+      "definition": "a stout hunting knife with a single edge",
+      "forms": [],
+      "id": "oewn-bowie_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "Bowie knife",
+      "synset": "oewn-02884084-n"
+    },
+    {
+      "definition": "a knife used to cut bread",
+      "forms": [],
+      "id": "oewn-bread_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "bread knife",
+      "synset": "oewn-02897203-n"
+    },
+    {
+      "definition": "a large ax with a broad cutting blade",
+      "forms": [],
+      "id": "oewn-broadax__1.06.00..",
+      "lang": "en",
+      "lemma": "broadax",
+      "synset": "oewn-02906331-n"
+    },
+    {
+      "definition": "a large ax with a broad cutting blade",
+      "forms": [],
+      "id": "oewn-broadaxe__1.06.00..",
+      "lang": "en",
+      "lemma": "broadaxe",
+      "synset": "oewn-02906331-n"
+    },
+    {
+      "definition": "a short-handled hatchet with a broad blade opposite a hammerhead",
+      "forms": [],
+      "id": "oewn-broad_hatchet__1.06.00..",
+      "lang": "en",
+      "lemma": "broad hatchet",
+      "synset": "oewn-02907434-n"
+    },
+    {
+      "definition": "a small carpenter's plane with the cutting edge near the front",
+      "forms": [],
+      "id": "oewn-bullnose__1.06.00..",
+      "lang": "en",
+      "lemma": "bullnose",
+      "synset": "oewn-02920953-n"
+    },
+    {
+      "definition": "a small carpenter's plane with the cutting edge near the front",
+      "forms": [],
+      "id": "oewn-bullnosed_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "bullnosed plane",
+      "synset": "oewn-02920953-n"
+    },
+    {
+      "definition": "small bit used in dentistry or surgery",
+      "forms": [],
+      "id": "oewn-bur__1.06.00..",
+      "lang": "en",
+      "lemma": "bur",
+      "synset": "oewn-02924676-n"
+    },
+    {
+      "definition": "small bit used in dentistry or surgery",
+      "forms": [],
+      "id": "oewn-burr__1.06.02..",
+      "lang": "en",
+      "lemma": "burr",
+      "synset": "oewn-02924676-n"
+    },
+    {
+      "definition": "a chisel of tempered steel with a sharp point; used for engraving",
+      "forms": [],
+      "id": "oewn-burin__1.06.00..",
+      "lang": "en",
+      "lemma": "burin",
+      "synset": "oewn-02925845-n"
+    },
+    {
+      "definition": "a large sharp knife for cutting or trimming meat",
+      "forms": [],
+      "id": "oewn-butcher_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "butcher knife",
+      "synset": "oewn-02930437-n"
+    },
+    {
+      "definition": "a small knife with a dull blade; for cutting or spreading butter",
+      "forms": [],
+      "id": "oewn-butter_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "butter knife",
+      "synset": "oewn-02931433-n"
+    },
+    {
+      "definition": "a large knife used to carve cooked meat",
+      "forms": [],
+      "id": "oewn-carving_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "carving knife",
+      "synset": "oewn-02977363-n"
+    },
+    {
+      "definition": "a knife with a fixed blade that is carried in a sheath",
+      "forms": [],
+      "id": "oewn-case_knife__1.06.01..",
+      "lang": "en",
+      "lemma": "case knife",
+      "synset": "oewn-02979582-n"
+    },
+    {
+      "definition": "a knife with a fixed blade that is carried in a sheath",
+      "forms": [],
+      "id": "oewn-sheath_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "sheath knife",
+      "synset": "oewn-02979582-n"
+    },
+    {
+      "definition": "a metal blade with a handle; used as cutlery",
+      "forms": [],
+      "id": "oewn-case_knife__1.06.02..",
+      "lang": "en",
+      "lemma": "case knife",
+      "synset": "oewn-02979708-n"
+    },
+    {
+      "definition": "a long double-edged knife used for amputations",
+      "forms": [],
+      "id": "oewn-catling__1.06.00..",
+      "lang": "en",
+      "lemma": "catling",
+      "synset": "oewn-02988961-n"
+    },
+    {
+      "definition": "a bit with a sharp center point for guidance and two side cutters",
+      "forms": [],
+      "id": "oewn-center_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "center bit",
+      "synset": "oewn-02997370-n"
+    },
+    {
+      "definition": "a bit with a sharp center point for guidance and two side cutters",
+      "forms": [],
+      "id": "oewn-centre_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "centre bit",
+      "synset": "oewn-02997370-n"
+    },
+    {
+      "definition": "a bit that is used for beveling",
+      "forms": [],
+      "id": "oewn-chamfer_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "chamfer bit",
+      "synset": "oewn-03008135-n"
+    },
+    {
+      "definition": "a plane that makes a beveled edge",
+      "forms": [],
+      "id": "oewn-chamfer_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "chamfer plane",
+      "synset": "oewn-03008224-n"
+    },
+    {
+      "definition": "an edge tool with a flat steel blade with a cutting edge",
+      "forms": [],
+      "id": "oewn-chisel__1.06.00..",
+      "lang": "en",
+      "lemma": "chisel",
+      "synset": "oewn-03024375-n"
+    },
+    {
+      "definition": "an implement for cutting the tip off of a cigar",
+      "forms": [],
+      "id": "oewn-cigar_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "cigar cutter",
+      "synset": "oewn-03034542-n"
+    },
+    {
+      "definition": "a plane with a flexible face that can plane concave or convex surfaces",
+      "forms": [],
+      "id": "oewn-circular_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "circular plane",
+      "synset": "oewn-03038501-n"
+    },
+    {
+      "definition": "a plane with a flexible face that can plane concave or convex surfaces",
+      "forms": [],
+      "id": "oewn-compass_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "compass plane",
+      "synset": "oewn-03038501-n"
+    },
+    {
+      "definition": "a large knife with one or more folding blades",
+      "forms": [],
+      "id": "oewn-clasp_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "clasp knife",
+      "synset": "oewn-03042465-n"
+    },
+    {
+      "definition": "a large knife with one or more folding blades",
+      "forms": [
+        "jackknives"
+      ],
+      "id": "oewn-jackknife__1.06.00..",
+      "lang": "en",
+      "lemma": "jackknife",
+      "synset": "oewn-03042465-n"
+    },
+    {
+      "definition": "a hatchet that has a cleft for pulling nails",
+      "forms": [],
+      "id": "oewn-claw_hatchet__1.06.00..",
+      "lang": "en",
+      "lemma": "claw hatchet",
+      "synset": "oewn-03043141-n"
+    },
+    {
+      "definition": "a butcher's knife having a large square blade",
+      "forms": [],
+      "id": "oewn-cleaver__1.06.00..",
+      "lang": "en",
+      "lemma": "cleaver",
+      "synset": "oewn-03045617-n"
+    },
+    {
+      "definition": "a butcher's knife having a large square blade",
+      "forms": [],
+      "id": "oewn-meat_cleaver__1.06.00..",
+      "lang": "en",
+      "lemma": "meat cleaver",
+      "synset": "oewn-03045617-n"
+    },
+    {
+      "definition": "a butcher's knife having a large square blade",
+      "forms": [],
+      "id": "oewn-chopper__1.06.00..",
+      "lang": "en",
+      "lemma": "chopper",
+      "synset": "oewn-03045617-n"
+    },
+    {
+      "definition": "scissors for cutting hair or finger nails",
+      "forms": [],
+      "id": "oewn-clipper__1.06.00..",
+      "lang": "en",
+      "lemma": "clipper",
+      "synset": "oewn-03048919-n"
+    },
+    {
+      "definition": "shears for cutting grass or shrubbery",
+      "forms": [],
+      "id": "oewn-clipper__1.06.01..",
+      "lang": "en",
+      "lemma": "clipper",
+      "synset": "oewn-03049059-n"
+    },
+    {
+      "definition": "narrow chisel made of steel; used to cut stone or bricks",
+      "forms": [],
+      "id": "oewn-cold_chisel__1.06.00..",
+      "lang": "en",
+      "lemma": "cold chisel",
+      "synset": "oewn-03071216-n"
+    },
+    {
+      "definition": "narrow chisel made of steel; used to cut stone or bricks",
+      "forms": [],
+      "id": "oewn-set_chisel__1.06.00..",
+      "lang": "en",
+      "lemma": "set chisel",
+      "synset": "oewn-03071216-n"
+    },
+    {
+      "definition": "a woodworking plane that has interchangeable cutters of various shapes",
+      "forms": [],
+      "id": "oewn-combination_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "combination plane",
+      "synset": "oewn-03079504-n"
+    },
+    {
+      "definition": "an ax with a long handle and a head that has one cutting edge and one blunt side",
+      "forms": [],
+      "id": "oewn-common_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "common ax",
+      "synset": "oewn-03081446-n"
+    },
+    {
+      "definition": "an ax with a long handle and a head that has one cutting edge and one blunt side",
+      "forms": [],
+      "id": "oewn-common_axe__1.06.00..",
+      "lang": "en",
+      "lemma": "common axe",
+      "synset": "oewn-03081446-n"
+    },
+    {
+      "definition": "an ax with a long handle and a head that has one cutting edge and one blunt side",
+      "forms": [],
+      "id": "oewn-dayton_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "Dayton ax",
+      "synset": "oewn-03081446-n"
+    },
+    {
+      "definition": "an ax with a long handle and a head that has one cutting edge and one blunt side",
+      "forms": [],
+      "id": "oewn-dayton_axe__1.06.00..",
+      "lang": "en",
+      "lemma": "Dayton axe",
+      "synset": "oewn-03081446-n"
+    },
+    {
+      "definition": "a hollow drilling bit that is the cutting part of a core drill; allows core samples to be taken",
+      "forms": [],
+      "id": "oewn-core_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "core bit",
+      "synset": "oewn-03113106-n"
+    },
+    {
+      "definition": "a bit for enlarging the upper part of a hole",
+      "forms": [],
+      "id": "oewn-counterbore__1.06.00..",
+      "lang": "en",
+      "lemma": "counterbore",
+      "synset": "oewn-03122293-n"
+    },
+    {
+      "definition": "a bit for enlarging the upper part of a hole",
+      "forms": [],
+      "id": "oewn-countersink__1.06.00..",
+      "lang": "en",
+      "lemma": "countersink",
+      "synset": "oewn-03122293-n"
+    },
+    {
+      "definition": "a bit for enlarging the upper part of a hole",
+      "forms": [],
+      "id": "oewn-countersink_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "countersink bit",
+      "synset": "oewn-03122293-n"
+    },
+    {
+      "definition": "a cutting implement; a tool for cutting",
+      "forms": [],
+      "id": "oewn-cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "cutter",
+      "synset": "oewn-03158739-n"
+    },
+    {
+      "definition": "a cutting implement; a tool for cutting",
+      "forms": [],
+      "id": "oewn-cutlery__1.06.01..",
+      "lang": "en",
+      "lemma": "cutlery",
+      "synset": "oewn-03158739-n"
+    },
+    {
+      "definition": "a cutting implement; a tool for cutting",
+      "forms": [],
+      "id": "oewn-cutting_tool__1.06.00..",
+      "lang": "en",
+      "lemma": "cutting tool",
+      "synset": "oewn-03158739-n"
+    },
+    {
+      "definition": "a tool used for cutting or slicing",
+      "forms": [],
+      "id": "oewn-cutting_implement__1.06.00..",
+      "lang": "en",
+      "lemma": "cutting implement",
+      "synset": "oewn-03159112-n"
+    },
+    {
+      "definition": "a plane for making a dado groove",
+      "forms": [],
+      "id": "oewn-dado_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "dado plane",
+      "synset": "oewn-03163462-n"
+    },
+    {
+      "definition": "a cutting tool that is fitted into a diestock and used for cutting male (external) screw threads on screws or bolts or pipes or rods",
+      "forms": [],
+      "id": "oewn-die__1.06.02..",
+      "lang": "en",
+      "lemma": "die",
+      "synset": "oewn-03197591-n"
+    },
+    {
+      "definition": "an ax that has cutting edges on both sides of the head",
+      "forms": [],
+      "id": "oewn-double-bitted_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "double-bitted ax",
+      "synset": "oewn-03230793-n"
+    },
+    {
+      "definition": "an ax that has cutting edges on both sides of the head",
+      "forms": [],
+      "id": "oewn-double-bitted_axe__1.06.00..",
+      "lang": "en",
+      "lemma": "double-bitted axe",
+      "synset": "oewn-03230793-n"
+    },
+    {
+      "definition": "an ax that has cutting edges on both sides of the head",
+      "forms": [],
+      "id": "oewn-western_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "Western ax",
+      "synset": "oewn-03230793-n"
+    },
+    {
+      "definition": "an ax that has cutting edges on both sides of the head",
+      "forms": [],
+      "id": "oewn-western_axe__1.06.00..",
+      "lang": "en",
+      "lemma": "Western axe",
+      "synset": "oewn-03230793-n"
+    },
+    {
+      "definition": "a woodworking plane designed to make the grooves for dovetail joints",
+      "forms": [],
+      "id": "oewn-dovetail_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "dovetail plane",
+      "synset": "oewn-03233818-n"
+    },
+    {
+      "definition": "a woodworker's knife to shave surfaces",
+      "forms": [
+        "drawknives"
+      ],
+      "id": "oewn-drawknife__1.06.00..",
+      "lang": "en",
+      "lemma": "drawknife",
+      "synset": "oewn-03240030-n"
+    },
+    {
+      "definition": "a woodworker's knife to shave surfaces",
+      "forms": [],
+      "id": "oewn-drawshave__1.06.00..",
+      "lang": "en",
+      "lemma": "drawshave",
+      "synset": "oewn-03240030-n"
+    },
+    {
+      "definition": "a bit used in drilling for oil",
+      "forms": [],
+      "id": "oewn-drilling_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "drilling bit",
+      "synset": "oewn-03245030-n"
+    },
+    {
+      "definition": "a bit used in drilling for oil",
+      "forms": [],
+      "id": "oewn-drill_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "drill bit",
+      "synset": "oewn-03245030-n"
+    },
+    {
+      "definition": "a stonemason's chisel with a broad edge for dressing stone",
+      "forms": [],
+      "id": "oewn-drove__1.06.00..",
+      "lang": "en",
+      "lemma": "drove",
+      "synset": "oewn-03252198-n"
+    },
+    {
+      "definition": "a stonemason's chisel with a broad edge for dressing stone",
+      "forms": [],
+      "id": "oewn-drove_chisel__1.06.00..",
+      "lang": "en",
+      "lemma": "drove chisel",
+      "synset": "oewn-03252198-n"
+    },
+    {
+      "definition": "any cutting tool with a sharp cutting edge (as a chisel or knife or plane or gouge)",
+      "forms": [],
+      "id": "oewn-edge_tool__1.06.00..",
+      "lang": "en",
+      "lemma": "edge tool",
+      "synset": "oewn-03269943-n"
+    },
+    {
+      "definition": "a bit with a cutting blade that can be adjusted to different sizes",
+      "forms": [],
+      "id": "oewn-expansion_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "expansion bit",
+      "synset": "oewn-03309268-n"
+    },
+    {
+      "definition": "a bit with a cutting blade that can be adjusted to different sizes",
+      "forms": [],
+      "id": "oewn-expansive_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "expansive bit",
+      "synset": "oewn-03309268-n"
+    },
+    {
+      "definition": "an ax that has a long handle and a head with one cutting edge and a point on the other side",
+      "forms": [],
+      "id": "oewn-fireman-ap-s_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "fireman's ax",
+      "synset": "oewn-03351135-n"
+    },
+    {
+      "definition": "an ax that has a long handle and a head with one cutting edge and a point on the other side",
+      "forms": [],
+      "id": "oewn-fireman-ap-s_axe__1.06.00..",
+      "lang": "en",
+      "lemma": "fireman's axe",
+      "synset": "oewn-03351135-n"
+    },
+    {
+      "definition": "a chisel with a thin blade for woodworking",
+      "forms": [],
+      "id": "oewn-firmer_chisel__1.06.00..",
+      "lang": "en",
+      "lemma": "firmer chisel",
+      "synset": "oewn-03354213-n"
+    },
+    {
+      "definition": "a small table knife with a spatula blade used for eating fish",
+      "forms": [],
+      "id": "oewn-fish_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "fish knife",
+      "synset": "oewn-03357212-n"
+    },
+    {
+      "definition": "a drilling bit with cutting edges usually hardened against wear",
+      "forms": [],
+      "id": "oewn-fishtail_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "fishtail bit",
+      "synset": "oewn-03357993-n"
+    },
+    {
+      "definition": "a drilling bit with cutting edges usually hardened against wear",
+      "forms": [],
+      "id": "oewn-blade_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "blade bit",
+      "synset": "oewn-03357993-n"
+    },
+    {
+      "definition": "a carpenter's plane intermediate between a jack plane and a jointer plane",
+      "forms": [],
+      "id": "oewn-fore_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "fore plane",
+      "synset": "oewn-03387815-n"
+    },
+    {
+      "definition": "a tool for cutting glass",
+      "forms": [],
+      "id": "oewn-glass_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "glass cutter",
+      "synset": "oewn-03443704-n"
+    },
+    {
+      "definition": "and edge tool with a blade like a trough for cutting channels or grooves",
+      "forms": [],
+      "id": "oewn-gouge__1.06.00..",
+      "lang": "en",
+      "lemma": "gouge",
+      "synset": "oewn-03454253-n"
+    },
+    {
+      "definition": "a hatchet with a half axe head",
+      "forms": [],
+      "id": "oewn-half_hatchet__1.06.00..",
+      "lang": "en",
+      "lemma": "half hatchet",
+      "synset": "oewn-03482896-n"
+    },
+    {
+      "definition": "a stone tool with a cutting edge; the stone is held in the hand and used for chopping",
+      "forms": [],
+      "id": "oewn-hand_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "hand ax",
+      "synset": "oewn-03487810-n"
+    },
+    {
+      "definition": "a stone tool with a cutting edge; the stone is held in the hand and used for chopping",
+      "forms": [],
+      "id": "oewn-hand_axe__1.06.00..",
+      "lang": "en",
+      "lemma": "hand axe",
+      "synset": "oewn-03487810-n"
+    },
+    {
+      "definition": "a small ax with a short handle used with one hand (usually to chop wood)",
+      "forms": [],
+      "id": "oewn-hatchet__1.06.00..",
+      "lang": "en",
+      "lemma": "hatchet",
+      "synset": "oewn-03504106-n"
+    },
+    {
+      "definition": "a hard steel edge tool used to cut gears",
+      "forms": [],
+      "id": "oewn-hob__1.06.01..",
+      "lang": "en",
+      "lemma": "hob",
+      "synset": "oewn-03528561-n"
+    },
+    {
+      "definition": "a large sharp knife with a handle shaped to fit the grip",
+      "forms": [],
+      "id": "oewn-hunting_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "hunting knife",
+      "synset": "oewn-03554653-n"
+    },
+    {
+      "definition": "an ax used by mountain climbers for cutting footholds in ice",
+      "forms": [],
+      "id": "oewn-ice_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "ice ax",
+      "synset": "oewn-03561859-n"
+    },
+    {
+      "definition": "an ax used by mountain climbers for cutting footholds in ice",
+      "forms": [],
+      "id": "oewn-ice_axe__1.06.00..",
+      "lang": "en",
+      "lemma": "ice axe",
+      "synset": "oewn-03561859-n"
+    },
+    {
+      "definition": "an ax used by mountain climbers for cutting footholds in ice",
+      "forms": [],
+      "id": "oewn-piolet__1.06.00..",
+      "lang": "en",
+      "lemma": "piolet",
+      "synset": "oewn-03561859-n"
+    },
+    {
+      "definition": "a carpenter's plane for rough finishing",
+      "forms": [],
+      "id": "oewn-jack_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "jack plane",
+      "synset": "oewn-03596119-n"
+    },
+    {
+      "definition": "a long carpenter's plane used to shape the edges of boards so they will fit together",
+      "forms": [],
+      "id": "oewn-jointer__1.06.00..",
+      "lang": "en",
+      "lemma": "jointer",
+      "synset": "oewn-03606851-n"
+    },
+    {
+      "definition": "a long carpenter's plane used to shape the edges of boards so they will fit together",
+      "forms": [],
+      "id": "oewn-jointer_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "jointer plane",
+      "synset": "oewn-03606851-n"
+    },
+    {
+      "definition": "a long carpenter's plane used to shape the edges of boards so they will fit together",
+      "forms": [],
+      "id": "oewn-jointing_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "jointing plane",
+      "synset": "oewn-03606851-n"
+    },
+    {
+      "definition": "a long carpenter's plane used to shape the edges of boards so they will fit together",
+      "forms": [],
+      "id": "oewn-long_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "long plane",
+      "synset": "oewn-03606851-n"
+    },
+    {
+      "definition": "edge tool used as a cutting instrument; has a pointed blade with a sharp edge and a handle",
+      "forms": [
+        "knives"
+      ],
+      "id": "oewn-knife__1.06.00..",
+      "lang": "en",
+      "lemma": "knife",
+      "synset": "oewn-03628765-n"
+    },
+    {
+      "definition": "the blade of a knife",
+      "forms": [],
+      "id": "oewn-knife_blade__1.06.00..",
+      "lang": "en",
+      "lemma": "knife blade",
+      "synset": "oewn-03629609-n"
+    },
+    {
+      "definition": "a surgical knife with a pointed double-edged blade; used for punctures and small incisions",
+      "forms": [],
+      "id": "oewn-lancet__1.06.00..",
+      "lang": "en",
+      "lemma": "lancet",
+      "synset": "oewn-03642932-n"
+    },
+    {
+      "definition": "a surgical knife with a pointed double-edged blade; used for punctures and small incisions",
+      "forms": [],
+      "id": "oewn-lance__1.06.02..",
+      "lang": "en",
+      "lemma": "lance",
+      "synset": "oewn-03642932-n"
+    },
+    {
+      "definition": "dull knife used to cut open the envelopes in which letters are mailed or to slit uncut pages of books",
+      "forms": [],
+      "id": "oewn-letter_opener__1.06.00..",
+      "lang": "en",
+      "lemma": "letter opener",
+      "synset": "oewn-03663511-n"
+    },
+    {
+      "definition": "dull knife used to cut open the envelopes in which letters are mailed or to slit uncut pages of books",
+      "forms": [],
+      "id": "oewn-paper_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "paper knife",
+      "synset": "oewn-03663511-n"
+    },
+    {
+      "definition": "dull knife used to cut open the envelopes in which letters are mailed or to slit uncut pages of books",
+      "forms": [
+        "paperknives"
+      ],
+      "id": "oewn-paperknife__1.06.00..",
+      "lang": "en",
+      "lemma": "paperknife",
+      "synset": "oewn-03663511-n"
+    },
+    {
+      "definition": "a knife having a short stiff blade with a curved point used for cutting linoleum",
+      "forms": [],
+      "id": "oewn-linoleum_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "linoleum knife",
+      "synset": "oewn-03680402-n"
+    },
+    {
+      "definition": "a knife having a short stiff blade with a curved point used for cutting linoleum",
+      "forms": [],
+      "id": "oewn-linoleum_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "linoleum cutter",
+      "synset": "oewn-03680402-n"
+    },
+    {
+      "definition": "a battle-ax formerly used by Scottish Highlanders",
+      "forms": [],
+      "id": "oewn-lochaber_ax__1.06.00..",
+      "lang": "en",
+      "lemma": "Lochaber ax",
+      "synset": "oewn-03687706-n"
+    },
+    {
+      "definition": "a plane having cutters designed to make the tongues and grooves on the edges of matchboards",
+      "forms": [],
+      "id": "oewn-match_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "match plane",
+      "synset": "oewn-03735138-n"
+    },
+    {
+      "definition": "a plane having cutters designed to make the tongues and grooves on the edges of matchboards",
+      "forms": [],
+      "id": "oewn-tonguing_and_grooving_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "tonguing and grooving plane",
+      "synset": "oewn-03735138-n"
+    },
+    {
+      "definition": "a kind of pick that is used for digging; has a flat blade set at right angles to the handle",
+      "forms": [],
+      "id": "oewn-mattock__1.06.00..",
+      "lang": "en",
+      "lemma": "mattock",
+      "synset": "oewn-03736510-n"
+    },
+    {
+      "definition": "a woodworking plane designed to cut rabbets",
+      "forms": [],
+      "id": "oewn-openside_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "openside plane",
+      "synset": "oewn-03854795-n"
+    },
+    {
+      "definition": "a woodworking plane designed to cut rabbets",
+      "forms": [],
+      "id": "oewn-rabbet_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "rabbet plane",
+      "synset": "oewn-03854795-n"
+    },
+    {
+      "definition": "a cutting implement for cutting sheets of paper to the desired size",
+      "forms": [],
+      "id": "oewn-paper_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "paper cutter",
+      "synset": "oewn-03892637-n"
+    },
+    {
+      "definition": "a stout straight knife used in Malaysia and Indonesia",
+      "forms": [],
+      "id": "oewn-parang__1.06.00..",
+      "lang": "en",
+      "lemma": "parang",
+      "synset": "oewn-03895094-n"
+    },
+    {
+      "definition": "a small sharp knife used in paring fruits or vegetables",
+      "forms": [],
+      "id": "oewn-parer__1.06.00..",
+      "lang": "en",
+      "lemma": "parer",
+      "synset": "oewn-03895790-n"
+    },
+    {
+      "definition": "a small sharp knife used in paring fruits or vegetables",
+      "forms": [],
+      "id": "oewn-paring_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "paring knife",
+      "synset": "oewn-03895790-n"
+    },
+    {
+      "definition": "a small pocketknife; originally used to cut quill pens",
+      "forms": [
+        "penknives"
+      ],
+      "id": "oewn-penknife__1.06.00..",
+      "lang": "en",
+      "lemma": "penknife",
+      "synset": "oewn-03917777-n"
+    },
+    {
+      "definition": "a heavy iron tool with a wooden handle and a curved head that is pointed on both ends",
+      "forms": [],
+      "id": "oewn-pick__1.06.00..",
+      "lang": "en",
+      "lemma": "pick",
+      "synset": "oewn-03935440-n"
+    },
+    {
+      "definition": "a heavy iron tool with a wooden handle and a curved head that is pointed on both ends",
+      "forms": [],
+      "id": "oewn-pickax__1.06.00..",
+      "lang": "en",
+      "lemma": "pickax",
+      "synset": "oewn-03935440-n"
+    },
+    {
+      "definition": "a heavy iron tool with a wooden handle and a curved head that is pointed on both ends",
+      "forms": [],
+      "id": "oewn-pickaxe__1.06.00..",
+      "lang": "en",
+      "lemma": "pickaxe",
+      "synset": "oewn-03935440-n"
+    },
+    {
+      "definition": "a small bit that drills a first hole to guide a larger drill",
+      "forms": [],
+      "id": "oewn-pilot_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "pilot bit",
+      "synset": "oewn-03945338-n"
+    },
+    {
+      "definition": "a carpenter's hand tool with an adjustable blade for smoothing or shaping wood",
+      "forms": [],
+      "id": "oewn-plane__1.06.00..",
+      "lang": "en",
+      "lemma": "plane",
+      "synset": "oewn-03961007-n"
+    },
+    {
+      "definition": "a carpenter's hand tool with an adjustable blade for smoothing or shaping wood",
+      "forms": [],
+      "id": "oewn-carpenter-ap-s_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "carpenter's plane",
+      "synset": "oewn-03961007-n"
+    },
+    {
+      "definition": "a carpenter's hand tool with an adjustable blade for smoothing or shaping wood",
+      "forms": [],
+      "id": "oewn-woodworking_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "woodworking plane",
+      "synset": "oewn-03961007-n"
+    },
+    {
+      "definition": "a knife with a blade that folds into the handle; suitable for carrying in the pocket",
+      "forms": [
+        "pocketknives"
+      ],
+      "id": "oewn-pocketknife__1.06.00..",
+      "lang": "en",
+      "lemma": "pocketknife",
+      "synset": "oewn-03979986-n"
+    },
+    {
+      "definition": "a knife with a blade that folds into the handle; suitable for carrying in the pocket",
+      "forms": [],
+      "id": "oewn-pocket_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "pocket knife",
+      "synset": "oewn-03979986-n"
+    },
+    {
+      "definition": "a battle ax used in the Middle Ages; a long handled ax and a pick",
+      "forms": [],
+      "id": "oewn-poleax__1.06.00..",
+      "lang": "en",
+      "lemma": "poleax",
+      "synset": "oewn-03983624-n"
+    },
+    {
+      "definition": "a battle ax used in the Middle Ages; a long handled ax and a pick",
+      "forms": [],
+      "id": "oewn-poleaxe__1.06.00..",
+      "lang": "en",
+      "lemma": "poleaxe",
+      "synset": "oewn-03983624-n"
+    },
+    {
+      "definition": "an ax used to slaughter cattle; has a hammer opposite the blade",
+      "forms": [],
+      "id": "oewn-poleax__1.06.01..",
+      "lang": "en",
+      "lemma": "poleax",
+      "synset": "oewn-03983788-n"
+    },
+    {
+      "definition": "an ax used to slaughter cattle; has a hammer opposite the blade",
+      "forms": [],
+      "id": "oewn-poleaxe__1.06.01..",
+      "lang": "en",
+      "lemma": "poleaxe",
+      "synset": "oewn-03983788-n"
+    },
+    {
+      "definition": "a knife with a curved or hooked blade",
+      "forms": [],
+      "id": "oewn-pruning_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "pruning knife",
+      "synset": "oewn-04022873-n"
+    },
+    {
+      "definition": "shears with strong blades used for light pruning of woody plants",
+      "forms": [],
+      "id": "oewn-pruning_shears__1.06.00..",
+      "lang": "en",
+      "lemma": "pruning shears",
+      "synset": "oewn-04023078-n"
+    },
+    {
+      "definition": "edge tool used in shaving",
+      "forms": [],
+      "id": "oewn-razor__1.06.00..",
+      "lang": "en",
+      "lemma": "razor",
+      "synset": "oewn-04064159-n"
+    },
+    {
+      "definition": "a blade that has very sharp edge",
+      "forms": [],
+      "id": "oewn-razorblade__1.06.00..",
+      "lang": "en",
+      "lemma": "razorblade",
+      "synset": "oewn-04064327-n"
+    },
+    {
+      "definition": "a long chisel with a slightly bent cutting end; used for heavy prying or cleaning mortises",
+      "forms": [],
+      "id": "oewn-ripping_chisel__1.06.00..",
+      "lang": "en",
+      "lemma": "ripping chisel",
+      "synset": "oewn-04101532-n"
+    },
+    {
+      "definition": "a drill bit that has hardened rotating rollers",
+      "forms": [],
+      "id": "oewn-rock_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "rock bit",
+      "synset": "oewn-04105493-n"
+    },
+    {
+      "definition": "a drill bit that has hardened rotating rollers",
+      "forms": [],
+      "id": "oewn-roller_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "roller bit",
+      "synset": "oewn-04105493-n"
+    },
+    {
+      "definition": "a woodworking plane with a narrow cutting head that will make grooves with smooth bottoms",
+      "forms": [],
+      "id": "oewn-router_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "router plane",
+      "synset": "oewn-04122090-n"
+    },
+    {
+      "definition": "a razor with a guard to prevent deep cuts in the skin",
+      "forms": [],
+      "id": "oewn-safety_razor__1.06.00..",
+      "lang": "en",
+      "lemma": "safety razor",
+      "synset": "oewn-04134622-n"
+    },
+    {
+      "definition": "a thin straight surgical knife used in dissection and surgery",
+      "forms": [],
+      "id": "oewn-scalpel__1.06.00..",
+      "lang": "en",
+      "lemma": "scalpel",
+      "synset": "oewn-04149499-n"
+    },
+    {
+      "definition": "an edge tool having two crossed pivoting blades",
+      "forms": [],
+      "id": "oewn-scissors__1.06.00..",
+      "lang": "en",
+      "lemma": "scissors",
+      "synset": "oewn-04155119-n"
+    },
+    {
+      "definition": "an edge tool having two crossed pivoting blades",
+      "forms": [],
+      "id": "oewn-pair_of_scissors__1.06.00..",
+      "lang": "en",
+      "lemma": "pair of scissors",
+      "synset": "oewn-04155119-n"
+    },
+    {
+      "definition": "a narrow woodworking plane used to cut away excess stock",
+      "forms": [],
+      "id": "oewn-scrub_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "scrub plane",
+      "synset": "oewn-04163358-n"
+    },
+    {
+      "definition": "an edge tool for cutting grass; has a long handle that must be held with both hands and a curved blade that moves parallel to the ground",
+      "forms": [],
+      "id": "oewn-scythe__1.06.00..",
+      "lang": "en",
+      "lemma": "scythe",
+      "synset": "oewn-04165311-n"
+    },
+    {
+      "definition": "small pruning shears with a spring that holds the handles open and a single blade that closes against a flat surface",
+      "forms": [],
+      "id": "oewn-secateurs__1.06.00..",
+      "lang": "en",
+      "lemma": "secateurs",
+      "synset": "oewn-04170591-n"
+    },
+    {
+      "definition": "a razor powered by an electric motor",
+      "forms": [],
+      "id": "oewn-shaver__1.06.00..",
+      "lang": "en",
+      "lemma": "shaver",
+      "synset": "oewn-04192847-n"
+    },
+    {
+      "definition": "a razor powered by an electric motor",
+      "forms": [],
+      "id": "oewn-electric_shaver__1.06.00..",
+      "lang": "en",
+      "lemma": "electric shaver",
+      "synset": "oewn-04192847-n"
+    },
+    {
+      "definition": "a razor powered by an electric motor",
+      "forms": [],
+      "id": "oewn-electric_razor__1.06.00..",
+      "lang": "en",
+      "lemma": "electric razor",
+      "synset": "oewn-04192847-n"
+    },
+    {
+      "definition": "a large edge tool that cuts sheet metal by passing a blade through it",
+      "forms": [],
+      "id": "oewn-shear__1.06.00..",
+      "lang": "en",
+      "lemma": "shear",
+      "synset": "oewn-04193752-n"
+    },
+    {
+      "definition": "large scissors with strong blades",
+      "forms": [],
+      "id": "oewn-shears__1.06.00..",
+      "lang": "en",
+      "lemma": "shears",
+      "synset": "oewn-04193891-n"
+    },
+    {
+      "definition": "an edge tool for cutting grass or crops; has a curved blade and a short handle",
+      "forms": [],
+      "id": "oewn-sickle__1.06.00..",
+      "lang": "en",
+      "lemma": "sickle",
+      "synset": "oewn-04220420-n"
+    },
+    {
+      "definition": "an edge tool for cutting grass or crops; has a curved blade and a short handle",
+      "forms": [],
+      "id": "oewn-reaping_hook__1.06.00..",
+      "lang": "en",
+      "lemma": "reaping hook",
+      "synset": "oewn-04220420-n"
+    },
+    {
+      "definition": "an edge tool for cutting grass or crops; has a curved blade and a short handle",
+      "forms": [],
+      "id": "oewn-reap_hook__1.06.00..",
+      "lang": "en",
+      "lemma": "reap hook",
+      "synset": "oewn-04220420-n"
+    },
+    {
+      "definition": "knife especially designed for slicing particular foods, as cheese",
+      "forms": [],
+      "id": "oewn-slicer__1.06.01..",
+      "lang": "en",
+      "lemma": "slicer",
+      "synset": "oewn-04244393-n"
+    },
+    {
+      "definition": "a small plane for finish work",
+      "forms": [],
+      "id": "oewn-smooth_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "smooth plane",
+      "synset": "oewn-04254758-n"
+    },
+    {
+      "definition": "a small plane for finish work",
+      "forms": [],
+      "id": "oewn-smoothing_plane__1.06.00..",
+      "lang": "en",
+      "lemma": "smoothing plane",
+      "synset": "oewn-04254758-n"
+    },
+    {
+      "definition": "(plural) hand shears for cutting sheet metal",
+      "forms": [],
+      "id": "oewn-snips__1.06.00..",
+      "lang": "en",
+      "lemma": "snips",
+      "synset": "oewn-04257583-n"
+    },
+    {
+      "definition": "(plural) hand shears for cutting sheet metal",
+      "forms": [],
+      "id": "oewn-tinsnips__1.06.00..",
+      "lang": "en",
+      "lemma": "tinsnips",
+      "synset": "oewn-04257583-n"
+    },
+    {
+      "definition": "scissors for cropping and holding the snuff of a candlewick",
+      "forms": [],
+      "id": "oewn-snuffers__1.06.00..",
+      "lang": "en",
+      "lemma": "snuffers",
+      "synset": "oewn-04260414-n"
+    },
+    {
+      "definition": "a thin bit with a center point and cutting edges on either side",
+      "forms": [],
+      "id": "oewn-spade_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "spade bit",
+      "synset": "oewn-04273959-n"
+    },
+    {
+      "definition": "a small plane that has a handle on each side of its blade; used for shaping or smoothing cylindrical wooden surfaces (originally wheel spokes)",
+      "forms": [],
+      "id": "oewn-spokeshave__1.06.00..",
+      "lang": "en",
+      "lemma": "spokeshave",
+      "synset": "oewn-04290723-n"
+    },
+    {
+      "definition": "a sharp table knife used in eating steak",
+      "forms": [],
+      "id": "oewn-steak_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "steak knife",
+      "synset": "oewn-04315124-n"
+    },
+    {
+      "definition": "a razor with a straight cutting edge enclosed in a case that forms a handle when the razor is opened for use",
+      "forms": [],
+      "id": "oewn-straight_razor__1.06.00..",
+      "lang": "en",
+      "lemma": "straight razor",
+      "synset": "oewn-04339212-n"
+    },
+    {
+      "definition": "a very sharp knife used in surgery",
+      "forms": [],
+      "id": "oewn-surgical_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "surgical knife",
+      "synset": "oewn-04371914-n"
+    },
+    {
+      "definition": "a pocketknife with a blade that springs open at the press of a button",
+      "forms": [],
+      "id": "oewn-switchblade__1.06.00..",
+      "lang": "en",
+      "lemma": "switchblade",
+      "synset": "oewn-04380176-n"
+    },
+    {
+      "definition": "a pocketknife with a blade that springs open at the press of a button",
+      "forms": [],
+      "id": "oewn-switchblade_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "switchblade knife",
+      "synset": "oewn-04380176-n"
+    },
+    {
+      "definition": "a pocketknife with a blade that springs open at the press of a button",
+      "forms": [],
+      "id": "oewn-flick-knife__1.06.00..",
+      "lang": "en",
+      "lemma": "flick-knife",
+      "synset": "oewn-04380176-n"
+    },
+    {
+      "definition": "a pocketknife with a blade that springs open at the press of a button",
+      "forms": [],
+      "id": "oewn-flick_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "flick knife",
+      "synset": "oewn-04380176-n"
+    },
+    {
+      "definition": "a knife used for eating at dining table",
+      "forms": [],
+      "id": "oewn-table_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "table knife",
+      "synset": "oewn-04387433-n"
+    },
+    {
+      "definition": "shears with one serrate blade; used for thinning hair",
+      "forms": [],
+      "id": "oewn-thinning_shears__1.06.00..",
+      "lang": "en",
+      "lemma": "thinning shears",
+      "synset": "oewn-04431827-n"
+    },
+    {
+      "definition": "a cutter (tool for cutting) for floor tiles",
+      "forms": [],
+      "id": "oewn-tile_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "tile cutter",
+      "synset": "oewn-04442686-n"
+    },
+    {
+      "definition": "a bit or drill having deep helical grooves",
+      "forms": [],
+      "id": "oewn-twist_bit__1.06.00..",
+      "lang": "en",
+      "lemma": "twist bit",
+      "synset": "oewn-04510888-n"
+    },
+    {
+      "definition": "a bit or drill having deep helical grooves",
+      "forms": [],
+      "id": "oewn-twist_drill__1.06.00..",
+      "lang": "en",
+      "lemma": "twist drill",
+      "synset": "oewn-04510888-n"
+    },
+    {
+      "definition": "an edge tool used in cutting wire",
+      "forms": [],
+      "id": "oewn-wire_cutter__1.06.00..",
+      "lang": "en",
+      "lemma": "wire cutter",
+      "synset": "oewn-04602155-n"
+    },
+    {
+      "definition": "a chisel for working wood; it is either struck with a mallet or pushed by hand",
+      "forms": [],
+      "id": "oewn-wood_chisel__1.06.00..",
+      "lang": "en",
+      "lemma": "wood chisel",
+      "synset": "oewn-04604727-n"
+    },
+    {
+      "definition": "a weapon with a hammer on one side and an axe on the other.",
+      "forms": [],
+      "id": "oewn-hammer_axe__1.06.01..",
+      "lang": "en",
+      "lemma": "hammer axe",
+      "synset": "oewn-92448436-n"
+    },
+    {
+      "definition": "a weapon with a hammer on one side and an axe on the other.",
+      "forms": [],
+      "id": "oewn-hammer-axe__1.06.01..",
+      "lang": "en",
+      "lemma": "hammer-axe",
+      "synset": "oewn-92448436-n"
+    },
+    {
+      "definition": "a weapon with a hammer on one side and an axe on the other.",
+      "forms": [],
+      "id": "oewn-axe-hammer__1.06.01..",
+      "lang": "en",
+      "lemma": "axe-hammer",
+      "synset": "oewn-92448436-n"
+    },
+    {
+      "definition": "A scalpel used for arts and crafts.",
+      "forms": [],
+      "id": "oewn-hobby_knife__1.06.01..",
+      "lang": "en",
+      "lemma": "hobby knife",
+      "synset": "oewn-92450662-n"
+    },
+    {
+      "definition": "a type of kitchen knife specialized for the cutting of cheese.",
+      "forms": [],
+      "id": "oewn-cheese_knife__1.06.01..",
+      "lang": "en",
+      "lemma": "cheese knife",
+      "synset": "oewn-92450680-n"
+    },
+    {
+      "definition": "Any knife used in gardening.",
+      "forms": [],
+      "id": "oewn-gardening_knife__1.06.01..",
+      "lang": "en",
+      "lemma": "gardening knife",
+      "synset": "oewn-92450682-n"
+    },
+    {
+      "definition": "a considerably big knife used for chopping or mincing meat, vegetables, etc.",
+      "forms": [],
+      "id": "oewn-chopping_knife__1.06.01..",
+      "lang": "en",
+      "lemma": "chopping knife",
+      "synset": "oewn-92450684-n"
+    },
+    {
+      "definition": "a considerably big knife used for chopping or mincing meat, vegetables, etc.",
+      "forms": [],
+      "id": "oewn-chopper_knife__1.06.01..",
+      "lang": "en",
+      "lemma": "chopper knife",
+      "synset": "oewn-92450684-n"
+    },
+    {
+      "definition": "a versatile hand tool that combines a pick and an adze, used for grubbing in hard soils and rocky terrain.",
+      "forms": [],
+      "id": "oewn-pick-mattock__1.06.01..",
+      "lang": "en",
+      "lemma": "pick-mattock",
+      "synset": "oewn-92459676-n"
+    },
+    {
+      "definition": "a versatile hand tool that combines a pick and an adze, used for grubbing in hard soils and rocky terrain.",
+      "forms": [],
+      "id": "oewn-pick_mattock__1.06.01..",
+      "lang": "en",
+      "lemma": "pick mattock",
+      "synset": "oewn-92459676-n"
+    },
+    {
+      "definition": "a cutting implement used to cut leading (spacing between lines) and slugs (thicker pieces of lead to provide support to set type forms).",
+      "forms": [],
+      "id": "oewn-slug_cutter__1.06.01..",
+      "lang": "en",
+      "lemma": "slug cutter",
+      "synset": "oewn-92461775-n"
+    },
+    {
+      "definition": "a type of cheese knife that produces thin, even slices, used to cut semi-hard and hard cheeses.",
+      "forms": [],
+      "id": "oewn-cheese_plane__1.06.01..",
+      "lang": "en",
+      "lemma": "cheese plane",
+      "synset": "oewn-92465661-n"
+    },
+    {
+      "definition": "a type of cheese knife that produces thin, even slices, used to cut semi-hard and hard cheeses.",
+      "forms": [],
+      "id": "oewn-cheese_slicer__1.06.01..",
+      "lang": "en",
+      "lemma": "cheese slicer",
+      "synset": "oewn-92465661-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "an edge tool used to cut and shape wood",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-02685165-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "adz"
+    },
+    {
+      "definition": "an edge tool with a heavy bladed head mounted across a handle",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-02767049-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "ax"
+    },
+    {
+      "definition": "a knife resembling a cleaver; used in the Philippines",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-02797391-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "barong"
+    },
+    {
+      "definition": "a broadax used as a weapon",
+      "hypernyms": [
+        "oewn-02906331-n"
+      ],
+      "id": "oewn-02814603-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "battle-ax"
+    },
+    {
+      "definition": "a plane with a concave blade for making moulding with beadwork",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-02818613-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "beading plane"
+    },
+    {
+      "definition": "the cutting part of a drill; usually pointed and threaded and is replaceable in a brace or bitstock or drill press",
+      "hypernyms": [
+        "oewn-03159112-n"
+      ],
+      "id": "oewn-02847545-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bit"
+    },
+    {
+      "definition": "the flat part of a tool or weapon that (usually) has a cutting edge",
+      "hypernyms": [
+        "oewn-03159112-n"
+      ],
+      "id": "oewn-02851454-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "blade"
+    },
+    {
+      "definition": "a small plane used on end grains of wood",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-02857791-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "block plane"
+    },
+    {
+      "definition": "long heavy knife with a single edge; of Philippine origin",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-02868327-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "bolo"
+    },
+    {
+      "definition": "an implement for cutting bolts",
+      "hypernyms": [
+        "oewn-03158739-n"
+      ],
+      "id": "oewn-02869726-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bolt cutter"
+    },
+    {
+      "definition": "a stout hunting knife with a single edge",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-02884084-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "Bowie knife"
+    },
+    {
+      "definition": "a knife used to cut bread",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-02897203-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "bread knife"
+    },
+    {
+      "definition": "a large ax with a broad cutting blade",
+      "hypernyms": [
+        "oewn-02767049-n"
+      ],
+      "id": "oewn-02906331-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "broadax"
+    },
+    {
+      "definition": "a short-handled hatchet with a broad blade opposite a hammerhead",
+      "hypernyms": [
+        "oewn-03504106-n"
+      ],
+      "id": "oewn-02907434-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "broad hatchet"
+    },
+    {
+      "definition": "a small carpenter's plane with the cutting edge near the front",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-02920953-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "bullnose"
+    },
+    {
+      "definition": "small bit used in dentistry or surgery",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-02924676-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bur"
+    },
+    {
+      "definition": "a chisel of tempered steel with a sharp point; used for engraving",
+      "hypernyms": [
+        "oewn-03024375-n"
+      ],
+      "id": "oewn-02925845-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "burin"
+    },
+    {
+      "definition": "a large sharp knife for cutting or trimming meat",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-02930437-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "butcher knife"
+    },
+    {
+      "definition": "a small knife with a dull blade; for cutting or spreading butter",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-02931433-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "butter knife"
+    },
+    {
+      "definition": "a large knife used to carve cooked meat",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-02977363-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "carving knife"
+    },
+    {
+      "definition": "a knife with a fixed blade that is carried in a sheath",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-02979582-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "case knife"
+    },
+    {
+      "definition": "a metal blade with a handle; used as cutlery",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-02979708-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "case knife"
+    },
+    {
+      "definition": "a long double-edged knife used for amputations",
+      "hypernyms": [
+        "oewn-04371914-n"
+      ],
+      "id": "oewn-02988961-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "catling"
+    },
+    {
+      "definition": "a bit with a sharp center point for guidance and two side cutters",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-02997370-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "center bit"
+    },
+    {
+      "definition": "a bit that is used for beveling",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-03008135-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "chamfer bit"
+    },
+    {
+      "definition": "a plane that makes a beveled edge",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03008224-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "chamfer plane"
+    },
+    {
+      "definition": "an edge tool with a flat steel blade with a cutting edge",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-03024375-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "chisel"
+    },
+    {
+      "definition": "an implement for cutting the tip off of a cigar",
+      "hypernyms": [
+        "oewn-03158739-n"
+      ],
+      "id": "oewn-03034542-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "cigar cutter"
+    },
+    {
+      "definition": "a plane with a flexible face that can plane concave or convex surfaces",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03038501-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "circular plane"
+    },
+    {
+      "definition": "a large knife with one or more folding blades",
+      "hypernyms": [
+        "oewn-03979986-n"
+      ],
+      "id": "oewn-03042465-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "clasp knife"
+    },
+    {
+      "definition": "a hatchet that has a cleft for pulling nails",
+      "hypernyms": [
+        "oewn-03504106-n"
+      ],
+      "id": "oewn-03043141-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "claw hatchet"
+    },
+    {
+      "definition": "a butcher's knife having a large square blade",
+      "hypernyms": [
+        "oewn-02930437-n"
+      ],
+      "id": "oewn-03045617-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "cleaver"
+    },
+    {
+      "definition": "scissors for cutting hair or finger nails",
+      "hypernyms": [
+        "oewn-04155119-n"
+      ],
+      "id": "oewn-03048919-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "clipper"
+    },
+    {
+      "definition": "shears for cutting grass or shrubbery",
+      "hypernyms": [
+        "oewn-04193891-n"
+      ],
+      "id": "oewn-03049059-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "clipper"
+    },
+    {
+      "definition": "narrow chisel made of steel; used to cut stone or bricks",
+      "hypernyms": [
+        "oewn-03024375-n"
+      ],
+      "id": "oewn-03071216-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "cold chisel"
+    },
+    {
+      "definition": "a woodworking plane that has interchangeable cutters of various shapes",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03079504-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "combination plane"
+    },
+    {
+      "definition": "an ax with a long handle and a head that has one cutting edge and one blunt side",
+      "hypernyms": [
+        "oewn-02767049-n"
+      ],
+      "id": "oewn-03081446-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "common ax"
+    },
+    {
+      "definition": "a hollow drilling bit that is the cutting part of a core drill; allows core samples to be taken",
+      "hypernyms": [
+        "oewn-03245030-n"
+      ],
+      "id": "oewn-03113106-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "core bit"
+    },
+    {
+      "definition": "a bit for enlarging the upper part of a hole",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-03122293-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "counterbore"
+    },
+    {
+      "definition": "a cutting implement; a tool for cutting",
+      "hypernyms": [
+        "oewn-03159112-n"
+      ],
+      "id": "oewn-03158739-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cutter"
+    },
+    {
+      "definition": "a tool used for cutting or slicing",
+      "hypernyms": [
+        "oewn-04459089-n"
+      ],
+      "id": "oewn-03159112-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cutting implement"
+    },
+    {
+      "definition": "a plane for making a dado groove",
+      "hypernyms": [
+        "oewn-03854795-n"
+      ],
+      "id": "oewn-03163462-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "dado plane"
+    },
+    {
+      "definition": "a cutting tool that is fitted into a diestock and used for cutting male (external) screw threads on screws or bolts or pipes or rods",
+      "hypernyms": [
+        "oewn-03158739-n"
+      ],
+      "id": "oewn-03197591-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "die"
+    },
+    {
+      "definition": "an ax that has cutting edges on both sides of the head",
+      "hypernyms": [
+        "oewn-02767049-n"
+      ],
+      "id": "oewn-03230793-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "double-bitted ax"
+    },
+    {
+      "definition": "a woodworking plane designed to make the grooves for dovetail joints",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03233818-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "dovetail plane"
+    },
+    {
+      "definition": "a woodworker's knife to shave surfaces",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-03240030-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "drawknife"
+    },
+    {
+      "definition": "a bit used in drilling for oil",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-03245030-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "drilling bit"
+    },
+    {
+      "definition": "a stonemason's chisel with a broad edge for dressing stone",
+      "hypernyms": [
+        "oewn-03024375-n"
+      ],
+      "id": "oewn-03252198-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "drove"
+    },
+    {
+      "definition": "any cutting tool with a sharp cutting edge (as a chisel or knife or plane or gouge)",
+      "hypernyms": [
+        "oewn-03158739-n"
+      ],
+      "id": "oewn-03269943-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "edge tool"
+    },
+    {
+      "definition": "a bit with a cutting blade that can be adjusted to different sizes",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-03309268-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "expansion bit"
+    },
+    {
+      "definition": "an ax that has a long handle and a head with one cutting edge and a point on the other side",
+      "hypernyms": [
+        "oewn-02767049-n"
+      ],
+      "id": "oewn-03351135-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "fireman's ax"
+    },
+    {
+      "definition": "a chisel with a thin blade for woodworking",
+      "hypernyms": [
+        "oewn-03024375-n"
+      ],
+      "id": "oewn-03354213-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "firmer chisel"
+    },
+    {
+      "definition": "a small table knife with a spatula blade used for eating fish",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-03357212-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "fish knife"
+    },
+    {
+      "definition": "a drilling bit with cutting edges usually hardened against wear",
+      "hypernyms": [
+        "oewn-03245030-n"
+      ],
+      "id": "oewn-03357993-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "fishtail bit"
+    },
+    {
+      "definition": "a carpenter's plane intermediate between a jack plane and a jointer plane",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03387815-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "fore plane"
+    },
+    {
+      "definition": "a tool for cutting glass",
+      "hypernyms": [
+        "oewn-03158739-n"
+      ],
+      "id": "oewn-03443704-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "glass cutter"
+    },
+    {
+      "definition": "and edge tool with a blade like a trough for cutting channels or grooves",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-03454253-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "gouge"
+    },
+    {
+      "definition": "a hatchet with a half axe head",
+      "hypernyms": [
+        "oewn-03504106-n"
+      ],
+      "id": "oewn-03482896-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "half hatchet"
+    },
+    {
+      "definition": "a stone tool with a cutting edge; the stone is held in the hand and used for chopping",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-03487810-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "hand ax"
+    },
+    {
+      "definition": "a small ax with a short handle used with one hand (usually to chop wood)",
+      "hypernyms": [
+        "oewn-02767049-n"
+      ],
+      "id": "oewn-03504106-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "hatchet"
+    },
+    {
+      "definition": "a hard steel edge tool used to cut gears",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-03528561-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "hob"
+    },
+    {
+      "definition": "a large sharp knife with a handle shaped to fit the grip",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-03554653-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "hunting knife"
+    },
+    {
+      "definition": "an ax used by mountain climbers for cutting footholds in ice",
+      "hypernyms": [
+        "oewn-02767049-n",
+        "oewn-92435347-n"
+      ],
+      "id": "oewn-03561859-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "ice ax"
+    },
+    {
+      "definition": "a carpenter's plane for rough finishing",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03596119-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "jack plane"
+    },
+    {
+      "definition": "a long carpenter's plane used to shape the edges of boards so they will fit together",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03606851-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "jointer"
+    },
+    {
+      "definition": "edge tool used as a cutting instrument; has a pointed blade with a sharp edge and a handle",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-03628765-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "knife"
+    },
+    {
+      "definition": "the blade of a knife",
+      "hypernyms": [
+        "oewn-02851454-n"
+      ],
+      "id": "oewn-03629609-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "knife blade"
+    },
+    {
+      "definition": "a surgical knife with a pointed double-edged blade; used for punctures and small incisions",
+      "hypernyms": [
+        "oewn-04371914-n"
+      ],
+      "id": "oewn-03642932-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "lancet"
+    },
+    {
+      "definition": "dull knife used to cut open the envelopes in which letters are mailed or to slit uncut pages of books",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-03663511-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "letter opener"
+    },
+    {
+      "definition": "a knife having a short stiff blade with a curved point used for cutting linoleum",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-03680402-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "linoleum knife"
+    },
+    {
+      "definition": "a battle-ax formerly used by Scottish Highlanders",
+      "hypernyms": [
+        "oewn-02814603-n",
+        "oewn-92444179-n"
+      ],
+      "id": "oewn-03687706-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 10,
+      "name": "Lochaber ax"
+    },
+    {
+      "definition": "a plane having cutters designed to make the tongues and grooves on the edges of matchboards",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03735138-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "match plane"
+    },
+    {
+      "definition": "a kind of pick that is used for digging; has a flat blade set at right angles to the handle",
+      "hypernyms": [
+        "oewn-03935440-n"
+      ],
+      "id": "oewn-03736510-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "mattock"
+    },
+    {
+      "definition": "a woodworking plane designed to cut rabbets",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-03854795-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "openside plane"
+    },
+    {
+      "definition": "a cutting implement for cutting sheets of paper to the desired size",
+      "hypernyms": [
+        "oewn-03159112-n"
+      ],
+      "id": "oewn-03892637-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "paper cutter"
+    },
+    {
+      "definition": "a stout straight knife used in Malaysia and Indonesia",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-03895094-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "parang"
+    },
+    {
+      "definition": "a small sharp knife used in paring fruits or vegetables",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-03895790-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "parer"
+    },
+    {
+      "definition": "a small pocketknife; originally used to cut quill pens",
+      "hypernyms": [
+        "oewn-03979986-n"
+      ],
+      "id": "oewn-03917777-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "penknife"
+    },
+    {
+      "definition": "a heavy iron tool with a wooden handle and a curved head that is pointed on both ends",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-03935440-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "pick"
+    },
+    {
+      "definition": "a small bit that drills a first hole to guide a larger drill",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-03945338-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "pilot bit"
+    },
+    {
+      "definition": "a carpenter's hand tool with an adjustable blade for smoothing or shaping wood",
+      "hypernyms": [
+        "oewn-03269943-n",
+        "oewn-03494245-n"
+      ],
+      "id": "oewn-03961007-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "plane"
+    },
+    {
+      "definition": "a knife with a blade that folds into the handle; suitable for carrying in the pocket",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-03979986-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "pocketknife"
+    },
+    {
+      "definition": "a battle ax used in the Middle Ages; a long handled ax and a pick",
+      "hypernyms": [
+        "oewn-02814603-n",
+        "oewn-92444179-n"
+      ],
+      "id": "oewn-03983624-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 10,
+      "name": "poleax"
+    },
+    {
+      "definition": "an ax used to slaughter cattle; has a hammer opposite the blade",
+      "hypernyms": [
+        "oewn-02767049-n"
+      ],
+      "id": "oewn-03983788-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "poleax"
+    },
+    {
+      "definition": "a knife with a curved or hooked blade",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-04022873-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "pruning knife"
+    },
+    {
+      "definition": "shears with strong blades used for light pruning of woody plants",
+      "hypernyms": [
+        "oewn-04193891-n"
+      ],
+      "id": "oewn-04023078-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "pruning shears"
+    },
+    {
+      "definition": "edge tool used in shaving",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-04064159-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "razor"
+    },
+    {
+      "definition": "a blade that has very sharp edge",
+      "hypernyms": [
+        "oewn-02851454-n"
+      ],
+      "id": "oewn-04064327-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "razorblade"
+    },
+    {
+      "definition": "a long chisel with a slightly bent cutting end; used for heavy prying or cleaning mortises",
+      "hypernyms": [
+        "oewn-03024375-n"
+      ],
+      "id": "oewn-04101532-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "ripping chisel"
+    },
+    {
+      "definition": "a drill bit that has hardened rotating rollers",
+      "hypernyms": [
+        "oewn-03245030-n"
+      ],
+      "id": "oewn-04105493-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "rock bit"
+    },
+    {
+      "definition": "a woodworking plane with a narrow cutting head that will make grooves with smooth bottoms",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-04122090-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "router plane"
+    },
+    {
+      "definition": "a razor with a guard to prevent deep cuts in the skin",
+      "hypernyms": [
+        "oewn-04064159-n"
+      ],
+      "id": "oewn-04134622-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "safety razor"
+    },
+    {
+      "definition": "a thin straight surgical knife used in dissection and surgery",
+      "hypernyms": [
+        "oewn-04371914-n"
+      ],
+      "id": "oewn-04149499-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "scalpel"
+    },
+    {
+      "definition": "an edge tool having two crossed pivoting blades",
+      "hypernyms": [
+        "oewn-03086131-n",
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-04155119-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "scissors"
+    },
+    {
+      "definition": "a narrow woodworking plane used to cut away excess stock",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-04163358-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "scrub plane"
+    },
+    {
+      "definition": "an edge tool for cutting grass; has a long handle that must be held with both hands and a curved blade that moves parallel to the ground",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-04165311-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "scythe"
+    },
+    {
+      "definition": "small pruning shears with a spring that holds the handles open and a single blade that closes against a flat surface",
+      "hypernyms": [
+        "oewn-04023078-n"
+      ],
+      "id": "oewn-04170591-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 13,
+      "name": "secateurs"
+    },
+    {
+      "definition": "a razor powered by an electric motor",
+      "hypernyms": [
+        "oewn-04064159-n"
+      ],
+      "id": "oewn-04192847-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "shaver"
+    },
+    {
+      "definition": "a large edge tool that cuts sheet metal by passing a blade through it",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-04193752-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "shear"
+    },
+    {
+      "definition": "large scissors with strong blades",
+      "hypernyms": [
+        "oewn-04155119-n"
+      ],
+      "id": "oewn-04193891-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "shears"
+    },
+    {
+      "definition": "an edge tool for cutting grass or crops; has a curved blade and a short handle",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-04220420-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "sickle"
+    },
+    {
+      "definition": "knife especially designed for slicing particular foods, as cheese",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-04244393-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "slicer"
+    },
+    {
+      "definition": "a small plane for finish work",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-04254758-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "smooth plane"
+    },
+    {
+      "definition": "(plural) hand shears for cutting sheet metal",
+      "hypernyms": [
+        "oewn-04193891-n"
+      ],
+      "id": "oewn-04257583-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "snips"
+    },
+    {
+      "definition": "scissors for cropping and holding the snuff of a candlewick",
+      "hypernyms": [
+        "oewn-04155119-n"
+      ],
+      "id": "oewn-04260414-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 11,
+      "name": "snuffers"
+    },
+    {
+      "definition": "a thin bit with a center point and cutting edges on either side",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-04273959-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "spade bit"
+    },
+    {
+      "definition": "a small plane that has a handle on each side of its blade; used for shaping or smoothing cylindrical wooden surfaces (originally wheel spokes)",
+      "hypernyms": [
+        "oewn-03961007-n"
+      ],
+      "id": "oewn-04290723-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "spokeshave"
+    },
+    {
+      "definition": "a sharp table knife used in eating steak",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-04315124-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "steak knife"
+    },
+    {
+      "definition": "a razor with a straight cutting edge enclosed in a case that forms a handle when the razor is opened for use",
+      "hypernyms": [
+        "oewn-04064159-n"
+      ],
+      "id": "oewn-04339212-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "straight razor"
+    },
+    {
+      "definition": "a very sharp knife used in surgery",
+      "hypernyms": [
+        "oewn-03628765-n",
+        "oewn-04371632-n"
+      ],
+      "id": "oewn-04371914-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "surgical knife"
+    },
+    {
+      "definition": "a pocketknife with a blade that springs open at the press of a button",
+      "hypernyms": [
+        "oewn-03979986-n"
+      ],
+      "id": "oewn-04380176-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "switchblade"
+    },
+    {
+      "definition": "a knife used for eating at dining table",
+      "hypernyms": [
+        "oewn-03158041-n",
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-04387433-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "table knife"
+    },
+    {
+      "definition": "shears with one serrate blade; used for thinning hair",
+      "hypernyms": [
+        "oewn-04193891-n"
+      ],
+      "id": "oewn-04431827-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 12,
+      "name": "thinning shears"
+    },
+    {
+      "definition": "a cutter (tool for cutting) for floor tiles",
+      "hypernyms": [
+        "oewn-03158739-n"
+      ],
+      "id": "oewn-04442686-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tile cutter"
+    },
+    {
+      "definition": "a bit or drill having deep helical grooves",
+      "hypernyms": [
+        "oewn-02847545-n"
+      ],
+      "id": "oewn-04510888-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "twist bit"
+    },
+    {
+      "definition": "an edge tool used in cutting wire",
+      "hypernyms": [
+        "oewn-03269943-n"
+      ],
+      "id": "oewn-04602155-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "wire cutter"
+    },
+    {
+      "definition": "a chisel for working wood; it is either struck with a mallet or pushed by hand",
+      "hypernyms": [
+        "oewn-03024375-n"
+      ],
+      "id": "oewn-04604727-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "wood chisel"
+    },
+    {
+      "definition": "a weapon with a hammer on one side and an axe on the other.",
+      "hypernyms": [
+        "oewn-02767049-n"
+      ],
+      "id": "oewn-92448436-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "hammer axe"
+    },
+    {
+      "definition": "A scalpel used for arts and crafts.",
+      "hypernyms": [
+        "oewn-04149499-n"
+      ],
+      "id": "oewn-92450662-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "hobby knife"
+    },
+    {
+      "definition": "a type of kitchen knife specialized for the cutting of cheese.",
+      "hypernyms": [
+        "oewn-04244393-n"
+      ],
+      "id": "oewn-92450680-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "cheese knife"
+    },
+    {
+      "definition": "Any knife used in gardening.",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-92450682-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "gardening knife"
+    },
+    {
+      "definition": "a considerably big knife used for chopping or mincing meat, vegetables, etc.",
+      "hypernyms": [
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-92450684-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "chopping knife"
+    },
+    {
+      "definition": "a versatile hand tool that combines a pick and an adze, used for grubbing in hard soils and rocky terrain.",
+      "hypernyms": [
+        "oewn-03736510-n"
+      ],
+      "id": "oewn-92459676-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "pick-mattock"
+    },
+    {
+      "definition": "a cutting implement used to cut leading (spacing between lines) and slugs (thicker pieces of lead to provide support to set type forms).",
+      "hypernyms": [
+        "oewn-03159112-n"
+      ],
+      "id": "oewn-92461775-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "slug cutter"
+    },
+    {
+      "definition": "a type of cheese knife that produces thin, even slices, used to cut semi-hard and hard cheeses.",
+      "hypernyms": [
+        "oewn-92450680-n"
+      ],
+      "id": "oewn-92465661-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 14,
+      "name": "cheese plane"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

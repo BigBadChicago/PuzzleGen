@@ -1,0 +1,3996 @@
+{
+  "exported": "2026-10-09",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-04963771-n",
+  "senses": [
+    {
+      "definition": "a visual attribute of things that results from the light they emit or transmit or reflect",
+      "forms": [],
+      "id": "oewn-color__1.07.00..",
+      "lang": "en",
+      "lemma": "color",
+      "synset": "oewn-04963771-n"
+    },
+    {
+      "definition": "a visual attribute of things that results from the light they emit or transmit or reflect",
+      "forms": [],
+      "id": "oewn-colour__1.07.00..",
+      "lang": "en",
+      "lemma": "colour",
+      "synset": "oewn-04963771-n"
+    },
+    {
+      "definition": "a visual attribute of things that results from the light they emit or transmit or reflect",
+      "forms": [],
+      "id": "oewn-coloring__1.07.00..",
+      "lang": "en",
+      "lemma": "coloring",
+      "synset": "oewn-04963771-n"
+    },
+    {
+      "definition": "a visual attribute of things that results from the light they emit or transmit or reflect",
+      "forms": [],
+      "id": "oewn-colouring__1.07.00..",
+      "lang": "en",
+      "lemma": "colouring",
+      "synset": "oewn-04963771-n"
+    },
+    {
+      "definition": "any of three colors from which all others can be obtained by mixing",
+      "forms": [],
+      "id": "oewn-primary_color__1.07.00..",
+      "lang": "en",
+      "lemma": "primary color",
+      "synset": "oewn-04964353-n"
+    },
+    {
+      "definition": "any of three colors from which all others can be obtained by mixing",
+      "forms": [],
+      "id": "oewn-primary_colour__1.07.00..",
+      "lang": "en",
+      "lemma": "primary colour",
+      "synset": "oewn-04964353-n"
+    },
+    {
+      "definition": "any of three pigments from which all colors can be obtained by mixing",
+      "forms": [],
+      "id": "oewn-primary_color_for_pigments__1.07.00..",
+      "lang": "en",
+      "lemma": "primary color for pigments",
+      "synset": "oewn-04964533-n"
+    },
+    {
+      "definition": "any of three pigments from which all colors can be obtained by mixing",
+      "forms": [],
+      "id": "oewn-primary_colour_for_pigments__1.07.00..",
+      "lang": "en",
+      "lemma": "primary colour for pigments",
+      "synset": "oewn-04964533-n"
+    },
+    {
+      "definition": "any of three primary colors of light from which all colors can be obtained by additive mixing",
+      "forms": [],
+      "id": "oewn-primary_color_for_light__1.07.00..",
+      "lang": "en",
+      "lemma": "primary color for light",
+      "synset": "oewn-04964766-n"
+    },
+    {
+      "definition": "any of three primary colors of light from which all colors can be obtained by additive mixing",
+      "forms": [],
+      "id": "oewn-primary_colour_for_light__1.07.00..",
+      "lang": "en",
+      "lemma": "primary colour for light",
+      "synset": "oewn-04964766-n"
+    },
+    {
+      "definition": "any of the three colors that give the primary colors for light after subtraction from white light",
+      "forms": [],
+      "id": "oewn-primary_subtractive_color_for_light__1.07.00..",
+      "lang": "en",
+      "lemma": "primary subtractive color for light",
+      "synset": "oewn-04965031-n"
+    },
+    {
+      "definition": "any of the three colors that give the primary colors for light after subtraction from white light",
+      "forms": [],
+      "id": "oewn-primary_subtractive_colour_for_light__1.07.00..",
+      "lang": "en",
+      "lemma": "primary subtractive colour for light",
+      "synset": "oewn-04965031-n"
+    },
+    {
+      "definition": "interwoven yarns of mixed colors producing muted greyish shades with flecks of color",
+      "forms": [],
+      "id": "oewn-heather_mixture__1.07.00..",
+      "lang": "en",
+      "lemma": "heather mixture",
+      "synset": "oewn-04965323-n"
+    },
+    {
+      "definition": "interwoven yarns of mixed colors producing muted greyish shades with flecks of color",
+      "forms": [],
+      "id": "oewn-heather__1.07.00..",
+      "lang": "en",
+      "lemma": "heather",
+      "synset": "oewn-04965323-n"
+    },
+    {
+      "definition": "a soft shade of a color",
+      "forms": [],
+      "id": "oewn-mellowness__1.07.01..",
+      "lang": "en",
+      "lemma": "mellowness",
+      "synset": "oewn-04965479-n"
+    },
+    {
+      "definition": "a strong deep vividness of hue",
+      "forms": [],
+      "id": "oewn-richness__1.07.00..",
+      "lang": "en",
+      "lemma": "richness",
+      "synset": "oewn-04965637-n"
+    },
+    {
+      "definition": "an irregular arrangement of patches of color",
+      "forms": [],
+      "id": "oewn-mottle__1.07.00..",
+      "lang": "en",
+      "lemma": "mottle",
+      "synset": "oewn-04966042-n"
+    },
+    {
+      "definition": "a quality of a given color that differs slightly from another color",
+      "forms": [],
+      "id": "oewn-shade__1.07.00..",
+      "lang": "en",
+      "lemma": "shade",
+      "synset": "oewn-04966407-n"
+    },
+    {
+      "definition": "a quality of a given color that differs slightly from another color",
+      "forms": [],
+      "id": "oewn-tint__1.07.00..",
+      "lang": "en",
+      "lemma": "tint",
+      "synset": "oewn-04966407-n"
+    },
+    {
+      "definition": "a quality of a given color that differs slightly from another color",
+      "forms": [],
+      "id": "oewn-tincture__1.07.00..",
+      "lang": "en",
+      "lemma": "tincture",
+      "synset": "oewn-04966407-n"
+    },
+    {
+      "definition": "a quality of a given color that differs slightly from another color",
+      "forms": [],
+      "id": "oewn-tone__1.07.00..",
+      "lang": "en",
+      "lemma": "tone",
+      "synset": "oewn-04966407-n"
+    },
+    {
+      "definition": "a pale or subdued color",
+      "forms": [],
+      "id": "oewn-undertone__1.07.00..",
+      "lang": "en",
+      "lemma": "undertone",
+      "synset": "oewn-04966744-n"
+    },
+    {
+      "definition": "a pale or subdued color",
+      "forms": [],
+      "id": "oewn-tinge__1.07.00..",
+      "lang": "en",
+      "lemma": "tinge",
+      "synset": "oewn-04966744-n"
+    },
+    {
+      "definition": "a color that has hue",
+      "forms": [],
+      "id": "oewn-chromatic_color__1.07.00..",
+      "lang": "en",
+      "lemma": "chromatic color",
+      "synset": "oewn-04966849-n"
+    },
+    {
+      "definition": "a color that has hue",
+      "forms": [],
+      "id": "oewn-chromatic_colour__1.07.00..",
+      "lang": "en",
+      "lemma": "chromatic colour",
+      "synset": "oewn-04966849-n"
+    },
+    {
+      "definition": "a color that has hue",
+      "forms": [],
+      "id": "oewn-spectral_color__1.07.00..",
+      "lang": "en",
+      "lemma": "spectral color",
+      "synset": "oewn-04966849-n"
+    },
+    {
+      "definition": "a color that has hue",
+      "forms": [],
+      "id": "oewn-spectral_colour__1.07.00..",
+      "lang": "en",
+      "lemma": "spectral colour",
+      "synset": "oewn-04966849-n"
+    },
+    {
+      "definition": "a color lacking hue; white or grey or black",
+      "forms": [],
+      "id": "oewn-achromatic_color__1.07.00..",
+      "lang": "en",
+      "lemma": "achromatic color",
+      "synset": "oewn-04967256-n"
+    },
+    {
+      "definition": "a color lacking hue; white or grey or black",
+      "forms": [],
+      "id": "oewn-achromatic_colour__1.07.00..",
+      "lang": "en",
+      "lemma": "achromatic colour",
+      "synset": "oewn-04967256-n"
+    },
+    {
+      "definition": "the quality or state of the achromatic color of least lightness (bearing the least resemblance to white)",
+      "forms": [],
+      "id": "oewn-black__1.07.00..",
+      "lang": "en",
+      "lemma": "black",
+      "synset": "oewn-04967454-n"
+    },
+    {
+      "definition": "the quality or state of the achromatic color of least lightness (bearing the least resemblance to white)",
+      "forms": [],
+      "id": "oewn-blackness__1.07.00..",
+      "lang": "en",
+      "lemma": "blackness",
+      "synset": "oewn-04967454-n"
+    },
+    {
+      "definition": "the quality or state of the achromatic color of least lightness (bearing the least resemblance to white)",
+      "forms": [],
+      "id": "oewn-inkiness__1.07.00..",
+      "lang": "en",
+      "lemma": "inkiness",
+      "synset": "oewn-04967454-n"
+    },
+    {
+      "definition": "a very dark black",
+      "forms": [],
+      "id": "oewn-coal_black__1.07.00..",
+      "lang": "en",
+      "lemma": "coal black",
+      "synset": "oewn-04967759-n"
+    },
+    {
+      "definition": "a very dark black",
+      "forms": [],
+      "id": "oewn-ebony__1.07.00..",
+      "lang": "en",
+      "lemma": "ebony",
+      "synset": "oewn-04967759-n"
+    },
+    {
+      "definition": "a very dark black",
+      "forms": [],
+      "id": "oewn-jet_black__1.07.00..",
+      "lang": "en",
+      "lemma": "jet black",
+      "synset": "oewn-04967759-n"
+    },
+    {
+      "definition": "a very dark black",
+      "forms": [],
+      "id": "oewn-pitch_black__1.07.00..",
+      "lang": "en",
+      "lemma": "pitch black",
+      "synset": "oewn-04967759-n"
+    },
+    {
+      "definition": "a very dark black",
+      "forms": [],
+      "id": "oewn-sable__1.07.00..",
+      "lang": "en",
+      "lemma": "sable",
+      "synset": "oewn-04967759-n"
+    },
+    {
+      "definition": "a very dark black",
+      "forms": [],
+      "id": "oewn-soot_black__1.07.00..",
+      "lang": "en",
+      "lemma": "soot black",
+      "synset": "oewn-04967759-n"
+    },
+    {
+      "definition": "the quality or state of the achromatic color of greatest lightness (bearing the least resemblance to black)",
+      "forms": [],
+      "id": "oewn-white__1.07.00..",
+      "lang": "en",
+      "lemma": "white",
+      "synset": "oewn-04967906-n"
+    },
+    {
+      "definition": "the quality or state of the achromatic color of greatest lightness (bearing the least resemblance to black)",
+      "forms": [],
+      "id": "oewn-whiteness__1.07.00..",
+      "lang": "en",
+      "lemma": "whiteness",
+      "synset": "oewn-04967906-n"
+    },
+    {
+      "definition": "a very light white",
+      "forms": [],
+      "id": "oewn-alabaster__1.07.00..",
+      "lang": "en",
+      "lemma": "alabaster",
+      "synset": "oewn-04968239-n"
+    },
+    {
+      "definition": "the whiteness that results from removing the color from something",
+      "forms": [],
+      "id": "oewn-bleach__1.07.00..",
+      "lang": "en",
+      "lemma": "bleach",
+      "synset": "oewn-04968313-n"
+    },
+    {
+      "definition": "a shade of white the color of bleached bones",
+      "forms": [],
+      "id": "oewn-bone__1.07.00..",
+      "lang": "en",
+      "lemma": "bone",
+      "synset": "oewn-04968508-n"
+    },
+    {
+      "definition": "a shade of white the color of bleached bones",
+      "forms": [],
+      "id": "oewn-ivory__1.07.00..",
+      "lang": "en",
+      "lemma": "ivory",
+      "synset": "oewn-04968508-n"
+    },
+    {
+      "definition": "a shade of white the color of bleached bones",
+      "forms": [],
+      "id": "oewn-pearl__1.07.00..",
+      "lang": "en",
+      "lemma": "pearl",
+      "synset": "oewn-04968508-n"
+    },
+    {
+      "definition": "a shade of white the color of bleached bones",
+      "forms": [],
+      "id": "oewn-off-white__1.07.00..",
+      "lang": "en",
+      "lemma": "off-white",
+      "synset": "oewn-04968508-n"
+    },
+    {
+      "definition": "a pure flat white with little reflectance",
+      "forms": [],
+      "id": "oewn-chalk__1.07.00..",
+      "lang": "en",
+      "lemma": "chalk",
+      "synset": "oewn-04968649-n"
+    },
+    {
+      "definition": "a silvery-white color",
+      "forms": [],
+      "id": "oewn-frostiness__1.07.02..",
+      "lang": "en",
+      "lemma": "frostiness",
+      "synset": "oewn-04968760-n"
+    },
+    {
+      "definition": "a silvery-white color",
+      "forms": [],
+      "id": "oewn-hoariness__1.07.02..",
+      "lang": "en",
+      "lemma": "hoariness",
+      "synset": "oewn-04968760-n"
+    },
+    {
+      "definition": "a neutral achromatic color midway between white and black",
+      "forms": [],
+      "id": "oewn-gray__1.07.00..",
+      "lang": "en",
+      "lemma": "gray",
+      "synset": "oewn-04968868-n"
+    },
+    {
+      "definition": "a neutral achromatic color midway between white and black",
+      "forms": [],
+      "id": "oewn-grayness__1.07.00..",
+      "lang": "en",
+      "lemma": "grayness",
+      "synset": "oewn-04968868-n"
+    },
+    {
+      "definition": "a neutral achromatic color midway between white and black",
+      "forms": [],
+      "id": "oewn-grey__1.07.00..",
+      "lang": "en",
+      "lemma": "grey",
+      "synset": "oewn-04968868-n"
+    },
+    {
+      "definition": "a neutral achromatic color midway between white and black",
+      "forms": [],
+      "id": "oewn-greyness__1.07.00..",
+      "lang": "en",
+      "lemma": "greyness",
+      "synset": "oewn-04968868-n"
+    },
+    {
+      "definition": "a light shade of grey",
+      "forms": [],
+      "id": "oewn-ash_grey__1.07.00..",
+      "lang": "en",
+      "lemma": "ash grey",
+      "synset": "oewn-04969239-n"
+    },
+    {
+      "definition": "a light shade of grey",
+      "forms": [],
+      "id": "oewn-ash_gray__1.07.00..",
+      "lang": "en",
+      "lemma": "ash gray",
+      "synset": "oewn-04969239-n"
+    },
+    {
+      "definition": "a light shade of grey",
+      "forms": [],
+      "id": "oewn-silver__1.07.00..",
+      "lang": "en",
+      "lemma": "silver",
+      "synset": "oewn-04969239-n"
+    },
+    {
+      "definition": "a light shade of grey",
+      "forms": [],
+      "id": "oewn-silver_grey__1.07.00..",
+      "lang": "en",
+      "lemma": "silver grey",
+      "synset": "oewn-04969239-n"
+    },
+    {
+      "definition": "a light shade of grey",
+      "forms": [],
+      "id": "oewn-silver_gray__1.07.00..",
+      "lang": "en",
+      "lemma": "silver gray",
+      "synset": "oewn-04969239-n"
+    },
+    {
+      "definition": "a very dark grey color",
+      "forms": [],
+      "id": "oewn-charcoal__1.07.00..",
+      "lang": "en",
+      "lemma": "charcoal",
+      "synset": "oewn-04969417-n"
+    },
+    {
+      "definition": "a very dark grey color",
+      "forms": [],
+      "id": "oewn-charcoal_grey__1.07.00..",
+      "lang": "en",
+      "lemma": "charcoal grey",
+      "synset": "oewn-04969417-n"
+    },
+    {
+      "definition": "a very dark grey color",
+      "forms": [],
+      "id": "oewn-charcoal_gray__1.07.00..",
+      "lang": "en",
+      "lemma": "charcoal gray",
+      "synset": "oewn-04969417-n"
+    },
+    {
+      "definition": "a very dark grey color",
+      "forms": [],
+      "id": "oewn-oxford_grey__1.07.00..",
+      "lang": "en",
+      "lemma": "oxford grey",
+      "synset": "oewn-04969417-n"
+    },
+    {
+      "definition": "a very dark grey color",
+      "forms": [],
+      "id": "oewn-oxford_gray__1.07.00..",
+      "lang": "en",
+      "lemma": "oxford gray",
+      "synset": "oewn-04969417-n"
+    },
+    {
+      "definition": "grey with a mottled pattern of darker grey markings",
+      "forms": [],
+      "id": "oewn-dapple-grey__1.07.00..",
+      "lang": "en",
+      "lemma": "dapple-grey",
+      "synset": "oewn-04969572-n"
+    },
+    {
+      "definition": "grey with a mottled pattern of darker grey markings",
+      "forms": [],
+      "id": "oewn-dapple-gray__1.07.00..",
+      "lang": "en",
+      "lemma": "dapple-gray",
+      "synset": "oewn-04969572-n"
+    },
+    {
+      "definition": "grey with a mottled pattern of darker grey markings",
+      "forms": [],
+      "id": "oewn-dappled-grey__1.07.00..",
+      "lang": "en",
+      "lemma": "dappled-grey",
+      "synset": "oewn-04969572-n"
+    },
+    {
+      "definition": "grey with a mottled pattern of darker grey markings",
+      "forms": [],
+      "id": "oewn-dappled-gray__1.07.00..",
+      "lang": "en",
+      "lemma": "dappled-gray",
+      "synset": "oewn-04969572-n"
+    },
+    {
+      "definition": "the color of freshly broken cast iron",
+      "forms": [],
+      "id": "oewn-iron-grey__1.07.00..",
+      "lang": "en",
+      "lemma": "iron-grey",
+      "synset": "oewn-04969725-n"
+    },
+    {
+      "definition": "the color of freshly broken cast iron",
+      "forms": [],
+      "id": "oewn-iron-gray__1.07.00..",
+      "lang": "en",
+      "lemma": "iron-gray",
+      "synset": "oewn-04969725-n"
+    },
+    {
+      "definition": "a greyish white",
+      "forms": [],
+      "id": "oewn-tattletale_grey__1.07.00..",
+      "lang": "en",
+      "lemma": "tattletale grey",
+      "synset": "oewn-04969866-n"
+    },
+    {
+      "definition": "a greyish white",
+      "forms": [],
+      "id": "oewn-tattletale_gray__1.07.00..",
+      "lang": "en",
+      "lemma": "tattletale gray",
+      "synset": "oewn-04969866-n"
+    },
+    {
+      "definition": "red color or pigment; the chromatic color resembling the hue of blood",
+      "forms": [],
+      "id": "oewn-red__1.07.00..",
+      "lang": "en",
+      "lemma": "red",
+      "synset": "oewn-04969961-n"
+    },
+    {
+      "definition": "red color or pigment; the chromatic color resembling the hue of blood",
+      "forms": [],
+      "id": "oewn-redness__1.07.00..",
+      "lang": "en",
+      "lemma": "redness",
+      "synset": "oewn-04969961-n"
+    },
+    {
+      "definition": "a blood-red color",
+      "forms": [],
+      "id": "oewn-sanguine__1.07.00..",
+      "lang": "en",
+      "lemma": "sanguine",
+      "synset": "oewn-04970288-n"
+    },
+    {
+      "definition": "a red pigment used in paints; basic lead chromate",
+      "forms": [],
+      "id": "oewn-chrome_red__1.07.00..",
+      "lang": "en",
+      "lemma": "chrome red",
+      "synset": "oewn-04970378-n"
+    },
+    {
+      "definition": "a bright orange-red color produced in cotton cloth with alizarine dye",
+      "forms": [],
+      "id": "oewn-turkey_red__1.07.00..",
+      "lang": "en",
+      "lemma": "Turkey red",
+      "synset": "oewn-04970484-n"
+    },
+    {
+      "definition": "a bright orange-red color produced in cotton cloth with alizarine dye",
+      "forms": [],
+      "id": "oewn-alizarine_red__1.07.00..",
+      "lang": "en",
+      "lemma": "alizarine red",
+      "synset": "oewn-04970484-n"
+    },
+    {
+      "definition": "a variable color averaging a vivid red",
+      "forms": [],
+      "id": "oewn-cardinal__1.07.00..",
+      "lang": "en",
+      "lemma": "cardinal",
+      "synset": "oewn-04970626-n"
+    },
+    {
+      "definition": "a variable color averaging a vivid red",
+      "forms": [],
+      "id": "oewn-carmine__1.07.00..",
+      "lang": "en",
+      "lemma": "carmine",
+      "synset": "oewn-04970626-n"
+    },
+    {
+      "definition": "a deep and vivid red color",
+      "forms": [],
+      "id": "oewn-crimson__1.07.00..",
+      "lang": "en",
+      "lemma": "crimson",
+      "synset": "oewn-04970765-n"
+    },
+    {
+      "definition": "a deep and vivid red color",
+      "forms": [],
+      "id": "oewn-ruby__1.07.00..",
+      "lang": "en",
+      "lemma": "ruby",
+      "synset": "oewn-04970765-n"
+    },
+    {
+      "definition": "a deep and vivid red color",
+      "forms": [],
+      "id": "oewn-deep_red__1.07.00..",
+      "lang": "en",
+      "lemma": "deep red",
+      "synset": "oewn-04970765-n"
+    },
+    {
+      "definition": "a red color that reflects little light",
+      "forms": [],
+      "id": "oewn-dark_red__1.07.00..",
+      "lang": "en",
+      "lemma": "dark red",
+      "synset": "oewn-04970917-n"
+    },
+    {
+      "definition": "a dark purplish-red to blackish-red color",
+      "forms": [],
+      "id": "oewn-burgundy__1.07.00..",
+      "lang": "en",
+      "lemma": "burgundy",
+      "synset": "oewn-04971082-n"
+    },
+    {
+      "definition": "a dark purplish-red color",
+      "forms": [],
+      "id": "oewn-claret__1.07.00..",
+      "lang": "en",
+      "lemma": "claret",
+      "synset": "oewn-04971178-n"
+    },
+    {
+      "definition": "a dark brownish-red color",
+      "forms": [],
+      "id": "oewn-oxblood_red__1.07.00..",
+      "lang": "en",
+      "lemma": "oxblood red",
+      "synset": "oewn-04971256-n"
+    },
+    {
+      "definition": "a red as dark as red wine",
+      "forms": [],
+      "id": "oewn-wine__1.07.00..",
+      "lang": "en",
+      "lemma": "wine",
+      "synset": "oewn-04971339-n"
+    },
+    {
+      "definition": "a red as dark as red wine",
+      "forms": [],
+      "id": "oewn-wine-colored__1.07.00..",
+      "lang": "en",
+      "lemma": "wine-colored",
+      "synset": "oewn-04971339-n"
+    },
+    {
+      "definition": "a red as dark as red wine",
+      "forms": [],
+      "id": "oewn-wine-coloured__1.07.00..",
+      "lang": "en",
+      "lemma": "wine-coloured",
+      "synset": "oewn-04971339-n"
+    },
+    {
+      "definition": "a red with a tinge of purple",
+      "forms": [],
+      "id": "oewn-purplish_red__1.07.00..",
+      "lang": "en",
+      "lemma": "purplish red",
+      "synset": "oewn-04971464-n"
+    },
+    {
+      "definition": "a red with a tinge of purple",
+      "forms": [],
+      "id": "oewn-purplish-red__1.07.00..",
+      "lang": "en",
+      "lemma": "purplish-red",
+      "synset": "oewn-04971464-n"
+    },
+    {
+      "definition": "a red the color of ripe cherries",
+      "forms": [],
+      "id": "oewn-cerise__1.07.00..",
+      "lang": "en",
+      "lemma": "cerise",
+      "synset": "oewn-04971620-n"
+    },
+    {
+      "definition": "a red the color of ripe cherries",
+      "forms": [],
+      "id": "oewn-cherry__1.07.00..",
+      "lang": "en",
+      "lemma": "cherry",
+      "synset": "oewn-04971620-n"
+    },
+    {
+      "definition": "a red the color of ripe cherries",
+      "forms": [],
+      "id": "oewn-cherry_red__1.07.00..",
+      "lang": "en",
+      "lemma": "cherry red",
+      "synset": "oewn-04971620-n"
+    },
+    {
+      "definition": "a primary subtractive color for light; a dark purple-red color; the dye for magenta was discovered in 1859, the year of the battle of Magenta",
+      "forms": [],
+      "id": "oewn-magenta__1.07.00..",
+      "lang": "en",
+      "lemma": "magenta",
+      "synset": "oewn-04971763-n"
+    },
+    {
+      "definition": "a vivid purplish-red color",
+      "forms": [],
+      "id": "oewn-fuchsia__1.07.00..",
+      "lang": "en",
+      "lemma": "fuchsia",
+      "synset": "oewn-04971976-n"
+    },
+    {
+      "definition": "a dark purplish-red to dark brownish-red color",
+      "forms": [],
+      "id": "oewn-maroon__1.07.00..",
+      "lang": "en",
+      "lemma": "maroon",
+      "synset": "oewn-04972055-n"
+    },
+    {
+      "definition": "a variable color that is vivid red but sometimes with an orange tinge",
+      "forms": [],
+      "id": "oewn-scarlet__1.07.00..",
+      "lang": "en",
+      "lemma": "scarlet",
+      "synset": "oewn-04972154-n"
+    },
+    {
+      "definition": "a variable color that is vivid red but sometimes with an orange tinge",
+      "forms": [],
+      "id": "oewn-vermilion__1.07.00..",
+      "lang": "en",
+      "lemma": "vermilion",
+      "synset": "oewn-04972154-n"
+    },
+    {
+      "definition": "a variable color that is vivid red but sometimes with an orange tinge",
+      "forms": [],
+      "id": "oewn-orange_red__1.07.00..",
+      "lang": "en",
+      "lemma": "orange red",
+      "synset": "oewn-04972154-n"
+    },
+    {
+      "definition": "orange color or pigment; any of a range of colors between red and yellow",
+      "forms": [],
+      "id": "oewn-orange__1.07.00..",
+      "lang": "en",
+      "lemma": "orange",
+      "synset": "oewn-04972356-n"
+    },
+    {
+      "definition": "orange color or pigment; any of a range of colors between red and yellow",
+      "forms": [],
+      "id": "oewn-orangeness__1.07.00..",
+      "lang": "en",
+      "lemma": "orangeness",
+      "synset": "oewn-04972356-n"
+    },
+    {
+      "definition": "a pale pinkish orange color",
+      "forms": [],
+      "id": "oewn-salmon__1.07.00..",
+      "lang": "en",
+      "lemma": "salmon",
+      "synset": "oewn-04972548-n"
+    },
+    {
+      "definition": "an orange color closer to red than to yellow",
+      "forms": [],
+      "id": "oewn-reddish_orange__1.07.00..",
+      "lang": "en",
+      "lemma": "reddish orange",
+      "synset": "oewn-04972628-n"
+    },
+    {
+      "definition": "a reddish to vivid orange color",
+      "forms": [],
+      "id": "oewn-tangerine__1.07.00..",
+      "lang": "en",
+      "lemma": "tangerine",
+      "synset": "oewn-04972751-n"
+    },
+    {
+      "definition": "yellow color or pigment; the chromatic color resembling the hue of sunflowers or ripe lemons",
+      "forms": [],
+      "id": "oewn-yellow__1.07.00..",
+      "lang": "en",
+      "lemma": "yellow",
+      "synset": "oewn-04972838-n"
+    },
+    {
+      "definition": "yellow color or pigment; the chromatic color resembling the hue of sunflowers or ripe lemons",
+      "forms": [],
+      "id": "oewn-yellowness__1.07.00..",
+      "lang": "en",
+      "lemma": "yellowness",
+      "synset": "oewn-04972838-n"
+    },
+    {
+      "definition": "a light grayish yellow to near white",
+      "forms": [],
+      "id": "oewn-blond__1.07.00..",
+      "lang": "en",
+      "lemma": "blond",
+      "synset": "oewn-04973194-n"
+    },
+    {
+      "definition": "a light grayish yellow to near white",
+      "forms": [],
+      "id": "oewn-blonde__1.07.00..",
+      "lang": "en",
+      "lemma": "blonde",
+      "synset": "oewn-04973194-n"
+    },
+    {
+      "definition": "a moderate yellow with a greenish tinge",
+      "forms": [],
+      "id": "oewn-canary_yellow__1.07.00..",
+      "lang": "en",
+      "lemma": "canary yellow",
+      "synset": "oewn-04973291-n"
+    },
+    {
+      "definition": "a moderate yellow with a greenish tinge",
+      "forms": [],
+      "id": "oewn-canary__1.07.00..",
+      "lang": "en",
+      "lemma": "canary",
+      "synset": "oewn-04973291-n"
+    },
+    {
+      "definition": "a deep yellow color",
+      "forms": [],
+      "id": "oewn-amber__1.07.00..",
+      "lang": "en",
+      "lemma": "amber",
+      "synset": "oewn-04973417-n"
+    },
+    {
+      "definition": "a deep yellow color",
+      "forms": [],
+      "id": "oewn-gold__1.07.00..",
+      "lang": "en",
+      "lemma": "gold",
+      "synset": "oewn-04973417-n"
+    },
+    {
+      "definition": "a yellow color of low lightness with a brownish tinge",
+      "forms": [],
+      "id": "oewn-brownish_yellow__1.07.00..",
+      "lang": "en",
+      "lemma": "brownish yellow",
+      "synset": "oewn-04973605-n"
+    },
+    {
+      "definition": "a strong yellow color",
+      "forms": [],
+      "id": "oewn-gamboge__1.07.00..",
+      "lang": "en",
+      "lemma": "gamboge",
+      "synset": "oewn-04973720-n"
+    },
+    {
+      "definition": "a strong yellow color",
+      "forms": [],
+      "id": "oewn-lemon__1.07.00..",
+      "lang": "en",
+      "lemma": "lemon",
+      "synset": "oewn-04973720-n"
+    },
+    {
+      "definition": "a strong yellow color",
+      "forms": [],
+      "id": "oewn-lemon_yellow__1.07.00..",
+      "lang": "en",
+      "lemma": "lemon yellow",
+      "synset": "oewn-04973720-n"
+    },
+    {
+      "definition": "a strong yellow color",
+      "forms": [],
+      "id": "oewn-maize__1.07.00..",
+      "lang": "en",
+      "lemma": "maize",
+      "synset": "oewn-04973720-n"
+    },
+    {
+      "definition": "a dark yellow",
+      "forms": [],
+      "id": "oewn-old_gold__1.07.00..",
+      "lang": "en",
+      "lemma": "old gold",
+      "synset": "oewn-04973826-n"
+    },
+    {
+      "definition": "a shade of yellow tinged with orange",
+      "forms": [],
+      "id": "oewn-orange_yellow__1.07.00..",
+      "lang": "en",
+      "lemma": "orange yellow",
+      "synset": "oewn-04973894-n"
+    },
+    {
+      "definition": "a shade of yellow tinged with orange",
+      "forms": [],
+      "id": "oewn-saffron__1.07.00..",
+      "lang": "en",
+      "lemma": "saffron",
+      "synset": "oewn-04973894-n"
+    },
+    {
+      "definition": "a moderate yellow-orange to orange color",
+      "forms": [],
+      "id": "oewn-ocher__1.07.00..",
+      "lang": "en",
+      "lemma": "ocher",
+      "synset": "oewn-04974018-n"
+    },
+    {
+      "definition": "a moderate yellow-orange to orange color",
+      "forms": [],
+      "id": "oewn-ochre__1.07.00..",
+      "lang": "en",
+      "lemma": "ochre",
+      "synset": "oewn-04974018-n"
+    },
+    {
+      "definition": "a variable yellow tint; dull yellow, often diluted with white",
+      "forms": [],
+      "id": "oewn-pale_yellow__1.07.00..",
+      "lang": "en",
+      "lemma": "pale yellow",
+      "synset": "oewn-04974118-n"
+    },
+    {
+      "definition": "a variable yellow tint; dull yellow, often diluted with white",
+      "forms": [],
+      "id": "oewn-straw__1.07.00..",
+      "lang": "en",
+      "lemma": "straw",
+      "synset": "oewn-04974118-n"
+    },
+    {
+      "definition": "a variable yellow tint; dull yellow, often diluted with white",
+      "forms": [],
+      "id": "oewn-wheat__1.07.00..",
+      "lang": "en",
+      "lemma": "wheat",
+      "synset": "oewn-04974118-n"
+    },
+    {
+      "definition": "a shade of yellow tinged with green",
+      "forms": [],
+      "id": "oewn-greenish_yellow__1.07.00..",
+      "lang": "en",
+      "lemma": "greenish yellow",
+      "synset": "oewn-04974271-n"
+    },
+    {
+      "definition": "green color or pigment; resembling the color of growing grass",
+      "forms": [],
+      "id": "oewn-green__1.07.00..",
+      "lang": "en",
+      "lemma": "green",
+      "synset": "oewn-04974368-n"
+    },
+    {
+      "definition": "green color or pigment; resembling the color of growing grass",
+      "forms": [],
+      "id": "oewn-greenness__1.07.00..",
+      "lang": "en",
+      "lemma": "greenness",
+      "synset": "oewn-04974368-n"
+    },
+    {
+      "definition": "green color or pigment; resembling the color of growing grass",
+      "forms": [],
+      "id": "oewn-viridity__1.07.00..",
+      "lang": "en",
+      "lemma": "viridity",
+      "synset": "oewn-04974368-n"
+    },
+    {
+      "definition": "the property of being somewhat green",
+      "forms": [],
+      "id": "oewn-greenishness__1.07.00..",
+      "lang": "en",
+      "lemma": "greenishness",
+      "synset": "oewn-04974738-n"
+    },
+    {
+      "definition": "the property of a moderate green color resembling the waters of the sea",
+      "forms": [],
+      "id": "oewn-sea_green__1.07.00..",
+      "lang": "en",
+      "lemma": "sea green",
+      "synset": "oewn-04974851-n"
+    },
+    {
+      "definition": "the color of sage leaves",
+      "forms": [],
+      "id": "oewn-sage_green__1.07.00..",
+      "lang": "en",
+      "lemma": "sage green",
+      "synset": "oewn-04974978-n"
+    },
+    {
+      "definition": "dark to moderate or greyish green",
+      "forms": [],
+      "id": "oewn-bottle_green__1.07.00..",
+      "lang": "en",
+      "lemma": "bottle green",
+      "synset": "oewn-04975059-n"
+    },
+    {
+      "definition": "a brilliant green color",
+      "forms": [],
+      "id": "oewn-chrome_green__1.07.00..",
+      "lang": "en",
+      "lemma": "chrome green",
+      "synset": "oewn-04975151-n"
+    },
+    {
+      "definition": "the green color of an emerald",
+      "forms": [],
+      "id": "oewn-emerald__1.07.00..",
+      "lang": "en",
+      "lemma": "emerald",
+      "synset": "oewn-04975233-n"
+    },
+    {
+      "definition": "a color that is lighter and greener than olive",
+      "forms": [],
+      "id": "oewn-olive_green__1.07.00..",
+      "lang": "en",
+      "lemma": "olive green",
+      "synset": "oewn-04975316-n"
+    },
+    {
+      "definition": "a color that is lighter and greener than olive",
+      "forms": [],
+      "id": "oewn-olive-green__1.07.00..",
+      "lang": "en",
+      "lemma": "olive-green",
+      "synset": "oewn-04975316-n"
+    },
+    {
+      "definition": "a shade of green tinged with yellow",
+      "forms": [],
+      "id": "oewn-yellow_green__1.07.00..",
+      "lang": "en",
+      "lemma": "yellow green",
+      "synset": "oewn-04975434-n"
+    },
+    {
+      "definition": "a shade of green tinged with yellow",
+      "forms": [],
+      "id": "oewn-yellowish_green__1.07.00..",
+      "lang": "en",
+      "lemma": "yellowish green",
+      "synset": "oewn-04975434-n"
+    },
+    {
+      "definition": "a shade of green tinged with yellow",
+      "forms": [],
+      "id": "oewn-chartreuse__1.07.00..",
+      "lang": "en",
+      "lemma": "chartreuse",
+      "synset": "oewn-04975434-n"
+    },
+    {
+      "definition": "a shade of green tinged with yellow",
+      "forms": [],
+      "id": "oewn-paris_green__1.07.00..",
+      "lang": "en",
+      "lemma": "Paris green",
+      "synset": "oewn-04975434-n"
+    },
+    {
+      "definition": "a shade of green tinged with yellow",
+      "forms": [],
+      "id": "oewn-pea_green__1.07.00..",
+      "lang": "en",
+      "lemma": "pea green",
+      "synset": "oewn-04975434-n"
+    },
+    {
+      "definition": "a blue-green color or pigment",
+      "forms": [],
+      "id": "oewn-bluish_green__1.07.00..",
+      "lang": "en",
+      "lemma": "bluish green",
+      "synset": "oewn-04975603-n"
+    },
+    {
+      "definition": "a blue-green color or pigment",
+      "forms": [],
+      "id": "oewn-blue_green__1.07.00..",
+      "lang": "en",
+      "lemma": "blue green",
+      "synset": "oewn-04975603-n"
+    },
+    {
+      "definition": "a blue-green color or pigment",
+      "forms": [],
+      "id": "oewn-teal__1.07.00..",
+      "lang": "en",
+      "lemma": "teal",
+      "synset": "oewn-04975603-n"
+    },
+    {
+      "definition": "a primary subtractive color for light; has a blue-green color",
+      "forms": [],
+      "id": "oewn-cyan__1.07.00..",
+      "lang": "en",
+      "lemma": "cyan",
+      "synset": "oewn-04975796-n"
+    },
+    {
+      "definition": "a light green color varying from bluish green to yellowish green",
+      "forms": [],
+      "id": "oewn-jade_green__1.07.00..",
+      "lang": "en",
+      "lemma": "jade green",
+      "synset": "oewn-04975926-n"
+    },
+    {
+      "definition": "a light green color varying from bluish green to yellowish green",
+      "forms": [],
+      "id": "oewn-jade__1.07.00..",
+      "lang": "en",
+      "lemma": "jade",
+      "synset": "oewn-04975926-n"
+    },
+    {
+      "definition": "blue color or pigment; resembling the color of the clear sky in the daytime",
+      "forms": [],
+      "id": "oewn-blue__1.07.00..",
+      "lang": "en",
+      "lemma": "blue",
+      "synset": "oewn-04976072-n"
+    },
+    {
+      "definition": "blue color or pigment; resembling the color of the clear sky in the daytime",
+      "forms": [],
+      "id": "oewn-blueness__1.07.00..",
+      "lang": "en",
+      "lemma": "blueness",
+      "synset": "oewn-04976072-n"
+    },
+    {
+      "definition": "a light shade of blue",
+      "forms": [],
+      "id": "oewn-azure__1.07.00..",
+      "lang": "en",
+      "lemma": "azure",
+      "synset": "oewn-04976419-n"
+    },
+    {
+      "definition": "a light shade of blue",
+      "forms": [],
+      "id": "oewn-cerulean__1.07.00..",
+      "lang": "en",
+      "lemma": "cerulean",
+      "synset": "oewn-04976419-n"
+    },
+    {
+      "definition": "a light shade of blue",
+      "forms": [],
+      "id": "oewn-sapphire__1.07.00..",
+      "lang": "en",
+      "lemma": "sapphire",
+      "synset": "oewn-04976419-n"
+    },
+    {
+      "definition": "a light shade of blue",
+      "forms": [],
+      "id": "oewn-lazuline__1.07.00..",
+      "lang": "en",
+      "lemma": "lazuline",
+      "synset": "oewn-04976419-n"
+    },
+    {
+      "definition": "a light shade of blue",
+      "forms": [],
+      "id": "oewn-sky-blue__1.07.00..",
+      "lang": "en",
+      "lemma": "sky-blue",
+      "synset": "oewn-04976419-n"
+    },
+    {
+      "definition": "a pale blue color with grey in it",
+      "forms": [],
+      "id": "oewn-powder_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "powder blue",
+      "synset": "oewn-04976608-n"
+    },
+    {
+      "definition": "a greyish blue color",
+      "forms": [],
+      "id": "oewn-steel_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "steel blue",
+      "synset": "oewn-04976717-n"
+    },
+    {
+      "definition": "a dark greenish-blue color",
+      "forms": [],
+      "id": "oewn-prussian_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "Prussian blue",
+      "synset": "oewn-04976794-n"
+    },
+    {
+      "definition": "a dark shade of blue",
+      "forms": [],
+      "id": "oewn-dark_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "dark blue",
+      "synset": "oewn-04976880-n"
+    },
+    {
+      "definition": "a dark shade of blue",
+      "forms": [],
+      "id": "oewn-navy__1.07.00..",
+      "lang": "en",
+      "lemma": "navy",
+      "synset": "oewn-04976880-n"
+    },
+    {
+      "definition": "a dark shade of blue",
+      "forms": [],
+      "id": "oewn-navy_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "navy blue",
+      "synset": "oewn-04976880-n"
+    },
+    {
+      "definition": "a shade of blue tinged with green",
+      "forms": [],
+      "id": "oewn-greenish_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "greenish blue",
+      "synset": "oewn-04976975-n"
+    },
+    {
+      "definition": "a shade of blue tinged with green",
+      "forms": [
+        "aquae"
+      ],
+      "id": "oewn-aqua__1.07.00..",
+      "lang": "en",
+      "lemma": "aqua",
+      "synset": "oewn-04976975-n"
+    },
+    {
+      "definition": "a shade of blue tinged with green",
+      "forms": [],
+      "id": "oewn-aquamarine__1.07.00..",
+      "lang": "en",
+      "lemma": "aquamarine",
+      "synset": "oewn-04976975-n"
+    },
+    {
+      "definition": "a shade of blue tinged with green",
+      "forms": [],
+      "id": "oewn-turquoise__1.07.00..",
+      "lang": "en",
+      "lemma": "turquoise",
+      "synset": "oewn-04976975-n"
+    },
+    {
+      "definition": "a shade of blue tinged with green",
+      "forms": [],
+      "id": "oewn-cobalt_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "cobalt blue",
+      "synset": "oewn-04976975-n"
+    },
+    {
+      "definition": "a shade of blue tinged with green",
+      "forms": [],
+      "id": "oewn-peacock_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "peacock blue",
+      "synset": "oewn-04976975-n"
+    },
+    {
+      "definition": "a shade of blue tinged with purple",
+      "forms": [],
+      "id": "oewn-purplish_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "purplish blue",
+      "synset": "oewn-04977129-n"
+    },
+    {
+      "definition": "a shade of blue tinged with purple",
+      "forms": [],
+      "id": "oewn-royal_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "royal blue",
+      "synset": "oewn-04977129-n"
+    },
+    {
+      "definition": "a color between red and blue",
+      "forms": [],
+      "id": "oewn-purple__1.07.00..",
+      "lang": "en",
+      "lemma": "purple",
+      "synset": "oewn-04977236-n"
+    },
+    {
+      "definition": "a color between red and blue",
+      "forms": [],
+      "id": "oewn-purpleness__1.07.00..",
+      "lang": "en",
+      "lemma": "purpleness",
+      "synset": "oewn-04977236-n"
+    },
+    {
+      "definition": "a vivid purplish-red color; in ancient Rome and Byzantium, it was the color worn by an emperor or senior magistrate",
+      "forms": [],
+      "id": "oewn-tyrian_purple__1.07.00..",
+      "lang": "en",
+      "lemma": "Tyrian purple",
+      "synset": "oewn-04977489-n"
+    },
+    {
+      "definition": "a blue-violet color",
+      "forms": [
+        "indigoes"
+      ],
+      "id": "oewn-indigo__1.07.00..",
+      "lang": "en",
+      "lemma": "indigo",
+      "synset": "oewn-04977665-n"
+    },
+    {
+      "definition": "a pale purple color",
+      "forms": [],
+      "id": "oewn-lavender__1.07.00..",
+      "lang": "en",
+      "lemma": "lavender",
+      "synset": "oewn-04977737-n"
+    },
+    {
+      "definition": "a moderate purple",
+      "forms": [],
+      "id": "oewn-mauve__1.07.00..",
+      "lang": "en",
+      "lemma": "mauve",
+      "synset": "oewn-04977811-n"
+    },
+    {
+      "definition": "a shade of purple tinged with red",
+      "forms": [],
+      "id": "oewn-reddish_purple__1.07.00..",
+      "lang": "en",
+      "lemma": "reddish purple",
+      "synset": "oewn-04977898-n"
+    },
+    {
+      "definition": "a shade of purple tinged with red",
+      "forms": [],
+      "id": "oewn-royal_purple__1.07.00..",
+      "lang": "en",
+      "lemma": "royal purple",
+      "synset": "oewn-04977898-n"
+    },
+    {
+      "definition": "a variable color that lies beyond blue in the spectrum",
+      "forms": [],
+      "id": "oewn-violet__1.07.00..",
+      "lang": "en",
+      "lemma": "violet",
+      "synset": "oewn-04978025-n"
+    },
+    {
+      "definition": "a variable color that lies beyond blue in the spectrum",
+      "forms": [],
+      "id": "oewn-reddish_blue__1.07.00..",
+      "lang": "en",
+      "lemma": "reddish blue",
+      "synset": "oewn-04978025-n"
+    },
+    {
+      "definition": "a light shade of red",
+      "forms": [],
+      "id": "oewn-pink__1.07.00..",
+      "lang": "en",
+      "lemma": "pink",
+      "synset": "oewn-04978183-n"
+    },
+    {
+      "definition": "the quality of being pink",
+      "forms": [],
+      "id": "oewn-pinkness__1.07.00..",
+      "lang": "en",
+      "lemma": "pinkness",
+      "synset": "oewn-04978398-n"
+    },
+    {
+      "definition": "a pink or reddish-pink color",
+      "forms": [],
+      "id": "oewn-carnation__1.07.00..",
+      "lang": "en",
+      "lemma": "carnation",
+      "synset": "oewn-04978478-n"
+    },
+    {
+      "definition": "a dusty pink color",
+      "forms": [],
+      "id": "oewn-rose__1.07.00..",
+      "lang": "en",
+      "lemma": "rose",
+      "synset": "oewn-04978580-n"
+    },
+    {
+      "definition": "a dusty pink color",
+      "forms": [],
+      "id": "oewn-rosiness__1.07.01..",
+      "lang": "en",
+      "lemma": "rosiness",
+      "synset": "oewn-04978580-n"
+    },
+    {
+      "definition": "a greyish-pink color",
+      "forms": [],
+      "id": "oewn-old_rose__1.07.00..",
+      "lang": "en",
+      "lemma": "old rose",
+      "synset": "oewn-04978714-n"
+    },
+    {
+      "definition": "a pink dye that was discovered in 1859, the year a battle was fought at Solferino",
+      "forms": [],
+      "id": "oewn-solferino__1.07.00..",
+      "lang": "en",
+      "lemma": "solferino",
+      "synset": "oewn-04978789-n"
+    },
+    {
+      "definition": "a pink dye that was discovered in 1859, the year a battle was fought at Solferino",
+      "forms": [],
+      "id": "oewn-purplish_pink__1.07.00..",
+      "lang": "en",
+      "lemma": "purplish pink",
+      "synset": "oewn-04978789-n"
+    },
+    {
+      "definition": "a shade of pink tinged with yellow",
+      "forms": [],
+      "id": "oewn-yellowish_pink__1.07.00..",
+      "lang": "en",
+      "lemma": "yellowish pink",
+      "synset": "oewn-04978942-n"
+    },
+    {
+      "definition": "a shade of pink tinged with yellow",
+      "forms": [],
+      "id": "oewn-apricot__1.07.00..",
+      "lang": "en",
+      "lemma": "apricot",
+      "synset": "oewn-04978942-n"
+    },
+    {
+      "definition": "a shade of pink tinged with yellow",
+      "forms": [],
+      "id": "oewn-peach__1.07.00..",
+      "lang": "en",
+      "lemma": "peach",
+      "synset": "oewn-04978942-n"
+    },
+    {
+      "definition": "a shade of pink tinged with yellow",
+      "forms": [],
+      "id": "oewn-salmon_pink__1.07.00..",
+      "lang": "en",
+      "lemma": "salmon pink",
+      "synset": "oewn-04978942-n"
+    },
+    {
+      "definition": "a variable color averaging a deep pink",
+      "forms": [],
+      "id": "oewn-coral__1.07.00..",
+      "lang": "en",
+      "lemma": "coral",
+      "synset": "oewn-04979087-n"
+    },
+    {
+      "definition": "an orange of low brightness and saturation",
+      "forms": [],
+      "id": "oewn-brown__1.07.00..",
+      "lang": "en",
+      "lemma": "brown",
+      "synset": "oewn-04979195-n"
+    },
+    {
+      "definition": "an orange of low brightness and saturation",
+      "forms": [],
+      "id": "oewn-brownness__1.07.00..",
+      "lang": "en",
+      "lemma": "brownness",
+      "synset": "oewn-04979195-n"
+    },
+    {
+      "definition": "a moderate brown color",
+      "forms": [],
+      "id": "oewn-vandyke_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "Vandyke brown",
+      "synset": "oewn-04979535-n"
+    },
+    {
+      "definition": "the brown color of chestnuts",
+      "forms": [],
+      "id": "oewn-chestnut__1.07.00..",
+      "lang": "en",
+      "lemma": "chestnut",
+      "synset": "oewn-04979617-n"
+    },
+    {
+      "definition": "a medium brown to dark-brown color",
+      "forms": [],
+      "id": "oewn-chocolate__1.07.00..",
+      "lang": "en",
+      "lemma": "chocolate",
+      "synset": "oewn-04979718-n"
+    },
+    {
+      "definition": "a medium brown to dark-brown color",
+      "forms": [],
+      "id": "oewn-coffee__1.07.00..",
+      "lang": "en",
+      "lemma": "coffee",
+      "synset": "oewn-04979718-n"
+    },
+    {
+      "definition": "a medium brown to dark-brown color",
+      "forms": [],
+      "id": "oewn-deep_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "deep brown",
+      "synset": "oewn-04979718-n"
+    },
+    {
+      "definition": "a medium brown to dark-brown color",
+      "forms": [],
+      "id": "oewn-umber__1.07.00..",
+      "lang": "en",
+      "lemma": "umber",
+      "synset": "oewn-04979718-n"
+    },
+    {
+      "definition": "a medium brown to dark-brown color",
+      "forms": [],
+      "id": "oewn-burnt_umber__1.07.00..",
+      "lang": "en",
+      "lemma": "burnt umber",
+      "synset": "oewn-04979718-n"
+    },
+    {
+      "definition": "a shade of brown that is yellowish or reddish; it is a greenish shade of brown when used to describe the color of someone's eyes",
+      "forms": [],
+      "id": "oewn-hazel__1.07.00..",
+      "lang": "en",
+      "lemma": "hazel",
+      "synset": "oewn-04979870-n"
+    },
+    {
+      "definition": "a brown that is light but unsaturated",
+      "forms": [],
+      "id": "oewn-light_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "light brown",
+      "synset": "oewn-04980068-n"
+    },
+    {
+      "definition": "a dark brown color",
+      "forms": [],
+      "id": "oewn-mocha__1.07.00..",
+      "lang": "en",
+      "lemma": "mocha",
+      "synset": "oewn-04980217-n"
+    },
+    {
+      "definition": "a light brown the color of topaz",
+      "forms": [],
+      "id": "oewn-tan__1.07.00..",
+      "lang": "en",
+      "lemma": "tan",
+      "synset": "oewn-04980287-n"
+    },
+    {
+      "definition": "a light brown the color of topaz",
+      "forms": [],
+      "id": "oewn-topaz__1.07.00..",
+      "lang": "en",
+      "lemma": "topaz",
+      "synset": "oewn-04980287-n"
+    },
+    {
+      "definition": "a color or pigment varying around a light grey-brown color",
+      "forms": [],
+      "id": "oewn-dun__1.07.00..",
+      "lang": "en",
+      "lemma": "dun",
+      "synset": "oewn-04980377-n"
+    },
+    {
+      "definition": "a color or pigment varying around a light grey-brown color",
+      "forms": [],
+      "id": "oewn-greyish_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "greyish brown",
+      "synset": "oewn-04980377-n"
+    },
+    {
+      "definition": "a color or pigment varying around a light grey-brown color",
+      "forms": [],
+      "id": "oewn-grayish_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "grayish brown",
+      "synset": "oewn-04980377-n"
+    },
+    {
+      "definition": "a color or pigment varying around a light grey-brown color",
+      "forms": [],
+      "id": "oewn-fawn__1.07.00..",
+      "lang": "en",
+      "lemma": "fawn",
+      "synset": "oewn-04980377-n"
+    },
+    {
+      "definition": "a very light brown",
+      "forms": [],
+      "id": "oewn-beige__1.07.00..",
+      "lang": "en",
+      "lemma": "beige",
+      "synset": "oewn-04980558-n"
+    },
+    {
+      "definition": "a very light brown",
+      "forms": [],
+      "id": "oewn-ecru__1.07.00..",
+      "lang": "en",
+      "lemma": "ecru",
+      "synset": "oewn-04980558-n"
+    },
+    {
+      "definition": "a shade of brown with a tinge of red",
+      "forms": [],
+      "id": "oewn-reddish_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "reddish brown",
+      "synset": "oewn-04980653-n"
+    },
+    {
+      "definition": "a shade of brown with a tinge of red",
+      "forms": [],
+      "id": "oewn-sepia__1.07.00..",
+      "lang": "en",
+      "lemma": "sepia",
+      "synset": "oewn-04980653-n"
+    },
+    {
+      "definition": "a shade of brown with a tinge of red",
+      "forms": [],
+      "id": "oewn-burnt_sienna__1.07.00..",
+      "lang": "en",
+      "lemma": "burnt sienna",
+      "synset": "oewn-04980653-n"
+    },
+    {
+      "definition": "a shade of brown with a tinge of red",
+      "forms": [],
+      "id": "oewn-venetian_red__1.07.00..",
+      "lang": "en",
+      "lemma": "Venetian red",
+      "synset": "oewn-04980653-n"
+    },
+    {
+      "definition": "a shade of brown with a tinge of red",
+      "forms": [],
+      "id": "oewn-mahogany__1.07.00..",
+      "lang": "en",
+      "lemma": "mahogany",
+      "synset": "oewn-04980653-n"
+    },
+    {
+      "definition": "a bright reddish-brown color",
+      "forms": [],
+      "id": "oewn-brick_red__1.07.00..",
+      "lang": "en",
+      "lemma": "brick red",
+      "synset": "oewn-04980852-n"
+    },
+    {
+      "definition": "a reddish-brown color resembling the color of polished copper",
+      "forms": [],
+      "id": "oewn-copper__1.07.00..",
+      "lang": "en",
+      "lemma": "copper",
+      "synset": "oewn-04980936-n"
+    },
+    {
+      "definition": "a reddish-brown color resembling the color of polished copper",
+      "forms": [],
+      "id": "oewn-copper_color__1.07.00..",
+      "lang": "en",
+      "lemma": "copper color",
+      "synset": "oewn-04980936-n"
+    },
+    {
+      "definition": "a reddish-brown color resembling the red soil used as body paint by American Indians",
+      "forms": [],
+      "id": "oewn-indian_red__1.07.00..",
+      "lang": "en",
+      "lemma": "Indian red",
+      "synset": "oewn-04981083-n"
+    },
+    {
+      "definition": "a medium to dark tan color",
+      "forms": [],
+      "id": "oewn-yellowish_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "yellowish brown",
+      "synset": "oewn-04981224-n"
+    },
+    {
+      "definition": "a medium to dark tan color",
+      "forms": [],
+      "id": "oewn-raw_sienna__1.07.00..",
+      "lang": "en",
+      "lemma": "raw sienna",
+      "synset": "oewn-04981224-n"
+    },
+    {
+      "definition": "a medium to dark tan color",
+      "forms": [],
+      "id": "oewn-buff__1.07.00..",
+      "lang": "en",
+      "lemma": "buff",
+      "synset": "oewn-04981224-n"
+    },
+    {
+      "definition": "a medium to dark tan color",
+      "forms": [],
+      "id": "oewn-caramel__1.07.00..",
+      "lang": "en",
+      "lemma": "caramel",
+      "synset": "oewn-04981224-n"
+    },
+    {
+      "definition": "a medium to dark tan color",
+      "forms": [],
+      "id": "oewn-caramel_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "caramel brown",
+      "synset": "oewn-04981224-n"
+    },
+    {
+      "definition": "a color varying from dark purplish brown to dark red",
+      "forms": [],
+      "id": "oewn-puce__1.07.00..",
+      "lang": "en",
+      "lemma": "puce",
+      "synset": "oewn-04981412-n"
+    },
+    {
+      "definition": "a shade of brown tinged with green",
+      "forms": [],
+      "id": "oewn-olive_brown__1.07.00..",
+      "lang": "en",
+      "lemma": "olive brown",
+      "synset": "oewn-04981515-n"
+    },
+    {
+      "definition": "a yellow-green color of low brightness and saturation",
+      "forms": [],
+      "id": "oewn-olive__1.07.00..",
+      "lang": "en",
+      "lemma": "olive",
+      "synset": "oewn-04981607-n"
+    },
+    {
+      "definition": "a dull greyish to yellowish or light olive brown",
+      "forms": [],
+      "id": "oewn-olive_drab__1.07.00..",
+      "lang": "en",
+      "lemma": "olive drab",
+      "synset": "oewn-04981730-n"
+    },
+    {
+      "definition": "a dull greyish to yellowish or light olive brown",
+      "forms": [],
+      "id": "oewn-drab__1.07.00..",
+      "lang": "en",
+      "lemma": "drab",
+      "synset": "oewn-04981730-n"
+    },
+    {
+      "definition": "any of various pale or light colors",
+      "forms": [],
+      "id": "oewn-pastel__1.07.00..",
+      "lang": "en",
+      "lemma": "pastel",
+      "synset": "oewn-04981842-n"
+    },
+    {
+      "definition": "dark yellowish brown",
+      "forms": [],
+      "id": "oewn-snuff-color__1.07.00..",
+      "lang": "en",
+      "lemma": "snuff-color",
+      "synset": "oewn-04981948-n"
+    },
+    {
+      "definition": "dark yellowish brown",
+      "forms": [],
+      "id": "oewn-snuff-colour__1.07.00..",
+      "lang": "en",
+      "lemma": "snuff-colour",
+      "synset": "oewn-04981948-n"
+    },
+    {
+      "definition": "a greyish brown",
+      "forms": [],
+      "id": "oewn-taupe__1.07.00..",
+      "lang": "en",
+      "lemma": "taupe",
+      "synset": "oewn-04982041-n"
+    },
+    {
+      "definition": "a vivid blue to purple-blue color",
+      "forms": [],
+      "id": "oewn-ultramarine__1.07.00..",
+      "lang": "en",
+      "lemma": "ultramarine",
+      "synset": "oewn-04982126-n"
+    },
+    {
+      "definition": "either one of two chromatic colors that when mixed together give white (in the case of lights) or grey (in the case of pigments)",
+      "forms": [],
+      "id": "oewn-complementary_color__1.07.00..",
+      "lang": "en",
+      "lemma": "complementary color",
+      "synset": "oewn-04983006-n"
+    },
+    {
+      "definition": "either one of two chromatic colors that when mixed together give white (in the case of lights) or grey (in the case of pigments)",
+      "forms": [],
+      "id": "oewn-complementary__1.07.00..",
+      "lang": "en",
+      "lemma": "complementary",
+      "synset": "oewn-04983006-n"
+    },
+    {
+      "definition": "appearance with regard to color",
+      "forms": [],
+      "id": "oewn-coloration__1.07.00..",
+      "lang": "en",
+      "lemma": "coloration",
+      "synset": "oewn-04983255-n"
+    },
+    {
+      "definition": "appearance with regard to color",
+      "forms": [],
+      "id": "oewn-colouration__1.07.00..",
+      "lang": "en",
+      "lemma": "colouration",
+      "synset": "oewn-04983255-n"
+    },
+    {
+      "definition": "coloring of the hair",
+      "forms": [],
+      "id": "oewn-hair_coloring__1.07.00..",
+      "lang": "en",
+      "lemma": "hair coloring",
+      "synset": "oewn-04983455-n"
+    },
+    {
+      "definition": "coloration of living tissues by pigment",
+      "forms": [],
+      "id": "oewn-pigmentation__1.07.00..",
+      "lang": "en",
+      "lemma": "pigmentation",
+      "synset": "oewn-04983586-n"
+    },
+    {
+      "definition": "abnormal pigmentation",
+      "forms": [],
+      "id": "oewn-chromatism__1.07.00..",
+      "lang": "en",
+      "lemma": "chromatism",
+      "synset": "oewn-04983756-n"
+    },
+    {
+      "definition": "abnormally dark skin caused by increased deposits of melatonin",
+      "forms": [],
+      "id": "oewn-melanoderma__1.07.00..",
+      "lang": "en",
+      "lemma": "melanoderma",
+      "synset": "oewn-04983834-n"
+    },
+    {
+      "definition": "absence or loss of pigmentation (or less than normal pigmentation) in the skin or hair",
+      "forms": [],
+      "id": "oewn-depigmentation__1.07.00..",
+      "lang": "en",
+      "lemma": "depigmentation",
+      "synset": "oewn-04983954-n"
+    },
+    {
+      "definition": "loss of color from the hair",
+      "forms": [],
+      "id": "oewn-poliosis__1.07.00..",
+      "lang": "en",
+      "lemma": "poliosis",
+      "synset": "oewn-04984137-n"
+    },
+    {
+      "definition": "the coloring of a person's face",
+      "forms": [],
+      "id": "oewn-complexion__1.07.00..",
+      "lang": "en",
+      "lemma": "complexion",
+      "synset": "oewn-04984219-n"
+    },
+    {
+      "definition": "the coloring of a person's face",
+      "forms": [],
+      "id": "oewn-skin_color__1.07.00..",
+      "lang": "en",
+      "lemma": "skin color",
+      "synset": "oewn-04984219-n"
+    },
+    {
+      "definition": "the coloring of a person's face",
+      "forms": [],
+      "id": "oewn-skin_colour__1.07.00..",
+      "lang": "en",
+      "lemma": "skin colour",
+      "synset": "oewn-04984219-n"
+    },
+    {
+      "definition": "the property of having a naturally light complexion",
+      "forms": [],
+      "id": "oewn-paleness__1.07.01..",
+      "lang": "en",
+      "lemma": "paleness",
+      "synset": "oewn-04984514-n"
+    },
+    {
+      "definition": "the property of having a naturally light complexion",
+      "forms": [],
+      "id": "oewn-blondness__1.07.00..",
+      "lang": "en",
+      "lemma": "blondness",
+      "synset": "oewn-04984514-n"
+    },
+    {
+      "definition": "the property of having a naturally light complexion",
+      "forms": [],
+      "id": "oewn-fairness__1.07.01..",
+      "lang": "en",
+      "lemma": "fairness",
+      "synset": "oewn-04984514-n"
+    },
+    {
+      "definition": "a healthy reddish complexion",
+      "forms": [],
+      "id": "oewn-ruddiness__1.07.00..",
+      "lang": "en",
+      "lemma": "ruddiness",
+      "synset": "oewn-04984679-n"
+    },
+    {
+      "definition": "a healthy reddish complexion",
+      "forms": [],
+      "id": "oewn-rosiness__1.07.00..",
+      "lang": "en",
+      "lemma": "rosiness",
+      "synset": "oewn-04984679-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-lividness__1.07.00..",
+      "lang": "en",
+      "lemma": "lividness",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-lividity__1.07.00..",
+      "lang": "en",
+      "lemma": "lividity",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-luridness__1.07.02..",
+      "lang": "en",
+      "lemma": "luridness",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-paleness__1.07.02..",
+      "lang": "en",
+      "lemma": "paleness",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-pallidness__1.07.00..",
+      "lang": "en",
+      "lemma": "pallidness",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-pallor__1.07.00..",
+      "lang": "en",
+      "lemma": "pallor",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-wanness__1.07.00..",
+      "lang": "en",
+      "lemma": "wanness",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "forms": [],
+      "id": "oewn-achromasia__1.07.00..",
+      "lang": "en",
+      "lemma": "achromasia",
+      "synset": "oewn-04984828-n"
+    },
+    {
+      "definition": "a sickly yellowish skin color",
+      "forms": [],
+      "id": "oewn-sallowness__1.07.00..",
+      "lang": "en",
+      "lemma": "sallowness",
+      "synset": "oewn-04985213-n"
+    },
+    {
+      "definition": "the quality or state of being the color of tanned leather",
+      "forms": [],
+      "id": "oewn-tawniness__1.07.00..",
+      "lang": "en",
+      "lemma": "tawniness",
+      "synset": "oewn-04985317-n"
+    },
+    {
+      "definition": "a swarthy complexion",
+      "forms": [],
+      "id": "oewn-darkness__1.07.01..",
+      "lang": "en",
+      "lemma": "darkness",
+      "synset": "oewn-04985483-n"
+    },
+    {
+      "definition": "a swarthy complexion",
+      "forms": [],
+      "id": "oewn-duskiness__1.07.00..",
+      "lang": "en",
+      "lemma": "duskiness",
+      "synset": "oewn-04985483-n"
+    },
+    {
+      "definition": "a swarthy complexion",
+      "forms": [],
+      "id": "oewn-swarthiness__1.07.00..",
+      "lang": "en",
+      "lemma": "swarthiness",
+      "synset": "oewn-04985483-n"
+    },
+    {
+      "definition": "lightness or fairness of complexion",
+      "forms": [],
+      "id": "oewn-whiteness__1.07.01..",
+      "lang": "en",
+      "lemma": "whiteness",
+      "synset": "oewn-04985620-n"
+    },
+    {
+      "definition": "a color produced by a pattern of differently colored dots that together simulate the desired color",
+      "forms": [],
+      "id": "oewn-nonsolid_color__1.07.00..",
+      "lang": "en",
+      "lemma": "nonsolid color",
+      "synset": "oewn-04985810-n"
+    },
+    {
+      "definition": "a color produced by a pattern of differently colored dots that together simulate the desired color",
+      "forms": [],
+      "id": "oewn-nonsolid_colour__1.07.00..",
+      "lang": "en",
+      "lemma": "nonsolid colour",
+      "synset": "oewn-04985810-n"
+    },
+    {
+      "definition": "a color produced by a pattern of differently colored dots that together simulate the desired color",
+      "forms": [],
+      "id": "oewn-dithered_color__1.07.00..",
+      "lang": "en",
+      "lemma": "dithered color",
+      "synset": "oewn-04985810-n"
+    },
+    {
+      "definition": "a color produced by a pattern of differently colored dots that together simulate the desired color",
+      "forms": [],
+      "id": "oewn-dithered_colour__1.07.00..",
+      "lang": "en",
+      "lemma": "dithered colour",
+      "synset": "oewn-04985810-n"
+    },
+    {
+      "definition": "coloration making an organism less visible or attractive to predators",
+      "forms": [],
+      "id": "oewn-protective_coloration__1.07.00..",
+      "lang": "en",
+      "lemma": "protective coloration",
+      "synset": "oewn-04986041-n"
+    },
+    {
+      "definition": "conspicuous coloration or markings of an animal serving to warn off predators",
+      "forms": [],
+      "id": "oewn-aposematic_coloration__1.07.00..",
+      "lang": "en",
+      "lemma": "aposematic coloration",
+      "synset": "oewn-04986251-n"
+    },
+    {
+      "definition": "conspicuous coloration or markings of an animal serving to warn off predators",
+      "forms": [],
+      "id": "oewn-warning_coloration__1.07.00..",
+      "lang": "en",
+      "lemma": "warning coloration",
+      "synset": "oewn-04986251-n"
+    },
+    {
+      "definition": "coloring serving as natural camouflage",
+      "forms": [],
+      "id": "oewn-apatetic_coloration__1.07.00..",
+      "lang": "en",
+      "lemma": "apatetic coloration",
+      "synset": "oewn-04986452-n"
+    },
+    {
+      "definition": "coloring that conceals or disguises an animal's shape",
+      "forms": [],
+      "id": "oewn-cryptic_coloration__1.07.00..",
+      "lang": "en",
+      "lemma": "cryptic coloration",
+      "synset": "oewn-04986556-n"
+    },
+    {
+      "definition": "slightly purplish or bluish dark grey",
+      "forms": [],
+      "id": "oewn-iron_blue__1.27.02..",
+      "lang": "en",
+      "lemma": "iron blue",
+      "synset": "oewn-14947198-n"
+    },
+    {
+      "definition": "slightly purplish or bluish dark grey",
+      "forms": [],
+      "id": "oewn-steel_grey__1.27.00..",
+      "lang": "en",
+      "lemma": "steel grey",
+      "synset": "oewn-14947198-n"
+    },
+    {
+      "definition": "slightly purplish or bluish dark grey",
+      "forms": [],
+      "id": "oewn-steel_gray__1.27.00..",
+      "lang": "en",
+      "lemma": "steel gray",
+      "synset": "oewn-14947198-n"
+    },
+    {
+      "definition": "slightly purplish or bluish dark grey",
+      "forms": [],
+      "id": "oewn-davy-ap-s_grey__1.27.00..",
+      "lang": "en",
+      "lemma": "Davy's grey",
+      "synset": "oewn-14947198-n"
+    },
+    {
+      "definition": "slightly purplish or bluish dark grey",
+      "forms": [],
+      "id": "oewn-davy-ap-s_gray__1.27.00..",
+      "lang": "en",
+      "lemma": "Davy's gray",
+      "synset": "oewn-14947198-n"
+    },
+    {
+      "definition": "The pigmentation of the eye's iris.",
+      "forms": [],
+      "id": "oewn-eye_colour__1.07.01..",
+      "lang": "en",
+      "lemma": "eye colour",
+      "synset": "oewn-92417573-n"
+    },
+    {
+      "definition": "The pigmentation of the eye's iris.",
+      "forms": [],
+      "id": "oewn-eye_color__1.07.01..",
+      "lang": "en",
+      "lemma": "eye color",
+      "synset": "oewn-92417573-n"
+    },
+    {
+      "definition": "The quality of being somewhat red.",
+      "forms": [],
+      "id": "oewn-reddishness__1.07.01..",
+      "lang": "en",
+      "lemma": "reddishness",
+      "synset": "oewn-92418287-n"
+    },
+    {
+      "definition": "A shade of medium-to-light blue containing relatively little green compared to blue.",
+      "forms": [],
+      "id": "oewn-cornflower_blue__1.07.01..",
+      "lang": "en",
+      "lemma": "cornflower blue",
+      "synset": "oewn-92419949-n"
+    },
+    {
+      "definition": "A strong reddish brown color.",
+      "forms": [],
+      "id": "oewn-rust__1.07.01..",
+      "lang": "en",
+      "lemma": "rust",
+      "synset": "oewn-92423533-n"
+    },
+    {
+      "definition": "A moderate reddish purple that is bluer, stronger, and slightly lighter than heliotrope see heliotrope and bluer and duller than eupatorium purple.",
+      "forms": [],
+      "id": "oewn-bishop-ap-s_purple__1.07.01..",
+      "lang": "en",
+      "lemma": "bishop's purple",
+      "synset": "oewn-92427398-n"
+    },
+    {
+      "definition": "A moderate reddish purple that is bluer, stronger, and slightly lighter than heliotrope see heliotrope and bluer and duller than eupatorium purple.",
+      "forms": [],
+      "id": "oewn-bishop-ap-s_violet__1.07.01..",
+      "lang": "en",
+      "lemma": "bishop's violet",
+      "synset": "oewn-92427398-n"
+    },
+    {
+      "definition": "The quality of being somewhat blue or having a tinge of blue.",
+      "forms": [],
+      "id": "oewn-bluishness__1.07.01..",
+      "lang": "en",
+      "lemma": "bluishness",
+      "synset": "oewn-92428812-n"
+    },
+    {
+      "definition": "the quality or state of being marked with spots.",
+      "forms": [],
+      "id": "oewn-spottedness__1.07.01..",
+      "lang": "en",
+      "lemma": "spottedness",
+      "synset": "oewn-92431221-n"
+    },
+    {
+      "definition": "a brownish orange color that resembles Terra cotta.",
+      "forms": [],
+      "id": "oewn-terra_cotta__1.07.01..",
+      "lang": "en",
+      "lemma": "terra cotta",
+      "synset": "oewn-92433931-n"
+    },
+    {
+      "definition": "A pale yellow-green colour, like that of the pistachio nut.",
+      "forms": [],
+      "id": "oewn-pistachio_green__1.07.01..",
+      "lang": "en",
+      "lemma": "pistachio green",
+      "synset": "oewn-92434568-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a visual attribute of things that results from the light they emit or transmit or reflect",
+      "hypernyms": [
+        "oewn-04957303-n"
+      ],
+      "id": "oewn-04963771-n",
+      "lang": "en",
+      "max_depth": 5,
+      "min_depth": 5,
+      "name": "color"
+    },
+    {
+      "definition": "any of three colors from which all others can be obtained by mixing",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04964353-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "primary color"
+    },
+    {
+      "definition": "any of three pigments from which all colors can be obtained by mixing",
+      "hypernyms": [
+        "oewn-04964353-n"
+      ],
+      "id": "oewn-04964533-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "primary color for pigments"
+    },
+    {
+      "definition": "any of three primary colors of light from which all colors can be obtained by additive mixing",
+      "hypernyms": [
+        "oewn-04964353-n"
+      ],
+      "id": "oewn-04964766-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "primary color for light"
+    },
+    {
+      "definition": "any of the three colors that give the primary colors for light after subtraction from white light",
+      "hypernyms": [
+        "oewn-04964766-n"
+      ],
+      "id": "oewn-04965031-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "primary subtractive color for light"
+    },
+    {
+      "definition": "interwoven yarns of mixed colors producing muted greyish shades with flecks of color",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04965323-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "heather mixture"
+    },
+    {
+      "definition": "a soft shade of a color",
+      "hypernyms": [
+        "oewn-04966407-n"
+      ],
+      "id": "oewn-04965479-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "mellowness"
+    },
+    {
+      "definition": "a strong deep vividness of hue",
+      "hypernyms": [
+        "oewn-04966407-n"
+      ],
+      "id": "oewn-04965637-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "richness"
+    },
+    {
+      "definition": "an irregular arrangement of patches of color",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04966042-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "mottle"
+    },
+    {
+      "definition": "a quality of a given color that differs slightly from another color",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04966407-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "shade"
+    },
+    {
+      "definition": "a pale or subdued color",
+      "hypernyms": [
+        "oewn-04966407-n"
+      ],
+      "id": "oewn-04966744-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "undertone"
+    },
+    {
+      "definition": "a color that has hue",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04966849-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "chromatic color"
+    },
+    {
+      "definition": "a color lacking hue; white or grey or black",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04967256-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "achromatic color"
+    },
+    {
+      "definition": "the quality or state of the achromatic color of least lightness (bearing the least resemblance to white)",
+      "hypernyms": [
+        "oewn-04967256-n"
+      ],
+      "id": "oewn-04967454-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "black"
+    },
+    {
+      "definition": "a very dark black",
+      "hypernyms": [
+        "oewn-04967454-n"
+      ],
+      "id": "oewn-04967759-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "coal black"
+    },
+    {
+      "definition": "the quality or state of the achromatic color of greatest lightness (bearing the least resemblance to black)",
+      "hypernyms": [
+        "oewn-04967256-n"
+      ],
+      "id": "oewn-04967906-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "white"
+    },
+    {
+      "definition": "a very light white",
+      "hypernyms": [
+        "oewn-04967906-n"
+      ],
+      "id": "oewn-04968239-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "alabaster"
+    },
+    {
+      "definition": "the whiteness that results from removing the color from something",
+      "hypernyms": [
+        "oewn-04967906-n"
+      ],
+      "id": "oewn-04968313-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bleach"
+    },
+    {
+      "definition": "a shade of white the color of bleached bones",
+      "hypernyms": [
+        "oewn-04967906-n"
+      ],
+      "id": "oewn-04968508-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bone"
+    },
+    {
+      "definition": "a pure flat white with little reflectance",
+      "hypernyms": [
+        "oewn-04967906-n"
+      ],
+      "id": "oewn-04968649-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "chalk"
+    },
+    {
+      "definition": "a silvery-white color",
+      "hypernyms": [
+        "oewn-04967906-n"
+      ],
+      "id": "oewn-04968760-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "frostiness"
+    },
+    {
+      "definition": "a neutral achromatic color midway between white and black",
+      "hypernyms": [
+        "oewn-04967256-n"
+      ],
+      "id": "oewn-04968868-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "gray"
+    },
+    {
+      "definition": "a light shade of grey",
+      "hypernyms": [
+        "oewn-04968868-n"
+      ],
+      "id": "oewn-04969239-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "ash grey"
+    },
+    {
+      "definition": "a very dark grey color",
+      "hypernyms": [
+        "oewn-04968868-n"
+      ],
+      "id": "oewn-04969417-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "charcoal"
+    },
+    {
+      "definition": "grey with a mottled pattern of darker grey markings",
+      "hypernyms": [
+        "oewn-04968868-n"
+      ],
+      "id": "oewn-04969572-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "dapple-grey"
+    },
+    {
+      "definition": "the color of freshly broken cast iron",
+      "hypernyms": [
+        "oewn-04968868-n"
+      ],
+      "id": "oewn-04969725-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "iron-grey"
+    },
+    {
+      "definition": "a greyish white",
+      "hypernyms": [
+        "oewn-04968868-n"
+      ],
+      "id": "oewn-04969866-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "tattletale grey"
+    },
+    {
+      "definition": "red color or pigment; the chromatic color resembling the hue of blood",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04969961-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "red"
+    },
+    {
+      "definition": "a blood-red color",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04970288-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "sanguine"
+    },
+    {
+      "definition": "a red pigment used in paints; basic lead chromate",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04970378-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "chrome red"
+    },
+    {
+      "definition": "a bright orange-red color produced in cotton cloth with alizarine dye",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04970484-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "Turkey red"
+    },
+    {
+      "definition": "a variable color averaging a vivid red",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04970626-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cardinal"
+    },
+    {
+      "definition": "a deep and vivid red color",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04970765-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "crimson"
+    },
+    {
+      "definition": "a red color that reflects little light",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04970917-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "dark red"
+    },
+    {
+      "definition": "a dark purplish-red to blackish-red color",
+      "hypernyms": [
+        "oewn-04970917-n"
+      ],
+      "id": "oewn-04971082-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "burgundy"
+    },
+    {
+      "definition": "a dark purplish-red color",
+      "hypernyms": [
+        "oewn-04970917-n"
+      ],
+      "id": "oewn-04971178-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "claret"
+    },
+    {
+      "definition": "a dark brownish-red color",
+      "hypernyms": [
+        "oewn-04970917-n"
+      ],
+      "id": "oewn-04971256-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "oxblood red"
+    },
+    {
+      "definition": "a red as dark as red wine",
+      "hypernyms": [
+        "oewn-04970917-n"
+      ],
+      "id": "oewn-04971339-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "wine"
+    },
+    {
+      "definition": "a red with a tinge of purple",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04971464-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "purplish red"
+    },
+    {
+      "definition": "a red the color of ripe cherries",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04971620-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cerise"
+    },
+    {
+      "definition": "a primary subtractive color for light; a dark purple-red color; the dye for magenta was discovered in 1859, the year of the battle of Magenta",
+      "hypernyms": [
+        "oewn-04971464-n"
+      ],
+      "id": "oewn-04971763-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "magenta"
+    },
+    {
+      "definition": "a vivid purplish-red color",
+      "hypernyms": [
+        "oewn-04971464-n"
+      ],
+      "id": "oewn-04971976-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "fuchsia"
+    },
+    {
+      "definition": "a dark purplish-red to dark brownish-red color",
+      "hypernyms": [
+        "oewn-04971464-n"
+      ],
+      "id": "oewn-04972055-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "maroon"
+    },
+    {
+      "definition": "a variable color that is vivid red but sometimes with an orange tinge",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-04972154-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "scarlet"
+    },
+    {
+      "definition": "orange color or pigment; any of a range of colors between red and yellow",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04972356-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "orange"
+    },
+    {
+      "definition": "a pale pinkish orange color",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04972548-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "salmon"
+    },
+    {
+      "definition": "an orange color closer to red than to yellow",
+      "hypernyms": [
+        "oewn-04972356-n"
+      ],
+      "id": "oewn-04972628-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "reddish orange"
+    },
+    {
+      "definition": "a reddish to vivid orange color",
+      "hypernyms": [
+        "oewn-04972628-n"
+      ],
+      "id": "oewn-04972751-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "tangerine"
+    },
+    {
+      "definition": "yellow color or pigment; the chromatic color resembling the hue of sunflowers or ripe lemons",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04972838-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "yellow"
+    },
+    {
+      "definition": "a light grayish yellow to near white",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04973194-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "blond"
+    },
+    {
+      "definition": "a moderate yellow with a greenish tinge",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04973291-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "canary yellow"
+    },
+    {
+      "definition": "a deep yellow color",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04973417-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "amber"
+    },
+    {
+      "definition": "a yellow color of low lightness with a brownish tinge",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04973605-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "brownish yellow"
+    },
+    {
+      "definition": "a strong yellow color",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04973720-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "gamboge"
+    },
+    {
+      "definition": "a dark yellow",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04973826-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "old gold"
+    },
+    {
+      "definition": "a shade of yellow tinged with orange",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04973894-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "orange yellow"
+    },
+    {
+      "definition": "a moderate yellow-orange to orange color",
+      "hypernyms": [
+        "oewn-04973894-n"
+      ],
+      "id": "oewn-04974018-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "ocher"
+    },
+    {
+      "definition": "a variable yellow tint; dull yellow, often diluted with white",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04974118-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "pale yellow"
+    },
+    {
+      "definition": "a shade of yellow tinged with green",
+      "hypernyms": [
+        "oewn-04972838-n"
+      ],
+      "id": "oewn-04974271-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "greenish yellow"
+    },
+    {
+      "definition": "green color or pigment; resembling the color of growing grass",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04974368-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "green"
+    },
+    {
+      "definition": "the property of being somewhat green",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04974738-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "greenishness"
+    },
+    {
+      "definition": "the property of a moderate green color resembling the waters of the sea",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04974851-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "sea green"
+    },
+    {
+      "definition": "the color of sage leaves",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04974978-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "sage green"
+    },
+    {
+      "definition": "dark to moderate or greyish green",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04975059-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bottle green"
+    },
+    {
+      "definition": "a brilliant green color",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04975151-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "chrome green"
+    },
+    {
+      "definition": "the green color of an emerald",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04975233-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "emerald"
+    },
+    {
+      "definition": "a color that is lighter and greener than olive",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04975316-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "olive green"
+    },
+    {
+      "definition": "a shade of green tinged with yellow",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04975434-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "yellow green"
+    },
+    {
+      "definition": "a blue-green color or pigment",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04975603-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bluish green"
+    },
+    {
+      "definition": "a primary subtractive color for light; has a blue-green color",
+      "hypernyms": [
+        "oewn-04975603-n"
+      ],
+      "id": "oewn-04975796-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cyan"
+    },
+    {
+      "definition": "a light green color varying from bluish green to yellowish green",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-04975926-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "jade green"
+    },
+    {
+      "definition": "blue color or pigment; resembling the color of the clear sky in the daytime",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04976072-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "blue"
+    },
+    {
+      "definition": "a light shade of blue",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04976419-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "azure"
+    },
+    {
+      "definition": "a pale blue color with grey in it",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04976608-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "powder blue"
+    },
+    {
+      "definition": "a greyish blue color",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04976717-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "steel blue"
+    },
+    {
+      "definition": "a dark greenish-blue color",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04976794-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "Prussian blue"
+    },
+    {
+      "definition": "a dark shade of blue",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04976880-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "dark blue"
+    },
+    {
+      "definition": "a shade of blue tinged with green",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04976975-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "greenish blue"
+    },
+    {
+      "definition": "a shade of blue tinged with purple",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04977129-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "purplish blue"
+    },
+    {
+      "definition": "a color between red and blue",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04977236-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "purple"
+    },
+    {
+      "definition": "a vivid purplish-red color; in ancient Rome and Byzantium, it was the color worn by an emperor or senior magistrate",
+      "hypernyms": [
+        "oewn-04977898-n"
+      ],
+      "id": "oewn-04977489-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "Tyrian purple"
+    },
+    {
+      "definition": "a blue-violet color",
+      "hypernyms": [
+        "oewn-04978025-n"
+      ],
+      "id": "oewn-04977665-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "indigo"
+    },
+    {
+      "definition": "a pale purple color",
+      "hypernyms": [
+        "oewn-04977236-n"
+      ],
+      "id": "oewn-04977737-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "lavender"
+    },
+    {
+      "definition": "a moderate purple",
+      "hypernyms": [
+        "oewn-04977236-n"
+      ],
+      "id": "oewn-04977811-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "mauve"
+    },
+    {
+      "definition": "a shade of purple tinged with red",
+      "hypernyms": [
+        "oewn-04977236-n"
+      ],
+      "id": "oewn-04977898-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "reddish purple"
+    },
+    {
+      "definition": "a variable color that lies beyond blue in the spectrum",
+      "hypernyms": [
+        "oewn-04977236-n"
+      ],
+      "id": "oewn-04978025-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "violet"
+    },
+    {
+      "definition": "a light shade of red",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04978183-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "pink"
+    },
+    {
+      "definition": "the quality of being pink",
+      "hypernyms": [
+        "oewn-04978183-n"
+      ],
+      "id": "oewn-04978398-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "pinkness"
+    },
+    {
+      "definition": "a pink or reddish-pink color",
+      "hypernyms": [
+        "oewn-04978183-n"
+      ],
+      "id": "oewn-04978478-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "carnation"
+    },
+    {
+      "definition": "a dusty pink color",
+      "hypernyms": [
+        "oewn-04978183-n"
+      ],
+      "id": "oewn-04978580-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "rose"
+    },
+    {
+      "definition": "a greyish-pink color",
+      "hypernyms": [
+        "oewn-04978580-n"
+      ],
+      "id": "oewn-04978714-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "old rose"
+    },
+    {
+      "definition": "a pink dye that was discovered in 1859, the year a battle was fought at Solferino",
+      "hypernyms": [
+        "oewn-04978183-n"
+      ],
+      "id": "oewn-04978789-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "solferino"
+    },
+    {
+      "definition": "a shade of pink tinged with yellow",
+      "hypernyms": [
+        "oewn-04978183-n"
+      ],
+      "id": "oewn-04978942-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "yellowish pink"
+    },
+    {
+      "definition": "a variable color averaging a deep pink",
+      "hypernyms": [
+        "oewn-04978183-n"
+      ],
+      "id": "oewn-04979087-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "coral"
+    },
+    {
+      "definition": "an orange of low brightness and saturation",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04979195-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "brown"
+    },
+    {
+      "definition": "a moderate brown color",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04979535-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "Vandyke brown"
+    },
+    {
+      "definition": "the brown color of chestnuts",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04979617-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "chestnut"
+    },
+    {
+      "definition": "a medium brown to dark-brown color",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04979718-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "chocolate"
+    },
+    {
+      "definition": "a shade of brown that is yellowish or reddish; it is a greenish shade of brown when used to describe the color of someone's eyes",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04979870-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "hazel"
+    },
+    {
+      "definition": "a brown that is light but unsaturated",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04980068-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "light brown"
+    },
+    {
+      "definition": "a dark brown color",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04980217-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "mocha"
+    },
+    {
+      "definition": "a light brown the color of topaz",
+      "hypernyms": [
+        "oewn-04980068-n"
+      ],
+      "id": "oewn-04980287-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "tan"
+    },
+    {
+      "definition": "a color or pigment varying around a light grey-brown color",
+      "hypernyms": [
+        "oewn-04980068-n"
+      ],
+      "id": "oewn-04980377-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "dun"
+    },
+    {
+      "definition": "a very light brown",
+      "hypernyms": [
+        "oewn-04980068-n"
+      ],
+      "id": "oewn-04980558-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "beige"
+    },
+    {
+      "definition": "a shade of brown with a tinge of red",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04980653-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "reddish brown"
+    },
+    {
+      "definition": "a bright reddish-brown color",
+      "hypernyms": [
+        "oewn-04980653-n"
+      ],
+      "id": "oewn-04980852-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "brick red"
+    },
+    {
+      "definition": "a reddish-brown color resembling the color of polished copper",
+      "hypernyms": [
+        "oewn-04980653-n"
+      ],
+      "id": "oewn-04980936-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "copper"
+    },
+    {
+      "definition": "a reddish-brown color resembling the red soil used as body paint by American Indians",
+      "hypernyms": [
+        "oewn-04980653-n"
+      ],
+      "id": "oewn-04981083-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "Indian red"
+    },
+    {
+      "definition": "a medium to dark tan color",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04981224-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "yellowish brown"
+    },
+    {
+      "definition": "a color varying from dark purplish brown to dark red",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04981412-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "puce"
+    },
+    {
+      "definition": "a shade of brown tinged with green",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04981515-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "olive brown"
+    },
+    {
+      "definition": "a yellow-green color of low brightness and saturation",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04981607-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "olive"
+    },
+    {
+      "definition": "a dull greyish to yellowish or light olive brown",
+      "hypernyms": [
+        "oewn-04981607-n"
+      ],
+      "id": "oewn-04981730-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "olive drab"
+    },
+    {
+      "definition": "any of various pale or light colors",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04981842-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "pastel"
+    },
+    {
+      "definition": "dark yellowish brown",
+      "hypernyms": [
+        "oewn-04981224-n"
+      ],
+      "id": "oewn-04981948-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "snuff-color"
+    },
+    {
+      "definition": "a greyish brown",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-04982041-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "taupe"
+    },
+    {
+      "definition": "a vivid blue to purple-blue color",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-04982126-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "ultramarine"
+    },
+    {
+      "definition": "either one of two chromatic colors that when mixed together give white (in the case of lights) or grey (in the case of pigments)",
+      "hypernyms": [
+        "oewn-04966849-n"
+      ],
+      "id": "oewn-04983006-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "complementary color"
+    },
+    {
+      "definition": "appearance with regard to color",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04983255-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "coloration"
+    },
+    {
+      "definition": "coloring of the hair",
+      "hypernyms": [
+        "oewn-04983255-n"
+      ],
+      "id": "oewn-04983455-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "hair coloring"
+    },
+    {
+      "definition": "coloration of living tissues by pigment",
+      "hypernyms": [
+        "oewn-04983255-n"
+      ],
+      "id": "oewn-04983586-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "pigmentation"
+    },
+    {
+      "definition": "abnormal pigmentation",
+      "hypernyms": [
+        "oewn-04983586-n"
+      ],
+      "id": "oewn-04983756-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "chromatism"
+    },
+    {
+      "definition": "abnormally dark skin caused by increased deposits of melatonin",
+      "hypernyms": [
+        "oewn-04983586-n"
+      ],
+      "id": "oewn-04983834-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "melanoderma"
+    },
+    {
+      "definition": "absence or loss of pigmentation (or less than normal pigmentation) in the skin or hair",
+      "hypernyms": [
+        "oewn-04983255-n"
+      ],
+      "id": "oewn-04983954-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "depigmentation"
+    },
+    {
+      "definition": "loss of color from the hair",
+      "hypernyms": [
+        "oewn-04983954-n"
+      ],
+      "id": "oewn-04984137-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "poliosis"
+    },
+    {
+      "definition": "the coloring of a person's face",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04984219-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "complexion"
+    },
+    {
+      "definition": "the property of having a naturally light complexion",
+      "hypernyms": [
+        "oewn-04984219-n"
+      ],
+      "id": "oewn-04984514-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "paleness"
+    },
+    {
+      "definition": "a healthy reddish complexion",
+      "hypernyms": [
+        "oewn-04984219-n"
+      ],
+      "id": "oewn-04984679-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "ruddiness"
+    },
+    {
+      "definition": "unnatural lack of color in the skin (as from bruising or sickness or emotional distress)",
+      "hypernyms": [
+        "oewn-04984219-n"
+      ],
+      "id": "oewn-04984828-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "lividness"
+    },
+    {
+      "definition": "a sickly yellowish skin color",
+      "hypernyms": [
+        "oewn-04984219-n"
+      ],
+      "id": "oewn-04985213-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "sallowness"
+    },
+    {
+      "definition": "the quality or state of being the color of tanned leather",
+      "hypernyms": [
+        "oewn-04984219-n"
+      ],
+      "id": "oewn-04985317-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "tawniness"
+    },
+    {
+      "definition": "a swarthy complexion",
+      "hypernyms": [
+        "oewn-04984219-n"
+      ],
+      "id": "oewn-04985483-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "darkness"
+    },
+    {
+      "definition": "lightness or fairness of complexion",
+      "hypernyms": [
+        "oewn-04984219-n"
+      ],
+      "id": "oewn-04985620-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "whiteness"
+    },
+    {
+      "definition": "a color produced by a pattern of differently colored dots that together simulate the desired color",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-04985810-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "nonsolid color"
+    },
+    {
+      "definition": "coloration making an organism less visible or attractive to predators",
+      "hypernyms": [
+        "oewn-04983255-n"
+      ],
+      "id": "oewn-04986041-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "protective coloration"
+    },
+    {
+      "definition": "conspicuous coloration or markings of an animal serving to warn off predators",
+      "hypernyms": [
+        "oewn-04986041-n"
+      ],
+      "id": "oewn-04986251-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "aposematic coloration"
+    },
+    {
+      "definition": "coloring serving as natural camouflage",
+      "hypernyms": [
+        "oewn-04986041-n"
+      ],
+      "id": "oewn-04986452-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "apatetic coloration"
+    },
+    {
+      "definition": "coloring that conceals or disguises an animal's shape",
+      "hypernyms": [
+        "oewn-04986041-n"
+      ],
+      "id": "oewn-04986556-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cryptic coloration"
+    },
+    {
+      "definition": "slightly purplish or bluish dark grey",
+      "hypernyms": [
+        "oewn-04968868-n"
+      ],
+      "id": "oewn-14947198-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "iron blue"
+    },
+    {
+      "definition": "The pigmentation of the eye's iris.",
+      "hypernyms": [
+        "oewn-04963771-n"
+      ],
+      "id": "oewn-92417573-n",
+      "lang": "en",
+      "max_depth": 6,
+      "min_depth": 6,
+      "name": "eye colour"
+    },
+    {
+      "definition": "The quality of being somewhat red.",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-92418287-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "reddishness"
+    },
+    {
+      "definition": "A shade of medium-to-light blue containing relatively little green compared to blue.",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-92419949-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cornflower blue"
+    },
+    {
+      "definition": "A strong reddish brown color.",
+      "hypernyms": [
+        "oewn-04969961-n"
+      ],
+      "id": "oewn-92423533-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "rust"
+    },
+    {
+      "definition": "A moderate reddish purple that is bluer, stronger, and slightly lighter than heliotrope see heliotrope and bluer and duller than eupatorium purple.",
+      "hypernyms": [
+        "oewn-04978025-n"
+      ],
+      "id": "oewn-92427398-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "bishop's purple"
+    },
+    {
+      "definition": "The quality of being somewhat blue or having a tinge of blue.",
+      "hypernyms": [
+        "oewn-04976072-n"
+      ],
+      "id": "oewn-92428812-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "bluishness"
+    },
+    {
+      "definition": "the quality or state of being marked with spots.",
+      "hypernyms": [
+        "oewn-04983255-n"
+      ],
+      "id": "oewn-92431221-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "spottedness"
+    },
+    {
+      "definition": "a brownish orange color that resembles Terra cotta.",
+      "hypernyms": [
+        "oewn-04979195-n"
+      ],
+      "id": "oewn-92433931-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "terra cotta"
+    },
+    {
+      "definition": "A pale yellow-green colour, like that of the pistachio nut.",
+      "hypernyms": [
+        "oewn-04974368-n"
+      ],
+      "id": "oewn-92434568-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "pistachio green"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

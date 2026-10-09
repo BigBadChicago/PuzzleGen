@@ -1,0 +1,2268 @@
+{
+  "exported": "2026-10-09",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-01943377-n",
+  "senses": [
+    {
+      "definition": "invertebrate having a soft unsegmented body usually enclosed in a shell",
+      "forms": [],
+      "id": "oewn-mollusk__1.05.00..",
+      "lang": "en",
+      "lemma": "mollusk",
+      "synset": "oewn-01943377-n"
+    },
+    {
+      "definition": "invertebrate having a soft unsegmented body usually enclosed in a shell",
+      "forms": [],
+      "id": "oewn-mollusc__1.05.00..",
+      "lang": "en",
+      "lemma": "mollusc",
+      "synset": "oewn-01943377-n"
+    },
+    {
+      "definition": "invertebrate having a soft unsegmented body usually enclosed in a shell",
+      "forms": [
+        "shellfishes"
+      ],
+      "id": "oewn-shellfish__1.05.01..",
+      "lang": "en",
+      "lemma": "shellfish",
+      "synset": "oewn-01943377-n"
+    },
+    {
+      "definition": "burrowing marine mollusk",
+      "forms": [],
+      "id": "oewn-scaphopod__1.05.00..",
+      "lang": "en",
+      "lemma": "scaphopod",
+      "synset": "oewn-01943864-n"
+    },
+    {
+      "definition": "any of various seashore mollusks having a tapering tubular shell open at each end and a foot pointed like a spade for burrowing",
+      "forms": [],
+      "id": "oewn-tooth_shell__1.05.00..",
+      "lang": "en",
+      "lemma": "tooth shell",
+      "synset": "oewn-01943981-n"
+    },
+    {
+      "definition": "any of various seashore mollusks having a tapering tubular shell open at each end and a foot pointed like a spade for burrowing",
+      "forms": [],
+      "id": "oewn-tusk_shell__1.05.00..",
+      "lang": "en",
+      "lemma": "tusk shell",
+      "synset": "oewn-01943981-n"
+    },
+    {
+      "definition": "a class of mollusks typically having a one-piece coiled shell and flattened muscular foot with a head bearing stalked eyes",
+      "forms": [],
+      "id": "oewn-gastropod__1.05.00..",
+      "lang": "en",
+      "lemma": "gastropod",
+      "synset": "oewn-01944818-n"
+    },
+    {
+      "definition": "a class of mollusks typically having a one-piece coiled shell and flattened muscular foot with a head bearing stalked eyes",
+      "forms": [],
+      "id": "oewn-univalve__1.05.00..",
+      "lang": "en",
+      "lemma": "univalve",
+      "synset": "oewn-01944818-n"
+    },
+    {
+      "definition": "any of various large edible marine gastropods of the genus Haliotis having an ear-shaped shell with pearly interior",
+      "forms": [],
+      "id": "oewn-abalone__1.05.00..",
+      "lang": "en",
+      "lemma": "abalone",
+      "synset": "oewn-01945510-n"
+    },
+    {
+      "definition": "any of various large edible marine gastropods of the genus Haliotis having an ear-shaped shell with pearly interior",
+      "forms": [],
+      "id": "oewn-ear-shell__1.05.00..",
+      "lang": "en",
+      "lemma": "ear-shell",
+      "synset": "oewn-01945510-n"
+    },
+    {
+      "definition": "an abalone found near the Channel Islands",
+      "forms": [],
+      "id": "oewn-ormer__1.05.00..",
+      "lang": "en",
+      "lemma": "ormer",
+      "synset": "oewn-01945728-n"
+    },
+    {
+      "definition": "an abalone found near the Channel Islands",
+      "forms": [],
+      "id": "oewn-sea-ear__1.05.00..",
+      "lang": "en",
+      "lemma": "sea-ear",
+      "synset": "oewn-01945728-n"
+    },
+    {
+      "definition": "an abalone found near the Channel Islands",
+      "forms": [],
+      "id": "oewn-haliotis_tuberculata__1.05.00..",
+      "lang": "en",
+      "lemma": "Haliotis tuberculata",
+      "synset": "oewn-01945728-n"
+    },
+    {
+      "definition": "any of numerous tropical marine snails that as adults have the outer lip of the aperture produced into a series of long curved spines",
+      "forms": [],
+      "id": "oewn-scorpion_shell__1.05.00..",
+      "lang": "en",
+      "lemma": "scorpion shell",
+      "synset": "oewn-01946182-n"
+    },
+    {
+      "definition": "any of various edible tropical marine gastropods of the genus Strombus having a brightly-colored spiral shell with large outer lip",
+      "forms": [],
+      "id": "oewn-conch__1.05.00..",
+      "lang": "en",
+      "lemma": "conch",
+      "synset": "oewn-01946540-n"
+    },
+    {
+      "definition": "a large variety of conch",
+      "forms": [],
+      "id": "oewn-giant_conch__1.05.00..",
+      "lang": "en",
+      "lemma": "giant conch",
+      "synset": "oewn-01946759-n"
+    },
+    {
+      "definition": "a large variety of conch",
+      "forms": [],
+      "id": "oewn-strombus_gigas__1.05.00..",
+      "lang": "en",
+      "lemma": "Strombus gigas",
+      "synset": "oewn-01946759-n"
+    },
+    {
+      "definition": "freshwater or marine or terrestrial gastropod mollusk usually having an external enclosing spiral shell",
+      "forms": [],
+      "id": "oewn-snail__1.05.00..",
+      "lang": "en",
+      "lemma": "snail",
+      "synset": "oewn-01947031-n"
+    },
+    {
+      "definition": "one of the chief edible snails",
+      "forms": [],
+      "id": "oewn-edible_snail__1.05.00..",
+      "lang": "en",
+      "lemma": "edible snail",
+      "synset": "oewn-01947453-n"
+    },
+    {
+      "definition": "one of the chief edible snails",
+      "forms": [],
+      "id": "oewn-helix_pomatia__1.05.00..",
+      "lang": "en",
+      "lemma": "Helix pomatia",
+      "synset": "oewn-01947453-n"
+    },
+    {
+      "definition": "any of several inedible snails of the genus Helix; often destructive pests",
+      "forms": [],
+      "id": "oewn-garden_snail__1.05.00..",
+      "lang": "en",
+      "lemma": "garden snail",
+      "synset": "oewn-01947596-n"
+    },
+    {
+      "definition": "serious garden pest having a brown shell with paler zigzag markings; nearly cosmopolitan in distribution",
+      "forms": [],
+      "id": "oewn-brown_snail__1.05.00..",
+      "lang": "en",
+      "lemma": "brown snail",
+      "synset": "oewn-01947784-n"
+    },
+    {
+      "definition": "serious garden pest having a brown shell with paler zigzag markings; nearly cosmopolitan in distribution",
+      "forms": [],
+      "id": "oewn-helix_aspersa__1.05.00..",
+      "lang": "en",
+      "lemma": "Helix aspersa",
+      "synset": "oewn-01947784-n"
+    },
+    {
+      "definition": "a kind of garden snail",
+      "forms": [],
+      "id": "oewn-helix_hortensis__1.05.00..",
+      "lang": "en",
+      "lemma": "Helix hortensis",
+      "synset": "oewn-01947981-n"
+    },
+    {
+      "definition": "any of various terrestrial gastropods having an elongated slimy body and no external shell",
+      "forms": [],
+      "id": "oewn-slug__1.05.00..",
+      "lang": "en",
+      "lemma": "slug",
+      "synset": "oewn-01948326-n"
+    },
+    {
+      "definition": "any of several creeping marine gastropods with a spirally coiled shell: whelks, tritons, moon shells, neritids",
+      "forms": [],
+      "id": "oewn-seasnail__1.05.02..",
+      "lang": "en",
+      "lemma": "seasnail",
+      "synset": "oewn-01948486-n"
+    },
+    {
+      "definition": "operculate seasnail of coastal waters with a short spiral shell",
+      "forms": [],
+      "id": "oewn-neritid__1.05.00..",
+      "lang": "en",
+      "lemma": "neritid",
+      "synset": "oewn-01948918-n"
+    },
+    {
+      "definition": "operculate seasnail of coastal waters with a short spiral shell",
+      "forms": [],
+      "id": "oewn-neritid_gastropod__1.05.00..",
+      "lang": "en",
+      "lemma": "neritid gastropod",
+      "synset": "oewn-01948918-n"
+    },
+    {
+      "definition": "a neritid gastropod having a short smooth or spirally ridged shell with thick usually toothed outer lip and toothed operculum",
+      "forms": [],
+      "id": "oewn-nerita__1.05.00..",
+      "lang": "en",
+      "lemma": "nerita",
+      "synset": "oewn-01949271-n"
+    },
+    {
+      "definition": "gastropod having reddish toothlike projections around the shell opening; of the Caribbean area",
+      "forms": [],
+      "id": "oewn-bleeding_tooth__1.05.00..",
+      "lang": "en",
+      "lemma": "bleeding tooth",
+      "synset": "oewn-01949468-n"
+    },
+    {
+      "definition": "gastropod having reddish toothlike projections around the shell opening; of the Caribbean area",
+      "forms": [],
+      "id": "oewn-nerita_peloronta__1.05.00..",
+      "lang": "en",
+      "lemma": "Nerita peloronta",
+      "synset": "oewn-01949468-n"
+    },
+    {
+      "definition": "ornately marked and brightly colored snails of brackish waters",
+      "forms": [],
+      "id": "oewn-neritina__1.05.00..",
+      "lang": "en",
+      "lemma": "neritina",
+      "synset": "oewn-01949780-n"
+    },
+    {
+      "definition": "large carnivorous marine gastropods of coastal waters and intertidal regions having a strong snail-like shell",
+      "forms": [],
+      "id": "oewn-whelk__1.05.00..",
+      "lang": "en",
+      "lemma": "whelk",
+      "synset": "oewn-01950037-n"
+    },
+    {
+      "definition": "tropical marine gastropods having beautifully colored spiral shells",
+      "forms": [],
+      "id": "oewn-triton__1.05.02..",
+      "lang": "en",
+      "lemma": "triton",
+      "synset": "oewn-01950376-n"
+    },
+    {
+      "definition": "marine gastropods having smooth rounded shells that form short spires",
+      "forms": [],
+      "id": "oewn-moon_shell__1.05.00..",
+      "lang": "en",
+      "lemma": "moon shell",
+      "synset": "oewn-01950638-n"
+    },
+    {
+      "definition": "marine gastropods having smooth rounded shells that form short spires",
+      "forms": [],
+      "id": "oewn-moonshell__1.05.00..",
+      "lang": "en",
+      "lemma": "moonshell",
+      "synset": "oewn-01950638-n"
+    },
+    {
+      "definition": "edible marine gastropod",
+      "forms": [],
+      "id": "oewn-periwinkle__1.05.00..",
+      "lang": "en",
+      "lemma": "periwinkle",
+      "synset": "oewn-01951087-n"
+    },
+    {
+      "definition": "edible marine gastropod",
+      "forms": [],
+      "id": "oewn-winkle__1.05.00..",
+      "lang": "en",
+      "lemma": "winkle",
+      "synset": "oewn-01951087-n"
+    },
+    {
+      "definition": "any of various usually marine gastropods with low conical shells; found clinging to rocks in littoral areas",
+      "forms": [],
+      "id": "oewn-limpet__1.05.00..",
+      "lang": "en",
+      "lemma": "limpet",
+      "synset": "oewn-01951214-n"
+    },
+    {
+      "definition": "marine limpet",
+      "forms": [],
+      "id": "oewn-common_limpet__1.05.00..",
+      "lang": "en",
+      "lemma": "common limpet",
+      "synset": "oewn-01951726-n"
+    },
+    {
+      "definition": "marine limpet",
+      "forms": [],
+      "id": "oewn-patella_vulgata__1.05.00..",
+      "lang": "en",
+      "lemma": "Patella vulgata",
+      "synset": "oewn-01951726-n"
+    },
+    {
+      "definition": "marine limpet having a conical shell with an opening at the apex",
+      "forms": [],
+      "id": "oewn-keyhole_limpet__1.05.00..",
+      "lang": "en",
+      "lemma": "keyhole limpet",
+      "synset": "oewn-01952140-n"
+    },
+    {
+      "definition": "marine limpet having a conical shell with an opening at the apex",
+      "forms": [],
+      "id": "oewn-fissurella_apertura__1.05.00..",
+      "lang": "en",
+      "lemma": "Fissurella apertura",
+      "synset": "oewn-01952140-n"
+    },
+    {
+      "definition": "marine limpet having a conical shell with an opening at the apex",
+      "forms": [],
+      "id": "oewn-diodora_apertura__1.05.00..",
+      "lang": "en",
+      "lemma": "Diodora apertura",
+      "synset": "oewn-01952140-n"
+    },
+    {
+      "definition": "minute conical gastropod superficially resembling a limpet but living and feeding on freshwater plants",
+      "forms": [],
+      "id": "oewn-river_limpet__1.05.00..",
+      "lang": "en",
+      "lemma": "river limpet",
+      "synset": "oewn-01952614-n"
+    },
+    {
+      "definition": "minute conical gastropod superficially resembling a limpet but living and feeding on freshwater plants",
+      "forms": [],
+      "id": "oewn-freshwater_limpet__1.05.00..",
+      "lang": "en",
+      "lemma": "freshwater limpet",
+      "synset": "oewn-01952614-n"
+    },
+    {
+      "definition": "minute conical gastropod superficially resembling a limpet but living and feeding on freshwater plants",
+      "forms": [],
+      "id": "oewn-ancylus_fluviatilis__1.05.00..",
+      "lang": "en",
+      "lemma": "Ancylus fluviatilis",
+      "synset": "oewn-01952614-n"
+    },
+    {
+      "definition": "any of various marine gastropods of the suborder Nudibranchia having a shell-less and often beautifully colored body",
+      "forms": [],
+      "id": "oewn-sea_slug__1.05.00..",
+      "lang": "en",
+      "lemma": "sea slug",
+      "synset": "oewn-01953372-n"
+    },
+    {
+      "definition": "any of various marine gastropods of the suborder Nudibranchia having a shell-less and often beautifully colored body",
+      "forms": [],
+      "id": "oewn-nudibranch__1.05.00..",
+      "lang": "en",
+      "lemma": "nudibranch",
+      "synset": "oewn-01953372-n"
+    },
+    {
+      "definition": "naked marine gastropod having a soft body with reduced internal shell and two pairs of ear-like tentacles",
+      "forms": [],
+      "id": "oewn-sea_hare__1.05.00..",
+      "lang": "en",
+      "lemma": "sea hare",
+      "synset": "oewn-01953915-n"
+    },
+    {
+      "definition": "naked marine gastropod having a soft body with reduced internal shell and two pairs of ear-like tentacles",
+      "forms": [],
+      "id": "oewn-aplysia_punctata__1.05.00..",
+      "lang": "en",
+      "lemma": "Aplysia punctata",
+      "synset": "oewn-01953915-n"
+    },
+    {
+      "definition": "a kind of sea slug",
+      "forms": [],
+      "id": "oewn-hermissenda_crassicornis__1.05.00..",
+      "lang": "en",
+      "lemma": "Hermissenda crassicornis",
+      "synset": "oewn-01954254-n"
+    },
+    {
+      "definition": "marine gastropod mollusk having a very small thin shell",
+      "forms": [],
+      "id": "oewn-bubble_shell__1.05.00..",
+      "lang": "en",
+      "lemma": "bubble shell",
+      "synset": "oewn-01954670-n"
+    },
+    {
+      "definition": "any member of the genus Physa",
+      "forms": [],
+      "id": "oewn-physa__1.05.00..",
+      "lang": "en",
+      "lemma": "physa",
+      "synset": "oewn-01955353-n"
+    },
+    {
+      "definition": "any of numerous tropical marine gastropods of the genus Cypraea having highly polished usually brightly marked shells",
+      "forms": [],
+      "id": "oewn-cowrie__1.05.00..",
+      "lang": "en",
+      "lemma": "cowrie",
+      "synset": "oewn-01956002-n"
+    },
+    {
+      "definition": "any of numerous tropical marine gastropods of the genus Cypraea having highly polished usually brightly marked shells",
+      "forms": [],
+      "id": "oewn-cowry__1.05.00..",
+      "lang": "en",
+      "lemma": "cowry",
+      "synset": "oewn-01956002-n"
+    },
+    {
+      "definition": "cowrie whose shell is used for money in parts of the southern Pacific and in parts of Africa",
+      "forms": [],
+      "id": "oewn-money_cowrie__1.05.00..",
+      "lang": "en",
+      "lemma": "money cowrie",
+      "synset": "oewn-01956235-n"
+    },
+    {
+      "definition": "cowrie whose shell is used for money in parts of the southern Pacific and in parts of Africa",
+      "forms": [],
+      "id": "oewn-cypraea_moneta__1.05.00..",
+      "lang": "en",
+      "lemma": "Cypraea moneta",
+      "synset": "oewn-01956235-n"
+    },
+    {
+      "definition": "cowrie whose shell is used for ornament",
+      "forms": [],
+      "id": "oewn-tiger_cowrie__1.05.00..",
+      "lang": "en",
+      "lemma": "tiger cowrie",
+      "synset": "oewn-01956403-n"
+    },
+    {
+      "definition": "cowrie whose shell is used for ornament",
+      "forms": [],
+      "id": "oewn-cypraea_tigris__1.05.00..",
+      "lang": "en",
+      "lemma": "Cypraea tigris",
+      "synset": "oewn-01956403-n"
+    },
+    {
+      "definition": "deep-water wormlike mollusks lacking calcareous plates on the body but having fine slimy spicules on the covering mantle",
+      "forms": [],
+      "id": "oewn-solenogaster__1.05.00..",
+      "lang": "en",
+      "lemma": "solenogaster",
+      "synset": "oewn-01957157-n"
+    },
+    {
+      "definition": "deep-water wormlike mollusks lacking calcareous plates on the body but having fine slimy spicules on the covering mantle",
+      "forms": [],
+      "id": "oewn-aplacophoran__1.05.00..",
+      "lang": "en",
+      "lemma": "aplacophoran",
+      "synset": "oewn-01957157-n"
+    },
+    {
+      "definition": "primitive elongated bilaterally symmetrical marine mollusk having a mantle covered with eight calcareous plates",
+      "forms": [],
+      "id": "oewn-chiton__1.05.00..",
+      "lang": "en",
+      "lemma": "chiton",
+      "synset": "oewn-01957725-n"
+    },
+    {
+      "definition": "primitive elongated bilaterally symmetrical marine mollusk having a mantle covered with eight calcareous plates",
+      "forms": [],
+      "id": "oewn-coat-of-mail_shell__1.05.00..",
+      "lang": "en",
+      "lemma": "coat-of-mail shell",
+      "synset": "oewn-01957725-n"
+    },
+    {
+      "definition": "primitive elongated bilaterally symmetrical marine mollusk having a mantle covered with eight calcareous plates",
+      "forms": [],
+      "id": "oewn-sea_cradle__1.05.00..",
+      "lang": "en",
+      "lemma": "sea cradle",
+      "synset": "oewn-01957725-n"
+    },
+    {
+      "definition": "primitive elongated bilaterally symmetrical marine mollusk having a mantle covered with eight calcareous plates",
+      "forms": [],
+      "id": "oewn-polyplacophore__1.05.00..",
+      "lang": "en",
+      "lemma": "polyplacophore",
+      "synset": "oewn-01957725-n"
+    },
+    {
+      "definition": "marine or freshwater mollusks having a soft body with platelike gills enclosed within two shells hinged together",
+      "forms": [],
+      "id": "oewn-bivalve__1.05.00..",
+      "lang": "en",
+      "lemma": "bivalve",
+      "synset": "oewn-01958574-n"
+    },
+    {
+      "definition": "marine or freshwater mollusks having a soft body with platelike gills enclosed within two shells hinged together",
+      "forms": [],
+      "id": "oewn-pelecypod__1.05.00..",
+      "lang": "en",
+      "lemma": "pelecypod",
+      "synset": "oewn-01958574-n"
+    },
+    {
+      "definition": "marine or freshwater mollusks having a soft body with platelike gills enclosed within two shells hinged together",
+      "forms": [],
+      "id": "oewn-lamellibranch__1.05.00..",
+      "lang": "en",
+      "lemma": "lamellibranch",
+      "synset": "oewn-01958574-n"
+    },
+    {
+      "definition": "burrowing marine mollusk living on sand or mud; the shell closes with viselike firmness",
+      "forms": [],
+      "id": "oewn-clam__1.05.00..",
+      "lang": "en",
+      "lemma": "clam",
+      "synset": "oewn-01959122-n"
+    },
+    {
+      "definition": "an edible clam with thin oval-shaped shell found in coastal regions of the United States and Europe",
+      "forms": [],
+      "id": "oewn-soft-shell_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "soft-shell clam",
+      "synset": "oewn-01959976-n"
+    },
+    {
+      "definition": "an edible clam with thin oval-shaped shell found in coastal regions of the United States and Europe",
+      "forms": [],
+      "id": "oewn-steamer__1.05.00..",
+      "lang": "en",
+      "lemma": "steamer",
+      "synset": "oewn-01959976-n"
+    },
+    {
+      "definition": "an edible clam with thin oval-shaped shell found in coastal regions of the United States and Europe",
+      "forms": [],
+      "id": "oewn-steamer_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "steamer clam",
+      "synset": "oewn-01959976-n"
+    },
+    {
+      "definition": "an edible clam with thin oval-shaped shell found in coastal regions of the United States and Europe",
+      "forms": [],
+      "id": "oewn-long-neck_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "long-neck clam",
+      "synset": "oewn-01959976-n"
+    },
+    {
+      "definition": "an edible clam with thin oval-shaped shell found in coastal regions of the United States and Europe",
+      "forms": [],
+      "id": "oewn-mya_arenaria__1.05.00..",
+      "lang": "en",
+      "lemma": "Mya arenaria",
+      "synset": "oewn-01959976-n"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "forms": [],
+      "id": "oewn-quahog__1.05.00..",
+      "lang": "en",
+      "lemma": "quahog",
+      "synset": "oewn-01960679-n"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "forms": [],
+      "id": "oewn-quahaug__1.05.00..",
+      "lang": "en",
+      "lemma": "quahaug",
+      "synset": "oewn-01960679-n"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "forms": [],
+      "id": "oewn-hard-shell_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "hard-shell clam",
+      "synset": "oewn-01960679-n"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "forms": [],
+      "id": "oewn-hard_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "hard clam",
+      "synset": "oewn-01960679-n"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "forms": [],
+      "id": "oewn-round_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "round clam",
+      "synset": "oewn-01960679-n"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "forms": [],
+      "id": "oewn-venus_mercenaria__1.05.00..",
+      "lang": "en",
+      "lemma": "Venus mercenaria",
+      "synset": "oewn-01960679-n"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "forms": [],
+      "id": "oewn-mercenaria_mercenaria__1.05.00..",
+      "lang": "en",
+      "lemma": "Mercenaria mercenaria",
+      "synset": "oewn-01960679-n"
+    },
+    {
+      "definition": "a young quahog",
+      "forms": [],
+      "id": "oewn-littleneck__1.05.00..",
+      "lang": "en",
+      "lemma": "littleneck",
+      "synset": "oewn-01960987-n"
+    },
+    {
+      "definition": "a young quahog",
+      "forms": [],
+      "id": "oewn-littleneck_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "littleneck clam",
+      "synset": "oewn-01960987-n"
+    },
+    {
+      "definition": "a half-grown quahog",
+      "forms": [],
+      "id": "oewn-cherrystone__1.05.00..",
+      "lang": "en",
+      "lemma": "cherrystone",
+      "synset": "oewn-01961076-n"
+    },
+    {
+      "definition": "a half-grown quahog",
+      "forms": [],
+      "id": "oewn-cherrystone_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "cherrystone clam",
+      "synset": "oewn-01961076-n"
+    },
+    {
+      "definition": "a large edible clam found burrowing deeply in sandy mud along the Pacific coast of North America; weighs up to six pounds; has siphons that can extend to several feet and cannot be withdrawn into the shell",
+      "forms": [],
+      "id": "oewn-geoduck__1.05.00..",
+      "lang": "en",
+      "lemma": "geoduck",
+      "synset": "oewn-01961172-n"
+    },
+    {
+      "definition": "marine clam having a long narrow curved thin shell",
+      "forms": [],
+      "id": "oewn-razor_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "razor clam",
+      "synset": "oewn-01961670-n"
+    },
+    {
+      "definition": "marine clam having a long narrow curved thin shell",
+      "forms": [],
+      "id": "oewn-jackknife_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "jackknife clam",
+      "synset": "oewn-01961670-n"
+    },
+    {
+      "definition": "marine clam having a long narrow curved thin shell",
+      "forms": [],
+      "id": "oewn-knife-handle__1.05.00..",
+      "lang": "en",
+      "lemma": "knife-handle",
+      "synset": "oewn-01961670-n"
+    },
+    {
+      "definition": "a large clam inhabiting reefs in the southern Pacific and weighing up to 500 pounds",
+      "forms": [],
+      "id": "oewn-giant_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "giant clam",
+      "synset": "oewn-01962133-n"
+    },
+    {
+      "definition": "a large clam inhabiting reefs in the southern Pacific and weighing up to 500 pounds",
+      "forms": [],
+      "id": "oewn-tridacna_gigas__1.05.00..",
+      "lang": "en",
+      "lemma": "Tridacna gigas",
+      "synset": "oewn-01962133-n"
+    },
+    {
+      "definition": "common edible, burrowing European bivalve mollusk that has a strong, rounded shell with radiating ribs",
+      "forms": [],
+      "id": "oewn-cockle__1.05.00..",
+      "lang": "en",
+      "lemma": "cockle",
+      "synset": "oewn-01962626-n"
+    },
+    {
+      "definition": "common edible European cockle",
+      "forms": [],
+      "id": "oewn-edible_cockle__1.05.00..",
+      "lang": "en",
+      "lemma": "edible cockle",
+      "synset": "oewn-01962818-n"
+    },
+    {
+      "definition": "common edible European cockle",
+      "forms": [],
+      "id": "oewn-cardium_edule__1.05.00..",
+      "lang": "en",
+      "lemma": "Cardium edule",
+      "synset": "oewn-01962818-n"
+    },
+    {
+      "definition": "marine mollusks having a rough irregular shell; found on the sea bed mostly in coastal waters",
+      "forms": [],
+      "id": "oewn-oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "oyster",
+      "synset": "oewn-01963100-n"
+    },
+    {
+      "definition": "a young oyster especially of a size for transplantation",
+      "forms": [],
+      "id": "oewn-seed_oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "seed oyster",
+      "synset": "oewn-01963428-n"
+    },
+    {
+      "definition": "small edible oyster typically from the southern shore of Long Island",
+      "forms": [],
+      "id": "oewn-bluepoint__1.05.00..",
+      "lang": "en",
+      "lemma": "bluepoint",
+      "synset": "oewn-01963700-n"
+    },
+    {
+      "definition": "small edible oyster typically from the southern shore of Long Island",
+      "forms": [],
+      "id": "oewn-blue_point__1.05.01..",
+      "lang": "en",
+      "lemma": "blue point",
+      "synset": "oewn-01963700-n"
+    },
+    {
+      "definition": "a large oyster native to Japan and introduced along the Pacific coast of the United States; a candidate for introduction in Chesapeake Bay",
+      "forms": [],
+      "id": "oewn-japanese_oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "Japanese oyster",
+      "synset": "oewn-01963875-n"
+    },
+    {
+      "definition": "a large oyster native to Japan and introduced along the Pacific coast of the United States; a candidate for introduction in Chesapeake Bay",
+      "forms": [],
+      "id": "oewn-ostrea_gigas__1.05.00..",
+      "lang": "en",
+      "lemma": "Ostrea gigas",
+      "synset": "oewn-01963875-n"
+    },
+    {
+      "definition": "common edible oyster of Atlantic coast of North America",
+      "forms": [],
+      "id": "oewn-virginia_oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "Virginia oyster",
+      "synset": "oewn-01964241-n"
+    },
+    {
+      "definition": "tropical marine bivalve found chiefly off eastern Asia and Pacific coast of North America and Central America; a major source of pearls",
+      "forms": [],
+      "id": "oewn-pearl_oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "pearl oyster",
+      "synset": "oewn-01964626-n"
+    },
+    {
+      "definition": "tropical marine bivalve found chiefly off eastern Asia and Pacific coast of North America and Central America; a major source of pearls",
+      "forms": [],
+      "id": "oewn-pinctada_margaritifera__1.05.00..",
+      "lang": "en",
+      "lemma": "Pinctada margaritifera",
+      "synset": "oewn-01964626-n"
+    },
+    {
+      "definition": "thin-shelled bivalve having the right valve deeply notched",
+      "forms": [],
+      "id": "oewn-saddle_oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "saddle oyster",
+      "synset": "oewn-01965147-n"
+    },
+    {
+      "definition": "thin-shelled bivalve having the right valve deeply notched",
+      "forms": [],
+      "id": "oewn-anomia_ephippium__1.05.00..",
+      "lang": "en",
+      "lemma": "Anomia ephippium",
+      "synset": "oewn-01965147-n"
+    },
+    {
+      "definition": "marine bivalve common in Philippine coastal waters characterized by a large thin flat translucent shell",
+      "forms": [],
+      "id": "oewn-window_oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "window oyster",
+      "synset": "oewn-01965429-n"
+    },
+    {
+      "definition": "marine bivalve common in Philippine coastal waters characterized by a large thin flat translucent shell",
+      "forms": [],
+      "id": "oewn-windowpane_oyster__1.05.00..",
+      "lang": "en",
+      "lemma": "windowpane oyster",
+      "synset": "oewn-01965429-n"
+    },
+    {
+      "definition": "marine bivalve common in Philippine coastal waters characterized by a large thin flat translucent shell",
+      "forms": [],
+      "id": "oewn-capiz__1.05.00..",
+      "lang": "en",
+      "lemma": "capiz",
+      "synset": "oewn-01965429-n"
+    },
+    {
+      "definition": "marine bivalve common in Philippine coastal waters characterized by a large thin flat translucent shell",
+      "forms": [],
+      "id": "oewn-placuna_placenta__1.05.00..",
+      "lang": "en",
+      "lemma": "Placuna placenta",
+      "synset": "oewn-01965429-n"
+    },
+    {
+      "definition": "marine bivalve mollusk having a heavy toothed shell with a deep boat-like inner surface",
+      "forms": [],
+      "id": "oewn-ark_shell__1.05.00..",
+      "lang": "en",
+      "lemma": "ark shell",
+      "synset": "oewn-01965958-n"
+    },
+    {
+      "definition": "red-blooded clam",
+      "forms": [],
+      "id": "oewn-blood_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "blood clam",
+      "synset": "oewn-01966120-n"
+    },
+    {
+      "definition": "marine or freshwater bivalve mollusk that lives attached to rocks etc.",
+      "forms": [],
+      "id": "oewn-mussel__1.05.00..",
+      "lang": "en",
+      "lemma": "mussel",
+      "synset": "oewn-01966212-n"
+    },
+    {
+      "definition": "marine bivalve mollusk having a dark elongated shell; live attached to solid objects especially in intertidal zones",
+      "forms": [],
+      "id": "oewn-marine_mussel__1.05.00..",
+      "lang": "en",
+      "lemma": "marine mussel",
+      "synset": "oewn-01966690-n"
+    },
+    {
+      "definition": "marine bivalve mollusk having a dark elongated shell; live attached to solid objects especially in intertidal zones",
+      "forms": [],
+      "id": "oewn-mytilid__1.05.00..",
+      "lang": "en",
+      "lemma": "mytilid",
+      "synset": "oewn-01966690-n"
+    },
+    {
+      "definition": "a mussel with a dark shell that lives attached to rocks",
+      "forms": [],
+      "id": "oewn-edible_mussel__1.05.00..",
+      "lang": "en",
+      "lemma": "edible mussel",
+      "synset": "oewn-01966912-n"
+    },
+    {
+      "definition": "a mussel with a dark shell that lives attached to rocks",
+      "forms": [],
+      "id": "oewn-mytilus_edulis__1.05.00..",
+      "lang": "en",
+      "lemma": "Mytilus edulis",
+      "synset": "oewn-01966912-n"
+    },
+    {
+      "definition": "bivalve mollusk abundant in rivers of central United States",
+      "forms": [],
+      "id": "oewn-freshwater_mussel__1.05.00..",
+      "lang": "en",
+      "lemma": "freshwater mussel",
+      "synset": "oewn-01967082-n"
+    },
+    {
+      "definition": "bivalve mollusk abundant in rivers of central United States",
+      "forms": [],
+      "id": "oewn-freshwater_clam__1.05.00..",
+      "lang": "en",
+      "lemma": "freshwater clam",
+      "synset": "oewn-01967082-n"
+    },
+    {
+      "definition": "the pearly lining of the dark shells is a source of mother-of-pearl",
+      "forms": [],
+      "id": "oewn-pearly-shelled_mussel__1.05.00..",
+      "lang": "en",
+      "lemma": "pearly-shelled mussel",
+      "synset": "oewn-01967598-n"
+    },
+    {
+      "definition": "mussel with thin fragile shells having only rudimentary hinge teeth",
+      "forms": [],
+      "id": "oewn-thin-shelled_mussel__1.05.00..",
+      "lang": "en",
+      "lemma": "thin-shelled mussel",
+      "synset": "oewn-01967893-n"
+    },
+    {
+      "definition": "inch long mollusk imported accidentally from Europe; clogs utility inlet pipes and feeds on edible freshwater mussels",
+      "forms": [],
+      "id": "oewn-zebra_mussel__1.05.00..",
+      "lang": "en",
+      "lemma": "zebra mussel",
+      "synset": "oewn-01968170-n"
+    },
+    {
+      "definition": "inch long mollusk imported accidentally from Europe; clogs utility inlet pipes and feeds on edible freshwater mussels",
+      "forms": [],
+      "id": "oewn-dreissena_polymorpha__1.05.00..",
+      "lang": "en",
+      "lemma": "Dreissena polymorpha",
+      "synset": "oewn-01968170-n"
+    },
+    {
+      "definition": "edible marine bivalve having a fluted fan-shaped shell that swim by expelling water from the shell in a series of snapping motions",
+      "forms": [],
+      "id": "oewn-scallop__1.05.00..",
+      "lang": "en",
+      "lemma": "scallop",
+      "synset": "oewn-01968530-n"
+    },
+    {
+      "definition": "edible marine bivalve having a fluted fan-shaped shell that swim by expelling water from the shell in a series of snapping motions",
+      "forms": [],
+      "id": "oewn-scollop__1.05.00..",
+      "lang": "en",
+      "lemma": "scollop",
+      "synset": "oewn-01968530-n"
+    },
+    {
+      "definition": "edible marine bivalve having a fluted fan-shaped shell that swim by expelling water from the shell in a series of snapping motions",
+      "forms": [],
+      "id": "oewn-escallop__1.05.00..",
+      "lang": "en",
+      "lemma": "escallop",
+      "synset": "oewn-01968530-n"
+    },
+    {
+      "definition": "a small scallop inhabiting shallow waters and mud flats of the Atlantic coast of North America",
+      "forms": [],
+      "id": "oewn-bay_scallop__1.05.00..",
+      "lang": "en",
+      "lemma": "bay scallop",
+      "synset": "oewn-01969018-n"
+    },
+    {
+      "definition": "a small scallop inhabiting shallow waters and mud flats of the Atlantic coast of North America",
+      "forms": [],
+      "id": "oewn-pecten_irradians__1.05.00..",
+      "lang": "en",
+      "lemma": "Pecten irradians",
+      "synset": "oewn-01969018-n"
+    },
+    {
+      "definition": "a large scallop inhabiting deep waters of the Atlantic coast of North America",
+      "forms": [],
+      "id": "oewn-sea_scallop__1.05.00..",
+      "lang": "en",
+      "lemma": "sea scallop",
+      "synset": "oewn-01969227-n"
+    },
+    {
+      "definition": "a large scallop inhabiting deep waters of the Atlantic coast of North America",
+      "forms": [],
+      "id": "oewn-giant_scallop__1.05.00..",
+      "lang": "en",
+      "lemma": "giant scallop",
+      "synset": "oewn-01969227-n"
+    },
+    {
+      "definition": "a large scallop inhabiting deep waters of the Atlantic coast of North America",
+      "forms": [],
+      "id": "oewn-pecten_magellanicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Pecten magellanicus",
+      "synset": "oewn-01969227-n"
+    },
+    {
+      "definition": "wormlike marine bivalve that bores into wooden piers and ships by means of drill-like shells",
+      "forms": [],
+      "id": "oewn-shipworm__1.05.00..",
+      "lang": "en",
+      "lemma": "shipworm",
+      "synset": "oewn-01969735-n"
+    },
+    {
+      "definition": "wormlike marine bivalve that bores into wooden piers and ships by means of drill-like shells",
+      "forms": [],
+      "id": "oewn-teredinid__1.05.00..",
+      "lang": "en",
+      "lemma": "teredinid",
+      "synset": "oewn-01969735-n"
+    },
+    {
+      "definition": "typical shipworm",
+      "forms": [
+        "teredines"
+      ],
+      "id": "oewn-teredo__1.05.00..",
+      "lang": "en",
+      "lemma": "teredo",
+      "synset": "oewn-01969949-n"
+    },
+    {
+      "definition": "giant shipworm of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-giant_northwest_shipworm__1.05.00..",
+      "lang": "en",
+      "lemma": "giant northwest shipworm",
+      "synset": "oewn-01970158-n"
+    },
+    {
+      "definition": "giant shipworm of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-bankia_setaceae__1.05.00..",
+      "lang": "en",
+      "lemma": "Bankia setaceae",
+      "synset": "oewn-01970158-n"
+    },
+    {
+      "definition": "marine bivalve that bores into rock or clay or wood by means of saw-like shells",
+      "forms": [],
+      "id": "oewn-piddock__1.05.00..",
+      "lang": "en",
+      "lemma": "piddock",
+      "synset": "oewn-01970604-n"
+    },
+    {
+      "definition": "marine mollusk characterized by well-developed head and eyes and sucker-bearing tentacles",
+      "forms": [],
+      "id": "oewn-cephalopod__1.05.00..",
+      "lang": "en",
+      "lemma": "cephalopod",
+      "synset": "oewn-01970956-n"
+    },
+    {
+      "definition": "marine mollusk characterized by well-developed head and eyes and sucker-bearing tentacles",
+      "forms": [],
+      "id": "oewn-cephalopod_mollusk__1.05.00..",
+      "lang": "en",
+      "lemma": "cephalopod mollusk",
+      "synset": "oewn-01970956-n"
+    },
+    {
+      "definition": "cephalopod of the Indian and Pacific oceans having a spiral shell with pale pearly partitions",
+      "forms": [],
+      "id": "oewn-chambered_nautilus__1.05.00..",
+      "lang": "en",
+      "lemma": "chambered nautilus",
+      "synset": "oewn-01971538-n"
+    },
+    {
+      "definition": "cephalopod of the Indian and Pacific oceans having a spiral shell with pale pearly partitions",
+      "forms": [],
+      "id": "oewn-pearly_nautilus__1.05.00..",
+      "lang": "en",
+      "lemma": "pearly nautilus",
+      "synset": "oewn-01971538-n"
+    },
+    {
+      "definition": "cephalopod of the Indian and Pacific oceans having a spiral shell with pale pearly partitions",
+      "forms": [
+        "nautili"
+      ],
+      "id": "oewn-nautilus__1.05.01..",
+      "lang": "en",
+      "lemma": "nautilus",
+      "synset": "oewn-01971538-n"
+    },
+    {
+      "definition": "cephalopods having two gills",
+      "forms": [],
+      "id": "oewn-dibranchiate__1.05.00..",
+      "lang": "en",
+      "lemma": "dibranchiate",
+      "synset": "oewn-01972070-n"
+    },
+    {
+      "definition": "cephalopods having two gills",
+      "forms": [],
+      "id": "oewn-dibranchiate_mollusk__1.05.00..",
+      "lang": "en",
+      "lemma": "dibranchiate mollusk",
+      "synset": "oewn-01972070-n"
+    },
+    {
+      "definition": "cephalopods having two gills",
+      "forms": [],
+      "id": "oewn-dibranch__1.05.00..",
+      "lang": "en",
+      "lemma": "dibranch",
+      "synset": "oewn-01972070-n"
+    },
+    {
+      "definition": "a cephalopod with eight arms but lacking an internal shell",
+      "forms": [],
+      "id": "oewn-octopod__1.05.00..",
+      "lang": "en",
+      "lemma": "octopod",
+      "synset": "oewn-01972367-n"
+    },
+    {
+      "definition": "bottom-living cephalopod having a soft oval body with eight long tentacles",
+      "forms": [
+        "octopi"
+      ],
+      "id": "oewn-octopus__1.05.00..",
+      "lang": "en",
+      "lemma": "octopus",
+      "synset": "oewn-01972805-n"
+    },
+    {
+      "definition": "bottom-living cephalopod having a soft oval body with eight long tentacles",
+      "forms": [
+        "devilfishes"
+      ],
+      "id": "oewn-devilfish__1.05.01..",
+      "lang": "en",
+      "lemma": "devilfish",
+      "synset": "oewn-01972805-n"
+    },
+    {
+      "definition": "cephalopod mollusk of warm seas whose females have delicate papery spiral shells",
+      "forms": [],
+      "id": "oewn-paper_nautilus__1.05.00..",
+      "lang": "en",
+      "lemma": "paper nautilus",
+      "synset": "oewn-01973308-n"
+    },
+    {
+      "definition": "cephalopod mollusk of warm seas whose females have delicate papery spiral shells",
+      "forms": [
+        "nautili"
+      ],
+      "id": "oewn-nautilus__1.05.02..",
+      "lang": "en",
+      "lemma": "nautilus",
+      "synset": "oewn-01973308-n"
+    },
+    {
+      "definition": "cephalopod mollusk of warm seas whose females have delicate papery spiral shells",
+      "forms": [],
+      "id": "oewn-argonaut__1.05.00..",
+      "lang": "en",
+      "lemma": "Argonaut",
+      "synset": "oewn-01973308-n"
+    },
+    {
+      "definition": "cephalopod mollusk of warm seas whose females have delicate papery spiral shells",
+      "forms": [],
+      "id": "oewn-argonauta_argo__1.05.00..",
+      "lang": "en",
+      "lemma": "Argonauta argo",
+      "synset": "oewn-01973308-n"
+    },
+    {
+      "definition": "cephalopods having eight short tentacles plus two long ones",
+      "forms": [],
+      "id": "oewn-decapod__1.05.02..",
+      "lang": "en",
+      "lemma": "decapod",
+      "synset": "oewn-01973735-n"
+    },
+    {
+      "definition": "widely distributed fast-moving ten-armed cephalopod mollusk having a long tapered body with triangular tail fins",
+      "forms": [],
+      "id": "oewn-squid__1.05.00..",
+      "lang": "en",
+      "lemma": "squid",
+      "synset": "oewn-01973921-n"
+    },
+    {
+      "definition": "somewhat flattened cylindrical squid",
+      "forms": [],
+      "id": "oewn-loligo__1.05.00..",
+      "lang": "en",
+      "lemma": "loligo",
+      "synset": "oewn-01974261-n"
+    },
+    {
+      "definition": "extremely active cylindrical squid with short strong arms and large rhombic terminal fins",
+      "forms": [],
+      "id": "oewn-ommastrephes__1.05.00..",
+      "lang": "en",
+      "lemma": "ommastrephes",
+      "synset": "oewn-01974491-n"
+    },
+    {
+      "definition": "largest mollusk known about but never seen (to 60 feet long)",
+      "forms": [],
+      "id": "oewn-architeuthis__1.05.00..",
+      "lang": "en",
+      "lemma": "architeuthis",
+      "synset": "oewn-01974772-n"
+    },
+    {
+      "definition": "largest mollusk known about but never seen (to 60 feet long)",
+      "forms": [],
+      "id": "oewn-giant_squid__1.05.00..",
+      "lang": "en",
+      "lemma": "giant squid",
+      "synset": "oewn-01974772-n"
+    },
+    {
+      "definition": "ten-armed oval-bodied cephalopod with narrow fins as long as the body and a large calcareous internal shell",
+      "forms": [
+        "cuttlefishes"
+      ],
+      "id": "oewn-cuttlefish__1.05.00..",
+      "lang": "en",
+      "lemma": "cuttlefish",
+      "synset": "oewn-01975182-n"
+    },
+    {
+      "definition": "ten-armed oval-bodied cephalopod with narrow fins as long as the body and a large calcareous internal shell",
+      "forms": [],
+      "id": "oewn-cuttle__1.05.00..",
+      "lang": "en",
+      "lemma": "cuttle",
+      "synset": "oewn-01975182-n"
+    },
+    {
+      "definition": "a small tropical cephalopod of the genus Spirula having prominent eyes and short arms and a many-chambered shell coiled in a flat spiral",
+      "forms": [],
+      "id": "oewn-spirula__1.05.00..",
+      "lang": "en",
+      "lemma": "spirula",
+      "synset": "oewn-01975789-n"
+    },
+    {
+      "definition": "a small tropical cephalopod of the genus Spirula having prominent eyes and short arms and a many-chambered shell coiled in a flat spiral",
+      "forms": [],
+      "id": "oewn-spirula_peronii__1.05.00..",
+      "lang": "en",
+      "lemma": "Spirula peronii",
+      "synset": "oewn-01975789-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "invertebrate having a soft unsegmented body usually enclosed in a shell",
+      "hypernyms": [
+        "oewn-01908302-n"
+      ],
+      "id": "oewn-01943377-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 6,
+      "name": "mollusk"
+    },
+    {
+      "definition": "burrowing marine mollusk",
+      "hypernyms": [
+        "oewn-01943377-n"
+      ],
+      "id": "oewn-01943864-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "scaphopod"
+    },
+    {
+      "definition": "any of various seashore mollusks having a tapering tubular shell open at each end and a foot pointed like a spade for burrowing",
+      "hypernyms": [
+        "oewn-01943864-n"
+      ],
+      "id": "oewn-01943981-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "tooth shell"
+    },
+    {
+      "definition": "a class of mollusks typically having a one-piece coiled shell and flattened muscular foot with a head bearing stalked eyes",
+      "hypernyms": [
+        "oewn-01943377-n"
+      ],
+      "id": "oewn-01944818-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "gastropod"
+    },
+    {
+      "definition": "any of various large edible marine gastropods of the genus Haliotis having an ear-shaped shell with pearly interior",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01945510-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "abalone"
+    },
+    {
+      "definition": "an abalone found near the Channel Islands",
+      "hypernyms": [
+        "oewn-01945510-n"
+      ],
+      "id": "oewn-01945728-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "ormer"
+    },
+    {
+      "definition": "any of numerous tropical marine snails that as adults have the outer lip of the aperture produced into a series of long curved spines",
+      "hypernyms": [
+        "oewn-01947031-n"
+      ],
+      "id": "oewn-01946182-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "scorpion shell"
+    },
+    {
+      "definition": "any of various edible tropical marine gastropods of the genus Strombus having a brightly-colored spiral shell with large outer lip",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01946540-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "conch"
+    },
+    {
+      "definition": "a large variety of conch",
+      "hypernyms": [
+        "oewn-01946540-n"
+      ],
+      "id": "oewn-01946759-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "giant conch"
+    },
+    {
+      "definition": "freshwater or marine or terrestrial gastropod mollusk usually having an external enclosing spiral shell",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01947031-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "snail"
+    },
+    {
+      "definition": "one of the chief edible snails",
+      "hypernyms": [
+        "oewn-01947031-n"
+      ],
+      "id": "oewn-01947453-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "edible snail"
+    },
+    {
+      "definition": "any of several inedible snails of the genus Helix; often destructive pests",
+      "hypernyms": [
+        "oewn-01947031-n"
+      ],
+      "id": "oewn-01947596-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "garden snail"
+    },
+    {
+      "definition": "serious garden pest having a brown shell with paler zigzag markings; nearly cosmopolitan in distribution",
+      "hypernyms": [
+        "oewn-01947596-n"
+      ],
+      "id": "oewn-01947784-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "brown snail"
+    },
+    {
+      "definition": "a kind of garden snail",
+      "hypernyms": [
+        "oewn-01947596-n"
+      ],
+      "id": "oewn-01947981-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Helix hortensis"
+    },
+    {
+      "definition": "any of various terrestrial gastropods having an elongated slimy body and no external shell",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01948326-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "slug"
+    },
+    {
+      "definition": "any of several creeping marine gastropods with a spirally coiled shell: whelks, tritons, moon shells, neritids",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01948486-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "seasnail"
+    },
+    {
+      "definition": "operculate seasnail of coastal waters with a short spiral shell",
+      "hypernyms": [
+        "oewn-01948486-n"
+      ],
+      "id": "oewn-01948918-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "neritid"
+    },
+    {
+      "definition": "a neritid gastropod having a short smooth or spirally ridged shell with thick usually toothed outer lip and toothed operculum",
+      "hypernyms": [
+        "oewn-01948918-n"
+      ],
+      "id": "oewn-01949271-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "nerita"
+    },
+    {
+      "definition": "gastropod having reddish toothlike projections around the shell opening; of the Caribbean area",
+      "hypernyms": [
+        "oewn-01948918-n"
+      ],
+      "id": "oewn-01949468-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "bleeding tooth"
+    },
+    {
+      "definition": "ornately marked and brightly colored snails of brackish waters",
+      "hypernyms": [
+        "oewn-01948918-n"
+      ],
+      "id": "oewn-01949780-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "neritina"
+    },
+    {
+      "definition": "large carnivorous marine gastropods of coastal waters and intertidal regions having a strong snail-like shell",
+      "hypernyms": [
+        "oewn-01948486-n"
+      ],
+      "id": "oewn-01950037-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "whelk"
+    },
+    {
+      "definition": "tropical marine gastropods having beautifully colored spiral shells",
+      "hypernyms": [
+        "oewn-01948486-n"
+      ],
+      "id": "oewn-01950376-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "triton"
+    },
+    {
+      "definition": "marine gastropods having smooth rounded shells that form short spires",
+      "hypernyms": [
+        "oewn-01948486-n"
+      ],
+      "id": "oewn-01950638-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "moon shell"
+    },
+    {
+      "definition": "edible marine gastropod",
+      "hypernyms": [
+        "oewn-01948486-n"
+      ],
+      "id": "oewn-01951087-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "periwinkle"
+    },
+    {
+      "definition": "any of various usually marine gastropods with low conical shells; found clinging to rocks in littoral areas",
+      "hypernyms": [
+        "oewn-01948486-n"
+      ],
+      "id": "oewn-01951214-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "limpet"
+    },
+    {
+      "definition": "marine limpet",
+      "hypernyms": [
+        "oewn-01951214-n"
+      ],
+      "id": "oewn-01951726-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "common limpet"
+    },
+    {
+      "definition": "marine limpet having a conical shell with an opening at the apex",
+      "hypernyms": [
+        "oewn-01951214-n"
+      ],
+      "id": "oewn-01952140-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "keyhole limpet"
+    },
+    {
+      "definition": "minute conical gastropod superficially resembling a limpet but living and feeding on freshwater plants",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01952614-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "river limpet"
+    },
+    {
+      "definition": "any of various marine gastropods of the suborder Nudibranchia having a shell-less and often beautifully colored body",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01953372-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sea slug"
+    },
+    {
+      "definition": "naked marine gastropod having a soft body with reduced internal shell and two pairs of ear-like tentacles",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01953915-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sea hare"
+    },
+    {
+      "definition": "a kind of sea slug",
+      "hypernyms": [
+        "oewn-01953372-n"
+      ],
+      "id": "oewn-01954254-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Hermissenda crassicornis"
+    },
+    {
+      "definition": "marine gastropod mollusk having a very small thin shell",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01954670-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "bubble shell"
+    },
+    {
+      "definition": "any member of the genus Physa",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01955353-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "physa"
+    },
+    {
+      "definition": "any of numerous tropical marine gastropods of the genus Cypraea having highly polished usually brightly marked shells",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01956002-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "cowrie"
+    },
+    {
+      "definition": "cowrie whose shell is used for money in parts of the southern Pacific and in parts of Africa",
+      "hypernyms": [
+        "oewn-01956002-n"
+      ],
+      "id": "oewn-01956235-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "money cowrie"
+    },
+    {
+      "definition": "cowrie whose shell is used for ornament",
+      "hypernyms": [
+        "oewn-01956002-n"
+      ],
+      "id": "oewn-01956403-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tiger cowrie"
+    },
+    {
+      "definition": "deep-water wormlike mollusks lacking calcareous plates on the body but having fine slimy spicules on the covering mantle",
+      "hypernyms": [
+        "oewn-01944818-n"
+      ],
+      "id": "oewn-01957157-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "solenogaster"
+    },
+    {
+      "definition": "primitive elongated bilaterally symmetrical marine mollusk having a mantle covered with eight calcareous plates",
+      "hypernyms": [
+        "oewn-01943377-n"
+      ],
+      "id": "oewn-01957725-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "chiton"
+    },
+    {
+      "definition": "marine or freshwater mollusks having a soft body with platelike gills enclosed within two shells hinged together",
+      "hypernyms": [
+        "oewn-01943377-n"
+      ],
+      "id": "oewn-01958574-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "bivalve"
+    },
+    {
+      "definition": "burrowing marine mollusk living on sand or mud; the shell closes with viselike firmness",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01959122-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "clam"
+    },
+    {
+      "definition": "an edible clam with thin oval-shaped shell found in coastal regions of the United States and Europe",
+      "hypernyms": [
+        "oewn-01959122-n"
+      ],
+      "id": "oewn-01959976-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "soft-shell clam"
+    },
+    {
+      "definition": "an edible American clam; the heavy shells were used as money by some American Indians",
+      "hypernyms": [
+        "oewn-01959122-n"
+      ],
+      "id": "oewn-01960679-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "quahog"
+    },
+    {
+      "definition": "a young quahog",
+      "hypernyms": [
+        "oewn-01960679-n"
+      ],
+      "id": "oewn-01960987-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "littleneck"
+    },
+    {
+      "definition": "a half-grown quahog",
+      "hypernyms": [
+        "oewn-01960679-n"
+      ],
+      "id": "oewn-01961076-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "cherrystone"
+    },
+    {
+      "definition": "a large edible clam found burrowing deeply in sandy mud along the Pacific coast of North America; weighs up to six pounds; has siphons that can extend to several feet and cannot be withdrawn into the shell",
+      "hypernyms": [
+        "oewn-01959122-n"
+      ],
+      "id": "oewn-01961172-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "geoduck"
+    },
+    {
+      "definition": "marine clam having a long narrow curved thin shell",
+      "hypernyms": [
+        "oewn-01959122-n"
+      ],
+      "id": "oewn-01961670-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "razor clam"
+    },
+    {
+      "definition": "a large clam inhabiting reefs in the southern Pacific and weighing up to 500 pounds",
+      "hypernyms": [
+        "oewn-01959122-n"
+      ],
+      "id": "oewn-01962133-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "giant clam"
+    },
+    {
+      "definition": "common edible, burrowing European bivalve mollusk that has a strong, rounded shell with radiating ribs",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01962626-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "cockle"
+    },
+    {
+      "definition": "common edible European cockle",
+      "hypernyms": [
+        "oewn-01962626-n"
+      ],
+      "id": "oewn-01962818-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "edible cockle"
+    },
+    {
+      "definition": "marine mollusks having a rough irregular shell; found on the sea bed mostly in coastal waters",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01963100-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "oyster"
+    },
+    {
+      "definition": "a young oyster especially of a size for transplantation",
+      "hypernyms": [
+        "oewn-01963100-n"
+      ],
+      "id": "oewn-01963428-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "seed oyster"
+    },
+    {
+      "definition": "small edible oyster typically from the southern shore of Long Island",
+      "hypernyms": [
+        "oewn-01963100-n"
+      ],
+      "id": "oewn-01963700-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "bluepoint"
+    },
+    {
+      "definition": "a large oyster native to Japan and introduced along the Pacific coast of the United States; a candidate for introduction in Chesapeake Bay",
+      "hypernyms": [
+        "oewn-01963100-n"
+      ],
+      "id": "oewn-01963875-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Japanese oyster"
+    },
+    {
+      "definition": "common edible oyster of Atlantic coast of North America",
+      "hypernyms": [
+        "oewn-01963100-n"
+      ],
+      "id": "oewn-01964241-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Virginia oyster"
+    },
+    {
+      "definition": "tropical marine bivalve found chiefly off eastern Asia and Pacific coast of North America and Central America; a major source of pearls",
+      "hypernyms": [
+        "oewn-01963100-n"
+      ],
+      "id": "oewn-01964626-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "pearl oyster"
+    },
+    {
+      "definition": "thin-shelled bivalve having the right valve deeply notched",
+      "hypernyms": [
+        "oewn-01963100-n"
+      ],
+      "id": "oewn-01965147-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "saddle oyster"
+    },
+    {
+      "definition": "marine bivalve common in Philippine coastal waters characterized by a large thin flat translucent shell",
+      "hypernyms": [
+        "oewn-01963100-n"
+      ],
+      "id": "oewn-01965429-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "window oyster"
+    },
+    {
+      "definition": "marine bivalve mollusk having a heavy toothed shell with a deep boat-like inner surface",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01965958-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "ark shell"
+    },
+    {
+      "definition": "red-blooded clam",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01966120-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "blood clam"
+    },
+    {
+      "definition": "marine or freshwater bivalve mollusk that lives attached to rocks etc.",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01966212-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "mussel"
+    },
+    {
+      "definition": "marine bivalve mollusk having a dark elongated shell; live attached to solid objects especially in intertidal zones",
+      "hypernyms": [
+        "oewn-01966212-n"
+      ],
+      "id": "oewn-01966690-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "marine mussel"
+    },
+    {
+      "definition": "a mussel with a dark shell that lives attached to rocks",
+      "hypernyms": [
+        "oewn-01966690-n"
+      ],
+      "id": "oewn-01966912-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "edible mussel"
+    },
+    {
+      "definition": "bivalve mollusk abundant in rivers of central United States",
+      "hypernyms": [
+        "oewn-01966212-n"
+      ],
+      "id": "oewn-01967082-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "freshwater mussel"
+    },
+    {
+      "definition": "the pearly lining of the dark shells is a source of mother-of-pearl",
+      "hypernyms": [
+        "oewn-01967082-n"
+      ],
+      "id": "oewn-01967598-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "pearly-shelled mussel"
+    },
+    {
+      "definition": "mussel with thin fragile shells having only rudimentary hinge teeth",
+      "hypernyms": [
+        "oewn-01967082-n"
+      ],
+      "id": "oewn-01967893-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "thin-shelled mussel"
+    },
+    {
+      "definition": "inch long mollusk imported accidentally from Europe; clogs utility inlet pipes and feeds on edible freshwater mussels",
+      "hypernyms": [
+        "oewn-01967082-n"
+      ],
+      "id": "oewn-01968170-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "zebra mussel"
+    },
+    {
+      "definition": "edible marine bivalve having a fluted fan-shaped shell that swim by expelling water from the shell in a series of snapping motions",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01968530-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "scallop"
+    },
+    {
+      "definition": "a small scallop inhabiting shallow waters and mud flats of the Atlantic coast of North America",
+      "hypernyms": [
+        "oewn-01968530-n"
+      ],
+      "id": "oewn-01969018-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "bay scallop"
+    },
+    {
+      "definition": "a large scallop inhabiting deep waters of the Atlantic coast of North America",
+      "hypernyms": [
+        "oewn-01968530-n"
+      ],
+      "id": "oewn-01969227-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "sea scallop"
+    },
+    {
+      "definition": "wormlike marine bivalve that bores into wooden piers and ships by means of drill-like shells",
+      "hypernyms": [
+        "oewn-01959122-n"
+      ],
+      "id": "oewn-01969735-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "shipworm"
+    },
+    {
+      "definition": "typical shipworm",
+      "hypernyms": [
+        "oewn-01969735-n"
+      ],
+      "id": "oewn-01969949-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "teredo"
+    },
+    {
+      "definition": "giant shipworm of the Pacific coast of North America",
+      "hypernyms": [
+        "oewn-01969735-n"
+      ],
+      "id": "oewn-01970158-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "giant northwest shipworm"
+    },
+    {
+      "definition": "marine bivalve that bores into rock or clay or wood by means of saw-like shells",
+      "hypernyms": [
+        "oewn-01958574-n"
+      ],
+      "id": "oewn-01970604-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "piddock"
+    },
+    {
+      "definition": "marine mollusk characterized by well-developed head and eyes and sucker-bearing tentacles",
+      "hypernyms": [
+        "oewn-01943377-n"
+      ],
+      "id": "oewn-01970956-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "cephalopod"
+    },
+    {
+      "definition": "cephalopod of the Indian and Pacific oceans having a spiral shell with pale pearly partitions",
+      "hypernyms": [
+        "oewn-01970956-n"
+      ],
+      "id": "oewn-01971538-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "chambered nautilus"
+    },
+    {
+      "definition": "cephalopods having two gills",
+      "hypernyms": [
+        "oewn-01970956-n"
+      ],
+      "id": "oewn-01972070-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "dibranchiate"
+    },
+    {
+      "definition": "a cephalopod with eight arms but lacking an internal shell",
+      "hypernyms": [
+        "oewn-01970956-n"
+      ],
+      "id": "oewn-01972367-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "octopod"
+    },
+    {
+      "definition": "bottom-living cephalopod having a soft oval body with eight long tentacles",
+      "hypernyms": [
+        "oewn-01972367-n"
+      ],
+      "id": "oewn-01972805-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "octopus"
+    },
+    {
+      "definition": "cephalopod mollusk of warm seas whose females have delicate papery spiral shells",
+      "hypernyms": [
+        "oewn-01972367-n"
+      ],
+      "id": "oewn-01973308-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "paper nautilus"
+    },
+    {
+      "definition": "cephalopods having eight short tentacles plus two long ones",
+      "hypernyms": [
+        "oewn-01970956-n"
+      ],
+      "id": "oewn-01973735-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "decapod"
+    },
+    {
+      "definition": "widely distributed fast-moving ten-armed cephalopod mollusk having a long tapered body with triangular tail fins",
+      "hypernyms": [
+        "oewn-01973735-n"
+      ],
+      "id": "oewn-01973921-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "squid"
+    },
+    {
+      "definition": "somewhat flattened cylindrical squid",
+      "hypernyms": [
+        "oewn-01973921-n"
+      ],
+      "id": "oewn-01974261-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "loligo"
+    },
+    {
+      "definition": "extremely active cylindrical squid with short strong arms and large rhombic terminal fins",
+      "hypernyms": [
+        "oewn-01973921-n"
+      ],
+      "id": "oewn-01974491-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "ommastrephes"
+    },
+    {
+      "definition": "largest mollusk known about but never seen (to 60 feet long)",
+      "hypernyms": [
+        "oewn-01973921-n"
+      ],
+      "id": "oewn-01974772-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "architeuthis"
+    },
+    {
+      "definition": "ten-armed oval-bodied cephalopod with narrow fins as long as the body and a large calcareous internal shell",
+      "hypernyms": [
+        "oewn-01973735-n"
+      ],
+      "id": "oewn-01975182-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cuttlefish"
+    },
+    {
+      "definition": "a small tropical cephalopod of the genus Spirula having prominent eyes and short arms and a many-chambered shell coiled in a flat spiral",
+      "hypernyms": [
+        "oewn-01973735-n"
+      ],
+      "id": "oewn-01975789-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "spirula"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

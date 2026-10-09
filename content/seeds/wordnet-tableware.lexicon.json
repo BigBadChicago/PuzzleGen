@@ -1,0 +1,2006 @@
+{
+  "exported": "2026-10-09",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-04389081-n",
+  "senses": [
+    {
+      "definition": "a covered gravy holder of silver or other metal containing a detachable central vessel for hot water to keep the gravy warm",
+      "forms": [],
+      "id": "oewn-argyll__1.06.02..",
+      "lang": "en",
+      "lemma": "argyll",
+      "synset": "oewn-02740171-n"
+    },
+    {
+      "definition": "a covered gravy holder of silver or other metal containing a detachable central vessel for hot water to keep the gravy warm",
+      "forms": [],
+      "id": "oewn-argyle__1.06.02..",
+      "lang": "en",
+      "lemma": "argyle",
+      "synset": "oewn-02740171-n"
+    },
+    {
+      "definition": "a cup (usually without a handle)",
+      "forms": [],
+      "id": "oewn-beaker__1.06.00..",
+      "lang": "en",
+      "lemma": "beaker",
+      "synset": "oewn-02818884-n"
+    },
+    {
+      "definition": "a dish that is round and open at the top for serving foods",
+      "forms": [],
+      "id": "oewn-bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "bowl",
+      "synset": "oewn-02884182-n"
+    },
+    {
+      "definition": "a small dish (often with a cover) for holding butter at the table",
+      "forms": [],
+      "id": "oewn-butter_dish__1.06.00..",
+      "lang": "en",
+      "lemma": "butter dish",
+      "synset": "oewn-02931148-n"
+    },
+    {
+      "definition": "a small knife with a dull blade; for cutting or spreading butter",
+      "forms": [],
+      "id": "oewn-butter_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "butter knife",
+      "synset": "oewn-02931433-n"
+    },
+    {
+      "definition": "a large fork used in carving cooked meat",
+      "forms": [],
+      "id": "oewn-carving_fork__1.06.00..",
+      "lang": "en",
+      "lemma": "carving fork",
+      "synset": "oewn-02977264-n"
+    },
+    {
+      "definition": "a metal blade with a handle; used as cutlery",
+      "forms": [],
+      "id": "oewn-case_knife__1.06.02..",
+      "lang": "en",
+      "lemma": "case knife",
+      "synset": "oewn-02979708-n"
+    },
+    {
+      "definition": "large deep dish in which food can be cooked and served",
+      "forms": [],
+      "id": "oewn-casserole__1.06.00..",
+      "lang": "en",
+      "lemma": "casserole",
+      "synset": "oewn-02982212-n"
+    },
+    {
+      "definition": "a bowl for holding breakfast cereal",
+      "forms": [],
+      "id": "oewn-cereal_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "cereal bowl",
+      "synset": "oewn-03001517-n"
+    },
+    {
+      "definition": "a bowl-shaped drinking vessel; especially the Eucharistic cup",
+      "forms": [],
+      "id": "oewn-chalice__1.06.00..",
+      "lang": "en",
+      "lemma": "chalice",
+      "synset": "oewn-03006552-n"
+    },
+    {
+      "definition": "a bowl-shaped drinking vessel; especially the Eucharistic cup",
+      "forms": [],
+      "id": "oewn-goblet__1.06.01..",
+      "lang": "en",
+      "lemma": "goblet",
+      "synset": "oewn-03006552-n"
+    },
+    {
+      "definition": "dishware made of high quality porcelain",
+      "forms": [],
+      "id": "oewn-chinaware__1.06.00..",
+      "lang": "en",
+      "lemma": "chinaware",
+      "synset": "oewn-03022147-n"
+    },
+    {
+      "definition": "dishware made of high quality porcelain",
+      "forms": [],
+      "id": "oewn-china__1.06.01..",
+      "lang": "en",
+      "lemma": "china",
+      "synset": "oewn-03022147-n"
+    },
+    {
+      "definition": "one of a pair of slender sticks used as oriental tableware to eat food with",
+      "forms": [],
+      "id": "oewn-chopstick__1.06.00..",
+      "lang": "en",
+      "lemma": "chopstick",
+      "synset": "oewn-03029438-n"
+    },
+    {
+      "definition": "a small casserole in which individual portions can be cooked and served",
+      "forms": [],
+      "id": "oewn-cocotte__1.06.00..",
+      "lang": "en",
+      "lemma": "cocotte",
+      "synset": "oewn-03066339-n"
+    },
+    {
+      "definition": "a cup from which coffee is drunk",
+      "forms": [],
+      "id": "oewn-coffee_cup__1.06.00..",
+      "lang": "en",
+      "lemma": "coffee cup",
+      "synset": "oewn-03067076-n"
+    },
+    {
+      "definition": "a dish in the form of a scallop shell",
+      "forms": [],
+      "id": "oewn-coquille__1.06.00..",
+      "lang": "en",
+      "lemma": "coquille",
+      "synset": "oewn-03109865-n"
+    },
+    {
+      "definition": "tableware (eating and serving dishes) collectively",
+      "forms": [],
+      "id": "oewn-crockery__1.06.00..",
+      "lang": "en",
+      "lemma": "crockery",
+      "synset": "oewn-03138189-n"
+    },
+    {
+      "definition": "tableware (eating and serving dishes) collectively",
+      "forms": [],
+      "id": "oewn-dishware__1.06.00..",
+      "lang": "en",
+      "lemma": "dishware",
+      "synset": "oewn-03138189-n"
+    },
+    {
+      "definition": "glassware made of quartz",
+      "forms": [],
+      "id": "oewn-crystal__1.06.01..",
+      "lang": "en",
+      "lemma": "crystal",
+      "synset": "oewn-03147485-n"
+    },
+    {
+      "definition": "a small open container usually used for drinking; usually has a handle",
+      "forms": [],
+      "id": "oewn-cup__1.06.00..",
+      "lang": "en",
+      "lemma": "cup",
+      "synset": "oewn-03152175-n"
+    },
+    {
+      "definition": "glass decorated by cutting or grinding facets",
+      "forms": [],
+      "id": "oewn-cut_glass__1.06.00..",
+      "lang": "en",
+      "lemma": "cut glass",
+      "synset": "oewn-03157811-n"
+    },
+    {
+      "definition": "tableware implements for cutting and eating food",
+      "forms": [],
+      "id": "oewn-cutlery__1.06.00..",
+      "lang": "en",
+      "lemma": "cutlery",
+      "synset": "oewn-03158041-n"
+    },
+    {
+      "definition": "tableware implements for cutting and eating food",
+      "forms": [],
+      "id": "oewn-eating_utensil__1.06.00..",
+      "lang": "en",
+      "lemma": "eating utensil",
+      "synset": "oewn-03158041-n"
+    },
+    {
+      "definition": "small coffee cup; for serving black coffee",
+      "forms": [],
+      "id": "oewn-demitasse__1.06.00..",
+      "lang": "en",
+      "lemma": "demitasse",
+      "synset": "oewn-03179397-n"
+    },
+    {
+      "definition": "a small plate on which dessert can be served",
+      "forms": [],
+      "id": "oewn-dessert_plate__1.06.00..",
+      "lang": "en",
+      "lemma": "dessert plate",
+      "synset": "oewn-03184946-n"
+    },
+    {
+      "definition": "a spoon larger than a teaspoon and smaller than a tablespoon",
+      "forms": [],
+      "id": "oewn-dessert_spoon__1.06.00..",
+      "lang": "en",
+      "lemma": "dessert spoon",
+      "synset": "oewn-03185050-n"
+    },
+    {
+      "definition": "a plate from which a diner eats during the main course of a meal",
+      "forms": [],
+      "id": "oewn-dinner_plate__1.06.00..",
+      "lang": "en",
+      "lemma": "dinner plate",
+      "synset": "oewn-03206807-n"
+    },
+    {
+      "definition": "a table service for serving dinner",
+      "forms": [],
+      "id": "oewn-dinner_service__1.06.00..",
+      "lang": "en",
+      "lemma": "dinner service",
+      "synset": "oewn-03206930-n"
+    },
+    {
+      "definition": "a table service for serving dinner",
+      "forms": [],
+      "id": "oewn-dinner_set__1.06.00..",
+      "lang": "en",
+      "lemma": "dinner set",
+      "synset": "oewn-03206930-n"
+    },
+    {
+      "definition": "the tableware (plates and platters and serving bowls etc.) used in serving a meal",
+      "forms": [],
+      "id": "oewn-dinnerware__1.06.00..",
+      "lang": "en",
+      "lemma": "dinnerware",
+      "synset": "oewn-03207306-n"
+    },
+    {
+      "definition": "a piece of dishware normally used as a container for holding or serving food",
+      "forms": [],
+      "id": "oewn-dish__1.06.00..",
+      "lang": "en",
+      "lemma": "dish",
+      "synset": "oewn-03211629-n"
+    },
+    {
+      "definition": "a disposable cup made of paper; for holding drinks",
+      "forms": [],
+      "id": "oewn-dixie_cup__1.06.00..",
+      "lang": "en",
+      "lemma": "Dixie cup",
+      "synset": "oewn-03221413-n"
+    },
+    {
+      "definition": "a disposable cup made of paper; for holding drinks",
+      "forms": [],
+      "id": "oewn-paper_cup__1.06.00..",
+      "lang": "en",
+      "lemma": "paper cup",
+      "synset": "oewn-03221413-n"
+    },
+    {
+      "definition": "dishware consisting of a small cup for serving a boiled egg",
+      "forms": [],
+      "id": "oewn-eggcup__1.06.00..",
+      "lang": "en",
+      "lemma": "eggcup",
+      "synset": "oewn-03271409-n"
+    },
+    {
+      "definition": "dishware consisting of a small cup for serving a boiled egg",
+      "forms": [],
+      "id": "oewn-egg_cup__1.06.00..",
+      "lang": "en",
+      "lemma": "egg cup",
+      "synset": "oewn-03271409-n"
+    },
+    {
+      "definition": "small bowl for rinsing the fingers at table",
+      "forms": [],
+      "id": "oewn-finger_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "finger bowl",
+      "synset": "oewn-03346551-n"
+    },
+    {
+      "definition": "a small table knife with a spatula blade used for eating fish",
+      "forms": [],
+      "id": "oewn-fish_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "fish knife",
+      "synset": "oewn-03357212-n"
+    },
+    {
+      "definition": "silverware eating utensils",
+      "forms": [],
+      "id": "oewn-flatware__1.06.00..",
+      "lang": "en",
+      "lemma": "flatware",
+      "synset": "oewn-03366683-n"
+    },
+    {
+      "definition": "silverware eating utensils",
+      "forms": [],
+      "id": "oewn-silver__1.06.00..",
+      "lang": "en",
+      "lemma": "silver",
+      "synset": "oewn-03366683-n"
+    },
+    {
+      "definition": "tableware that is relatively flat and fashioned as a single piece",
+      "forms": [],
+      "id": "oewn-flatware__1.06.01..",
+      "lang": "en",
+      "lemma": "flatware",
+      "synset": "oewn-03366791-n"
+    },
+    {
+      "definition": "a utensil with two or more prongs, used for serving or eating food",
+      "forms": [],
+      "id": "oewn-fork__1.06.00..",
+      "lang": "en",
+      "lemma": "fork",
+      "synset": "oewn-03388794-n"
+    },
+    {
+      "definition": "glassware collectively",
+      "forms": [],
+      "id": "oewn-glass__1.06.04..",
+      "lang": "en",
+      "lemma": "glass",
+      "synset": "oewn-03443585-n"
+    },
+    {
+      "definition": "an article of tableware made of glass",
+      "forms": [],
+      "id": "oewn-glassware__1.06.00..",
+      "lang": "en",
+      "lemma": "glassware",
+      "synset": "oewn-03443988-n"
+    },
+    {
+      "definition": "an article of tableware made of glass",
+      "forms": [],
+      "id": "oewn-glasswork__1.06.00..",
+      "lang": "en",
+      "lemma": "glasswork",
+      "synset": "oewn-03443988-n"
+    },
+    {
+      "definition": "tableware that is plated with gold",
+      "forms": [],
+      "id": "oewn-gold_plate__1.06.01..",
+      "lang": "en",
+      "lemma": "gold plate",
+      "synset": "oewn-03450405-n"
+    },
+    {
+      "definition": "cup to be passed around for the final toast after a meal",
+      "forms": [],
+      "id": "oewn-grace_cup__1.06.00..",
+      "lang": "en",
+      "lemma": "grace cup",
+      "synset": "oewn-03456197-n"
+    },
+    {
+      "definition": "(legend) chalice used by Christ at the Last Supper",
+      "forms": [],
+      "id": "oewn-grail__1.06.00..",
+      "lang": "en",
+      "lemma": "grail",
+      "synset": "oewn-03456853-n"
+    },
+    {
+      "definition": "(legend) chalice used by Christ at the Last Supper",
+      "forms": [],
+      "id": "oewn-holy_grail__1.06.00..",
+      "lang": "en",
+      "lemma": "Holy Grail",
+      "synset": "oewn-03456853-n"
+    },
+    {
+      "definition": "(legend) chalice used by Christ at the Last Supper",
+      "forms": [],
+      "id": "oewn-sangraal__1.06.00..",
+      "lang": "en",
+      "lemma": "Sangraal",
+      "synset": "oewn-03456853-n"
+    },
+    {
+      "definition": "a dish (often boat-shaped) for serving gravy or sauce",
+      "forms": [],
+      "id": "oewn-gravy_boat__1.06.00..",
+      "lang": "en",
+      "lemma": "gravy boat",
+      "synset": "oewn-03460968-n"
+    },
+    {
+      "definition": "a dish (often boat-shaped) for serving gravy or sauce",
+      "forms": [],
+      "id": "oewn-gravy_holder__1.06.00..",
+      "lang": "en",
+      "lemma": "gravy holder",
+      "synset": "oewn-03460968-n"
+    },
+    {
+      "definition": "a dish (often boat-shaped) for serving gravy or sauce",
+      "forms": [],
+      "id": "oewn-sauceboat__1.06.00..",
+      "lang": "en",
+      "lemma": "sauceboat",
+      "synset": "oewn-03460968-n"
+    },
+    {
+      "definition": "a dish (often boat-shaped) for serving gravy or sauce",
+      "forms": [],
+      "id": "oewn-boat__1.06.01..",
+      "lang": "en",
+      "lemma": "boat",
+      "synset": "oewn-03460968-n"
+    },
+    {
+      "definition": "silverware serving dishes",
+      "forms": [],
+      "id": "oewn-hollowware__1.06.00..",
+      "lang": "en",
+      "lemma": "hollowware",
+      "synset": "oewn-03532329-n"
+    },
+    {
+      "definition": "silverware serving dishes",
+      "forms": [],
+      "id": "oewn-holloware__1.06.00..",
+      "lang": "en",
+      "lemma": "holloware",
+      "synset": "oewn-03532329-n"
+    },
+    {
+      "definition": "a teaspoon with a long handle",
+      "forms": [],
+      "id": "oewn-iced-tea_spoon__1.06.00..",
+      "lang": "en",
+      "lemma": "iced-tea spoon",
+      "synset": "oewn-03562450-n"
+    },
+    {
+      "definition": "a shallow drinking cup with two handles; used in ancient Greece",
+      "forms": [
+        "kylikes"
+      ],
+      "id": "oewn-kylix__1.06.00..",
+      "lang": "en",
+      "lemma": "kylix",
+      "synset": "oewn-03634811-n"
+    },
+    {
+      "definition": "a shallow drinking cup with two handles; used in ancient Greece",
+      "forms": [
+        "cylices",
+        "cylikes"
+      ],
+      "id": "oewn-cylix__1.06.00..",
+      "lang": "en",
+      "lemma": "cylix",
+      "synset": "oewn-03634811-n"
+    },
+    {
+      "definition": "bowl used with an electric mixer",
+      "forms": [],
+      "id": "oewn-mixing_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "mixing bowl",
+      "synset": "oewn-03781079-n"
+    },
+    {
+      "definition": "a drinking cup with a bar inside the rim to keep a man's mustache out of the drink",
+      "forms": [],
+      "id": "oewn-mustache_cup__1.06.00..",
+      "lang": "en",
+      "lemma": "mustache cup",
+      "synset": "oewn-03808183-n"
+    },
+    {
+      "definition": "a drinking cup with a bar inside the rim to keep a man's mustache out of the drink",
+      "forms": [],
+      "id": "oewn-moustache_cup__1.06.00..",
+      "lang": "en",
+      "lemma": "moustache cup",
+      "synset": "oewn-03808183-n"
+    },
+    {
+      "definition": "heat-resistant dishware in which food can be cooked as well as served",
+      "forms": [],
+      "id": "oewn-ovenware__1.06.00..",
+      "lang": "en",
+      "lemma": "ovenware",
+      "synset": "oewn-03868504-n"
+    },
+    {
+      "definition": "a disposable plate made of cardboard",
+      "forms": [],
+      "id": "oewn-paper_plate__1.06.00..",
+      "lang": "en",
+      "lemma": "paper plate",
+      "synset": "oewn-03893300-n"
+    },
+    {
+      "definition": "a shallow dish used to culture bacteria",
+      "forms": [],
+      "id": "oewn-petri_dish__1.06.00..",
+      "lang": "en",
+      "lemma": "Petri dish",
+      "synset": "oewn-03926410-n"
+    },
+    {
+      "definition": "a table service for one person",
+      "forms": [],
+      "id": "oewn-place_setting__1.06.00..",
+      "lang": "en",
+      "lemma": "place setting",
+      "synset": "oewn-03960019-n"
+    },
+    {
+      "definition": "a table service for one person",
+      "forms": [],
+      "id": "oewn-setting__1.06.02..",
+      "lang": "en",
+      "lemma": "setting",
+      "synset": "oewn-03960019-n"
+    },
+    {
+      "definition": "dish on which food is served or from which food is eaten",
+      "forms": [],
+      "id": "oewn-plate__1.06.00..",
+      "lang": "en",
+      "lemma": "plate",
+      "synset": "oewn-03965779-n"
+    },
+    {
+      "definition": "a large shallow dish used for serving food",
+      "forms": [],
+      "id": "oewn-platter__1.06.00..",
+      "lang": "en",
+      "lemma": "platter",
+      "synset": "oewn-03969492-n"
+    },
+    {
+      "definition": "a shallow metal bowl (usually with a handle)",
+      "forms": [],
+      "id": "oewn-porringer__1.06.00..",
+      "lang": "en",
+      "lemma": "porringer",
+      "synset": "oewn-03991117-n"
+    },
+    {
+      "definition": "a large bowl for serving beverages; usually with a ladle",
+      "forms": [],
+      "id": "oewn-punch_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "punch bowl",
+      "synset": "oewn-04030089-n"
+    },
+    {
+      "definition": "a small fireproof dish used for baking and serving individual portions",
+      "forms": [],
+      "id": "oewn-ramekin__1.06.00..",
+      "lang": "en",
+      "lemma": "ramekin",
+      "synset": "oewn-04058045-n"
+    },
+    {
+      "definition": "a small fireproof dish used for baking and serving individual portions",
+      "forms": [],
+      "id": "oewn-ramequin__1.06.00..",
+      "lang": "en",
+      "lemma": "ramequin",
+      "synset": "oewn-04058045-n"
+    },
+    {
+      "definition": "a fork-like spoon with a cutting edge; coined by Edward Lear",
+      "forms": [],
+      "id": "oewn-runcible_spoon__1.06.00..",
+      "lang": "en",
+      "lemma": "runcible spoon",
+      "synset": "oewn-04126724-n"
+    },
+    {
+      "definition": "a large bowl for mixing and serving a salad",
+      "forms": [],
+      "id": "oewn-salad_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "salad bowl",
+      "synset": "oewn-04137340-n"
+    },
+    {
+      "definition": "a fork intended for eating salads",
+      "forms": [],
+      "id": "oewn-salad_fork__1.06.00..",
+      "lang": "en",
+      "lemma": "salad fork",
+      "synset": "oewn-04137440-n"
+    },
+    {
+      "definition": "a plate or bowl for individual servings of salad",
+      "forms": [],
+      "id": "oewn-salad_plate__1.06.00..",
+      "lang": "en",
+      "lemma": "salad plate",
+      "synset": "oewn-04137530-n"
+    },
+    {
+      "definition": "a plate or bowl for individual servings of salad",
+      "forms": [],
+      "id": "oewn-salad_bowl__1.06.01..",
+      "lang": "en",
+      "lemma": "salad bowl",
+      "synset": "oewn-04137530-n"
+    },
+    {
+      "definition": "a small shallow dish for holding a cup at the table",
+      "forms": [],
+      "id": "oewn-saucer__1.06.00..",
+      "lang": "en",
+      "lemma": "saucer",
+      "synset": "oewn-04146374-n"
+    },
+    {
+      "definition": "an ancient Greek drinking cup; two handles and footed base",
+      "forms": [
+        "scyphi"
+      ],
+      "id": "oewn-scyphus__1.06.00..",
+      "lang": "en",
+      "lemma": "scyphus",
+      "synset": "oewn-04165199-n"
+    },
+    {
+      "definition": "tableware consisting of a complete set of articles (silver or dishware) for use at table",
+      "forms": [],
+      "id": "oewn-service__1.06.00..",
+      "lang": "en",
+      "lemma": "service",
+      "synset": "oewn-04182441-n"
+    },
+    {
+      "definition": "tableware consisting of a complete set of articles (silver or dishware) for use at table",
+      "forms": [],
+      "id": "oewn-table_service__1.06.00..",
+      "lang": "en",
+      "lemma": "table service",
+      "synset": "oewn-04182441-n"
+    },
+    {
+      "definition": "a dish used for serving food",
+      "forms": [],
+      "id": "oewn-serving_dish__1.06.00..",
+      "lang": "en",
+      "lemma": "serving dish",
+      "synset": "oewn-04183251-n"
+    },
+    {
+      "definition": "tableware that is plated with silver",
+      "forms": [],
+      "id": "oewn-silver_plate__1.06.01..",
+      "lang": "en",
+      "lemma": "silver plate",
+      "synset": "oewn-04228012-n"
+    },
+    {
+      "definition": "tableware made of silver or silver plate or pewter or stainless steel",
+      "forms": [],
+      "id": "oewn-silverware__1.06.00..",
+      "lang": "en",
+      "lemma": "silverware",
+      "synset": "oewn-04228491-n"
+    },
+    {
+      "definition": "a bowl into which the dregs of teacups and coffee cups are emptied at the table",
+      "forms": [],
+      "id": "oewn-slop_basin__1.06.00..",
+      "lang": "en",
+      "lemma": "slop basin",
+      "synset": "oewn-04249832-n"
+    },
+    {
+      "definition": "a bowl into which the dregs of teacups and coffee cups are emptied at the table",
+      "forms": [],
+      "id": "oewn-slop_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "slop bowl",
+      "synset": "oewn-04249832-n"
+    },
+    {
+      "definition": "a bowl for serving soup",
+      "forms": [],
+      "id": "oewn-soup_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "soup bowl",
+      "synset": "oewn-04270367-n"
+    },
+    {
+      "definition": "a deep plate with a wide rim",
+      "forms": [],
+      "id": "oewn-soup_plate__1.06.00..",
+      "lang": "en",
+      "lemma": "soup plate",
+      "synset": "oewn-04270527-n"
+    },
+    {
+      "definition": "a spoon with a rounded bowl for eating soup",
+      "forms": [],
+      "id": "oewn-soupspoon__1.06.00..",
+      "lang": "en",
+      "lemma": "soupspoon",
+      "synset": "oewn-04270612-n"
+    },
+    {
+      "definition": "a spoon with a rounded bowl for eating soup",
+      "forms": [],
+      "id": "oewn-soup_spoon__1.06.00..",
+      "lang": "en",
+      "lemma": "soup spoon",
+      "synset": "oewn-04270612-n"
+    },
+    {
+      "definition": "a piece of cutlery with a shallow bowl-shaped container and a handle; used to stir or serve or take up food",
+      "forms": [],
+      "id": "oewn-spoon__1.06.00..",
+      "lang": "en",
+      "lemma": "spoon",
+      "synset": "oewn-04291140-n"
+    },
+    {
+      "definition": "trademark for a plastic eating utensil that has both tines and a bowl like a spoon",
+      "forms": [],
+      "id": "oewn-spork__1.06.00..",
+      "lang": "en",
+      "lemma": "Spork",
+      "synset": "oewn-04291576-n"
+    },
+    {
+      "definition": "a sharp table knife used in eating steak",
+      "forms": [],
+      "id": "oewn-steak_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "steak knife",
+      "synset": "oewn-04315124-n"
+    },
+    {
+      "definition": "a plate of steel",
+      "forms": [],
+      "id": "oewn-steel_plate__1.06.00..",
+      "lang": "en",
+      "lemma": "steel plate",
+      "synset": "oewn-04318937-n"
+    },
+    {
+      "definition": "a dish in which sugar is served",
+      "forms": [],
+      "id": "oewn-sugar_bowl__1.06.00..",
+      "lang": "en",
+      "lemma": "sugar bowl",
+      "synset": "oewn-04357659-n"
+    },
+    {
+      "definition": "a spoon for serving sugar; often made in the shape of a seashell",
+      "forms": [],
+      "id": "oewn-sugar_spoon__1.06.00..",
+      "lang": "en",
+      "lemma": "sugar spoon",
+      "synset": "oewn-04357847-n"
+    },
+    {
+      "definition": "a spoon for serving sugar; often made in the shape of a seashell",
+      "forms": [],
+      "id": "oewn-sugar_shell__1.06.00..",
+      "lang": "en",
+      "lemma": "sugar shell",
+      "synset": "oewn-04357847-n"
+    },
+    {
+      "definition": "a fork for eating at a dining table",
+      "forms": [],
+      "id": "oewn-tablefork__1.06.00..",
+      "lang": "en",
+      "lemma": "tablefork",
+      "synset": "oewn-04387342-n"
+    },
+    {
+      "definition": "a knife used for eating at dining table",
+      "forms": [],
+      "id": "oewn-table_knife__1.06.00..",
+      "lang": "en",
+      "lemma": "table knife",
+      "synset": "oewn-04387433-n"
+    },
+    {
+      "definition": "a spoon larger than a dessert spoon; used for serving",
+      "forms": [],
+      "id": "oewn-tablespoon__1.06.00..",
+      "lang": "en",
+      "lemma": "tablespoon",
+      "synset": "oewn-04388160-n"
+    },
+    {
+      "definition": "articles for use at the table (dishes and silverware and glassware)",
+      "forms": [],
+      "id": "oewn-tableware__1.06.00..",
+      "lang": "en",
+      "lemma": "tableware",
+      "synset": "oewn-04389081-n"
+    },
+    {
+      "definition": "a cup from which tea is drunk",
+      "forms": [],
+      "id": "oewn-teacup__1.06.00..",
+      "lang": "en",
+      "lemma": "teacup",
+      "synset": "oewn-04404587-n"
+    },
+    {
+      "definition": "a covered spoon with perforations",
+      "forms": [],
+      "id": "oewn-tea_maker__1.06.00..",
+      "lang": "en",
+      "lemma": "tea maker",
+      "synset": "oewn-04404995-n"
+    },
+    {
+      "definition": "a set of china or silverware for serving tea",
+      "forms": [],
+      "id": "oewn-tea_service__1.06.00..",
+      "lang": "en",
+      "lemma": "tea service",
+      "synset": "oewn-04405444-n"
+    },
+    {
+      "definition": "a set of china or silverware for serving tea",
+      "forms": [],
+      "id": "oewn-tea_set__1.06.00..",
+      "lang": "en",
+      "lemma": "tea set",
+      "synset": "oewn-04405444-n"
+    },
+    {
+      "definition": "a small spoon used for stirring tea or coffee; holds about one fluid dram",
+      "forms": [],
+      "id": "oewn-teaspoon__1.06.00..",
+      "lang": "en",
+      "lemma": "teaspoon",
+      "synset": "oewn-04405823-n"
+    },
+    {
+      "definition": "long-handled fork for cooking or toasting frankfurters or bread etc. (especially over an open fire)",
+      "forms": [],
+      "id": "oewn-toasting_fork__1.06.00..",
+      "lang": "en",
+      "lemma": "toasting fork",
+      "synset": "oewn-04449716-n"
+    },
+    {
+      "definition": "large deep serving dish with a cover; for serving soups and stews",
+      "forms": [],
+      "id": "oewn-tureen__1.06.00..",
+      "lang": "en",
+      "lemma": "tureen",
+      "synset": "oewn-04506357-n"
+    },
+    {
+      "definition": "fine glassware made near Venice",
+      "forms": [],
+      "id": "oewn-venetian_glass__1.06.00..",
+      "lang": "en",
+      "lemma": "Venetian glass",
+      "synset": "oewn-04533024-n"
+    },
+    {
+      "definition": "laboratory glassware; a shallow glass dish used as an evaporating surface or to cover a beaker",
+      "forms": [],
+      "id": "oewn-watch_glass__1.06.01..",
+      "lang": "en",
+      "lemma": "watch glass",
+      "synset": "oewn-04563950-n"
+    },
+    {
+      "definition": "chinaware decorated with a blue Chinese design on a white background depicting a willow tree and often a river",
+      "forms": [],
+      "id": "oewn-willowware__1.06.00..",
+      "lang": "en",
+      "lemma": "willowware",
+      "synset": "oewn-04592230-n"
+    },
+    {
+      "definition": "chinaware decorated with a blue Chinese design on a white background depicting a willow tree and often a river",
+      "forms": [],
+      "id": "oewn-willow-pattern__1.06.00..",
+      "lang": "en",
+      "lemma": "willow-pattern",
+      "synset": "oewn-04592230-n"
+    },
+    {
+      "definition": "a spoon made of wood",
+      "forms": [],
+      "id": "oewn-wooden_spoon__1.06.00..",
+      "lang": "en",
+      "lemma": "wooden spoon",
+      "synset": "oewn-04605240-n"
+    },
+    {
+      "definition": "Laboratory glassware refers to a variety of equipment, traditionally made of glass, used for scientific experiments and other work in science, especially in chemistry and biology laboratories.",
+      "forms": [],
+      "id": "oewn-laboratory_glassware__1.06.01..",
+      "lang": "en",
+      "lemma": "laboratory glassware",
+      "synset": "oewn-92406133-n"
+    },
+    {
+      "definition": "a round sheet of paper, foil, or silicone with scallop-pressed edges, giving the muffin a round cup shape.",
+      "forms": [],
+      "id": "oewn-muffin_case__1.06.01..",
+      "lang": "en",
+      "lemma": "muffin case",
+      "synset": "oewn-92459601-n"
+    },
+    {
+      "definition": "a round sheet of paper, foil, or silicone with scallop-pressed edges, giving the muffin a round cup shape.",
+      "forms": [],
+      "id": "oewn-muffin_cup__1.06.01..",
+      "lang": "en",
+      "lemma": "muffin cup",
+      "synset": "oewn-92459601-n"
+    },
+    {
+      "definition": "an elongated, two-pronged fork used to lift and turn food while being cooked as in the case of barbecue.",
+      "forms": [],
+      "id": "oewn-barbecue_fork__1.06.01..",
+      "lang": "en",
+      "lemma": "barbecue fork",
+      "synset": "oewn-92460136-n"
+    },
+    {
+      "definition": "a bottle used for saturating a liquid with a gas.",
+      "forms": [],
+      "id": "oewn-gas-washing_bottle__1.06.01..",
+      "lang": "en",
+      "lemma": "gas-washing bottle",
+      "synset": "oewn-92463456-n"
+    },
+    {
+      "definition": "a bottle used for saturating a liquid with a gas.",
+      "forms": [],
+      "id": "oewn-gas_washing_bottle__1.06.01..",
+      "lang": "en",
+      "lemma": "gas washing bottle",
+      "synset": "oewn-92463456-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a covered gravy holder of silver or other metal containing a detachable central vessel for hot water to keep the gravy warm",
+      "hypernyms": [
+        "oewn-03460968-n"
+      ],
+      "id": "oewn-02740171-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "argyll"
+    },
+    {
+      "definition": "a cup (usually without a handle)",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-02818884-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "beaker"
+    },
+    {
+      "definition": "a dish that is round and open at the top for serving foods",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-02884182-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "bowl"
+    },
+    {
+      "definition": "a small dish (often with a cover) for holding butter at the table",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-02931148-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "butter dish"
+    },
+    {
+      "definition": "a small knife with a dull blade; for cutting or spreading butter",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-02931433-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "butter knife"
+    },
+    {
+      "definition": "a large fork used in carving cooked meat",
+      "hypernyms": [
+        "oewn-03388794-n"
+      ],
+      "id": "oewn-02977264-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "carving fork"
+    },
+    {
+      "definition": "a metal blade with a handle; used as cutlery",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-02979708-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "case knife"
+    },
+    {
+      "definition": "large deep dish in which food can be cooked and served",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-02982212-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "casserole"
+    },
+    {
+      "definition": "a bowl for holding breakfast cereal",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-03001517-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cereal bowl"
+    },
+    {
+      "definition": "a bowl-shaped drinking vessel; especially the Eucharistic cup",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-03006552-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "chalice"
+    },
+    {
+      "definition": "dishware made of high quality porcelain",
+      "hypernyms": [
+        "oewn-03138189-n"
+      ],
+      "id": "oewn-03022147-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "chinaware"
+    },
+    {
+      "definition": "one of a pair of slender sticks used as oriental tableware to eat food with",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-03029438-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "chopstick"
+    },
+    {
+      "definition": "a small casserole in which individual portions can be cooked and served",
+      "hypernyms": [
+        "oewn-02982212-n"
+      ],
+      "id": "oewn-03066339-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cocotte"
+    },
+    {
+      "definition": "a cup from which coffee is drunk",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-03067076-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "coffee cup"
+    },
+    {
+      "definition": "a dish in the form of a scallop shell",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-03109865-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "coquille"
+    },
+    {
+      "definition": "tableware (eating and serving dishes) collectively",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-03138189-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "crockery"
+    },
+    {
+      "definition": "glassware made of quartz",
+      "hypernyms": [
+        "oewn-03443988-n"
+      ],
+      "id": "oewn-03147485-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "crystal"
+    },
+    {
+      "definition": "a small open container usually used for drinking; usually has a handle",
+      "hypernyms": [
+        "oewn-03099154-n",
+        "oewn-03138189-n"
+      ],
+      "id": "oewn-03152175-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "cup"
+    },
+    {
+      "definition": "glass decorated by cutting or grinding facets",
+      "hypernyms": [
+        "oewn-03443988-n"
+      ],
+      "id": "oewn-03157811-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "cut glass"
+    },
+    {
+      "definition": "tableware implements for cutting and eating food",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-03158041-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "cutlery"
+    },
+    {
+      "definition": "small coffee cup; for serving black coffee",
+      "hypernyms": [
+        "oewn-03067076-n"
+      ],
+      "id": "oewn-03179397-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "demitasse"
+    },
+    {
+      "definition": "a small plate on which dessert can be served",
+      "hypernyms": [
+        "oewn-03965779-n"
+      ],
+      "id": "oewn-03184946-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "dessert plate"
+    },
+    {
+      "definition": "a spoon larger than a teaspoon and smaller than a tablespoon",
+      "hypernyms": [
+        "oewn-04291140-n"
+      ],
+      "id": "oewn-03185050-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "dessert spoon"
+    },
+    {
+      "definition": "a plate from which a diner eats during the main course of a meal",
+      "hypernyms": [
+        "oewn-03965779-n"
+      ],
+      "id": "oewn-03206807-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "dinner plate"
+    },
+    {
+      "definition": "a table service for serving dinner",
+      "hypernyms": [
+        "oewn-04182441-n"
+      ],
+      "id": "oewn-03206930-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "dinner service"
+    },
+    {
+      "definition": "the tableware (plates and platters and serving bowls etc.) used in serving a meal",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-03207306-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "dinnerware"
+    },
+    {
+      "definition": "a piece of dishware normally used as a container for holding or serving food",
+      "hypernyms": [
+        "oewn-03099154-n",
+        "oewn-03138189-n"
+      ],
+      "id": "oewn-03211629-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "dish"
+    },
+    {
+      "definition": "a disposable cup made of paper; for holding drinks",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-03221413-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "Dixie cup"
+    },
+    {
+      "definition": "dishware consisting of a small cup for serving a boiled egg",
+      "hypernyms": [
+        "oewn-03138189-n"
+      ],
+      "id": "oewn-03271409-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "eggcup"
+    },
+    {
+      "definition": "small bowl for rinsing the fingers at table",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-03346551-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "finger bowl"
+    },
+    {
+      "definition": "a small table knife with a spatula blade used for eating fish",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-03357212-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "fish knife"
+    },
+    {
+      "definition": "silverware eating utensils",
+      "hypernyms": [
+        "oewn-04228491-n"
+      ],
+      "id": "oewn-03366683-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "flatware"
+    },
+    {
+      "definition": "tableware that is relatively flat and fashioned as a single piece",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-03366791-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "flatware"
+    },
+    {
+      "definition": "a utensil with two or more prongs, used for serving or eating food",
+      "hypernyms": [
+        "oewn-03158041-n"
+      ],
+      "id": "oewn-03388794-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "fork"
+    },
+    {
+      "definition": "glassware collectively",
+      "hypernyms": [
+        "oewn-03443988-n"
+      ],
+      "id": "oewn-03443585-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "glass"
+    },
+    {
+      "definition": "an article of tableware made of glass",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-03443988-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "glassware"
+    },
+    {
+      "definition": "tableware that is plated with gold",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-03450405-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "gold plate"
+    },
+    {
+      "definition": "cup to be passed around for the final toast after a meal",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-03456197-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "grace cup"
+    },
+    {
+      "definition": "(legend) chalice used by Christ at the Last Supper",
+      "hypernyms": [
+        "oewn-03006552-n"
+      ],
+      "id": "oewn-03456853-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "grail"
+    },
+    {
+      "definition": "a dish (often boat-shaped) for serving gravy or sauce",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-03460968-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "gravy boat"
+    },
+    {
+      "definition": "silverware serving dishes",
+      "hypernyms": [
+        "oewn-04228491-n"
+      ],
+      "id": "oewn-03532329-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "hollowware"
+    },
+    {
+      "definition": "a teaspoon with a long handle",
+      "hypernyms": [
+        "oewn-04405823-n"
+      ],
+      "id": "oewn-03562450-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "iced-tea spoon"
+    },
+    {
+      "definition": "a shallow drinking cup with two handles; used in ancient Greece",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-03634811-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "kylix"
+    },
+    {
+      "definition": "bowl used with an electric mixer",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-03781079-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "mixing bowl"
+    },
+    {
+      "definition": "a drinking cup with a bar inside the rim to keep a man's mustache out of the drink",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-03808183-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "mustache cup"
+    },
+    {
+      "definition": "heat-resistant dishware in which food can be cooked as well as served",
+      "hypernyms": [
+        "oewn-03138189-n"
+      ],
+      "id": "oewn-03868504-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "ovenware"
+    },
+    {
+      "definition": "a disposable plate made of cardboard",
+      "hypernyms": [
+        "oewn-03965779-n"
+      ],
+      "id": "oewn-03893300-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "paper plate"
+    },
+    {
+      "definition": "a shallow dish used to culture bacteria",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-03926410-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "Petri dish"
+    },
+    {
+      "definition": "a table service for one person",
+      "hypernyms": [
+        "oewn-04182441-n"
+      ],
+      "id": "oewn-03960019-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "place setting"
+    },
+    {
+      "definition": "dish on which food is served or from which food is eaten",
+      "hypernyms": [
+        "oewn-03366791-n"
+      ],
+      "id": "oewn-03965779-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "plate"
+    },
+    {
+      "definition": "a large shallow dish used for serving food",
+      "hypernyms": [
+        "oewn-03366791-n"
+      ],
+      "id": "oewn-03969492-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "platter"
+    },
+    {
+      "definition": "a shallow metal bowl (usually with a handle)",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-03991117-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "porringer"
+    },
+    {
+      "definition": "a large bowl for serving beverages; usually with a ladle",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-04030089-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "punch bowl"
+    },
+    {
+      "definition": "a small fireproof dish used for baking and serving individual portions",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-04058045-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "ramekin"
+    },
+    {
+      "definition": "a fork-like spoon with a cutting edge; coined by Edward Lear",
+      "hypernyms": [
+        "oewn-04291140-n"
+      ],
+      "id": "oewn-04126724-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "runcible spoon"
+    },
+    {
+      "definition": "a large bowl for mixing and serving a salad",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-04137340-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "salad bowl"
+    },
+    {
+      "definition": "a fork intended for eating salads",
+      "hypernyms": [
+        "oewn-03388794-n"
+      ],
+      "id": "oewn-04137440-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "salad fork"
+    },
+    {
+      "definition": "a plate or bowl for individual servings of salad",
+      "hypernyms": [
+        "oewn-03965779-n"
+      ],
+      "id": "oewn-04137530-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "salad plate"
+    },
+    {
+      "definition": "a small shallow dish for holding a cup at the table",
+      "hypernyms": [
+        "oewn-03366791-n"
+      ],
+      "id": "oewn-04146374-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "saucer"
+    },
+    {
+      "definition": "an ancient Greek drinking cup; two handles and footed base",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-04165199-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "scyphus"
+    },
+    {
+      "definition": "tableware consisting of a complete set of articles (silver or dishware) for use at table",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-04182441-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "service"
+    },
+    {
+      "definition": "a dish used for serving food",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-04183251-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "serving dish"
+    },
+    {
+      "definition": "tableware that is plated with silver",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-04228012-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "silver plate"
+    },
+    {
+      "definition": "tableware made of silver or silver plate or pewter or stainless steel",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-04228491-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "silverware"
+    },
+    {
+      "definition": "a bowl into which the dregs of teacups and coffee cups are emptied at the table",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-04249832-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "slop basin"
+    },
+    {
+      "definition": "a bowl for serving soup",
+      "hypernyms": [
+        "oewn-02884182-n"
+      ],
+      "id": "oewn-04270367-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "soup bowl"
+    },
+    {
+      "definition": "a deep plate with a wide rim",
+      "hypernyms": [
+        "oewn-03965779-n"
+      ],
+      "id": "oewn-04270527-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "soup plate"
+    },
+    {
+      "definition": "a spoon with a rounded bowl for eating soup",
+      "hypernyms": [
+        "oewn-04291140-n"
+      ],
+      "id": "oewn-04270612-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "soupspoon"
+    },
+    {
+      "definition": "a piece of cutlery with a shallow bowl-shaped container and a handle; used to stir or serve or take up food",
+      "hypernyms": [
+        "oewn-03099154-n",
+        "oewn-03158041-n"
+      ],
+      "id": "oewn-04291140-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "spoon"
+    },
+    {
+      "definition": "trademark for a plastic eating utensil that has both tines and a bowl like a spoon",
+      "hypernyms": [
+        "oewn-03158041-n"
+      ],
+      "id": "oewn-04291576-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "Spork"
+    },
+    {
+      "definition": "a sharp table knife used in eating steak",
+      "hypernyms": [
+        "oewn-04387433-n"
+      ],
+      "id": "oewn-04315124-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 10,
+      "name": "steak knife"
+    },
+    {
+      "definition": "a plate of steel",
+      "hypernyms": [
+        "oewn-03965779-n"
+      ],
+      "id": "oewn-04318937-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "steel plate"
+    },
+    {
+      "definition": "a dish in which sugar is served",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-04357659-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sugar bowl"
+    },
+    {
+      "definition": "a spoon for serving sugar; often made in the shape of a seashell",
+      "hypernyms": [
+        "oewn-04291140-n"
+      ],
+      "id": "oewn-04357847-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sugar spoon"
+    },
+    {
+      "definition": "a fork for eating at a dining table",
+      "hypernyms": [
+        "oewn-03388794-n"
+      ],
+      "id": "oewn-04387342-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "tablefork"
+    },
+    {
+      "definition": "a knife used for eating at dining table",
+      "hypernyms": [
+        "oewn-03158041-n",
+        "oewn-03628765-n"
+      ],
+      "id": "oewn-04387433-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 9,
+      "name": "table knife"
+    },
+    {
+      "definition": "a spoon larger than a dessert spoon; used for serving",
+      "hypernyms": [
+        "oewn-04291140-n"
+      ],
+      "id": "oewn-04388160-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "tablespoon"
+    },
+    {
+      "definition": "articles for use at the table (dishes and silverware and glassware)",
+      "hypernyms": [
+        "oewn-04558126-n"
+      ],
+      "id": "oewn-04389081-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 7,
+      "name": "tableware"
+    },
+    {
+      "definition": "a cup from which tea is drunk",
+      "hypernyms": [
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-04404587-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "teacup"
+    },
+    {
+      "definition": "a covered spoon with perforations",
+      "hypernyms": [
+        "oewn-04291140-n"
+      ],
+      "id": "oewn-04404995-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "tea maker"
+    },
+    {
+      "definition": "a set of china or silverware for serving tea",
+      "hypernyms": [
+        "oewn-04389081-n"
+      ],
+      "id": "oewn-04405444-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "tea service"
+    },
+    {
+      "definition": "a small spoon used for stirring tea or coffee; holds about one fluid dram",
+      "hypernyms": [
+        "oewn-04291140-n"
+      ],
+      "id": "oewn-04405823-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "teaspoon"
+    },
+    {
+      "definition": "long-handled fork for cooking or toasting frankfurters or bread etc. (especially over an open fire)",
+      "hypernyms": [
+        "oewn-03388794-n"
+      ],
+      "id": "oewn-04449716-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "toasting fork"
+    },
+    {
+      "definition": "large deep serving dish with a cover; for serving soups and stews",
+      "hypernyms": [
+        "oewn-04183251-n"
+      ],
+      "id": "oewn-04506357-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tureen"
+    },
+    {
+      "definition": "fine glassware made near Venice",
+      "hypernyms": [
+        "oewn-03443988-n"
+      ],
+      "id": "oewn-04533024-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "Venetian glass"
+    },
+    {
+      "definition": "laboratory glassware; a shallow glass dish used as an evaporating surface or to cover a beaker",
+      "hypernyms": [
+        "oewn-03211629-n"
+      ],
+      "id": "oewn-04563950-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "watch glass"
+    },
+    {
+      "definition": "chinaware decorated with a blue Chinese design on a white background depicting a willow tree and often a river",
+      "hypernyms": [
+        "oewn-03022147-n"
+      ],
+      "id": "oewn-04592230-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "willowware"
+    },
+    {
+      "definition": "a spoon made of wood",
+      "hypernyms": [
+        "oewn-04291140-n",
+        "oewn-04605131-n"
+      ],
+      "id": "oewn-04605240-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "wooden spoon"
+    },
+    {
+      "definition": "Laboratory glassware refers to a variety of equipment, traditionally made of glass, used for scientific experiments and other work in science, especially in chemistry and biology laboratories.",
+      "hypernyms": [
+        "oewn-03443988-n"
+      ],
+      "id": "oewn-92406133-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "laboratory glassware"
+    },
+    {
+      "definition": "a round sheet of paper, foil, or silicone with scallop-pressed edges, giving the muffin a round cup shape.",
+      "hypernyms": [
+        "oewn-03106637-n",
+        "oewn-03152175-n"
+      ],
+      "id": "oewn-92459601-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "muffin case"
+    },
+    {
+      "definition": "an elongated, two-pronged fork used to lift and turn food while being cooked as in the case of barbecue.",
+      "hypernyms": [
+        "oewn-03388794-n"
+      ],
+      "id": "oewn-92460136-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "barbecue fork"
+    },
+    {
+      "definition": "a bottle used for saturating a liquid with a gas.",
+      "hypernyms": [
+        "oewn-02879899-n",
+        "oewn-92406133-n"
+      ],
+      "id": "oewn-92463456-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "gas-washing bottle"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

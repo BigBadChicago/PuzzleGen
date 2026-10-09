@@ -1,0 +1,704 @@
+{
+  "exported": "2026-10-09",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-04003842-n",
+  "senses": [
+    {
+      "definition": "a hammer driven by compressed air",
+      "forms": [],
+      "id": "oewn-air_hammer__1.06.00..",
+      "lang": "en",
+      "lemma": "air hammer",
+      "synset": "oewn-02692293-n"
+    },
+    {
+      "definition": "a hammer driven by compressed air",
+      "forms": [],
+      "id": "oewn-jackhammer__1.06.00..",
+      "lang": "en",
+      "lemma": "jackhammer",
+      "synset": "oewn-02692293-n"
+    },
+    {
+      "definition": "a hammer driven by compressed air",
+      "forms": [],
+      "id": "oewn-pneumatic_hammer__1.06.00..",
+      "lang": "en",
+      "lemma": "pneumatic hammer",
+      "synset": "oewn-02692293-n"
+    },
+    {
+      "definition": "an endless saw consisting of a toothed metal band that is driven around two wheels",
+      "forms": [],
+      "id": "oewn-bandsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "bandsaw",
+      "synset": "oewn-02789860-n"
+    },
+    {
+      "definition": "an endless saw consisting of a toothed metal band that is driven around two wheels",
+      "forms": [],
+      "id": "oewn-band_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "band saw",
+      "synset": "oewn-02789860-n"
+    },
+    {
+      "definition": "a power tool used to buff surfaces",
+      "forms": [],
+      "id": "oewn-buffer__1.06.01..",
+      "lang": "en",
+      "lemma": "buffer",
+      "synset": "oewn-02914678-n"
+    },
+    {
+      "definition": "a power tool used to buff surfaces",
+      "forms": [],
+      "id": "oewn-polisher__1.06.00..",
+      "lang": "en",
+      "lemma": "polisher",
+      "synset": "oewn-02914678-n"
+    },
+    {
+      "definition": "rotary file for smoothing rough edges left on a workpiece",
+      "forms": [],
+      "id": "oewn-burr__1.06.01..",
+      "lang": "en",
+      "lemma": "burr",
+      "synset": "oewn-02927299-n"
+    },
+    {
+      "definition": "portable power saw; teeth linked to form an endless chain",
+      "forms": [],
+      "id": "oewn-chain_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "chain saw",
+      "synset": "oewn-03004288-n"
+    },
+    {
+      "definition": "portable power saw; teeth linked to form an endless chain",
+      "forms": [],
+      "id": "oewn-chainsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "chainsaw",
+      "synset": "oewn-03004288-n"
+    },
+    {
+      "definition": "a power saw that has a steel disk with cutting teeth on the periphery; rotates on a spindle",
+      "forms": [],
+      "id": "oewn-circular_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "circular saw",
+      "synset": "oewn-03038648-n"
+    },
+    {
+      "definition": "a power saw that has a steel disk with cutting teeth on the periphery; rotates on a spindle",
+      "forms": [],
+      "id": "oewn-buzz_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "buzz saw",
+      "synset": "oewn-03038648-n"
+    },
+    {
+      "definition": "a rotating power drill powered by an electric motor",
+      "forms": [],
+      "id": "oewn-electric_drill__1.06.00..",
+      "lang": "en",
+      "lemma": "electric drill",
+      "synset": "oewn-03244843-n"
+    },
+    {
+      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
+      "forms": [],
+      "id": "oewn-drum_sander__1.06.00..",
+      "lang": "en",
+      "lemma": "drum sander",
+      "synset": "oewn-03255291-n"
+    },
+    {
+      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
+      "forms": [],
+      "id": "oewn-electric_sander__1.06.00..",
+      "lang": "en",
+      "lemma": "electric sander",
+      "synset": "oewn-03255291-n"
+    },
+    {
+      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
+      "forms": [],
+      "id": "oewn-sander__1.06.00..",
+      "lang": "en",
+      "lemma": "sander",
+      "synset": "oewn-03255291-n"
+    },
+    {
+      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
+      "forms": [],
+      "id": "oewn-smoother__1.06.00..",
+      "lang": "en",
+      "lemma": "smoother",
+      "synset": "oewn-03255291-n"
+    },
+    {
+      "definition": "a hammer driven by electric motor",
+      "forms": [],
+      "id": "oewn-electric_hammer__1.06.00..",
+      "lang": "en",
+      "lemma": "electric hammer",
+      "synset": "oewn-03277036-n"
+    },
+    {
+      "definition": "a power saw that has several parallel blades making simultaneous cuts",
+      "forms": [],
+      "id": "oewn-gangsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "gangsaw",
+      "synset": "oewn-03420536-n"
+    },
+    {
+      "definition": "a power tool for drilling rocks",
+      "forms": [],
+      "id": "oewn-hammer__1.06.01..",
+      "lang": "en",
+      "lemma": "hammer",
+      "synset": "oewn-03486604-n"
+    },
+    {
+      "definition": "a power tool for drilling rocks",
+      "forms": [],
+      "id": "oewn-power_hammer__1.06.00..",
+      "lang": "en",
+      "lemma": "power hammer",
+      "synset": "oewn-03486604-n"
+    },
+    {
+      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
+      "forms": [],
+      "id": "oewn-jigsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "jigsaw",
+      "synset": "oewn-03603976-n"
+    },
+    {
+      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
+      "forms": [],
+      "id": "oewn-scroll_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "scroll saw",
+      "synset": "oewn-03603976-n"
+    },
+    {
+      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
+      "forms": [],
+      "id": "oewn-fretsaw__1.06.00..",
+      "lang": "en",
+      "lemma": "fretsaw",
+      "synset": "oewn-03603976-n"
+    },
+    {
+      "definition": "a power tool for smoothing or shaping wood",
+      "forms": [],
+      "id": "oewn-plane__1.06.02..",
+      "lang": "en",
+      "lemma": "plane",
+      "synset": "oewn-03961572-n"
+    },
+    {
+      "definition": "a power tool for smoothing or shaping wood",
+      "forms": [],
+      "id": "oewn-planer__1.06.00..",
+      "lang": "en",
+      "lemma": "planer",
+      "synset": "oewn-03961572-n"
+    },
+    {
+      "definition": "a power tool for smoothing or shaping wood",
+      "forms": [],
+      "id": "oewn-planing_machine__1.06.00..",
+      "lang": "en",
+      "lemma": "planing machine",
+      "synset": "oewn-03961572-n"
+    },
+    {
+      "definition": "a power drill powered by compressed air",
+      "forms": [],
+      "id": "oewn-pneumatic_drill__1.06.00..",
+      "lang": "en",
+      "lemma": "pneumatic drill",
+      "synset": "oewn-03977679-n"
+    },
+    {
+      "definition": "a circular saw that is portable and is operated with a hand grip",
+      "forms": [],
+      "id": "oewn-portable_circular_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "portable circular saw",
+      "synset": "oewn-03991799-n"
+    },
+    {
+      "definition": "a circular saw that is portable and is operated with a hand grip",
+      "forms": [],
+      "id": "oewn-portable_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "portable saw",
+      "synset": "oewn-03991799-n"
+    },
+    {
+      "definition": "a power tool for drilling holes into hard materials",
+      "forms": [],
+      "id": "oewn-power_drill__1.06.00..",
+      "lang": "en",
+      "lemma": "power drill",
+      "synset": "oewn-04001730-n"
+    },
+    {
+      "definition": "a power tool for cutting wood",
+      "forms": [],
+      "id": "oewn-power_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "power saw",
+      "synset": "oewn-04002503-n"
+    },
+    {
+      "definition": "a power tool for cutting wood",
+      "forms": [],
+      "id": "oewn-saw__1.06.01..",
+      "lang": "en",
+      "lemma": "saw",
+      "synset": "oewn-04002503-n"
+    },
+    {
+      "definition": "a power tool for cutting wood",
+      "forms": [],
+      "id": "oewn-sawing_machine__1.06.00..",
+      "lang": "en",
+      "lemma": "sawing machine",
+      "synset": "oewn-04002503-n"
+    },
+    {
+      "definition": "a tool driven by a motor",
+      "forms": [],
+      "id": "oewn-power_tool__1.06.00..",
+      "lang": "en",
+      "lemma": "power tool",
+      "synset": "oewn-04003842-n"
+    },
+    {
+      "definition": "a power tool with a shaped cutter; used in carpentry for cutting grooves",
+      "forms": [],
+      "id": "oewn-router__1.06.00..",
+      "lang": "en",
+      "lemma": "router",
+      "synset": "oewn-04121813-n"
+    },
+    {
+      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
+      "forms": [],
+      "id": "oewn-saber_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "saber saw",
+      "synset": "oewn-04128822-n"
+    },
+    {
+      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
+      "forms": [],
+      "id": "oewn-jigsaw__1.06.01..",
+      "lang": "en",
+      "lemma": "jigsaw",
+      "synset": "oewn-04128822-n"
+    },
+    {
+      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
+      "forms": [],
+      "id": "oewn-reciprocating_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "reciprocating saw",
+      "synset": "oewn-04128822-n"
+    },
+    {
+      "definition": "a large sawing machine",
+      "forms": [],
+      "id": "oewn-sawmill__1.06.01..",
+      "lang": "en",
+      "lemma": "sawmill",
+      "synset": "oewn-04147842-n"
+    },
+    {
+      "definition": "a power tool that stamps",
+      "forms": [],
+      "id": "oewn-stamping_machine__1.06.00..",
+      "lang": "en",
+      "lemma": "stamping machine",
+      "synset": "oewn-04307647-n"
+    },
+    {
+      "definition": "a power tool that stamps",
+      "forms": [],
+      "id": "oewn-stamper__1.06.00..",
+      "lang": "en",
+      "lemma": "stamper",
+      "synset": "oewn-04307647-n"
+    },
+    {
+      "definition": "a circular saw mounted under a table or bench so that the blade of the saw projects up through a slot",
+      "forms": [],
+      "id": "oewn-table_saw__1.06.00..",
+      "lang": "en",
+      "lemma": "table saw",
+      "synset": "oewn-04388003-n"
+    },
+    {
+      "definition": "a massive power hammer; raised by a cam until released to fall under gravity",
+      "forms": [],
+      "id": "oewn-triphammer__1.06.00..",
+      "lang": "en",
+      "lemma": "triphammer",
+      "synset": "oewn-04491903-n"
+    },
+    {
+      "definition": "A large pile driving device.",
+      "forms": [],
+      "id": "oewn-piling_hammer__1.06.01..",
+      "lang": "en",
+      "lemma": "piling hammer",
+      "synset": "oewn-92460211-n"
+    },
+    {
+      "definition": "a pile hammer that uses vibrations.",
+      "forms": [],
+      "id": "oewn-vibratory_pile_hammer__1.06.01..",
+      "lang": "en",
+      "lemma": "vibratory pile hammer",
+      "synset": "oewn-92460213-n"
+    },
+    {
+      "definition": "a pile hammer that uses vibrations.",
+      "forms": [],
+      "id": "oewn-vibratory_hammer__1.06.01..",
+      "lang": "en",
+      "lemma": "vibratory hammer",
+      "synset": "oewn-92460213-n"
+    },
+    {
+      "definition": "A pile driving device consisting of a large two-stroke diesel engine.",
+      "forms": [],
+      "id": "oewn-diesel_hammer__1.06.01..",
+      "lang": "en",
+      "lemma": "diesel hammer",
+      "synset": "oewn-92460215-n"
+    },
+    {
+      "definition": "A pile driving device consisting of a large two-stroke diesel engine.",
+      "forms": [],
+      "id": "oewn-diesel_pile_hammer__1.06.01..",
+      "lang": "en",
+      "lemma": "diesel pile hammer",
+      "synset": "oewn-92460215-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a hammer driven by compressed air",
+      "hypernyms": [
+        "oewn-03486604-n"
+      ],
+      "id": "oewn-02692293-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "air hammer"
+    },
+    {
+      "definition": "an endless saw consisting of a toothed metal band that is driven around two wheels",
+      "hypernyms": [
+        "oewn-04002503-n"
+      ],
+      "id": "oewn-02789860-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "bandsaw"
+    },
+    {
+      "definition": "a power tool used to buff surfaces",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-02914678-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "buffer"
+    },
+    {
+      "definition": "rotary file for smoothing rough edges left on a workpiece",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-02927299-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "burr"
+    },
+    {
+      "definition": "portable power saw; teeth linked to form an endless chain",
+      "hypernyms": [
+        "oewn-04002503-n"
+      ],
+      "id": "oewn-03004288-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "chain saw"
+    },
+    {
+      "definition": "a power saw that has a steel disk with cutting teeth on the periphery; rotates on a spindle",
+      "hypernyms": [
+        "oewn-04002503-n"
+      ],
+      "id": "oewn-03038648-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "circular saw"
+    },
+    {
+      "definition": "a rotating power drill powered by an electric motor",
+      "hypernyms": [
+        "oewn-04001730-n"
+      ],
+      "id": "oewn-03244843-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "electric drill"
+    },
+    {
+      "definition": "a power tool used for sanding wood; an endless loop of sandpaper is moved at high speed by an electric motor",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-03255291-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "drum sander"
+    },
+    {
+      "definition": "a hammer driven by electric motor",
+      "hypernyms": [
+        "oewn-03486604-n"
+      ],
+      "id": "oewn-03277036-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "electric hammer"
+    },
+    {
+      "definition": "a power saw that has several parallel blades making simultaneous cuts",
+      "hypernyms": [
+        "oewn-04002503-n"
+      ],
+      "id": "oewn-03420536-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "gangsaw"
+    },
+    {
+      "definition": "a power tool for drilling rocks",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-03486604-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "hammer"
+    },
+    {
+      "definition": "fine-toothed power saw with a narrow blade; used to cut curved outlines",
+      "hypernyms": [
+        "oewn-04002503-n"
+      ],
+      "id": "oewn-03603976-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "jigsaw"
+    },
+    {
+      "definition": "a power tool for smoothing or shaping wood",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-03961572-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "plane"
+    },
+    {
+      "definition": "a power drill powered by compressed air",
+      "hypernyms": [
+        "oewn-04001730-n"
+      ],
+      "id": "oewn-03977679-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "pneumatic drill"
+    },
+    {
+      "definition": "a circular saw that is portable and is operated with a hand grip",
+      "hypernyms": [
+        "oewn-03038648-n"
+      ],
+      "id": "oewn-03991799-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "portable circular saw"
+    },
+    {
+      "definition": "a power tool for drilling holes into hard materials",
+      "hypernyms": [
+        "oewn-03244429-n",
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-04001730-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "power drill"
+    },
+    {
+      "definition": "a power tool for cutting wood",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-04002503-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "power saw"
+    },
+    {
+      "definition": "a tool driven by a motor",
+      "hypernyms": [
+        "oewn-03705309-n",
+        "oewn-04459089-n"
+      ],
+      "id": "oewn-04003842-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 8,
+      "name": "power tool"
+    },
+    {
+      "definition": "a power tool with a shaped cutter; used in carpentry for cutting grooves",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-04121813-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "router"
+    },
+    {
+      "definition": "a portable power saw with a reciprocating blade; can be used with a variety of blades depending on the application and kind of cut; generally have a plate that rides on the surface that is being cut",
+      "hypernyms": [
+        "oewn-04002503-n"
+      ],
+      "id": "oewn-04128822-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "saber saw"
+    },
+    {
+      "definition": "a large sawing machine",
+      "hypernyms": [
+        "oewn-04002503-n"
+      ],
+      "id": "oewn-04147842-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "sawmill"
+    },
+    {
+      "definition": "a power tool that stamps",
+      "hypernyms": [
+        "oewn-04003842-n"
+      ],
+      "id": "oewn-04307647-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 9,
+      "name": "stamping machine"
+    },
+    {
+      "definition": "a circular saw mounted under a table or bench so that the blade of the saw projects up through a slot",
+      "hypernyms": [
+        "oewn-03038648-n"
+      ],
+      "id": "oewn-04388003-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "table saw"
+    },
+    {
+      "definition": "a massive power hammer; raised by a cam until released to fall under gravity",
+      "hypernyms": [
+        "oewn-03486604-n"
+      ],
+      "id": "oewn-04491903-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "triphammer"
+    },
+    {
+      "definition": "A large pile driving device.",
+      "hypernyms": [
+        "oewn-03486604-n",
+        "oewn-03942742-n"
+      ],
+      "id": "oewn-92460211-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 9,
+      "name": "piling hammer"
+    },
+    {
+      "definition": "a pile hammer that uses vibrations.",
+      "hypernyms": [
+        "oewn-92460211-n"
+      ],
+      "id": "oewn-92460213-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "vibratory pile hammer"
+    },
+    {
+      "definition": "A pile driving device consisting of a large two-stroke diesel engine.",
+      "hypernyms": [
+        "oewn-92460211-n"
+      ],
+      "id": "oewn-92460215-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 10,
+      "name": "diesel hammer"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}
