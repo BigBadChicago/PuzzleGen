@@ -1,279 +1,182 @@
 # PuzzleGen Handoff
 
-This file is overwritten at the end of every conversation in the Puzzle
-Universe project. It is the first thing a new conversation reads. It answers
-three questions: where things stand, what you need to do before the next
-conversation starts, and what the next conversation should do first.
+First thing a new conversation reads. Verify repository claims directly (file
+sizes, what a lexicon resolves to, whether a build runs) rather than trusting a
+filename or commit message; this project has been burned by stale committed
+artifacts more than once.
 
-**You do not need to read the rest of this conversation's transcript to
-continue this work.** Everything a new conversation needs is in this file,
-plus `docs/decision-log.md`'s "Phase 7, continued" section (why each choice
-was made) and `docs/architecture.md`'s "Phase 7, continued" section (how each
-piece works). Read those two sections before re-deciding anything that looks
-unresolved below; the reasoning may already be settled.
+Last verified: 2026-10-10, against the repo on the user's computer.
 
-## Where things stand: phase 7's content goal is met, with two open gaps
+## FIRST THING: push the pending commit
 
-The handoff this file replaced said phase 7 closes when a real board
-generates end to end. **That happened.** On a snapshot built from this
-project's sixteen WordNet export roots, with real (non-development)
-embeddings covering the words involved, a real day's pipeline — the same
-`GenerationPipeline` production uses, verifier included — produced a board
-that was unique, COMPLETE, and scored on-target for its requested difficulty.
-The user independently confirmed 30 of 30 days generating a board across
-every supported size (5 through 9), committed to the repository, and pushed.
+One local commit is not on origin: `e02f7ca` (the `.gitattributes` line-ending
+fix). The linked-computer shell has no GitHub push credentials, so it could not
+be pushed. Run, in a terminal where GitHub is authenticated (Codespace or local):
 
-This was not a small fix. Getting here required a sequence of real
-discoveries, in order, each hiding the next:
+`cd ~/Documents/Code/PuzzleGen && git push origin main`
 
-1. The original grouping rule (direct category membership) cannot produce a
-   good visible group from an imported dictionary hierarchy — it was
-   structurally guaranteed to find either "no groups" or "one word with many
-   names" (`synonym_density.py` demonstrates this is universal, not
-   occasional). Fixed by adding a second grouping mode, `SIBLINGS`
-   (distinct children of one parent), used for game 1's lexical queries.
-2. Picking which synonym represents a child needed a rule (Option R: the
-   overlay's own tagged word wins, else the category's own name).
-3. The uniqueness verifier's partition-validity check was nearly vacuous on
-   real ancestry-bearing tiles (ten "craft" tiles could be split 126 ways,
-   all silently "valid"). Fixed by requiring mutually incomparable group
-   labels, not just non-identical ones.
-4. Two separate search-order bugs (the same root cause, in two places): an
-   unspread `itertools.combinations` meant the first N offers of any large
-   pool never varied enough to be disjoint. Fixed in both the content
-   service's group search and the game's own four-group quadruple search
-   (`covering_quadruples`).
-5. The temptation floor (requiring the four visible groups to share family
-   resemblance) was blocking real, already-authored overlay categories. The
-   user chose **Option B**: lower the floor to zero, treat the whole lexical
-   taxonomy as one pool, and report a `relatedness` confidence (0 to 1) on
-   every board instead of refusing cross-domain ones.
-6. A category-merge bug was found and fixed: two senses of one word (e.g.
-   `viola` the plant vs. the instrument), exported under different roots,
-   were merging into one category that kept only the *first* import's
-   parent, silently discarding the other sense's ancestry. Fixed to union
-   both parents, which required adding a cycle check that did not previously
-   exist (parents could not be added after construction before this change).
-7. A day now tries every supported board size in order (its own drawn size
-   first, then the rest), not just one, so a day whose preferred size the
-   content cannot serve falls back instead of failing outright.
+origin is at `4cd9e1b` (seeds + fish depth-8, already pushed, so coverage A and
+B are reproducible there). After the push, origin also has the line-ending fix
+and the repo is fully current.
 
-Full reasoning for every one of these is in the decision log; exact mechanics
-are in the architecture doc. **Do not re-derive any of this from scratch** —
-check those two files first.
+## Where things stand
 
-## Two things are still open, and both are content/build-process work, not design work
+Phase 7 (game 1, the grouping game) is functionally closed. The project is at a
+deliberate fork: it is becoming a multi-game engine, and the next work is the
+first shared subsystem plus the first second game.
 
-### Gap 1: the committed repository cannot reproduce the 30/30 result
+### Resolved (all committed; commit ids noted)
 
-Checked directly, this session: `content/graph.sqlite` as committed is a
-24,576-byte stub, not a real database. `content/seeds/embeddings.json` does
-not cover every committed lexicon root — confirmed missing or incomplete for
-`planet`, `sport`, and parts of `fish`, `insect`, `reptile`, `flower`, `herb`,
-`flavorer`, `kitchen` at the point this was checked. The user's Codespace
-evidently had locally-regenerated derived files that were never fully
-committed at each push.
+1. **Gap 2 (every board identical) was a code defect, not content thinness.**
+   The prior handoff said the generator offered one candidate and told the next
+   session NOT to touch candidate selection. Wrong, and verified wrong. Root
+   cause: `_ordered` in `puzzlegen/games/grouping/generate.py` used a fixed
+   total order over content properties with candidate id as the final
+   tie-break. Nothing varied by day, and the engine takes the first candidate
+   that verifies (a lookup, not a choice), so every day served at one size
+   produced a byte-identical board. Fixed by (a) round-robin draining of
+   hidden-group candidate streams with a per-group share, and (b) a day-derived
+   shuffle inside each rank (`rng.derive("candidate-order").shuffled(...)`)
+   before the stable sort, so the day key reaches selection while enrichment and
+   temptation still rank. Determinism preserved. Tests:
+   `tests/unit/test_grouping_variety.py`. (commit `453be84`)
 
-**Fix, to run in the Codespace, in order:**
+2. **`generate_days.py` reported the drawn size, not the served size.** A day
+   tries its drawn size first, then falls back; the tool read the draw, so a run
+   leaning entirely on fallback looked like full size coverage (the "30/30
+   across sizes 5-9" claim rested on this). Fixed to read
+   `outcome.puzzle.payload["group_size"]` and count drawn vs served separately.
+   (commit `453be84`)
 
-```bash
-# 1. Confirm the exact, final list of lexicon roots to use. See "stray files"
-#    note below first -- several files in content/seeds/ are NOT meant to be
-#    part of a real build.
+3. **The lemma-collision report was a false-alarm generator.** It claimed a
+   later sense of a merged category loses its parents; the builder unions them
+   and refuses only a cycle-closing edge. 14 overlay words were reported as
+   losing a parent; a real build showed 0 do. `tools/report_lemma_collisions.py`
+   rewritten to mirror the builder (union parents, refuse only
+   ancestor/descendant edges, follow file order, union hypernym edges across
+   files, loop guard). New test `tests/unit/test_collision_report_matches_builder.py`
+   builds the same files both ways and fails if they disagree. (commit `e9313ed`)
 
-python tools/build_snapshot.py --write-inputs build/ \
-    --lexicon content/seeds/wordnet-<root1>.lexicon.json \
-    --lexicon content/seeds/wordnet-<root2>.lexicon.json \
-    ... \
-    --overlay content/seeds/overlay.curated.json
+4. **New lexicon roots committed and pushed (commit `4cd9e1b`).** Seven roots
+   that close most overlay coverage gaps were generated in a prior session but
+   never committed, so the repo could not reproduce `coverage-A` or
+   `coverage-B`. Now on origin: `mollusk`, `crustacean`, `cutting_implement`,
+   `tableware`, `power_tool`, `color`, `drug_of_abuse`, plus `fish` re-exported
+   at depth 8 (617 synsets, was 498 at depth 6; the only root truncated at depth
+   6). `wordnet-shellfish` was dropped (it holds food senses, not the animals;
+   `mollusk` + `crustacean` replace it). `docs/candidate-roots.md` documents the
+   full analysis and a second batch for the remaining 22 unsupplied overlay
+   words. `docs/rebuild-with-new-roots.sh` reproduces the A/B builds.
 
-python tools/export_frequency.py --terms build/terms.txt \
-    --out content/seeds/frequency.json
-python tools/export_embeddings.py --texts build/texts.txt \
-    --out content/seeds/embeddings.json
+5. **Line endings fixed (commit `e02f7ca`, NOT yet pushed; see top).** Added
+   `.gitattributes` (`* text=auto eol=lf` + binary guards + `*.sh` LF), so the
+   Windows checkout (CRLF) no longer shows every tracked text file as modified
+   against the LF blobs. Also widened `.gitignore` sqlite rule from `*.sqlite3`
+   to `*.sqlite*` (so `content/graph.sqlite` can never be committed by
+   accident), added `*.bak`, untracked the stray `.gitignore.bak`. Working tree
+   is clean. The ~50 files still showing `w/crlf` in `git ls-files --eol` are
+   the working copy only; git stores LF and converts on commit. Do not "fix"
+   them.
 
-rm content/graph.sqlite
-python tools/build_snapshot.py --db content/graph.sqlite --label <today's date> \
-    --now $(date -u +%Y-%m-%dT%H:%M:%S+00:00) \
-    --frequency content/seeds/frequency.json \
-    --embeddings content/seeds/embeddings.json \
-    --lexicon content/seeds/wordnet-<root1>.lexicon.json \
-    ... (the same exact list as step 1)
+### The A/B coverage result (the gate)
 
-python tools/generate_days.py --db content/graph.sqlite --start 2026-10-01 \
-    --days 30 --json build/days-30.json
-git add content/graph.sqlite content/seeds/frequency.json \
-    content/seeds/embeddings.json build/days-30.json
-git commit -m "Regenerate derived files from the full lexicon set; reproducible 30/30"
-git push
+Build A = 16 base roots + mollusk, crustacean, cutting_implement, tableware,
+power_tool. Build B = A + color + drug_of_abuse. Difficulty MEDIUM. Distinct
+hidden categories reaching all four homes, by board size:
+
+```
+          size5  size6  size7  size8  size9
+build A     1      3      4      3      3
+build B     1      3      4      3      4
 ```
 
-**`content/graph.sqlite` must either be committed in full (verify it is not
-gitignored as `*.sqlite`; if it is, change the `.gitignore` rule from
-`*.sqlite3` to also exclude nothing broader than that, or use Git LFS) or not
-committed at all with the runbook corrected to say so.** A 24 KB stub
-masquerading as the real file is worse than no file, because it looks correct
-at a glance.
+**Recommendation: ship A.** It unblocks board variety across sizes 6-9 with four
+working hidden categories. **Hold B**: its only unique wins (`thing that can be
+smoked`, `word that is also a person's name`) ride on `color`, which introduces
+a real defect. Confirmed in coverage-B: for the hidden group `word that is also
+a color`, the visible homes include `chromatic color`, `pink` and `red`. A board
+asking the player to find the colour word, with one visible group literally the
+colours, is broken. The generator's leak check misses it because the visible
+group is a sibling category, not the hidden category itself.
 
-**Stray/duplicate lexicon files, found this session, should be removed before
-the rebuild above:** `content/seeds/` currently also contains
-`wordnet-bird1.lexicon.json` (exact duplicate of `wordnet-bird.lexicon.json`),
-`wordnet-bird3.lexicon.json` (root resolved to "dame," 1 synset — almost
-certainly a mis-resolved export, not bird-related), `wordnet-bird5.lexicon.json`
-(root "shuttlecock," 1 synset — same problem), `wordnet-carnivore1.lexicon.json`
-(exact duplicate of `wordnet-carnivore.lexicon.json`), and
-`wordnet-carnivore2.lexicon.json` (1 synset — broken/partial). The canonical,
-correctly-resolved files (`wordnet-bird.lexicon.json`,
-`wordnet-carnivore.lexicon.json`, `wordnet-herb.lexicon.json`, and presumably
-the rest) were checked and are intact. This is the third time this project has
-hit a "wrong file in the directory" incident (`architecture.md`'s "things
-phase 7 got wrong" section records the first two); it is worth adding a
-permanent habit — never glob `wordnet-*.lexicon.json`, always name the exact
-roots — rather than only cleaning up this instance:
+## Open decisions (what the next conversation resolves)
 
-```bash
-git rm content/seeds/wordnet-bird1.lexicon.json \
-       content/seeds/wordnet-bird3.lexicon.json \
-       content/seeds/wordnet-bird5.lexicon.json \
-       content/seeds/wordnet-carnivore1.lexicon.json \
-       content/seeds/wordnet-carnivore2.lexicon.json
-```
+1. **The color leak.**
+   - Rule (recommended): a visible group may not be an ancestor or descendant of
+     the hidden category. General, prevents future leaks of this class.
+   - Blacklist: exclude `chromatic color` and children as visible groups only
+     for the colour hidden group. Narrow, leaves the hole open for the next
+     overlapping pair.
+   Neither has a test yet; the choice determines the test.
 
-Confirm the exact current canonical list with:
-```bash
-for f in content/seeds/wordnet-*.lexicon.json; do
-  python -c "
-import json
-d = json.load(open('$f'))
-names = {s['id']: s['name'] for s in d['synsets']}
-print('$f', '->', names.get(d.get('root'), d.get('root')), len(names), 'synsets')
-"
-done
-```
-A row with a tiny synset count or a root name that doesn't match the
-filename is almost certainly another stray and should be investigated before
-inclusion.
+2. **Ship A, yes/no.** If yes, A is the gate build and game 1 is closed.
 
-### Gap 2: every generated board is currently identical
+3. **The surface form subsystem (the fork).** The user decided this is an
+   engine-level subsystem, not a helper, bigger than one game. It defines what
+   the letters of an entity are (case folding, diacritics, spaces/hyphens,
+   multi-word collapse), which surface form counts (primary lemma vs a shorter
+   true synonym, e.g. `bowed instrument` for `bowed stringed instrument`), a
+   stable inspectable entity-to-letters mapping, and a precomputed index
+   (character queries run per candidate every daily build). Sits beside the
+   content graph, adds no new content-service operation, games call it.
+   `missing_letters` is its first client. **Pending: build the subsystem before
+   implementing missing_letters (platform-first, the user's lean), or inline and
+   extract later.**
 
-Confirmed against the user's own committed `build/days-30.json`: all 30 days
-produced the exact same hidden group (`word that is also a color`) and the
-exact same score. **This is not a bug in the day-to-day randomization** — it
-is correctly wired and was specifically checked. The cause, confirmed by
-direct measurement: the generator currently offers **exactly one candidate**
-on a real day, so there is nothing for the day's own RNG to choose among.
+4. **`missing_letters` (second game, first subsystem client).** Specified in
+   `missing-letters-requirements.docx` (delivered to the user; fold into `docs/`
+   if wanted in-repo). Settled: SOUND_INCOMPLETE with a stated search bound and a
+   pinned word list; a mark must occur in its own tile's word; multi-word
+   category names permitted with common names favored and shorter-synonym
+   substitution allowed; when difficulty wants more blanks than the data forces,
+   leave a could-have-been-marked tile unmarked to manufacture the extra blank
+   (and record per board which blanks were forced vs manufactured); at least two
+   blanks always; free anagram; one mark per tile max; not every tile marked.
+   Game id `missing_letters`. No coverage tool yet; an analogue of
+   `measure_coverage.py` is the natural next artifact before implementation.
 
-This will resolve as more overlay categories become feasible — the
-`measure_coverage.py` output already shows this number rising across the
-session (1 → 4 feasible categories at size 5). It is a content problem, not a
-code problem. **Do not attempt to fix this by changing candidate selection or
-ordering logic** — the mechanism is correct and was verified correct; the
-input to it is thin.
+5. **Second batch of roots** (22 still-unsupplied overlay words: beaver, broom,
+   cheese, coconut, comb, drill, erica, hemp, hoe, holly, hop, hops, iris,
+   jasmine, mate, mower, onion, rake, ram, rodent, rush, walnut). Candidates and
+   ids in `docs/candidate-roots.md` section 5, led by `tool` (recovers 6) and
+   `rodent`. `mate` (the beverage) is unreachable by any root; it needs an
+   explicit synset id or removal from the overlay.
 
-**What to close next, in order of apparent leverage** (from the most recent
-`measure_coverage.py --difficulty medium` output; re-run it fresh before
-trusting these specifics, since the lexicon set may have changed):
+## Standing cautions
 
-1. **`thing with teeth`** — reaches 3 of 4 needed homes. Absent:
-   `beaver`, `chainsaw`, `comb`, `jigsaw`, `rake`, `rodent`. A `rodent` export
-   (for `beaver`, `rodent` itself) and checking whether `hand_tool`'s depth
-   reaches `chainsaw`/`jigsaw`/`comb`/`rake` (they may simply be deeper than
-   the current export depth, not absent from WordNet) are the two things to
-   check first.
-2. **`word that is also a person's name`** — reaches 3 of 4. Absent:
-   `erica`, `hazel`, `heather`, `holly`, `iris`. The `flower` root should
-   supply at least `iris` and `holly`; check why they didn't land (possibly a
-   depth or sense-resolution issue, the same class as the `herb.n.01` vs.
-   `herb.n.02` ambiguity resolved earlier this session).
-3. **`thing with strings`** — blocked by *small parents*, not missing words:
-   `bowed stringed instrument` has only 4 kinds (`cello`, `viola`, `violin`,
-   plus one more), one short of 5. This is the "kinds of kinds" idea the user
-   raised and the assistant set aside pending a decision — it was not built.
-   If closing this category matters, that idea needs to be revisited now that
-   real data shows exactly where it would help (a parent one or two kinds
-   short, not zero).
-4. **`thing that is blown`**, **`thing that floats`**, **`thing found in a
-   kitchen`** — each has `no_valid_quadruple` or `no_shared_domain` as its
-   blocker now (not missing words), meaning Option B's floor-of-zero should
-   already allow these; re-check with a fresh `measure_coverage.py` run
-   whether they are now feasible, since the coverage numbers above were
-   captured mid-session and may already be stale relative to the latest
-   commit.
+- **The recurring failure mode is a diagnostic that recomputes a value instead
+  of reading what the engine actually did.** Three instances: a hand-copied
+  threshold that drifted, `generate_days.py` reading the drawn size, the
+  collision report's parent-loss logic. When a tool and the engine could
+  disagree about a number, make the tool import the real constant or read the
+  real output, never re-derive it.
+- Never glob `content/seeds/wordnet-*.lexicon.json`; name exact roots.
+  `wordnet-mini` is an 8-synset test fixture a glob would wrongly include.
+- Line endings are now handled by the committed `.gitattributes`. `git status`
+  on the Windows checkout is clean. If a mass of modified text files appears
+  again, the attributes file was lost or bypassed; do not commit that churn.
+- Git on the linked-computer shell has no commit identity by default (set
+  repo-local to the user) and no push credentials, and cannot delete its own
+  `.git` lock/temp files without folder delete permission (grant it at the start
+  of a git-heavy session) or stale `.lock` files make later git commands fail.
+- The test suite needs Python 3.11+ (`StrEnum`). The device shell has only 3.10
+  and the repo `.venv` is a Windows venv, so the suite cannot run from the
+  linked-computer shell; run it in the Codespace. Last full run: 2,262 passing,
+  3 expected content-gap failures (overlay words still unsupplied, the content
+  tracker in `test_overlay_seed.py`, correct to stay red until the second root
+  batch lands).
 
-Run this to get a current, authoritative picture before doing anything else:
-```bash
-python tools/measure_coverage.py --db content/graph.sqlite --difficulty medium \
-    --json build/coverage-current.json
-```
+## Reading order
 
-## Manual steps required before the next conversation begins
+1. What the person says now.
+2. Files attached to the conversation.
+3. Project memory and docs.
+4. Repository files (lowest priority; can be stale).
 
-1. Work through Gap 1 (reproducibility) above. This is the actual blocker to
-   trusting anything else: until it's closed, no one — including a future
-   conversation — can verify any further claim against the real repository
-   state without rebuilding from scratch each time.
-2. Re-run `tools/report_lemma_collisions.py` over the final, cleaned lexicon
-   list (after removing the stray files above) and check its "overlay words
-   whose second meaning lost its parent in the merge" section. The merge fix
-   (union parents) means this should now report 0 affected overlay words
-   regardless of what it finds, but worth confirming directly rather than
-   assuming.
-3. Decide whether to pursue Gap 2's item 3 (small-parent categories needing
-   a "kinds of kinds" mechanism) now or defer it; it is the one open design
-   question from this session that was raised, discussed, and explicitly not
-   resolved.
+## Response conventions
 
-## What the next conversation must do first
-
-Before any further phase work: ask whether the manual steps above are
-complete. Accept exactly one of two replies:
-
-- **`Steps Complete`** — run `tools/measure_coverage.py --difficulty medium`
-  and `tools/generate_days.py --days 30` fresh, from the just-rebuilt
-  snapshot. If `generate_days.py` shows more than one distinct hidden group
-  across 30 days, phase 7 is fully closed (reproducible, and no longer
-  single-board-only); open whatever the project's next phase is. If it is
-  still one board, continue closing Gap 2's categories above, in order.
-- **`Detour {filename.md}`** — stop, read the named file (must be attached
-  to the chat or a path under `docs/` in the repository), and ask what to do
-  with it before touching phase work. Do not resume phase work until the
-  detour is explicitly closed.
-
-If the reply is neither of these two forms, ask for it to be restated as one
-of them. Do not guess which was intended.
-
-## Reading order for this project (unchanged)
-
-1. What the person says in the current conversation.
-2. Files attached to the current conversation.
-3. This project's own file context (memory).
-4. Files pulled from the connected GitHub repository
-   (`https://github.com/BigBadChicago/PuzzleGen`).
-
-A repository file is lowest priority because it can be stale relative to what
-the person and the conversation already know — and this session found exactly
-that kind of staleness twice (the committed `graph.sqlite` stub; the
-committed embeddings missing roots). Always verify a repository claim (file
-sizes, which roots a lexicon file actually resolves to, whether a build
-actually succeeds) rather than trusting a filename or a prior commit message.
-
-## Standing project conventions (apply regardless of phase, unchanged)
-
-- No preamble, no recap, no filler; decisions and open questions stated in
-  lists at the end of each response.
-- Every multi-option question or choice gets a plain-language explanation
-  (assume a middle-school reading level) plus a benefits-versus-costs
-  weighing for each option, before any recommendation.
-- Files longer than ~300 lines: state what is about to be produced and wait
-  for confirmation before generating it.
-- Never glob `wordnet-*.lexicon.json` or any other wildcard over
-  `content/seeds/`; name exact files. This project has hit stray/duplicate/
-  broken files in that directory three separate times.
-- When a diagnostic tool and the real engine could disagree about a number
-  (feasibility, candidate count, a rejection reason), make the tool import
-  the real constant or function rather than hand-copying its value — this
-  session found and fixed two cases where a hand-copied threshold had drifted
-  from the real one.
-- Before trusting any "it works" claim about committed content, check file
-  sizes and actually attempt a rebuild from the committed files alone. This
-  session's two open gaps were both found exactly this way.
+No preamble, recap, or filler. Decisions and open questions in lists at the end.
+Every multi-option choice gets a plain-language explanation plus a benefits
+versus costs weighing before any recommendation. State anything over ~300 lines
+before producing it and wait. CLI commands on a single line, no continuations.
+No dashes except within a word.
