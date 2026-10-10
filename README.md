@@ -47,3 +47,19 @@ Snapshot-building tools (`tools/export_*.py`) require the extra dependencies
 in `pip install -e ".[snapshot]"`. The engine itself never imports them. A
 coverage measurement needs neither: it is structural, so a build with
 `--dev-embeddings` measures it exactly.
+
+## Builds run in GitHub Actions
+
+Builds are dispatched, not run in a working session. Each workflow runs one
+task of `scripts/ci.sh` and ends its log with a short summary between
+`===== SUMMARY =====` markers, also shown on the run page, so the result is a
+dozen lines rather than a build log.
+
+| workflow | runs on | does |
+|---|---|---|
+| `tests` | push to main, PRs, dispatch | platform alone, then every suite, on 3.11 and 3.13 |
+| `coverage artifacts` | content changes, dispatch | rebuilds A2 and fails if the committed coverage files differ; dispatched on a branch with `commit` set, it commits them instead |
+| `snapshot` | dispatch only | A2 with real vectors, then days; snapshot, vectors and days uploaded as an artifact |
+
+The same tasks run locally: `scripts/ci.sh tests`, `scripts/ci.sh coverage`,
+`DAYS=5 scripts/ci.sh snapshot`.
