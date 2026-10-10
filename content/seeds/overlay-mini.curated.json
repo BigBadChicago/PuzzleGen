@@ -1,0 +1,48 @@
+{
+  "curated_schema": 1,
+  "version": "2026.10.1",
+  "updated": "2026-10-10",
+  "warnings": [
+    "A platform test fixture, not content. Four entities over two crosscutting categories, chosen to sit on wordnet-mini.lexicon.json so a snapshot built from the two is complete. Never include it in a real build; name roots and overlays explicitly, never by glob.",
+    "Overlay memberships are asserted by a curator, not inferred by tooling. Import this file with taxonomy='overlay'."
+  ],
+  "categories": [
+    {
+      "key": "mini.striped",
+      "name": "thing with stripes",
+      "gloss": "An animal whose coat is striped."
+    },
+    {
+      "key": "mini.swims",
+      "name": "thing that swims",
+      "gloss": "An animal at home in water."
+    }
+  ],
+  "entities": [
+    {
+      "key": "e.raccoon",
+      "name": "raccoon",
+      "categories": ["mini.striped"],
+      "confidence": 0.95
+    },
+    {
+      "key": "e.badger",
+      "name": "badger",
+      "categories": ["mini.striped"],
+      "confidence": 0.95
+    },
+    {
+      "key": "e.otter",
+      "name": "otter",
+      "categories": ["mini.swims", "mini.striped"],
+      "confidence": 0.9
+    },
+    {
+      "key": "e.weasel",
+      "name": "weasel",
+      "categories": ["mini.swims"],
+      "confidence": 0.85
+    }
+  ],
+  "retired": []
+}

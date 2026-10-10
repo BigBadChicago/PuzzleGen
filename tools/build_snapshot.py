@@ -61,7 +61,12 @@ from puzzlegen.providers.frequency import TableFrequencyProvider
 from puzzlegen.providers.wordnet import WordNetLexiconProvider
 
 #: Not a flag. See the module docstring.
-OVERLAY_SEED = Path("content/seeds/overlay.curated.json")
+#: No default. The overlay is one game's own crosscutting taxonomy, not
+#: platform content, and it moved into that game's distribution when game one
+#: became one. A platform tool holding the path to a game's content file is
+#: the coupling that makes removing the game a platform edit, so the caller
+#: names it or the build has no overlay at all.
+OVERLAY_SEED = None
 
 LEXICAL_TAXONOMY = "wordnet"
 OVERLAY_TAXONOMY = "overlay"
@@ -99,7 +104,7 @@ def parse_curated_spec(value: str) -> tuple[Path, str]:
 
 def input_lists(
     lexicons: list[Path],
-    overlay: Path,
+    overlay: Path | None,
     now: dt.datetime,
     extra_curated: tuple[tuple[Path, str], ...] = (),
 ) -> tuple[list[str], list[str]]:
@@ -134,7 +139,7 @@ def input_lists(
 def write_inputs(
     directory: Path,
     lexicons: list[Path],
-    overlay: Path,
+    overlay: Path | None,
     now: dt.datetime,
     extra_curated: tuple[tuple[Path, str], ...] = (),
 ) -> tuple[Path, Path]:
@@ -149,7 +154,7 @@ def write_inputs(
 
 def providers(
     lexicons: list[Path],
-    overlay: Path,
+    overlay: Path | None,
     now: dt.datetime,
     extra_curated: tuple[tuple[Path, str], ...] = (),
 ) -> list[tuple]:
@@ -171,12 +176,18 @@ def providers(
         )
         for path in lexicons
     ]
-    chosen.append(
-        (
-            CuratedJSONProvider(overlay, name="overlay-seed", now=now),
-            {"taxonomy": OVERLAY_TAXONOMY, "entity_identity": "lemma"},
+    # An overlay is a game's content, so a build can legitimately have none:
+    # the platform's own tests build lexicon-only snapshots, and so would an
+    # operator preparing a snapshot before installing any game. A build with
+    # no second axis cannot serve game one, which that game's coverage tool
+    # reports rather than this one guessing at.
+    if overlay is not None:
+        chosen.append(
+            (
+                CuratedJSONProvider(overlay, name="overlay-seed", now=now),
+                {"taxonomy": OVERLAY_TAXONOMY, "entity_identity": "lemma"},
+            )
         )
-    )
     for path, taxonomy in extra_curated:
         chosen.append(
             (
@@ -329,7 +340,7 @@ def main(argv: list[str] | None = None) -> int:
     missing = [
         p
         for p in (*args.lexicon, args.overlay, *(path for path, _ in args.curated))
-        if not p.exists()
+        if p is not None and not p.exists()
     ]
     if missing:
         print(f"input not found: {missing[0]}", file=sys.stderr)
@@ -337,7 +348,12 @@ def main(argv: list[str] | None = None) -> int:
 
     derived = [p for p in (args.frequency, args.embeddings) if p is not None]
     stale = stale_inputs(
-        derived, [*args.lexicon, args.overlay, *(path for path, _ in args.curated)]
+        derived,
+        [
+            p
+            for p in (*args.lexicon, args.overlay, *(path for path, _ in args.curated))
+            if p is not None
+        ],
     )
     if stale and not args.ignore_stale:
         for path, source in stale:

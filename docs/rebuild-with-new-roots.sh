@@ -9,6 +9,8 @@
 set -euo pipefail
 
 SEEDS=content/seeds
+# Game one owns the overlay, so it lives in that game's distribution.
+OVERLAY=games/grouping/content/overlay.curated.json
 BASE="bird carnivore fish flavorer flower fruit garment herb insect instrument kitchen planet reptile sport hand_tool vehicle"  # hand_tool: this file said "tool" before the 2026-10-10 rename; the subtree is unchanged
 # Listed first so a merged category such as crab takes the crustacean gloss
 # instead of the rowing stroke from sport. Parents merge either way, so order
@@ -45,9 +47,9 @@ flags() { for r in "$@"; do printf -- "--lexicon %s/wordnet-%s.lexicon.json " "$
 # the KeyError the first run hit for cannabis, coffee, coral, hazel and heather.
 mkdir -p build/inputs-A build/inputs-B build/inputs-all
 python tools/build_snapshot.py --write-inputs build/inputs-A/ \
-  $(flags $FIRST $BASE $GROUP_A) --overlay "$SEEDS/overlay.curated.json"
+  $(flags $FIRST $BASE $GROUP_A) --overlay "$OVERLAY"
 python tools/build_snapshot.py --write-inputs build/inputs-B/ \
-  $(flags $FIRST $BASE $GROUP_A $GROUP_B) --overlay "$SEEDS/overlay.curated.json"
+  $(flags $FIRST $BASE $GROUP_A $GROUP_B) --overlay "$OVERLAY"
 
 # C locale so the merged order is identical on every machine.
 for kind in terms texts; do
@@ -64,8 +66,8 @@ build() { # label roots...
   python tools/build_snapshot.py --db "build/graph-$label.sqlite" --label "2026-10-03-$label" \
     --now 2026-10-03T00:00:00+00:00 \
     --frequency build/frequency.all.json --embeddings build/embeddings.all.json \
-    --overlay "$SEEDS/overlay.curated.json" $(flags "$@")
-  python tools/measure_coverage.py --db "build/graph-$label.sqlite" --difficulty medium \
+    --overlay "$OVERLAY" $(flags "$@")
+  python games/grouping/tools/measure_coverage.py --db "build/graph-$label.sqlite" --difficulty medium \
     --json "build/coverage-$label.json"
 }
 

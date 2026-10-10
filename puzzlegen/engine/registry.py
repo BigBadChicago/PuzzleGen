@@ -16,10 +16,21 @@ from __future__ import annotations
 import datetime as dt
 from collections.abc import Iterator, Sequence
 from dataclasses import dataclass
+from importlib.metadata import entry_points
 
 from ..core.errors import ConfigurationError, ConflictError
 from ..core.versions import PLUGIN_PROTOCOL_VERSION, SemVer
 from .plugin import GameDescriptor, GamePlugin
+
+#: Entry point group every game distribution advertises itself in.
+#:
+#: The platform holds no list of games and names none of them. A game is
+#: installed when a distribution declaring this group is installed, and
+#: uninstalled when it is removed, which is what makes adding and removing a
+#: game require no platform change. An entry point resolves to either a plugin
+#: or a zero argument factory returning one; a factory is preferred, because it
+#: lets the registry decide when a game is constructed.
+GAME_ENTRY_POINT_GROUP = "puzzlegen.games"
 
 #: Default cap on simultaneously active games. A cap exists because each
 #: active game consumes a generation run, a review burden and a slot in the
@@ -118,6 +129,63 @@ class GameRegistry:
 
     def installed(self) -> tuple[str, ...]:
         return tuple(sorted(self._games))
+
+    # -- discovery --------------------------------------------------------
+
+    def discover(self, *, group: str = GAME_ENTRY_POINT_GROUP) -> tuple[str, ...]:
+        """Register every installed game distribution. Returns their ids.
+
+        Discovery is explicit rather than automatic on construction. A test
+        that wants a registry holding one fixture game must be able to have
+        one, and an operator deciding which games a process serves should not
+        have that decided by what happens to be installed in the environment.
+
+        A distribution whose entry point cannot be loaded, or whose object is
+        not a conformant plugin, is a configuration error named by distribution
+        rather than a silently absent game: a game missing from the daily
+        schedule with no message is the failure this is written to avoid.
+        """
+        found: list[str] = []
+        for entry in sorted(
+            entry_points(group=group), key=lambda e: (e.name, e.value)
+        ):
+            try:
+                loaded = entry.load()
+            except Exception as exc:
+                raise ConfigurationError(
+                    f"game entry point {entry.name!r} ({entry.value}) "
+                    f"could not be loaded: {exc}"
+                ) from exc
+            plugin = self._instantiate(entry.name, loaded)
+            if not hasattr(plugin, "describe"):
+                raise ConfigurationError(
+                    f"game entry point {entry.name!r} ({entry.value}) resolved "
+                    "to something that is not a game plugin"
+                )
+            found.append(self.register(plugin).game_id)
+        return tuple(found)
+
+    @staticmethod
+    def _instantiate(name: str, loaded: object) -> GamePlugin:
+        """A plugin, from either a factory or a plugin.
+
+        Both forms are accepted because both are reasonable things for a
+        distribution to export, and the difference is not something the
+        platform should make a game care about.
+        """
+        if hasattr(loaded, "describe"):
+            return loaded  # type: ignore[return-value]
+        if callable(loaded):
+            try:
+                return loaded()  # type: ignore[no-any-return]
+            except TypeError as exc:
+                raise ConfigurationError(
+                    f"game entry point {name!r} is callable but not a zero "
+                    f"argument factory: {exc}"
+                ) from exc
+        raise ConfigurationError(
+            f"game entry point {name!r} is neither a plugin nor a factory"
+        )
 
     # -- activation -------------------------------------------------------
 

@@ -15,6 +15,8 @@
 set -euo pipefail
 
 SEEDS=content/seeds
+# Game one owns the overlay, so it lives in that game's distribution.
+OVERLAY=games/grouping/content/overlay.curated.json
 # wordnet-tool.lexicon.json was the "hand tool" subtree until 2026-10-10 and is
 # now the "tool" subtree (oewn-04459089-n). Hand tool kept its own file under
 # its own name. A script that still says tool where it means hand tool builds a
@@ -42,14 +44,14 @@ export_root oewn-13133423-n 6 shrub
 flags() { for r in "$@"; do printf -- "--lexicon %s/wordnet-%s.lexicon.json " "$SEEDS" "$r"; done; }
 
 mkdir -p build/inputs-A2
-python tools/build_snapshot.py --write-inputs build/inputs-A2/ $(flags $A $BATCH2) --overlay "$SEEDS/overlay.curated.json"
+python tools/build_snapshot.py --write-inputs build/inputs-A2/ $(flags $A $BATCH2) --overlay "$OVERLAY"
 python tools/export_frequency.py --terms build/inputs-A2/terms.txt --out build/frequency.A2.json
 
 # What merges, before building: read overlay_missing and the refused parents.
-python tools/report_lemma_collisions.py $(flags $A $BATCH2) --overlay "$SEEDS/overlay.curated.json" --out build/lemma-collisions-A2.json
+python tools/report_lemma_collisions.py $(flags $A $BATCH2) --overlay "$OVERLAY" --out build/lemma-collisions-A2.json
 
 rm -f build/graph-A2.sqlite*
-python tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json --dev-embeddings --overlay "$SEEDS/overlay.curated.json" $(flags $A $BATCH2)
-python tools/measure_coverage.py --db build/graph-A2.sqlite --difficulty medium --json build/coverage-A2.json
+python tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json --dev-embeddings --overlay "$OVERLAY" $(flags $A $BATCH2)
+python games/grouping/tools/measure_coverage.py --db build/graph-A2.sqlite --difficulty medium --json build/coverage-A2.json
 
 echo "done: build/coverage-A2.json"

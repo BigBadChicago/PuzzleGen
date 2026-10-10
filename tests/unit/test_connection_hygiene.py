@@ -1,4 +1,4 @@
-"""No tool may leave an sqlite connection open when its command ends.
+"""No platform tool may leave an sqlite connection open when its command ends.
 
 Python 3.13 and later emit a ResourceWarning when an unclosed connection is
 garbage collected, and this repository turns warnings into errors. The failure
@@ -12,7 +12,6 @@ rather than waiting for the collector.
 from __future__ import annotations
 
 import importlib.util
-import json
 import sqlite3
 import sys
 from pathlib import Path
@@ -32,8 +31,10 @@ def load_tool(name: str):
     return module
 
 
+# Platform tools only. A game's tools follow the same rule and are tested in
+# the game's own distribution, because this suite must pass with no game
+# installed at all.
 build_snapshot = load_tool("build_snapshot")
-propose_overlay = load_tool("propose_overlay")
 review_tool = load_tool("review")
 
 
@@ -127,57 +128,7 @@ class TestBuildSnapshot:
         assert unclosed(connections) == 0
 
 
-class TestProposer:
-    def test_a_proposal_run_closes_its_store(self, built, tmp_path, connections):
-        connections.clear()
-        propose_overlay.main(
-            [
-                "--db",
-                str(built),
-                "--batch",
-                "b1",
-                "--manifest",
-                str(tmp_path / "b1.json"),
-            ]
-        )
-        assert connections
-        assert unclosed(connections) == 0
-
-    def test_a_dry_run_closes_its_store(self, built, tmp_path, connections):
-        connections.clear()
-        propose_overlay.main(
-            ["--db", str(built), "--batch", "b1", "--dry-run"]
-        )
-        assert connections
-        assert unclosed(connections) == 0
-
-    def test_a_proposer_that_fails_mid_run_still_closes_its_store(
-        self, built, connections, monkeypatch
-    ):
-        connections.clear()
-
-        def explode(*args, **kwargs):
-            raise RuntimeError("scoring failed")
-
-        monkeypatch.setattr(propose_overlay, "propose", explode)
-        with pytest.raises(RuntimeError):
-            propose_overlay.main(["--db", str(built), "--batch", "b1"])
-        assert connections
-        assert unclosed(connections) == 0
-
-
 class TestReviewTool:
-    @pytest.fixture
-    def candidate(self, built, tmp_path, connections) -> str:
-        manifest = tmp_path / "b1.json"
-        propose_overlay.main(
-            ["--db", str(built), "--batch", "b1", "--manifest", str(manifest)]
-        )
-        rows = json.loads(manifest.read_text())["candidates"]
-        if rows:
-            return rows[0]["subject_ref"]
-        pytest.skip("the mini lexicon proposes nothing to review")
-
     def test_the_queue_closes_its_store(self, built, connections):
         connections.clear()
         review_tool.main(["--db", str(built), "queue"])

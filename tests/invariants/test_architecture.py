@@ -15,9 +15,14 @@ repository.
 from __future__ import annotations
 
 import ast
+import importlib.util
+import os
 import pathlib
+from importlib.metadata import entry_points
 
 import pytest
+
+from puzzlegen.engine.registry import GAME_ENTRY_POINT_GROUP
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / "puzzlegen"
@@ -59,16 +64,88 @@ ALLOWED_FOR_GAMES = {
     "puzzlegen.content.query",
     "puzzlegen.core",
     "puzzlegen.engine",
-    "puzzlegen.games",
 }
 
 #: Layer order. A module may import from its own layer and any layer below it,
 #: never above. This is what keeps the dependency direction from inverting.
-LAYERS = ["core", "graph", "providers", "content", "engine", "games", "ops", "cli"]
+LAYERS = ["core", "graph", "providers", "content", "engine", "ops", "cli"]
+
+
+#: Test support, inside the package but not part of the runtime.
+#:
+#: ``puzzlegen.testing`` exists so a game distribution's tests can build
+#: content without reaching into this repository's ``tests/`` directory. It
+#: necessarily does things runtime code may not, above all minting records
+#: already marked ACTIVE, so it is excluded from the scans below. The
+#: exclusion is safe only because nothing in the runtime may import it, which
+#: is its own invariant (see ``TestTestSupportStaysOutOfTheRuntime``).
+TESTING = PACKAGE / "testing"
+
+
+#: Set in this repository's own test runner and in CI. Without a game
+#: installed the boundary tests have nothing to inspect, which is a legitimate
+#: state for the platform alone and a broken configuration for a full run, so
+#: the difference is made explicit rather than guessed at.
+REQUIRE_GAMES = bool(os.environ.get("PUZZLEGEN_REQUIRE_GAMES"))
+
+#: Game distributions in this checkout, whether or not they are installed.
+#:
+#: Read from the filesystem rather than from entry points, because some rules
+#: are about repository layout and must hold when nothing is installed.
+GAME_DISTRIBUTIONS = sorted(
+    path.parent
+    for path in (ROOT / "games").glob("*/pyproject.toml")
+)
+
+
+def in_a_game_distribution(path: pathlib.Path) -> bool:
+    return any(root in path.parents for root in GAME_DISTRIBUTIONS)
+
+
+def requires_a_game(reason: str) -> None:
+    """Fail in a full run, skip for the platform alone."""
+    if REQUIRE_GAMES:
+        raise AssertionError(reason)
+    pytest.skip(reason)
+
+
+def game_packages() -> list[pathlib.Path]:
+    """The package directory of every installed game distribution.
+
+    Games used to live in ``puzzlegen/games/`` and were found by walking that
+    directory. They are now separate distributions found through the
+    ``puzzlegen.games`` entry point group, which is what lets one be installed
+    or removed without the platform changing. The boundary tests follow the
+    same route the registry does, so a game is subject to them wherever it
+    lives, in this repository or not.
+    """
+    found: dict[str, pathlib.Path] = {}
+    for entry in entry_points(group=GAME_ENTRY_POINT_GROUP):
+        module = entry.value.split(":", 1)[0].split(".", 1)[0]
+        spec = importlib.util.find_spec(module)
+        if spec is None:
+            continue
+        if spec.submodule_search_locations:
+            found[module] = pathlib.Path(list(spec.submodule_search_locations)[0])
+        elif spec.origin:
+            found[module] = pathlib.Path(spec.origin).parent
+    return sorted(found.values())
+
+
+def game_files() -> list[pathlib.Path]:
+    files: list[pathlib.Path] = []
+    for package in game_packages():
+        files.extend(python_files(package))
+    return files
 
 
 def python_files(directory: pathlib.Path) -> list[pathlib.Path]:
-    return sorted(p for p in directory.rglob("*.py") if "__pycache__" not in p.parts)
+    """Every module in a tree, excluding caches and the test support package."""
+    return sorted(
+        p
+        for p in directory.rglob("*.py")
+        if "__pycache__" not in p.parts and TESTING not in p.parents
+    )
 
 
 def imported_modules(path: pathlib.Path) -> set[str]:
@@ -113,15 +190,26 @@ def layer_of(path: pathlib.Path) -> str | None:
 class TestPluginBoundary:
     """Games are lenses. They may not reach the knowledge they look through."""
 
-    def test_the_games_package_exists(self):
-        assert (PACKAGE / "games").is_dir(), (
-            "the games package must exist for the boundary test to be meaningful; "
-            "an absent directory would make this suite vacuously pass"
-        )
+    def test_at_least_one_game_distribution_is_installed(self):
+        """Without one, every test below passes by having nothing to check.
+
+        This is the guard that keeps the boundary suite honest now that games
+        are separate distributions: an environment with the platform installed
+        and no game would run these tests against an empty list and report
+        them all green.
+        """
+        if not game_packages():
+            requires_a_game(
+                "no distribution advertises the "
+                f"{GAME_ENTRY_POINT_GROUP!r} entry point group, so the plugin "
+                "boundary tests have nothing to inspect. Install this "
+                "repository's games (scripts/test-all.sh does) before "
+                "trusting this suite."
+            )
 
     def test_no_game_imports_storage_providers_or_the_outside_world(self):
         violations: list[str] = []
-        for path in python_files(PACKAGE / "games"):
+        for path in game_files():
             for module in imported_modules(path):
                 banned = is_forbidden(module, FORBIDDEN_FOR_GAMES)
                 if banned:
@@ -135,7 +223,7 @@ class TestPluginBoundary:
 
     def test_games_import_only_from_the_allowed_surface(self):
         violations: list[str] = []
-        for path in python_files(PACKAGE / "games"):
+        for path in game_files():
             for module in imported_modules(path):
                 if not module.startswith("puzzlegen"):
                     continue
@@ -153,7 +241,7 @@ class TestPluginBoundary:
         """Even without an import, a builtin call would breach the sandbox."""
         banned_calls = {"open", "eval", "exec", "compile", "__import__"}
         violations: list[str] = []
-        for path in python_files(PACKAGE / "games"):
+        for path in game_files():
             tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
             for node in ast.walk(tree):
                 if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
@@ -265,21 +353,16 @@ class TestLayerDirection:
             "FrequencyRepository",
         }
         violations: list[str] = []
-        for layer in ("engine", "games"):
-            directory = PACKAGE / layer
-            if not directory.is_dir():
-                continue
-            for path in python_files(directory):
-                tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
-                for node in ast.walk(tree):
-                    if isinstance(node, ast.ImportFrom) and node.module:
-                        if "graph.repositories" not in node.module:
-                            continue
-                        for alias in node.names:
-                            if alias.name in forbidden_names:
-                                violations.append(
-                                    f"{path.relative_to(ROOT)} imports {alias.name}"
-                                )
+        for path in [*python_files(PACKAGE / "engine"), *game_files()]:
+            tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+            for node in ast.walk(tree):
+                if not (isinstance(node, ast.ImportFrom) and node.module):
+                    continue
+                if "graph.repositories" not in node.module:
+                    continue
+                for alias in node.names:
+                    if alias.name in forbidden_names:
+                        violations.append(f"{path.name} imports {alias.name}")
         assert not violations, (
             "graph repositories belong to the content layer:\n" + "\n".join(violations)
         )
@@ -287,7 +370,7 @@ class TestLayerDirection:
     def test_games_hold_no_repository_of_any_kind(self):
         """A game owns no storage at all, not even its own."""
         violations: list[str] = []
-        for path in python_files(PACKAGE / "games"):
+        for path in game_files():
             for module in imported_modules(path):
                 if "repositories" in module or "store" in module:
                     violations.append(f"{path.relative_to(ROOT)} imports {module!r}")
@@ -520,7 +603,7 @@ class TestSessionLayer:
             "puzzlegen.engine.session_storage",
             "puzzlegen.engine.session_service",
         }
-        for path in python_files(PACKAGE / "games"):
+        for path in game_files():
             modules = imported_modules(path)
             caught = [m for m in modules if is_forbidden(m, forbidden)]
             assert not caught, f"{path.relative_to(PACKAGE)} imports {caught}"
@@ -659,6 +742,104 @@ def status_writes(path: pathlib.Path) -> set[str]:
     return found
 
 
+def string_literals(path: pathlib.Path) -> set[str]:
+    """Every string constant in a module, docstrings included."""
+    tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+    return {
+        node.value
+        for node in ast.walk(tree)
+        if isinstance(node, ast.Constant) and isinstance(node.value, str)
+    }
+
+
+class TestThePlatformNamesNoGame:
+    """The platform may not name a game in code, anywhere.
+
+    This is the invariant behind the claim that a game can be added or removed
+    without touching the platform. The registry finds games through an entry
+    point group and holds no list; an import of a game's package, or a literal
+    equal to a game id, would quietly reintroduce the coupling.
+
+    Code, not prose. "A grouping game has four groups" in a docstring is a
+    statement about a genre and is fine; ``import puzzlegen_grouping`` is not.
+    The matching is therefore an exact literal comparison against installed
+    game ids plus a check on imported module names, rather than a substring
+    search over the file, which would flag every ordinary English use of a
+    word a game happens to be named after.
+
+    The third form this coupling took, a platform tool defaulting to a game's
+    content file, is not visible here because the path contained no game name.
+    That one is held by ``test_the_builder_names_no_games_overlay_file``.
+
+    Game ids are read from what is installed rather than listed here, so this
+    test cannot go stale and cannot be satisfied by renaming a game.
+    """
+
+    def game_names(self) -> tuple[set[str], set[str]]:
+        """Installed game ids, and the top-level packages they live in."""
+        ids: set[str] = set()
+        packages: set[str] = set()
+        for entry in entry_points(group=GAME_ENTRY_POINT_GROUP):
+            ids.add(entry.name)
+            packages.add(entry.value.split(":", 1)[0].split(".", 1)[0])
+        return ids, {name for name in packages if name}
+
+    def platform_files(self) -> list[pathlib.Path]:
+        return [*python_files(PACKAGE), *python_files(TOOLS)]
+
+    def test_a_game_is_installed_to_check_against(self):
+        ids, packages = self.game_names()
+        if not (ids and packages):
+            requires_a_game("no game installed, so these tests pass vacuously")
+
+    def test_no_platform_module_imports_a_game(self):
+        _, packages = self.game_names()
+        offenders: dict[str, list[str]] = {}
+        for path in self.platform_files():
+            named = sorted(
+                module
+                for module in imported_modules(path)
+                if module.split(".", 1)[0] in packages
+            )
+            if named:
+                offenders[str(path.relative_to(ROOT))] = named
+        assert not offenders, f"the platform imports a game: {offenders}"
+
+    def test_no_platform_module_holds_a_game_id_as_a_literal(self):
+        ids, packages = self.game_names()
+        wanted = ids | packages
+        offenders: dict[str, list[str]] = {}
+        for path in self.platform_files():
+            named = sorted(wanted & string_literals(path))
+            if named:
+                offenders[str(path.relative_to(ROOT))] = named
+        assert not offenders, f"the platform names a game: {offenders}"
+
+
+class TestTestSupportStaysOutOfTheRuntime:
+    """``puzzlegen.testing`` may be imported by tests and by nothing else.
+
+    It is the one module in the package allowed to build records that are
+    already ACTIVE, which is exactly the authority the snapshot builder is
+    supposed to hold alone. That is tolerable while it is unreachable from the
+    runtime, and a defect the moment it is not, so the reachability is the
+    thing under test rather than a comment.
+    """
+
+    def test_no_runtime_module_imports_the_test_support(self):
+        offenders = {
+            str(path.relative_to(PACKAGE)): sorted(
+                name for name in imported_modules(path) if "puzzlegen.testing" in name
+            )
+            for path in python_files(PACKAGE)
+            if any("puzzlegen.testing" in name for name in imported_modules(path))
+        }
+        assert not offenders, f"test support imported at runtime: {offenders}"
+
+    def test_the_test_support_exists_where_the_plugin_entry_point_says(self):
+        assert (TESTING / "__init__.py").exists()
+
+
 class TestReviewAuthority:
     """Who may write APPROVED, who may write ACTIVE, and who may write neither."""
 
@@ -713,7 +894,7 @@ class TestReviewAuthority:
 
     def test_games_cannot_import_the_review_module(self):
         forbidden = {"puzzlegen.content.review"}
-        for path in python_files(PACKAGE / "games"):
+        for path in game_files():
             modules = imported_modules(path)
             caught = [m for m in modules if is_forbidden(m, forbidden)]
             assert not caught, f"{path.relative_to(PACKAGE)} imports {caught}"
@@ -864,8 +1045,19 @@ class TestModulesLiveWhereTheyBelong:
                 continue
             if "tests" in path.relative_to(ROOT).parts:
                 continue
+            if path.parent.name == "tools":
+                continue
             # tools/ is exempt: a script there is a top-level name by
-            # design, and nothing in the package may import it.
-            if path.stem in package_names and path.parent != TOOLS:
+            # design, and nothing in the package may import it. A game
+            # distribution's own package is exempt too: its modules are
+            # reached as ``puzzlegen_<game>.plugin`` and can shadow nothing,
+            # and a game being told it may not have a module named after one
+            # of the engine's would make the engine's file names part of
+            # every game's API.
+            if (
+                path.stem in package_names
+                and path.parent != TOOLS
+                and not in_a_game_distribution(path)
+            ):
                 collisions.append(str(path.relative_to(ROOT)))
         assert not collisions, f"shadow package module names: {collisions}"

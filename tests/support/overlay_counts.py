@@ -1,13 +1,13 @@
-"""What the committed overlay seed holds, read from it and never typed.
+"""What the platform's overlay fixture holds, read from it and never typed.
 
-Tests used to state these as literals (15 categories, 144 entities, 150
-memberships), which made every retirement or reopening a hunt through five test
-files for numbers that had merely become stale. The seed is the source of
-truth, so the tests that only need to agree with it read it.
+The platform's tool tests used to assert against game one's committed overlay
+seed, which coupled this suite to a game's content: the numbers moved whenever
+a curator retired a category, and the platform suite could not run at all once
+the game was uninstalled. They now read ``overlay-mini.curated.json``, a
+fixture of four entities beside the eight synset ``wordnet-mini`` lexicon, for
+the same reason that lexicon exists.
 
-``test_overlay_seed.py`` still pins the live category count on purpose: that is
-the guard against a category disappearing by accident, and it should change
-only when someone means it to.
+Game one's own assertions about its own overlay live with game one.
 """
 
 from __future__ import annotations
@@ -15,13 +15,18 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-SEED = Path(__file__).resolve().parents[2] / "content" / "seeds" / "overlay.curated.json"
+SEED = (
+    Path(__file__).resolve().parents[2]
+    / "content"
+    / "seeds"
+    / "overlay-mini.curated.json"
+)
 
 _document = json.loads(SEED.read_text(encoding="utf-8"))
 
 #: Live categories, the ones a build imports.
 CATEGORIES = len(_document["categories"])
-#: Distinct entities the seed contributes.
+#: Distinct entities the fixture contributes.
 ENTITIES = len(_document["entities"])
 #: Entity to category memberships, which is the relationship count an import makes.
 MEMBERSHIPS = sum(len(e["categories"]) for e in _document["entities"])

@@ -17,6 +17,13 @@ dev = ["pytest>=8.0", "hypothesis>=6.98"]
 # never require them: vectors and frequency scores are baked into snapshots.
 snapshot = ["wn>=0.9", "wordfreq>=3.0", "sentence-transformers>=2.5", "numpy>=1.26"]
 
+# Fixtures and record builders a game distribution's tests need, registered
+# as a pytest plugin so an installed game gets them with no path manipulation
+# and no copied conftest. Test support the platform owns is what keeps a new
+# game's test setup to one short file.
+[project.entry-points.pytest11]
+puzzlegen_testing = "puzzlegen.testing"
+
 [tool.setuptools.packages.find]
 include = ["puzzlegen*"]
 

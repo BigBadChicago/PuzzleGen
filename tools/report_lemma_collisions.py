@@ -38,7 +38,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-DEFAULT_OVERLAY = Path("content/seeds/overlay.curated.json")
+#: No default, for the reason stated in ``tools/build_snapshot.py``: the
+#: overlay belongs to a game, and this is a platform tool.
+DEFAULT_OVERLAY = None
 
 
 @dataclass(slots=True)

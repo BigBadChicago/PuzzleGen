@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parents[2]
 TOOLS = ROOT / "tools"
 SEEDS = ROOT / "content" / "seeds"
 MINI_LEXICON = SEEDS / "wordnet-mini.lexicon.json"
-OVERLAY = SEEDS / "overlay.curated.json"
+OVERLAY = SEEDS / "overlay-mini.curated.json"
 
 
 def load_tool(name: str):
@@ -128,11 +128,11 @@ class TestCollecting:
 class TestOverlayMembers:
     def test_members_are_read_with_their_category_names(self):
         members = collisions.overlay_members(OVERLAY)
-        assert members["turtle"] == ["thing with a shell"]
+        assert members["raccoon"] == ["thing with stripes"]
 
     def test_a_member_in_two_categories_lists_both(self):
         members = collisions.overlay_members(OVERLAY)
-        assert len(members["salmon"]) == 2
+        assert len(members["otter"]) == 2
 
     def test_every_seed_member_is_present(self):
         assert len(collisions.overlay_members(OVERLAY)) == ENTITIES
@@ -284,7 +284,7 @@ class TestInputLists:
     def test_overlay_members_join_the_term_list(self, tmp_path):
         path = write_lexicon(tmp_path / "a.lexicon.json", [sense("otter", "s.otter")])
         terms, _ = build_snapshot.input_lists([path], OVERLAY, NOW)
-        assert "turtle" in terms and "otter" in terms
+        assert "raccoon" in terms and "otter" in terms
 
     def test_the_two_lists_stay_aligned(self, tmp_path):
         path = write_lexicon(
@@ -390,6 +390,8 @@ class TestGamesBringingTheirOwnTaxonomy:
                 str(MINI_LEXICON),
                 "--curated",
                 f"{curated}:parity",
+                "--overlay",
+                str(OVERLAY),
                 "--db",
                 str(db),
                 "--label",
@@ -522,11 +524,19 @@ class TestProviderOrder:
         )
         assert all(o["entity_identity"] == "lemma" for _, o in chosen)
 
-    def test_the_overlay_is_not_optional(self):
-        """No flag removes it. A snapshot without a second axis is four piles."""
+    def test_the_builder_names_no_games_overlay_file(self):
+        """The caller supplies the overlay; the platform does not know one.
+
+        It used to default to game one's ``overlay.curated.json``. That made a
+        platform tool hold the path of a game's content, so uninstalling the
+        game would have left a default pointing at a missing file, and the
+        build scripts would have kept working by accident. The overlay is a
+        game's own crosscutting taxonomy: it moved into that game's
+        distribution, and the flag lost its default.
+        """
+        assert build_snapshot.OVERLAY_SEED is None
         parser_args = build_snapshot.main.__doc__ or ""
         assert "--no-overlay" not in parser_args
-        assert build_snapshot.OVERLAY_SEED.name == "overlay.curated.json"
 
 
 class TestBuildCommandLine:
@@ -576,11 +586,19 @@ class TestBuildCommandLine:
             assert meta.content_hash
 
     def test_a_full_build_activates_the_overlay(self, tmp_path):
+        """The overlay is named on the command line, not defaulted.
+
+        It used to be defaulted, which is why this test did not pass it. The
+        flag lost its default when the overlay moved into the game that owns
+        it, so every caller names its own.
+        """
         db = tmp_path / "graph.sqlite"
         build_snapshot.main(
             [
                 "--lexicon",
                 str(MINI_LEXICON),
+                "--overlay",
+                str(OVERLAY),
                 "--db",
                 str(db),
                 "--label",
@@ -714,7 +732,7 @@ class TestTheInputListsMatchTheBuild:
     def test_the_overlay_members_are_present_without_a_gloss(self, tmp_path):
         path = self.two_senses(tmp_path)
         _, texts = build_snapshot.input_lists([path], OVERLAY, NOW)
-        assert "turtle" in texts
+        assert "raccoon" in texts
 
     def test_a_table_built_from_the_list_satisfies_the_build(self, tmp_path):
         """End to end: prepare, fake command 7, build. No KeyError."""

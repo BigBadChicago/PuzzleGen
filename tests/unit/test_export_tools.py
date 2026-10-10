@@ -391,7 +391,7 @@ class TestBuildReportCounts:
             report=report,
         )
         builder.import_provider(
-            CuratedJSONProvider(SEEDS / "overlay.curated.json", name=name, now=NOW),
+            CuratedJSONProvider(SEEDS / "overlay-mini.curated.json", name=name, now=NOW),
             taxonomy="overlay",
             report=report,
         )
@@ -415,7 +415,7 @@ class TestBuildReportCounts:
             report=report,
         )
         builder.import_provider(
-            CuratedJSONProvider(SEEDS / "overlay.curated.json", name="b", now=NOW),
+            CuratedJSONProvider(SEEDS / "overlay-mini.curated.json", name="b", now=NOW),
             taxonomy="overlay",
             report=report,
         )

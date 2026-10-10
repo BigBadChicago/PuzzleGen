@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "puzzlegen-grouping"
+version = "1.0.0"
+description = "Game one for PuzzleGen: four visible groups, and a fifth nobody mentions."
+requires-python = ">=3.11"
+# The platform, and nothing else. A game depends on the capabilities the
+# engine exposes, never on how they are implemented, so there is no snapshot
+# dependency here and no storage dependency: a game that could install one
+# could reach the graph.
+dependencies = ["puzzlegen>=0.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "hypothesis>=6.98"]
+
+# How the platform finds this game. The registry reads this group and
+# registers what it finds, so installing this distribution adds the game and
+# uninstalling it removes the game, with no edit anywhere in the platform.
+[project.entry-points."puzzlegen.games"]
+grouping = "puzzlegen_grouping:build_plugin"
+
+[tool.setuptools.packages.find]
+include = ["puzzlegen_grouping*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error"]

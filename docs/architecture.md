@@ -1323,3 +1323,95 @@ same thing but are unrelated in the graph, `overlay.color` and `chromatic
 color` being the live example. Overlay categories are taxonomy roots, so there
 is no relation to find. That needs an anchor recorded on the overlay category;
 see `docs/decision-log.md`, session 3.
+
+## Phase 8 (session 3): games as distributions
+
+Paths in every section above predate this change. A reference to
+`puzzlegen/games/grouping/x.py` means `games/grouping/puzzlegen_grouping/x.py`,
+and one to `tools/overlay_coverage.py`, `tools/measure_coverage.py`,
+`tools/propose_overlay.py`, `tools/overlay_seed.py` or `tools/generate_days.py`
+means the same file under `games/grouping/tools/`. The code is unchanged; what
+changed is who owns it.
+
+### A game is a distribution, found through an entry point
+
+Game one was an in-tree package under `puzzlegen/games/`, registered by
+whichever code constructed the registry. Adding a game meant editing that
+wiring, and removing one meant editing it back, which made both a platform
+change. The platform now holds no list of games:
+
+- a game is its own distribution (`games/<name>/`) with its own
+  `pyproject.toml`, package, tests, tools and content
+- it advertises itself in the `puzzlegen.games` entry point group, resolving
+  to a plugin or a zero argument factory
+- `GameRegistry.discover()` registers what is installed, and is called
+  explicitly rather than on construction, because which games a process serves
+  is an operator's decision and a test's, not a property of the environment
+- an entry point that cannot be loaded, or that resolves to something without
+  `describe`, is a `ConfigurationError` naming the distribution, never a
+  silently absent game
+
+Installing the distribution is the whole of adding the game. Uninstalling it is
+the whole of removing it.
+
+### What moved out of the platform, and why each had to
+
+- **The game's code**, to `games/grouping/puzzlegen_grouping/`. Its imports of
+  the platform are now absolute, which is also a statement: it depends on the
+  installed capability, not on being in the same tree.
+- **The game's tests**, to `games/grouping/tests/`. A game whose tests live in
+  the platform's suite cannot be uninstalled without breaking it.
+- **The game's tools**, to `games/grouping/tools/`: the coverage model, the
+  coverage CLI, the overlay proposer, the overlay seed writer and the day
+  generator. All five are about one game's board shape or one game's taxonomy.
+  `build_snapshot`, the exporters, `report_lemma_collisions`, `review` and
+  `synonym_density` stayed: they are about lexicons, snapshots and review
+  authority, which every game shares.
+- **The game's content**, `overlay.curated.json`, to
+  `games/grouping/content/`. The overlay is one game's crosscutting taxonomy,
+  and `--overlay` lost its default in `tools/build_snapshot.py` as a result: a
+  platform tool holding the path of a game's content file is the coupling that
+  makes removing the game a platform edit. A build may now have no overlay at
+  all, which is what a lexicon-only snapshot is.
+
+### Test support became a platform capability
+
+`puzzlegen/testing` holds the graph fixtures and record builders that every
+game's tests need, registered through the `pytest11` entry point. A game's
+entire test setup is then one short conftest that puts its own helpers on the
+path. Without this, each new game would copy the platform's conftest, and the
+copies would drift.
+
+It is the one module in the package allowed to mint records already marked
+ACTIVE, which is the authority the snapshot builder otherwise holds alone.
+That is safe only while no runtime module can reach it, so that unreachability
+is itself an invariant (`TestTestSupportStaysOutOfTheRuntime`), and the
+package-wide scans exclude the directory explicitly rather than by accident.
+
+### The invariants moved with the boundary
+
+The plugin boundary tests used to walk `puzzlegen/games/`. They now resolve
+installed game packages through the same entry point group the registry reads,
+so a game is subject to them wherever it lives, in this repository or not, and
+they fail loudly when no game is installed rather than passing vacuously over
+an empty list.
+
+Two new invariants state the property this phase is for:
+
+- **The platform imports no game** and **holds no game id as a literal**,
+  checked against the ids and packages that are actually installed, so the test
+  cannot go stale and cannot be satisfied by renaming a game. Deliberately
+  about code rather than prose: "a grouping game has four groups" in a
+  docstring is a statement about a genre.
+- **A platform tool names no game**, which is the form the coupling took in
+  `build_snapshot`'s overlay default. The path contained no game name, so that
+  specific case is held by its own test instead.
+
+### What this does not yet give
+
+Third-party games still run in-process. The subprocess sandbox the versioning
+module describes (`PLUGIN_PROTOCOL_VERSION`, wire protocol) is unbuilt, so the
+import boundary is enforced for installed games by the invariants above rather
+than by isolation. That is the same enforcement in-tree games had, now applied
+to a wider set, and the sandbox remains the stronger mechanism for code that
+never enters the repository.
