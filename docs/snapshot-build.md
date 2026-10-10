@@ -1,275 +1,199 @@
-# Building the first real snapshot
+# Building a real snapshot
 
-Everything before this point ran against test fixtures: an 8 synset lexicon and
-a 23 entity curated file. This is the procedure that produces a snapshot made
-of real content.
+This is the procedure that produces a snapshot made of real content, as the
+build actually stands now. An earlier version of this doc described a five then
+seven root build at depth 3 with measured figures from a 3,229 entity snapshot;
+that build no longer exists. The current build is 23 roots and produces roughly
+12,000 entities. Where this doc gives a number, it is from the current build or
+marked as not yet re-measured; do not trust a figure here you have not seen a
+tool print.
 
-The figures below were measured by running every step against the Open English
-WordNet 2024 edition (the same 12,912,118 byte file that `python -m wn download
-oewn:2024` fetches). One step could not be run where the figures were measured,
-command 7, because it downloads an embedding model. Everything else printed
-exactly what is shown.
+The authoritative, runnable version of the root set and the exact commands is
+`docs/rebuild-with-new-roots.sh`. This doc explains the steps and the reasons;
+that script is what you run. If the two ever disagree, the script wins, because
+it is executed and this is prose.
 
 ## Step 0: prerequisites
 
 ```bash
 pip install -e ".[dev]"
-pip install torch --index-url https://download.pytorch.org/whl/cpu   # no GPU
+pip install torch --index-url https://download.pytorch.org/whl/cpu
 pip install -e ".[snapshot]"
 python -m wn download oewn:2024
 ```
 
 The engine never imports `wn`, `wordfreq` or `sentence-transformers`. These
-commands run offline and the resulting JSON is committed, which keeps the
-runtime install small and makes two machines importing the same file produce
-the same graph.
+commands run offline after the one model download, and the resulting JSON is
+committed, which keeps the runtime install small and makes two machines
+importing the same files produce the same graph. The build needs Python 3.11+
+(the engine uses `StrEnum`).
 
-## Step 1: choose the roots
+The embedding step fetches the 90 MB `sentence-transformers/all-MiniLM-L6-v2`
+model the first time; it needs network access once. If `python -m wn download`
+cannot reach its host, the OEWN 2024 edition is also downloadable directly from
+the GitHub release `english-wordnet-2024.xml.gz` and loadable with `wn.add`.
 
-A root is one synset, and the export takes everything within three hyponym
-levels below it. Name it as `lemma.pos.NN`: the lemma, its part of speech, and
-its position among that lemma's senses of that part of speech. The tool prints
-the synset it resolved and its definition before it writes anything, because
-sense numbers come from the lexicon and differ between lexicons and editions.
-Read that line. `plant.n.01` is a factory and `plant.n.02` is the organism.
+## Step 1: the roots
 
-To see what a lemma could mean before choosing:
+A root is one synset. The export takes everything within a given number of
+hyponym levels below it (the `--depth` flag; default 3, but the real build uses
+6 for most roots and 8 for `fish`). Name a root by synset id (stable across
+editions) or as `lemma.pos.NN`. The tool prints the synset it resolved and its
+definition before writing anything, because sense numbers come from the lexicon
+and differ between editions. Read that line: a first line naming a different
+synset than intended means the root resolved to the wrong sense; stop and use
+`--list`.
 
 ```bash
 python tools/export_wordnet.py --root plant --pos n --list
 ```
 
-| Root | Resolves to | Why |
-|---|---|---|
-| `animal.n.01` | `oewn-00015568-n`, a living organism characterized by voluntary movement | Dense, familiar, deeply nested. The reliable group source. |
-| `plant.n.02` | `oewn-00017402-n`, (botany) a living organism lacking the power of locomotion | Familiar nouns, several overlay collisions (sage, mint). |
-| `tool.n.01` | `oewn-04459089-n`, an implement used in the practice of a vocation | Concrete artifacts. |
-| `vehicle.n.01` | `oewn-04531608-n`, a conveyance that transports people or objects | Small and clean, low polysemy. |
-| `musical_instrument.n.01` | `oewn-03806455-n`, any of various devices that can be used to produce musical tones | Distinct vocabulary, little overlap with the others. |
+### The current 23 roots
 
-Five roots rather than four, because four visible groups drawn from a pool of
-four gives every board the same domains.
+Sixteen base roots plus seven added to close overlay coverage gaps. All at
+depth 6 except `fish` at depth 8 (it was the only root truncated at depth 6,
+losing 101 synsets).
 
-## Step 2: the seven commands
+Base (16): `bird`, `carnivore`, `fish`, `flavorer`, `flower`, `fruit`,
+`garment`, `herb`, `insect`, `instrument`, `kitchen`, `planet`, `reptile`,
+`sport`, `tool`, `vehicle`.
 
-Five exports, then frequency, then embeddings, with a prepare step between the
-exports and the last two that is not one of the seven.
+Added (7), with synset ids, because these ids are what the rebuild script uses:
 
-```bash
-# 1 to 5: the lexical exports
-python tools/export_wordnet.py --root animal.n.01 --depth 3 \
-    --out content/seeds/wordnet-carnivore.lexicon.json
-python tools/export_wordnet.py --root plant.n.02 --depth 3 \
-    --out content/seeds/wordnet-bird.lexicon.json
-python tools/export_wordnet.py --root tool.n.01 --depth 3 \
-    --out content/seeds/wordnet-tool.lexicon.json
-python tools/export_wordnet.py --root vehicle.n.01 --depth 3 \
-    --out content/seeds/wordnet-vehicle.lexicon.json
-python tools/export_wordnet.py --root musical_instrument.n.01 --depth 3 \
-    --out content/seeds/wordnet-instrument.lexicon.json
+| Root | Synset id | Depth | Why added |
+|---|---|---|---|
+| `mollusk` | `oewn-01943377-n` | 6 | clam, oyster, snail (animal senses) |
+| `crustacean` | `oewn-01977414-n` | 6 | crab, lobster, shrimp (animal senses) |
+| `cutting_implement` | `oewn-03159112-n` | 6 | cutlery, knife, scissors |
+| `tableware` | `oewn-04389081-n` | 6 | cutlery, fork |
+| `power_tool` | `oewn-04003842-n` | 6 | chainsaw, jigsaw |
+| `color` | `oewn-04963771-n` | 6 | hazel, heather, coral, indigo (colour senses) |
+| `drug_of_abuse` | `oewn-03253661-n` | 6 | cannabis, marijuana |
 
-# prepare: the two input lists the next two commands consume
-python tools/build_snapshot.py --write-inputs build/ \
-    --lexicon content/seeds/wordnet-carnivore.lexicon.json \
-    --lexicon content/seeds/wordnet-bird.lexicon.json \
-    --lexicon content/seeds/wordnet-fruit.lexicon.json \
-    --lexicon content/seeds/wordnet-garment.lexicon.json \
-    --lexicon content/seeds/wordnet-tool.lexicon.json \
-    --lexicon content/seeds/wordnet-vehicle.lexicon.json \
-    --lexicon content/seeds/wordnet-instrument.lexicon.json
+`mollusk` and `crustacean` replaced a superseded `shellfish` root, which held
+the food senses (the flesh of a clam) rather than the animals the overlay
+means. `shellfish` must not be in a build; the rebuild script deletes it
+defensively. `mollusk` and `crustacean` are listed first in the build order so
+a merged category such as `crab` takes the crustacean gloss rather than the
+rowing stroke from `sport` (parents merge regardless of order; order only sets
+the displayed gloss).
 
-# 6: corpus frequency, scored per lemma
-python tools/export_frequency.py --terms build/terms.txt \
-    --out content/seeds/frequency.json
+**`color` carries a known risk.** It makes `chromatic color` a lexical parent,
+which lets game 1 form a visible colour group next to the hidden group `word
+that is also a color`, giving the answer away. See the handoff and decision log:
+build A excludes `color` and `drug_of_abuse` for this reason, build B includes
+them, and the leak is an open generator fix, not a reason the root itself is
+wrong.
 
-# 7: sentence embeddings, computed over "name: definition"
-python tools/export_embeddings.py --texts build/texts.txt \
-    --out content/seeds/embeddings.json
-```
+The remaining gap: 22 overlay words are still unsupplied by these 23 roots
+(beaver, broom, cheese, coconut, comb, drill, erica, hemp, hoe, holly, hop,
+hops, iris, jasmine, mate, mower, onion, rake, ram, rodent, rush, walnut). A
+second batch of candidate roots for them is in `docs/candidate-roots.md`
+section 5. `mate` (the beverage) is reachable by no root and needs an explicit
+synset id or removal from the overlay.
 
-### What each one printed
+## Step 2: export, prepare, frequency, embeddings
 
-| Command | Printed |
-|---|---|
-| 1 animal | `root: oewn-00015568-n  a living organism characterized by voluntary movement` then `wrote 282 synsets and 449 senses` |
-| 2 plant | `root: oewn-00017402-n  (botany) a living organism lacking the power of locomotion` then `wrote 749 synsets and 1854 senses` |
-| 3 tool | `root: oewn-04459089-n  an implement used in the practice of a vocation` then `wrote 259 synsets and 407 senses` |
-| 4 vehicle | `root: oewn-04531608-n  a conveyance that transports people or objects` then `wrote 164 synsets and 287 senses` |
-| 5 instrument | `root: oewn-03806455-n  any of various devices or contrivances that can be used to produce musical tones or sounds` then `wrote 111 synsets and 209 senses` |
-| prepare | `wrote build/terms.txt` and `wrote build/texts.txt`, 3229 lines each |
-| 6 frequency | `wrote 2379 scores to content/seeds/frequency.json`, 74 percent of the terms |
-| 7 embeddings | `wrote 3229 vectors`, which must equal the line count of `texts.txt` |
+The sequence, per build, is: export each root, write the input lists, score
+frequency, compute embeddings. `docs/rebuild-with-new-roots.sh` does all of it
+for builds A and B; read it rather than retyping the commands. The non obvious
+parts, which are where builds go wrong:
 
-A first line that names a different synset than the table means the root
-resolved to the wrong sense. Stop and use `--list`.
+**Never glob the lexicon files.** Name each root explicitly. A glob over
+`content/seeds/wordnet-*.lexicon.json` picks up the 8 synset test fixture
+`wordnet-mini.lexicon.json` and any stray export, and silently builds the wrong
+graph. This project has hit stray or duplicate files in that directory several
+times; the script defines the root set as explicit lists for exactly this
+reason.
 
-The prepare step imports the exports into a throwaway in-memory graph and reads
-the entities back, so `texts.txt` holds exactly the strings the build will
-later look up in the embedding table. Re-run it after changing any lexicon: a
-`texts.txt` from an older set of exports produces a table the build rejects at
-its last step, with a `KeyError` naming five words.
+**The prepare step must be re-run after any lexicon change.** `build_snapshot.py
+--write-inputs` imports the exports into a throwaway in-memory graph and reads
+the entities back, so `texts.txt` holds exactly the strings the build will later
+look up in the embedding table. A `texts.txt` from an older set of exports
+produces an embedding table the build rejects at its last step with a `KeyError`
+naming a few missing words.
 
-Command 7 is the slowest and needs network access the first time, to fetch the
-90 MB `sentence-transformers/all-MiniLM-L6-v2` model. It was not run where
-these figures were measured, so its count is what the arithmetic says it must
-be, not what was observed.
+**Inputs depend on the exact root set, so A and B need merged inputs.** An
+entity's embedded text is `word: definition` when some lexicon defines the word
+and the bare `word` when none does. `coffee` is bare in build A and defined
+(`coffee: a medium brown color`) in build B once `color` is present. Generating
+one input list from the larger build therefore omits build A's bare words and
+the build fails with a KeyError on them. The script writes inputs per build and
+merges them with `LC_ALL=C sort -u` so one embedding export serves both.
+
+**A clean checkout needs `--ignore-stale`.** `build_snapshot.py` refuses to
+build when `frequency.json` or `embeddings.json` are older than a lexicon file.
+A fresh `git clone` gives every file the same mtime, which trips this guard
+spuriously. Pass `--ignore-stale` after confirming the seeds are actually
+current. This guard is correct and worth keeping; it only misfires on a clone.
 
 ## Step 3: read the collision report
 
 ```bash
 python tools/report_lemma_collisions.py \
-    --lexicon content/seeds/wordnet-carnivore.lexicon.json \
-    --lexicon content/seeds/wordnet-bird.lexicon.json \
-    --lexicon content/seeds/wordnet-fruit.lexicon.json \
-    --lexicon content/seeds/wordnet-garment.lexicon.json \
-    --lexicon content/seeds/wordnet-tool.lexicon.json \
-    --lexicon content/seeds/wordnet-vehicle.lexicon.json \
-    --lexicon content/seeds/wordnet-instrument.lexicon.json \
+    --lexicon content/seeds/wordnet-<root>.lexicon.json ... \
+    --overlay content/seeds/overlay.curated.json \
     --out build/lemma-collisions.json
 ```
 
-Measured: 3102 lemmas, 97 with more than one sense (90 with two, 7 with
-three), and 6 that appear under two roots (`borer`, `bugle`, `embryo`,
-`rocket`, `sledge`, `viola`). Nothing in this report blocks a build. It is read
-by a person.
+Name the same explicit root list. The report changes nothing; a person reads
+it. Its "overlay words whose second meaning had a parent refused in the merge"
+section is the one to check: on the current 23 roots it reports 0 overlay words
+losing a parent, which matches the builder. (This report was rewritten to mirror
+the builder's real merge behavior; an earlier version produced false alarms.
+See the decision log.)
 
-### The finding that matters: the overlay barely meets the lexicon
-
-Of the 144 overlay members, **only 10 appear in these five exports**: `chime`,
-`comb`, `drum`, `engine`, `file`, `mint`, `rake`, `sage`, `saw` and `tap`. The
-other 134 are absent, across every one of the fifteen categories. All 134 do
-exist in WordNet as nouns; they live in parts of the hierarchy these five roots
-do not reach (colors, weather, sounds, abstractions, acts, geological
-formations).
-
-What that means for the build:
-
-- Those 134 become entities with no definition and no taxonomic parent. Their
-  embeddings are computed over the bare word, not a gloss.
-- They can act as hidden group members. They cannot also belong to a visible
-  group, because they have no category in the lexical taxonomy.
-- The design's central move, one word belonging to a visible group and to a
-  hidden one, is available for only those 10 words.
-
-This is not a build failure and the report does not treat it as one. It is a
-content decision, and it is made before batch 2 sizes the game's content
-requirements.
-
-Adding roots to reach the missing words does not scale. Measured against the
-real lexicon at depth 3, each extra root covers only a few of the 134:
-
-| Extra root | Synsets exported | Overlay words it reaches |
-|---|---|---|
-| `artifact.n.01` | 2136 | 29 |
-| `abstraction.n.06` | 1366 | 17 |
-| `communication.n.02` | 830 | 15 |
-| `attribute.n.02` | 1727 | 15 |
-| `act.n.02` | 1394 | 11 |
-| `event.n.01` | 671 | 11 |
-| `geological_formation.n.01` | 232 | 8 |
-| `substance.n.01` | 749 | 7 |
-
-The best four together (`artifact`, `abstraction`, `substance`,
-`geological_formation`, about 4,500 synsets, roughly three times the current
-snapshot) reach 55 of the 134. The other 79 include nearly all of the color,
-sound, scent and cold weather words, which sit deeper than three levels or
-under roots not listed here.
-
-`saw` is the only overlay member with more than one sense in these exports.
-Both senses are tools, a hand tool and a power tool, so the merge is harmless.
+Order matters in one respect only: the first file to name a category sets its
+gloss. Parents from a later file are unioned onto it, so no sense loses its
+ancestry to file order. The build order in the rebuild script is chosen so the
+displayed glosses read correctly, not to protect ancestry.
 
 ## Step 4: build
 
-```bash
-python tools/build_snapshot.py \
-    --db content/graph.sqlite \
-    --label 2026.09.1 \
-    --now 2026-09-28T12:00:00+00:00 \
-    --lexicon content/seeds/wordnet-carnivore.lexicon.json \
-    --lexicon content/seeds/wordnet-bird.lexicon.json \
-    --lexicon content/seeds/wordnet-fruit.lexicon.json \
-    --lexicon content/seeds/wordnet-garment.lexicon.json \
-    --lexicon content/seeds/wordnet-tool.lexicon.json \
-    --lexicon content/seeds/wordnet-vehicle.lexicon.json \
-    --lexicon content/seeds/wordnet-instrument.lexicon.json \
-    --frequency content/seeds/frequency.json \
-    --embeddings content/seeds/embeddings.json
-```
+The build command is in the rebuild script. `--now` pins the timestamp stamped
+on every record; the content hash covers it, so two builds of identical inputs
+agree on their hash only when it is pinned. A release build passes it; a local
+one need not. The overlay seed is imported automatically, last, after every
+lexicon: without it there is no second axis, and a grouping game with no second
+axis is four piles.
 
-`--now` pins the timestamp stamped on every record built in this run. Every
-governed record carries a creation time and the content hash covers it, so two
-builds of identical inputs agree on their hash only if it is pinned. A release
-build passes it; a local one does not need to.
+A real build passes `--embeddings content/seeds/embeddings.json`. `--dev-embeddings`
+produces hash vectors that are fine for structural checks (does a board form)
+but meaningless for anything using similarity (coverage, the temptation gate),
+and it prints a warning that must be absent from a real build.
 
-The overlay seed is imported automatically, last, after every lexicon. It is
-not a flag: without it there is no second axis, and a grouping game with no
-second axis is four piles.
+### What a good build looks like
 
-### What it printed (with development embeddings)
+- `entities` around 12,000 and `embeddings` exactly equal to it.
+- `wordnet:oewn` category count equal to the sum of the exports' synsets minus
+  the synsets shared between roots (which merge).
+- `frequency: missing` well under `scored` (rare species and multiword terms
+  have no corpus score).
+- The overlay's active categories each with their active members.
+- No development embeddings warning.
 
-```
-records:
-  categories       1541
-  entities         3229
-  embeddings       3229
-  frequencies      2379
-  relationships    3308
-per provider:
-  overlay-seed     categories=15, entities=144, relationships=150
-  wordnet:oewn     categories=1565, entities=3206, relationships=3206
-frequency : scored 2379, missing 850
-activated : 8078
-```
+Exact counts for the current 23 root build are in `build/coverage-A.json` and
+`build/coverage-B.json` (entities, usable tiles, lexical categories). Read those
+rather than trusting a number memorized here.
 
-`wordnet:oewn` sums the five lexicons, and its category count equals the sum of
-the five exports' synsets (282 + 749 + 259 + 164 + 111 = 1565). The graph holds
-fewer categories than that plus the overlay's fifteen because synsets shared
-between roots merge.
+## Afterwards: what to commit
 
-A real build passes `--embeddings content/seeds/embeddings.json` in place of
-`--dev-embeddings`, and must not print the development embeddings warning.
+Commit the lexicon files, `frequency.json`, and `embeddings.json`. These are the
+seeds a build needs and without them the committed coverage results cannot be
+reproduced (this exact gap, new roots generated but never committed, has bitten
+the project before).
 
-## What a good build looks like
+**Do not commit `content/graph.sqlite` to a normal build**, and `.gitignore`
+now excludes `*.sqlite*` so it cannot happen by accident. The graph is
+regenerable from the seeds above.
 
-- `entities` in the low thousands and `embeddings` exactly equal to it.
-- `frequency: missing` well under `scored`. It is 850 against 2379 here,
-  because rare species names and multiword terms have no corpus score.
-- `activated` a few thousand.
-- Fifteen active overlay categories, each with ten active members.
-- No warning mentioning development embeddings.
+The one exception, and the reason this file's history is contradictory: once a
+review ledger exists in the database, that database stops being purely derived.
+The `ReviewDecision` ledger records what a curator decided on which day and is
+the sole evidence behind every credited accept; a rebuild cannot reproduce it,
+and the review system's anti-abuse property is that those days cannot be
+manufactured. If and when the project runs real curation, the database (or a
+dedicated export of that ledger) must be preserved outside the regenerable
+build. Until then, the graph is a build output and stays out of git.
 
-## Afterwards
-
-Commit the five lexicon files, `frequency.json`, `embeddings.json` **and**
-`content/graph.sqlite`. Do not commit `build/`.
-
-The sqlite file was previously listed here as derived and regenerable, and
-that stopped being true the moment review began. Two things live in that file
-that no rebuild can reproduce: the `ReviewDecision` ledger, which is a record
-of what a curator decided on which day and is the sole evidence behind every
-credited accept, and the pinned build time a byte-identical rebuild needs.
-Losing the file loses the ten-day accept history outright, and the review
-system's whole anti-abuse property is that those ten days cannot be
-manufactured. Regenerating the graph is cheap; regenerating ten days of
-curation is impossible.
-
-
-## Which exports belong to a build
-
-Seven roots, exported at depth 6: `carnivore.n.01`, `bird.n.01`,
-`edible_fruit.n.01`, `musical_instrument.n.01`, `vehicle.n.01`,
-`garment.n.01`, `hand_tool.n.01`.
-
-Name every one of them explicitly. Do not glob `wordnet-*.lexicon.json`: a
-glob picks up whatever is in the directory, including the test fixture
-`wordnet-mini.lexicon.json` and any superseded export that has not been
-deleted yet. The broad `animal` and `plant` exports this project began with
-were removed for exactly that reason. Measured before they were: building the
-seven roots produced 8 categories that lose a parent to a name collision, and
-building all nine produced 31, including `viola`, which is an overlay word.
-
-Run `tools/report_lemma_collisions.py` over the same list before building, and
-read its "overlay words whose second meaning lost its parent" section. Order
-matters in one respect only: the first file to name a category sets its gloss.
-Parents from a later file are added to it (see "Merging a category" in
-`architecture.md`), so no sense loses its ancestry to the order any more.
+Never commit `build/`.

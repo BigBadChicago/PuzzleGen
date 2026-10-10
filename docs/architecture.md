@@ -1185,3 +1185,110 @@ practice (confirmed against a real 30-day run), so the day-level
 randomization that already exists correctly has nothing to select among yet.
 Neither is a defect in the mechanisms described above; both are closed by
 content and build-process work, detailed in `docs/handoff.md`.
+
+## Phase 7, continued (session 2): candidate selection, the report/builder contract, and the surface form subsystem
+
+This supersedes the "both currently open" paragraph that ends the previous
+section: both gaps named there are now closed. How the mechanisms work:
+
+### Candidate selection: how a day chooses a board
+
+The engine does not choose among candidates. `GenerationPipeline` verifies them
+in list order and takes the first that passes. So the *order* a game hands back
+is the whole of selection, and anything that must vary by day has to vary the
+order.
+
+Two mechanisms in `puzzlegen/games/grouping/generate.py` produce a day-varying,
+still-deterministic order:
+
+- **`_candidates_at` drains hidden groups round-robin.** For each placeable
+  hidden group it opens a lazy stream of board plans (`plans_for`), then pulls
+  one plan per stream in rotation, with a per-group ceiling of roughly
+  `candidate_budget / number_of_groups`. The earlier version drained the first
+  hidden group's stream to the budget and returned from inside the inner loop,
+  so later hidden groups were never represented at all; a prolific first group
+  starved every other. Round-robin plus the ceiling guarantees the returned
+  candidate list spans distinct hidden groups, which is the precondition for the
+  day having anything to choose between.
+- **`_ordered` shuffles within rank.** It derives a day-keyed substream
+  (`rng.derive("candidate-order")`), shuffles the candidate list with it, then
+  applies a *stable* sort keyed by (not-enriched, negative-temptation). Python's
+  stable sort preserves the shuffled order inside each equal-key run, so the
+  two-axis preference (enriched hidden groups first, then more tempting boards)
+  is intact while ties break by the day's RNG instead of by candidate id. The
+  previous key ended in candidate id, a content property, so every day resolved
+  to the same first survivor.
+
+Why the randomness is in the plugin, not the engine: the engine performs a
+lookup (first that verifies), not a selection, so putting a draw there would add
+a second, independent source of randomness to one board. The plugin's ordering
+is the one place that actually selects, so one draw there keeps one source of
+randomness per board. This is what the generator's former no-randomness rule was
+protecting; the rule was right about the goal and wrong that the generator
+drawing nothing achieved it.
+
+Determinism is preserved end to end: the day key seeds the substream, so the
+same day regenerates the same order and the same board. `tests/unit/test_grouping_variety.py`
+covers both "two days differ" and "the same day is identical."
+
+### `generate_days.py` reports the served size
+
+A day draws a preferred board size (`group_size_for`) and the generator falls
+back to other sizes when the content cannot serve the draw. The served size
+lives in `outcome.puzzle.payload["group_size"]`. The tool now reads that, and
+reports "drew" and "served" as separate columns, so a run that falls back on
+every day can no longer look like full size coverage. This is the same class of
+fix as the collision report: read what the engine did, do not recompute it.
+
+### The report/builder contract for category merges
+
+`tools/report_lemma_collisions.py` and `SnapshotBuilder._merge_category` must
+agree on what happens when two same-named synsets merge, because the report
+exists to predict the build. The builder's rule, which the report now mirrors
+exactly:
+
+- A merged category's parents are the **union** of every same-named sense's
+  parents (not the first importer's only).
+- The sole parent *refused* is one that would make the category its own ancestor
+  (the category itself, or any category already below it). Refusal is reported,
+  not silent.
+- File order sets only the displayed gloss (first file wins), never ancestry.
+- Hypernym edges are unioned across files before the ancestor check, because a
+  synset exported under two roots keeps only the hypernyms inside each root's
+  subtree; letting a later file overwrite an earlier one dropped edges and hid
+  the cycles the check exists to catch.
+
+`tests/unit/test_collision_report_matches_builder.py` builds the same fixtures
+through both paths and asserts the report's "kept" equals the builder's actual
+parents and the report's "refused" never appears in them. It is the guard that
+keeps these two from drifting again, which is the project's recurring failure
+mode (a diagnostic that recomputes rather than reads).
+
+### The surface form subsystem (design, not yet built)
+
+A planned engine-level subsystem, specified so its architectural place is fixed
+before it is built. It is the first shared capability that is neither the content
+graph nor a game.
+
+- **What it owns:** the definition of an entity's letters. Case folding;
+  diacritic handling; whether spaces and hyphens are kept or dropped; how a
+  multi-word name collapses to a comparable sequence; which of an entity's
+  several names is the one that counts (primary lemma, or a shorter true synonym
+  where that is the common name); a deterministic, inspectable entity-to-letters
+  mapping; and a precomputed index, because character-level queries run per
+  candidate on every daily build.
+- **Where it sits:** beside the content graph, not inside it and not inside any
+  game. The graph is built for semantic questions and has no character index.
+  The subsystem consumes entities through the existing member queries and adds
+  **no new operation to the content service**. Games that need letters call the
+  subsystem; the graph is unchanged.
+- **Why a subsystem, not a helper:** the decisions above (which synonym counts,
+  how diacritics fold) are shared across any future letter-based game and are
+  load-bearing enough to need one authoritative answer plus an owned index. A
+  helper would hide them and let each game diverge.
+- **First client:** `missing_letters` (game 2). Its character-level feasibility
+  check (can a category's name be formed from letters distributed one per tile,
+  with the rest as blanks) runs in the game plugin, over members pulled through
+  existing queries and letters supplied by this subsystem, so the expensive
+  character work stays in the one game that needs it while the letter definition
+  stays shared. Full spec in `docs/missing-letters-requirements.md`.

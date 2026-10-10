@@ -903,3 +903,169 @@ This is expected to resolve as more overlay categories cross the feasibility
 line (the coverage tool already shows the count rising: 1 to 4 feasible
 categories at size 5 across this session), not as a code change. See the
 handoff for the specific categories closest to becoming feasible next.
+
+## Phase 7, continued (session 2): the two "unresolved gaps" closed, roots committed, and the fork to a multi-game engine
+
+The two gaps the previous section logged as unresolved are both resolved. One
+of them was misdiagnosed here, and the correction is the most important entry
+in this section.
+
+### The reproducibility gap: closed
+
+The committed `graph.sqlite` stub and the embeddings not covering every root
+were real. Resolution: `graph.sqlite` is not committed at all now (it is a
+build output; `.gitignore` excludes `*.sqlite*`), and the seven new-root
+lexicon files plus a depth-8 `fish` were committed (commit `4cd9e1b`) so the
+committed seeds reproduce `coverage-A.json` and `coverage-B.json`. The seeds,
+`frequency.json` and `embeddings.json` are the reproducible inputs; the graph
+is regenerated from them. `docs/snapshot-build.md` was rewritten to the current
+23-root reality.
+
+### The "every board is the same" gap: it was a code defect, and the previous entry's instruction was wrong
+
+The previous section concluded this was content starvation ("the generator
+offered exactly one candidate... expected to resolve as more overlay categories
+cross the feasibility line, not as a code change") and the handoff told the next
+session not to touch candidate selection. **That was wrong, and was verified
+wrong by direct measurement.**
+
+Root cause: `_ordered` in `puzzlegen/games/grouping/generate.py` sorted
+candidates by a fixed total order over content properties (enriched, then
+temptation, then candidate id). Nothing in that key varied by day. The engine
+does not *choose* among candidates; it verifies them in list order and takes the
+first that passes, which is a lookup, not a selection. So every day served at
+one board size produced a byte-identical board regardless of how many hidden
+groups the content supported. On a real day the generator was offered up to
+twelve distinct hidden groups and the fixed order picked the same one every
+time.
+
+Two fixes:
+
+- **Round-robin candidate accumulation with a per-group share.** `_candidates_at`
+  previously drained one hidden group's plans until the candidate budget was
+  spent, so later hidden groups were never reached. It now drains one plan per
+  hidden group in rotation with an even per-group ceiling, so the day has
+  distinct hidden groups to choose among rather than many boards wearing the
+  first one.
+- **A day-derived shuffle inside each rank.** `_ordered` now shuffles with
+  `rng.derive("candidate-order").shuffled(...)` before a stable sort by
+  enriched-then-temptation. The shuffle survives inside each equal-rank run, so
+  enrichment and temptation still rank while the day key reaches selection.
+  Randomness lives in the plugin's ordering, not the engine, because the engine
+  performs a lookup; this keeps one source of randomness per board, which the
+  old no-randomness-in-the-generator rule was protecting. Determinism is
+  preserved: same day, same board.
+
+Tests: `tests/unit/test_grouping_variety.py`. Six of its ten tests fail against
+the old code and pass against the fix, which makes them regression guards rather
+than decoration. (commit `453be84`)
+
+**Standing lesson reinforced:** the previous entry's "verified correct" claim
+for the selection mechanism was made against a snapshot where only one candidate
+existed, where correct selection and broken selection are indistinguishable. A
+"do not touch X, it is correct" instruction is only as good as the input it was
+verified against.
+
+### `generate_days.py` reported the drawn size, not the served size
+
+A day tries its drawn board size first and falls back to other sizes if the
+content cannot serve it. The tool reported the size the day *drew*, read from
+`group_size_for(day)`, not the size it was *served*, which the engine already
+carries in `outcome.puzzle.payload["group_size"]`. A run leaning entirely on
+fallback therefore looked like full coverage across sizes 5 to 9; the "30/30
+across every size" claim rested on this misread. Fixed to read the served size
+and to count drawn versus served on separate axes. This is the same recompute-
+instead-of-read failure mode as the collision report below. (commit `453be84`)
+
+### The lemma-collision report was a false-alarm generator
+
+`tools/report_lemma_collisions.py` claimed that when two senses of one word
+merge into one category, the later sense loses its parents, and it listed 14
+overlay words as losing a parent on the real roots. The builder does not do
+that: `_merge_category` unions the parents of every same-named sense and refuses
+only an edge that would make the category its own ancestor. Checked against a
+real dev build, 0 of the 14 actually lose a parent; all 14 were false alarms,
+including the 4 the previous section had already recorded.
+
+The report was rewritten to mirror the builder: union parents, refuse only a
+cycle-closing (ancestor or descendant) edge, follow the given file order, union
+hypernym edges across files (a synset exported under two roots keeps only the
+hypernyms inside each root's subtree, so letting a later file overwrite an
+earlier one dropped edges and hid the very loops the report exists to show), and
+a visited-set loop guard so a malformed lexicon cannot hang it. New test
+`tests/unit/test_collision_report_matches_builder.py` builds the same files both
+ways and fails if the report and the builder ever disagree; three of its tests
+fail against the old report. (commit `e9313ed`)
+
+### New roots, and the A/B coverage gate
+
+Seven roots were added to close most overlay coverage gaps: `mollusk`,
+`crustacean`, `cutting_implement`, `tableware`, `power_tool`, `color`,
+`drug_of_abuse`, plus `fish` re-exported at depth 8 (the only root truncated at
+depth 6, 498 to 617 synsets). A superseded `shellfish` root was dropped; it held
+food senses, not the animals, and `mollusk` + `crustacean` replace it. The full
+roots analysis, with synset ids and a second batch for the 22 still-unsupplied
+words, is in `docs/candidate-roots.md`.
+
+Two builds were measured. A = 16 base + mollusk, crustacean, cutting_implement,
+tableware, power_tool. B = A + color + drug_of_abuse. Distinct hidden categories
+reaching all four homes, at difficulty MEDIUM:
+
+```
+          size5  size6  size7  size8  size9
+build A     1      3      4      3      3
+build B     1      3      4      3      4
+```
+
+**Decision: ship A, hold B.** B's only unique wins ride on `color`, which
+introduces a real defect: for the hidden group `word that is also a color`, the
+visible homes include `chromatic color`, `pink` and `red`. A board asking the
+player to find the colour word while one visible group is literally the colours
+is broken, and the generator's leak check misses it because the visible group is
+a sibling of the hidden category, not the hidden category itself. The fix (open):
+a visible group may not be an ancestor or descendant of the hidden category.
+
+### Investigative method note: measure against the engine, load OEWN directly when the package host is blocked
+
+Several findings this session came from loading OEWN 2024 directly from its
+GitHub release (`english-wordnet-2024.xml.gz`, `wn.add`) when `python -m wn
+download`'s host was unreachable, then measuring candidate roots and parent
+merges against a real dev build rather than against a tool's recomputed opinion.
+Every "the tool says X" claim that disagreed with the engine turned out to be
+the tool's error, never the engine's. When a diagnostic and the engine could
+disagree about a number, make the diagnostic read the engine's real output or
+import the real constant; do not re-derive it.
+
+### The fork: a multi-game engine, a surface form subsystem, and game 2
+
+Settled this session, recorded here because it sets project direction:
+
+- PuzzleGen is now explicitly a multi-game engine, not one game with a graph.
+  Game 1 (grouping) reasons about meaning; game 2 (`missing_letters`) reasons
+  about a word's letters.
+- The **surface form subsystem** is an engine-level subsystem, not a helper. It
+  defines what the letters of an entity are (case folding, diacritics,
+  spaces/hyphens, multi-word collapse), which surface form counts (primary lemma
+  versus a shorter true synonym, e.g. `bowed instrument` for `bowed stringed
+  instrument`), a stable inspectable entity-to-letters mapping, and a
+  precomputed index since character queries run per candidate every daily build.
+  It sits beside the content graph and adds no new content-service operation.
+  `missing_letters` is its first client. Open: build the subsystem first
+  (platform-first, the user's lean) or inline and extract later.
+- **`missing_letters`** is specified in full in `docs/missing-letters-requirements.md`.
+  Settled: SOUND_INCOMPLETE verification with a stated search bound and a pinned
+  word list; a mark must occur in its own tile's word; multi-word category names
+  permitted with common names favored and shorter-synonym substitution allowed;
+  when difficulty wants more blanks than the data forces, leave a
+  could-have-been-marked tile unmarked to manufacture the extra blank (recording
+  per board which blanks were forced versus manufactured); at least two blanks
+  always; free anagram; one mark per tile max; not every tile marked. No coverage
+  tool for it exists yet.
+
+### Repository hygiene
+
+Added `.gitattributes` (`* text=auto eol=lf` plus binary guards and `*.sh`
+pinned to LF) to end the CRLF/LF churn that made the user's Windows checkout show
+every tracked text file as modified. Widened the `.gitignore` sqlite rule from
+`*.sqlite3` to `*.sqlite*`, added `*.bak`, and untracked the stray
+`.gitignore.bak`. (commit `e02f7ca`)
