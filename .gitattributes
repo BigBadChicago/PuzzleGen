@@ -1,0 +1,21 @@
+# Normalize line endings: store LF in the repo, let each OS check out its own.
+# Without this, a Windows checkout (CRLF) shows every text file as modified
+# against the LF-stored blobs. Set once; ends the CRLF/LF churn permanently.
+* text=auto eol=lf
+
+# Binary formats: never touch their bytes, never diff them as text.
+*.sqlite  binary
+*.sqlite3 binary
+*.db      binary
+*.gz      binary
+*.zip     binary
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.pdf     binary
+*.docx    binary
+*.pptx    binary
+*.xlsx    binary
+
+# Shell scripts are LF even on Windows, or they break under bash.
+*.sh text eol=lf

@@ -2,10 +2,11 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .hypothesis/
-*.sqlite3
+*.sqlite*
 *.egg-info/
 .venv/
 dist/
 build/
 .venv/
 scratch-overlay.verb-words.json
+*.bak
