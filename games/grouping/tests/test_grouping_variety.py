@@ -12,11 +12,13 @@ files cannot drift into disagreeing about what a board is.
 
 from __future__ import annotations
 
+import datetime as dt
+
 import pytest
 
 from paths import TOOLS
 
-from puzzlegen_grouping.descriptor import VISIBLE_GROUPS, group_size_for
+from puzzlegen_grouping.descriptor import GAME_ID, VISIBLE_GROUPS, group_size_for
 from puzzlegen_grouping.generate import generate_candidates
 
 from .test_grouping_generate import (
@@ -242,3 +244,76 @@ class TestServedSizeReporting:
         table = tool.by_size(results)
         assert table[9] == (0, 1)
         assert table[5] == (2, 1)
+
+
+class TestTheDayChoosesAmongEquals:
+    """Ranking by an exact content score outranks the day's own draw.
+
+    The engine takes the first candidate that verifies, so a total order over
+    content properties decides the board and the day's shuffle only breaks
+    ties that exact scores rarely produce. Measured on build A2 after the
+    visible pool was fixed to cover nine overlay categories: the generator
+    offered boards from several of them and one won all ten days, by a single
+    point of temptation. Banding is what gives the draw something to choose.
+    """
+
+    def payload(self, temptation: int, *, enriched: bool = False) -> dict:
+        return {"temptation": temptation, "enriched": enriched}
+
+    def candidate(self, name: str, temptation: int, *, enriched: bool = False):
+        from puzzlegen.engine.plugin import PuzzleCandidate
+
+        return PuzzleCandidate(
+            candidate_id=name,
+            payload=self.payload(temptation, enriched=enriched),
+            fact_refs=("entity:x",),
+            rationale="",
+        )
+
+    def order_for(self, day: str, candidates):
+        from puzzlegen.core.rng import DeterministicRng, derive_seed
+        from puzzlegen_grouping.generate import _ordered
+
+        rng = DeterministicRng(derive_seed(day, GAME_ID))
+        return [c.candidate_id for c in _ordered(list(candidates), rng)]
+
+    def test_near_equal_boards_are_ordered_by_the_day(self):
+        from puzzlegen_grouping.generate import TEMPTATION_BAND
+
+        # Within one band, so no content property separates them.
+        candidates = [
+            self.candidate(f"c{n}", n) for n in range(TEMPTATION_BAND)
+        ]
+        days = [
+            (dt.date(2026, 10, 1) + dt.timedelta(days=n)).isoformat()
+            for n in range(20)
+        ]
+        leaders = {self.order_for(day, candidates)[0] for day in days}
+
+        assert len(leaders) > 1
+
+    def test_a_better_band_still_leads(self):
+        from puzzlegen_grouping.generate import TEMPTATION_BAND
+
+        candidates = [
+            self.candidate("plain", 0),
+            self.candidate("tempting", TEMPTATION_BAND * 2),
+        ]
+        for n in range(10):
+            day = (dt.date(2026, 10, 1) + dt.timedelta(days=n)).isoformat()
+            assert self.order_for(day, candidates)[0] == "tempting"
+
+    def test_a_two_axis_hidden_group_still_leads(self):
+        candidates = [
+            self.candidate("plain", 24),
+            self.candidate("two-axis", 0, enriched=True),
+        ]
+        for n in range(10):
+            day = (dt.date(2026, 10, 1) + dt.timedelta(days=n)).isoformat()
+            assert self.order_for(day, candidates)[0] == "two-axis"
+
+    def test_the_same_day_orders_the_same_way(self):
+        candidates = [self.candidate(f"c{n}", 1) for n in range(6)]
+        day = "2026-10-05"
+
+        assert self.order_for(day, candidates) == self.order_for(day, candidates)

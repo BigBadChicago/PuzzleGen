@@ -21,7 +21,7 @@ import itertools
 from collections.abc import Iterable, Iterator, Sequence
 from dataclasses import dataclass
 
-from puzzlegen.content.query import ContentResult, GroupView
+from puzzlegen.content.query import ContentResult, EntityView, GroupView
 from puzzlegen.core.rng import DeterministicRng
 from puzzlegen.engine.plugin import GenerationContext, PuzzleCandidate
 from . import content as content_module
@@ -67,6 +67,23 @@ MINIMUM_TEMPTATION = 0
 #: convincing reading, which the verifier would catch anyway but far more
 #: expensively than a count does here.
 MAXIMUM_TEMPTATION = 24
+
+#: Temptation is ranked in bands this wide, not by its exact count.
+#:
+#: The exact count is a total order over content properties, and the engine
+#: takes the first candidate that verifies, so ranking by it hands the day to
+#: whichever board happens to score highest and keeps handing it over: the
+#: day's own shuffle only breaks ties, and exact counts rarely tie. Measured
+#: on build A2 after the pool was fixed to cover nine overlay categories, the
+#: generator offered boards from several of them and the same one won all ten
+#: days, by one point of temptation.
+#:
+#: Banding makes near-equal boards actually equal, which is what the day's
+#: draw needs to have something to choose between. Eight of a possible
+#: twenty-four, so a board with real family resemblance still outranks a
+#: cross-domain one and two boards within a few points of each other do not
+#: pretend to differ.
+TEMPTATION_BAND = 8
 
 
 @dataclass(frozen=True, slots=True)
@@ -490,6 +507,123 @@ def hidden_candidates(
     return ordered
 
 
+def placeable_hidden_groups(
+    offered: Sequence[tuple[GroupView, bool]],
+    pool: Sequence[GroupView],
+    group_size: int,
+) -> list[tuple[GroupView, bool]]:
+    """Hidden groups recomposed from the members the board can actually hold.
+
+    The overlay query offers particular subsets of each overlay category,
+    chosen with no knowledge of which tiles the visible pool ended up with.
+    The pool's covering requirement guarantees that *some* ``group_size``
+    members of a covered category are on the board, spread over four groups;
+    it cannot guarantee that the offered subset is that one. Joining the two
+    is this function: per category, take the members the pool can place and
+    assemble the subset that spreads widest.
+
+    Nothing is fabricated. Every member here is an entity view the content
+    service issued for that same category, and the category's own name and id
+    come from the group it issued them in. Composition is assembly's job, and
+    this is the smallest possible piece of it: choosing which of the offered
+    members go on the board.
+
+    The offered subsets are kept as well, ahead of the recomposed ones when
+    enriched. A subset the query chose for a reason the game cannot see, the
+    second overlay axis, is better material than one this function assembled,
+    and both are only candidates.
+    """
+    home_of: dict[str, int] = {}
+    for index, group in enumerate(pool):
+        for member in group.members:
+            home_of.setdefault(member.entity_id, index)
+
+    by_category: dict[str, list[tuple[GroupView, bool]]] = {}
+    for group, enriched in offered:
+        key = group.shared_category_id or group.shared_category or ""
+        by_category.setdefault(key, []).append((group, enriched))
+
+    recomposed: list[tuple[GroupView, bool]] = []
+    for groups in by_category.values():
+        members: dict[str, EntityView] = {}
+        for group, _enriched in groups:
+            for member in group.members:
+                if member.entity_id in home_of:
+                    members.setdefault(member.entity_id, member)
+        if len(members) < group_size:
+            continue
+        chosen = _spread_over_homes(members, home_of, group_size)
+        if chosen is None:
+            continue
+        # The enriched one if there is one: its secondary axis is the only
+        # thing distinguishing the views, and keeping it is free.
+        source, enriched = next(
+            (pair for pair in groups if pair[1]),
+            groups[0],
+        )
+        recomposed.append(
+            (
+                GroupView(
+                    members=chosen,
+                    shared_category=source.shared_category,
+                    shared_category_id=source.shared_category_id,
+                    secondary_category=source.secondary_category,
+                    secondary_category_id=source.secondary_category_id,
+                    similarity_strategy=source.similarity_strategy,
+                ),
+                enriched,
+            )
+        )
+
+    seen: set[frozenset[str]] = set()
+    result: list[tuple[GroupView, bool]] = []
+    for group, enriched in (*offered, *recomposed):
+        key = member_ids(group)
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append((group, enriched))
+    return result
+
+
+def _spread_over_homes(
+    members: dict[str, EntityView],
+    home_of: dict[str, int],
+    group_size: int,
+    spread: int = VISIBLE_GROUPS,
+) -> tuple[EntityView, ...] | None:
+    """``group_size`` members from as many different visible groups as possible.
+
+    One per visible group before any group gives a second, because every
+    visible group has to give up a tile: a subset drawn from three groups is
+    refused by ``borrowings_for`` however well it reads.
+    """
+    by_home: dict[int, list[str]] = {}
+    for entity_id in sorted(members):
+        by_home.setdefault(home_of[entity_id], []).append(entity_id)
+
+    if len(by_home) < spread:
+        # Refused here rather than offered and refused later. A subset whose
+        # members sit in three groups cannot borrow one from each of four, so
+        # the combination search can only spend its budget discovering that,
+        # and the budget is divided among the candidates offered: an
+        # unusable one makes every usable one poorer.
+        return None
+
+    chosen: list[str] = []
+    for round_index in range(group_size):
+        for home in sorted(by_home):
+            if len(chosen) >= group_size:
+                break
+            if round_index < len(by_home[home]):
+                chosen.append(by_home[home][round_index])
+        if len(chosen) >= group_size:
+            break
+    if len(chosen) < group_size:
+        return None
+    return tuple(members[entity_id] for entity_id in chosen)
+
+
 def payload_for(plan: BoardPlan) -> dict[str, object]:
     """What a candidate carries forward.
 
@@ -549,17 +683,25 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     # Cleared first, so a run that returns early cannot leave the previous
     # day's refusals to be reported as its own.
     _LAST_REJECTIONS.clear()
-    candidates: list[PuzzleCandidate] = []
     rejected: dict[str, int] = {}
+    # Every size's candidates, the day's own size first, rather than stopping
+    # at the first size that produced any. A candidate is a claim, and the
+    # engine is what finds out whether it verifies: stopping here meant a
+    # single unverifiable candidate at the preferred size lost the day while
+    # workable boards sat unoffered one size down. The preference survives as
+    # the order, which is where a preference belongs when the chooser is
+    # downstream.
+    ordered: list[PuzzleCandidate] = []
     for group_size in descriptor_module.group_sizes_for(context.day_key):
-        candidates = _candidates_at(context, group_size, rejected)
-        if candidates:
+        at_size = _candidates_at(context, group_size, rejected)
+        ordered.extend(_ordered(at_size, context.rng))
+        if len(ordered) >= context.candidate_budget:
             break
     _LAST_REJECTIONS.clear()
     _LAST_REJECTIONS.update(rejected)
     # A tuple, as the protocol's return type says: the sequence a plugin hands
     # back is not the engine's to mutate.
-    return tuple(_ordered(candidates, context.rng))
+    return tuple(ordered[: context.candidate_budget])
 
 
 def _candidates_at(
@@ -588,7 +730,10 @@ def _candidates_at(
     # missing.
     tiles: frozenset[str] = frozenset().union(*(member_ids(g) for g in pool))
     placeable = []
-    for hidden, enriched in hidden_candidates(context, group_size):
+    offered = placeable_hidden_groups(
+        hidden_candidates(context, group_size), pool, group_size
+    )
+    for hidden, enriched in offered:
         if len(hidden.members) != group_size:
             # The hidden group is exactly as large as a visible one, so it
             # cannot be identified by counting.
@@ -701,7 +846,7 @@ def _ordered(
         shuffled,
         key=lambda c: (
             not c.payload.get("enriched", False),
-            -int(c.payload.get("temptation", 0)),
+            -(int(c.payload.get("temptation", 0)) // TEMPTATION_BAND),
         ),
     )
 
@@ -732,7 +877,17 @@ def unusable_reason(context: GenerationContext) -> str | None:
     if not any(len(group.members) == group_size for group, _ in hidden):
         return f"no overlay group has exactly {group_size} members"
 
-    counts = last_rejections()
+    # This size's refusals only. A run tries every supported size, so a day
+    # whose own size produced boards still records what the sizes it did not
+    # need refused; counting those called a working day broken. The other
+    # sizes' counts are in ``last_rejections`` for anyone reading the whole
+    # run, keyed by the size that produced them.
+    prefix = f"size {group_size}: "
+    counts = {
+        key.removeprefix(prefix): value
+        for key, value in last_rejections().items()
+        if key.startswith(prefix)
+    }
     if counts:
         # The content was there and every combination of it was refused, so
         # the useful answer is which constraint did the refusing.
@@ -748,6 +903,7 @@ def unusable_reason(context: GenerationContext) -> str | None:
 __all__ = [
     "COMBINATION_BUDGET",
     "MAXIMUM_TEMPTATION",
+    "TEMPTATION_BAND",
     "MINIMUM_TEMPTATION",
     "VISIBLE_SHORTLIST",
     "BoardPlan",

@@ -87,6 +87,10 @@ class RejectionReason(StrEnum):
     #: The entity belongs to no category in a taxonomy the query
     #: required it to intersect.
     NOT_IN_REQUIRED_TAXONOMY = "NOT_IN_REQUIRED_TAXONOMY"
+    #: The result as a whole covered no whole group of a taxonomy the query
+    #: required it to cover. A property of the set, not of any group in it,
+    #: which is why it cannot be reported as a per-group rejection.
+    COVERAGE_NOT_MET = "COVERAGE_NOT_MET"
     SEMANTIC_DISTANCE_TOO_LOW = "SEMANTIC_DISTANCE_TOO_LOW"
     SEMANTIC_SPREAD_TOO_WIDE = "SEMANTIC_SPREAD_TOO_WIDE"
     EMBEDDING_OUTLIER = "EMBEDDING_OUTLIER"

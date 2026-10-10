@@ -53,7 +53,7 @@ HIDDEN_ENRICHED = "hidden_groups_two_axis"
 #: overlap, groups too close to each other to tell apart, groups with no tile
 #: the hidden group can borrow. Asking for four would mean any single
 #: rejection fails the day, so the pool is sized to survive heavy filtering.
-VISIBLE_POOL = 40
+VISIBLE_POOL = 120
 
 #: Candidate hidden groups. Far fewer, because the overlay is small by design
 #: and a day only needs one, but more than one so a hidden group that cannot
@@ -125,6 +125,24 @@ def visible_group_query(
         # 14,720 entity graph is not lucky often: the first real day's visible
         # pool covered its best hidden group one member in five.
         intersects_taxonomy=OVERLAY_TAXONOMY,
+        # And the pool as a whole must cover at least one overlay category
+        # completely, with its members in four different groups.
+        #
+        # ``intersects_taxonomy`` above gets every tile a second meaning;
+        # it cannot get the *same* second meaning onto four tiles, because
+        # that is a property of the pool rather than of any group in it.
+        # Without this the two axes met only by luck: measured on build A2,
+        # 199 of 200 candidate hidden groups were unplaceable against the 40
+        # groups fetched, the same survivor won all thirty days, and sizes 6
+        # through 9 served nothing at all.
+        #
+        # Four, the number of visible groups, because the hidden group gives
+        # up one tile to each. A cover spread over three is a hidden group
+        # findable by noticing which group is untouched, which the generator
+        # would refuse after the fetch had already been spent on it.
+        covering_taxonomy=OVERLAY_TAXONOMY,
+        minimum_covered_members=group_size,
+        minimum_covered_spread=VISIBLE_GROUPS,
         difficulty_band=difficulty_target,
         minimum_confidence=MINIMUM_CONFIDENCE,
         fresh_only=True,
