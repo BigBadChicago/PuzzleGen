@@ -1,0 +1,50 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  suites:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # The floor the package declares, and the version development runs on.
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: Install the platform and every game
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          for game in games/*/; do
+            [ -f "$game/pyproject.toml" ] || continue
+            python -m pip install -e "$game"
+          done
+
+      # Platform first, with no game installed in its own step, because the
+      # claim that the platform depends on no game is only tested that way.
+      - name: Platform suite with no game installed
+        run: |
+          for game in games/*/; do
+            name=$(python -c "import tomllib,sys;print(tomllib.load(open('$game/pyproject.toml','rb'))['project']['name'])")
+            python -m pip uninstall -y "$name"
+          done
+          python -m pytest -q tests
+
+      - name: Every suite, games installed
+        run: |
+          for game in games/*/; do
+            [ -f "$game/pyproject.toml" ] || continue
+            python -m pip install -e "$game"
+          done
+          scripts/test-all.sh

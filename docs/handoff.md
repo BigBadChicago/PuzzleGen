@@ -17,31 +17,59 @@ the subsystem under it.
 
 Nothing is pending on origin: `main` is current.
 
-### The build environment, which is now cheaper than the handoff used to assume
+### Where the work happens: the cloud, not a local checkout
+
+The repository is the environment. A Codespace or any container built from
+`.devcontainer/` gets Python 3.13, the platform and every game installed, and
+can run the whole suite and rebuild a snapshot with no local toolchain. That is
+now the canonical place to work. A checkout on a personal machine is a
+convenience mirror: pull it or delete it, nothing depends on it.
+
+The reasons are concrete rather than preference. The suite needs Python 3.11 or
+later for `StrEnum`, and the Windows checkout had 3.10 with a Windows `.venv`.
+Git on the linked-computer shell has no push credentials and cannot delete its
+own `.git` lock files, so a `pull` there half applies and then wedges. And none
+of the heavy inputs are local: lexicons come from a GitHub release, frequency
+from pypi, and coverage needs no model at all.
+
+CI runs in two workflows. `tests.yml` runs the platform suite **with no game
+installed**, then every suite with the games installed, on Python 3.11 and
+3.13; the first step is what keeps the platform's independence from a game an
+actual property rather than a claim. `coverage.yml` rebuilds build A2 and fails
+if `build/coverage-A2.json` or the collision report has changed, which retires
+the last form of this project's recurring bug: a committed number that no
+longer matches what the code produces. It pins `wordfreq`, because frequency
+bands decide which entities can be tiles and an upstream release would
+otherwise look like a content regression.
 
 A coverage measurement needs no network and no embedding model. Verified: a
 snapshot built with `--dev-embeddings` plus a frequency table exported on the
-spot reproduces `build/coverage-A.json` byte for byte. Coverage is structural
-and applies no embedding gate. Only a published snapshot needs real vectors.
+spot reproduces `build/coverage-A.json` byte for byte, because coverage is
+structural and applies no embedding gate. Only a published snapshot needs real
+vectors. WordNet data for `tools/export_wordnet.py` comes from the GitHub
+release (`globalwordnet/english-wordnet`, 2024 edition) and loads with
+`wn.add(path)`; `en-word.net` itself is not reachable from a sandboxed runner,
+and `docs/rebuild-with-batch2.sh` therefore skips any root whose lexicon is
+already committed.
 
-The test suite needs Python 3.11+ (`StrEnum`). It runs in a cloud container or a
-Codespace; it cannot run from the linked-computer shell, which has Python 3.10
-and a Windows `.venv`. Last full run: **2,278 passing, 0 failing**, 4 skipped. The three
-long-standing content-gap failures in `test_overlay_seed.py` are gone: batch 2
-supplies the words they were waiting for. Read that green with one qualifier,
-stated in the file itself: the tracker measures whether a lexicon *in the
-repository* supplies each overlay word, and `wordnet-color` and
-`wordnet-drug_of_abuse` are committed even though build A does not import them.
-So `coral` and `coffee` pass the tracker while build A still has no definition
-for them.
-
-WordNet data for `tools/export_wordnet.py` comes from the GitHub release
-(`globalwordnet/english-wordnet`, 2024 edition) and loads with
-`wn.add(path)`; `en-word.net` itself is not reachable from the cloud container.
-The sentence-transformers model is not reachable either, which is why
-`--dev-embeddings` matters.
+Last full run: **2,281 passing, 0 failing** (1,568 platform, 713 game one), plus
+1,566 passing with the game uninstalled, the 2 differences being the guards
+that refuse to let the boundary suite pass vacuously.
 
 ### Resolved this session (all committed)
+
+0. **Games are distributions now, and the cloud is the environment.** Game one
+   moved to `games/grouping/` with its own pyproject, package, tests, tools and
+   content, advertised through the `puzzlegen.games` entry point group;
+   `GameRegistry.discover()` registers what is installed. `--overlay` lost its
+   default in `tools/build_snapshot.py`, because the overlay is one game's
+   taxonomy. `puzzlegen/testing` is new: the fixtures a game's tests need, as a
+   pytest plugin, so a game's test setup is one short conftest. Two new
+   invariants state the property: the platform imports no game and holds no
+   game id as a literal, checked against what is installed. `.devcontainer/`
+   and two CI workflows make a cloud container the place this is built and
+   measured. Details in `docs/architecture.md` phase 8.
+
 
 1. **Ship A, and a correction to this file.** The A/B table a previous handoff
    carried (build A giving 1, 3, 4, 3, 3 working hidden categories across group

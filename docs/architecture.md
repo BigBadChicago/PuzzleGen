@@ -1415,3 +1415,31 @@ import boundary is enforced for installed games by the invariants above rather
 than by isolation. That is the same enforcement in-tree games had, now applied
 to a wider set, and the sandbox remains the stronger mechanism for code that
 never enters the repository.
+
+### The environment is the repository, and CI is where the claims are checked
+
+A development container definition (`.devcontainer/`) installs the platform,
+its snapshot extras and every game found by globbing `games/*/`, so a fresh
+cloud container can run every suite and rebuild a snapshot with nothing
+installed locally. Two workflows then hold the two claims this phase makes:
+
+- `tests.yml` runs the platform suite **with every game uninstalled**, then
+  every suite with the games installed, on the declared floor (3.11) and the
+  development version (3.13). The first step is the one that matters: the
+  platform's independence from any game is otherwise an assertion in a
+  docstring. Two invariants would pass vacuously in that state, so they skip
+  unless `PUZZLEGEN_REQUIRE_GAMES` is set, which `scripts/test-all.sh` and the
+  second CI step both set.
+- `coverage.yml` rebuilds build A2 and fails if the committed coverage artifact
+  or collision report changed. It is affordable because coverage is structural
+  and needs no embedding model, and `docs/rebuild-with-batch2.sh` skips roots
+  whose lexicon is already committed, so the job needs no WordNet install. It
+  pins `wordfreq`: frequency bands decide which entities can be tiles, so an
+  upstream release would arrive looking like a content regression.
+
+This is the fourth and last instance of the project's recurring failure put
+beyond reach. A threshold was hand-copied, a tool read the drawn size instead
+of the served one, a report re-derived the builder's merge rule, and a handoff
+table disagreed with the artifact it summarised. The first three were fixed by
+making the tool read the real value. The fourth is fixed by rebuilding the
+artifact on every change that could move it.

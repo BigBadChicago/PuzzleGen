@@ -24,8 +24,18 @@ OVERLAY=games/grouping/content/overlay.curated.json
 A="mollusk crustacean bird carnivore fish flavorer flower fruit garment herb insect instrument kitchen planet reptile sport hand_tool vehicle cutting_implement tableware power_tool"
 BATCH2="dairy_product tool rodent nut bulbous_plant vine angiospermous_tree marsh_plant shrub"
 
+# Exports a root, unless its lexicon is already committed. The seeds are in
+# the repository, and re-exporting needs the WordNet data installed, which a CI
+# runner has no reason to carry: this script has to be runnable both by someone
+# adding a root and by a job that only rebuilds and measures. Set
+# PUZZLEGEN_REEXPORT=1 to export regardless.
 export_root() { # synset-id depth name
-  python tools/export_wordnet.py --root "$1" --depth "$2" --out "$SEEDS/wordnet-$3.lexicon.json"
+  local out="$SEEDS/wordnet-$3.lexicon.json"
+  if [ -s "$out" ] && [ -z "${PUZZLEGEN_REEXPORT:-}" ]; then
+    echo "have $out"
+    return 0
+  fi
+  python3 tools/export_wordnet.py --root "$1" --depth "$2" --out "$out"
 }
 
 # Batch 2. dairy_product is exported and listed before shrub so the merged
@@ -44,14 +54,14 @@ export_root oewn-13133423-n 6 shrub
 flags() { for r in "$@"; do printf -- "--lexicon %s/wordnet-%s.lexicon.json " "$SEEDS" "$r"; done; }
 
 mkdir -p build/inputs-A2
-python tools/build_snapshot.py --write-inputs build/inputs-A2/ $(flags $A $BATCH2) --overlay "$OVERLAY"
-python tools/export_frequency.py --terms build/inputs-A2/terms.txt --out build/frequency.A2.json
+python3 tools/build_snapshot.py --write-inputs build/inputs-A2/ $(flags $A $BATCH2) --overlay "$OVERLAY"
+python3 tools/export_frequency.py --terms build/inputs-A2/terms.txt --out build/frequency.A2.json
 
 # What merges, before building: read overlay_missing and the refused parents.
-python tools/report_lemma_collisions.py $(flags $A $BATCH2) --overlay "$OVERLAY" --out build/lemma-collisions-A2.json
+python3 tools/report_lemma_collisions.py $(flags $A $BATCH2) --overlay "$OVERLAY" --out build/lemma-collisions-A2.json
 
 rm -f build/graph-A2.sqlite*
-python tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json --dev-embeddings --overlay "$OVERLAY" $(flags $A $BATCH2)
-python games/grouping/tools/measure_coverage.py --db build/graph-A2.sqlite --difficulty medium --json build/coverage-A2.json
+python3 tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json --dev-embeddings --overlay "$OVERLAY" $(flags $A $BATCH2)
+python3 games/grouping/tools/measure_coverage.py --db build/graph-A2.sqlite --difficulty medium --json build/coverage-A2.json
 
 echo "done: build/coverage-A2.json"
