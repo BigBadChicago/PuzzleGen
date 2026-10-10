@@ -60,8 +60,16 @@ python3 tools/export_frequency.py --terms build/inputs-A2/terms.txt --out build/
 # What merges, before building: read overlay_missing and the refused parents.
 python3 tools/report_lemma_collisions.py $(flags $A $BATCH2) --overlay "$OVERLAY" --out build/lemma-collisions-A2.json
 
+# PUZZLEGEN_REAL_EMBEDDINGS=1 builds the snapshot days are generated from;
+# without it the build is the coverage build, which needs no model.
+EMBEDDINGS=--dev-embeddings
+if [ -n "${PUZZLEGEN_REAL_EMBEDDINGS:-}" ]; then
+  python3 tools/export_embeddings.py --texts build/inputs-A2/texts.txt --out build/embeddings.A2.json
+  EMBEDDINGS="--embeddings build/embeddings.A2.json"
+fi
+
 rm -f build/graph-A2.sqlite*
-python3 tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json --dev-embeddings --overlay "$OVERLAY" $(flags $A $BATCH2)
+python3 tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json $EMBEDDINGS --overlay "$OVERLAY" $(flags $A $BATCH2)
 python3 games/grouping/tools/measure_coverage.py --db build/graph-A2.sqlite --difficulty medium --json build/coverage-A2.json
 
 echo "done: build/coverage-A2.json"

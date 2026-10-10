@@ -1,0 +1,72 @@
+name: snapshot
+
+# Builds build A2 with real sentence vectors and generates days against it:
+# the run that needs the model, so the one a session should never do itself.
+# The snapshot, its vectors and the days are uploaded as an artifact, which is
+# what makes a real-vector result reproducible from a clean clone rather than
+# from whichever container last had the files.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Consecutive days to generate"
+        default: "30"
+      start:
+        description: "First day, YYYY-MM-DD"
+        default: "2026-10-01"
+      difficulty:
+        type: choice
+        options: [easy, medium, hard, expert]
+        default: medium
+      embeddings:
+        description: "real needs the model; dev is the hash vectors coverage uses"
+        type: choice
+        options: [real, dev]
+        default: real
+      reexport:
+        description: "Install WordNet and re-export every root instead of using the committed seeds"
+        type: boolean
+        default: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      # The model is the slow download; vectors are pinned by its name.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ hashFiles('tools/export_embeddings.py') }}
+
+      - name: Install
+        run: scripts/ci.sh install snapshot
+
+      - name: Build and generate days
+        env:
+          DAYS: ${{ inputs.days }}
+          START: ${{ inputs.start }}
+          DIFFICULTY: ${{ inputs.difficulty }}
+          EMBEDDINGS: ${{ inputs.embeddings }}
+          REEXPORT: ${{ inputs.reexport && '1' || '' }}
+        run: scripts/ci.sh snapshot
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: snapshot-A2-${{ inputs.embeddings }}-${{ github.run_number }}
+          retention-days: 14
+          if-no-files-found: ignore
+          path: |
+            build/graph-A2.sqlite
+            build/embeddings.A2.json
+            build/frequency.A2.json
+            build/days-${{ inputs.days }}.json
+            build/ci/summary.md
