@@ -245,12 +245,21 @@ def content_requirements(
     a far better day than failing during assembly with a half-built board.
     """
     requirements: list[ContentRequirement] = []
-    for position, group_size in enumerate(group_sizes_for(day_key, salt)):
-        # Only the day's own size is required. The rest are optional, so a day
-        # whose preferred size the content cannot serve falls back instead of
-        # failing a requirement, and a day where nothing can be served still
-        # reports one honest unmet requirement rather than five.
-        optional = position > 0
+    for group_size in group_sizes_for(day_key, salt):
+        # Every size is optional, the day's own included. A size is a
+        # preference: generation offers candidates from all of them in
+        # preference order, so whether the *day* can be served is decided
+        # there, across the whole set, and no single size's content can
+        # decide it alone. Marking the preferred size required only looked
+        # right while an unsatisfied result still counted as met; once a
+        # covering failure reports itself honestly, that encoding failed a
+        # day that had a perfectly good board one size down. Measured on
+        # build A2: three days in ten lost a board they had previously
+        # served, at sizes 8 and 9 the overlay cannot cover.
+        #
+        # A day where nothing can be served fails on candidates instead, and
+        # ``unusable_reason`` supplies the per-size narrative a curator acts
+        # on, which is more of the day's shape than one requirement's name.
         requirements.extend(
             (
                 ContentRequirement(
@@ -261,13 +270,13 @@ def content_requirements(
                         locale=locale,
                     ),
                     minimum=VISIBLE_GROUPS * 2,
-                    optional=optional,
+                    optional=True,
                 ),
                 ContentRequirement(
                     name=sized(HIDDEN, group_size),
                     query=hidden_group_query(group_size=group_size, locale=locale),
                     minimum=1,
-                    optional=optional,
+                    optional=True,
                 ),
                 ContentRequirement(
                     name=sized(HIDDEN_ENRICHED, group_size),

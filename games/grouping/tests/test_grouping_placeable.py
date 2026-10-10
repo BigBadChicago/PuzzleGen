@@ -96,8 +96,39 @@ class TestRecomposition:
         assert len(result) == 1
         assert names_of(result[0][0]) == {f"g0_{n}" for n in range(SIZE)} | {"absent"}
 
-    def test_the_enriched_view_is_preferred_as_the_source(self):
-        """Its secondary axis is the only thing distinguishing the views."""
+    def test_the_enriched_view_is_the_source_when_it_covers_the_choice(self):
+        """Its secondary axis is the only thing distinguishing the views.
+
+        Every chosen member comes from the enriched subset, so the axis is
+        true of all of them and the board can be hinted as two-axis.
+        """
+        spread = [f"g{index}_0" for index in range(VISIBLE_GROUPS)]
+        offered = [
+            (group("overlay", ["absent1", *spread], secondary="kitchen"), True),
+            (group("overlay", ["absent2", *spread[2:]]), False),
+        ]
+        result = placeable_hidden_groups(offered, pool(), VISIBLE_GROUPS)
+
+        recomposed = [
+            (view, enriched)
+            for view, enriched in result
+            if names_of(view) == set(spread)
+        ]
+        assert len(recomposed) == 1
+        view, enriched = recomposed[0]
+        assert enriched is True
+        assert view.secondary_category == "kitchen"
+
+    def test_an_axis_the_chosen_members_do_not_share_is_dropped(self):
+        """Half the choice comes from the plain subset.
+
+        The enriched view says its members are also kitchen things; it says
+        nothing about ``g2_0`` and ``g3_0``, which the pool contributed from
+        the other subset. Carrying the axis anyway would show a player "these
+        also have to do with kitchens" over two tiles that do not, which is
+        worse than offering no second hint. The recomposed group is still
+        offered; only the claim about it is withdrawn.
+        """
         spread = [f"g{index}_0" for index in range(VISIBLE_GROUPS)]
         offered = [
             (group("overlay", ["absent1", *spread[:2]], secondary="kitchen"), True),
@@ -112,8 +143,8 @@ class TestRecomposition:
         ]
         assert len(recomposed) == 1
         view, enriched = recomposed[0]
-        assert enriched is True
-        assert view.secondary_category == "kitchen"
+        assert enriched is False
+        assert view.secondary_category is None
 
     def test_duplicates_are_collapsed(self):
         """Recomposing a category whose offered subset was already placeable."""

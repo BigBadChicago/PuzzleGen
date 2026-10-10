@@ -14,7 +14,12 @@ from __future__ import annotations
 
 import pytest
 
-from puzzlegen.content.query import ContentQuery, GroupingMode, Operation
+from puzzlegen.content.query import (
+    ContentQuery,
+    ContentRequirement,
+    GroupingMode,
+    Operation,
+)
 from puzzlegen.content.service import _cover_for
 from puzzlegen.core.errors import RejectionReason
 
@@ -202,6 +207,44 @@ class TestTheResultCoversWholeGroups:
         assert len(plain.groups) == 4
 
 
+class TestAnUnsatisfiedResultIsAnUnmetRequirement:
+    """The verdict has to survive the trip back to the engine.
+
+    ``COVERAGE_NOT_MET`` leaves the harvest's filler groups in the result,
+    because a caller asking for a pool of 120 still wants 120 if it decides to
+    proceed. A requirement that counted only the groups therefore read that
+    result as met and handed an uncovered pool to generation, which is the
+    silent fallback this whole change exists to end.
+    """
+
+    def requirement(self, **overrides) -> ContentRequirement:
+        return ContentRequirement(name="pool", query=query(**overrides), minimum=1)
+
+    def test_a_coverage_failure_is_unmet_despite_the_filler_groups(
+        self, repos, tmp_path
+    ):
+        service = world(repos, tmp_path, PARENTS, {"marked": ["a1"]})
+        result = service.execute(query())
+
+        assert result.groups
+        assert not self.requirement().is_met(result)
+
+    def test_a_covered_result_is_met(self, repos, tmp_path):
+        service = world(repos, tmp_path, PARENTS, {"marked": ["a1", "b1", "g1"]})
+        result = service.execute(query())
+
+        assert self.requirement().is_met(result)
+
+    def test_an_optional_requirement_still_passes(self, repos, tmp_path):
+        service = world(repos, tmp_path, PARENTS, {"marked": ["a1"]})
+        result = service.execute(query())
+        optional = ContentRequirement(
+            name="pool", query=query(), minimum=1, optional=True
+        )
+
+        assert optional.is_met(result)
+
+
 class TestCoverForChoosesUsableCovers:
     def test_spread_before_members(self):
         """One member per group first, so the cover spreads as wide as it can.
@@ -272,8 +315,31 @@ class TestTheQueryRefusesHalfARequest:
     def test_a_covering_request_needs_a_member_count_from_somewhere(self):
         with pytest.raises(ValueError, match="minimum_covered_members or group_size"):
             ContentQuery(
-                operation=Operation.FIND_ENTITIES,
+                operation=Operation.FIND_PAIRS,
                 taxonomy=TAXONOMY,
+                covering_taxonomy=OVERLAY,
+            )
+
+    @pytest.mark.parametrize(
+        "operation",
+        [
+            Operation.FIND_ENTITIES,
+            Operation.FIND_SIBLINGS,
+            Operation.FIND_RELATIONSHIP_PATTERNS,
+        ],
+    )
+    def test_an_operation_that_cannot_cover_refuses_the_request(self, operation):
+        """Only a handler that selects its whole result can honour coverage.
+
+        Accepted on an operation that ignores it, a covering request comes
+        back unconstrained and marked satisfied, which is the exact failure
+        the request exists to prevent rather than a milder version of it.
+        """
+        with pytest.raises(ValueError, match="not honoured by"):
+            ContentQuery(
+                operation=operation,
+                taxonomy=TAXONOMY,
+                group_size=3,
                 covering_taxonomy=OVERLAY,
             )
 

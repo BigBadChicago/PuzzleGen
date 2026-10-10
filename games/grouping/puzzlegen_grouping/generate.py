@@ -555,23 +555,37 @@ def placeable_hidden_groups(
         chosen = _spread_over_homes(members, home_of, group_size)
         if chosen is None:
             continue
-        # The enriched one if there is one: its secondary axis is the only
-        # thing distinguishing the views, and keeping it is free.
-        source, enriched = next(
-            (pair for pair in groups if pair[1]),
-            groups[0],
+        # An enriched view lends its second axis only to members it actually
+        # covers. ``chosen`` is pooled from every offered subset of the primary
+        # category, so a member from outside the enriched subset carries no
+        # claim to that axis: ranking the board as two-axis anyway would put a
+        # hint in front of a player that is not true of every tile, which is
+        # worse than having no second hint at all.
+        chosen_ids = frozenset(member.entity_id for member in chosen)
+        covering = next(
+            (
+                group
+                for group, enriched in groups
+                if enriched and chosen_ids <= member_ids(group)
+            ),
+            None,
         )
+        source = covering if covering is not None else groups[0][0]
         recomposed.append(
             (
                 GroupView(
                     members=chosen,
                     shared_category=source.shared_category,
                     shared_category_id=source.shared_category_id,
-                    secondary_category=source.secondary_category,
-                    secondary_category_id=source.secondary_category_id,
+                    secondary_category=(
+                        source.secondary_category if covering is not None else None
+                    ),
+                    secondary_category_id=(
+                        source.secondary_category_id if covering is not None else None
+                    ),
                     similarity_strategy=source.similarity_strategy,
                 ),
-                enriched,
+                covering is not None,
             )
         )
 

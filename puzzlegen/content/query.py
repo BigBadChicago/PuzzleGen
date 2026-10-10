@@ -36,6 +36,20 @@ class Operation(StrEnum):
     FIND_ENTITIES_BY_DIFFICULTY = "find_entities_by_difficulty"
 
 
+#: Operations whose handler selects its result as a set, and so can honour a
+#: covering request. Accepting ``covering_taxonomy`` on any other operation
+#: would hand back an unconstrained result marked satisfied, which is the
+#: failure the requirement exists to prevent rather than a smaller version of
+#: it. An operation that learns to cover is added here and nowhere else.
+COVERING_OPERATIONS = frozenset(
+    {
+        Operation.FIND_GROUPS,
+        Operation.FIND_PAIRS,
+        Operation.FIND_INTERSECTING_GROUPS,
+    }
+)
+
+
 class GroupingMode(StrEnum):
     """What makes a set of entities a group in a group query.
 
@@ -217,6 +231,12 @@ class ContentQuery:
         nothing passes for one that meets everything.
         """
         named = self.covering_taxonomy is not None
+        if named and self.operation not in COVERING_OPERATIONS:
+            raise ValueError(
+                f"covering_taxonomy is not honoured by {self.operation}: "
+                f"only {sorted(o.value for o in COVERING_OPERATIONS)} select "
+                "their result as a set"
+            )
         for name in ("minimum_covered_members", "minimum_covered_spread"):
             value = getattr(self, name)
             if value is not None and value < 1:
@@ -401,7 +421,12 @@ class ContentRequirement:
     optional: bool = False
 
     def is_met(self, result: ContentResult) -> bool:
-        return self.optional or len(result) >= self.minimum
+        # ``satisfied`` as well as the count: a result can carry enough groups
+        # and still not be what was asked for. A covering query reports
+        # COVERAGE_NOT_MET with the harvest's filler groups in place, and a
+        # length-only check passed that as met, which is the silent fallback
+        # the covering requirement exists to end.
+        return self.optional or (result.satisfied and len(result) >= self.minimum)
 
 
 def resolve_queries(

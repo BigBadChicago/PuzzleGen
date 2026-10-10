@@ -1136,7 +1136,12 @@ class ContentService:
             groups=tuple(kept[: query.limit]),
             examined=base.examined,
             rejected=rejected,
-            satisfied=bool(kept),
+            # The base verdict carries forward: this filter can only remove
+            # groups, so a base that failed to cover cannot be rescued by it,
+            # and recomputing from ``kept`` alone discarded a
+            # COVERAGE_NOT_MET the caller had asked to be told about.
+            satisfied=bool(kept) and base.satisfied,
+            detail=base.detail,
         )
 
     def _secondary_axis(
