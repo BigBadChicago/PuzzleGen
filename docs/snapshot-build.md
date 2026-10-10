@@ -48,15 +48,21 @@ synset than intended means the root resolved to the wrong sense; stop and use
 python tools/export_wordnet.py --root plant --pos n --list
 ```
 
-### The current 23 roots
+### The current 32 roots
 
-Sixteen base roots plus seven added to close overlay coverage gaps. All at
-depth 6 except `fish` at depth 8 (it was the only root truncated at depth 6,
-losing 101 synsets).
+Sixteen base roots, seven added to close overlay coverage gaps, and nine more in
+batch 2. All at depth 6 except `fish` at depth 8 (it was the only root truncated
+at depth 6, losing 101 synsets).
 
 Base (16): `bird`, `carnivore`, `fish`, `flavorer`, `flower`, `fruit`,
 `garment`, `herb`, `insect`, `instrument`, `kitchen`, `planet`, `reptile`,
-`sport`, `tool`, `vehicle`.
+`sport`, `hand_tool`, `vehicle`.
+
+`hand_tool` was called `tool` in this list and in its filename until
+2026-10-10. The file held the `hand tool` subtree (`oewn-03494245-n`, 164
+synsets) throughout; only the name was wrong. `wordnet-tool.lexicon.json` now
+holds the real `tool` subtree, which batch 2 added. A root list that says
+`tool` and means `hand tool` builds a different snapshot and nothing errors.
 
 Added (7), with synset ids, because these ids are what the rebuild script uses:
 
@@ -70,6 +76,25 @@ Added (7), with synset ids, because these ids are what the rebuild script uses:
 | `color` | `oewn-04963771-n` | 6 | hazel, heather, coral, indigo (colour senses) |
 | `drug_of_abuse` | `oewn-03253661-n` | 6 | cannabis, marijuana |
 
+Batch 2 (9), which closed the last of the overlay gap:
+
+| Root | Synset id | Depth | Why added |
+|---|---|---|---|
+| `dairy_product` | `oewn-07859751-n` | 6 | cheese |
+| `tool` | `oewn-04459089-n` | 6 | comb, drill, hoe, mower, rake, ram |
+| `rodent` | `oewn-02332053-n` | 6 | beaver, rodent |
+| `nut` | `oewn-13157333-n` | 6 | coconut, walnut |
+| `bulbous_plant` | `oewn-13155061-n` | 6 | iris, onion |
+| `vine` | `oewn-13121436-n` | 6 | hop, hops |
+| `angiospermous_tree` | `oewn-13130492-n` | 6 | holly, walnut, mate |
+| `marsh_plant` | `oewn-13143123-n` | 6 | rush |
+| `shrub` | `oewn-13133423-n` | 6 | broom, erica, hemp, jasmine |
+
+`dairy_product` is passed before `shrub` so the merged `cheese` entity takes the
+dairy gloss rather than tall mallow, the shrub. `heath` was in the candidate
+list and is not here: both its targets sit inside `shrub` at depth 6, and
+`heath` still appears as a usable visible category without being a root.
+
 `mollusk` and `crustacean` replaced a superseded `shellfish` root, which held
 the food senses (the flesh of a clam) rather than the animals the overlay
 means. `shellfish` must not be in a build; the rebuild script deletes it
@@ -78,19 +103,19 @@ a merged category such as `crab` takes the crustacean gloss rather than the
 rowing stroke from `sport` (parents merge regardless of order; order only sets
 the displayed gloss).
 
-**`color` carries a known risk.** It makes `chromatic color` a lexical parent,
-which lets game 1 form a visible colour group next to the hidden group `word
-that is also a color`, giving the answer away. See the handoff and decision log:
-build A excludes `color` and `drug_of_abuse` for this reason, build B includes
-them, and the leak is an open generator fix, not a reason the root itself is
-wrong.
+**`color` carries a known risk, and it is still open.** It makes `chromatic
+color` a lexical parent, which lets game 1 form a visible colour group next to
+the hidden group `word that is also a color`, giving the answer away. Build A
+excludes `color` and `drug_of_abuse`; build B includes them. The generator gate
+added in session 3 does **not** close it, because overlay categories are
+taxonomy roots and there is no ancestor relation between `overlay.color` and
+the lexical colour tree for a rule to find. See the handoff and decision log:
+closing it needs an anchor recorded on the overlay category.
 
-The remaining gap: 22 overlay words are still unsupplied by these 23 roots
-(beaver, broom, cheese, coconut, comb, drill, erica, hemp, hoe, holly, hop,
-hops, iris, jasmine, mate, mower, onion, rake, ram, rodent, rush, walnut). A
-second batch of candidate roots for them is in `docs/candidate-roots.md`
-section 5. `mate` (the beverage) is reachable by no root and needs an explicit
-synset id or removal from the overlay.
+The overlay gap is closed: of 146 overlay members, 2 are unsupplied by build A
+(`coral`, which wants the colour sense, and `coffee`, which wants a brewed
+sense no root covers). Both of the remaining two are supplied by lexicons that
+exist in the repository but that build A does not import.
 
 ## Step 2: export, prepare, frequency, embeddings
 
