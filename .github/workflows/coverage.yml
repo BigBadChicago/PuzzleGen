@@ -64,13 +64,13 @@ jobs:
         id: rebuild
         # A requested commit turns a changed artifact into work for the next
         # step rather than a red job.
-        continue-on-error: ${{ inputs.commit == true && github.ref_name != 'main' }}
+        continue-on-error: ${{ inputs.commit == true && github.ref_type == 'branch' && github.ref_name != 'main' }}
         run: scripts/ci.sh coverage
 
       - name: Commit the regenerated artifacts
         # Main only moves through review; a branch is where a change that
         # legitimately moves coverage collects its new numbers.
-        if: steps.rebuild.outcome == 'failure' && inputs.commit && github.ref_name != 'main'
+        if: steps.rebuild.outcome == 'failure' && inputs.commit && github.ref_type == 'branch' && github.ref_name != 'main'
         run: |
           git diff --quiet -- build/coverage-A2.json build/lemma-collisions-A2.json && exit 1
           git config user.name "github-actions[bot]"

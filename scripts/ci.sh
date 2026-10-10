@@ -43,7 +43,10 @@ game_name() {
 }
 
 task_install() {
-  set -e
+  # A failed install skips every later step, so this is the only place its
+  # summary can be written.
+  trap 'printf "### Install\n\n**install failed**: see the log above this summary\n" > "$SUMMARY"; publish' ERR
+  set -eE
   python3 -m pip install --upgrade pip
   if [ "${1:-}" = snapshot ]; then
     # CPU wheels: the default torch wheel carries CUDA, gigabytes a runner never uses.
@@ -112,6 +115,9 @@ task_snapshot() {
   local days="${DAYS:-30}" start="${START:-2026-10-01}" difficulty="${DIFFICULTY:-medium}"
   if [ "${EMBEDDINGS:-real}" = real ]; then
     export PUZZLEGEN_REAL_EMBEDDINGS=1
+  else
+    # EMBEDDINGS decides, not whatever the caller's shell already exported.
+    unset PUZZLEGEN_REAL_EMBEDDINGS
   fi
   if [ "${REEXPORT:-}" = 1 ]; then
     export PUZZLEGEN_REEXPORT=1
@@ -122,18 +128,23 @@ task_snapshot() {
     publish
     return 1
   fi
-  local json="build/days-$days.json"
+  local json="build/days-$days.json" status=0
+  rm -f "$json"
+  # Exits 1 when any day fails to generate, after writing every day's result:
+  # those per-day reasons are the summary, so render them whenever they exist.
   python3 games/grouping/tools/generate_days.py --db "$DB" --start "$start" --days "$days" \
-    --difficulty "$difficulty" --now "$NOW" --json "$json" || {
+    --difficulty "$difficulty" --now "$NOW" --json "$json" || status=$?
+  if [ ! -s "$json" ]; then
     printf '### Snapshot\n\n**day generation failed**: see the log above this summary\n' > "$SUMMARY"
     publish
     return 1
-  }
+  fi
   {
     printf '### Snapshot\n\n- embeddings: %s\n- days from %s at %s\n\n' "${EMBEDDINGS:-real}" "$start" "$difficulty"
     python3 scripts/ci_summary.py days "$json"
   } > "$SUMMARY"
   publish
+  return "$status"
 }
 
 task="${1:-}"
