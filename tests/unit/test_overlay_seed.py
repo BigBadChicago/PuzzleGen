@@ -326,7 +326,10 @@ LEXICON_ROOTS = (
     "planet",
     "reptile",
     "sport",
-    "tool",
+    # The file named wordnet-tool held the hand tool subtree until 2026-10-10.
+    # Renamed to its real root; "tool" below is the tool subtree proper, which
+    # batch 2 added.
+    "hand_tool",
     "vehicle",
 )
 
@@ -340,6 +343,16 @@ PENDING_ROOTS = (
     "power_tool",
     "color",
     "drug_of_abuse",
+    # Batch 2.
+    "dairy_product",
+    "tool",
+    "rodent",
+    "nut",
+    "bulbous_plant",
+    "vine",
+    "angiospermous_tree",
+    "marsh_plant",
+    "shrub",
 )
 LEXICONS = [
     SEED.parent / f"wordnet-{root}.lexicon.json"

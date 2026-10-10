@@ -1,0 +1,3837 @@
+{
+  "exported": "2026-10-10",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-02332053-n",
+  "senses": [
+    {
+      "definition": "relatively small placental mammals having a single pair of constantly growing incisor teeth specialized for gnawing",
+      "forms": [],
+      "id": "oewn-rodent__1.05.00..",
+      "lang": "en",
+      "lemma": "rodent",
+      "synset": "oewn-02332053-n"
+    },
+    {
+      "definition": "relatively small placental mammals having a single pair of constantly growing incisor teeth specialized for gnawing",
+      "forms": [],
+      "id": "oewn-gnawer__1.05.00..",
+      "lang": "en",
+      "lemma": "gnawer",
+      "synset": "oewn-02332053-n"
+    },
+    {
+      "definition": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails",
+      "forms": [
+        "mice"
+      ],
+      "id": "oewn-mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "mouse",
+      "synset": "oewn-02332897-n"
+    },
+    {
+      "definition": "any of various long-tailed rodents similar to but larger than a mouse",
+      "forms": [],
+      "id": "oewn-rat__1.05.00..",
+      "lang": "en",
+      "lemma": "rat",
+      "synset": "oewn-02333698-n"
+    },
+    {
+      "definition": "any of various rodents with cheek pouches",
+      "forms": [],
+      "id": "oewn-pocket_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "pocket rat",
+      "synset": "oewn-02333961-n"
+    },
+    {
+      "definition": "a rodent that is a member of the family Muridae",
+      "forms": [],
+      "id": "oewn-murine__1.05.00..",
+      "lang": "en",
+      "lemma": "murine",
+      "synset": "oewn-02334494-n"
+    },
+    {
+      "definition": "brownish-grey Old World mouse now a common household pest worldwide",
+      "forms": [],
+      "id": "oewn-house_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "house mouse",
+      "synset": "oewn-02334808-n"
+    },
+    {
+      "definition": "brownish-grey Old World mouse now a common household pest worldwide",
+      "forms": [],
+      "id": "oewn-mus_musculus__1.05.00..",
+      "lang": "en",
+      "lemma": "Mus musculus",
+      "synset": "oewn-02334808-n"
+    },
+    {
+      "definition": "small reddish-brown Eurasian mouse inhabiting e.g. cornfields",
+      "forms": [],
+      "id": "oewn-harvest_mouse__1.05.01..",
+      "lang": "en",
+      "lemma": "harvest mouse",
+      "synset": "oewn-02335099-n"
+    },
+    {
+      "definition": "small reddish-brown Eurasian mouse inhabiting e.g. cornfields",
+      "forms": [],
+      "id": "oewn-micromyx_minutus__1.05.00..",
+      "lang": "en",
+      "lemma": "Micromyx minutus",
+      "synset": "oewn-02335099-n"
+    },
+    {
+      "definition": "any nocturnal Old World mouse of the genus Apodemus inhabiting woods and fields and gardens",
+      "forms": [],
+      "id": "oewn-field_mouse__1.05.02..",
+      "lang": "en",
+      "lemma": "field mouse",
+      "synset": "oewn-02335407-n"
+    },
+    {
+      "definition": "any nocturnal Old World mouse of the genus Apodemus inhabiting woods and fields and gardens",
+      "forms": [
+        "fieldmice"
+      ],
+      "id": "oewn-fieldmouse__1.05.00..",
+      "lang": "en",
+      "lemma": "fieldmouse",
+      "synset": "oewn-02335407-n"
+    },
+    {
+      "definition": "a mouse with a genetic defect that prevents them from growing hair and also prevents them from immunologically rejecting human cells and tissues; widely used in preclinical trials",
+      "forms": [],
+      "id": "oewn-nude_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "nude mouse",
+      "synset": "oewn-02335606-n"
+    },
+    {
+      "definition": "nocturnal yellowish-brown mouse inhabiting woods and fields and gardens",
+      "forms": [],
+      "id": "oewn-european_wood_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "European wood mouse",
+      "synset": "oewn-02335842-n"
+    },
+    {
+      "definition": "nocturnal yellowish-brown mouse inhabiting woods and fields and gardens",
+      "forms": [],
+      "id": "oewn-apodemus_sylvaticus__1.05.00..",
+      "lang": "en",
+      "lemma": "Apodemus sylvaticus",
+      "synset": "oewn-02335842-n"
+    },
+    {
+      "definition": "common domestic rat; serious pest worldwide",
+      "forms": [],
+      "id": "oewn-brown_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "brown rat",
+      "synset": "oewn-02336198-n"
+    },
+    {
+      "definition": "common domestic rat; serious pest worldwide",
+      "forms": [],
+      "id": "oewn-norway_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "Norway rat",
+      "synset": "oewn-02336198-n"
+    },
+    {
+      "definition": "common domestic rat; serious pest worldwide",
+      "forms": [],
+      "id": "oewn-rattus_norvegicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Rattus norvegicus",
+      "synset": "oewn-02336198-n"
+    },
+    {
+      "definition": "brown rat that infests wharves",
+      "forms": [],
+      "id": "oewn-wharf_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "wharf rat",
+      "synset": "oewn-02336385-n"
+    },
+    {
+      "definition": "brown rat commonly found in sewers",
+      "forms": [],
+      "id": "oewn-sewer_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "sewer rat",
+      "synset": "oewn-02336471-n"
+    },
+    {
+      "definition": "common household pest originally from Asia that has spread worldwide",
+      "forms": [],
+      "id": "oewn-black_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "black rat",
+      "synset": "oewn-02336561-n"
+    },
+    {
+      "definition": "common household pest originally from Asia that has spread worldwide",
+      "forms": [],
+      "id": "oewn-roof_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "roof rat",
+      "synset": "oewn-02336561-n"
+    },
+    {
+      "definition": "common household pest originally from Asia that has spread worldwide",
+      "forms": [],
+      "id": "oewn-rattus_rattus__1.05.00..",
+      "lang": "en",
+      "lemma": "Rattus rattus",
+      "synset": "oewn-02336561-n"
+    },
+    {
+      "definition": "burrowing scaly-tailed rat of India and Ceylon",
+      "forms": [],
+      "id": "oewn-bandicoot_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "bandicoot rat",
+      "synset": "oewn-02336853-n"
+    },
+    {
+      "definition": "burrowing scaly-tailed rat of India and Ceylon",
+      "forms": [],
+      "id": "oewn-mole_rat__1.05.02..",
+      "lang": "en",
+      "lemma": "mole rat",
+      "synset": "oewn-02336853-n"
+    },
+    {
+      "definition": "large Australian rat with hind legs adapted for leaping",
+      "forms": [],
+      "id": "oewn-jerboa_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "jerboa rat",
+      "synset": "oewn-02337112-n"
+    },
+    {
+      "definition": "leaping rodent of Australian desert areas",
+      "forms": [],
+      "id": "oewn-kangaroo_mouse__1.05.01..",
+      "lang": "en",
+      "lemma": "kangaroo mouse",
+      "synset": "oewn-02337380-n"
+    },
+    {
+      "definition": "any of various amphibious rats",
+      "forms": [],
+      "id": "oewn-water_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "water rat",
+      "synset": "oewn-02337779-n"
+    },
+    {
+      "definition": "amphibious rat of Australia and New Guinea",
+      "forms": [],
+      "id": "oewn-beaver_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "beaver rat",
+      "synset": "oewn-02337883-n"
+    },
+    {
+      "definition": "a variety of rodent",
+      "forms": [],
+      "id": "oewn-new_world_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "New World mouse",
+      "synset": "oewn-02338663-n"
+    },
+    {
+      "definition": "any of several small greyish New World mice inhabiting e.g. grain fields",
+      "forms": [],
+      "id": "oewn-american_harvest_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "American harvest mouse",
+      "synset": "oewn-02338927-n"
+    },
+    {
+      "definition": "any of several small greyish New World mice inhabiting e.g. grain fields",
+      "forms": [],
+      "id": "oewn-harvest_mouse__1.05.02..",
+      "lang": "en",
+      "lemma": "harvest mouse",
+      "synset": "oewn-02338927-n"
+    },
+    {
+      "definition": "any of various New World woodland mice",
+      "forms": [],
+      "id": "oewn-wood_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "wood mouse",
+      "synset": "oewn-02339293-n"
+    },
+    {
+      "definition": "American woodland mouse with white feet and underparts",
+      "forms": [],
+      "id": "oewn-white-footed_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "white-footed mouse",
+      "synset": "oewn-02339478-n"
+    },
+    {
+      "definition": "American woodland mouse with white feet and underparts",
+      "forms": [],
+      "id": "oewn-vesper_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "vesper mouse",
+      "synset": "oewn-02339478-n"
+    },
+    {
+      "definition": "American woodland mouse with white feet and underparts",
+      "forms": [],
+      "id": "oewn-peromyscus_leucopus__1.05.00..",
+      "lang": "en",
+      "lemma": "Peromyscus leucopus",
+      "synset": "oewn-02339478-n"
+    },
+    {
+      "definition": "brownish New World mouse; most widely distributed member of the genus",
+      "forms": [],
+      "id": "oewn-deer_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "deer mouse",
+      "synset": "oewn-02339653-n"
+    },
+    {
+      "definition": "brownish New World mouse; most widely distributed member of the genus",
+      "forms": [],
+      "id": "oewn-peromyscus_maniculatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Peromyscus maniculatus",
+      "synset": "oewn-02339653-n"
+    },
+    {
+      "definition": "burrowing mouse of desert areas of southwestern United States",
+      "forms": [],
+      "id": "oewn-cactus_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "cactus mouse",
+      "synset": "oewn-02339823-n"
+    },
+    {
+      "definition": "burrowing mouse of desert areas of southwestern United States",
+      "forms": [],
+      "id": "oewn-peromyscus_eremicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Peromyscus eremicus",
+      "synset": "oewn-02339823-n"
+    },
+    {
+      "definition": "large dark mouse of southeastern United States",
+      "forms": [],
+      "id": "oewn-cotton_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "cotton mouse",
+      "synset": "oewn-02339984-n"
+    },
+    {
+      "definition": "large dark mouse of southeastern United States",
+      "forms": [],
+      "id": "oewn-peromyscus_gossypinus__1.05.00..",
+      "lang": "en",
+      "lemma": "Peromyscus gossypinus",
+      "synset": "oewn-02339984-n"
+    },
+    {
+      "definition": "very small dark greyish brown mouse resembling a house mouse; of Texas and Mexico",
+      "forms": [],
+      "id": "oewn-pygmy_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "pygmy mouse",
+      "synset": "oewn-02340250-n"
+    },
+    {
+      "definition": "very small dark greyish brown mouse resembling a house mouse; of Texas and Mexico",
+      "forms": [],
+      "id": "oewn-baiomys_taylori__1.05.00..",
+      "lang": "en",
+      "lemma": "Baiomys taylori",
+      "synset": "oewn-02340250-n"
+    },
+    {
+      "definition": "insectivorous mouse of western North America",
+      "forms": [],
+      "id": "oewn-grasshopper_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "grasshopper mouse",
+      "synset": "oewn-02340554-n"
+    },
+    {
+      "definition": "beaver-like aquatic rodent of North America with dark glossy brown fur",
+      "forms": [],
+      "id": "oewn-muskrat__1.05.00..",
+      "lang": "en",
+      "lemma": "muskrat",
+      "synset": "oewn-02340797-n"
+    },
+    {
+      "definition": "beaver-like aquatic rodent of North America with dark glossy brown fur",
+      "forms": [],
+      "id": "oewn-musquash__1.05.00..",
+      "lang": "en",
+      "lemma": "musquash",
+      "synset": "oewn-02340797-n"
+    },
+    {
+      "definition": "beaver-like aquatic rodent of North America with dark glossy brown fur",
+      "forms": [],
+      "id": "oewn-ondatra_zibethica__1.05.00..",
+      "lang": "en",
+      "lemma": "Ondatra zibethica",
+      "synset": "oewn-02340797-n"
+    },
+    {
+      "definition": "of Florida wetlands",
+      "forms": [],
+      "id": "oewn-round-tailed_muskrat__1.05.00..",
+      "lang": "en",
+      "lemma": "round-tailed muskrat",
+      "synset": "oewn-02341101-n"
+    },
+    {
+      "definition": "of Florida wetlands",
+      "forms": [],
+      "id": "oewn-florida_water_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "Florida water rat",
+      "synset": "oewn-02341101-n"
+    },
+    {
+      "definition": "of Florida wetlands",
+      "forms": [],
+      "id": "oewn-neofiber_alleni__1.05.00..",
+      "lang": "en",
+      "lemma": "Neofiber alleni",
+      "synset": "oewn-02341101-n"
+    },
+    {
+      "definition": "destructive long-haired burrowing rat of southern North America and Central America",
+      "forms": [],
+      "id": "oewn-cotton_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "cotton rat",
+      "synset": "oewn-02341374-n"
+    },
+    {
+      "definition": "destructive long-haired burrowing rat of southern North America and Central America",
+      "forms": [],
+      "id": "oewn-sigmodon_hispidus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sigmodon hispidus",
+      "synset": "oewn-02341374-n"
+    },
+    {
+      "definition": "any of various small short-tailed rodents of the Northern Hemisphere having soft fur grey above and white below with furred tails and large ears; some are hosts for Ixodes pacificus and Ixodes scapularis (Lyme disease ticks)",
+      "forms": [],
+      "id": "oewn-wood_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "wood rat",
+      "synset": "oewn-02341553-n"
+    },
+    {
+      "definition": "any of various small short-tailed rodents of the Northern Hemisphere having soft fur grey above and white below with furred tails and large ears; some are hosts for Ixodes pacificus and Ixodes scapularis (Lyme disease ticks)",
+      "forms": [],
+      "id": "oewn-wood-rat__1.05.00..",
+      "lang": "en",
+      "lemma": "wood-rat",
+      "synset": "oewn-02341553-n"
+    },
+    {
+      "definition": "a wood rat with dusky feet",
+      "forms": [],
+      "id": "oewn-dusky-footed_wood_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "dusky-footed wood rat",
+      "synset": "oewn-02341934-n"
+    },
+    {
+      "definition": "any of various small mouselike rodents of the family Cricetidae (especially of genus Microtus) having a stout short-tailed body and inconspicuous ears and inhabiting fields or meadows",
+      "forms": [],
+      "id": "oewn-vole__1.05.00..",
+      "lang": "en",
+      "lemma": "vole",
+      "synset": "oewn-02342028-n"
+    },
+    {
+      "definition": "any of various small mouselike rodents of the family Cricetidae (especially of genus Microtus) having a stout short-tailed body and inconspicuous ears and inhabiting fields or meadows",
+      "forms": [],
+      "id": "oewn-field_mouse__1.05.01..",
+      "lang": "en",
+      "lemma": "field mouse",
+      "synset": "oewn-02342028-n"
+    },
+    {
+      "definition": "any of several bushy-tailed rodents of the genus Neotoma of western North America; hoards food and other objects",
+      "forms": [],
+      "id": "oewn-packrat__1.05.00..",
+      "lang": "en",
+      "lemma": "packrat",
+      "synset": "oewn-02342574-n"
+    },
+    {
+      "definition": "any of several bushy-tailed rodents of the genus Neotoma of western North America; hoards food and other objects",
+      "forms": [],
+      "id": "oewn-pack_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "pack rat",
+      "synset": "oewn-02342574-n"
+    },
+    {
+      "definition": "any of several bushy-tailed rodents of the genus Neotoma of western North America; hoards food and other objects",
+      "forms": [],
+      "id": "oewn-trade_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "trade rat",
+      "synset": "oewn-02342574-n"
+    },
+    {
+      "definition": "any of several bushy-tailed rodents of the genus Neotoma of western North America; hoards food and other objects",
+      "forms": [],
+      "id": "oewn-bushytail_woodrat__1.05.00..",
+      "lang": "en",
+      "lemma": "bushytail woodrat",
+      "synset": "oewn-02342574-n"
+    },
+    {
+      "definition": "any of several bushy-tailed rodents of the genus Neotoma of western North America; hoards food and other objects",
+      "forms": [],
+      "id": "oewn-neotoma_cinerea__1.05.00..",
+      "lang": "en",
+      "lemma": "Neotoma cinerea",
+      "synset": "oewn-02342574-n"
+    },
+    {
+      "definition": "host to Lyme disease tick (Ixodes pacificus) in northern California",
+      "forms": [],
+      "id": "oewn-dusky-footed_woodrat__1.05.00..",
+      "lang": "en",
+      "lemma": "dusky-footed woodrat",
+      "synset": "oewn-02342838-n"
+    },
+    {
+      "definition": "host to Lyme disease tick (Ixodes pacificus) in northern California",
+      "forms": [],
+      "id": "oewn-neotoma_fuscipes__1.05.00..",
+      "lang": "en",
+      "lemma": "Neotoma fuscipes",
+      "synset": "oewn-02342838-n"
+    },
+    {
+      "definition": "large greyish-brown wood rat of the southeastern United States",
+      "forms": [],
+      "id": "oewn-eastern_woodrat__1.05.00..",
+      "lang": "en",
+      "lemma": "eastern woodrat",
+      "synset": "oewn-02343010-n"
+    },
+    {
+      "definition": "large greyish-brown wood rat of the southeastern United States",
+      "forms": [],
+      "id": "oewn-neotoma_floridana__1.05.00..",
+      "lang": "en",
+      "lemma": "Neotoma floridana",
+      "synset": "oewn-02343010-n"
+    },
+    {
+      "definition": "hardy agile rat of grassy marshes of Mexico and the southeastern United States",
+      "forms": [],
+      "id": "oewn-rice_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "rice rat",
+      "synset": "oewn-02343292-n"
+    },
+    {
+      "definition": "hardy agile rat of grassy marshes of Mexico and the southeastern United States",
+      "forms": [],
+      "id": "oewn-oryzomys_palustris__1.05.00..",
+      "lang": "en",
+      "lemma": "Oryzomys palustris",
+      "synset": "oewn-02343292-n"
+    },
+    {
+      "definition": "short-tailed glossy-furred burrowing vole of the eastern United States",
+      "forms": [],
+      "id": "oewn-pine_vole__1.05.00..",
+      "lang": "en",
+      "lemma": "pine vole",
+      "synset": "oewn-02343582-n"
+    },
+    {
+      "definition": "short-tailed glossy-furred burrowing vole of the eastern United States",
+      "forms": [],
+      "id": "oewn-pine_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "pine mouse",
+      "synset": "oewn-02343582-n"
+    },
+    {
+      "definition": "short-tailed glossy-furred burrowing vole of the eastern United States",
+      "forms": [],
+      "id": "oewn-pitymys_pinetorum__1.05.00..",
+      "lang": "en",
+      "lemma": "Pitymys pinetorum",
+      "synset": "oewn-02343582-n"
+    },
+    {
+      "definition": "widely distributed in grasslands of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-meadow_vole__1.05.00..",
+      "lang": "en",
+      "lemma": "meadow vole",
+      "synset": "oewn-02343940-n"
+    },
+    {
+      "definition": "widely distributed in grasslands of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-meadow_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "meadow mouse",
+      "synset": "oewn-02343940-n"
+    },
+    {
+      "definition": "widely distributed in grasslands of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-microtus_pennsylvaticus__1.05.00..",
+      "lang": "en",
+      "lemma": "Microtus pennsylvaticus",
+      "synset": "oewn-02343940-n"
+    },
+    {
+      "definition": "The largest vole of western North America (Microtus richardsoni)",
+      "forms": [],
+      "id": "oewn-water_vole__1.05.02..",
+      "lang": "en",
+      "lemma": "water vole",
+      "synset": "oewn-02344127-n"
+    },
+    {
+      "definition": "The largest vole of western North America (Microtus richardsoni)",
+      "forms": [],
+      "id": "oewn-richardson_vole__1.05.00..",
+      "lang": "en",
+      "lemma": "Richardson vole",
+      "synset": "oewn-02344127-n"
+    },
+    {
+      "definition": "The largest vole of western North America (Microtus richardsoni)",
+      "forms": [],
+      "id": "oewn-microtus_richardsoni__1.05.00..",
+      "lang": "en",
+      "lemma": "Microtus richardsoni",
+      "synset": "oewn-02344127-n"
+    },
+    {
+      "definition": "typical vole of the extended prairie region of central United States and southern Canada",
+      "forms": [],
+      "id": "oewn-prairie_vole__1.05.00..",
+      "lang": "en",
+      "lemma": "prairie vole",
+      "synset": "oewn-02344268-n"
+    },
+    {
+      "definition": "typical vole of the extended prairie region of central United States and southern Canada",
+      "forms": [],
+      "id": "oewn-microtus_ochrogaster__1.05.00..",
+      "lang": "en",
+      "lemma": "Microtus ochrogaster",
+      "synset": "oewn-02344268-n"
+    },
+    {
+      "definition": "common large Eurasian vole",
+      "forms": [],
+      "id": "oewn-water_vole__1.05.01..",
+      "lang": "en",
+      "lemma": "water vole",
+      "synset": "oewn-02344626-n"
+    },
+    {
+      "definition": "common large Eurasian vole",
+      "forms": [],
+      "id": "oewn-water_rat__1.05.02..",
+      "lang": "en",
+      "lemma": "water rat",
+      "synset": "oewn-02344626-n"
+    },
+    {
+      "definition": "common large Eurasian vole",
+      "forms": [],
+      "id": "oewn-arvicola_amphibius__1.05.00..",
+      "lang": "en",
+      "lemma": "Arvicola amphibius",
+      "synset": "oewn-02344626-n"
+    },
+    {
+      "definition": "any of several voles of mountainous regions of Eurasia and America",
+      "forms": [],
+      "id": "oewn-red-backed_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "red-backed mouse",
+      "synset": "oewn-02344902-n"
+    },
+    {
+      "definition": "any of several voles of mountainous regions of Eurasia and America",
+      "forms": [],
+      "id": "oewn-redback_vole__1.05.00..",
+      "lang": "en",
+      "lemma": "redback vole",
+      "synset": "oewn-02344902-n"
+    },
+    {
+      "definition": "any of several vole-like terrestrial or arboreal rodents of cold forested regions of Canada and western United States",
+      "forms": [],
+      "id": "oewn-phenacomys__1.05.00..",
+      "lang": "en",
+      "lemma": "phenacomys",
+      "synset": "oewn-02345186-n"
+    },
+    {
+      "definition": "short-tailed Old World burrowing rodent with large cheek pouches",
+      "forms": [],
+      "id": "oewn-hamster__1.05.00..",
+      "lang": "en",
+      "lemma": "hamster",
+      "synset": "oewn-02345537-n"
+    },
+    {
+      "definition": "a variety of hamster common to Europe and Asia",
+      "forms": [],
+      "id": "oewn-eurasian_hamster__1.05.00..",
+      "lang": "en",
+      "lemma": "Eurasian hamster",
+      "synset": "oewn-02345710-n"
+    },
+    {
+      "definition": "a variety of hamster common to Europe and Asia",
+      "forms": [],
+      "id": "oewn-cricetus_cricetus__1.05.00..",
+      "lang": "en",
+      "lemma": "Cricetus cricetus",
+      "synset": "oewn-02345710-n"
+    },
+    {
+      "definition": "small light-colored hamster often kept as a pet",
+      "forms": [],
+      "id": "oewn-golden_hamster__1.05.00..",
+      "lang": "en",
+      "lemma": "golden hamster",
+      "synset": "oewn-02345972-n"
+    },
+    {
+      "definition": "small light-colored hamster often kept as a pet",
+      "forms": [],
+      "id": "oewn-syrian_hamster__1.05.00..",
+      "lang": "en",
+      "lemma": "Syrian hamster",
+      "synset": "oewn-02345972-n"
+    },
+    {
+      "definition": "small light-colored hamster often kept as a pet",
+      "forms": [],
+      "id": "oewn-mesocricetus_auratus__1.05.00..",
+      "lang": "en",
+      "lemma": "Mesocricetus auratus",
+      "synset": "oewn-02345972-n"
+    },
+    {
+      "definition": "small Old World burrowing desert rodent with long soft pale fur and hind legs adapted for leaping",
+      "forms": [],
+      "id": "oewn-gerbil__1.05.00..",
+      "lang": "en",
+      "lemma": "gerbil",
+      "synset": "oewn-02346424-n"
+    },
+    {
+      "definition": "small Old World burrowing desert rodent with long soft pale fur and hind legs adapted for leaping",
+      "forms": [],
+      "id": "oewn-gerbille__1.05.00..",
+      "lang": "en",
+      "lemma": "gerbille",
+      "synset": "oewn-02346424-n"
+    },
+    {
+      "definition": "gerbil of northern Africa",
+      "forms": [],
+      "id": "oewn-jird__1.05.00..",
+      "lang": "en",
+      "lemma": "jird",
+      "synset": "oewn-02346827-n"
+    },
+    {
+      "definition": "a gerbil that is popular as a pet",
+      "forms": [],
+      "id": "oewn-tamarisk_gerbil__1.05.00..",
+      "lang": "en",
+      "lemma": "tamarisk gerbil",
+      "synset": "oewn-02346922-n"
+    },
+    {
+      "definition": "a gerbil that is popular as a pet",
+      "forms": [],
+      "id": "oewn-meriones_unguiculatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Meriones unguiculatus",
+      "synset": "oewn-02346922-n"
+    },
+    {
+      "definition": "southern European gerbil",
+      "forms": [],
+      "id": "oewn-sand_rat__1.05.01..",
+      "lang": "en",
+      "lemma": "sand rat",
+      "synset": "oewn-02347060-n"
+    },
+    {
+      "definition": "southern European gerbil",
+      "forms": [],
+      "id": "oewn-meriones_longifrons__1.05.00..",
+      "lang": "en",
+      "lemma": "Meriones longifrons",
+      "synset": "oewn-02347060-n"
+    },
+    {
+      "definition": "any of various short-tailed furry-footed rodents of circumpolar distribution",
+      "forms": [],
+      "id": "oewn-lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "lemming",
+      "synset": "oewn-02347180-n"
+    },
+    {
+      "definition": "notable for mass migrations even into the sea where many drown",
+      "forms": [],
+      "id": "oewn-european_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "European lemming",
+      "synset": "oewn-02347570-n"
+    },
+    {
+      "definition": "notable for mass migrations even into the sea where many drown",
+      "forms": [],
+      "id": "oewn-lemmus_lemmus__1.05.00..",
+      "lang": "en",
+      "lemma": "Lemmus lemmus",
+      "synset": "oewn-02347570-n"
+    },
+    {
+      "definition": "of northwestern Canada and Alaska",
+      "forms": [],
+      "id": "oewn-brown_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "brown lemming",
+      "synset": "oewn-02347730-n"
+    },
+    {
+      "definition": "of northwestern Canada and Alaska",
+      "forms": [],
+      "id": "oewn-lemmus_trimucronatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Lemmus trimucronatus",
+      "synset": "oewn-02347730-n"
+    },
+    {
+      "definition": "Old World lemming",
+      "forms": [],
+      "id": "oewn-grey_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "grey lemming",
+      "synset": "oewn-02347992-n"
+    },
+    {
+      "definition": "Old World lemming",
+      "forms": [],
+      "id": "oewn-gray_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "gray lemming",
+      "synset": "oewn-02347992-n"
+    },
+    {
+      "definition": "Old World lemming",
+      "forms": [],
+      "id": "oewn-red-backed_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "red-backed lemming",
+      "synset": "oewn-02347992-n"
+    },
+    {
+      "definition": "North American lemming having a white winter coat and some claws much enlarged",
+      "forms": [],
+      "id": "oewn-pied_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "pied lemming",
+      "synset": "oewn-02348252-n"
+    },
+    {
+      "definition": "of northern Canada",
+      "forms": [],
+      "id": "oewn-hudson_bay_collared_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "Hudson bay collared lemming",
+      "synset": "oewn-02348426-n"
+    },
+    {
+      "definition": "of northern Canada",
+      "forms": [],
+      "id": "oewn-dicrostonyx_hudsonius__1.05.00..",
+      "lang": "en",
+      "lemma": "Dicrostonyx hudsonius",
+      "synset": "oewn-02348426-n"
+    },
+    {
+      "definition": "of low bogs and meadows of northeastern and central United States and southern Canada",
+      "forms": [],
+      "id": "oewn-southern_bog_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "southern bog lemming",
+      "synset": "oewn-02348649-n"
+    },
+    {
+      "definition": "of low bogs and meadows of northeastern and central United States and southern Canada",
+      "forms": [],
+      "id": "oewn-synaptomys_cooperi__1.05.00..",
+      "lang": "en",
+      "lemma": "Synaptomys cooperi",
+      "synset": "oewn-02348649-n"
+    },
+    {
+      "definition": "of wet alpine and subalpine meadows of Canada and Alaska",
+      "forms": [],
+      "id": "oewn-northern_bog_lemming__1.05.00..",
+      "lang": "en",
+      "lemma": "northern bog lemming",
+      "synset": "oewn-02348822-n"
+    },
+    {
+      "definition": "of wet alpine and subalpine meadows of Canada and Alaska",
+      "forms": [],
+      "id": "oewn-synaptomys_borealis__1.05.00..",
+      "lang": "en",
+      "lemma": "Synaptomys borealis",
+      "synset": "oewn-02348822-n"
+    },
+    {
+      "definition": "relatively large rodents with sharp erectile bristles mingled with the fur",
+      "forms": [],
+      "id": "oewn-porcupine__1.05.00..",
+      "lang": "en",
+      "lemma": "porcupine",
+      "synset": "oewn-02349279-n"
+    },
+    {
+      "definition": "relatively large rodents with sharp erectile bristles mingled with the fur",
+      "forms": [],
+      "id": "oewn-hedgehog__1.05.02..",
+      "lang": "en",
+      "lemma": "hedgehog",
+      "synset": "oewn-02349279-n"
+    },
+    {
+      "definition": "terrestrial porcupine",
+      "forms": [],
+      "id": "oewn-old_world_porcupine__1.05.00..",
+      "lang": "en",
+      "lemma": "Old World porcupine",
+      "synset": "oewn-02349650-n"
+    },
+    {
+      "definition": "porcupine with a tuft of large beaded bristles on the tail",
+      "forms": [],
+      "id": "oewn-brush-tailed_porcupine__1.05.00..",
+      "lang": "en",
+      "lemma": "brush-tailed porcupine",
+      "synset": "oewn-02349926-n"
+    },
+    {
+      "definition": "porcupine with a tuft of large beaded bristles on the tail",
+      "forms": [],
+      "id": "oewn-brush-tail_porcupine__1.05.00..",
+      "lang": "en",
+      "lemma": "brush-tail porcupine",
+      "synset": "oewn-02349926-n"
+    },
+    {
+      "definition": "porcupine of Borneo and Sumatra having short spines and a long tail",
+      "forms": [],
+      "id": "oewn-long-tailed_porcupine__1.05.00..",
+      "lang": "en",
+      "lemma": "long-tailed porcupine",
+      "synset": "oewn-02350225-n"
+    },
+    {
+      "definition": "porcupine of Borneo and Sumatra having short spines and a long tail",
+      "forms": [],
+      "id": "oewn-trichys_lipura__1.05.00..",
+      "lang": "en",
+      "lemma": "Trichys lipura",
+      "synset": "oewn-02350225-n"
+    },
+    {
+      "definition": "arboreal porcupine",
+      "forms": [],
+      "id": "oewn-new_world_porcupine__1.05.00..",
+      "lang": "en",
+      "lemma": "New World porcupine",
+      "synset": "oewn-02350396-n"
+    },
+    {
+      "definition": "porcupine of northeastern North America with barbed spines concealed in the coarse fur; often gnaws buildings for salt and grease",
+      "forms": [],
+      "id": "oewn-canada_porcupine__1.05.00..",
+      "lang": "en",
+      "lemma": "Canada porcupine",
+      "synset": "oewn-02350825-n"
+    },
+    {
+      "definition": "porcupine of northeastern North America with barbed spines concealed in the coarse fur; often gnaws buildings for salt and grease",
+      "forms": [],
+      "id": "oewn-erethizon_dorsatum__1.05.00..",
+      "lang": "en",
+      "lemma": "Erethizon dorsatum",
+      "synset": "oewn-02350825-n"
+    },
+    {
+      "definition": "any of various small nocturnal burrowing desert rodents with cheek pouches and long hind legs and tail",
+      "forms": [],
+      "id": "oewn-pocket_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "pocket mouse",
+      "synset": "oewn-02351440-n"
+    },
+    {
+      "definition": "small pale yellowish soft-furred rodent of southwestern United States and Mexico",
+      "forms": [],
+      "id": "oewn-silky_pocket_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "silky pocket mouse",
+      "synset": "oewn-02351857-n"
+    },
+    {
+      "definition": "small pale yellowish soft-furred rodent of southwestern United States and Mexico",
+      "forms": [],
+      "id": "oewn-perognathus_flavus__1.05.00..",
+      "lang": "en",
+      "lemma": "Perognathus flavus",
+      "synset": "oewn-02351857-n"
+    },
+    {
+      "definition": "small rodent of open areas of United States plains states",
+      "forms": [],
+      "id": "oewn-plains_pocket_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "plains pocket mouse",
+      "synset": "oewn-02352042-n"
+    },
+    {
+      "definition": "small rodent of open areas of United States plains states",
+      "forms": [],
+      "id": "oewn-perognathus_flavescens__1.05.00..",
+      "lang": "en",
+      "lemma": "Perognathus flavescens",
+      "synset": "oewn-02352042-n"
+    },
+    {
+      "definition": "large stiff-haired rodent of shortgrass prairies of United States",
+      "forms": [],
+      "id": "oewn-hispid_pocket_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "hispid pocket mouse",
+      "synset": "oewn-02352209-n"
+    },
+    {
+      "definition": "large stiff-haired rodent of shortgrass prairies of United States",
+      "forms": [],
+      "id": "oewn-perognathus_hispidus__1.05.00..",
+      "lang": "en",
+      "lemma": "Perognathus hispidus",
+      "synset": "oewn-02352209-n"
+    },
+    {
+      "definition": "large pocket mouse of Mexico",
+      "forms": [],
+      "id": "oewn-mexican_pocket_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "Mexican pocket mouse",
+      "synset": "oewn-02352499-n"
+    },
+    {
+      "definition": "large pocket mouse of Mexico",
+      "forms": [],
+      "id": "oewn-liomys_irroratus__1.05.00..",
+      "lang": "en",
+      "lemma": "Liomys irroratus",
+      "synset": "oewn-02352499-n"
+    },
+    {
+      "definition": "any of various leaping rodents of desert regions of North America and Mexico; largest members of the family Heteromyidae",
+      "forms": [],
+      "id": "oewn-kangaroo_rat__1.05.01..",
+      "lang": "en",
+      "lemma": "kangaroo rat",
+      "synset": "oewn-02352757-n"
+    },
+    {
+      "definition": "any of various leaping rodents of desert regions of North America and Mexico; largest members of the family Heteromyidae",
+      "forms": [],
+      "id": "oewn-desert_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "desert rat",
+      "synset": "oewn-02352757-n"
+    },
+    {
+      "definition": "any of various leaping rodents of desert regions of North America and Mexico; largest members of the family Heteromyidae",
+      "forms": [],
+      "id": "oewn-dipodomys_phillipsii__1.05.00..",
+      "lang": "en",
+      "lemma": "Dipodomys phillipsii",
+      "synset": "oewn-02352757-n"
+    },
+    {
+      "definition": "most widely distributed kangaroo rat: plains and mountain areas of central and western United States",
+      "forms": [],
+      "id": "oewn-ord_kangaroo_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "Ord kangaroo rat",
+      "synset": "oewn-02353009-n"
+    },
+    {
+      "definition": "most widely distributed kangaroo rat: plains and mountain areas of central and western United States",
+      "forms": [],
+      "id": "oewn-dipodomys_ordi__1.05.00..",
+      "lang": "en",
+      "lemma": "Dipodomys ordi",
+      "synset": "oewn-02353009-n"
+    },
+    {
+      "definition": "small silky-haired pouched rodent; similar to but smaller than kangaroo rats",
+      "forms": [],
+      "id": "oewn-kangaroo_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "kangaroo mouse",
+      "synset": "oewn-02353322-n"
+    },
+    {
+      "definition": "small silky-haired pouched rodent; similar to but smaller than kangaroo rats",
+      "forms": [],
+      "id": "oewn-dwarf_pocket_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "dwarf pocket rat",
+      "synset": "oewn-02353322-n"
+    },
+    {
+      "definition": "any of several primitive mouselike rodents with long hind legs and no cheek pouches; of woodlands of Eurasia and North America",
+      "forms": [],
+      "id": "oewn-jumping_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "jumping mouse",
+      "synset": "oewn-02353641-n"
+    },
+    {
+      "definition": "widely distributed in northeastern and central United States and Canada",
+      "forms": [],
+      "id": "oewn-meadow_jumping_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "meadow jumping mouse",
+      "synset": "oewn-02353995-n"
+    },
+    {
+      "definition": "widely distributed in northeastern and central United States and Canada",
+      "forms": [],
+      "id": "oewn-zapus_hudsonius__1.05.00..",
+      "lang": "en",
+      "lemma": "Zapus hudsonius",
+      "synset": "oewn-02353995-n"
+    },
+    {
+      "definition": "mouselike jumping rodent",
+      "forms": [],
+      "id": "oewn-jerboa__1.05.00..",
+      "lang": "en",
+      "lemma": "jerboa",
+      "synset": "oewn-02354522-n"
+    },
+    {
+      "definition": "small nocturnal jumping rodent with long hind legs; of arid parts of Asia and northern Africa",
+      "forms": [],
+      "id": "oewn-typical_jerboa__1.05.00..",
+      "lang": "en",
+      "lemma": "typical jerboa",
+      "synset": "oewn-02354654-n"
+    },
+    {
+      "definition": "a variety of jerboa",
+      "forms": [],
+      "id": "oewn-jaculus_jaculus__1.05.00..",
+      "lang": "en",
+      "lemma": "Jaculus jaculus",
+      "synset": "oewn-02354942-n"
+    },
+    {
+      "definition": "small furry-tailed squirrel-like Old World rodent that becomes torpid in cold weather",
+      "forms": [
+        "dormice"
+      ],
+      "id": "oewn-dormouse__1.05.00..",
+      "lang": "en",
+      "lemma": "dormouse",
+      "synset": "oewn-02355243-n"
+    },
+    {
+      "definition": "large European dormouse",
+      "forms": [],
+      "id": "oewn-loir__1.05.00..",
+      "lang": "en",
+      "lemma": "loir",
+      "synset": "oewn-02355584-n"
+    },
+    {
+      "definition": "large European dormouse",
+      "forms": [],
+      "id": "oewn-glis_glis__1.05.00..",
+      "lang": "en",
+      "lemma": "Glis glis",
+      "synset": "oewn-02355584-n"
+    },
+    {
+      "definition": "a variety of dormouse",
+      "forms": [],
+      "id": "oewn-hazel_mouse__1.05.00..",
+      "lang": "en",
+      "lemma": "hazel mouse",
+      "synset": "oewn-02355824-n"
+    },
+    {
+      "definition": "a variety of dormouse",
+      "forms": [],
+      "id": "oewn-muscardinus_avellanarius__1.05.00..",
+      "lang": "en",
+      "lemma": "Muscardinus avellanarius",
+      "synset": "oewn-02355824-n"
+    },
+    {
+      "definition": "dormouse of southern Europe and northern Africa",
+      "forms": [],
+      "id": "oewn-lerot__1.05.00..",
+      "lang": "en",
+      "lemma": "lerot",
+      "synset": "oewn-02356063-n"
+    },
+    {
+      "definition": "burrowing rodent of the family Geomyidae having large external cheek pouches; of Central America and southwestern North America",
+      "forms": [],
+      "id": "oewn-gopher__1.05.01..",
+      "lang": "en",
+      "lemma": "gopher",
+      "synset": "oewn-02356513-n"
+    },
+    {
+      "definition": "burrowing rodent of the family Geomyidae having large external cheek pouches; of Central America and southwestern North America",
+      "forms": [],
+      "id": "oewn-pocket_gopher__1.05.00..",
+      "lang": "en",
+      "lemma": "pocket gopher",
+      "synset": "oewn-02356513-n"
+    },
+    {
+      "definition": "burrowing rodent of the family Geomyidae having large external cheek pouches; of Central America and southwestern North America",
+      "forms": [],
+      "id": "oewn-pouched_rat__1.05.01..",
+      "lang": "en",
+      "lemma": "pouched rat",
+      "synset": "oewn-02356513-n"
+    },
+    {
+      "definition": "gopher of chiefly grasslands of central North America",
+      "forms": [],
+      "id": "oewn-plains_pocket_gopher__1.05.00..",
+      "lang": "en",
+      "lemma": "plains pocket gopher",
+      "synset": "oewn-02356814-n"
+    },
+    {
+      "definition": "gopher of chiefly grasslands of central North America",
+      "forms": [],
+      "id": "oewn-geomys_bursarius__1.05.00..",
+      "lang": "en",
+      "lemma": "Geomys bursarius",
+      "synset": "oewn-02356814-n"
+    },
+    {
+      "definition": "gopher of Alabama and Georgia and Florida",
+      "forms": [],
+      "id": "oewn-southeastern_pocket_gopher__1.05.00..",
+      "lang": "en",
+      "lemma": "southeastern pocket gopher",
+      "synset": "oewn-02356972-n"
+    },
+    {
+      "definition": "gopher of Alabama and Georgia and Florida",
+      "forms": [],
+      "id": "oewn-geomys_pinetis__1.05.00..",
+      "lang": "en",
+      "lemma": "Geomys pinetis",
+      "synset": "oewn-02356972-n"
+    },
+    {
+      "definition": "of valleys and mountain meadows of western United States",
+      "forms": [],
+      "id": "oewn-valley_pocket_gopher__1.05.00..",
+      "lang": "en",
+      "lemma": "valley pocket gopher",
+      "synset": "oewn-02357273-n"
+    },
+    {
+      "definition": "of valleys and mountain meadows of western United States",
+      "forms": [],
+      "id": "oewn-thomomys_bottae__1.05.00..",
+      "lang": "en",
+      "lemma": "Thomomys bottae",
+      "synset": "oewn-02357273-n"
+    },
+    {
+      "definition": "greyish to brown gopher of western and central United States",
+      "forms": [],
+      "id": "oewn-northern_pocket_gopher__1.05.00..",
+      "lang": "en",
+      "lemma": "northern pocket gopher",
+      "synset": "oewn-02357433-n"
+    },
+    {
+      "definition": "greyish to brown gopher of western and central United States",
+      "forms": [],
+      "id": "oewn-thomomys_talpoides__1.05.00..",
+      "lang": "en",
+      "lemma": "Thomomys talpoides",
+      "synset": "oewn-02357433-n"
+    },
+    {
+      "definition": "a kind of arboreal rodent having a long bushy tail",
+      "forms": [],
+      "id": "oewn-squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "squirrel",
+      "synset": "oewn-02357879-n"
+    },
+    {
+      "definition": "any typical arboreal squirrel",
+      "forms": [],
+      "id": "oewn-tree_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "tree squirrel",
+      "synset": "oewn-02358129-n"
+    },
+    {
+      "definition": "common medium-large squirrel of eastern North America; now introduced into England",
+      "forms": [],
+      "id": "oewn-eastern_grey_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "eastern grey squirrel",
+      "synset": "oewn-02359033-n"
+    },
+    {
+      "definition": "common medium-large squirrel of eastern North America; now introduced into England",
+      "forms": [],
+      "id": "oewn-eastern_gray_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "eastern gray squirrel",
+      "synset": "oewn-02359033-n"
+    },
+    {
+      "definition": "common medium-large squirrel of eastern North America; now introduced into England",
+      "forms": [],
+      "id": "oewn-cat_squirrel__1.05.01..",
+      "lang": "en",
+      "lemma": "cat squirrel",
+      "synset": "oewn-02359033-n"
+    },
+    {
+      "definition": "common medium-large squirrel of eastern North America; now introduced into England",
+      "forms": [],
+      "id": "oewn-sciurus_carolinensis__1.05.00..",
+      "lang": "en",
+      "lemma": "Sciurus carolinensis",
+      "synset": "oewn-02359033-n"
+    },
+    {
+      "definition": "large grey squirrel of far western areas of United States",
+      "forms": [],
+      "id": "oewn-western_grey_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "western grey squirrel",
+      "synset": "oewn-02359264-n"
+    },
+    {
+      "definition": "large grey squirrel of far western areas of United States",
+      "forms": [],
+      "id": "oewn-western_gray_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "western gray squirrel",
+      "synset": "oewn-02359264-n"
+    },
+    {
+      "definition": "large grey squirrel of far western areas of United States",
+      "forms": [],
+      "id": "oewn-sciurus_griseus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sciurus griseus",
+      "synset": "oewn-02359264-n"
+    },
+    {
+      "definition": "exceptionally large arboreal squirrel of eastern United States",
+      "forms": [],
+      "id": "oewn-fox_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "fox squirrel",
+      "synset": "oewn-02359450-n"
+    },
+    {
+      "definition": "exceptionally large arboreal squirrel of eastern United States",
+      "forms": [],
+      "id": "oewn-eastern_fox_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "eastern fox squirrel",
+      "synset": "oewn-02359450-n"
+    },
+    {
+      "definition": "exceptionally large arboreal squirrel of eastern United States",
+      "forms": [],
+      "id": "oewn-sciurus_niger__1.05.00..",
+      "lang": "en",
+      "lemma": "Sciurus niger",
+      "synset": "oewn-02359450-n"
+    },
+    {
+      "definition": "fox squirrel or grey squirrel in the black color phase",
+      "forms": [],
+      "id": "oewn-black_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "black squirrel",
+      "synset": "oewn-02359629-n"
+    },
+    {
+      "definition": "common reddish-brown squirrel of Europe and parts of Asia",
+      "forms": [],
+      "id": "oewn-red_squirrel__1.05.01..",
+      "lang": "en",
+      "lemma": "red squirrel",
+      "synset": "oewn-02359763-n"
+    },
+    {
+      "definition": "common reddish-brown squirrel of Europe and parts of Asia",
+      "forms": [],
+      "id": "oewn-cat_squirrel__1.05.02..",
+      "lang": "en",
+      "lemma": "cat squirrel",
+      "synset": "oewn-02359763-n"
+    },
+    {
+      "definition": "common reddish-brown squirrel of Europe and parts of Asia",
+      "forms": [],
+      "id": "oewn-sciurus_vulgaris__1.05.00..",
+      "lang": "en",
+      "lemma": "Sciurus vulgaris",
+      "synset": "oewn-02359763-n"
+    },
+    {
+      "definition": "of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-american_red_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "American red squirrel",
+      "synset": "oewn-02360053-n"
+    },
+    {
+      "definition": "of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-spruce_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "spruce squirrel",
+      "synset": "oewn-02360053-n"
+    },
+    {
+      "definition": "of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-red_squirrel__1.05.02..",
+      "lang": "en",
+      "lemma": "red squirrel",
+      "synset": "oewn-02360053-n"
+    },
+    {
+      "definition": "of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-sciurus_hudsonicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Sciurus hudsonicus",
+      "synset": "oewn-02360053-n"
+    },
+    {
+      "definition": "of northern United States and Canada",
+      "forms": [],
+      "id": "oewn-tamiasciurus_hudsonicus__1.05.00..",
+      "lang": "en",
+      "lemma": "Tamiasciurus hudsonicus",
+      "synset": "oewn-02360053-n"
+    },
+    {
+      "definition": "far western United States counterpart of the red squirrel",
+      "forms": [],
+      "id": "oewn-chickeree__1.05.00..",
+      "lang": "en",
+      "lemma": "chickeree",
+      "synset": "oewn-02360237-n"
+    },
+    {
+      "definition": "far western United States counterpart of the red squirrel",
+      "forms": [],
+      "id": "oewn-douglas_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "Douglas squirrel",
+      "synset": "oewn-02360237-n"
+    },
+    {
+      "definition": "far western United States counterpart of the red squirrel",
+      "forms": [],
+      "id": "oewn-tamiasciurus_douglasi__1.05.00..",
+      "lang": "en",
+      "lemma": "Tamiasciurus douglasi",
+      "synset": "oewn-02360237-n"
+    },
+    {
+      "definition": "small ground squirrel of western United States",
+      "forms": [],
+      "id": "oewn-antelope_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "antelope squirrel",
+      "synset": "oewn-02360563-n"
+    },
+    {
+      "definition": "small ground squirrel of western United States",
+      "forms": [],
+      "id": "oewn-whitetail_antelope_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "whitetail antelope squirrel",
+      "synset": "oewn-02360563-n"
+    },
+    {
+      "definition": "small ground squirrel of western United States",
+      "forms": [],
+      "id": "oewn-antelope_chipmunk__1.05.00..",
+      "lang": "en",
+      "lemma": "antelope chipmunk",
+      "synset": "oewn-02360563-n"
+    },
+    {
+      "definition": "small ground squirrel of western United States",
+      "forms": [],
+      "id": "oewn-citellus_leucurus__1.05.00..",
+      "lang": "en",
+      "lemma": "Citellus leucurus",
+      "synset": "oewn-02360563-n"
+    },
+    {
+      "definition": "any of various terrestrial burrowing rodents of Old and New Worlds; often destroy crops",
+      "forms": [],
+      "id": "oewn-ground_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "ground squirrel",
+      "synset": "oewn-02360743-n"
+    },
+    {
+      "definition": "any of various terrestrial burrowing rodents of Old and New Worlds; often destroy crops",
+      "forms": [],
+      "id": "oewn-gopher__1.05.03..",
+      "lang": "en",
+      "lemma": "gopher",
+      "synset": "oewn-02360743-n"
+    },
+    {
+      "definition": "any of various terrestrial burrowing rodents of Old and New Worlds; often destroy crops",
+      "forms": [],
+      "id": "oewn-spermophile__1.05.00..",
+      "lang": "en",
+      "lemma": "spermophile",
+      "synset": "oewn-02360743-n"
+    },
+    {
+      "definition": "common black-striped reddish-brown ground squirrel of western North America; resembles a large chipmunk",
+      "forms": [],
+      "id": "oewn-mantled_ground_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "mantled ground squirrel",
+      "synset": "oewn-02361042-n"
+    },
+    {
+      "definition": "common black-striped reddish-brown ground squirrel of western North America; resembles a large chipmunk",
+      "forms": [],
+      "id": "oewn-citellus_lateralis__1.05.00..",
+      "lang": "en",
+      "lemma": "Citellus lateralis",
+      "synset": "oewn-02361042-n"
+    },
+    {
+      "definition": "rather large central Eurasian ground squirrel",
+      "forms": [],
+      "id": "oewn-suslik__1.05.00..",
+      "lang": "en",
+      "lemma": "suslik",
+      "synset": "oewn-02361236-n"
+    },
+    {
+      "definition": "rather large central Eurasian ground squirrel",
+      "forms": [],
+      "id": "oewn-souslik__1.05.00..",
+      "lang": "en",
+      "lemma": "souslik",
+      "synset": "oewn-02361236-n"
+    },
+    {
+      "definition": "rather large central Eurasian ground squirrel",
+      "forms": [],
+      "id": "oewn-citellus_citellus__1.05.00..",
+      "lang": "en",
+      "lemma": "Citellus citellus",
+      "synset": "oewn-02361236-n"
+    },
+    {
+      "definition": "of sagebrush and grassland areas of western United States and Canada",
+      "forms": [],
+      "id": "oewn-flickertail__1.05.00..",
+      "lang": "en",
+      "lemma": "flickertail",
+      "synset": "oewn-02361364-n"
+    },
+    {
+      "definition": "of sagebrush and grassland areas of western United States and Canada",
+      "forms": [],
+      "id": "oewn-richardson_ground_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "Richardson ground squirrel",
+      "synset": "oewn-02361364-n"
+    },
+    {
+      "definition": "of sagebrush and grassland areas of western United States and Canada",
+      "forms": [],
+      "id": "oewn-citellus_richardsoni__1.05.00..",
+      "lang": "en",
+      "lemma": "Citellus richardsoni",
+      "synset": "oewn-02361364-n"
+    },
+    {
+      "definition": "large grey ground squirrel of rocky areas of the southwestern United States",
+      "forms": [],
+      "id": "oewn-rock_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "rock squirrel",
+      "synset": "oewn-02361542-n"
+    },
+    {
+      "definition": "large grey ground squirrel of rocky areas of the southwestern United States",
+      "forms": [],
+      "id": "oewn-citellus_variegatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Citellus variegatus",
+      "synset": "oewn-02361542-n"
+    },
+    {
+      "definition": "large ground squirrel of the North American far north",
+      "forms": [],
+      "id": "oewn-arctic_ground_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "Arctic ground squirrel",
+      "synset": "oewn-02361699-n"
+    },
+    {
+      "definition": "large ground squirrel of the North American far north",
+      "forms": [],
+      "id": "oewn-parka_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "parka squirrel",
+      "synset": "oewn-02361699-n"
+    },
+    {
+      "definition": "large ground squirrel of the North American far north",
+      "forms": [],
+      "id": "oewn-citellus_parryi__1.05.00..",
+      "lang": "en",
+      "lemma": "Citellus parryi",
+      "synset": "oewn-02361699-n"
+    },
+    {
+      "definition": "any of several rodents of North American prairies living in large complex burrows having a barking cry",
+      "forms": [],
+      "id": "oewn-prairie_dog__1.05.00..",
+      "lang": "en",
+      "lemma": "prairie dog",
+      "synset": "oewn-02361976-n"
+    },
+    {
+      "definition": "any of several rodents of North American prairies living in large complex burrows having a barking cry",
+      "forms": [],
+      "id": "oewn-prairie_marmot__1.05.00..",
+      "lang": "en",
+      "lemma": "prairie marmot",
+      "synset": "oewn-02361976-n"
+    },
+    {
+      "definition": "tail is black tipped",
+      "forms": [],
+      "id": "oewn-blacktail_prairie_dog__1.05.00..",
+      "lang": "en",
+      "lemma": "blacktail prairie dog",
+      "synset": "oewn-02362208-n"
+    },
+    {
+      "definition": "tail is black tipped",
+      "forms": [],
+      "id": "oewn-cynomys_ludovicianus__1.05.00..",
+      "lang": "en",
+      "lemma": "Cynomys ludovicianus",
+      "synset": "oewn-02362208-n"
+    },
+    {
+      "definition": "tail is white tipped",
+      "forms": [],
+      "id": "oewn-whitetail_prairie_dog__1.05.00..",
+      "lang": "en",
+      "lemma": "whitetail prairie dog",
+      "synset": "oewn-02362319-n"
+    },
+    {
+      "definition": "tail is white tipped",
+      "forms": [],
+      "id": "oewn-cynomys_gunnisoni__1.05.00..",
+      "lang": "en",
+      "lemma": "Cynomys gunnisoni",
+      "synset": "oewn-02362319-n"
+    },
+    {
+      "definition": "small striped semiterrestrial eastern American squirrel with cheek pouches",
+      "forms": [],
+      "id": "oewn-eastern_chipmunk__1.05.00..",
+      "lang": "en",
+      "lemma": "eastern chipmunk",
+      "synset": "oewn-02362567-n"
+    },
+    {
+      "definition": "small striped semiterrestrial eastern American squirrel with cheek pouches",
+      "forms": [],
+      "id": "oewn-hackee__1.05.00..",
+      "lang": "en",
+      "lemma": "hackee",
+      "synset": "oewn-02362567-n"
+    },
+    {
+      "definition": "small striped semiterrestrial eastern American squirrel with cheek pouches",
+      "forms": [],
+      "id": "oewn-striped_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "striped squirrel",
+      "synset": "oewn-02362567-n"
+    },
+    {
+      "definition": "small striped semiterrestrial eastern American squirrel with cheek pouches",
+      "forms": [],
+      "id": "oewn-ground_squirrel__1.05.02..",
+      "lang": "en",
+      "lemma": "ground squirrel",
+      "synset": "oewn-02362567-n"
+    },
+    {
+      "definition": "small striped semiterrestrial eastern American squirrel with cheek pouches",
+      "forms": [],
+      "id": "oewn-tamias_striatus__1.05.00..",
+      "lang": "en",
+      "lemma": "Tamias striatus",
+      "synset": "oewn-02362567-n"
+    },
+    {
+      "definition": "a burrowing ground squirrel of western America and Asia; has cheek pouches and a light and dark stripe running down the body",
+      "forms": [],
+      "id": "oewn-chipmunk__1.05.02..",
+      "lang": "en",
+      "lemma": "chipmunk",
+      "synset": "oewn-02362934-n"
+    },
+    {
+      "definition": "terrestrial Siberian squirrel",
+      "forms": [],
+      "id": "oewn-baronduki__1.05.00..",
+      "lang": "en",
+      "lemma": "baronduki",
+      "synset": "oewn-02363132-n"
+    },
+    {
+      "definition": "terrestrial Siberian squirrel",
+      "forms": [],
+      "id": "oewn-baranduki__1.05.00..",
+      "lang": "en",
+      "lemma": "baranduki",
+      "synset": "oewn-02363132-n"
+    },
+    {
+      "definition": "terrestrial Siberian squirrel",
+      "forms": [],
+      "id": "oewn-barunduki__1.05.00..",
+      "lang": "en",
+      "lemma": "barunduki",
+      "synset": "oewn-02363132-n"
+    },
+    {
+      "definition": "terrestrial Siberian squirrel",
+      "forms": [],
+      "id": "oewn-burunduki__1.05.00..",
+      "lang": "en",
+      "lemma": "burunduki",
+      "synset": "oewn-02363132-n"
+    },
+    {
+      "definition": "terrestrial Siberian squirrel",
+      "forms": [],
+      "id": "oewn-eutamius_asiaticus__1.05.00..",
+      "lang": "en",
+      "lemma": "Eutamius asiaticus",
+      "synset": "oewn-02363132-n"
+    },
+    {
+      "definition": "terrestrial Siberian squirrel",
+      "forms": [],
+      "id": "oewn-eutamius_sibiricus__1.05.00..",
+      "lang": "en",
+      "lemma": "Eutamius sibiricus",
+      "synset": "oewn-02363132-n"
+    },
+    {
+      "definition": "a name used to describe both the northern and southern flying squirrels",
+      "forms": [],
+      "id": "oewn-american_flying_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "American flying squirrel",
+      "synset": "oewn-02363433-n"
+    },
+    {
+      "definition": "small large-eyed nocturnal flying squirrel of eastern United States",
+      "forms": [],
+      "id": "oewn-southern_flying_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "southern flying squirrel",
+      "synset": "oewn-02363585-n"
+    },
+    {
+      "definition": "small large-eyed nocturnal flying squirrel of eastern United States",
+      "forms": [],
+      "id": "oewn-glaucomys_volans__1.05.00..",
+      "lang": "en",
+      "lemma": "Glaucomys volans",
+      "synset": "oewn-02363585-n"
+    },
+    {
+      "definition": "large flying squirrel; chiefly of Canada",
+      "forms": [],
+      "id": "oewn-northern_flying_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "northern flying squirrel",
+      "synset": "oewn-02363742-n"
+    },
+    {
+      "definition": "large flying squirrel; chiefly of Canada",
+      "forms": [],
+      "id": "oewn-glaucomys_sabrinus__1.05.00..",
+      "lang": "en",
+      "lemma": "Glaucomys sabrinus",
+      "synset": "oewn-02363742-n"
+    },
+    {
+      "definition": "stocky coarse-furred burrowing rodent with a short bushy tail found throughout the Northern Hemisphere; hibernates in winter",
+      "forms": [],
+      "id": "oewn-marmot__1.05.00..",
+      "lang": "en",
+      "lemma": "marmot",
+      "synset": "oewn-02363989-n"
+    },
+    {
+      "definition": "reddish brown North American marmot",
+      "forms": [],
+      "id": "oewn-groundhog__1.05.00..",
+      "lang": "en",
+      "lemma": "groundhog",
+      "synset": "oewn-02364239-n"
+    },
+    {
+      "definition": "reddish brown North American marmot",
+      "forms": [],
+      "id": "oewn-woodchuck__1.05.00..",
+      "lang": "en",
+      "lemma": "woodchuck",
+      "synset": "oewn-02364239-n"
+    },
+    {
+      "definition": "reddish brown North American marmot",
+      "forms": [],
+      "id": "oewn-marmota_monax__1.05.00..",
+      "lang": "en",
+      "lemma": "Marmota monax",
+      "synset": "oewn-02364239-n"
+    },
+    {
+      "definition": "large North American mountain marmot",
+      "forms": [],
+      "id": "oewn-hoary_marmot__1.05.00..",
+      "lang": "en",
+      "lemma": "hoary marmot",
+      "synset": "oewn-02364358-n"
+    },
+    {
+      "definition": "large North American mountain marmot",
+      "forms": [],
+      "id": "oewn-whistler__1.05.03..",
+      "lang": "en",
+      "lemma": "whistler",
+      "synset": "oewn-02364358-n"
+    },
+    {
+      "definition": "large North American mountain marmot",
+      "forms": [],
+      "id": "oewn-whistling_marmot__1.05.00..",
+      "lang": "en",
+      "lemma": "whistling marmot",
+      "synset": "oewn-02364358-n"
+    },
+    {
+      "definition": "large North American mountain marmot",
+      "forms": [],
+      "id": "oewn-marmota_caligata__1.05.00..",
+      "lang": "en",
+      "lemma": "Marmota caligata",
+      "synset": "oewn-02364358-n"
+    },
+    {
+      "definition": "heavy-bodied yellowish-brown marmot of rocky areas of western North America",
+      "forms": [],
+      "id": "oewn-yellowbelly_marmot__1.05.00..",
+      "lang": "en",
+      "lemma": "yellowbelly marmot",
+      "synset": "oewn-02364502-n"
+    },
+    {
+      "definition": "heavy-bodied yellowish-brown marmot of rocky areas of western North America",
+      "forms": [],
+      "id": "oewn-rockchuck__1.05.00..",
+      "lang": "en",
+      "lemma": "rockchuck",
+      "synset": "oewn-02364502-n"
+    },
+    {
+      "definition": "heavy-bodied yellowish-brown marmot of rocky areas of western North America",
+      "forms": [],
+      "id": "oewn-marmota_flaviventris__1.05.00..",
+      "lang": "en",
+      "lemma": "Marmota flaviventris",
+      "synset": "oewn-02364502-n"
+    },
+    {
+      "definition": "nocturnal rodent of Asia having furry folds of skin between forelegs and hind legs enabling it to move by gliding leaps",
+      "forms": [],
+      "id": "oewn-asiatic_flying_squirrel__1.05.00..",
+      "lang": "en",
+      "lemma": "Asiatic flying squirrel",
+      "synset": "oewn-02364846-n"
+    },
+    {
+      "definition": "East Indian flying squirrel",
+      "forms": [],
+      "id": "oewn-taguan__1.05.00..",
+      "lang": "en",
+      "lemma": "taguan",
+      "synset": "oewn-02365221-n"
+    },
+    {
+      "definition": "East Indian flying squirrel",
+      "forms": [],
+      "id": "oewn-flying_marmot__1.05.00..",
+      "lang": "en",
+      "lemma": "flying marmot",
+      "synset": "oewn-02365221-n"
+    },
+    {
+      "definition": "East Indian flying squirrel",
+      "forms": [],
+      "id": "oewn-flying_cat__1.05.01..",
+      "lang": "en",
+      "lemma": "flying cat",
+      "synset": "oewn-02365221-n"
+    },
+    {
+      "definition": "East Indian flying squirrel",
+      "forms": [],
+      "id": "oewn-petaurista_petaurista__1.05.00..",
+      "lang": "en",
+      "lemma": "Petaurista petaurista",
+      "synset": "oewn-02365221-n"
+    },
+    {
+      "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail; construct complex dams and underwater lodges",
+      "forms": [],
+      "id": "oewn-beaver__1.05.00..",
+      "lang": "en",
+      "lemma": "beaver",
+      "synset": "oewn-02365657-n"
+    },
+    {
+      "definition": "a European variety of beaver",
+      "forms": [],
+      "id": "oewn-old_world_beaver__1.05.00..",
+      "lang": "en",
+      "lemma": "Old World beaver",
+      "synset": "oewn-02365897-n"
+    },
+    {
+      "definition": "a European variety of beaver",
+      "forms": [],
+      "id": "oewn-castor_fiber__1.05.00..",
+      "lang": "en",
+      "lemma": "Castor fiber",
+      "synset": "oewn-02365897-n"
+    },
+    {
+      "definition": "a variety of beaver found in almost all areas of North America except Florida",
+      "forms": [],
+      "id": "oewn-new_world_beaver__1.05.00..",
+      "lang": "en",
+      "lemma": "New World beaver",
+      "synset": "oewn-02366003-n"
+    },
+    {
+      "definition": "a variety of beaver found in almost all areas of North America except Florida",
+      "forms": [],
+      "id": "oewn-castor_canadensis__1.05.00..",
+      "lang": "en",
+      "lemma": "Castor canadensis",
+      "synset": "oewn-02366003-n"
+    },
+    {
+      "definition": "bulky nocturnal burrowing rodent of uplands of the Pacific coast of North America; the most primitive living rodent",
+      "forms": [],
+      "id": "oewn-mountain_beaver__1.05.00..",
+      "lang": "en",
+      "lemma": "mountain beaver",
+      "synset": "oewn-02366648-n"
+    },
+    {
+      "definition": "bulky nocturnal burrowing rodent of uplands of the Pacific coast of North America; the most primitive living rodent",
+      "forms": [],
+      "id": "oewn-sewellel__1.05.00..",
+      "lang": "en",
+      "lemma": "sewellel",
+      "synset": "oewn-02366648-n"
+    },
+    {
+      "definition": "bulky nocturnal burrowing rodent of uplands of the Pacific coast of North America; the most primitive living rodent",
+      "forms": [],
+      "id": "oewn-aplodontia_rufa__1.05.00..",
+      "lang": "en",
+      "lemma": "Aplodontia rufa",
+      "synset": "oewn-02366648-n"
+    },
+    {
+      "definition": "short-tailed rough-haired South American rodent",
+      "forms": [],
+      "id": "oewn-cavy__1.05.00..",
+      "lang": "en",
+      "lemma": "cavy",
+      "synset": "oewn-02367172-n"
+    },
+    {
+      "definition": "stout-bodied nearly tailless domesticated cavy; often kept as a pet and widely used in research",
+      "forms": [],
+      "id": "oewn-guinea_pig__1.05.00..",
+      "lang": "en",
+      "lemma": "guinea pig",
+      "synset": "oewn-02367325-n"
+    },
+    {
+      "definition": "stout-bodied nearly tailless domesticated cavy; often kept as a pet and widely used in research",
+      "forms": [],
+      "id": "oewn-cavia_cobaya__1.05.00..",
+      "lang": "en",
+      "lemma": "Cavia cobaya",
+      "synset": "oewn-02367325-n"
+    },
+    {
+      "definition": "South American cavy; possibly ancestral to the domestic guinea pig",
+      "forms": [],
+      "id": "oewn-aperea__1.05.00..",
+      "lang": "en",
+      "lemma": "aperea",
+      "synset": "oewn-02367492-n"
+    },
+    {
+      "definition": "South American cavy; possibly ancestral to the domestic guinea pig",
+      "forms": [],
+      "id": "oewn-wild_cavy__1.05.00..",
+      "lang": "en",
+      "lemma": "wild cavy",
+      "synset": "oewn-02367492-n"
+    },
+    {
+      "definition": "South American cavy; possibly ancestral to the domestic guinea pig",
+      "forms": [],
+      "id": "oewn-cavia_porcellus__1.05.00..",
+      "lang": "en",
+      "lemma": "Cavia porcellus",
+      "synset": "oewn-02367492-n"
+    },
+    {
+      "definition": "hare-like rodent of the Pampas of Argentina",
+      "forms": [],
+      "id": "oewn-mara__1.05.00..",
+      "lang": "en",
+      "lemma": "mara",
+      "synset": "oewn-02367760-n"
+    },
+    {
+      "definition": "hare-like rodent of the Pampas of Argentina",
+      "forms": [],
+      "id": "oewn-dolichotis_patagonum__1.05.00..",
+      "lang": "en",
+      "lemma": "Dolichotis patagonum",
+      "synset": "oewn-02367760-n"
+    },
+    {
+      "definition": "pig-sized tailless South American amphibious rodent with partly webbed feet; largest living rodent",
+      "forms": [],
+      "id": "oewn-capybara__1.05.00..",
+      "lang": "en",
+      "lemma": "capybara",
+      "synset": "oewn-02368132-n"
+    },
+    {
+      "definition": "pig-sized tailless South American amphibious rodent with partly webbed feet; largest living rodent",
+      "forms": [],
+      "id": "oewn-capibara__1.05.00..",
+      "lang": "en",
+      "lemma": "capibara",
+      "synset": "oewn-02368132-n"
+    },
+    {
+      "definition": "pig-sized tailless South American amphibious rodent with partly webbed feet; largest living rodent",
+      "forms": [],
+      "id": "oewn-hydrochoerus_hydrochaeris__1.05.00..",
+      "lang": "en",
+      "lemma": "Hydrochoerus hydrochaeris",
+      "synset": "oewn-02368132-n"
+    },
+    {
+      "definition": "agile long-legged rabbit-sized rodent of Central America and South America and the West Indies; valued as food",
+      "forms": [
+        "agouties"
+      ],
+      "id": "oewn-agouti__1.05.00..",
+      "lang": "en",
+      "lemma": "agouti",
+      "synset": "oewn-02368654-n"
+    },
+    {
+      "definition": "agile long-legged rabbit-sized rodent of Central America and South America and the West Indies; valued as food",
+      "forms": [],
+      "id": "oewn-dasyprocta_aguti__1.05.00..",
+      "lang": "en",
+      "lemma": "Dasyprocta aguti",
+      "synset": "oewn-02368654-n"
+    },
+    {
+      "definition": "large burrowing rodent of South America and Central America; highly esteemed as food",
+      "forms": [],
+      "id": "oewn-paca__1.05.00..",
+      "lang": "en",
+      "lemma": "paca",
+      "synset": "oewn-02368953-n"
+    },
+    {
+      "definition": "large burrowing rodent of South America and Central America; highly esteemed as food",
+      "forms": [],
+      "id": "oewn-cuniculus_paca__1.05.00..",
+      "lang": "en",
+      "lemma": "Cuniculus paca",
+      "synset": "oewn-02368953-n"
+    },
+    {
+      "definition": "rodent of mountains of western South America",
+      "forms": [],
+      "id": "oewn-mountain_paca__1.05.00..",
+      "lang": "en",
+      "lemma": "mountain paca",
+      "synset": "oewn-02369231-n"
+    },
+    {
+      "definition": "aquatic South American rodent resembling a small beaver; bred for its fur",
+      "forms": [],
+      "id": "oewn-coypu__1.05.00..",
+      "lang": "en",
+      "lemma": "coypu",
+      "synset": "oewn-02369611-n"
+    },
+    {
+      "definition": "aquatic South American rodent resembling a small beaver; bred for its fur",
+      "forms": [],
+      "id": "oewn-nutria__1.05.00..",
+      "lang": "en",
+      "lemma": "nutria",
+      "synset": "oewn-02369611-n"
+    },
+    {
+      "definition": "aquatic South American rodent resembling a small beaver; bred for its fur",
+      "forms": [],
+      "id": "oewn-myocastor_coypus__1.05.00..",
+      "lang": "en",
+      "lemma": "Myocastor coypus",
+      "synset": "oewn-02369611-n"
+    },
+    {
+      "definition": "small rodent with soft pearly grey fur; native to the Andes but bred in captivity for fur",
+      "forms": [],
+      "id": "oewn-chinchilla__1.05.00..",
+      "lang": "en",
+      "lemma": "chinchilla",
+      "synset": "oewn-02370144-n"
+    },
+    {
+      "definition": "small rodent with soft pearly grey fur; native to the Andes but bred in captivity for fur",
+      "forms": [],
+      "id": "oewn-chinchilla_laniger__1.05.00..",
+      "lang": "en",
+      "lemma": "Chinchilla laniger",
+      "synset": "oewn-02370144-n"
+    },
+    {
+      "definition": "a rodent native to the mountains of Chile and Peru and now bred in captivity",
+      "forms": [],
+      "id": "oewn-mountain_chinchilla__1.05.00..",
+      "lang": "en",
+      "lemma": "mountain chinchilla",
+      "synset": "oewn-02370464-n"
+    },
+    {
+      "definition": "a rodent native to the mountains of Chile and Peru and now bred in captivity",
+      "forms": [],
+      "id": "oewn-mountain_viscacha__1.05.00..",
+      "lang": "en",
+      "lemma": "mountain viscacha",
+      "synset": "oewn-02370464-n"
+    },
+    {
+      "definition": "gregarious burrowing rodent larger than the chinchillas",
+      "forms": [],
+      "id": "oewn-viscacha__1.05.00..",
+      "lang": "en",
+      "lemma": "viscacha",
+      "synset": "oewn-02370768-n"
+    },
+    {
+      "definition": "gregarious burrowing rodent larger than the chinchillas",
+      "forms": [],
+      "id": "oewn-chinchillon__1.05.00..",
+      "lang": "en",
+      "lemma": "chinchillon",
+      "synset": "oewn-02370768-n"
+    },
+    {
+      "definition": "gregarious burrowing rodent larger than the chinchillas",
+      "forms": [],
+      "id": "oewn-lagostomus_maximus__1.05.00..",
+      "lang": "en",
+      "lemma": "Lagostomus maximus",
+      "synset": "oewn-02370768-n"
+    },
+    {
+      "definition": "ratlike rodent with soft fur and large ears of the Andes",
+      "forms": [],
+      "id": "oewn-abrocome__1.05.00..",
+      "lang": "en",
+      "lemma": "abrocome",
+      "synset": "oewn-02371051-n"
+    },
+    {
+      "definition": "ratlike rodent with soft fur and large ears of the Andes",
+      "forms": [],
+      "id": "oewn-chinchilla_rat__1.05.00..",
+      "lang": "en",
+      "lemma": "chinchilla rat",
+      "synset": "oewn-02371051-n"
+    },
+    {
+      "definition": "ratlike rodent with soft fur and large ears of the Andes",
+      "forms": [],
+      "id": "oewn-rat_chinchilla__1.05.00..",
+      "lang": "en",
+      "lemma": "rat chinchilla",
+      "synset": "oewn-02371051-n"
+    },
+    {
+      "definition": "furry short-limbed tailless rodent resembling a true mole in habits and appearance; of eastern Europe and Middle East",
+      "forms": [],
+      "id": "oewn-mole_rat__1.05.03..",
+      "lang": "en",
+      "lemma": "mole rat",
+      "synset": "oewn-02371473-n"
+    },
+    {
+      "definition": "African rodent resembling a mole in habits and appearance",
+      "forms": [],
+      "id": "oewn-mole_rat__1.05.01..",
+      "lang": "en",
+      "lemma": "mole rat",
+      "synset": "oewn-02371945-n"
+    },
+    {
+      "definition": "small nearly naked African mole rat of desert areas",
+      "forms": [],
+      "id": "oewn-sand_rat__1.05.02..",
+      "lang": "en",
+      "lemma": "sand rat",
+      "synset": "oewn-02372207-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "relatively small placental mammals having a single pair of constantly growing incisor teeth specialized for gnawing",
+      "hypernyms": [
+        "oewn-01889397-n"
+      ],
+      "id": "oewn-02332053-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "rodent"
+    },
+    {
+      "definition": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02332897-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mouse"
+    },
+    {
+      "definition": "any of various long-tailed rodents similar to but larger than a mouse",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02333698-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "rat"
+    },
+    {
+      "definition": "any of various rodents with cheek pouches",
+      "hypernyms": [
+        "oewn-02333698-n"
+      ],
+      "id": "oewn-02333961-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "pocket rat"
+    },
+    {
+      "definition": "a rodent that is a member of the family Muridae",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02334494-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "murine"
+    },
+    {
+      "definition": "brownish-grey Old World mouse now a common household pest worldwide",
+      "hypernyms": [
+        "oewn-02332897-n"
+      ],
+      "id": "oewn-02334808-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "house mouse"
+    },
+    {
+      "definition": "small reddish-brown Eurasian mouse inhabiting e.g. cornfields",
+      "hypernyms": [
+        "oewn-02332897-n"
+      ],
+      "id": "oewn-02335099-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "harvest mouse"
+    },
+    {
+      "definition": "any nocturnal Old World mouse of the genus Apodemus inhabiting woods and fields and gardens",
+      "hypernyms": [
+        "oewn-02332897-n"
+      ],
+      "id": "oewn-02335407-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "field mouse"
+    },
+    {
+      "definition": "a mouse with a genetic defect that prevents them from growing hair and also prevents them from immunologically rejecting human cells and tissues; widely used in preclinical trials",
+      "hypernyms": [
+        "oewn-02332897-n"
+      ],
+      "id": "oewn-02335606-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "nude mouse"
+    },
+    {
+      "definition": "nocturnal yellowish-brown mouse inhabiting woods and fields and gardens",
+      "hypernyms": [
+        "oewn-02335407-n"
+      ],
+      "id": "oewn-02335842-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "European wood mouse"
+    },
+    {
+      "definition": "common domestic rat; serious pest worldwide",
+      "hypernyms": [
+        "oewn-02333698-n"
+      ],
+      "id": "oewn-02336198-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "brown rat"
+    },
+    {
+      "definition": "brown rat that infests wharves",
+      "hypernyms": [
+        "oewn-02336198-n"
+      ],
+      "id": "oewn-02336385-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "wharf rat"
+    },
+    {
+      "definition": "brown rat commonly found in sewers",
+      "hypernyms": [
+        "oewn-02336198-n"
+      ],
+      "id": "oewn-02336471-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "sewer rat"
+    },
+    {
+      "definition": "common household pest originally from Asia that has spread worldwide",
+      "hypernyms": [
+        "oewn-02333698-n"
+      ],
+      "id": "oewn-02336561-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "black rat"
+    },
+    {
+      "definition": "burrowing scaly-tailed rat of India and Ceylon",
+      "hypernyms": [
+        "oewn-02333698-n"
+      ],
+      "id": "oewn-02336853-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "bandicoot rat"
+    },
+    {
+      "definition": "large Australian rat with hind legs adapted for leaping",
+      "hypernyms": [
+        "oewn-02333698-n"
+      ],
+      "id": "oewn-02337112-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "jerboa rat"
+    },
+    {
+      "definition": "leaping rodent of Australian desert areas",
+      "hypernyms": [
+        "oewn-02337112-n"
+      ],
+      "id": "oewn-02337380-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "kangaroo mouse"
+    },
+    {
+      "definition": "any of various amphibious rats",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02337779-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "water rat"
+    },
+    {
+      "definition": "amphibious rat of Australia and New Guinea",
+      "hypernyms": [
+        "oewn-02337779-n"
+      ],
+      "id": "oewn-02337883-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "beaver rat"
+    },
+    {
+      "definition": "a variety of rodent",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02338663-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "New World mouse"
+    },
+    {
+      "definition": "any of several small greyish New World mice inhabiting e.g. grain fields",
+      "hypernyms": [
+        "oewn-02338663-n"
+      ],
+      "id": "oewn-02338927-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "American harvest mouse"
+    },
+    {
+      "definition": "any of various New World woodland mice",
+      "hypernyms": [
+        "oewn-02332897-n"
+      ],
+      "id": "oewn-02339293-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "wood mouse"
+    },
+    {
+      "definition": "American woodland mouse with white feet and underparts",
+      "hypernyms": [
+        "oewn-02339293-n"
+      ],
+      "id": "oewn-02339478-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "white-footed mouse"
+    },
+    {
+      "definition": "brownish New World mouse; most widely distributed member of the genus",
+      "hypernyms": [
+        "oewn-02339293-n"
+      ],
+      "id": "oewn-02339653-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "deer mouse"
+    },
+    {
+      "definition": "burrowing mouse of desert areas of southwestern United States",
+      "hypernyms": [
+        "oewn-02339293-n"
+      ],
+      "id": "oewn-02339823-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "cactus mouse"
+    },
+    {
+      "definition": "large dark mouse of southeastern United States",
+      "hypernyms": [
+        "oewn-02339293-n"
+      ],
+      "id": "oewn-02339984-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "cotton mouse"
+    },
+    {
+      "definition": "very small dark greyish brown mouse resembling a house mouse; of Texas and Mexico",
+      "hypernyms": [
+        "oewn-02339293-n"
+      ],
+      "id": "oewn-02340250-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "pygmy mouse"
+    },
+    {
+      "definition": "insectivorous mouse of western North America",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02340554-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "grasshopper mouse"
+    },
+    {
+      "definition": "beaver-like aquatic rodent of North America with dark glossy brown fur",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02340797-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "muskrat"
+    },
+    {
+      "definition": "of Florida wetlands",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02341101-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "round-tailed muskrat"
+    },
+    {
+      "definition": "destructive long-haired burrowing rat of southern North America and Central America",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02341374-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "cotton rat"
+    },
+    {
+      "definition": "any of various small short-tailed rodents of the Northern Hemisphere having soft fur grey above and white below with furred tails and large ears; some are hosts for Ixodes pacificus and Ixodes scapularis (Lyme disease ticks)",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02341553-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "wood rat"
+    },
+    {
+      "definition": "a wood rat with dusky feet",
+      "hypernyms": [
+        "oewn-02341553-n"
+      ],
+      "id": "oewn-02341934-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "dusky-footed wood rat"
+    },
+    {
+      "definition": "any of various small mouselike rodents of the family Cricetidae (especially of genus Microtus) having a stout short-tailed body and inconspicuous ears and inhabiting fields or meadows",
+      "hypernyms": [
+        "oewn-02341553-n"
+      ],
+      "id": "oewn-02342028-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "vole"
+    },
+    {
+      "definition": "any of several bushy-tailed rodents of the genus Neotoma of western North America; hoards food and other objects",
+      "hypernyms": [
+        "oewn-02341553-n"
+      ],
+      "id": "oewn-02342574-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "packrat"
+    },
+    {
+      "definition": "host to Lyme disease tick (Ixodes pacificus) in northern California",
+      "hypernyms": [
+        "oewn-02342574-n"
+      ],
+      "id": "oewn-02342838-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "dusky-footed woodrat"
+    },
+    {
+      "definition": "large greyish-brown wood rat of the southeastern United States",
+      "hypernyms": [
+        "oewn-02341553-n"
+      ],
+      "id": "oewn-02343010-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "eastern woodrat"
+    },
+    {
+      "definition": "hardy agile rat of grassy marshes of Mexico and the southeastern United States",
+      "hypernyms": [
+        "oewn-02333698-n"
+      ],
+      "id": "oewn-02343292-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "rice rat"
+    },
+    {
+      "definition": "short-tailed glossy-furred burrowing vole of the eastern United States",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02343582-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "pine vole"
+    },
+    {
+      "definition": "widely distributed in grasslands of northern United States and Canada",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02343940-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "meadow vole"
+    },
+    {
+      "definition": "The largest vole of western North America (Microtus richardsoni)",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02344127-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "water vole"
+    },
+    {
+      "definition": "typical vole of the extended prairie region of central United States and southern Canada",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02344268-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "prairie vole"
+    },
+    {
+      "definition": "common large Eurasian vole",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02344626-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "water vole"
+    },
+    {
+      "definition": "any of several voles of mountainous regions of Eurasia and America",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02344902-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "red-backed mouse"
+    },
+    {
+      "definition": "any of several vole-like terrestrial or arboreal rodents of cold forested regions of Canada and western United States",
+      "hypernyms": [
+        "oewn-02342028-n"
+      ],
+      "id": "oewn-02345186-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "phenacomys"
+    },
+    {
+      "definition": "short-tailed Old World burrowing rodent with large cheek pouches",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02345537-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "hamster"
+    },
+    {
+      "definition": "a variety of hamster common to Europe and Asia",
+      "hypernyms": [
+        "oewn-02345537-n"
+      ],
+      "id": "oewn-02345710-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "Eurasian hamster"
+    },
+    {
+      "definition": "small light-colored hamster often kept as a pet",
+      "hypernyms": [
+        "oewn-02345537-n"
+      ],
+      "id": "oewn-02345972-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "golden hamster"
+    },
+    {
+      "definition": "small Old World burrowing desert rodent with long soft pale fur and hind legs adapted for leaping",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02346424-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "gerbil"
+    },
+    {
+      "definition": "gerbil of northern Africa",
+      "hypernyms": [
+        "oewn-02346424-n"
+      ],
+      "id": "oewn-02346827-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "jird"
+    },
+    {
+      "definition": "a gerbil that is popular as a pet",
+      "hypernyms": [
+        "oewn-02346424-n"
+      ],
+      "id": "oewn-02346922-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "tamarisk gerbil"
+    },
+    {
+      "definition": "southern European gerbil",
+      "hypernyms": [
+        "oewn-02346424-n"
+      ],
+      "id": "oewn-02347060-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "sand rat"
+    },
+    {
+      "definition": "any of various short-tailed furry-footed rodents of circumpolar distribution",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02347180-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "lemming"
+    },
+    {
+      "definition": "notable for mass migrations even into the sea where many drown",
+      "hypernyms": [
+        "oewn-02347180-n"
+      ],
+      "id": "oewn-02347570-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "European lemming"
+    },
+    {
+      "definition": "of northwestern Canada and Alaska",
+      "hypernyms": [
+        "oewn-02347180-n"
+      ],
+      "id": "oewn-02347730-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "brown lemming"
+    },
+    {
+      "definition": "Old World lemming",
+      "hypernyms": [
+        "oewn-02347180-n"
+      ],
+      "id": "oewn-02347992-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "grey lemming"
+    },
+    {
+      "definition": "North American lemming having a white winter coat and some claws much enlarged",
+      "hypernyms": [
+        "oewn-02347180-n"
+      ],
+      "id": "oewn-02348252-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "pied lemming"
+    },
+    {
+      "definition": "of northern Canada",
+      "hypernyms": [
+        "oewn-02348252-n"
+      ],
+      "id": "oewn-02348426-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "Hudson bay collared lemming"
+    },
+    {
+      "definition": "of low bogs and meadows of northeastern and central United States and southern Canada",
+      "hypernyms": [
+        "oewn-02347180-n"
+      ],
+      "id": "oewn-02348649-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "southern bog lemming"
+    },
+    {
+      "definition": "of wet alpine and subalpine meadows of Canada and Alaska",
+      "hypernyms": [
+        "oewn-02347180-n"
+      ],
+      "id": "oewn-02348822-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "northern bog lemming"
+    },
+    {
+      "definition": "relatively large rodents with sharp erectile bristles mingled with the fur",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02349279-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "porcupine"
+    },
+    {
+      "definition": "terrestrial porcupine",
+      "hypernyms": [
+        "oewn-02349279-n"
+      ],
+      "id": "oewn-02349650-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "Old World porcupine"
+    },
+    {
+      "definition": "porcupine with a tuft of large beaded bristles on the tail",
+      "hypernyms": [
+        "oewn-02349650-n"
+      ],
+      "id": "oewn-02349926-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "brush-tailed porcupine"
+    },
+    {
+      "definition": "porcupine of Borneo and Sumatra having short spines and a long tail",
+      "hypernyms": [
+        "oewn-02349650-n"
+      ],
+      "id": "oewn-02350225-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "long-tailed porcupine"
+    },
+    {
+      "definition": "arboreal porcupine",
+      "hypernyms": [
+        "oewn-02349279-n"
+      ],
+      "id": "oewn-02350396-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "New World porcupine"
+    },
+    {
+      "definition": "porcupine of northeastern North America with barbed spines concealed in the coarse fur; often gnaws buildings for salt and grease",
+      "hypernyms": [
+        "oewn-02350396-n"
+      ],
+      "id": "oewn-02350825-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "Canada porcupine"
+    },
+    {
+      "definition": "any of various small nocturnal burrowing desert rodents with cheek pouches and long hind legs and tail",
+      "hypernyms": [
+        "oewn-02333961-n"
+      ],
+      "id": "oewn-02351440-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "pocket mouse"
+    },
+    {
+      "definition": "small pale yellowish soft-furred rodent of southwestern United States and Mexico",
+      "hypernyms": [
+        "oewn-02351440-n"
+      ],
+      "id": "oewn-02351857-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "silky pocket mouse"
+    },
+    {
+      "definition": "small rodent of open areas of United States plains states",
+      "hypernyms": [
+        "oewn-02351440-n"
+      ],
+      "id": "oewn-02352042-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "plains pocket mouse"
+    },
+    {
+      "definition": "large stiff-haired rodent of shortgrass prairies of United States",
+      "hypernyms": [
+        "oewn-02351440-n"
+      ],
+      "id": "oewn-02352209-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "hispid pocket mouse"
+    },
+    {
+      "definition": "large pocket mouse of Mexico",
+      "hypernyms": [
+        "oewn-02351440-n"
+      ],
+      "id": "oewn-02352499-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "Mexican pocket mouse"
+    },
+    {
+      "definition": "any of various leaping rodents of desert regions of North America and Mexico; largest members of the family Heteromyidae",
+      "hypernyms": [
+        "oewn-02333961-n"
+      ],
+      "id": "oewn-02352757-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "kangaroo rat"
+    },
+    {
+      "definition": "most widely distributed kangaroo rat: plains and mountain areas of central and western United States",
+      "hypernyms": [
+        "oewn-02352757-n"
+      ],
+      "id": "oewn-02353009-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "Ord kangaroo rat"
+    },
+    {
+      "definition": "small silky-haired pouched rodent; similar to but smaller than kangaroo rats",
+      "hypernyms": [
+        "oewn-02333961-n"
+      ],
+      "id": "oewn-02353322-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "kangaroo mouse"
+    },
+    {
+      "definition": "any of several primitive mouselike rodents with long hind legs and no cheek pouches; of woodlands of Eurasia and North America",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02353641-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "jumping mouse"
+    },
+    {
+      "definition": "widely distributed in northeastern and central United States and Canada",
+      "hypernyms": [
+        "oewn-02353641-n"
+      ],
+      "id": "oewn-02353995-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "meadow jumping mouse"
+    },
+    {
+      "definition": "mouselike jumping rodent",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02354522-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "jerboa"
+    },
+    {
+      "definition": "small nocturnal jumping rodent with long hind legs; of arid parts of Asia and northern Africa",
+      "hypernyms": [
+        "oewn-02354522-n"
+      ],
+      "id": "oewn-02354654-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "typical jerboa"
+    },
+    {
+      "definition": "a variety of jerboa",
+      "hypernyms": [
+        "oewn-02354522-n"
+      ],
+      "id": "oewn-02354942-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "Jaculus jaculus"
+    },
+    {
+      "definition": "small furry-tailed squirrel-like Old World rodent that becomes torpid in cold weather",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02355243-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "dormouse"
+    },
+    {
+      "definition": "large European dormouse",
+      "hypernyms": [
+        "oewn-02355243-n"
+      ],
+      "id": "oewn-02355584-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "loir"
+    },
+    {
+      "definition": "a variety of dormouse",
+      "hypernyms": [
+        "oewn-02355243-n"
+      ],
+      "id": "oewn-02355824-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "hazel mouse"
+    },
+    {
+      "definition": "dormouse of southern Europe and northern Africa",
+      "hypernyms": [
+        "oewn-02355243-n"
+      ],
+      "id": "oewn-02356063-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "lerot"
+    },
+    {
+      "definition": "burrowing rodent of the family Geomyidae having large external cheek pouches; of Central America and southwestern North America",
+      "hypernyms": [
+        "oewn-02333961-n"
+      ],
+      "id": "oewn-02356513-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "gopher"
+    },
+    {
+      "definition": "gopher of chiefly grasslands of central North America",
+      "hypernyms": [
+        "oewn-02356513-n"
+      ],
+      "id": "oewn-02356814-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "plains pocket gopher"
+    },
+    {
+      "definition": "gopher of Alabama and Georgia and Florida",
+      "hypernyms": [
+        "oewn-02356513-n"
+      ],
+      "id": "oewn-02356972-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "southeastern pocket gopher"
+    },
+    {
+      "definition": "of valleys and mountain meadows of western United States",
+      "hypernyms": [
+        "oewn-02356513-n"
+      ],
+      "id": "oewn-02357273-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "valley pocket gopher"
+    },
+    {
+      "definition": "greyish to brown gopher of western and central United States",
+      "hypernyms": [
+        "oewn-02356513-n"
+      ],
+      "id": "oewn-02357433-n",
+      "lang": "en",
+      "max_depth": 15,
+      "min_depth": 13,
+      "name": "northern pocket gopher"
+    },
+    {
+      "definition": "a kind of arboreal rodent having a long bushy tail",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02357879-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "squirrel"
+    },
+    {
+      "definition": "any typical arboreal squirrel",
+      "hypernyms": [
+        "oewn-02357879-n"
+      ],
+      "id": "oewn-02358129-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "tree squirrel"
+    },
+    {
+      "definition": "common medium-large squirrel of eastern North America; now introduced into England",
+      "hypernyms": [
+        "oewn-02358129-n"
+      ],
+      "id": "oewn-02359033-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "eastern grey squirrel"
+    },
+    {
+      "definition": "large grey squirrel of far western areas of United States",
+      "hypernyms": [
+        "oewn-02358129-n"
+      ],
+      "id": "oewn-02359264-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "western grey squirrel"
+    },
+    {
+      "definition": "exceptionally large arboreal squirrel of eastern United States",
+      "hypernyms": [
+        "oewn-02358129-n"
+      ],
+      "id": "oewn-02359450-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "fox squirrel"
+    },
+    {
+      "definition": "fox squirrel or grey squirrel in the black color phase",
+      "hypernyms": [
+        "oewn-02358129-n"
+      ],
+      "id": "oewn-02359629-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "black squirrel"
+    },
+    {
+      "definition": "common reddish-brown squirrel of Europe and parts of Asia",
+      "hypernyms": [
+        "oewn-02358129-n"
+      ],
+      "id": "oewn-02359763-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "red squirrel"
+    },
+    {
+      "definition": "of northern United States and Canada",
+      "hypernyms": [
+        "oewn-02358129-n"
+      ],
+      "id": "oewn-02360053-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "American red squirrel"
+    },
+    {
+      "definition": "far western United States counterpart of the red squirrel",
+      "hypernyms": [
+        "oewn-02358129-n"
+      ],
+      "id": "oewn-02360237-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "chickeree"
+    },
+    {
+      "definition": "small ground squirrel of western United States",
+      "hypernyms": [
+        "oewn-02360743-n"
+      ],
+      "id": "oewn-02360563-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "antelope squirrel"
+    },
+    {
+      "definition": "any of various terrestrial burrowing rodents of Old and New Worlds; often destroy crops",
+      "hypernyms": [
+        "oewn-02357879-n"
+      ],
+      "id": "oewn-02360743-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "ground squirrel"
+    },
+    {
+      "definition": "common black-striped reddish-brown ground squirrel of western North America; resembles a large chipmunk",
+      "hypernyms": [
+        "oewn-02360743-n"
+      ],
+      "id": "oewn-02361042-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "mantled ground squirrel"
+    },
+    {
+      "definition": "rather large central Eurasian ground squirrel",
+      "hypernyms": [
+        "oewn-02360743-n"
+      ],
+      "id": "oewn-02361236-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "suslik"
+    },
+    {
+      "definition": "of sagebrush and grassland areas of western United States and Canada",
+      "hypernyms": [
+        "oewn-02360743-n"
+      ],
+      "id": "oewn-02361364-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "flickertail"
+    },
+    {
+      "definition": "large grey ground squirrel of rocky areas of the southwestern United States",
+      "hypernyms": [
+        "oewn-02360743-n"
+      ],
+      "id": "oewn-02361542-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "rock squirrel"
+    },
+    {
+      "definition": "large ground squirrel of the North American far north",
+      "hypernyms": [
+        "oewn-02360743-n"
+      ],
+      "id": "oewn-02361699-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "Arctic ground squirrel"
+    },
+    {
+      "definition": "any of several rodents of North American prairies living in large complex burrows having a barking cry",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02361976-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "prairie dog"
+    },
+    {
+      "definition": "tail is black tipped",
+      "hypernyms": [
+        "oewn-02361976-n"
+      ],
+      "id": "oewn-02362208-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "blacktail prairie dog"
+    },
+    {
+      "definition": "tail is white tipped",
+      "hypernyms": [
+        "oewn-02361976-n"
+      ],
+      "id": "oewn-02362319-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "whitetail prairie dog"
+    },
+    {
+      "definition": "small striped semiterrestrial eastern American squirrel with cheek pouches",
+      "hypernyms": [
+        "oewn-02357879-n"
+      ],
+      "id": "oewn-02362567-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "eastern chipmunk"
+    },
+    {
+      "definition": "a burrowing ground squirrel of western America and Asia; has cheek pouches and a light and dark stripe running down the body",
+      "hypernyms": [
+        "oewn-02357879-n"
+      ],
+      "id": "oewn-02362934-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "chipmunk"
+    },
+    {
+      "definition": "terrestrial Siberian squirrel",
+      "hypernyms": [
+        "oewn-02357879-n"
+      ],
+      "id": "oewn-02363132-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "baronduki"
+    },
+    {
+      "definition": "a name used to describe both the northern and southern flying squirrels",
+      "hypernyms": [
+        "oewn-02357879-n"
+      ],
+      "id": "oewn-02363433-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "American flying squirrel"
+    },
+    {
+      "definition": "small large-eyed nocturnal flying squirrel of eastern United States",
+      "hypernyms": [
+        "oewn-02363433-n"
+      ],
+      "id": "oewn-02363585-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "southern flying squirrel"
+    },
+    {
+      "definition": "large flying squirrel; chiefly of Canada",
+      "hypernyms": [
+        "oewn-02363433-n"
+      ],
+      "id": "oewn-02363742-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "northern flying squirrel"
+    },
+    {
+      "definition": "stocky coarse-furred burrowing rodent with a short bushy tail found throughout the Northern Hemisphere; hibernates in winter",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02363989-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "marmot"
+    },
+    {
+      "definition": "reddish brown North American marmot",
+      "hypernyms": [
+        "oewn-02363989-n"
+      ],
+      "id": "oewn-02364239-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "groundhog"
+    },
+    {
+      "definition": "large North American mountain marmot",
+      "hypernyms": [
+        "oewn-02363989-n"
+      ],
+      "id": "oewn-02364358-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "hoary marmot"
+    },
+    {
+      "definition": "heavy-bodied yellowish-brown marmot of rocky areas of western North America",
+      "hypernyms": [
+        "oewn-02363989-n"
+      ],
+      "id": "oewn-02364502-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "yellowbelly marmot"
+    },
+    {
+      "definition": "nocturnal rodent of Asia having furry folds of skin between forelegs and hind legs enabling it to move by gliding leaps",
+      "hypernyms": [
+        "oewn-02357879-n"
+      ],
+      "id": "oewn-02364846-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "Asiatic flying squirrel"
+    },
+    {
+      "definition": "East Indian flying squirrel",
+      "hypernyms": [
+        "oewn-02364846-n"
+      ],
+      "id": "oewn-02365221-n",
+      "lang": "en",
+      "max_depth": 14,
+      "min_depth": 12,
+      "name": "taguan"
+    },
+    {
+      "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail; construct complex dams and underwater lodges",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02365657-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "beaver"
+    },
+    {
+      "definition": "a European variety of beaver",
+      "hypernyms": [
+        "oewn-02365657-n"
+      ],
+      "id": "oewn-02365897-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "Old World beaver"
+    },
+    {
+      "definition": "a variety of beaver found in almost all areas of North America except Florida",
+      "hypernyms": [
+        "oewn-02365657-n"
+      ],
+      "id": "oewn-02366003-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "New World beaver"
+    },
+    {
+      "definition": "bulky nocturnal burrowing rodent of uplands of the Pacific coast of North America; the most primitive living rodent",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02366648-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mountain beaver"
+    },
+    {
+      "definition": "short-tailed rough-haired South American rodent",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02367172-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "cavy"
+    },
+    {
+      "definition": "stout-bodied nearly tailless domesticated cavy; often kept as a pet and widely used in research",
+      "hypernyms": [
+        "oewn-02367172-n"
+      ],
+      "id": "oewn-02367325-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "guinea pig"
+    },
+    {
+      "definition": "South American cavy; possibly ancestral to the domestic guinea pig",
+      "hypernyms": [
+        "oewn-02367172-n"
+      ],
+      "id": "oewn-02367492-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "aperea"
+    },
+    {
+      "definition": "hare-like rodent of the Pampas of Argentina",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02367760-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mara"
+    },
+    {
+      "definition": "pig-sized tailless South American amphibious rodent with partly webbed feet; largest living rodent",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02368132-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "capybara"
+    },
+    {
+      "definition": "agile long-legged rabbit-sized rodent of Central America and South America and the West Indies; valued as food",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02368654-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "agouti"
+    },
+    {
+      "definition": "large burrowing rodent of South America and Central America; highly esteemed as food",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02368953-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "paca"
+    },
+    {
+      "definition": "rodent of mountains of western South America",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02369231-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mountain paca"
+    },
+    {
+      "definition": "aquatic South American rodent resembling a small beaver; bred for its fur",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02369611-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "coypu"
+    },
+    {
+      "definition": "small rodent with soft pearly grey fur; native to the Andes but bred in captivity for fur",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02370144-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "chinchilla"
+    },
+    {
+      "definition": "a rodent native to the mountains of Chile and Peru and now bred in captivity",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02370464-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mountain chinchilla"
+    },
+    {
+      "definition": "gregarious burrowing rodent larger than the chinchillas",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02370768-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "viscacha"
+    },
+    {
+      "definition": "ratlike rodent with soft fur and large ears of the Andes",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02371051-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "abrocome"
+    },
+    {
+      "definition": "furry short-limbed tailless rodent resembling a true mole in habits and appearance; of eastern Europe and Middle East",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02371473-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mole rat"
+    },
+    {
+      "definition": "African rodent resembling a mole in habits and appearance",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02371945-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "mole rat"
+    },
+    {
+      "definition": "small nearly naked African mole rat of desert areas",
+      "hypernyms": [
+        "oewn-02332053-n"
+      ],
+      "id": "oewn-02372207-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "sand rat"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

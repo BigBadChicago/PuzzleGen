@@ -1,0 +1,5698 @@
+{
+  "exported": "2026-10-10",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-13155061-n",
+  "senses": [
+    {
+      "definition": "any bulbous plant of the family Iridaceae",
+      "forms": [],
+      "id": "oewn-iridaceous_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "iridaceous plant",
+      "synset": "oewn-12431966-n"
+    },
+    {
+      "definition": "plants with sword-shaped leaves and erect stalks bearing bright-colored flowers composed of three petals and three drooping sepals",
+      "forms": [
+        "irides"
+      ],
+      "id": "oewn-iris__1.20.00..",
+      "lang": "en",
+      "lemma": "iris",
+      "synset": "oewn-12432427-n"
+    },
+    {
+      "definition": "plants with sword-shaped leaves and erect stalks bearing bright-colored flowers composed of three petals and three drooping sepals",
+      "forms": [],
+      "id": "oewn-flag__1.20.00..",
+      "lang": "en",
+      "lemma": "flag",
+      "synset": "oewn-12432427-n"
+    },
+    {
+      "definition": "plants with sword-shaped leaves and erect stalks bearing bright-colored flowers composed of three petals and three drooping sepals",
+      "forms": [
+        "fleurs-de-lis"
+      ],
+      "id": "oewn-fleur-de-lis__1.20.00..",
+      "lang": "en",
+      "lemma": "fleur-de-lis",
+      "synset": "oewn-12432427-n"
+    },
+    {
+      "definition": "plants with sword-shaped leaves and erect stalks bearing bright-colored flowers composed of three petals and three drooping sepals",
+      "forms": [],
+      "id": "oewn-sword_lily__1.20.01..",
+      "lang": "en",
+      "lemma": "sword lily",
+      "synset": "oewn-12432427-n"
+    },
+    {
+      "definition": "any of numerous wild or cultivated irises with hairlike structures on the falls (the drooping sepals)",
+      "forms": [],
+      "id": "oewn-bearded_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "bearded iris",
+      "synset": "oewn-12432860-n"
+    },
+    {
+      "definition": "any of numerous wild or cultivated irises having no hairs on the drooping sepals (the falls)",
+      "forms": [],
+      "id": "oewn-beardless_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "beardless iris",
+      "synset": "oewn-12433111-n"
+    },
+    {
+      "definition": "any of various irises having a rootstock formed like a bulb",
+      "forms": [],
+      "id": "oewn-bulbous_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "bulbous iris",
+      "synset": "oewn-12433355-n"
+    },
+    {
+      "definition": "low-growing summer-flowering iris of northeastern United States",
+      "forms": [],
+      "id": "oewn-dwarf_iris__1.20.02..",
+      "lang": "en",
+      "lemma": "dwarf iris",
+      "synset": "oewn-12433670-n"
+    },
+    {
+      "definition": "low-growing summer-flowering iris of northeastern United States",
+      "forms": [],
+      "id": "oewn-iris_cristata__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris cristata",
+      "synset": "oewn-12433670-n"
+    },
+    {
+      "definition": "bulbous Spanish iris with red-violet flowers",
+      "forms": [],
+      "id": "oewn-dutch_iris__1.20.01..",
+      "lang": "en",
+      "lemma": "Dutch iris",
+      "synset": "oewn-12433806-n"
+    },
+    {
+      "definition": "bulbous Spanish iris with red-violet flowers",
+      "forms": [],
+      "id": "oewn-iris_filifolia__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris filifolia",
+      "synset": "oewn-12433806-n"
+    },
+    {
+      "definition": "German iris having large white flowers with lavender-tinged falls and a fragrant rhizome",
+      "forms": [],
+      "id": "oewn-florentine_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "Florentine iris",
+      "synset": "oewn-12433924-n"
+    },
+    {
+      "definition": "German iris having large white flowers with lavender-tinged falls and a fragrant rhizome",
+      "forms": [],
+      "id": "oewn-orris__1.20.01..",
+      "lang": "en",
+      "lemma": "orris",
+      "synset": "oewn-12433924-n"
+    },
+    {
+      "definition": "German iris having large white flowers with lavender-tinged falls and a fragrant rhizome",
+      "forms": [],
+      "id": "oewn-iris_germanica_florentina__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris germanica florentina",
+      "synset": "oewn-12433924-n"
+    },
+    {
+      "definition": "German iris having large white flowers with lavender-tinged falls and a fragrant rhizome",
+      "forms": [],
+      "id": "oewn-iris_florentina__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris florentina",
+      "synset": "oewn-12433924-n"
+    },
+    {
+      "definition": "iris with purple flowers and foul-smelling leaves; southern and western Europe and North Africa",
+      "forms": [],
+      "id": "oewn-stinking_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "stinking iris",
+      "synset": "oewn-12434147-n"
+    },
+    {
+      "definition": "iris with purple flowers and foul-smelling leaves; southern and western Europe and North Africa",
+      "forms": [],
+      "id": "oewn-gladdon__1.20.00..",
+      "lang": "en",
+      "lemma": "gladdon",
+      "synset": "oewn-12434147-n"
+    },
+    {
+      "definition": "iris with purple flowers and foul-smelling leaves; southern and western Europe and North Africa",
+      "forms": [],
+      "id": "oewn-gladdon_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "gladdon iris",
+      "synset": "oewn-12434147-n"
+    },
+    {
+      "definition": "iris with purple flowers and foul-smelling leaves; southern and western Europe and North Africa",
+      "forms": [],
+      "id": "oewn-stinking_gladwyn__1.20.00..",
+      "lang": "en",
+      "lemma": "stinking gladwyn",
+      "synset": "oewn-12434147-n"
+    },
+    {
+      "definition": "iris with purple flowers and foul-smelling leaves; southern and western Europe and North Africa",
+      "forms": [],
+      "id": "oewn-roast_beef_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "roast beef plant",
+      "synset": "oewn-12434147-n"
+    },
+    {
+      "definition": "iris with purple flowers and foul-smelling leaves; southern and western Europe and North Africa",
+      "forms": [],
+      "id": "oewn-iris_foetidissima__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris foetidissima",
+      "synset": "oewn-12434147-n"
+    },
+    {
+      "definition": "a large iris with purple or white flowers, native to central and southern Europe",
+      "forms": [],
+      "id": "oewn-german_iris__1.20.01..",
+      "lang": "en",
+      "lemma": "German iris",
+      "synset": "oewn-12434385-n"
+    },
+    {
+      "definition": "a large iris with purple or white flowers, native to central and southern Europe",
+      "forms": [],
+      "id": "oewn-iris_germanica__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris germanica",
+      "synset": "oewn-12434385-n"
+    },
+    {
+      "definition": "iris native to Japan having large showy flowers",
+      "forms": [],
+      "id": "oewn-japanese_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "Japanese iris",
+      "synset": "oewn-12434540-n"
+    },
+    {
+      "definition": "iris native to Japan having large showy flowers",
+      "forms": [],
+      "id": "oewn-iris_kaempferi__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris kaempferi",
+      "synset": "oewn-12434540-n"
+    },
+    {
+      "definition": "iris of northern Italy having deep blue-purple flowers; similar to but smaller than Iris germanica",
+      "forms": [],
+      "id": "oewn-german_iris__1.20.02..",
+      "lang": "en",
+      "lemma": "German iris",
+      "synset": "oewn-12434664-n"
+    },
+    {
+      "definition": "iris of northern Italy having deep blue-purple flowers; similar to but smaller than Iris germanica",
+      "forms": [],
+      "id": "oewn-iris_kochii__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris kochii",
+      "synset": "oewn-12434664-n"
+    },
+    {
+      "definition": "European iris having soft lilac-blue flowers",
+      "forms": [],
+      "id": "oewn-dalmatian_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "Dalmatian iris",
+      "synset": "oewn-12434834-n"
+    },
+    {
+      "definition": "European iris having soft lilac-blue flowers",
+      "forms": [],
+      "id": "oewn-iris_pallida__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris pallida",
+      "synset": "oewn-12434834-n"
+    },
+    {
+      "definition": "bulbous iris native to Asia Minor cultivated for its pale lilac-colored flowers",
+      "forms": [],
+      "id": "oewn-persian_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "Persian iris",
+      "synset": "oewn-12434954-n"
+    },
+    {
+      "definition": "bulbous iris native to Asia Minor cultivated for its pale lilac-colored flowers",
+      "forms": [],
+      "id": "oewn-iris_persica__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris persica",
+      "synset": "oewn-12434954-n"
+    },
+    {
+      "definition": "common yellow-flowered iris of Europe and North Africa, naturalized in United States and often cultivated",
+      "forms": [],
+      "id": "oewn-yellow_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow iris",
+      "synset": "oewn-12435107-n"
+    },
+    {
+      "definition": "common yellow-flowered iris of Europe and North Africa, naturalized in United States and often cultivated",
+      "forms": [],
+      "id": "oewn-yellow_flag__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow flag",
+      "synset": "oewn-12435107-n"
+    },
+    {
+      "definition": "common yellow-flowered iris of Europe and North Africa, naturalized in United States and often cultivated",
+      "forms": [],
+      "id": "oewn-yellow_water_flag__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow water flag",
+      "synset": "oewn-12435107-n"
+    },
+    {
+      "definition": "common yellow-flowered iris of Europe and North Africa, naturalized in United States and often cultivated",
+      "forms": [],
+      "id": "oewn-iris_pseudacorus__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris pseudacorus",
+      "synset": "oewn-12435107-n"
+    },
+    {
+      "definition": "bulbous Spanish iris having blue flowers",
+      "forms": [],
+      "id": "oewn-dutch_iris__1.20.02..",
+      "lang": "en",
+      "lemma": "Dutch iris",
+      "synset": "oewn-12435323-n"
+    },
+    {
+      "definition": "bulbous Spanish iris having blue flowers",
+      "forms": [],
+      "id": "oewn-iris_tingitana__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris tingitana",
+      "synset": "oewn-12435323-n"
+    },
+    {
+      "definition": "low-growing spring-flowering American iris with bright blue-lilac flowers",
+      "forms": [],
+      "id": "oewn-dwarf_iris__1.20.01..",
+      "lang": "en",
+      "lemma": "dwarf iris",
+      "synset": "oewn-12435437-n"
+    },
+    {
+      "definition": "low-growing spring-flowering American iris with bright blue-lilac flowers",
+      "forms": [],
+      "id": "oewn-vernal_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "vernal iris",
+      "synset": "oewn-12435437-n"
+    },
+    {
+      "definition": "low-growing spring-flowering American iris with bright blue-lilac flowers",
+      "forms": [],
+      "id": "oewn-iris_verna__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris verna",
+      "synset": "oewn-12435437-n"
+    },
+    {
+      "definition": "a common iris of the eastern United States having blue or blue-violet flowers; root formerly used medicinally",
+      "forms": [],
+      "id": "oewn-blue_flag__1.20.00..",
+      "lang": "en",
+      "lemma": "blue flag",
+      "synset": "oewn-12435594-n"
+    },
+    {
+      "definition": "a common iris of the eastern United States having blue or blue-violet flowers; root formerly used medicinally",
+      "forms": [],
+      "id": "oewn-iris_versicolor__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris versicolor",
+      "synset": "oewn-12435594-n"
+    },
+    {
+      "definition": "similar to blue flag; the eastern United States",
+      "forms": [],
+      "id": "oewn-southern_blue_flag__1.20.00..",
+      "lang": "en",
+      "lemma": "southern blue flag",
+      "synset": "oewn-12435777-n"
+    },
+    {
+      "definition": "similar to blue flag; the eastern United States",
+      "forms": [],
+      "id": "oewn-iris_virginica__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris virginica",
+      "synset": "oewn-12435777-n"
+    },
+    {
+      "definition": "bulbous iris native to the Pyrenees; widely cultivated for its large delicate flowers in various colors except yellow",
+      "forms": [],
+      "id": "oewn-english_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "English iris",
+      "synset": "oewn-12435906-n"
+    },
+    {
+      "definition": "bulbous iris native to the Pyrenees; widely cultivated for its large delicate flowers in various colors except yellow",
+      "forms": [],
+      "id": "oewn-iris_xiphioides__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris xiphioides",
+      "synset": "oewn-12435906-n"
+    },
+    {
+      "definition": "bulbous iris of western Mediterranean region having usually violet-purple flowers",
+      "forms": [],
+      "id": "oewn-spanish_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "Spanish iris",
+      "synset": "oewn-12436100-n"
+    },
+    {
+      "definition": "bulbous iris of western Mediterranean region having usually violet-purple flowers",
+      "forms": [],
+      "id": "oewn-xiphium_iris__1.20.00..",
+      "lang": "en",
+      "lemma": "xiphium iris",
+      "synset": "oewn-12436100-n"
+    },
+    {
+      "definition": "bulbous iris of western Mediterranean region having usually violet-purple flowers",
+      "forms": [],
+      "id": "oewn-iris_xiphium__1.20.00..",
+      "lang": "en",
+      "lemma": "Iris xiphium",
+      "synset": "oewn-12436100-n"
+    },
+    {
+      "definition": "garden plant whose capsule discloses when ripe a mass of seeds resembling a blackberry",
+      "forms": [],
+      "id": "oewn-blackberry-lily__1.20.00..",
+      "lang": "en",
+      "lemma": "blackberry-lily",
+      "synset": "oewn-12436578-n"
+    },
+    {
+      "definition": "garden plant whose capsule discloses when ripe a mass of seeds resembling a blackberry",
+      "forms": [],
+      "id": "oewn-leopard_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "leopard lily",
+      "synset": "oewn-12436578-n"
+    },
+    {
+      "definition": "garden plant whose capsule discloses when ripe a mass of seeds resembling a blackberry",
+      "forms": [],
+      "id": "oewn-belamcanda_chinensis__1.20.00..",
+      "lang": "en",
+      "lemma": "Belamcanda chinensis",
+      "synset": "oewn-12436578-n"
+    },
+    {
+      "definition": "any of numerous low-growing plants of the genus Crocus having slender grasslike leaves and white or yellow or purple flowers; native chiefly to the Mediterranean region but widely cultivated",
+      "forms": [],
+      "id": "oewn-crocus__1.20.00..",
+      "lang": "en",
+      "lemma": "crocus",
+      "synset": "oewn-12436928-n"
+    },
+    {
+      "definition": "Old World crocus having purple or white flowers with aromatic pungent orange stigmas used in flavoring food",
+      "forms": [],
+      "id": "oewn-saffron__1.20.00..",
+      "lang": "en",
+      "lemma": "saffron",
+      "synset": "oewn-12437208-n"
+    },
+    {
+      "definition": "Old World crocus having purple or white flowers with aromatic pungent orange stigmas used in flavoring food",
+      "forms": [],
+      "id": "oewn-saffron_crocus__1.20.00..",
+      "lang": "en",
+      "lemma": "saffron crocus",
+      "synset": "oewn-12437208-n"
+    },
+    {
+      "definition": "Old World crocus having purple or white flowers with aromatic pungent orange stigmas used in flavoring food",
+      "forms": [],
+      "id": "oewn-crocus_sativus__1.20.00..",
+      "lang": "en",
+      "lemma": "Crocus sativus",
+      "synset": "oewn-12437208-n"
+    },
+    {
+      "definition": "any of several plants of the genus Freesia valued for their one-sided clusters of usually fragrant yellow or white or pink tubular flowers",
+      "forms": [],
+      "id": "oewn-freesia__1.20.00..",
+      "lang": "en",
+      "lemma": "freesia",
+      "synset": "oewn-12437567-n"
+    },
+    {
+      "definition": "any of numerous plants of the genus Gladiolus native chiefly to tropical and South Africa having sword-shaped leaves and one-sided spikes of brightly colored funnel-shaped flowers; widely cultivated",
+      "forms": [
+        "gladioli"
+      ],
+      "id": "oewn-gladiolus__1.20.00..",
+      "lang": "en",
+      "lemma": "gladiolus",
+      "synset": "oewn-12437887-n"
+    },
+    {
+      "definition": "any of numerous plants of the genus Gladiolus native chiefly to tropical and South Africa having sword-shaped leaves and one-sided spikes of brightly colored funnel-shaped flowers; widely cultivated",
+      "forms": [],
+      "id": "oewn-gladiola__1.20.00..",
+      "lang": "en",
+      "lemma": "gladiola",
+      "synset": "oewn-12437887-n"
+    },
+    {
+      "definition": "any of numerous plants of the genus Gladiolus native chiefly to tropical and South Africa having sword-shaped leaves and one-sided spikes of brightly colored funnel-shaped flowers; widely cultivated",
+      "forms": [],
+      "id": "oewn-glad__1.20.00..",
+      "lang": "en",
+      "lemma": "glad",
+      "synset": "oewn-12437887-n"
+    },
+    {
+      "definition": "any of numerous plants of the genus Gladiolus native chiefly to tropical and South Africa having sword-shaped leaves and one-sided spikes of brightly colored funnel-shaped flowers; widely cultivated",
+      "forms": [],
+      "id": "oewn-sword_lily__1.20.02..",
+      "lang": "en",
+      "lemma": "sword lily",
+      "synset": "oewn-12437887-n"
+    },
+    {
+      "definition": "any of several South African plants of the genus Ixia having grasslike leaves and clusters of showy variously colored lily-like flowers; widely cultivated",
+      "forms": [],
+      "id": "oewn-corn_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "corn lily",
+      "synset": "oewn-12438341-n"
+    },
+    {
+      "definition": "plant with grasslike foliage and delicate blue flowers",
+      "forms": [],
+      "id": "oewn-blue-eyed_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "blue-eyed grass",
+      "synset": "oewn-12438726-n"
+    },
+    {
+      "definition": "bulbous plant having showy white to reddish flowers",
+      "forms": [],
+      "id": "oewn-amaryllis__1.20.00..",
+      "lang": "en",
+      "lemma": "amaryllis",
+      "synset": "oewn-12439542-n"
+    },
+    {
+      "definition": "amaryllis of South Africa often cultivated for its fragrant white or rose flowers",
+      "forms": [],
+      "id": "oewn-belladonna_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "belladonna lily",
+      "synset": "oewn-12439899-n"
+    },
+    {
+      "definition": "amaryllis of South Africa often cultivated for its fragrant white or rose flowers",
+      "forms": [],
+      "id": "oewn-naked_lady__1.20.01..",
+      "lang": "en",
+      "lemma": "naked lady",
+      "synset": "oewn-12439899-n"
+    },
+    {
+      "definition": "amaryllis of South Africa often cultivated for its fragrant white or rose flowers",
+      "forms": [],
+      "id": "oewn-amaryllis_belladonna__1.20.00..",
+      "lang": "en",
+      "lemma": "Amaryllis belladonna",
+      "synset": "oewn-12439899-n"
+    },
+    {
+      "definition": "any of various deciduous or evergreen herbs of the genus Haemanthus; South Africa and Namibia",
+      "forms": [],
+      "id": "oewn-blood_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "blood lily",
+      "synset": "oewn-12441040-n"
+    },
+    {
+      "definition": "spectacular plant having large prostrate leaves barred in reddish-purple and flowers with a clump of long yellow stamens in a coral-red cup of fleshy bracts; South Africa",
+      "forms": [],
+      "id": "oewn-cape_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "Cape tulip",
+      "synset": "oewn-12441227-n"
+    },
+    {
+      "definition": "spectacular plant having large prostrate leaves barred in reddish-purple and flowers with a clump of long yellow stamens in a coral-red cup of fleshy bracts; South Africa",
+      "forms": [],
+      "id": "oewn-haemanthus_coccineus__1.20.00..",
+      "lang": "en",
+      "lemma": "Haemanthus coccineus",
+      "synset": "oewn-12441227-n"
+    },
+    {
+      "definition": "amaryllis of tropical America often cultivated as a houseplant for its showy white to red flowers",
+      "forms": [],
+      "id": "oewn-hippeastrum__1.20.00..",
+      "lang": "en",
+      "lemma": "hippeastrum",
+      "synset": "oewn-12441642-n"
+    },
+    {
+      "definition": "amaryllis of tropical America often cultivated as a houseplant for its showy white to red flowers",
+      "forms": [],
+      "id": "oewn-hippeastrum_puniceum__1.20.00..",
+      "lang": "en",
+      "lemma": "Hippeastrum puniceum",
+      "synset": "oewn-12441642-n"
+    },
+    {
+      "definition": "bulbous plant having erect linear leaves and showy yellow or white flowers either solitary or in clusters",
+      "forms": [
+        "narcissi"
+      ],
+      "id": "oewn-narcissus__1.20.00..",
+      "lang": "en",
+      "lemma": "narcissus",
+      "synset": "oewn-12441972-n"
+    },
+    {
+      "definition": "any of numerous varieties of Narcissus plants having showy often yellow flowers with a trumpet-shaped central crown",
+      "forms": [],
+      "id": "oewn-daffodil__1.20.00..",
+      "lang": "en",
+      "lemma": "daffodil",
+      "synset": "oewn-12442188-n"
+    },
+    {
+      "definition": "any of numerous varieties of Narcissus plants having showy often yellow flowers with a trumpet-shaped central crown",
+      "forms": [],
+      "id": "oewn-narcissus_pseudonarcissus__1.20.00..",
+      "lang": "en",
+      "lemma": "Narcissus pseudonarcissus",
+      "synset": "oewn-12442188-n"
+    },
+    {
+      "definition": "widely cultivated ornamental plant native to southern Europe but naturalized elsewhere having fragrant yellow or white clustered flowers",
+      "forms": [],
+      "id": "oewn-jonquil__1.20.00..",
+      "lang": "en",
+      "lemma": "jonquil",
+      "synset": "oewn-12442422-n"
+    },
+    {
+      "definition": "widely cultivated ornamental plant native to southern Europe but naturalized elsewhere having fragrant yellow or white clustered flowers",
+      "forms": [],
+      "id": "oewn-narcissus_jonquilla__1.20.00..",
+      "lang": "en",
+      "lemma": "Narcissus jonquilla",
+      "synset": "oewn-12442422-n"
+    },
+    {
+      "definition": "often used colloquially for any yellow daffodil",
+      "forms": [],
+      "id": "oewn-jonquil__1.20.02..",
+      "lang": "en",
+      "lemma": "jonquil",
+      "synset": "oewn-12442634-n"
+    },
+    {
+      "definition": "a daffodil having star-shaped white blossoms; often grown indoors to bloom in the winter",
+      "forms": [],
+      "id": "oewn-paper_white__1.20.00..",
+      "lang": "en",
+      "lemma": "paper white",
+      "synset": "oewn-12442735-n"
+    },
+    {
+      "definition": "a daffodil having star-shaped white blossoms; often grown indoors to bloom in the winter",
+      "forms": [],
+      "id": "oewn-narcissus_papyraceus__1.20.00..",
+      "lang": "en",
+      "lemma": "Narcissus papyraceus",
+      "synset": "oewn-12442735-n"
+    },
+    {
+      "definition": "Mexican bulbous herb cultivated for its handsome bright red solitary flower",
+      "forms": [],
+      "id": "oewn-jacobean_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Jacobean lily",
+      "synset": "oewn-12443064-n"
+    },
+    {
+      "definition": "Mexican bulbous herb cultivated for its handsome bright red solitary flower",
+      "forms": [],
+      "id": "oewn-aztec_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Aztec lily",
+      "synset": "oewn-12443064-n"
+    },
+    {
+      "definition": "Mexican bulbous herb cultivated for its handsome bright red solitary flower",
+      "forms": [],
+      "id": "oewn-strekelia_formosissima__1.20.00..",
+      "lang": "en",
+      "lemma": "Strekelia formosissima",
+      "synset": "oewn-12443064-n"
+    },
+    {
+      "definition": "plant growing from a bulb or corm or rhizome or tuber",
+      "forms": [],
+      "id": "oewn-liliaceous_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "liliaceous plant",
+      "synset": "oewn-12445786-n"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Lilium having showy pendulous flowers",
+      "forms": [],
+      "id": "oewn-lily__1.20.00..",
+      "lang": "en",
+      "lemma": "lily",
+      "synset": "oewn-12446753-n"
+    },
+    {
+      "definition": "Japanese lily with golden rays",
+      "forms": [],
+      "id": "oewn-mountain_lily__1.20.01..",
+      "lang": "en",
+      "lemma": "mountain lily",
+      "synset": "oewn-12447128-n"
+    },
+    {
+      "definition": "Japanese lily with golden rays",
+      "forms": [],
+      "id": "oewn-lilium_auratum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium auratum",
+      "synset": "oewn-12447128-n"
+    },
+    {
+      "definition": "common lily of the eastern United States having nodding yellow or reddish flowers spotted with brown",
+      "forms": [],
+      "id": "oewn-canada_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Canada lily",
+      "synset": "oewn-12447254-n"
+    },
+    {
+      "definition": "common lily of the eastern United States having nodding yellow or reddish flowers spotted with brown",
+      "forms": [],
+      "id": "oewn-wild_yellow_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "wild yellow lily",
+      "synset": "oewn-12447254-n"
+    },
+    {
+      "definition": "common lily of the eastern United States having nodding yellow or reddish flowers spotted with brown",
+      "forms": [],
+      "id": "oewn-meadow_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "meadow lily",
+      "synset": "oewn-12447254-n"
+    },
+    {
+      "definition": "common lily of the eastern United States having nodding yellow or reddish flowers spotted with brown",
+      "forms": [],
+      "id": "oewn-wild_meadow_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "wild meadow lily",
+      "synset": "oewn-12447254-n"
+    },
+    {
+      "definition": "common lily of the eastern United States having nodding yellow or reddish flowers spotted with brown",
+      "forms": [],
+      "id": "oewn-lilium_canadense__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium canadense",
+      "synset": "oewn-12447254-n"
+    },
+    {
+      "definition": "lily of eastern Mediterranean and the Balkans with broad funnel-shaped white flowers",
+      "forms": [],
+      "id": "oewn-madonna_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Madonna lily",
+      "synset": "oewn-12447483-n"
+    },
+    {
+      "definition": "lily of eastern Mediterranean and the Balkans with broad funnel-shaped white flowers",
+      "forms": [],
+      "id": "oewn-white_lily__1.20.01..",
+      "lang": "en",
+      "lemma": "white lily",
+      "synset": "oewn-12447483-n"
+    },
+    {
+      "definition": "lily of eastern Mediterranean and the Balkans with broad funnel-shaped white flowers",
+      "forms": [],
+      "id": "oewn-annunciation_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Annunciation lily",
+      "synset": "oewn-12447483-n"
+    },
+    {
+      "definition": "lily of eastern Mediterranean and the Balkans with broad funnel-shaped white flowers",
+      "forms": [],
+      "id": "oewn-lent_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Lent lily",
+      "synset": "oewn-12447483-n"
+    },
+    {
+      "definition": "lily of eastern Mediterranean and the Balkans with broad funnel-shaped white flowers",
+      "forms": [],
+      "id": "oewn-lilium_candidum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium candidum",
+      "synset": "oewn-12447483-n"
+    },
+    {
+      "definition": "lily of southeastern United States having cup-shaped flowers with deep yellow to scarlet recurved petals",
+      "forms": [],
+      "id": "oewn-tiger_lily__1.20.01..",
+      "lang": "en",
+      "lemma": "tiger lily",
+      "synset": "oewn-12447689-n"
+    },
+    {
+      "definition": "lily of southeastern United States having cup-shaped flowers with deep yellow to scarlet recurved petals",
+      "forms": [],
+      "id": "oewn-leopard_lily__1.20.01..",
+      "lang": "en",
+      "lemma": "leopard lily",
+      "synset": "oewn-12447689-n"
+    },
+    {
+      "definition": "lily of southeastern United States having cup-shaped flowers with deep yellow to scarlet recurved petals",
+      "forms": [],
+      "id": "oewn-pine_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "pine lily",
+      "synset": "oewn-12447689-n"
+    },
+    {
+      "definition": "lily of southeastern United States having cup-shaped flowers with deep yellow to scarlet recurved petals",
+      "forms": [],
+      "id": "oewn-lilium_catesbaei__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium catesbaei",
+      "synset": "oewn-12447689-n"
+    },
+    {
+      "definition": "lily of western North America with showy orange-red purple-spotted flowers",
+      "forms": [],
+      "id": "oewn-columbia_tiger_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Columbia tiger lily",
+      "synset": "oewn-12447896-n"
+    },
+    {
+      "definition": "lily of western North America with showy orange-red purple-spotted flowers",
+      "forms": [],
+      "id": "oewn-oregon_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Oregon lily",
+      "synset": "oewn-12447896-n"
+    },
+    {
+      "definition": "lily of western North America with showy orange-red purple-spotted flowers",
+      "forms": [],
+      "id": "oewn-lilium_columbianum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium columbianum",
+      "synset": "oewn-12447896-n"
+    },
+    {
+      "definition": "east Asian perennial having large reddish-orange black-spotted flowers with reflexed petals",
+      "forms": [],
+      "id": "oewn-tiger_lily__1.20.02..",
+      "lang": "en",
+      "lemma": "tiger lily",
+      "synset": "oewn-12448071-n"
+    },
+    {
+      "definition": "east Asian perennial having large reddish-orange black-spotted flowers with reflexed petals",
+      "forms": [],
+      "id": "oewn-devil_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "devil lily",
+      "synset": "oewn-12448071-n"
+    },
+    {
+      "definition": "east Asian perennial having large reddish-orange black-spotted flowers with reflexed petals",
+      "forms": [],
+      "id": "oewn-kentan__1.20.00..",
+      "lang": "en",
+      "lemma": "kentan",
+      "synset": "oewn-12448071-n"
+    },
+    {
+      "definition": "east Asian perennial having large reddish-orange black-spotted flowers with reflexed petals",
+      "forms": [],
+      "id": "oewn-lilium_lancifolium__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium lancifolium",
+      "synset": "oewn-12448071-n"
+    },
+    {
+      "definition": "tall lily have large white trumpet-shaped flowers that bloom in the spring",
+      "forms": [],
+      "id": "oewn-easter_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Easter lily",
+      "synset": "oewn-12448262-n"
+    },
+    {
+      "definition": "tall lily have large white trumpet-shaped flowers that bloom in the spring",
+      "forms": [],
+      "id": "oewn-bermuda_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Bermuda lily",
+      "synset": "oewn-12448262-n"
+    },
+    {
+      "definition": "tall lily have large white trumpet-shaped flowers that bloom in the spring",
+      "forms": [],
+      "id": "oewn-white_trumpet_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "white trumpet lily",
+      "synset": "oewn-12448262-n"
+    },
+    {
+      "definition": "tall lily have large white trumpet-shaped flowers that bloom in the spring",
+      "forms": [],
+      "id": "oewn-lilium_longiflorum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium longiflorum",
+      "synset": "oewn-12448262-n"
+    },
+    {
+      "definition": "orange-flowered lily of Pacific coast of United States",
+      "forms": [],
+      "id": "oewn-coast_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "coast lily",
+      "synset": "oewn-12448451-n"
+    },
+    {
+      "definition": "orange-flowered lily of Pacific coast of United States",
+      "forms": [],
+      "id": "oewn-lilium_maritinum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium maritinum",
+      "synset": "oewn-12448451-n"
+    },
+    {
+      "definition": "lily with small dull purple flowers of northwestern Europe and northwestern Asia",
+      "forms": [],
+      "id": "oewn-turk-ap-s-cap__1.20.02..",
+      "lang": "en",
+      "lemma": "Turk's-cap",
+      "synset": "oewn-12448581-n"
+    },
+    {
+      "definition": "lily with small dull purple flowers of northwestern Europe and northwestern Asia",
+      "forms": [],
+      "id": "oewn-martagon__1.20.00..",
+      "lang": "en",
+      "lemma": "martagon",
+      "synset": "oewn-12448581-n"
+    },
+    {
+      "definition": "lily with small dull purple flowers of northwestern Europe and northwestern Asia",
+      "forms": [],
+      "id": "oewn-lilium_martagon__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium martagon",
+      "synset": "oewn-12448581-n"
+    },
+    {
+      "definition": "lily of central North America having recurved orange-red flowers with deep crimson spots",
+      "forms": [],
+      "id": "oewn-michigan_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Michigan lily",
+      "synset": "oewn-12448747-n"
+    },
+    {
+      "definition": "lily of central North America having recurved orange-red flowers with deep crimson spots",
+      "forms": [],
+      "id": "oewn-lilium_michiganense__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium michiganense",
+      "synset": "oewn-12448747-n"
+    },
+    {
+      "definition": "lily of western United States having orange-red to crimson maroon-spotted flowers",
+      "forms": [],
+      "id": "oewn-leopard_lily__1.20.02..",
+      "lang": "en",
+      "lemma": "leopard lily",
+      "synset": "oewn-12448917-n"
+    },
+    {
+      "definition": "lily of western United States having orange-red to crimson maroon-spotted flowers",
+      "forms": [],
+      "id": "oewn-panther_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "panther lily",
+      "synset": "oewn-12448917-n"
+    },
+    {
+      "definition": "lily of western United States having orange-red to crimson maroon-spotted flowers",
+      "forms": [],
+      "id": "oewn-lilium_pardalinum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium pardalinum",
+      "synset": "oewn-12448917-n"
+    },
+    {
+      "definition": "lily of eastern North America having orange to orange-red purple-spotted flowers",
+      "forms": [],
+      "id": "oewn-wood_lily__1.20.01..",
+      "lang": "en",
+      "lemma": "wood lily",
+      "synset": "oewn-12449092-n"
+    },
+    {
+      "definition": "lily of eastern North America having orange to orange-red purple-spotted flowers",
+      "forms": [],
+      "id": "oewn-lilium_philadelphicum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium philadelphicum",
+      "synset": "oewn-12449092-n"
+    },
+    {
+      "definition": "lily of the eastern United States with orange to red maroon-spotted flowers",
+      "forms": [],
+      "id": "oewn-turk-ap-s-cap__1.20.01..",
+      "lang": "en",
+      "lemma": "Turk's-cap",
+      "synset": "oewn-12449252-n"
+    },
+    {
+      "definition": "lily of the eastern United States with orange to red maroon-spotted flowers",
+      "forms": [],
+      "id": "oewn-turk-ap-s_cap-lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Turk's cap-lily",
+      "synset": "oewn-12449252-n"
+    },
+    {
+      "definition": "lily of the eastern United States with orange to red maroon-spotted flowers",
+      "forms": [],
+      "id": "oewn-lilium_superbum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lilium superbum",
+      "synset": "oewn-12449252-n"
+    },
+    {
+      "definition": "any of various plants of the genus Agapanthus having umbels of showy blue to purple flowers",
+      "forms": [],
+      "id": "oewn-agapanthus__1.20.00..",
+      "lang": "en",
+      "lemma": "agapanthus",
+      "synset": "oewn-12449653-n"
+    },
+    {
+      "definition": "any of various plants of the genus Agapanthus having umbels of showy blue to purple flowers",
+      "forms": [],
+      "id": "oewn-lily_of_the_nile__1.20.00..",
+      "lang": "en",
+      "lemma": "lily of the Nile",
+      "synset": "oewn-12449653-n"
+    },
+    {
+      "definition": "African plant with bright green evergreen leaves and umbels of many usually deep violet-blue flowers",
+      "forms": [],
+      "id": "oewn-african_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "African lily",
+      "synset": "oewn-12449857-n"
+    },
+    {
+      "definition": "African plant with bright green evergreen leaves and umbels of many usually deep violet-blue flowers",
+      "forms": [],
+      "id": "oewn-african_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "African tulip",
+      "synset": "oewn-12449857-n"
+    },
+    {
+      "definition": "African plant with bright green evergreen leaves and umbels of many usually deep violet-blue flowers",
+      "forms": [],
+      "id": "oewn-blue_african_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "blue African lily",
+      "synset": "oewn-12449857-n"
+    },
+    {
+      "definition": "African plant with bright green evergreen leaves and umbels of many usually deep violet-blue flowers",
+      "forms": [],
+      "id": "oewn-agapanthus_africanus__1.20.00..",
+      "lang": "en",
+      "lemma": "Agapanthus africanus",
+      "synset": "oewn-12449857-n"
+    },
+    {
+      "definition": "any of various plants of the genus Albuca having large clusters of pale yellow flowers; South Africa",
+      "forms": [],
+      "id": "oewn-albuca__1.20.00..",
+      "lang": "en",
+      "lemma": "albuca",
+      "synset": "oewn-12450275-n"
+    },
+    {
+      "definition": "any of several perennials of the genus Aletris having grasslike leaves and bitter roots reputed to cure colic",
+      "forms": [],
+      "id": "oewn-colicroot__1.20.00..",
+      "lang": "en",
+      "lemma": "colicroot",
+      "synset": "oewn-12450703-n"
+    },
+    {
+      "definition": "any of several perennials of the genus Aletris having grasslike leaves and bitter roots reputed to cure colic",
+      "forms": [],
+      "id": "oewn-colic_root__1.20.00..",
+      "lang": "en",
+      "lemma": "colic root",
+      "synset": "oewn-12450703-n"
+    },
+    {
+      "definition": "any of several perennials of the genus Aletris having grasslike leaves and bitter roots reputed to cure colic",
+      "forms": [],
+      "id": "oewn-crow_corn__1.20.00..",
+      "lang": "en",
+      "lemma": "crow corn",
+      "synset": "oewn-12450703-n"
+    },
+    {
+      "definition": "any of several perennials of the genus Aletris having grasslike leaves and bitter roots reputed to cure colic",
+      "forms": [],
+      "id": "oewn-star_grass__1.20.03..",
+      "lang": "en",
+      "lemma": "star grass",
+      "synset": "oewn-12450703-n"
+    },
+    {
+      "definition": "any of several perennials of the genus Aletris having grasslike leaves and bitter roots reputed to cure colic",
+      "forms": [],
+      "id": "oewn-unicorn_root__1.20.00..",
+      "lang": "en",
+      "lemma": "unicorn root",
+      "synset": "oewn-12450703-n"
+    },
+    {
+      "definition": "colicroot having a scurfy or granuliferous perianth and white flowers; southeastern United States",
+      "forms": [],
+      "id": "oewn-ague_root__1.20.00..",
+      "lang": "en",
+      "lemma": "ague root",
+      "synset": "oewn-12450976-n"
+    },
+    {
+      "definition": "colicroot having a scurfy or granuliferous perianth and white flowers; southeastern United States",
+      "forms": [],
+      "id": "oewn-ague_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "ague grass",
+      "synset": "oewn-12450976-n"
+    },
+    {
+      "definition": "colicroot having a scurfy or granuliferous perianth and white flowers; southeastern United States",
+      "forms": [],
+      "id": "oewn-aletris_farinosa__1.20.00..",
+      "lang": "en",
+      "lemma": "Aletris farinosa",
+      "synset": "oewn-12450976-n"
+    },
+    {
+      "definition": "colicroot with yellow-bracted racemose flowers; smaller than Aletris farinosa; southeastern United States",
+      "forms": [],
+      "id": "oewn-yellow_colicroot__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow colicroot",
+      "synset": "oewn-12451180-n"
+    },
+    {
+      "definition": "colicroot with yellow-bracted racemose flowers; smaller than Aletris farinosa; southeastern United States",
+      "forms": [],
+      "id": "oewn-aletris_aurea__1.20.00..",
+      "lang": "en",
+      "lemma": "Aletris aurea",
+      "synset": "oewn-12451180-n"
+    },
+    {
+      "definition": "bulbous plants having a characteristic pungent onion odor",
+      "forms": [],
+      "id": "oewn-alliaceous_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "alliaceous plant",
+      "synset": "oewn-12451939-n"
+    },
+    {
+      "definition": "any of various plants of the genus Allium with edible bulbs found growing wild",
+      "forms": [],
+      "id": "oewn-wild_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "wild onion",
+      "synset": "oewn-12452366-n"
+    },
+    {
+      "definition": "a common North American wild onion with a strong onion odor and an umbel of pink flowers atop a leafless stalk; British Columbia to California and Arizona and east to Wyoming and Colorado",
+      "forms": [],
+      "id": "oewn-hooker-ap-s_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "Hooker's onion",
+      "synset": "oewn-12452574-n"
+    },
+    {
+      "definition": "a common North American wild onion with a strong onion odor and an umbel of pink flowers atop a leafless stalk; British Columbia to California and Arizona and east to Wyoming and Colorado",
+      "forms": [],
+      "id": "oewn-allium_acuminatum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium acuminatum",
+      "synset": "oewn-12452574-n"
+    },
+    {
+      "definition": "coarse Old World perennial having a large bulb and tall stalk of greenish purple-tinged flowers; widely naturalized",
+      "forms": [],
+      "id": "oewn-wild_leek__1.20.01..",
+      "lang": "en",
+      "lemma": "wild leek",
+      "synset": "oewn-12452861-n"
+    },
+    {
+      "definition": "coarse Old World perennial having a large bulb and tall stalk of greenish purple-tinged flowers; widely naturalized",
+      "forms": [],
+      "id": "oewn-levant_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "Levant garlic",
+      "synset": "oewn-12452861-n"
+    },
+    {
+      "definition": "coarse Old World perennial having a large bulb and tall stalk of greenish purple-tinged flowers; widely naturalized",
+      "forms": [],
+      "id": "oewn-kurrat__1.20.00..",
+      "lang": "en",
+      "lemma": "kurrat",
+      "synset": "oewn-12452861-n"
+    },
+    {
+      "definition": "coarse Old World perennial having a large bulb and tall stalk of greenish purple-tinged flowers; widely naturalized",
+      "forms": [],
+      "id": "oewn-allium_ampeloprasum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium ampeloprasum",
+      "synset": "oewn-12452861-n"
+    },
+    {
+      "definition": "North American bulbous plant",
+      "forms": [],
+      "id": "oewn-canada_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "Canada garlic",
+      "synset": "oewn-12453079-n"
+    },
+    {
+      "definition": "North American bulbous plant",
+      "forms": [],
+      "id": "oewn-meadow_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "meadow leek",
+      "synset": "oewn-12453079-n"
+    },
+    {
+      "definition": "North American bulbous plant",
+      "forms": [],
+      "id": "oewn-rose_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "rose leek",
+      "synset": "oewn-12453079-n"
+    },
+    {
+      "definition": "North American bulbous plant",
+      "forms": [],
+      "id": "oewn-allium_canadense__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium canadense",
+      "synset": "oewn-12453079-n"
+    },
+    {
+      "definition": "Eurasian bulbous plant",
+      "forms": [],
+      "id": "oewn-keeled_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "keeled garlic",
+      "synset": "oewn-12453212-n"
+    },
+    {
+      "definition": "Eurasian bulbous plant",
+      "forms": [],
+      "id": "oewn-allium_carinatum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium carinatum",
+      "synset": "oewn-12453212-n"
+    },
+    {
+      "definition": "bulbous plant having hollow leaves cultivated worldwide for its rounded edible bulb",
+      "forms": [],
+      "id": "oewn-onion__1.20.00..",
+      "lang": "en",
+      "lemma": "onion",
+      "synset": "oewn-12453313-n"
+    },
+    {
+      "definition": "bulbous plant having hollow leaves cultivated worldwide for its rounded edible bulb",
+      "forms": [],
+      "id": "oewn-onion_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "onion plant",
+      "synset": "oewn-12453313-n"
+    },
+    {
+      "definition": "bulbous plant having hollow leaves cultivated worldwide for its rounded edible bulb",
+      "forms": [],
+      "id": "oewn-allium_cepa__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium cepa",
+      "synset": "oewn-12453313-n"
+    },
+    {
+      "definition": "type of onion plant producing small clustered mild-flavored bulbs used as seasoning",
+      "forms": [],
+      "id": "oewn-shallot__1.20.00..",
+      "lang": "en",
+      "lemma": "shallot",
+      "synset": "oewn-12453683-n"
+    },
+    {
+      "definition": "type of onion plant producing small clustered mild-flavored bulbs used as seasoning",
+      "forms": [],
+      "id": "oewn-eschalot__1.20.00..",
+      "lang": "en",
+      "lemma": "eschalot",
+      "synset": "oewn-12453683-n"
+    },
+    {
+      "definition": "type of onion plant producing small clustered mild-flavored bulbs used as seasoning",
+      "forms": [],
+      "id": "oewn-multiplier_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "multiplier onion",
+      "synset": "oewn-12453683-n"
+    },
+    {
+      "definition": "type of onion plant producing small clustered mild-flavored bulbs used as seasoning",
+      "forms": [],
+      "id": "oewn-allium_cepa_aggregatum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium cepa aggregatum",
+      "synset": "oewn-12453683-n"
+    },
+    {
+      "definition": "type of onion plant producing small clustered mild-flavored bulbs used as seasoning",
+      "forms": [],
+      "id": "oewn-allium_ascalonicum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium ascalonicum",
+      "synset": "oewn-12453683-n"
+    },
+    {
+      "definition": "type of perennial onion grown chiefly as a curiosity or for early salad onions; having bulbils that replace the flowers",
+      "forms": [],
+      "id": "oewn-tree_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "tree onion",
+      "synset": "oewn-12454045-n"
+    },
+    {
+      "definition": "type of perennial onion grown chiefly as a curiosity or for early salad onions; having bulbils that replace the flowers",
+      "forms": [],
+      "id": "oewn-egyptian_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "Egyptian onion",
+      "synset": "oewn-12454045-n"
+    },
+    {
+      "definition": "type of perennial onion grown chiefly as a curiosity or for early salad onions; having bulbils that replace the flowers",
+      "forms": [],
+      "id": "oewn-top_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "top onion",
+      "synset": "oewn-12454045-n"
+    },
+    {
+      "definition": "type of perennial onion grown chiefly as a curiosity or for early salad onions; having bulbils that replace the flowers",
+      "forms": [],
+      "id": "oewn-allium_cepa_viviparum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium cepa viviparum",
+      "synset": "oewn-12454045-n"
+    },
+    {
+      "definition": "widely distributed North American wild onion with white to rose flowers",
+      "forms": [],
+      "id": "oewn-nodding_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "nodding onion",
+      "synset": "oewn-12454274-n"
+    },
+    {
+      "definition": "widely distributed North American wild onion with white to rose flowers",
+      "forms": [],
+      "id": "oewn-nodding_wild_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "nodding wild onion",
+      "synset": "oewn-12454274-n"
+    },
+    {
+      "definition": "widely distributed North American wild onion with white to rose flowers",
+      "forms": [],
+      "id": "oewn-lady-ap-s_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "lady's leek",
+      "synset": "oewn-12454274-n"
+    },
+    {
+      "definition": "widely distributed North American wild onion with white to rose flowers",
+      "forms": [],
+      "id": "oewn-allium_cernuum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium cernuum",
+      "synset": "oewn-12454274-n"
+    },
+    {
+      "definition": "Asiatic onion with slender bulbs; used as early green onions",
+      "forms": [],
+      "id": "oewn-welsh_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "Welsh onion",
+      "synset": "oewn-12454457-n"
+    },
+    {
+      "definition": "Asiatic onion with slender bulbs; used as early green onions",
+      "forms": [],
+      "id": "oewn-japanese_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "Japanese leek",
+      "synset": "oewn-12454457-n"
+    },
+    {
+      "definition": "Asiatic onion with slender bulbs; used as early green onions",
+      "forms": [],
+      "id": "oewn-allium_fistulosum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium fistulosum",
+      "synset": "oewn-12454457-n"
+    },
+    {
+      "definition": "onion with white to deep red tunic; California",
+      "forms": [],
+      "id": "oewn-red-skinned_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "red-skinned onion",
+      "synset": "oewn-12454611-n"
+    },
+    {
+      "definition": "onion with white to deep red tunic; California",
+      "forms": [],
+      "id": "oewn-allium_haematochiton__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium haematochiton",
+      "synset": "oewn-12454611-n"
+    },
+    {
+      "definition": "plant having a large slender white bulb and flat overlapping dark green leaves; used in cooking; believed derived from the wild Allium ampeloprasum",
+      "forms": [],
+      "id": "oewn-leek__1.20.00..",
+      "lang": "en",
+      "lemma": "leek",
+      "synset": "oewn-12454744-n"
+    },
+    {
+      "definition": "plant having a large slender white bulb and flat overlapping dark green leaves; used in cooking; believed derived from the wild Allium ampeloprasum",
+      "forms": [],
+      "id": "oewn-scallion__1.20.02..",
+      "lang": "en",
+      "lemma": "scallion",
+      "synset": "oewn-12454744-n"
+    },
+    {
+      "definition": "plant having a large slender white bulb and flat overlapping dark green leaves; used in cooking; believed derived from the wild Allium ampeloprasum",
+      "forms": [],
+      "id": "oewn-allium_porrum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium porrum",
+      "synset": "oewn-12454744-n"
+    },
+    {
+      "definition": "European onion with white flowers",
+      "forms": [],
+      "id": "oewn-daffodil_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "daffodil garlic",
+      "synset": "oewn-12454988-n"
+    },
+    {
+      "definition": "European onion with white flowers",
+      "forms": [],
+      "id": "oewn-flowering_onion__1.20.00..",
+      "lang": "en",
+      "lemma": "flowering onion",
+      "synset": "oewn-12454988-n"
+    },
+    {
+      "definition": "European onion with white flowers",
+      "forms": [],
+      "id": "oewn-naples_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "Naples garlic",
+      "synset": "oewn-12454988-n"
+    },
+    {
+      "definition": "European onion with white flowers",
+      "forms": [],
+      "id": "oewn-allium_neopolitanum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium neopolitanum",
+      "synset": "oewn-12454988-n"
+    },
+    {
+      "definition": "leek producing bulbils instead of flowers; Russia and Iran",
+      "forms": [],
+      "id": "oewn-few-flowered_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "few-flowered leek",
+      "synset": "oewn-12455139-n"
+    },
+    {
+      "definition": "leek producing bulbils instead of flowers; Russia and Iran",
+      "forms": [],
+      "id": "oewn-allium_paradoxum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium paradoxum",
+      "synset": "oewn-12455139-n"
+    },
+    {
+      "definition": "bulbous herb of southern Europe widely naturalized; bulb breaks up into separate strong-flavored cloves",
+      "forms": [],
+      "id": "oewn-garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "garlic",
+      "synset": "oewn-12455280-n"
+    },
+    {
+      "definition": "bulbous herb of southern Europe widely naturalized; bulb breaks up into separate strong-flavored cloves",
+      "forms": [],
+      "id": "oewn-allium_sativum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium sativum",
+      "synset": "oewn-12455280-n"
+    },
+    {
+      "definition": "European leek cultivated and used like leeks",
+      "forms": [],
+      "id": "oewn-sand_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "sand leek",
+      "synset": "oewn-12455490-n"
+    },
+    {
+      "definition": "European leek cultivated and used like leeks",
+      "forms": [],
+      "id": "oewn-giant_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "giant garlic",
+      "synset": "oewn-12455490-n"
+    },
+    {
+      "definition": "European leek cultivated and used like leeks",
+      "forms": [],
+      "id": "oewn-spanish_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "Spanish garlic",
+      "synset": "oewn-12455490-n"
+    },
+    {
+      "definition": "European leek cultivated and used like leeks",
+      "forms": [],
+      "id": "oewn-rocambole__1.20.00..",
+      "lang": "en",
+      "lemma": "rocambole",
+      "synset": "oewn-12455490-n"
+    },
+    {
+      "definition": "European leek cultivated and used like leeks",
+      "forms": [],
+      "id": "oewn-allium_scorodoprasum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium scorodoprasum",
+      "synset": "oewn-12455490-n"
+    },
+    {
+      "definition": "perennial having hollow cylindrical leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-chives__1.20.00..",
+      "lang": "en",
+      "lemma": "chives",
+      "synset": "oewn-12455657-n"
+    },
+    {
+      "definition": "perennial having hollow cylindrical leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-chive__1.20.00..",
+      "lang": "en",
+      "lemma": "chive",
+      "synset": "oewn-12455657-n"
+    },
+    {
+      "definition": "perennial having hollow cylindrical leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-cive__1.20.00..",
+      "lang": "en",
+      "lemma": "cive",
+      "synset": "oewn-12455657-n"
+    },
+    {
+      "definition": "perennial having hollow cylindrical leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-schnittlaugh__1.20.00..",
+      "lang": "en",
+      "lemma": "schnittlaugh",
+      "synset": "oewn-12455657-n"
+    },
+    {
+      "definition": "perennial having hollow cylindrical leaves used for seasoning",
+      "forms": [],
+      "id": "oewn-allium_schoenoprasum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium schoenoprasum",
+      "synset": "oewn-12455657-n"
+    },
+    {
+      "definition": "North American perennial having a slender bulb and whitish flowers",
+      "forms": [],
+      "id": "oewn-ramp__1.20.00..",
+      "lang": "en",
+      "lemma": "ramp",
+      "synset": "oewn-12455843-n"
+    },
+    {
+      "definition": "North American perennial having a slender bulb and whitish flowers",
+      "forms": [],
+      "id": "oewn-wild_leek__1.20.02..",
+      "lang": "en",
+      "lemma": "wild leek",
+      "synset": "oewn-12455843-n"
+    },
+    {
+      "definition": "North American perennial having a slender bulb and whitish flowers",
+      "forms": [],
+      "id": "oewn-allium_tricoccum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium tricoccum",
+      "synset": "oewn-12455843-n"
+    },
+    {
+      "definition": "pungent Old World wild onion",
+      "forms": [],
+      "id": "oewn-crow_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "crow garlic",
+      "synset": "oewn-12455991-n"
+    },
+    {
+      "definition": "pungent Old World wild onion",
+      "forms": [],
+      "id": "oewn-false_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "false garlic",
+      "synset": "oewn-12455991-n"
+    },
+    {
+      "definition": "pungent Old World wild onion",
+      "forms": [],
+      "id": "oewn-field_garlic__1.20.01..",
+      "lang": "en",
+      "lemma": "field garlic",
+      "synset": "oewn-12455991-n"
+    },
+    {
+      "definition": "pungent Old World wild onion",
+      "forms": [],
+      "id": "oewn-stag-ap-s_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "stag's garlic",
+      "synset": "oewn-12455991-n"
+    },
+    {
+      "definition": "pungent Old World wild onion",
+      "forms": [],
+      "id": "oewn-wild_garlic__1.20.02..",
+      "lang": "en",
+      "lemma": "wild garlic",
+      "synset": "oewn-12455991-n"
+    },
+    {
+      "definition": "pungent Old World wild onion",
+      "forms": [],
+      "id": "oewn-allium_vineale__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium vineale",
+      "synset": "oewn-12455991-n"
+    },
+    {
+      "definition": "pungent Old World weedy plant",
+      "forms": [],
+      "id": "oewn-wild_garlic__1.20.01..",
+      "lang": "en",
+      "lemma": "wild garlic",
+      "synset": "oewn-12456154-n"
+    },
+    {
+      "definition": "pungent Old World weedy plant",
+      "forms": [],
+      "id": "oewn-wood_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "wood garlic",
+      "synset": "oewn-12456154-n"
+    },
+    {
+      "definition": "pungent Old World weedy plant",
+      "forms": [],
+      "id": "oewn-ramsons__1.20.00..",
+      "lang": "en",
+      "lemma": "Ramsons",
+      "synset": "oewn-12456154-n"
+    },
+    {
+      "definition": "pungent Old World weedy plant",
+      "forms": [],
+      "id": "oewn-allium_ursinum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium ursinum",
+      "synset": "oewn-12456154-n"
+    },
+    {
+      "definition": "a plant of eastern Asia; larger than Allium schoenoprasum",
+      "forms": [],
+      "id": "oewn-garlic_chive__1.20.00..",
+      "lang": "en",
+      "lemma": "garlic chive",
+      "synset": "oewn-12456282-n"
+    },
+    {
+      "definition": "a plant of eastern Asia; larger than Allium schoenoprasum",
+      "forms": [],
+      "id": "oewn-chinese_chive__1.20.00..",
+      "lang": "en",
+      "lemma": "Chinese chive",
+      "synset": "oewn-12456282-n"
+    },
+    {
+      "definition": "a plant of eastern Asia; larger than Allium schoenoprasum",
+      "forms": [],
+      "id": "oewn-oriental_garlic__1.20.00..",
+      "lang": "en",
+      "lemma": "Oriental garlic",
+      "synset": "oewn-12456282-n"
+    },
+    {
+      "definition": "a plant of eastern Asia; larger than Allium schoenoprasum",
+      "forms": [],
+      "id": "oewn-allium_tuberosum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium tuberosum",
+      "synset": "oewn-12456282-n"
+    },
+    {
+      "definition": "Old World leek with a spherical bulb",
+      "forms": [],
+      "id": "oewn-round-headed_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "round-headed leek",
+      "synset": "oewn-12456470-n"
+    },
+    {
+      "definition": "Old World leek with a spherical bulb",
+      "forms": [],
+      "id": "oewn-allium_sphaerocephalum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium sphaerocephalum",
+      "synset": "oewn-12456470-n"
+    },
+    {
+      "definition": "European leek naturalized in Great Britain; leaves are triangular",
+      "forms": [],
+      "id": "oewn-three-cornered_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "three-cornered leek",
+      "synset": "oewn-12456595-n"
+    },
+    {
+      "definition": "European leek naturalized in Great Britain; leaves are triangular",
+      "forms": [],
+      "id": "oewn-triquetrous_leek__1.20.00..",
+      "lang": "en",
+      "lemma": "triquetrous leek",
+      "synset": "oewn-12456595-n"
+    },
+    {
+      "definition": "European leek naturalized in Great Britain; leaves are triangular",
+      "forms": [],
+      "id": "oewn-allium_triquetrum__1.20.00..",
+      "lang": "en",
+      "lemma": "Allium triquetrum",
+      "synset": "oewn-12456595-n"
+    },
+    {
+      "definition": "any of various South American plants of the genus Alstroemeria valued for their handsome umbels of beautiful flowers",
+      "forms": [],
+      "id": "oewn-alstroemeria__1.20.00..",
+      "lang": "en",
+      "lemma": "alstroemeria",
+      "synset": "oewn-12459076-n"
+    },
+    {
+      "definition": "an Andean herb having umbels of showy pinkish-purple lily-like flowers",
+      "forms": [],
+      "id": "oewn-peruvian_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Peruvian lily",
+      "synset": "oewn-12459288-n"
+    },
+    {
+      "definition": "an Andean herb having umbels of showy pinkish-purple lily-like flowers",
+      "forms": [],
+      "id": "oewn-lily_of_the_incas__1.20.00..",
+      "lang": "en",
+      "lemma": "lily of the Incas",
+      "synset": "oewn-12459288-n"
+    },
+    {
+      "definition": "an Andean herb having umbels of showy pinkish-purple lily-like flowers",
+      "forms": [],
+      "id": "oewn-alstroemeria_pelegrina__1.20.00..",
+      "lang": "en",
+      "lemma": "Alstroemeria pelegrina",
+      "synset": "oewn-12459288-n"
+    },
+    {
+      "definition": "all parts of plant are highly toxic; bulb pounded and used as a fly poison; sometimes placed in subfamily Melanthiaceae",
+      "forms": [],
+      "id": "oewn-fly_poison__1.20.00..",
+      "lang": "en",
+      "lemma": "fly poison",
+      "synset": "oewn-12459659-n"
+    },
+    {
+      "definition": "all parts of plant are highly toxic; bulb pounded and used as a fly poison; sometimes placed in subfamily Melanthiaceae",
+      "forms": [],
+      "id": "oewn-amianthum_muscaetoxicum__1.20.00..",
+      "lang": "en",
+      "lemma": "Amianthum muscaetoxicum",
+      "synset": "oewn-12459659-n"
+    },
+    {
+      "definition": "all parts of plant are highly toxic; bulb pounded and used as a fly poison; sometimes placed in subfamily Melanthiaceae",
+      "forms": [],
+      "id": "oewn-amianthum_muscitoxicum__1.20.00..",
+      "lang": "en",
+      "lemma": "Amianthum muscitoxicum",
+      "synset": "oewn-12459659-n"
+    },
+    {
+      "definition": "southern European plant commonly cultivated for its spikes of small starry greenish-white flowers",
+      "forms": [],
+      "id": "oewn-saint-bernard-ap-s-lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Saint-Bernard's-lily",
+      "synset": "oewn-12460131-n"
+    },
+    {
+      "definition": "southern European plant commonly cultivated for its spikes of small starry greenish-white flowers",
+      "forms": [],
+      "id": "oewn-anthericum_liliago__1.20.00..",
+      "lang": "en",
+      "lemma": "Anthericum liliago",
+      "synset": "oewn-12460131-n"
+    },
+    {
+      "definition": "plant having basal grasslike leaves and a narrow open cluster of starlike yellowish-orange flowers atop a leafless stalk; southwestern United States; only species of Anthericum growing in North America",
+      "forms": [],
+      "id": "oewn-amber_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "amber lily",
+      "synset": "oewn-12460335-n"
+    },
+    {
+      "definition": "plant having basal grasslike leaves and a narrow open cluster of starlike yellowish-orange flowers atop a leafless stalk; southwestern United States; only species of Anthericum growing in North America",
+      "forms": [],
+      "id": "oewn-anthericum_torreyi__1.20.00..",
+      "lang": "en",
+      "lemma": "Anthericum torreyi",
+      "synset": "oewn-12460335-n"
+    },
+    {
+      "definition": "any of various chiefly Mediterranean plants of the genera Asphodeline and Asphodelus having linear leaves and racemes of white or pink or yellow flowers",
+      "forms": [],
+      "id": "oewn-asphodel__1.20.00..",
+      "lang": "en",
+      "lemma": "asphodel",
+      "synset": "oewn-12462463-n"
+    },
+    {
+      "definition": "asphodel having erect smooth unbranched stem either flexuous or straight",
+      "forms": [],
+      "id": "oewn-jacob-ap-s_rod__1.20.00..",
+      "lang": "en",
+      "lemma": "Jacob's rod",
+      "synset": "oewn-12463053-n"
+    },
+    {
+      "definition": "asphodel with leafy stem and fragrant yellow flowers",
+      "forms": [],
+      "id": "oewn-king-ap-s_spear__1.20.00..",
+      "lang": "en",
+      "lemma": "king's spear",
+      "synset": "oewn-12463202-n"
+    },
+    {
+      "definition": "asphodel with leafy stem and fragrant yellow flowers",
+      "forms": [],
+      "id": "oewn-yellow_asphodel__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow asphodel",
+      "synset": "oewn-12463202-n"
+    },
+    {
+      "definition": "asphodel with leafy stem and fragrant yellow flowers",
+      "forms": [],
+      "id": "oewn-asphodeline_lutea__1.20.00..",
+      "lang": "en",
+      "lemma": "Asphodeline lutea",
+      "synset": "oewn-12463202-n"
+    },
+    {
+      "definition": "California plant having grasslike leaves and showy orange flowers",
+      "forms": [],
+      "id": "oewn-golden_star__1.20.00..",
+      "lang": "en",
+      "lemma": "golden star",
+      "synset": "oewn-12464995-n"
+    },
+    {
+      "definition": "California plant having grasslike leaves and showy orange flowers",
+      "forms": [],
+      "id": "oewn-golden_stars__1.20.00..",
+      "lang": "en",
+      "lemma": "golden stars",
+      "synset": "oewn-12464995-n"
+    },
+    {
+      "definition": "California plant having grasslike leaves and showy orange flowers",
+      "forms": [],
+      "id": "oewn-bloomeria_crocea__1.20.00..",
+      "lang": "en",
+      "lemma": "Bloomeria crocea",
+      "synset": "oewn-12464995-n"
+    },
+    {
+      "definition": "any of several plants of the genus Brodiaea having basal grasslike leaves and globose flower heads on leafless stems resembling those of genus Allium",
+      "forms": [],
+      "id": "oewn-brodiaea__1.20.00..",
+      "lang": "en",
+      "lemma": "brodiaea",
+      "synset": "oewn-12465892-n"
+    },
+    {
+      "definition": "brodiaea having an umbel of violet or blue-violet flowers atop a leafless stalk; northern Oregon to southern California",
+      "forms": [],
+      "id": "oewn-elegant_brodiaea__1.20.00..",
+      "lang": "en",
+      "lemma": "elegant brodiaea",
+      "synset": "oewn-12466133-n"
+    },
+    {
+      "definition": "brodiaea having an umbel of violet or blue-violet flowers atop a leafless stalk; northern Oregon to southern California",
+      "forms": [],
+      "id": "oewn-brodiaea_elegans__1.20.00..",
+      "lang": "en",
+      "lemma": "Brodiaea elegans",
+      "synset": "oewn-12466133-n"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having tulip-shaped flowers with 3 sepals and 3 petals; southwestern United States and Mexico",
+      "forms": [],
+      "id": "oewn-mariposa__1.20.00..",
+      "lang": "en",
+      "lemma": "mariposa",
+      "synset": "oewn-12466705-n"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having tulip-shaped flowers with 3 sepals and 3 petals; southwestern United States and Mexico",
+      "forms": [],
+      "id": "oewn-mariposa_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "mariposa tulip",
+      "synset": "oewn-12466705-n"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having tulip-shaped flowers with 3 sepals and 3 petals; southwestern United States and Mexico",
+      "forms": [],
+      "id": "oewn-mariposa_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "mariposa lily",
+      "synset": "oewn-12466705-n"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having egg-shaped flowers",
+      "forms": [],
+      "id": "oewn-globe_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "globe lily",
+      "synset": "oewn-12467024-n"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having egg-shaped flowers",
+      "forms": [],
+      "id": "oewn-fairy_lantern__1.20.00..",
+      "lang": "en",
+      "lemma": "fairy lantern",
+      "synset": "oewn-12467024-n"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having flowers with petals shaped like cat's ears",
+      "forms": [],
+      "id": "oewn-cat-ap-s-ear__1.20.02..",
+      "lang": "en",
+      "lemma": "cat's-ear",
+      "synset": "oewn-12467242-n"
+    },
+    {
+      "definition": "globe lily having open branched clusters of egg-shaped white flowers; southern California",
+      "forms": [],
+      "id": "oewn-white_globe_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "white globe lily",
+      "synset": "oewn-12467413-n"
+    },
+    {
+      "definition": "globe lily having open branched clusters of egg-shaped white flowers; southern California",
+      "forms": [],
+      "id": "oewn-white_fairy_lantern__1.20.00..",
+      "lang": "en",
+      "lemma": "white fairy lantern",
+      "synset": "oewn-12467413-n"
+    },
+    {
+      "definition": "globe lily having open branched clusters of egg-shaped white flowers; southern California",
+      "forms": [],
+      "id": "oewn-calochortus_albus__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus albus",
+      "synset": "oewn-12467413-n"
+    },
+    {
+      "definition": "globe lily having open branched clusters of clear yellow egg-shaped flowers; northern California",
+      "forms": [],
+      "id": "oewn-yellow_globe_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow globe lily",
+      "synset": "oewn-12467626-n"
+    },
+    {
+      "definition": "globe lily having open branched clusters of clear yellow egg-shaped flowers; northern California",
+      "forms": [],
+      "id": "oewn-golden_fairy_lantern__1.20.00..",
+      "lang": "en",
+      "lemma": "golden fairy lantern",
+      "synset": "oewn-12467626-n"
+    },
+    {
+      "definition": "globe lily having open branched clusters of clear yellow egg-shaped flowers; northern California",
+      "forms": [],
+      "id": "oewn-calochortus_amabilis__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus amabilis",
+      "synset": "oewn-12467626-n"
+    },
+    {
+      "definition": "globe lily with deep rose-pink or purple egg-shaped flowers on flexuous stems; western slopes of Sierra Nevada in San Joaquin Valley",
+      "forms": [],
+      "id": "oewn-rose_globe_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "rose globe lily",
+      "synset": "oewn-12467851-n"
+    },
+    {
+      "definition": "globe lily with deep rose-pink or purple egg-shaped flowers on flexuous stems; western slopes of Sierra Nevada in San Joaquin Valley",
+      "forms": [],
+      "id": "oewn-calochortus_amoenus__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus amoenus",
+      "synset": "oewn-12467851-n"
+    },
+    {
+      "definition": "small plant with slender bent stems bearing branched clusters of a few white star-shaped flowers with petals shaped like cat's ears; southeastern Washington and northeastern Oregon to Montana",
+      "forms": [],
+      "id": "oewn-star_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "star tulip",
+      "synset": "oewn-12468086-n"
+    },
+    {
+      "definition": "small plant with slender bent stems bearing branched clusters of a few white star-shaped flowers with petals shaped like cat's ears; southeastern Washington and northeastern Oregon to Montana",
+      "forms": [],
+      "id": "oewn-elegant_cat-ap-s_ears__1.20.00..",
+      "lang": "en",
+      "lemma": "elegant cat's ears",
+      "synset": "oewn-12468086-n"
+    },
+    {
+      "definition": "small plant with slender bent stems bearing branched clusters of a few white star-shaped flowers with petals shaped like cat's ears; southeastern Washington and northeastern Oregon to Montana",
+      "forms": [],
+      "id": "oewn-calochortus_elegans__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus elegans",
+      "synset": "oewn-12468086-n"
+    },
+    {
+      "definition": "mariposa with clusters of bell-shaped vermilion or orange or yellow flowers atop short stems; southern California to Arizona and Mexico",
+      "forms": [],
+      "id": "oewn-desert_mariposa_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "desert mariposa tulip",
+      "synset": "oewn-12468396-n"
+    },
+    {
+      "definition": "mariposa with clusters of bell-shaped vermilion or orange or yellow flowers atop short stems; southern California to Arizona and Mexico",
+      "forms": [],
+      "id": "oewn-calochortus_kennedyi__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus kennedyi",
+      "synset": "oewn-12468396-n"
+    },
+    {
+      "definition": "mariposa having clusters of a few large deep yellow bell-shaped flowers atop slender stems; California coastal ranges",
+      "forms": [],
+      "id": "oewn-yellow_mariposa_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow mariposa tulip",
+      "synset": "oewn-12468641-n"
+    },
+    {
+      "definition": "mariposa having clusters of a few large deep yellow bell-shaped flowers atop slender stems; California coastal ranges",
+      "forms": [],
+      "id": "oewn-calochortus_luteus__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus luteus",
+      "synset": "oewn-12468641-n"
+    },
+    {
+      "definition": "mariposa having loose clusters of one to three handsome lilac flowers resembling umbels atop stout erect stems; arid northwestern North America east of Cascade Mountains from southern British Columbia to northern California",
+      "forms": [],
+      "id": "oewn-sagebrush_mariposa_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "sagebrush mariposa tulip",
+      "synset": "oewn-12468866-n"
+    },
+    {
+      "definition": "mariposa having loose clusters of one to three handsome lilac flowers resembling umbels atop stout erect stems; arid northwestern North America east of Cascade Mountains from southern British Columbia to northern California",
+      "forms": [],
+      "id": "oewn-calochortus_macrocarpus__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus macrocarpus",
+      "synset": "oewn-12468866-n"
+    },
+    {
+      "definition": "perennial plant having clusters of one to four showy white bell-shaped flowers atop erect unbranched stems; edible bulbs useful in times of scarcity; eastern Montana and western North Dakota south to northern Arizona and northwestern New Mexico",
+      "forms": [],
+      "id": "oewn-sego_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "sego lily",
+      "synset": "oewn-12469205-n"
+    },
+    {
+      "definition": "perennial plant having clusters of one to four showy white bell-shaped flowers atop erect unbranched stems; edible bulbs useful in times of scarcity; eastern Montana and western North Dakota south to northern Arizona and northwestern New Mexico",
+      "forms": [],
+      "id": "oewn-calochortus_nuttallii__1.20.00..",
+      "lang": "en",
+      "lemma": "Calochortus nuttallii",
+      "synset": "oewn-12469205-n"
+    },
+    {
+      "definition": "any of several plants of the genus Camassia; North and South America",
+      "forms": [],
+      "id": "oewn-camas__1.20.00..",
+      "lang": "en",
+      "lemma": "camas",
+      "synset": "oewn-12469801-n"
+    },
+    {
+      "definition": "any of several plants of the genus Camassia; North and South America",
+      "forms": [],
+      "id": "oewn-camass__1.20.00..",
+      "lang": "en",
+      "lemma": "camass",
+      "synset": "oewn-12469801-n"
+    },
+    {
+      "definition": "any of several plants of the genus Camassia; North and South America",
+      "forms": [],
+      "id": "oewn-quamash__1.20.00..",
+      "lang": "en",
+      "lemma": "quamash",
+      "synset": "oewn-12469801-n"
+    },
+    {
+      "definition": "any of several plants of the genus Camassia; North and South America",
+      "forms": [],
+      "id": "oewn-camosh__1.20.00..",
+      "lang": "en",
+      "lemma": "camosh",
+      "synset": "oewn-12469801-n"
+    },
+    {
+      "definition": "any of several plants of the genus Camassia; North and South America",
+      "forms": [],
+      "id": "oewn-camash__1.20.00..",
+      "lang": "en",
+      "lemma": "camash",
+      "synset": "oewn-12469801-n"
+    },
+    {
+      "definition": "plant having a large edible bulb and linear basal leaves and racemes of light to deep violet-blue star-shaped flowers on tall green scapes; western North America",
+      "forms": [],
+      "id": "oewn-common_camas__1.20.00..",
+      "lang": "en",
+      "lemma": "common camas",
+      "synset": "oewn-12470031-n"
+    },
+    {
+      "definition": "plant having a large edible bulb and linear basal leaves and racemes of light to deep violet-blue star-shaped flowers on tall green scapes; western North America",
+      "forms": [],
+      "id": "oewn-camassia_quamash__1.20.00..",
+      "lang": "en",
+      "lemma": "Camassia quamash",
+      "synset": "oewn-12470031-n"
+    },
+    {
+      "definition": "camas found to the west of Cascade Mountains",
+      "forms": [],
+      "id": "oewn-leichtlin-ap-s_camas__1.20.00..",
+      "lang": "en",
+      "lemma": "Leichtlin's camas",
+      "synset": "oewn-12470289-n"
+    },
+    {
+      "definition": "camas found to the west of Cascade Mountains",
+      "forms": [],
+      "id": "oewn-camassia_leichtlinii__1.20.00..",
+      "lang": "en",
+      "lemma": "Camassia leichtlinii",
+      "synset": "oewn-12470289-n"
+    },
+    {
+      "definition": "eastern camas; eastern and central North America",
+      "forms": [],
+      "id": "oewn-wild_hyacinth__1.20.02..",
+      "lang": "en",
+      "lemma": "wild hyacinth",
+      "synset": "oewn-12470439-n"
+    },
+    {
+      "definition": "eastern camas; eastern and central North America",
+      "forms": [],
+      "id": "oewn-indigo_squill__1.20.00..",
+      "lang": "en",
+      "lemma": "indigo squill",
+      "synset": "oewn-12470439-n"
+    },
+    {
+      "definition": "eastern camas; eastern and central North America",
+      "forms": [],
+      "id": "oewn-camassia_scilloides__1.20.00..",
+      "lang": "en",
+      "lemma": "Camassia scilloides",
+      "synset": "oewn-12470439-n"
+    },
+    {
+      "definition": "perennial woodland spring-flowering plant; widely cultivated",
+      "forms": [],
+      "id": "oewn-dogtooth_violet__1.20.00..",
+      "lang": "en",
+      "lemma": "dogtooth violet",
+      "synset": "oewn-12470849-n"
+    },
+    {
+      "definition": "perennial woodland spring-flowering plant; widely cultivated",
+      "forms": [
+        "dogteeth"
+      ],
+      "id": "oewn-dogtooth__1.20.00..",
+      "lang": "en",
+      "lemma": "dogtooth",
+      "synset": "oewn-12470849-n"
+    },
+    {
+      "definition": "perennial woodland spring-flowering plant; widely cultivated",
+      "forms": [],
+      "id": "oewn-dog-ap-s-tooth_violet__1.20.00..",
+      "lang": "en",
+      "lemma": "dog's-tooth violet",
+      "synset": "oewn-12470849-n"
+    },
+    {
+      "definition": "North American dogtooth having solitary white flowers with yellow centers and blue or pink exteriors",
+      "forms": [],
+      "id": "oewn-white_dogtooth_violet__1.20.00..",
+      "lang": "en",
+      "lemma": "white dogtooth violet",
+      "synset": "oewn-12471112-n"
+    },
+    {
+      "definition": "North American dogtooth having solitary white flowers with yellow centers and blue or pink exteriors",
+      "forms": [],
+      "id": "oewn-white_dog-ap-s-tooth_violet__1.20.00..",
+      "lang": "en",
+      "lemma": "white dog's-tooth violet",
+      "synset": "oewn-12471112-n"
+    },
+    {
+      "definition": "North American dogtooth having solitary white flowers with yellow centers and blue or pink exteriors",
+      "forms": [],
+      "id": "oewn-blonde_lilian__1.20.00..",
+      "lang": "en",
+      "lemma": "blonde lilian",
+      "synset": "oewn-12471112-n"
+    },
+    {
+      "definition": "North American dogtooth having solitary white flowers with yellow centers and blue or pink exteriors",
+      "forms": [],
+      "id": "oewn-erythronium_albidum__1.20.00..",
+      "lang": "en",
+      "lemma": "Erythronium albidum",
+      "synset": "oewn-12471112-n"
+    },
+    {
+      "definition": "eastern North American dogtooth having solitary yellow flowers marked with brown or purple and spotted interiors",
+      "forms": [],
+      "id": "oewn-yellow_adder-ap-s_tongue__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow adder's tongue",
+      "synset": "oewn-12471345-n"
+    },
+    {
+      "definition": "eastern North American dogtooth having solitary yellow flowers marked with brown or purple and spotted interiors",
+      "forms": [],
+      "id": "oewn-trout_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "trout lily",
+      "synset": "oewn-12471345-n"
+    },
+    {
+      "definition": "eastern North American dogtooth having solitary yellow flowers marked with brown or purple and spotted interiors",
+      "forms": [],
+      "id": "oewn-amberbell__1.20.00..",
+      "lang": "en",
+      "lemma": "amberbell",
+      "synset": "oewn-12471345-n"
+    },
+    {
+      "definition": "eastern North American dogtooth having solitary yellow flowers marked with brown or purple and spotted interiors",
+      "forms": [],
+      "id": "oewn-erythronium_americanum__1.20.00..",
+      "lang": "en",
+      "lemma": "Erythronium americanum",
+      "synset": "oewn-12471345-n"
+    },
+    {
+      "definition": "sturdy European dogtooth with rose to mauve flowers; cultivated in many varieties",
+      "forms": [],
+      "id": "oewn-european_dogtooth__1.20.00..",
+      "lang": "en",
+      "lemma": "European dogtooth",
+      "synset": "oewn-12471575-n"
+    },
+    {
+      "definition": "sturdy European dogtooth with rose to mauve flowers; cultivated in many varieties",
+      "forms": [],
+      "id": "oewn-erythronium_dens-canis__1.20.00..",
+      "lang": "en",
+      "lemma": "Erythronium dens-canis",
+      "synset": "oewn-12471575-n"
+    },
+    {
+      "definition": "California dogtooth violet with creamy white flowers sometimes yellow-tinged",
+      "forms": [],
+      "id": "oewn-fawn_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "fawn lily",
+      "synset": "oewn-12471745-n"
+    },
+    {
+      "definition": "California dogtooth violet with creamy white flowers sometimes yellow-tinged",
+      "forms": [],
+      "id": "oewn-erythronium_californicum__1.20.00..",
+      "lang": "en",
+      "lemma": "Erythronium californicum",
+      "synset": "oewn-12471745-n"
+    },
+    {
+      "definition": "dogtooth violet of western North America having bright yellow flowers",
+      "forms": [],
+      "id": "oewn-glacier_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "glacier lily",
+      "synset": "oewn-12471904-n"
+    },
+    {
+      "definition": "dogtooth violet of western North America having bright yellow flowers",
+      "forms": [],
+      "id": "oewn-snow_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "snow lily",
+      "synset": "oewn-12471904-n"
+    },
+    {
+      "definition": "dogtooth violet of western North America having bright yellow flowers",
+      "forms": [],
+      "id": "oewn-erythronium_grandiflorum__1.20.00..",
+      "lang": "en",
+      "lemma": "Erythronium grandiflorum",
+      "synset": "oewn-12471904-n"
+    },
+    {
+      "definition": "perennial herb having large white flowers marked with orange; found near the snow line in the northwestern United States",
+      "forms": [],
+      "id": "oewn-avalanche_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "avalanche lily",
+      "synset": "oewn-12472071-n"
+    },
+    {
+      "definition": "perennial herb having large white flowers marked with orange; found near the snow line in the northwestern United States",
+      "forms": [],
+      "id": "oewn-erythronium_montanum__1.20.00..",
+      "lang": "en",
+      "lemma": "Erythronium montanum",
+      "synset": "oewn-12472071-n"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Fritillaria having nodding variously colored flowers",
+      "forms": [],
+      "id": "oewn-fritillary__1.20.00..",
+      "lang": "en",
+      "lemma": "fritillary",
+      "synset": "oewn-12472420-n"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Fritillaria having nodding variously colored flowers",
+      "forms": [],
+      "id": "oewn-checkered_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "checkered lily",
+      "synset": "oewn-12472420-n"
+    },
+    {
+      "definition": "herb of northwestern America having green-and-purple bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-mission_bells__1.20.01..",
+      "lang": "en",
+      "lemma": "mission bells",
+      "synset": "oewn-12472761-n"
+    },
+    {
+      "definition": "herb of northwestern America having green-and-purple bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-rice-grain_fritillary__1.20.00..",
+      "lang": "en",
+      "lemma": "rice-grain fritillary",
+      "synset": "oewn-12472761-n"
+    },
+    {
+      "definition": "herb of northwestern America having green-and-purple bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-fritillaria_affinis__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria affinis",
+      "synset": "oewn-12472761-n"
+    },
+    {
+      "definition": "herb of northwestern America having green-and-purple bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-fritillaria_lanceolata__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria lanceolata",
+      "synset": "oewn-12472761-n"
+    },
+    {
+      "definition": "herb of northwestern America having green-and-purple bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-fritillaria_mutica__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria mutica",
+      "synset": "oewn-12472761-n"
+    },
+    {
+      "definition": "herb of southwestern United States having dark purple bell-shaped flowers mottled with green",
+      "forms": [],
+      "id": "oewn-mission_bells__1.20.02..",
+      "lang": "en",
+      "lemma": "mission bells",
+      "synset": "oewn-12472985-n"
+    },
+    {
+      "definition": "herb of southwestern United States having dark purple bell-shaped flowers mottled with green",
+      "forms": [],
+      "id": "oewn-black_fritillary__1.20.00..",
+      "lang": "en",
+      "lemma": "black fritillary",
+      "synset": "oewn-12472985-n"
+    },
+    {
+      "definition": "herb of southwestern United States having dark purple bell-shaped flowers mottled with green",
+      "forms": [],
+      "id": "oewn-fritillaria_biflora__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria biflora",
+      "synset": "oewn-12472985-n"
+    },
+    {
+      "definition": "a malodorous California herb with bell-shaped flowers; a common weed in grainfields",
+      "forms": [],
+      "id": "oewn-stink_bell__1.20.00..",
+      "lang": "en",
+      "lemma": "stink bell",
+      "synset": "oewn-12473178-n"
+    },
+    {
+      "definition": "a malodorous California herb with bell-shaped flowers; a common weed in grainfields",
+      "forms": [],
+      "id": "oewn-fritillaria_agrestis__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria agrestis",
+      "synset": "oewn-12473178-n"
+    },
+    {
+      "definition": "Eurasian herb with a cluster of leaves and orange-red bell-shaped flowers at the top of the stem",
+      "forms": [],
+      "id": "oewn-crown_imperial__1.20.00..",
+      "lang": "en",
+      "lemma": "crown imperial",
+      "synset": "oewn-12473341-n"
+    },
+    {
+      "definition": "Eurasian herb with a cluster of leaves and orange-red bell-shaped flowers at the top of the stem",
+      "forms": [],
+      "id": "oewn-fritillaria_imperialis__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria imperialis",
+      "synset": "oewn-12473341-n"
+    },
+    {
+      "definition": "California herb with white conic or bell-shaped flowers usually tinged with green",
+      "forms": [],
+      "id": "oewn-white_fritillary__1.20.00..",
+      "lang": "en",
+      "lemma": "white fritillary",
+      "synset": "oewn-12473523-n"
+    },
+    {
+      "definition": "California herb with white conic or bell-shaped flowers usually tinged with green",
+      "forms": [],
+      "id": "oewn-fritillaria_liliaceae__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria liliaceae",
+      "synset": "oewn-12473523-n"
+    },
+    {
+      "definition": "Eurasian checkered lily with pendant flowers usually veined and checkered with purple or maroon on a pale ground and shaped like the bells carried by lepers in medieval times; widely grown as an ornamental",
+      "forms": [],
+      "id": "oewn-snake-ap-s_head_fritillary__1.20.00..",
+      "lang": "en",
+      "lemma": "snake's head fritillary",
+      "synset": "oewn-12473691-n"
+    },
+    {
+      "definition": "Eurasian checkered lily with pendant flowers usually veined and checkered with purple or maroon on a pale ground and shaped like the bells carried by lepers in medieval times; widely grown as an ornamental",
+      "forms": [],
+      "id": "oewn-guinea-hen_flower__1.20.00..",
+      "lang": "en",
+      "lemma": "guinea-hen flower",
+      "synset": "oewn-12473691-n"
+    },
+    {
+      "definition": "Eurasian checkered lily with pendant flowers usually veined and checkered with purple or maroon on a pale ground and shaped like the bells carried by lepers in medieval times; widely grown as an ornamental",
+      "forms": [],
+      "id": "oewn-checkered_daffodil__1.20.00..",
+      "lang": "en",
+      "lemma": "checkered daffodil",
+      "synset": "oewn-12473691-n"
+    },
+    {
+      "definition": "Eurasian checkered lily with pendant flowers usually veined and checkered with purple or maroon on a pale ground and shaped like the bells carried by lepers in medieval times; widely grown as an ornamental",
+      "forms": [],
+      "id": "oewn-leper_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "leper lily",
+      "synset": "oewn-12473691-n"
+    },
+    {
+      "definition": "Eurasian checkered lily with pendant flowers usually veined and checkered with purple or maroon on a pale ground and shaped like the bells carried by lepers in medieval times; widely grown as an ornamental",
+      "forms": [],
+      "id": "oewn-fritillaria_meleagris__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria meleagris",
+      "synset": "oewn-12473691-n"
+    },
+    {
+      "definition": "California herb with brownish-purple or greenish bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-brown_bells__1.20.00..",
+      "lang": "en",
+      "lemma": "brown bells",
+      "synset": "oewn-12474044-n"
+    },
+    {
+      "definition": "California herb with brownish-purple or greenish bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-fritillaria_micrantha__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria micrantha",
+      "synset": "oewn-12474044-n"
+    },
+    {
+      "definition": "California herb with brownish-purple or greenish bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-fritillaria_parviflora__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria parviflora",
+      "synset": "oewn-12474044-n"
+    },
+    {
+      "definition": "California herb with pinkish purple flowers",
+      "forms": [],
+      "id": "oewn-adobe_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "adobe lily",
+      "synset": "oewn-12474219-n"
+    },
+    {
+      "definition": "California herb with pinkish purple flowers",
+      "forms": [],
+      "id": "oewn-pink_fritillary__1.20.00..",
+      "lang": "en",
+      "lemma": "pink fritillary",
+      "synset": "oewn-12474219-n"
+    },
+    {
+      "definition": "California herb with pinkish purple flowers",
+      "forms": [],
+      "id": "oewn-fritillaria_pluriflora__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria pluriflora",
+      "synset": "oewn-12474219-n"
+    },
+    {
+      "definition": "western United States herb with scarlet and yellow narrow bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-scarlet_fritillary__1.20.00..",
+      "lang": "en",
+      "lemma": "scarlet fritillary",
+      "synset": "oewn-12474362-n"
+    },
+    {
+      "definition": "western United States herb with scarlet and yellow narrow bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-fritillaria_recurva__1.20.00..",
+      "lang": "en",
+      "lemma": "Fritillaria recurva",
+      "synset": "oewn-12474362-n"
+    },
+    {
+      "definition": "any of numerous perennial bulbous herbs having linear or broadly lanceolate leaves and usually a single showy flower",
+      "forms": [],
+      "id": "oewn-tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "tulip",
+      "synset": "oewn-12474664-n"
+    },
+    {
+      "definition": "small early blooming tulip",
+      "forms": [],
+      "id": "oewn-dwarf_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "dwarf tulip",
+      "synset": "oewn-12474941-n"
+    },
+    {
+      "definition": "small early blooming tulip",
+      "forms": [],
+      "id": "oewn-tulipa_armena__1.20.00..",
+      "lang": "en",
+      "lemma": "Tulipa armena",
+      "synset": "oewn-12474941-n"
+    },
+    {
+      "definition": "small early blooming tulip",
+      "forms": [],
+      "id": "oewn-tulipa_suaveolens__1.20.00..",
+      "lang": "en",
+      "lemma": "Tulipa suaveolens",
+      "synset": "oewn-12474941-n"
+    },
+    {
+      "definition": "Eurasian tulip with small flowers blotched at the base",
+      "forms": [],
+      "id": "oewn-lady_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "lady tulip",
+      "synset": "oewn-12475061-n"
+    },
+    {
+      "definition": "Eurasian tulip with small flowers blotched at the base",
+      "forms": [],
+      "id": "oewn-candlestick_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "candlestick tulip",
+      "synset": "oewn-12475061-n"
+    },
+    {
+      "definition": "Eurasian tulip with small flowers blotched at the base",
+      "forms": [],
+      "id": "oewn-tulipa_clusiana__1.20.00..",
+      "lang": "en",
+      "lemma": "Tulipa clusiana",
+      "synset": "oewn-12475061-n"
+    },
+    {
+      "definition": "tall late blooming tulip",
+      "forms": [],
+      "id": "oewn-tulipa_gesneriana__1.20.00..",
+      "lang": "en",
+      "lemma": "Tulipa gesneriana",
+      "synset": "oewn-12475210-n"
+    },
+    {
+      "definition": "any of several long-stemmed tulips that flower in May; have egg-shaped variously colored flowers",
+      "forms": [],
+      "id": "oewn-cottage_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "cottage tulip",
+      "synset": "oewn-12475298-n"
+    },
+    {
+      "definition": "any of several very tall, late blooming tulips bearing large squarish flowers on sturdy stems",
+      "forms": [],
+      "id": "oewn-darwin_tulip__1.20.00..",
+      "lang": "en",
+      "lemma": "Darwin tulip",
+      "synset": "oewn-12475454-n"
+    },
+    {
+      "definition": "bulbous autumn-flowering herb with white, purple or lavender-and-white flowers; native to western and central Europe",
+      "forms": [],
+      "id": "oewn-autumn_crocus__1.20.00..",
+      "lang": "en",
+      "lemma": "autumn crocus",
+      "synset": "oewn-12476045-n"
+    },
+    {
+      "definition": "bulbous autumn-flowering herb with white, purple or lavender-and-white flowers; native to western and central Europe",
+      "forms": [],
+      "id": "oewn-meadow_saffron__1.20.00..",
+      "lang": "en",
+      "lemma": "meadow saffron",
+      "synset": "oewn-12476045-n"
+    },
+    {
+      "definition": "bulbous autumn-flowering herb with white, purple or lavender-and-white flowers; native to western and central Europe",
+      "forms": [],
+      "id": "oewn-naked_lady__1.20.02..",
+      "lang": "en",
+      "lemma": "naked lady",
+      "synset": "oewn-12476045-n"
+    },
+    {
+      "definition": "bulbous autumn-flowering herb with white, purple or lavender-and-white flowers; native to western and central Europe",
+      "forms": [],
+      "id": "oewn-colchicum_autumnale__1.20.00..",
+      "lang": "en",
+      "lemma": "Colchicum autumnale",
+      "synset": "oewn-12476045-n"
+    },
+    {
+      "definition": "any of numerous perennials having tuberous roots and long narrow bladelike leaves and usually yellow lily-like flowers that bloom for only a day",
+      "forms": [],
+      "id": "oewn-day_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "day lily",
+      "synset": "oewn-12477350-n"
+    },
+    {
+      "definition": "any of numerous perennials having tuberous roots and long narrow bladelike leaves and usually yellow lily-like flowers that bloom for only a day",
+      "forms": [],
+      "id": "oewn-daylily__1.20.00..",
+      "lang": "en",
+      "lemma": "daylily",
+      "synset": "oewn-12477350-n"
+    },
+    {
+      "definition": "a day lily with yellow flowers",
+      "forms": [],
+      "id": "oewn-lemon_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "lemon lily",
+      "synset": "oewn-12477596-n"
+    },
+    {
+      "definition": "a day lily with yellow flowers",
+      "forms": [],
+      "id": "oewn-hemerocallis_lilio-asphodelus__1.20.00..",
+      "lang": "en",
+      "lemma": "Hemerocallis lilio-asphodelus",
+      "synset": "oewn-12477596-n"
+    },
+    {
+      "definition": "a day lily with yellow flowers",
+      "forms": [],
+      "id": "oewn-hemerocallis_flava__1.20.00..",
+      "lang": "en",
+      "lemma": "Hemerocallis flava",
+      "synset": "oewn-12477596-n"
+    },
+    {
+      "definition": "any of numerous bulbous perennial herbs",
+      "forms": [],
+      "id": "oewn-hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "hyacinth",
+      "synset": "oewn-12478888-n"
+    },
+    {
+      "definition": "widely grown for its fragrance and its white, pink, blue, or purplish flowers",
+      "forms": [],
+      "id": "oewn-common_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "common hyacinth",
+      "synset": "oewn-12479055-n"
+    },
+    {
+      "definition": "widely grown for its fragrance and its white, pink, blue, or purplish flowers",
+      "forms": [],
+      "id": "oewn-hyacinthus_orientalis__1.20.00..",
+      "lang": "en",
+      "lemma": "Hyacinthus orientalis",
+      "synset": "oewn-12479055-n"
+    },
+    {
+      "definition": "hyacinth with loosely flowered spikes, several growing from one bulb",
+      "forms": [],
+      "id": "oewn-roman_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "Roman hyacinth",
+      "synset": "oewn-12479218-n"
+    },
+    {
+      "definition": "hyacinth with loosely flowered spikes, several growing from one bulb",
+      "forms": [],
+      "id": "oewn-hyacinthus_orientalis_albulus__1.20.00..",
+      "lang": "en",
+      "lemma": "Hyacinthus orientalis albulus",
+      "synset": "oewn-12479218-n"
+    },
+    {
+      "definition": "southern African herb with white bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-summer_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "summer hyacinth",
+      "synset": "oewn-12479379-n"
+    },
+    {
+      "definition": "southern African herb with white bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-cape_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "cape hyacinth",
+      "synset": "oewn-12479379-n"
+    },
+    {
+      "definition": "southern African herb with white bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-hyacinthus_candicans__1.20.00..",
+      "lang": "en",
+      "lemma": "Hyacinthus candicans",
+      "synset": "oewn-12479379-n"
+    },
+    {
+      "definition": "southern African herb with white bell-shaped flowers",
+      "forms": [],
+      "id": "oewn-galtonia_candicans__1.20.00..",
+      "lang": "en",
+      "lemma": "Galtonia candicans",
+      "synset": "oewn-12479379-n"
+    },
+    {
+      "definition": "sometimes placed in genus Scilla",
+      "forms": [],
+      "id": "oewn-wild_hyacinth__1.20.01..",
+      "lang": "en",
+      "lemma": "wild hyacinth",
+      "synset": "oewn-12479780-n"
+    },
+    {
+      "definition": "sometimes placed in genus Scilla",
+      "forms": [],
+      "id": "oewn-wood_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "wood hyacinth",
+      "synset": "oewn-12479780-n"
+    },
+    {
+      "definition": "sometimes placed in genus Scilla",
+      "forms": [],
+      "id": "oewn-bluebell__1.20.02..",
+      "lang": "en",
+      "lemma": "bluebell",
+      "synset": "oewn-12479780-n"
+    },
+    {
+      "definition": "sometimes placed in genus Scilla",
+      "forms": [],
+      "id": "oewn-harebell__1.20.02..",
+      "lang": "en",
+      "lemma": "harebell",
+      "synset": "oewn-12479780-n"
+    },
+    {
+      "definition": "sometimes placed in genus Scilla",
+      "forms": [],
+      "id": "oewn-hyacinthoides_nonscripta__1.20.00..",
+      "lang": "en",
+      "lemma": "Hyacinthoides nonscripta",
+      "synset": "oewn-12479780-n"
+    },
+    {
+      "definition": "sometimes placed in genus Scilla",
+      "forms": [],
+      "id": "oewn-scilla_nonscripta__1.20.00..",
+      "lang": "en",
+      "lemma": "Scilla nonscripta",
+      "synset": "oewn-12479780-n"
+    },
+    {
+      "definition": "any of several perennial plants of the genus Ornithogalum native to the Mediterranean and having star-shaped flowers",
+      "forms": [],
+      "id": "oewn-star-of-bethlehem__1.20.00..",
+      "lang": "en",
+      "lemma": "star-of-Bethlehem",
+      "synset": "oewn-12480134-n"
+    },
+    {
+      "definition": "common Old World herb having grasslike leaves and clusters of star-shaped white flowers with green stripes; naturalized in the eastern United States",
+      "forms": [],
+      "id": "oewn-starflower__1.20.00..",
+      "lang": "en",
+      "lemma": "starflower",
+      "synset": "oewn-12480387-n"
+    },
+    {
+      "definition": "common Old World herb having grasslike leaves and clusters of star-shaped white flowers with green stripes; naturalized in the eastern United States",
+      "forms": [],
+      "id": "oewn-sleepy_dick__1.20.00..",
+      "lang": "en",
+      "lemma": "sleepy dick",
+      "synset": "oewn-12480387-n"
+    },
+    {
+      "definition": "common Old World herb having grasslike leaves and clusters of star-shaped white flowers with green stripes; naturalized in the eastern United States",
+      "forms": [],
+      "id": "oewn-summer_snowflake__1.20.00..",
+      "lang": "en",
+      "lemma": "summer snowflake",
+      "synset": "oewn-12480387-n"
+    },
+    {
+      "definition": "common Old World herb having grasslike leaves and clusters of star-shaped white flowers with green stripes; naturalized in the eastern United States",
+      "forms": [],
+      "id": "oewn-ornithogalum_umbellatum__1.20.00..",
+      "lang": "en",
+      "lemma": "Ornithogalum umbellatum",
+      "synset": "oewn-12480387-n"
+    },
+    {
+      "definition": "Old World star of Bethlehem having edible young shoots",
+      "forms": [],
+      "id": "oewn-bath_asparagus__1.20.00..",
+      "lang": "en",
+      "lemma": "bath asparagus",
+      "synset": "oewn-12480651-n"
+    },
+    {
+      "definition": "Old World star of Bethlehem having edible young shoots",
+      "forms": [],
+      "id": "oewn-prussian_asparagus__1.20.00..",
+      "lang": "en",
+      "lemma": "Prussian asparagus",
+      "synset": "oewn-12480651-n"
+    },
+    {
+      "definition": "Old World star of Bethlehem having edible young shoots",
+      "forms": [],
+      "id": "oewn-ornithogalum_pyrenaicum__1.20.00..",
+      "lang": "en",
+      "lemma": "Ornithogalum pyrenaicum",
+      "synset": "oewn-12480651-n"
+    },
+    {
+      "definition": "South African perennial with long-lasting spikes of white blossoms that are shipped in to Europe and America for use as winter cut flowers",
+      "forms": [],
+      "id": "oewn-chincherinchee__1.20.00..",
+      "lang": "en",
+      "lemma": "chincherinchee",
+      "synset": "oewn-12480813-n"
+    },
+    {
+      "definition": "South African perennial with long-lasting spikes of white blossoms that are shipped in to Europe and America for use as winter cut flowers",
+      "forms": [],
+      "id": "oewn-wonder_flower__1.20.00..",
+      "lang": "en",
+      "lemma": "wonder flower",
+      "synset": "oewn-12480813-n"
+    },
+    {
+      "definition": "South African perennial with long-lasting spikes of white blossoms that are shipped in to Europe and America for use as winter cut flowers",
+      "forms": [],
+      "id": "oewn-ornithogalum_thyrsoides__1.20.00..",
+      "lang": "en",
+      "lemma": "Ornithogalum thyrsoides",
+      "synset": "oewn-12480813-n"
+    },
+    {
+      "definition": "any of various early flowering spring hyacinths native to Eurasia having dense spikes of rounded blue flowers resembling bunches of small grapes",
+      "forms": [],
+      "id": "oewn-grape_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "grape hyacinth",
+      "synset": "oewn-12481202-n"
+    },
+    {
+      "definition": "prolific species having particularly beautiful dark blue flowers",
+      "forms": [],
+      "id": "oewn-common_grape_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "common grape hyacinth",
+      "synset": "oewn-12481462-n"
+    },
+    {
+      "definition": "prolific species having particularly beautiful dark blue flowers",
+      "forms": [],
+      "id": "oewn-muscari_neglectum__1.20.00..",
+      "lang": "en",
+      "lemma": "Muscari neglectum",
+      "synset": "oewn-12481462-n"
+    },
+    {
+      "definition": "large beautiful Mediterranean species having sterile bluish-violet flowers with fringed corollas forming a tuft above the fertile flowers",
+      "forms": [],
+      "id": "oewn-tassel_hyacinth__1.20.00..",
+      "lang": "en",
+      "lemma": "tassel hyacinth",
+      "synset": "oewn-12481614-n"
+    },
+    {
+      "definition": "large beautiful Mediterranean species having sterile bluish-violet flowers with fringed corollas forming a tuft above the fertile flowers",
+      "forms": [],
+      "id": "oewn-muscari_comosum__1.20.00..",
+      "lang": "en",
+      "lemma": "Muscari comosum",
+      "synset": "oewn-12481614-n"
+    },
+    {
+      "definition": "an Old World plant of the genus Scilla having narrow basal leaves and pink or blue or white racemose flowers",
+      "forms": [],
+      "id": "oewn-scilla__1.20.00..",
+      "lang": "en",
+      "lemma": "scilla",
+      "synset": "oewn-12481971-n"
+    },
+    {
+      "definition": "an Old World plant of the genus Scilla having narrow basal leaves and pink or blue or white racemose flowers",
+      "forms": [],
+      "id": "oewn-squill__1.20.00..",
+      "lang": "en",
+      "lemma": "squill",
+      "synset": "oewn-12481971-n"
+    },
+    {
+      "definition": "European scilla with small blue or purple flowers",
+      "forms": [],
+      "id": "oewn-spring_squill__1.20.00..",
+      "lang": "en",
+      "lemma": "spring squill",
+      "synset": "oewn-12482178-n"
+    },
+    {
+      "definition": "European scilla with small blue or purple flowers",
+      "forms": [],
+      "id": "oewn-scilla_verna__1.20.00..",
+      "lang": "en",
+      "lemma": "Scilla verna",
+      "synset": "oewn-12482178-n"
+    },
+    {
+      "definition": "European scilla with small blue or purple flowers",
+      "forms": [],
+      "id": "oewn-sea_onion__1.20.01..",
+      "lang": "en",
+      "lemma": "sea onion",
+      "synset": "oewn-12482178-n"
+    },
+    {
+      "definition": "a plant of the genus Tofieldia having linear chiefly basal leaves and small spicate flowers",
+      "forms": [],
+      "id": "oewn-false_asphodel__1.20.00..",
+      "lang": "en",
+      "lemma": "false asphodel",
+      "synset": "oewn-12482537-n"
+    },
+    {
+      "definition": "false asphodel having spikes of white flowers; of mountainous regions of Europe",
+      "forms": [],
+      "id": "oewn-scotch_asphodel__1.20.00..",
+      "lang": "en",
+      "lemma": "Scotch asphodel",
+      "synset": "oewn-12482726-n"
+    },
+    {
+      "definition": "false asphodel having spikes of white flowers; of mountainous regions of Europe",
+      "forms": [],
+      "id": "oewn-tofieldia_pusilla__1.20.00..",
+      "lang": "en",
+      "lemma": "Tofieldia pusilla",
+      "synset": "oewn-12482726-n"
+    },
+    {
+      "definition": "having dense spikes of small white flowers and yielding a bulb with medicinal properties",
+      "forms": [],
+      "id": "oewn-sea_squill__1.20.00..",
+      "lang": "en",
+      "lemma": "sea squill",
+      "synset": "oewn-12483087-n"
+    },
+    {
+      "definition": "having dense spikes of small white flowers and yielding a bulb with medicinal properties",
+      "forms": [],
+      "id": "oewn-sea_onion__1.20.02..",
+      "lang": "en",
+      "lemma": "sea onion",
+      "synset": "oewn-12483087-n"
+    },
+    {
+      "definition": "having dense spikes of small white flowers and yielding a bulb with medicinal properties",
+      "forms": [],
+      "id": "oewn-squill__1.20.02..",
+      "lang": "en",
+      "lemma": "squill",
+      "synset": "oewn-12483087-n"
+    },
+    {
+      "definition": "having dense spikes of small white flowers and yielding a bulb with medicinal properties",
+      "forms": [],
+      "id": "oewn-urginea_maritima__1.20.00..",
+      "lang": "en",
+      "lemma": "Urginea maritima",
+      "synset": "oewn-12483087-n"
+    },
+    {
+      "definition": "either of two herbaceous rushlike bog plants having small yellow flowers and grasslike leaves; north temperate regions",
+      "forms": [],
+      "id": "oewn-bog_asphodel__1.20.00..",
+      "lang": "en",
+      "lemma": "bog asphodel",
+      "synset": "oewn-12484248-n"
+    },
+    {
+      "definition": "of western Europe: Scandinavia to northern Spain and Portugal",
+      "forms": [],
+      "id": "oewn-european_bog_asphodel__1.20.00..",
+      "lang": "en",
+      "lemma": "European bog asphodel",
+      "synset": "oewn-12484480-n"
+    },
+    {
+      "definition": "of western Europe: Scandinavia to northern Spain and Portugal",
+      "forms": [],
+      "id": "oewn-narthecium_ossifragum__1.20.00..",
+      "lang": "en",
+      "lemma": "Narthecium ossifragum",
+      "synset": "oewn-12484480-n"
+    },
+    {
+      "definition": "of the eastern United States: New Jersey to South Carolina",
+      "forms": [],
+      "id": "oewn-american_bog_asphodel__1.20.00..",
+      "lang": "en",
+      "lemma": "American bog asphodel",
+      "synset": "oewn-12484633-n"
+    },
+    {
+      "definition": "of the eastern United States: New Jersey to South Carolina",
+      "forms": [],
+      "id": "oewn-narthecium_americanum__1.20.00..",
+      "lang": "en",
+      "lemma": "Narthecium americanum",
+      "synset": "oewn-12484633-n"
+    },
+    {
+      "definition": "perennial herbs of the lily family having thick toxic rhizomes",
+      "forms": [],
+      "id": "oewn-hellebore__1.20.02..",
+      "lang": "en",
+      "lemma": "hellebore",
+      "synset": "oewn-12484981-n"
+    },
+    {
+      "definition": "perennial herbs of the lily family having thick toxic rhizomes",
+      "forms": [],
+      "id": "oewn-false_hellebore__1.20.00..",
+      "lang": "en",
+      "lemma": "false hellebore",
+      "synset": "oewn-12484981-n"
+    },
+    {
+      "definition": "North American plant having large leaves and yellowish green flowers growing in racemes; yields a toxic alkaloid used medicinally",
+      "forms": [],
+      "id": "oewn-white_hellebore__1.20.00..",
+      "lang": "en",
+      "lemma": "white hellebore",
+      "synset": "oewn-12485154-n"
+    },
+    {
+      "definition": "North American plant having large leaves and yellowish green flowers growing in racemes; yields a toxic alkaloid used medicinally",
+      "forms": [],
+      "id": "oewn-american_hellebore__1.20.00..",
+      "lang": "en",
+      "lemma": "American hellebore",
+      "synset": "oewn-12485154-n"
+    },
+    {
+      "definition": "North American plant having large leaves and yellowish green flowers growing in racemes; yields a toxic alkaloid used medicinally",
+      "forms": [],
+      "id": "oewn-indian_poke__1.20.01..",
+      "lang": "en",
+      "lemma": "Indian poke",
+      "synset": "oewn-12485154-n"
+    },
+    {
+      "definition": "North American plant having large leaves and yellowish green flowers growing in racemes; yields a toxic alkaloid used medicinally",
+      "forms": [],
+      "id": "oewn-bugbane__1.20.02..",
+      "lang": "en",
+      "lemma": "bugbane",
+      "synset": "oewn-12485154-n"
+    },
+    {
+      "definition": "North American plant having large leaves and yellowish green flowers growing in racemes; yields a toxic alkaloid used medicinally",
+      "forms": [],
+      "id": "oewn-veratrum_viride__1.20.00..",
+      "lang": "en",
+      "lemma": "Veratrum viride",
+      "synset": "oewn-12485154-n"
+    },
+    {
+      "definition": "plant of western North America having woody rhizomes and tufts of stiff grasslike basal leaves and spikes of creamy white flowers",
+      "forms": [],
+      "id": "oewn-squaw_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "squaw grass",
+      "synset": "oewn-12486062-n"
+    },
+    {
+      "definition": "plant of western North America having woody rhizomes and tufts of stiff grasslike basal leaves and spikes of creamy white flowers",
+      "forms": [],
+      "id": "oewn-bear_grass__1.20.04..",
+      "lang": "en",
+      "lemma": "bear grass",
+      "synset": "oewn-12486062-n"
+    },
+    {
+      "definition": "plant of western North America having woody rhizomes and tufts of stiff grasslike basal leaves and spikes of creamy white flowers",
+      "forms": [],
+      "id": "oewn-xerophyllum_tenax__1.20.00..",
+      "lang": "en",
+      "lemma": "Xerophyllum tenax",
+      "synset": "oewn-12486062-n"
+    },
+    {
+      "definition": "any of various plants of the genus Zigadenus having glaucous leaves and terminal racemes of mostly white flowers; all are poisonous",
+      "forms": [],
+      "id": "oewn-death_camas__1.20.00..",
+      "lang": "en",
+      "lemma": "death camas",
+      "synset": "oewn-12487232-n"
+    },
+    {
+      "definition": "any of various plants of the genus Zigadenus having glaucous leaves and terminal racemes of mostly white flowers; all are poisonous",
+      "forms": [],
+      "id": "oewn-zigadene__1.20.00..",
+      "lang": "en",
+      "lemma": "zigadene",
+      "synset": "oewn-12487232-n"
+    },
+    {
+      "definition": "plant of western North America having grasslike leaves and greenish-white flowers",
+      "forms": [],
+      "id": "oewn-alkali_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "alkali grass",
+      "synset": "oewn-12487523-n"
+    },
+    {
+      "definition": "plant of western North America having grasslike leaves and greenish-white flowers",
+      "forms": [],
+      "id": "oewn-zigadenus_elegans__1.20.00..",
+      "lang": "en",
+      "lemma": "Zigadenus elegans",
+      "synset": "oewn-12487523-n"
+    },
+    {
+      "definition": "plant of eastern and central North America having creamy white flowers tinged with brown or purple; poisonous especially to grazing animals",
+      "forms": [],
+      "id": "oewn-white_camas__1.20.00..",
+      "lang": "en",
+      "lemma": "white camas",
+      "synset": "oewn-12487702-n"
+    },
+    {
+      "definition": "plant of eastern and central North America having creamy white flowers tinged with brown or purple; poisonous especially to grazing animals",
+      "forms": [],
+      "id": "oewn-zigadenus_glaucus__1.20.00..",
+      "lang": "en",
+      "lemma": "Zigadenus glaucus",
+      "synset": "oewn-12487702-n"
+    },
+    {
+      "definition": "a common perennial death camas; Tennessee to Kansas to Texas",
+      "forms": [],
+      "id": "oewn-poison_camas__1.20.00..",
+      "lang": "en",
+      "lemma": "poison camas",
+      "synset": "oewn-12487938-n"
+    },
+    {
+      "definition": "a common perennial death camas; Tennessee to Kansas to Texas",
+      "forms": [],
+      "id": "oewn-zigadenus_nuttalli__1.20.00..",
+      "lang": "en",
+      "lemma": "Zigadenus nuttalli",
+      "synset": "oewn-12487938-n"
+    },
+    {
+      "definition": "plant of western North America to Mexico; poisonous especially to grazing animals",
+      "forms": [],
+      "id": "oewn-grassy_death_camas__1.20.00..",
+      "lang": "en",
+      "lemma": "grassy death camas",
+      "synset": "oewn-12488097-n"
+    },
+    {
+      "definition": "plant of western North America to Mexico; poisonous especially to grazing animals",
+      "forms": [],
+      "id": "oewn-zigadenus_venenosus__1.20.00..",
+      "lang": "en",
+      "lemma": "Zigadenus venenosus",
+      "synset": "oewn-12488097-n"
+    },
+    {
+      "definition": "plant of western North America to Mexico; poisonous especially to grazing animals",
+      "forms": [],
+      "id": "oewn-zigadenus_venenosus_gramineus__1.20.00..",
+      "lang": "en",
+      "lemma": "Zigadenus venenosus gramineus",
+      "synset": "oewn-12488097-n"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Trillium having a whorl of three leaves at the top of the stem with a single three-petaled flower",
+      "forms": [],
+      "id": "oewn-trillium__1.20.00..",
+      "lang": "en",
+      "lemma": "trillium",
+      "synset": "oewn-12488748-n"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Trillium having a whorl of three leaves at the top of the stem with a single three-petaled flower",
+      "forms": [],
+      "id": "oewn-wood_lily__1.20.02..",
+      "lang": "en",
+      "lemma": "wood lily",
+      "synset": "oewn-12488748-n"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Trillium having a whorl of three leaves at the top of the stem with a single three-petaled flower",
+      "forms": [],
+      "id": "oewn-wake-robin__1.20.00..",
+      "lang": "en",
+      "lemma": "wake-robin",
+      "synset": "oewn-12488748-n"
+    },
+    {
+      "definition": "trillium of central United States having dark purple sessile flowers",
+      "forms": [],
+      "id": "oewn-prairie_wake-robin__1.20.00..",
+      "lang": "en",
+      "lemma": "prairie wake-robin",
+      "synset": "oewn-12489050-n"
+    },
+    {
+      "definition": "trillium of central United States having dark purple sessile flowers",
+      "forms": [],
+      "id": "oewn-prairie_trillium__1.20.00..",
+      "lang": "en",
+      "lemma": "prairie trillium",
+      "synset": "oewn-12489050-n"
+    },
+    {
+      "definition": "trillium of central United States having dark purple sessile flowers",
+      "forms": [],
+      "id": "oewn-trillium_recurvatum__1.20.00..",
+      "lang": "en",
+      "lemma": "Trillium recurvatum",
+      "synset": "oewn-12489050-n"
+    },
+    {
+      "definition": "a low perennial white-flowered trillium found in the southeastern United States",
+      "forms": [],
+      "id": "oewn-dwarf-white_trillium__1.20.00..",
+      "lang": "en",
+      "lemma": "dwarf-white trillium",
+      "synset": "oewn-12489224-n"
+    },
+    {
+      "definition": "a low perennial white-flowered trillium found in the southeastern United States",
+      "forms": [],
+      "id": "oewn-snow_trillium__1.20.00..",
+      "lang": "en",
+      "lemma": "snow trillium",
+      "synset": "oewn-12489224-n"
+    },
+    {
+      "definition": "a low perennial white-flowered trillium found in the southeastern United States",
+      "forms": [],
+      "id": "oewn-early_wake-robin__1.20.00..",
+      "lang": "en",
+      "lemma": "early wake-robin",
+      "synset": "oewn-12489224-n"
+    },
+    {
+      "definition": "trillium of eastern North America having malodorous pink to purple flowers and an astringent root used in folk medicine especially to ease childbirth",
+      "forms": [],
+      "id": "oewn-purple_trillium__1.20.00..",
+      "lang": "en",
+      "lemma": "purple trillium",
+      "synset": "oewn-12489405-n"
+    },
+    {
+      "definition": "trillium of eastern North America having malodorous pink to purple flowers and an astringent root used in folk medicine especially to ease childbirth",
+      "forms": [],
+      "id": "oewn-red_trillium__1.20.01..",
+      "lang": "en",
+      "lemma": "red trillium",
+      "synset": "oewn-12489405-n"
+    },
+    {
+      "definition": "trillium of eastern North America having malodorous pink to purple flowers and an astringent root used in folk medicine especially to ease childbirth",
+      "forms": [],
+      "id": "oewn-birthroot__1.20.00..",
+      "lang": "en",
+      "lemma": "birthroot",
+      "synset": "oewn-12489405-n"
+    },
+    {
+      "definition": "trillium of eastern North America having malodorous pink to purple flowers and an astringent root used in folk medicine especially to ease childbirth",
+      "forms": [],
+      "id": "oewn-trillium_erectum__1.20.00..",
+      "lang": "en",
+      "lemma": "Trillium erectum",
+      "synset": "oewn-12489405-n"
+    },
+    {
+      "definition": "trillium of northeastern United States with sessile leaves and red or purple flowers having a pungent odor",
+      "forms": [],
+      "id": "oewn-red_trillium__1.20.02..",
+      "lang": "en",
+      "lemma": "red trillium",
+      "synset": "oewn-12489662-n"
+    },
+    {
+      "definition": "trillium of northeastern United States with sessile leaves and red or purple flowers having a pungent odor",
+      "forms": [],
+      "id": "oewn-toadshade__1.20.00..",
+      "lang": "en",
+      "lemma": "toadshade",
+      "synset": "oewn-12489662-n"
+    },
+    {
+      "definition": "trillium of northeastern United States with sessile leaves and red or purple flowers having a pungent odor",
+      "forms": [],
+      "id": "oewn-sessile_trillium__1.20.00..",
+      "lang": "en",
+      "lemma": "sessile trillium",
+      "synset": "oewn-12489662-n"
+    },
+    {
+      "definition": "trillium of northeastern United States with sessile leaves and red or purple flowers having a pungent odor",
+      "forms": [],
+      "id": "oewn-trillium_sessile__1.20.00..",
+      "lang": "en",
+      "lemma": "Trillium sessile",
+      "synset": "oewn-12489662-n"
+    },
+    {
+      "definition": "low-growing perennial plant having usually two large oblong lanceolate leaves and a raceme of small fragrant nodding bell-shaped flowers followed by scarlet berries",
+      "forms": [],
+      "id": "oewn-lily_of_the_valley__1.20.00..",
+      "lang": "en",
+      "lemma": "lily of the valley",
+      "synset": "oewn-12492049-n"
+    },
+    {
+      "definition": "low-growing perennial plant having usually two large oblong lanceolate leaves and a raceme of small fragrant nodding bell-shaped flowers followed by scarlet berries",
+      "forms": [],
+      "id": "oewn-may_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "May lily",
+      "synset": "oewn-12492049-n"
+    },
+    {
+      "definition": "low-growing perennial plant having usually two large oblong lanceolate leaves and a raceme of small fragrant nodding bell-shaped flowers followed by scarlet berries",
+      "forms": [],
+      "id": "oewn-convallaria_majalis__1.20.00..",
+      "lang": "en",
+      "lemma": "Convallaria majalis",
+      "synset": "oewn-12492049-n"
+    },
+    {
+      "definition": "any temperate liliaceous plant of the genus Clintonia having broad basal leaves and white or yellowish or purplish flowers followed by blue or black berries",
+      "forms": [],
+      "id": "oewn-clintonia__1.20.00..",
+      "lang": "en",
+      "lemma": "clintonia",
+      "synset": "oewn-12492529-n"
+    },
+    {
+      "definition": "any temperate liliaceous plant of the genus Clintonia having broad basal leaves and white or yellowish or purplish flowers followed by blue or black berries",
+      "forms": [],
+      "id": "oewn-clinton-ap-s_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "Clinton's lily",
+      "synset": "oewn-12492529-n"
+    },
+    {
+      "definition": "plant with nearly leafless stalk topped by a cluster of red or reddish lavender flowers; California to Oregon",
+      "forms": [],
+      "id": "oewn-red_clintonia__1.20.00..",
+      "lang": "en",
+      "lemma": "red Clintonia",
+      "synset": "oewn-12492831-n"
+    },
+    {
+      "definition": "plant with nearly leafless stalk topped by a cluster of red or reddish lavender flowers; California to Oregon",
+      "forms": [],
+      "id": "oewn-andrew-ap-s_clintonia__1.20.00..",
+      "lang": "en",
+      "lemma": "Andrew's clintonia",
+      "synset": "oewn-12492831-n"
+    },
+    {
+      "definition": "plant with nearly leafless stalk topped by a cluster of red or reddish lavender flowers; California to Oregon",
+      "forms": [],
+      "id": "oewn-clintonia_andrewsiana__1.20.00..",
+      "lang": "en",
+      "lemma": "Clintonia andrewsiana",
+      "synset": "oewn-12492831-n"
+    },
+    {
+      "definition": "common woodland herb of temperate North America having yellow nodding flowers and small round blue fruits",
+      "forms": [],
+      "id": "oewn-yellow_clintonia__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow clintonia",
+      "synset": "oewn-12493064-n"
+    },
+    {
+      "definition": "common woodland herb of temperate North America having yellow nodding flowers and small round blue fruits",
+      "forms": [],
+      "id": "oewn-heal_all__1.20.01..",
+      "lang": "en",
+      "lemma": "heal all",
+      "synset": "oewn-12493064-n"
+    },
+    {
+      "definition": "common woodland herb of temperate North America having yellow nodding flowers and small round blue fruits",
+      "forms": [],
+      "id": "oewn-clintonia_borealis__1.20.00..",
+      "lang": "en",
+      "lemma": "Clintonia borealis",
+      "synset": "oewn-12493064-n"
+    },
+    {
+      "definition": "plant with 1 or 2 white starlike flowers on short leafless stalks; Alaska to California and east to Oregon and Montana",
+      "forms": [],
+      "id": "oewn-queen-ap-s_cup__1.20.00..",
+      "lang": "en",
+      "lemma": "queen's cup",
+      "synset": "oewn-12493283-n"
+    },
+    {
+      "definition": "plant with 1 or 2 white starlike flowers on short leafless stalks; Alaska to California and east to Oregon and Montana",
+      "forms": [],
+      "id": "oewn-bride-ap-s_bonnet__1.20.00..",
+      "lang": "en",
+      "lemma": "bride's bonnet",
+      "synset": "oewn-12493283-n"
+    },
+    {
+      "definition": "plant with 1 or 2 white starlike flowers on short leafless stalks; Alaska to California and east to Oregon and Montana",
+      "forms": [],
+      "id": "oewn-clintonia_uniflora__1.20.00..",
+      "lang": "en",
+      "lemma": "Clintonia uniflora",
+      "synset": "oewn-12493283-n"
+    },
+    {
+      "definition": "Asiatic perennial tufted herb with grasslike evergreen foliage and clusters of dark mauve grapelike flowers; grown as ground cover",
+      "forms": [],
+      "id": "oewn-lilyturf__1.20.00..",
+      "lang": "en",
+      "lemma": "lilyturf",
+      "synset": "oewn-12493676-n"
+    },
+    {
+      "definition": "Asiatic perennial tufted herb with grasslike evergreen foliage and clusters of dark mauve grapelike flowers; grown as ground cover",
+      "forms": [],
+      "id": "oewn-lily_turf__1.20.00..",
+      "lang": "en",
+      "lemma": "lily turf",
+      "synset": "oewn-12493676-n"
+    },
+    {
+      "definition": "Asiatic perennial tufted herb with grasslike evergreen foliage and clusters of dark mauve grapelike flowers; grown as ground cover",
+      "forms": [],
+      "id": "oewn-liriope_muscari__1.20.00..",
+      "lang": "en",
+      "lemma": "Liriope muscari",
+      "synset": "oewn-12493676-n"
+    },
+    {
+      "definition": "small two-leaved herb of the northern United States and parts of Canada having racemes of small fragrant white flowers",
+      "forms": [],
+      "id": "oewn-false_lily_of_the_valley__1.20.01..",
+      "lang": "en",
+      "lemma": "false lily of the valley",
+      "synset": "oewn-12494113-n"
+    },
+    {
+      "definition": "small two-leaved herb of the northern United States and parts of Canada having racemes of small fragrant white flowers",
+      "forms": [],
+      "id": "oewn-maianthemum_canadense__1.20.00..",
+      "lang": "en",
+      "lemma": "Maianthemum canadense",
+      "synset": "oewn-12494113-n"
+    },
+    {
+      "definition": "small white-flowered plant of western Europe to Japan",
+      "forms": [],
+      "id": "oewn-false_lily_of_the_valley__1.20.02..",
+      "lang": "en",
+      "lemma": "false lily of the valley",
+      "synset": "oewn-12494345-n"
+    },
+    {
+      "definition": "small white-flowered plant of western Europe to Japan",
+      "forms": [],
+      "id": "oewn-maianthemum_bifolium__1.20.00..",
+      "lang": "en",
+      "lemma": "Maianthemum bifolium",
+      "synset": "oewn-12494345-n"
+    },
+    {
+      "definition": "any of several plants of the genus Polygonatum having paired drooping yellowish-green flowers and a thick rootstock with scars shaped like Solomon's seal",
+      "forms": [],
+      "id": "oewn-solomon-ap-s-seal__1.20.00..",
+      "lang": "en",
+      "lemma": "Solomon's-seal",
+      "synset": "oewn-12494672-n"
+    },
+    {
+      "definition": "North American perennial herb with smooth foliage and drooping tubular greenish flowers",
+      "forms": [],
+      "id": "oewn-great_solomon-ap-s-seal__1.20.00..",
+      "lang": "en",
+      "lemma": "great Solomon's-seal",
+      "synset": "oewn-12494923-n"
+    },
+    {
+      "definition": "North American perennial herb with smooth foliage and drooping tubular greenish flowers",
+      "forms": [],
+      "id": "oewn-polygonatum_biflorum__1.20.00..",
+      "lang": "en",
+      "lemma": "Polygonatum biflorum",
+      "synset": "oewn-12494923-n"
+    },
+    {
+      "definition": "North American perennial herb with smooth foliage and drooping tubular greenish flowers",
+      "forms": [],
+      "id": "oewn-polygonatum_commutatum__1.20.00..",
+      "lang": "en",
+      "lemma": "Polygonatum commutatum",
+      "synset": "oewn-12494923-n"
+    },
+    {
+      "definition": "plant growing from a bulb",
+      "forms": [],
+      "id": "oewn-bulbous_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "bulbous plant",
+      "synset": "oewn-13155061-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "any bulbous plant of the family Iridaceae",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12431966-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "iridaceous plant"
+    },
+    {
+      "definition": "plants with sword-shaped leaves and erect stalks bearing bright-colored flowers composed of three petals and three drooping sepals",
+      "hypernyms": [
+        "oewn-12431966-n"
+      ],
+      "id": "oewn-12432427-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "iris"
+    },
+    {
+      "definition": "any of numerous wild or cultivated irises with hairlike structures on the falls (the drooping sepals)",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12432860-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "bearded iris"
+    },
+    {
+      "definition": "any of numerous wild or cultivated irises having no hairs on the drooping sepals (the falls)",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12433111-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "beardless iris"
+    },
+    {
+      "definition": "any of various irises having a rootstock formed like a bulb",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12433355-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "bulbous iris"
+    },
+    {
+      "definition": "low-growing summer-flowering iris of northeastern United States",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12433670-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "dwarf iris"
+    },
+    {
+      "definition": "bulbous Spanish iris with red-violet flowers",
+      "hypernyms": [
+        "oewn-12433111-n"
+      ],
+      "id": "oewn-12433806-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Dutch iris"
+    },
+    {
+      "definition": "German iris having large white flowers with lavender-tinged falls and a fragrant rhizome",
+      "hypernyms": [
+        "oewn-12432860-n"
+      ],
+      "id": "oewn-12433924-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Florentine iris"
+    },
+    {
+      "definition": "iris with purple flowers and foul-smelling leaves; southern and western Europe and North Africa",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12434147-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "stinking iris"
+    },
+    {
+      "definition": "a large iris with purple or white flowers, native to central and southern Europe",
+      "hypernyms": [
+        "oewn-12432860-n"
+      ],
+      "id": "oewn-12434385-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "German iris"
+    },
+    {
+      "definition": "iris native to Japan having large showy flowers",
+      "hypernyms": [
+        "oewn-12433111-n"
+      ],
+      "id": "oewn-12434540-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Japanese iris"
+    },
+    {
+      "definition": "iris of northern Italy having deep blue-purple flowers; similar to but smaller than Iris germanica",
+      "hypernyms": [
+        "oewn-12432860-n"
+      ],
+      "id": "oewn-12434664-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "German iris"
+    },
+    {
+      "definition": "European iris having soft lilac-blue flowers",
+      "hypernyms": [
+        "oewn-12432860-n"
+      ],
+      "id": "oewn-12434834-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Dalmatian iris"
+    },
+    {
+      "definition": "bulbous iris native to Asia Minor cultivated for its pale lilac-colored flowers",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12434954-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Persian iris"
+    },
+    {
+      "definition": "common yellow-flowered iris of Europe and North Africa, naturalized in United States and often cultivated",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12435107-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "yellow iris"
+    },
+    {
+      "definition": "bulbous Spanish iris having blue flowers",
+      "hypernyms": [
+        "oewn-12433111-n"
+      ],
+      "id": "oewn-12435323-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Dutch iris"
+    },
+    {
+      "definition": "low-growing spring-flowering American iris with bright blue-lilac flowers",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12435437-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "dwarf iris"
+    },
+    {
+      "definition": "a common iris of the eastern United States having blue or blue-violet flowers; root formerly used medicinally",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12435594-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "blue flag"
+    },
+    {
+      "definition": "similar to blue flag; the eastern United States",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12435777-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "southern blue flag"
+    },
+    {
+      "definition": "bulbous iris native to the Pyrenees; widely cultivated for its large delicate flowers in various colors except yellow",
+      "hypernyms": [
+        "oewn-12432427-n"
+      ],
+      "id": "oewn-12435906-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "English iris"
+    },
+    {
+      "definition": "bulbous iris of western Mediterranean region having usually violet-purple flowers",
+      "hypernyms": [
+        "oewn-12433111-n"
+      ],
+      "id": "oewn-12436100-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Spanish iris"
+    },
+    {
+      "definition": "garden plant whose capsule discloses when ripe a mass of seeds resembling a blackberry",
+      "hypernyms": [
+        "oewn-12431966-n"
+      ],
+      "id": "oewn-12436578-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "blackberry-lily"
+    },
+    {
+      "definition": "any of numerous low-growing plants of the genus Crocus having slender grasslike leaves and white or yellow or purple flowers; native chiefly to the Mediterranean region but widely cultivated",
+      "hypernyms": [
+        "oewn-12431966-n"
+      ],
+      "id": "oewn-12436928-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "crocus"
+    },
+    {
+      "definition": "Old World crocus having purple or white flowers with aromatic pungent orange stigmas used in flavoring food",
+      "hypernyms": [
+        "oewn-12436928-n"
+      ],
+      "id": "oewn-12437208-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "saffron"
+    },
+    {
+      "definition": "any of several plants of the genus Freesia valued for their one-sided clusters of usually fragrant yellow or white or pink tubular flowers",
+      "hypernyms": [
+        "oewn-12431966-n"
+      ],
+      "id": "oewn-12437567-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "freesia"
+    },
+    {
+      "definition": "any of numerous plants of the genus Gladiolus native chiefly to tropical and South Africa having sword-shaped leaves and one-sided spikes of brightly colored funnel-shaped flowers; widely cultivated",
+      "hypernyms": [
+        "oewn-12431966-n"
+      ],
+      "id": "oewn-12437887-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "gladiolus"
+    },
+    {
+      "definition": "any of several South African plants of the genus Ixia having grasslike leaves and clusters of showy variously colored lily-like flowers; widely cultivated",
+      "hypernyms": [
+        "oewn-12431966-n"
+      ],
+      "id": "oewn-12438341-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "corn lily"
+    },
+    {
+      "definition": "plant with grasslike foliage and delicate blue flowers",
+      "hypernyms": [
+        "oewn-12431966-n"
+      ],
+      "id": "oewn-12438726-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "blue-eyed grass"
+    },
+    {
+      "definition": "bulbous plant having showy white to reddish flowers",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12439542-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "amaryllis"
+    },
+    {
+      "definition": "amaryllis of South Africa often cultivated for its fragrant white or rose flowers",
+      "hypernyms": [
+        "oewn-12439542-n"
+      ],
+      "id": "oewn-12439899-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "belladonna lily"
+    },
+    {
+      "definition": "any of various deciduous or evergreen herbs of the genus Haemanthus; South Africa and Namibia",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12441040-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "blood lily"
+    },
+    {
+      "definition": "spectacular plant having large prostrate leaves barred in reddish-purple and flowers with a clump of long yellow stamens in a coral-red cup of fleshy bracts; South Africa",
+      "hypernyms": [
+        "oewn-12441040-n"
+      ],
+      "id": "oewn-12441227-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "Cape tulip"
+    },
+    {
+      "definition": "amaryllis of tropical America often cultivated as a houseplant for its showy white to red flowers",
+      "hypernyms": [
+        "oewn-12439542-n"
+      ],
+      "id": "oewn-12441642-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "hippeastrum"
+    },
+    {
+      "definition": "bulbous plant having erect linear leaves and showy yellow or white flowers either solitary or in clusters",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12441972-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "narcissus"
+    },
+    {
+      "definition": "any of numerous varieties of Narcissus plants having showy often yellow flowers with a trumpet-shaped central crown",
+      "hypernyms": [
+        "oewn-12441972-n"
+      ],
+      "id": "oewn-12442188-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "daffodil"
+    },
+    {
+      "definition": "widely cultivated ornamental plant native to southern Europe but naturalized elsewhere having fragrant yellow or white clustered flowers",
+      "hypernyms": [
+        "oewn-12441972-n"
+      ],
+      "id": "oewn-12442422-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "jonquil"
+    },
+    {
+      "definition": "often used colloquially for any yellow daffodil",
+      "hypernyms": [
+        "oewn-12442188-n"
+      ],
+      "id": "oewn-12442634-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "jonquil"
+    },
+    {
+      "definition": "a daffodil having star-shaped white blossoms; often grown indoors to bloom in the winter",
+      "hypernyms": [
+        "oewn-12442188-n"
+      ],
+      "id": "oewn-12442735-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "paper white"
+    },
+    {
+      "definition": "Mexican bulbous herb cultivated for its handsome bright red solitary flower",
+      "hypernyms": [
+        "oewn-12439542-n"
+      ],
+      "id": "oewn-12443064-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "Jacobean lily"
+    },
+    {
+      "definition": "plant growing from a bulb or corm or rhizome or tuber",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12445786-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "liliaceous plant"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Lilium having showy pendulous flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12446753-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "lily"
+    },
+    {
+      "definition": "Japanese lily with golden rays",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12447128-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "mountain lily"
+    },
+    {
+      "definition": "common lily of the eastern United States having nodding yellow or reddish flowers spotted with brown",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12447254-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Canada lily"
+    },
+    {
+      "definition": "lily of eastern Mediterranean and the Balkans with broad funnel-shaped white flowers",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12447483-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Madonna lily"
+    },
+    {
+      "definition": "lily of southeastern United States having cup-shaped flowers with deep yellow to scarlet recurved petals",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12447689-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tiger lily"
+    },
+    {
+      "definition": "lily of western North America with showy orange-red purple-spotted flowers",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12447896-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Columbia tiger lily"
+    },
+    {
+      "definition": "east Asian perennial having large reddish-orange black-spotted flowers with reflexed petals",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12448071-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tiger lily"
+    },
+    {
+      "definition": "tall lily have large white trumpet-shaped flowers that bloom in the spring",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12448262-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Easter lily"
+    },
+    {
+      "definition": "orange-flowered lily of Pacific coast of United States",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12448451-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "coast lily"
+    },
+    {
+      "definition": "lily with small dull purple flowers of northwestern Europe and northwestern Asia",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12448581-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Turk's-cap"
+    },
+    {
+      "definition": "lily of central North America having recurved orange-red flowers with deep crimson spots",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12448747-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Michigan lily"
+    },
+    {
+      "definition": "lily of western United States having orange-red to crimson maroon-spotted flowers",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12448917-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "leopard lily"
+    },
+    {
+      "definition": "lily of eastern North America having orange to orange-red purple-spotted flowers",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12449092-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "wood lily"
+    },
+    {
+      "definition": "lily of the eastern United States with orange to red maroon-spotted flowers",
+      "hypernyms": [
+        "oewn-12446753-n"
+      ],
+      "id": "oewn-12449252-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Turk's-cap"
+    },
+    {
+      "definition": "any of various plants of the genus Agapanthus having umbels of showy blue to purple flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12449653-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "agapanthus"
+    },
+    {
+      "definition": "African plant with bright green evergreen leaves and umbels of many usually deep violet-blue flowers",
+      "hypernyms": [
+        "oewn-12449653-n"
+      ],
+      "id": "oewn-12449857-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "African lily"
+    },
+    {
+      "definition": "any of various plants of the genus Albuca having large clusters of pale yellow flowers; South Africa",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12450275-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "albuca"
+    },
+    {
+      "definition": "any of several perennials of the genus Aletris having grasslike leaves and bitter roots reputed to cure colic",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12450703-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "colicroot"
+    },
+    {
+      "definition": "colicroot having a scurfy or granuliferous perianth and white flowers; southeastern United States",
+      "hypernyms": [
+        "oewn-12450703-n"
+      ],
+      "id": "oewn-12450976-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "ague root"
+    },
+    {
+      "definition": "colicroot with yellow-bracted racemose flowers; smaller than Aletris farinosa; southeastern United States",
+      "hypernyms": [
+        "oewn-12450703-n"
+      ],
+      "id": "oewn-12451180-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "yellow colicroot"
+    },
+    {
+      "definition": "bulbous plants having a characteristic pungent onion odor",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12451939-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "alliaceous plant"
+    },
+    {
+      "definition": "any of various plants of the genus Allium with edible bulbs found growing wild",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12452366-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "wild onion"
+    },
+    {
+      "definition": "a common North American wild onion with a strong onion odor and an umbel of pink flowers atop a leafless stalk; British Columbia to California and Arizona and east to Wyoming and Colorado",
+      "hypernyms": [
+        "oewn-12452366-n"
+      ],
+      "id": "oewn-12452574-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Hooker's onion"
+    },
+    {
+      "definition": "coarse Old World perennial having a large bulb and tall stalk of greenish purple-tinged flowers; widely naturalized",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12452861-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "wild leek"
+    },
+    {
+      "definition": "North American bulbous plant",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12453079-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Canada garlic"
+    },
+    {
+      "definition": "Eurasian bulbous plant",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12453212-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "keeled garlic"
+    },
+    {
+      "definition": "bulbous plant having hollow leaves cultivated worldwide for its rounded edible bulb",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12453313-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "onion"
+    },
+    {
+      "definition": "type of onion plant producing small clustered mild-flavored bulbs used as seasoning",
+      "hypernyms": [
+        "oewn-12453313-n"
+      ],
+      "id": "oewn-12453683-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "shallot"
+    },
+    {
+      "definition": "type of perennial onion grown chiefly as a curiosity or for early salad onions; having bulbils that replace the flowers",
+      "hypernyms": [
+        "oewn-12453313-n"
+      ],
+      "id": "oewn-12454045-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "tree onion"
+    },
+    {
+      "definition": "widely distributed North American wild onion with white to rose flowers",
+      "hypernyms": [
+        "oewn-12452366-n"
+      ],
+      "id": "oewn-12454274-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "nodding onion"
+    },
+    {
+      "definition": "Asiatic onion with slender bulbs; used as early green onions",
+      "hypernyms": [
+        "oewn-12453313-n"
+      ],
+      "id": "oewn-12454457-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "Welsh onion"
+    },
+    {
+      "definition": "onion with white to deep red tunic; California",
+      "hypernyms": [
+        "oewn-12453313-n"
+      ],
+      "id": "oewn-12454611-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "red-skinned onion"
+    },
+    {
+      "definition": "plant having a large slender white bulb and flat overlapping dark green leaves; used in cooking; believed derived from the wild Allium ampeloprasum",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12454744-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "leek"
+    },
+    {
+      "definition": "European onion with white flowers",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12454988-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "daffodil garlic"
+    },
+    {
+      "definition": "leek producing bulbils instead of flowers; Russia and Iran",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12455139-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "few-flowered leek"
+    },
+    {
+      "definition": "bulbous herb of southern Europe widely naturalized; bulb breaks up into separate strong-flavored cloves",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12455280-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "garlic"
+    },
+    {
+      "definition": "European leek cultivated and used like leeks",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12455490-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "sand leek"
+    },
+    {
+      "definition": "perennial having hollow cylindrical leaves used for seasoning",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12455657-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "chives"
+    },
+    {
+      "definition": "North American perennial having a slender bulb and whitish flowers",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12455843-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "ramp"
+    },
+    {
+      "definition": "pungent Old World wild onion",
+      "hypernyms": [
+        "oewn-12452366-n"
+      ],
+      "id": "oewn-12455991-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "crow garlic"
+    },
+    {
+      "definition": "pungent Old World weedy plant",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12456154-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "wild garlic"
+    },
+    {
+      "definition": "a plant of eastern Asia; larger than Allium schoenoprasum",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12456282-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "garlic chive"
+    },
+    {
+      "definition": "Old World leek with a spherical bulb",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12456470-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "round-headed leek"
+    },
+    {
+      "definition": "European leek naturalized in Great Britain; leaves are triangular",
+      "hypernyms": [
+        "oewn-12451939-n"
+      ],
+      "id": "oewn-12456595-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "three-cornered leek"
+    },
+    {
+      "definition": "any of various South American plants of the genus Alstroemeria valued for their handsome umbels of beautiful flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12459076-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "alstroemeria"
+    },
+    {
+      "definition": "an Andean herb having umbels of showy pinkish-purple lily-like flowers",
+      "hypernyms": [
+        "oewn-12459076-n"
+      ],
+      "id": "oewn-12459288-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Peruvian lily"
+    },
+    {
+      "definition": "all parts of plant are highly toxic; bulb pounded and used as a fly poison; sometimes placed in subfamily Melanthiaceae",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12459659-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "fly poison"
+    },
+    {
+      "definition": "southern European plant commonly cultivated for its spikes of small starry greenish-white flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12460131-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "Saint-Bernard's-lily"
+    },
+    {
+      "definition": "plant having basal grasslike leaves and a narrow open cluster of starlike yellowish-orange flowers atop a leafless stalk; southwestern United States; only species of Anthericum growing in North America",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12460335-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "amber lily"
+    },
+    {
+      "definition": "any of various chiefly Mediterranean plants of the genera Asphodeline and Asphodelus having linear leaves and racemes of white or pink or yellow flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12462463-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "asphodel"
+    },
+    {
+      "definition": "asphodel having erect smooth unbranched stem either flexuous or straight",
+      "hypernyms": [
+        "oewn-12462463-n"
+      ],
+      "id": "oewn-12463053-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Jacob's rod"
+    },
+    {
+      "definition": "asphodel with leafy stem and fragrant yellow flowers",
+      "hypernyms": [
+        "oewn-12462463-n"
+      ],
+      "id": "oewn-12463202-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "king's spear"
+    },
+    {
+      "definition": "California plant having grasslike leaves and showy orange flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12464995-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "golden star"
+    },
+    {
+      "definition": "any of several plants of the genus Brodiaea having basal grasslike leaves and globose flower heads on leafless stems resembling those of genus Allium",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12465892-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "brodiaea"
+    },
+    {
+      "definition": "brodiaea having an umbel of violet or blue-violet flowers atop a leafless stalk; northern Oregon to southern California",
+      "hypernyms": [
+        "oewn-12465892-n"
+      ],
+      "id": "oewn-12466133-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "elegant brodiaea"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having tulip-shaped flowers with 3 sepals and 3 petals; southwestern United States and Mexico",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12466705-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "mariposa"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having egg-shaped flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12467024-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "globe lily"
+    },
+    {
+      "definition": "any of several plants of the genus Calochortus having flowers with petals shaped like cat's ears",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12467242-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "cat's-ear"
+    },
+    {
+      "definition": "globe lily having open branched clusters of egg-shaped white flowers; southern California",
+      "hypernyms": [
+        "oewn-12467024-n"
+      ],
+      "id": "oewn-12467413-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "white globe lily"
+    },
+    {
+      "definition": "globe lily having open branched clusters of clear yellow egg-shaped flowers; northern California",
+      "hypernyms": [
+        "oewn-12467024-n"
+      ],
+      "id": "oewn-12467626-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "yellow globe lily"
+    },
+    {
+      "definition": "globe lily with deep rose-pink or purple egg-shaped flowers on flexuous stems; western slopes of Sierra Nevada in San Joaquin Valley",
+      "hypernyms": [
+        "oewn-12467024-n"
+      ],
+      "id": "oewn-12467851-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "rose globe lily"
+    },
+    {
+      "definition": "small plant with slender bent stems bearing branched clusters of a few white star-shaped flowers with petals shaped like cat's ears; southeastern Washington and northeastern Oregon to Montana",
+      "hypernyms": [
+        "oewn-12466705-n"
+      ],
+      "id": "oewn-12468086-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "star tulip"
+    },
+    {
+      "definition": "mariposa with clusters of bell-shaped vermilion or orange or yellow flowers atop short stems; southern California to Arizona and Mexico",
+      "hypernyms": [
+        "oewn-12466705-n"
+      ],
+      "id": "oewn-12468396-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "desert mariposa tulip"
+    },
+    {
+      "definition": "mariposa having clusters of a few large deep yellow bell-shaped flowers atop slender stems; California coastal ranges",
+      "hypernyms": [
+        "oewn-12466705-n"
+      ],
+      "id": "oewn-12468641-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "yellow mariposa tulip"
+    },
+    {
+      "definition": "mariposa having loose clusters of one to three handsome lilac flowers resembling umbels atop stout erect stems; arid northwestern North America east of Cascade Mountains from southern British Columbia to northern California",
+      "hypernyms": [
+        "oewn-12466705-n"
+      ],
+      "id": "oewn-12468866-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "sagebrush mariposa tulip"
+    },
+    {
+      "definition": "perennial plant having clusters of one to four showy white bell-shaped flowers atop erect unbranched stems; edible bulbs useful in times of scarcity; eastern Montana and western North Dakota south to northern Arizona and northwestern New Mexico",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12469205-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sego lily"
+    },
+    {
+      "definition": "any of several plants of the genus Camassia; North and South America",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12469801-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "camas"
+    },
+    {
+      "definition": "plant having a large edible bulb and linear basal leaves and racemes of light to deep violet-blue star-shaped flowers on tall green scapes; western North America",
+      "hypernyms": [
+        "oewn-12469801-n"
+      ],
+      "id": "oewn-12470031-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "common camas"
+    },
+    {
+      "definition": "camas found to the west of Cascade Mountains",
+      "hypernyms": [
+        "oewn-12469801-n"
+      ],
+      "id": "oewn-12470289-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Leichtlin's camas"
+    },
+    {
+      "definition": "eastern camas; eastern and central North America",
+      "hypernyms": [
+        "oewn-12469801-n"
+      ],
+      "id": "oewn-12470439-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "wild hyacinth"
+    },
+    {
+      "definition": "perennial woodland spring-flowering plant; widely cultivated",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12470849-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "dogtooth violet"
+    },
+    {
+      "definition": "North American dogtooth having solitary white flowers with yellow centers and blue or pink exteriors",
+      "hypernyms": [
+        "oewn-12470849-n"
+      ],
+      "id": "oewn-12471112-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "white dogtooth violet"
+    },
+    {
+      "definition": "eastern North American dogtooth having solitary yellow flowers marked with brown or purple and spotted interiors",
+      "hypernyms": [
+        "oewn-12470849-n"
+      ],
+      "id": "oewn-12471345-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "yellow adder's tongue"
+    },
+    {
+      "definition": "sturdy European dogtooth with rose to mauve flowers; cultivated in many varieties",
+      "hypernyms": [
+        "oewn-12470849-n"
+      ],
+      "id": "oewn-12471575-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "European dogtooth"
+    },
+    {
+      "definition": "California dogtooth violet with creamy white flowers sometimes yellow-tinged",
+      "hypernyms": [
+        "oewn-12470849-n"
+      ],
+      "id": "oewn-12471745-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "fawn lily"
+    },
+    {
+      "definition": "dogtooth violet of western North America having bright yellow flowers",
+      "hypernyms": [
+        "oewn-12470849-n"
+      ],
+      "id": "oewn-12471904-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "glacier lily"
+    },
+    {
+      "definition": "perennial herb having large white flowers marked with orange; found near the snow line in the northwestern United States",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12472071-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "avalanche lily"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Fritillaria having nodding variously colored flowers",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12472420-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "fritillary"
+    },
+    {
+      "definition": "herb of northwestern America having green-and-purple bell-shaped flowers",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12472761-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "mission bells"
+    },
+    {
+      "definition": "herb of southwestern United States having dark purple bell-shaped flowers mottled with green",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12472985-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "mission bells"
+    },
+    {
+      "definition": "a malodorous California herb with bell-shaped flowers; a common weed in grainfields",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12473178-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "stink bell"
+    },
+    {
+      "definition": "Eurasian herb with a cluster of leaves and orange-red bell-shaped flowers at the top of the stem",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12473341-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "crown imperial"
+    },
+    {
+      "definition": "California herb with white conic or bell-shaped flowers usually tinged with green",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12473523-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "white fritillary"
+    },
+    {
+      "definition": "Eurasian checkered lily with pendant flowers usually veined and checkered with purple or maroon on a pale ground and shaped like the bells carried by lepers in medieval times; widely grown as an ornamental",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12473691-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "snake's head fritillary"
+    },
+    {
+      "definition": "California herb with brownish-purple or greenish bell-shaped flowers",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12474044-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "brown bells"
+    },
+    {
+      "definition": "California herb with pinkish purple flowers",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12474219-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "adobe lily"
+    },
+    {
+      "definition": "western United States herb with scarlet and yellow narrow bell-shaped flowers",
+      "hypernyms": [
+        "oewn-12472420-n"
+      ],
+      "id": "oewn-12474362-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "scarlet fritillary"
+    },
+    {
+      "definition": "any of numerous perennial bulbous herbs having linear or broadly lanceolate leaves and usually a single showy flower",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12474664-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "tulip"
+    },
+    {
+      "definition": "small early blooming tulip",
+      "hypernyms": [
+        "oewn-12474664-n"
+      ],
+      "id": "oewn-12474941-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "dwarf tulip"
+    },
+    {
+      "definition": "Eurasian tulip with small flowers blotched at the base",
+      "hypernyms": [
+        "oewn-12474664-n"
+      ],
+      "id": "oewn-12475061-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "lady tulip"
+    },
+    {
+      "definition": "tall late blooming tulip",
+      "hypernyms": [
+        "oewn-12474664-n"
+      ],
+      "id": "oewn-12475210-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Tulipa gesneriana"
+    },
+    {
+      "definition": "any of several long-stemmed tulips that flower in May; have egg-shaped variously colored flowers",
+      "hypernyms": [
+        "oewn-12474664-n"
+      ],
+      "id": "oewn-12475298-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cottage tulip"
+    },
+    {
+      "definition": "any of several very tall, late blooming tulips bearing large squarish flowers on sturdy stems",
+      "hypernyms": [
+        "oewn-12474664-n"
+      ],
+      "id": "oewn-12475454-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Darwin tulip"
+    },
+    {
+      "definition": "bulbous autumn-flowering herb with white, purple or lavender-and-white flowers; native to western and central Europe",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12476045-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "autumn crocus"
+    },
+    {
+      "definition": "any of numerous perennials having tuberous roots and long narrow bladelike leaves and usually yellow lily-like flowers that bloom for only a day",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12477350-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "day lily"
+    },
+    {
+      "definition": "a day lily with yellow flowers",
+      "hypernyms": [
+        "oewn-12477350-n"
+      ],
+      "id": "oewn-12477596-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "lemon lily"
+    },
+    {
+      "definition": "any of numerous bulbous perennial herbs",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12478888-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "hyacinth"
+    },
+    {
+      "definition": "widely grown for its fragrance and its white, pink, blue, or purplish flowers",
+      "hypernyms": [
+        "oewn-12478888-n"
+      ],
+      "id": "oewn-12479055-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "common hyacinth"
+    },
+    {
+      "definition": "hyacinth with loosely flowered spikes, several growing from one bulb",
+      "hypernyms": [
+        "oewn-12478888-n"
+      ],
+      "id": "oewn-12479218-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Roman hyacinth"
+    },
+    {
+      "definition": "southern African herb with white bell-shaped flowers",
+      "hypernyms": [
+        "oewn-12478888-n"
+      ],
+      "id": "oewn-12479379-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "summer hyacinth"
+    },
+    {
+      "definition": "sometimes placed in genus Scilla",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12479780-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "wild hyacinth"
+    },
+    {
+      "definition": "any of several perennial plants of the genus Ornithogalum native to the Mediterranean and having star-shaped flowers",
+      "hypernyms": [
+        "oewn-13155061-n"
+      ],
+      "id": "oewn-12480134-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "star-of-Bethlehem"
+    },
+    {
+      "definition": "common Old World herb having grasslike leaves and clusters of star-shaped white flowers with green stripes; naturalized in the eastern United States",
+      "hypernyms": [
+        "oewn-12480134-n"
+      ],
+      "id": "oewn-12480387-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "starflower"
+    },
+    {
+      "definition": "Old World star of Bethlehem having edible young shoots",
+      "hypernyms": [
+        "oewn-12480134-n"
+      ],
+      "id": "oewn-12480651-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "bath asparagus"
+    },
+    {
+      "definition": "South African perennial with long-lasting spikes of white blossoms that are shipped in to Europe and America for use as winter cut flowers",
+      "hypernyms": [
+        "oewn-12480134-n"
+      ],
+      "id": "oewn-12480813-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "chincherinchee"
+    },
+    {
+      "definition": "any of various early flowering spring hyacinths native to Eurasia having dense spikes of rounded blue flowers resembling bunches of small grapes",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12481202-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "grape hyacinth"
+    },
+    {
+      "definition": "prolific species having particularly beautiful dark blue flowers",
+      "hypernyms": [
+        "oewn-12481202-n"
+      ],
+      "id": "oewn-12481462-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "common grape hyacinth"
+    },
+    {
+      "definition": "large beautiful Mediterranean species having sterile bluish-violet flowers with fringed corollas forming a tuft above the fertile flowers",
+      "hypernyms": [
+        "oewn-12481202-n"
+      ],
+      "id": "oewn-12481614-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tassel hyacinth"
+    },
+    {
+      "definition": "an Old World plant of the genus Scilla having narrow basal leaves and pink or blue or white racemose flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12481971-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "scilla"
+    },
+    {
+      "definition": "European scilla with small blue or purple flowers",
+      "hypernyms": [
+        "oewn-12481971-n"
+      ],
+      "id": "oewn-12482178-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "spring squill"
+    },
+    {
+      "definition": "a plant of the genus Tofieldia having linear chiefly basal leaves and small spicate flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12482537-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "false asphodel"
+    },
+    {
+      "definition": "false asphodel having spikes of white flowers; of mountainous regions of Europe",
+      "hypernyms": [
+        "oewn-12482537-n"
+      ],
+      "id": "oewn-12482726-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "Scotch asphodel"
+    },
+    {
+      "definition": "having dense spikes of small white flowers and yielding a bulb with medicinal properties",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12483087-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sea squill"
+    },
+    {
+      "definition": "either of two herbaceous rushlike bog plants having small yellow flowers and grasslike leaves; north temperate regions",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12484248-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "bog asphodel"
+    },
+    {
+      "definition": "of western Europe: Scandinavia to northern Spain and Portugal",
+      "hypernyms": [
+        "oewn-12484248-n"
+      ],
+      "id": "oewn-12484480-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "European bog asphodel"
+    },
+    {
+      "definition": "of the eastern United States: New Jersey to South Carolina",
+      "hypernyms": [
+        "oewn-12484248-n"
+      ],
+      "id": "oewn-12484633-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "American bog asphodel"
+    },
+    {
+      "definition": "perennial herbs of the lily family having thick toxic rhizomes",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12484981-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "hellebore"
+    },
+    {
+      "definition": "North American plant having large leaves and yellowish green flowers growing in racemes; yields a toxic alkaloid used medicinally",
+      "hypernyms": [
+        "oewn-12484981-n"
+      ],
+      "id": "oewn-12485154-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "white hellebore"
+    },
+    {
+      "definition": "plant of western North America having woody rhizomes and tufts of stiff grasslike basal leaves and spikes of creamy white flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12486062-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "squaw grass"
+    },
+    {
+      "definition": "any of various plants of the genus Zigadenus having glaucous leaves and terminal racemes of mostly white flowers; all are poisonous",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12487232-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "death camas"
+    },
+    {
+      "definition": "plant of western North America having grasslike leaves and greenish-white flowers",
+      "hypernyms": [
+        "oewn-12487232-n"
+      ],
+      "id": "oewn-12487523-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "alkali grass"
+    },
+    {
+      "definition": "plant of eastern and central North America having creamy white flowers tinged with brown or purple; poisonous especially to grazing animals",
+      "hypernyms": [
+        "oewn-12487232-n"
+      ],
+      "id": "oewn-12487702-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "white camas"
+    },
+    {
+      "definition": "a common perennial death camas; Tennessee to Kansas to Texas",
+      "hypernyms": [
+        "oewn-12487232-n"
+      ],
+      "id": "oewn-12487938-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "poison camas"
+    },
+    {
+      "definition": "plant of western North America to Mexico; poisonous especially to grazing animals",
+      "hypernyms": [
+        "oewn-12487232-n"
+      ],
+      "id": "oewn-12488097-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "grassy death camas"
+    },
+    {
+      "definition": "any liliaceous plant of the genus Trillium having a whorl of three leaves at the top of the stem with a single three-petaled flower",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12488748-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "trillium"
+    },
+    {
+      "definition": "trillium of central United States having dark purple sessile flowers",
+      "hypernyms": [
+        "oewn-12488748-n"
+      ],
+      "id": "oewn-12489050-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "prairie wake-robin"
+    },
+    {
+      "definition": "a low perennial white-flowered trillium found in the southeastern United States",
+      "hypernyms": [
+        "oewn-12488748-n"
+      ],
+      "id": "oewn-12489224-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "dwarf-white trillium"
+    },
+    {
+      "definition": "trillium of eastern North America having malodorous pink to purple flowers and an astringent root used in folk medicine especially to ease childbirth",
+      "hypernyms": [
+        "oewn-12488748-n"
+      ],
+      "id": "oewn-12489405-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "purple trillium"
+    },
+    {
+      "definition": "trillium of northeastern United States with sessile leaves and red or purple flowers having a pungent odor",
+      "hypernyms": [
+        "oewn-12488748-n"
+      ],
+      "id": "oewn-12489662-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "red trillium"
+    },
+    {
+      "definition": "low-growing perennial plant having usually two large oblong lanceolate leaves and a raceme of small fragrant nodding bell-shaped flowers followed by scarlet berries",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12492049-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "lily of the valley"
+    },
+    {
+      "definition": "any temperate liliaceous plant of the genus Clintonia having broad basal leaves and white or yellowish or purplish flowers followed by blue or black berries",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12492529-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "clintonia"
+    },
+    {
+      "definition": "plant with nearly leafless stalk topped by a cluster of red or reddish lavender flowers; California to Oregon",
+      "hypernyms": [
+        "oewn-12492529-n"
+      ],
+      "id": "oewn-12492831-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "red Clintonia"
+    },
+    {
+      "definition": "common woodland herb of temperate North America having yellow nodding flowers and small round blue fruits",
+      "hypernyms": [
+        "oewn-12492529-n"
+      ],
+      "id": "oewn-12493064-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "yellow clintonia"
+    },
+    {
+      "definition": "plant with 1 or 2 white starlike flowers on short leafless stalks; Alaska to California and east to Oregon and Montana",
+      "hypernyms": [
+        "oewn-12492529-n"
+      ],
+      "id": "oewn-12493283-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "queen's cup"
+    },
+    {
+      "definition": "Asiatic perennial tufted herb with grasslike evergreen foliage and clusters of dark mauve grapelike flowers; grown as ground cover",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12493676-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "lilyturf"
+    },
+    {
+      "definition": "small two-leaved herb of the northern United States and parts of Canada having racemes of small fragrant white flowers",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12494113-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "false lily of the valley"
+    },
+    {
+      "definition": "small white-flowered plant of western Europe to Japan",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12494345-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "false lily of the valley"
+    },
+    {
+      "definition": "any of several plants of the genus Polygonatum having paired drooping yellowish-green flowers and a thick rootstock with scars shaped like Solomon's seal",
+      "hypernyms": [
+        "oewn-12445786-n"
+      ],
+      "id": "oewn-12494672-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "Solomon's-seal"
+    },
+    {
+      "definition": "North American perennial herb with smooth foliage and drooping tubular greenish flowers",
+      "hypernyms": [
+        "oewn-12494672-n"
+      ],
+      "id": "oewn-12494923-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "great Solomon's-seal"
+    },
+    {
+      "definition": "plant growing from a bulb",
+      "hypernyms": [
+        "oewn-13104346-n"
+      ],
+      "id": "oewn-13155061-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 6,
+      "name": "bulbous plant"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

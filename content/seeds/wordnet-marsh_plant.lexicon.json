@@ -1,0 +1,1866 @@
+{
+  "exported": "2026-10-10",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-13143123-n",
+  "senses": [
+    {
+      "definition": "semiaquatic Eurasian perennial crowfoot with leaves shaped like spears; naturalized in New Zealand",
+      "forms": [],
+      "id": "oewn-lesser_spearwort__1.20.00..",
+      "lang": "en",
+      "lemma": "lesser spearwort",
+      "synset": "oewn-11742111-n"
+    },
+    {
+      "definition": "semiaquatic Eurasian perennial crowfoot with leaves shaped like spears; naturalized in New Zealand",
+      "forms": [],
+      "id": "oewn-ranunculus_flammula__1.20.00..",
+      "lang": "en",
+      "lemma": "Ranunculus flammula",
+      "synset": "oewn-11742111-n"
+    },
+    {
+      "definition": "semiaquatic European crowfoot with leaves shaped like spears",
+      "forms": [],
+      "id": "oewn-greater_spearwort__1.20.00..",
+      "lang": "en",
+      "lemma": "greater spearwort",
+      "synset": "oewn-11742505-n"
+    },
+    {
+      "definition": "semiaquatic European crowfoot with leaves shaped like spears",
+      "forms": [],
+      "id": "oewn-ranunculus_lingua__1.20.00..",
+      "lang": "en",
+      "lemma": "Ranunculus lingua",
+      "synset": "oewn-11742505-n"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "forms": [],
+      "id": "oewn-marsh_marigold__1.20.00..",
+      "lang": "en",
+      "lemma": "marsh marigold",
+      "synset": "oewn-11748568-n"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "forms": [],
+      "id": "oewn-kingcup__1.20.02..",
+      "lang": "en",
+      "lemma": "kingcup",
+      "synset": "oewn-11748568-n"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "forms": [],
+      "id": "oewn-meadow_bright__1.20.00..",
+      "lang": "en",
+      "lemma": "meadow bright",
+      "synset": "oewn-11748568-n"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "forms": [],
+      "id": "oewn-may_blob__1.20.00..",
+      "lang": "en",
+      "lemma": "May blob",
+      "synset": "oewn-11748568-n"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "forms": [],
+      "id": "oewn-cowslip__1.20.01..",
+      "lang": "en",
+      "lemma": "cowslip",
+      "synset": "oewn-11748568-n"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "forms": [],
+      "id": "oewn-water_dragon__1.20.01..",
+      "lang": "en",
+      "lemma": "water dragon",
+      "synset": "oewn-11748568-n"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "forms": [],
+      "id": "oewn-caltha_palustris__1.20.00..",
+      "lang": "en",
+      "lemma": "Caltha palustris",
+      "synset": "oewn-11748568-n"
+    },
+    {
+      "definition": "grasslike plants growing in wet places and having cylindrical often hollow stems",
+      "forms": [],
+      "id": "oewn-rush__1.20.00..",
+      "lang": "en",
+      "lemma": "rush",
+      "synset": "oewn-11763763-n"
+    },
+    {
+      "definition": "tall rush with soft erect or arching stems found in Eurasia, Australia, New Zealand, and common in North America",
+      "forms": [],
+      "id": "oewn-bulrush__1.20.01..",
+      "lang": "en",
+      "lemma": "bulrush",
+      "synset": "oewn-11764241-n"
+    },
+    {
+      "definition": "tall rush with soft erect or arching stems found in Eurasia, Australia, New Zealand, and common in North America",
+      "forms": [],
+      "id": "oewn-bullrush__1.20.01..",
+      "lang": "en",
+      "lemma": "bullrush",
+      "synset": "oewn-11764241-n"
+    },
+    {
+      "definition": "tall rush with soft erect or arching stems found in Eurasia, Australia, New Zealand, and common in North America",
+      "forms": [],
+      "id": "oewn-common_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "common rush",
+      "synset": "oewn-11764241-n"
+    },
+    {
+      "definition": "tall rush with soft erect or arching stems found in Eurasia, Australia, New Zealand, and common in North America",
+      "forms": [],
+      "id": "oewn-soft_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "soft rush",
+      "synset": "oewn-11764241-n"
+    },
+    {
+      "definition": "tall rush with soft erect or arching stems found in Eurasia, Australia, New Zealand, and common in North America",
+      "forms": [],
+      "id": "oewn-juncus_effusus__1.20.00..",
+      "lang": "en",
+      "lemma": "Juncus effusus",
+      "synset": "oewn-11764241-n"
+    },
+    {
+      "definition": "rush of Australia",
+      "forms": [],
+      "id": "oewn-jointed_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "jointed rush",
+      "synset": "oewn-11764480-n"
+    },
+    {
+      "definition": "rush of Australia",
+      "forms": [],
+      "id": "oewn-juncus_articulatus__1.20.00..",
+      "lang": "en",
+      "lemma": "Juncus articulatus",
+      "synset": "oewn-11764480-n"
+    },
+    {
+      "definition": "low-growing annual rush of damp low-lying ground; nearly cosmopolitan",
+      "forms": [],
+      "id": "oewn-toad_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "toad rush",
+      "synset": "oewn-11764577-n"
+    },
+    {
+      "definition": "low-growing annual rush of damp low-lying ground; nearly cosmopolitan",
+      "forms": [],
+      "id": "oewn-juncus_bufonius__1.20.00..",
+      "lang": "en",
+      "lemma": "Juncus bufonius",
+      "synset": "oewn-11764577-n"
+    },
+    {
+      "definition": "tall rush of temperate regions",
+      "forms": [],
+      "id": "oewn-hard_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "hard rush",
+      "synset": "oewn-11764720-n"
+    },
+    {
+      "definition": "tall rush of temperate regions",
+      "forms": [],
+      "id": "oewn-juncus_inflexus__1.20.00..",
+      "lang": "en",
+      "lemma": "Juncus inflexus",
+      "synset": "oewn-11764720-n"
+    },
+    {
+      "definition": "rush of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-salt_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "salt rush",
+      "synset": "oewn-11764824-n"
+    },
+    {
+      "definition": "rush of the Pacific coast of North America",
+      "forms": [],
+      "id": "oewn-juncus_leseurii__1.20.00..",
+      "lang": "en",
+      "lemma": "Juncus leseurii",
+      "synset": "oewn-11764824-n"
+    },
+    {
+      "definition": "tufted wiry rush of wide distribution",
+      "forms": [],
+      "id": "oewn-slender_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "slender rush",
+      "synset": "oewn-11764940-n"
+    },
+    {
+      "definition": "tufted wiry rush of wide distribution",
+      "forms": [],
+      "id": "oewn-juncus_tenuis__1.20.00..",
+      "lang": "en",
+      "lemma": "Juncus tenuis",
+      "synset": "oewn-11764940-n"
+    },
+    {
+      "definition": "perennial marsh plant having swordlike leaves and aromatic roots",
+      "forms": [],
+      "id": "oewn-sweet_flag__1.20.00..",
+      "lang": "en",
+      "lemma": "sweet flag",
+      "synset": "oewn-11801399-n"
+    },
+    {
+      "definition": "perennial marsh plant having swordlike leaves and aromatic roots",
+      "forms": [
+        "calami"
+      ],
+      "id": "oewn-calamus__1.20.01..",
+      "lang": "en",
+      "lemma": "calamus",
+      "synset": "oewn-11801399-n"
+    },
+    {
+      "definition": "perennial marsh plant having swordlike leaves and aromatic roots",
+      "forms": [],
+      "id": "oewn-sweet_calamus__1.20.00..",
+      "lang": "en",
+      "lemma": "sweet calamus",
+      "synset": "oewn-11801399-n"
+    },
+    {
+      "definition": "perennial marsh plant having swordlike leaves and aromatic roots",
+      "forms": [],
+      "id": "oewn-myrtle_flag__1.20.00..",
+      "lang": "en",
+      "lemma": "myrtle flag",
+      "synset": "oewn-11801399-n"
+    },
+    {
+      "definition": "perennial marsh plant having swordlike leaves and aromatic roots",
+      "forms": [],
+      "id": "oewn-flagroot__1.20.00..",
+      "lang": "en",
+      "lemma": "flagroot",
+      "synset": "oewn-11801399-n"
+    },
+    {
+      "definition": "perennial marsh plant having swordlike leaves and aromatic roots",
+      "forms": [],
+      "id": "oewn-acorus_calamus__1.20.00..",
+      "lang": "en",
+      "lemma": "Acorus calamus",
+      "synset": "oewn-11801399-n"
+    },
+    {
+      "definition": "plant of wetlands and bogs of temperate regions having small greenish flowers partly enclosed in a white spathe and red berries",
+      "forms": [],
+      "id": "oewn-wild_calla__1.20.00..",
+      "lang": "en",
+      "lemma": "wild calla",
+      "synset": "oewn-11806600-n"
+    },
+    {
+      "definition": "plant of wetlands and bogs of temperate regions having small greenish flowers partly enclosed in a white spathe and red berries",
+      "forms": [],
+      "id": "oewn-water_arum__1.20.00..",
+      "lang": "en",
+      "lemma": "water arum",
+      "synset": "oewn-11806600-n"
+    },
+    {
+      "definition": "plant of wetlands and bogs of temperate regions having small greenish flowers partly enclosed in a white spathe and red berries",
+      "forms": [],
+      "id": "oewn-calla_palustris__1.20.00..",
+      "lang": "en",
+      "lemma": "Calla palustris",
+      "synset": "oewn-11806600-n"
+    },
+    {
+      "definition": "clump-forming deciduous perennial swamp plant of western North America similar to Symplocarpus foetidus but having a yellow spathe",
+      "forms": [],
+      "id": "oewn-skunk_cabbage__1.20.02..",
+      "lang": "en",
+      "lemma": "skunk cabbage",
+      "synset": "oewn-11809535-n"
+    },
+    {
+      "definition": "clump-forming deciduous perennial swamp plant of western North America similar to Symplocarpus foetidus but having a yellow spathe",
+      "forms": [],
+      "id": "oewn-lysichiton_americanum__1.20.00..",
+      "lang": "en",
+      "lemma": "Lysichiton americanum",
+      "synset": "oewn-11809535-n"
+    },
+    {
+      "definition": "deciduous perennial low-growing fetid swamp plant of eastern North America having minute flowers enclosed in a mottled greenish or purple cowl-shaped spathe",
+      "forms": [],
+      "id": "oewn-skunk_cabbage__1.20.01..",
+      "lang": "en",
+      "lemma": "skunk cabbage",
+      "synset": "oewn-11813211-n"
+    },
+    {
+      "definition": "deciduous perennial low-growing fetid swamp plant of eastern North America having minute flowers enclosed in a mottled greenish or purple cowl-shaped spathe",
+      "forms": [],
+      "id": "oewn-polecat_weed__1.20.00..",
+      "lang": "en",
+      "lemma": "polecat weed",
+      "synset": "oewn-11813211-n"
+    },
+    {
+      "definition": "deciduous perennial low-growing fetid swamp plant of eastern North America having minute flowers enclosed in a mottled greenish or purple cowl-shaped spathe",
+      "forms": [],
+      "id": "oewn-foetid_pothos__1.20.00..",
+      "lang": "en",
+      "lemma": "foetid pothos",
+      "synset": "oewn-11813211-n"
+    },
+    {
+      "definition": "deciduous perennial low-growing fetid swamp plant of eastern North America having minute flowers enclosed in a mottled greenish or purple cowl-shaped spathe",
+      "forms": [],
+      "id": "oewn-symplocarpus_foetidus__1.20.00..",
+      "lang": "en",
+      "lemma": "Symplocarpus foetidus",
+      "synset": "oewn-11813211-n"
+    },
+    {
+      "definition": "any of various coarse shrubby plants of the genus Iva with small greenish flowers; common in moist areas (as coastal salt marshes) of eastern and central North America",
+      "forms": [],
+      "id": "oewn-marsh_elder__1.20.00..",
+      "lang": "en",
+      "lemma": "marsh elder",
+      "synset": "oewn-12005522-n"
+    },
+    {
+      "definition": "any of various coarse shrubby plants of the genus Iva with small greenish flowers; common in moist areas (as coastal salt marshes) of eastern and central North America",
+      "forms": [],
+      "id": "oewn-iva__1.20.00..",
+      "lang": "en",
+      "lemma": "iva",
+      "synset": "oewn-12005522-n"
+    },
+    {
+      "definition": "tall annual marsh elder common in moist rich soil in central North America that can cause contact dermatitis; produces much pollen that is a major cause of hay fever",
+      "forms": [],
+      "id": "oewn-burweed_marsh_elder__1.20.00..",
+      "lang": "en",
+      "lemma": "burweed marsh elder",
+      "synset": "oewn-12005790-n"
+    },
+    {
+      "definition": "tall annual marsh elder common in moist rich soil in central North America that can cause contact dermatitis; produces much pollen that is a major cause of hay fever",
+      "forms": [],
+      "id": "oewn-false_ragweed__1.20.00..",
+      "lang": "en",
+      "lemma": "false ragweed",
+      "synset": "oewn-12005790-n"
+    },
+    {
+      "definition": "tall annual marsh elder common in moist rich soil in central North America that can cause contact dermatitis; produces much pollen that is a major cause of hay fever",
+      "forms": [],
+      "id": "oewn-iva_xanthifolia__1.20.00..",
+      "lang": "en",
+      "lemma": "Iva xanthifolia",
+      "synset": "oewn-12005790-n"
+    },
+    {
+      "definition": "grasslike or rushlike plant growing in wet places having solid stems, narrow grasslike leaves and spikelets of inconspicuous flowers",
+      "forms": [],
+      "id": "oewn-sedge__1.20.00..",
+      "lang": "en",
+      "lemma": "sedge",
+      "synset": "oewn-12170545-n"
+    },
+    {
+      "definition": "African sedge widely cultivated as an ornamental water plant for its terminal umbrellalike cluster of slender grasslike leaves",
+      "forms": [],
+      "id": "oewn-umbrella_plant__1.20.01..",
+      "lang": "en",
+      "lemma": "umbrella plant",
+      "synset": "oewn-12171239-n"
+    },
+    {
+      "definition": "African sedge widely cultivated as an ornamental water plant for its terminal umbrellalike cluster of slender grasslike leaves",
+      "forms": [],
+      "id": "oewn-umbrella_sedge__1.20.00..",
+      "lang": "en",
+      "lemma": "umbrella sedge",
+      "synset": "oewn-12171239-n"
+    },
+    {
+      "definition": "African sedge widely cultivated as an ornamental water plant for its terminal umbrellalike cluster of slender grasslike leaves",
+      "forms": [],
+      "id": "oewn-cyperus_alternifolius__1.20.00..",
+      "lang": "en",
+      "lemma": "Cyperus alternifolius",
+      "synset": "oewn-12171239-n"
+    },
+    {
+      "definition": "European sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-chufa__1.20.00..",
+      "lang": "en",
+      "lemma": "chufa",
+      "synset": "oewn-12171486-n"
+    },
+    {
+      "definition": "European sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-yellow_nutgrass__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow nutgrass",
+      "synset": "oewn-12171486-n"
+    },
+    {
+      "definition": "European sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-earth_almond__1.20.00..",
+      "lang": "en",
+      "lemma": "earth almond",
+      "synset": "oewn-12171486-n"
+    },
+    {
+      "definition": "European sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-ground_almond__1.20.00..",
+      "lang": "en",
+      "lemma": "ground almond",
+      "synset": "oewn-12171486-n"
+    },
+    {
+      "definition": "European sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-rush_nut__1.20.00..",
+      "lang": "en",
+      "lemma": "rush nut",
+      "synset": "oewn-12171486-n"
+    },
+    {
+      "definition": "European sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-cyperus_esculentus__1.20.00..",
+      "lang": "en",
+      "lemma": "Cyperus esculentus",
+      "synset": "oewn-12171486-n"
+    },
+    {
+      "definition": "European sedge having rough-edged leaves and spikelets of reddish flowers and aromatic roots",
+      "forms": [],
+      "id": "oewn-galingale__1.20.00..",
+      "lang": "en",
+      "lemma": "galingale",
+      "synset": "oewn-12171687-n"
+    },
+    {
+      "definition": "European sedge having rough-edged leaves and spikelets of reddish flowers and aromatic roots",
+      "forms": [],
+      "id": "oewn-galangal__1.20.03..",
+      "lang": "en",
+      "lemma": "galangal",
+      "synset": "oewn-12171687-n"
+    },
+    {
+      "definition": "European sedge having rough-edged leaves and spikelets of reddish flowers and aromatic roots",
+      "forms": [],
+      "id": "oewn-cyperus_longus__1.20.00..",
+      "lang": "en",
+      "lemma": "Cyperus longus",
+      "synset": "oewn-12171687-n"
+    },
+    {
+      "definition": "tall sedge of the Nile valley yielding fiber that served many purposes in historic times",
+      "forms": [
+        "papyri"
+      ],
+      "id": "oewn-papyrus__1.20.00..",
+      "lang": "en",
+      "lemma": "papyrus",
+      "synset": "oewn-12171882-n"
+    },
+    {
+      "definition": "tall sedge of the Nile valley yielding fiber that served many purposes in historic times",
+      "forms": [],
+      "id": "oewn-egyptian_paper_reed__1.20.00..",
+      "lang": "en",
+      "lemma": "Egyptian paper reed",
+      "synset": "oewn-12171882-n"
+    },
+    {
+      "definition": "tall sedge of the Nile valley yielding fiber that served many purposes in historic times",
+      "forms": [],
+      "id": "oewn-egyptian_paper_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "Egyptian paper rush",
+      "synset": "oewn-12171882-n"
+    },
+    {
+      "definition": "tall sedge of the Nile valley yielding fiber that served many purposes in historic times",
+      "forms": [],
+      "id": "oewn-paper_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "paper rush",
+      "synset": "oewn-12171882-n"
+    },
+    {
+      "definition": "tall sedge of the Nile valley yielding fiber that served many purposes in historic times",
+      "forms": [],
+      "id": "oewn-paper_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "paper plant",
+      "synset": "oewn-12171882-n"
+    },
+    {
+      "definition": "tall sedge of the Nile valley yielding fiber that served many purposes in historic times",
+      "forms": [],
+      "id": "oewn-cyperus_papyrus__1.20.00..",
+      "lang": "en",
+      "lemma": "Cyperus papyrus",
+      "synset": "oewn-12171882-n"
+    },
+    {
+      "definition": "a widely distributed perennial sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-nutgrass__1.20.00..",
+      "lang": "en",
+      "lemma": "nutgrass",
+      "synset": "oewn-12172132-n"
+    },
+    {
+      "definition": "a widely distributed perennial sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-nut_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "nut grass",
+      "synset": "oewn-12172132-n"
+    },
+    {
+      "definition": "a widely distributed perennial sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-nutsedge__1.20.00..",
+      "lang": "en",
+      "lemma": "nutsedge",
+      "synset": "oewn-12172132-n"
+    },
+    {
+      "definition": "a widely distributed perennial sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-nut_sedge__1.20.00..",
+      "lang": "en",
+      "lemma": "nut sedge",
+      "synset": "oewn-12172132-n"
+    },
+    {
+      "definition": "a widely distributed perennial sedge having small edible nutlike tubers",
+      "forms": [],
+      "id": "oewn-cyperus_rotundus__1.20.00..",
+      "lang": "en",
+      "lemma": "Cyperus rotundus",
+      "synset": "oewn-12172132-n"
+    },
+    {
+      "definition": "European maritime sedge naturalized along Atlantic coast of United States; rootstock has properties of sarsaparilla",
+      "forms": [],
+      "id": "oewn-sand_sedge__1.20.00..",
+      "lang": "en",
+      "lemma": "sand sedge",
+      "synset": "oewn-12172548-n"
+    },
+    {
+      "definition": "European maritime sedge naturalized along Atlantic coast of United States; rootstock has properties of sarsaparilla",
+      "forms": [],
+      "id": "oewn-sand_reed__1.20.00..",
+      "lang": "en",
+      "lemma": "sand reed",
+      "synset": "oewn-12172548-n"
+    },
+    {
+      "definition": "European maritime sedge naturalized along Atlantic coast of United States; rootstock has properties of sarsaparilla",
+      "forms": [],
+      "id": "oewn-carex_arenaria__1.20.00..",
+      "lang": "en",
+      "lemma": "Carex arenaria",
+      "synset": "oewn-12172548-n"
+    },
+    {
+      "definition": "tufted sedge of temperate regions; nearly cosmopolitan",
+      "forms": [],
+      "id": "oewn-cypress_sedge__1.20.00..",
+      "lang": "en",
+      "lemma": "cypress sedge",
+      "synset": "oewn-12172768-n"
+    },
+    {
+      "definition": "tufted sedge of temperate regions; nearly cosmopolitan",
+      "forms": [],
+      "id": "oewn-carex_pseudocyperus__1.20.00..",
+      "lang": "en",
+      "lemma": "Carex pseudocyperus",
+      "synset": "oewn-12172768-n"
+    },
+    {
+      "definition": "any sedge of the genus Eriophorum; north temperate bog plants with tufted spikes",
+      "forms": [],
+      "id": "oewn-cotton_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "cotton grass",
+      "synset": "oewn-12173049-n"
+    },
+    {
+      "definition": "any sedge of the genus Eriophorum; north temperate bog plants with tufted spikes",
+      "forms": [],
+      "id": "oewn-cotton_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "cotton rush",
+      "synset": "oewn-12173049-n"
+    },
+    {
+      "definition": "having densely tufted white cottony or downlike glumes",
+      "forms": [],
+      "id": "oewn-common_cotton_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "common cotton grass",
+      "synset": "oewn-12173239-n"
+    },
+    {
+      "definition": "having densely tufted white cottony or downlike glumes",
+      "forms": [],
+      "id": "oewn-eriophorum_angustifolium__1.20.00..",
+      "lang": "en",
+      "lemma": "Eriophorum angustifolium",
+      "synset": "oewn-12173239-n"
+    },
+    {
+      "definition": "widely distributed North American sedge having rigid olive green stems",
+      "forms": [],
+      "id": "oewn-hardstem_bulrush__1.20.00..",
+      "lang": "en",
+      "lemma": "hardstem bulrush",
+      "synset": "oewn-12173550-n"
+    },
+    {
+      "definition": "widely distributed North American sedge having rigid olive green stems",
+      "forms": [],
+      "id": "oewn-hardstemmed_bulrush__1.20.00..",
+      "lang": "en",
+      "lemma": "hardstemmed bulrush",
+      "synset": "oewn-12173550-n"
+    },
+    {
+      "definition": "widely distributed North American sedge having rigid olive green stems",
+      "forms": [],
+      "id": "oewn-scirpus_acutus__1.20.00..",
+      "lang": "en",
+      "lemma": "Scirpus acutus",
+      "synset": "oewn-12173550-n"
+    },
+    {
+      "definition": "sedge of eastern North America having numerous clustered woolly spikelets",
+      "forms": [],
+      "id": "oewn-wool_grass__1.20.02..",
+      "lang": "en",
+      "lemma": "wool grass",
+      "synset": "oewn-12173741-n"
+    },
+    {
+      "definition": "sedge of eastern North America having numerous clustered woolly spikelets",
+      "forms": [],
+      "id": "oewn-scirpus_cyperinus__1.20.00..",
+      "lang": "en",
+      "lemma": "Scirpus cyperinus",
+      "synset": "oewn-12173741-n"
+    },
+    {
+      "definition": "a sedge of the genus Eleocharis",
+      "forms": [],
+      "id": "oewn-spike_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "spike rush",
+      "synset": "oewn-12174097-n"
+    },
+    {
+      "definition": "Chinese sedge yielding edible bulb-shaped tubers",
+      "forms": [],
+      "id": "oewn-water_chestnut__1.20.01..",
+      "lang": "en",
+      "lemma": "water chestnut",
+      "synset": "oewn-12174258-n"
+    },
+    {
+      "definition": "Chinese sedge yielding edible bulb-shaped tubers",
+      "forms": [],
+      "id": "oewn-chinese_water_chestnut__1.20.00..",
+      "lang": "en",
+      "lemma": "Chinese water chestnut",
+      "synset": "oewn-12174258-n"
+    },
+    {
+      "definition": "Chinese sedge yielding edible bulb-shaped tubers",
+      "forms": [],
+      "id": "oewn-eleocharis_dulcis__1.20.00..",
+      "lang": "en",
+      "lemma": "Eleocharis dulcis",
+      "synset": "oewn-12174258-n"
+    },
+    {
+      "definition": "fine-leaved aquatic spike rush; popular as aerator for aquariums",
+      "forms": [],
+      "id": "oewn-needle_spike_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "needle spike rush",
+      "synset": "oewn-12174431-n"
+    },
+    {
+      "definition": "fine-leaved aquatic spike rush; popular as aerator for aquariums",
+      "forms": [],
+      "id": "oewn-needle_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "needle rush",
+      "synset": "oewn-12174431-n"
+    },
+    {
+      "definition": "fine-leaved aquatic spike rush; popular as aerator for aquariums",
+      "forms": [],
+      "id": "oewn-slender_spike_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "slender spike rush",
+      "synset": "oewn-12174431-n"
+    },
+    {
+      "definition": "fine-leaved aquatic spike rush; popular as aerator for aquariums",
+      "forms": [],
+      "id": "oewn-hair_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "hair grass",
+      "synset": "oewn-12174431-n"
+    },
+    {
+      "definition": "fine-leaved aquatic spike rush; popular as aerator for aquariums",
+      "forms": [],
+      "id": "oewn-eleocharis_acicularis__1.20.00..",
+      "lang": "en",
+      "lemma": "Eleocharis acicularis",
+      "synset": "oewn-12174431-n"
+    },
+    {
+      "definition": "cylindrical-stemmed sedge",
+      "forms": [],
+      "id": "oewn-creeping_spike_rush__1.20.00..",
+      "lang": "en",
+      "lemma": "creeping spike rush",
+      "synset": "oewn-12174631-n"
+    },
+    {
+      "definition": "cylindrical-stemmed sedge",
+      "forms": [],
+      "id": "oewn-eleocharis_palustris__1.20.00..",
+      "lang": "en",
+      "lemma": "Eleocharis palustris",
+      "synset": "oewn-12174631-n"
+    },
+    {
+      "definition": "tall erect herbs with sword-shaped leaves; cosmopolitan in fresh and salt marshes",
+      "forms": [],
+      "id": "oewn-cattail__1.20.00..",
+      "lang": "en",
+      "lemma": "cattail",
+      "synset": "oewn-12176100-n"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "forms": [],
+      "id": "oewn-cat-ap-s-tail__1.20.02..",
+      "lang": "en",
+      "lemma": "cat's-tail",
+      "synset": "oewn-12176290-n"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "forms": [],
+      "id": "oewn-bullrush__1.20.02..",
+      "lang": "en",
+      "lemma": "bullrush",
+      "synset": "oewn-12176290-n"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "forms": [],
+      "id": "oewn-bulrush__1.20.02..",
+      "lang": "en",
+      "lemma": "bulrush",
+      "synset": "oewn-12176290-n"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "forms": [],
+      "id": "oewn-nailrod__1.20.00..",
+      "lang": "en",
+      "lemma": "nailrod",
+      "synset": "oewn-12176290-n"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "forms": [],
+      "id": "oewn-reed_mace__1.20.00..",
+      "lang": "en",
+      "lemma": "reed mace",
+      "synset": "oewn-12176290-n"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "forms": [],
+      "id": "oewn-reedmace__1.20.00..",
+      "lang": "en",
+      "lemma": "reedmace",
+      "synset": "oewn-12176290-n"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "forms": [],
+      "id": "oewn-typha_latifolia__1.20.00..",
+      "lang": "en",
+      "lemma": "Typha latifolia",
+      "synset": "oewn-12176290-n"
+    },
+    {
+      "definition": "reed maces of America, Europe, North Africa, Asia",
+      "forms": [],
+      "id": "oewn-lesser_bullrush__1.20.00..",
+      "lang": "en",
+      "lemma": "lesser bullrush",
+      "synset": "oewn-12176634-n"
+    },
+    {
+      "definition": "reed maces of America, Europe, North Africa, Asia",
+      "forms": [],
+      "id": "oewn-narrow-leaf_cattail__1.20.00..",
+      "lang": "en",
+      "lemma": "narrow-leaf cattail",
+      "synset": "oewn-12176634-n"
+    },
+    {
+      "definition": "reed maces of America, Europe, North Africa, Asia",
+      "forms": [],
+      "id": "oewn-narrow-leaved_reedmace__1.20.00..",
+      "lang": "en",
+      "lemma": "narrow-leaved reedmace",
+      "synset": "oewn-12176634-n"
+    },
+    {
+      "definition": "reed maces of America, Europe, North Africa, Asia",
+      "forms": [],
+      "id": "oewn-soft_flag__1.20.00..",
+      "lang": "en",
+      "lemma": "soft flag",
+      "synset": "oewn-12176634-n"
+    },
+    {
+      "definition": "reed maces of America, Europe, North Africa, Asia",
+      "forms": [],
+      "id": "oewn-typha_angustifolia__1.20.00..",
+      "lang": "en",
+      "lemma": "Typha angustifolia",
+      "synset": "oewn-12176634-n"
+    },
+    {
+      "definition": "any of various plants of the genus Sabbatia having usually pink cymose flowers; occur from acid bogs to brackish marshes",
+      "forms": [],
+      "id": "oewn-sabbatia__1.20.00..",
+      "lang": "en",
+      "lemma": "sabbatia",
+      "synset": "oewn-12318682-n"
+    },
+    {
+      "definition": "any of several pink-flowered marsh plant of the eastern United States resembling a true centaury",
+      "forms": [],
+      "id": "oewn-marsh_pink__1.20.00..",
+      "lang": "en",
+      "lemma": "marsh pink",
+      "synset": "oewn-12318912-n"
+    },
+    {
+      "definition": "any of several pink-flowered marsh plant of the eastern United States resembling a true centaury",
+      "forms": [],
+      "id": "oewn-rose_pink__1.20.00..",
+      "lang": "en",
+      "lemma": "rose pink",
+      "synset": "oewn-12318912-n"
+    },
+    {
+      "definition": "any of several pink-flowered marsh plant of the eastern United States resembling a true centaury",
+      "forms": [],
+      "id": "oewn-bitter_floom__1.20.00..",
+      "lang": "en",
+      "lemma": "bitter floom",
+      "synset": "oewn-12318912-n"
+    },
+    {
+      "definition": "any of several pink-flowered marsh plant of the eastern United States resembling a true centaury",
+      "forms": [],
+      "id": "oewn-american_centaury__1.20.00..",
+      "lang": "en",
+      "lemma": "American centaury",
+      "synset": "oewn-12318912-n"
+    },
+    {
+      "definition": "any of several pink-flowered marsh plant of the eastern United States resembling a true centaury",
+      "forms": [],
+      "id": "oewn-sabbatia_stellaris__1.20.00..",
+      "lang": "en",
+      "lemma": "Sabbatia stellaris",
+      "synset": "oewn-12318912-n"
+    },
+    {
+      "definition": "any of several pink-flowered marsh plant of the eastern United States resembling a true centaury",
+      "forms": [],
+      "id": "oewn-sabbatia_angularis__1.20.00..",
+      "lang": "en",
+      "lemma": "Sabbatia Angularis",
+      "synset": "oewn-12318912-n"
+    },
+    {
+      "definition": "prairie herb with solitary lilac-colored flowers",
+      "forms": [],
+      "id": "oewn-prairia_sabbatia__1.20.00..",
+      "lang": "en",
+      "lemma": "prairia Sabbatia",
+      "synset": "oewn-12319154-n"
+    },
+    {
+      "definition": "prairie herb with solitary lilac-colored flowers",
+      "forms": [],
+      "id": "oewn-texas_star__1.20.02..",
+      "lang": "en",
+      "lemma": "Texas star",
+      "synset": "oewn-12319154-n"
+    },
+    {
+      "definition": "prairie herb with solitary lilac-colored flowers",
+      "forms": [],
+      "id": "oewn-sabbatia_campestris__1.20.00..",
+      "lang": "en",
+      "lemma": "Sabbatia campestris",
+      "synset": "oewn-12319154-n"
+    },
+    {
+      "definition": "any of several rushlike plants, especially of the pine barrens of southern United States",
+      "forms": [],
+      "id": "oewn-yellow-eyed_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "yellow-eyed grass",
+      "synset": "oewn-12626444-n"
+    },
+    {
+      "definition": "of Australia",
+      "forms": [],
+      "id": "oewn-tall_yellow-eye__1.20.00..",
+      "lang": "en",
+      "lemma": "tall yellow-eye",
+      "synset": "oewn-12626633-n"
+    },
+    {
+      "definition": "of Australia",
+      "forms": [],
+      "id": "oewn-xyris_operculata__1.20.00..",
+      "lang": "en",
+      "lemma": "Xyris operculata",
+      "synset": "oewn-12626633-n"
+    },
+    {
+      "definition": "marsh plant having clusters of small white or pinkish flowers and broad pointed or rounded leaves",
+      "forms": [],
+      "id": "oewn-water_plantain__1.20.00..",
+      "lang": "en",
+      "lemma": "water plantain",
+      "synset": "oewn-12632931-n"
+    },
+    {
+      "definition": "marsh plant having clusters of small white or pinkish flowers and broad pointed or rounded leaves",
+      "forms": [],
+      "id": "oewn-alisma_plantago-aquatica__1.20.00..",
+      "lang": "en",
+      "lemma": "Alisma plantago-aquatica",
+      "synset": "oewn-12632931-n"
+    },
+    {
+      "definition": "a variety of water plantain (Alisma gramineum)",
+      "forms": [],
+      "id": "oewn-ribbon-leaved_water_plantain__1.20.00..",
+      "lang": "en",
+      "lemma": "ribbon-leaved water plantain",
+      "synset": "oewn-12633470-n"
+    },
+    {
+      "definition": "a variety of water plantain (Alisma lanceolatum)",
+      "forms": [],
+      "id": "oewn-narrow-leaved_water_plantain__1.20.00..",
+      "lang": "en",
+      "lemma": "narrow-leaved water plantain",
+      "synset": "oewn-12633572-n"
+    },
+    {
+      "definition": "tufted perennial found in shallow water or marshland; sometimes poisons livestock",
+      "forms": [],
+      "id": "oewn-arrow_grass__1.20.00..",
+      "lang": "en",
+      "lemma": "arrow grass",
+      "synset": "oewn-12638320-n"
+    },
+    {
+      "definition": "tufted perennial found in shallow water or marshland; sometimes poisons livestock",
+      "forms": [],
+      "id": "oewn-triglochin_maritima__1.20.00..",
+      "lang": "en",
+      "lemma": "Triglochin maritima",
+      "synset": "oewn-12638320-n"
+    },
+    {
+      "definition": "any of various usually evergreen bog plants of the genus Parnassia having broad smooth basal leaves and a single pale flower resembling a buttercup",
+      "forms": [],
+      "id": "oewn-parnassia__1.20.00..",
+      "lang": "en",
+      "lemma": "parnassia",
+      "synset": "oewn-12822280-n"
+    },
+    {
+      "definition": "any of various usually evergreen bog plants of the genus Parnassia having broad smooth basal leaves and a single pale flower resembling a buttercup",
+      "forms": [],
+      "id": "oewn-grass-of-parnassus__1.20.00..",
+      "lang": "en",
+      "lemma": "grass-of-Parnassus",
+      "synset": "oewn-12822280-n"
+    },
+    {
+      "definition": "plant having ovate leaves in a basal rosette and white starlike flowers netted with green",
+      "forms": [],
+      "id": "oewn-bog_star__1.20.00..",
+      "lang": "en",
+      "lemma": "bog star",
+      "synset": "oewn-12822541-n"
+    },
+    {
+      "definition": "plant having ovate leaves in a basal rosette and white starlike flowers netted with green",
+      "forms": [],
+      "id": "oewn-parnassia_palustris__1.20.00..",
+      "lang": "en",
+      "lemma": "Parnassia palustris",
+      "synset": "oewn-12822541-n"
+    },
+    {
+      "definition": "showy perennial of marshlands of eastern and central North America having waxy lanceolate leaves and flower with lower part creamy white and upper parts pale pink to deep purple",
+      "forms": [],
+      "id": "oewn-shellflower__1.20.01..",
+      "lang": "en",
+      "lemma": "shellflower",
+      "synset": "oewn-12901865-n"
+    },
+    {
+      "definition": "showy perennial of marshlands of eastern and central North America having waxy lanceolate leaves and flower with lower part creamy white and upper parts pale pink to deep purple",
+      "forms": [],
+      "id": "oewn-shell-flower__1.20.01..",
+      "lang": "en",
+      "lemma": "shell-flower",
+      "synset": "oewn-12901865-n"
+    },
+    {
+      "definition": "showy perennial of marshlands of eastern and central North America having waxy lanceolate leaves and flower with lower part creamy white and upper parts pale pink to deep purple",
+      "forms": [],
+      "id": "oewn-turtlehead__1.20.00..",
+      "lang": "en",
+      "lemma": "turtlehead",
+      "synset": "oewn-12901865-n"
+    },
+    {
+      "definition": "showy perennial of marshlands of eastern and central North America having waxy lanceolate leaves and flower with lower part creamy white and upper parts pale pink to deep purple",
+      "forms": [],
+      "id": "oewn-snakehead__1.20.00..",
+      "lang": "en",
+      "lemma": "snakehead",
+      "synset": "oewn-12901865-n"
+    },
+    {
+      "definition": "showy perennial of marshlands of eastern and central North America having waxy lanceolate leaves and flower with lower part creamy white and upper parts pale pink to deep purple",
+      "forms": [],
+      "id": "oewn-snake-head__1.20.00..",
+      "lang": "en",
+      "lemma": "snake-head",
+      "synset": "oewn-12901865-n"
+    },
+    {
+      "definition": "showy perennial of marshlands of eastern and central North America having waxy lanceolate leaves and flower with lower part creamy white and upper parts pale pink to deep purple",
+      "forms": [],
+      "id": "oewn-chelone_glabra__1.20.00..",
+      "lang": "en",
+      "lemma": "Chelone glabra",
+      "synset": "oewn-12901865-n"
+    },
+    {
+      "definition": "plant of western North America and northeastern Asia having prostrate stems with dense racemes of pale violet to lilac flowers",
+      "forms": [],
+      "id": "oewn-brooklime__1.20.01..",
+      "lang": "en",
+      "lemma": "brooklime",
+      "synset": "oewn-12911445-n"
+    },
+    {
+      "definition": "plant of western North America and northeastern Asia having prostrate stems with dense racemes of pale violet to lilac flowers",
+      "forms": [],
+      "id": "oewn-american_brooklime__1.20.00..",
+      "lang": "en",
+      "lemma": "American brooklime",
+      "synset": "oewn-12911445-n"
+    },
+    {
+      "definition": "plant of western North America and northeastern Asia having prostrate stems with dense racemes of pale violet to lilac flowers",
+      "forms": [],
+      "id": "oewn-veronica_americana__1.20.00..",
+      "lang": "en",
+      "lemma": "Veronica americana",
+      "synset": "oewn-12911445-n"
+    },
+    {
+      "definition": "European plant having low-lying stems with blue flowers; sparsely naturalized in North America",
+      "forms": [],
+      "id": "oewn-brooklime__1.20.02..",
+      "lang": "en",
+      "lemma": "brooklime",
+      "synset": "oewn-12911853-n"
+    },
+    {
+      "definition": "European plant having low-lying stems with blue flowers; sparsely naturalized in North America",
+      "forms": [],
+      "id": "oewn-european_brooklime__1.20.00..",
+      "lang": "en",
+      "lemma": "European brooklime",
+      "synset": "oewn-12911853-n"
+    },
+    {
+      "definition": "European plant having low-lying stems with blue flowers; sparsely naturalized in North America",
+      "forms": [],
+      "id": "oewn-veronica_beccabunga__1.20.00..",
+      "lang": "en",
+      "lemma": "Veronica beccabunga",
+      "synset": "oewn-12911853-n"
+    },
+    {
+      "definition": "stout white-flowered perennial found wild in shallow fresh water; northern United States and Asia",
+      "forms": [],
+      "id": "oewn-water_parsnip__1.20.00..",
+      "lang": "en",
+      "lemma": "water parsnip",
+      "synset": "oewn-12965937-n"
+    },
+    {
+      "definition": "stout white-flowered perennial found wild in shallow fresh water; northern United States and Asia",
+      "forms": [],
+      "id": "oewn-sium_suave__1.20.00..",
+      "lang": "en",
+      "lemma": "Sium suave",
+      "synset": "oewn-12965937-n"
+    },
+    {
+      "definition": "large stout white-flowered perennial found wild in shallow fresh water; Europe",
+      "forms": [],
+      "id": "oewn-greater_water_parsnip__1.20.00..",
+      "lang": "en",
+      "lemma": "greater water parsnip",
+      "synset": "oewn-12966126-n"
+    },
+    {
+      "definition": "large stout white-flowered perennial found wild in shallow fresh water; Europe",
+      "forms": [],
+      "id": "oewn-sium_latifolium__1.20.00..",
+      "lang": "en",
+      "lemma": "Sium latifolium",
+      "synset": "oewn-12966126-n"
+    },
+    {
+      "definition": "an Asiatic herb cultivated in Europe for its sweet edible tuberous root",
+      "forms": [],
+      "id": "oewn-skirret__1.20.00..",
+      "lang": "en",
+      "lemma": "skirret",
+      "synset": "oewn-12966309-n"
+    },
+    {
+      "definition": "an Asiatic herb cultivated in Europe for its sweet edible tuberous root",
+      "forms": [],
+      "id": "oewn-sium_sisarum__1.20.00..",
+      "lang": "en",
+      "lemma": "Sium sisarum",
+      "synset": "oewn-12966309-n"
+    },
+    {
+      "definition": "a semiaquatic plant that grows in soft wet land; most are monocots: sedge, sphagnum, grasses, cattails, etc.; possibly heath",
+      "forms": [],
+      "id": "oewn-marsh_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "marsh plant",
+      "synset": "oewn-13143123-n"
+    },
+    {
+      "definition": "a semiaquatic plant that grows in soft wet land; most are monocots: sedge, sphagnum, grasses, cattails, etc.; possibly heath",
+      "forms": [],
+      "id": "oewn-bog_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "bog plant",
+      "synset": "oewn-13143123-n"
+    },
+    {
+      "definition": "a semiaquatic plant that grows in soft wet land; most are monocots: sedge, sphagnum, grasses, cattails, etc.; possibly heath",
+      "forms": [],
+      "id": "oewn-swamp_plant__1.20.00..",
+      "lang": "en",
+      "lemma": "swamp plant",
+      "synset": "oewn-13143123-n"
+    },
+    {
+      "definition": "North American herbaceous perennial of wet places having slender curled racemes of small white flowers",
+      "forms": [],
+      "id": "oewn-lizard-ap-s-tail__1.20.00..",
+      "lang": "en",
+      "lemma": "lizard's-tail",
+      "synset": "oewn-13172752-n"
+    },
+    {
+      "definition": "North American herbaceous perennial of wet places having slender curled racemes of small white flowers",
+      "forms": [],
+      "id": "oewn-swamp_lily__1.20.00..",
+      "lang": "en",
+      "lemma": "swamp lily",
+      "synset": "oewn-13172752-n"
+    },
+    {
+      "definition": "North American herbaceous perennial of wet places having slender curled racemes of small white flowers",
+      "forms": [],
+      "id": "oewn-water_dragon__1.20.02..",
+      "lang": "en",
+      "lemma": "water dragon",
+      "synset": "oewn-13172752-n"
+    },
+    {
+      "definition": "North American herbaceous perennial of wet places having slender curled racemes of small white flowers",
+      "forms": [],
+      "id": "oewn-saururus_cernuus__1.20.00..",
+      "lang": "en",
+      "lemma": "Saururus cernuus",
+      "synset": "oewn-13172752-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "semiaquatic Eurasian perennial crowfoot with leaves shaped like spears; naturalized in New Zealand",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11742111-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "lesser spearwort"
+    },
+    {
+      "definition": "semiaquatic European crowfoot with leaves shaped like spears",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11742505-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "greater spearwort"
+    },
+    {
+      "definition": "swamp plant of Europe and North America having bright yellow flowers resembling buttercups",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11748568-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "marsh marigold"
+    },
+    {
+      "definition": "grasslike plants growing in wet places and having cylindrical often hollow stems",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11763763-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "rush"
+    },
+    {
+      "definition": "tall rush with soft erect or arching stems found in Eurasia, Australia, New Zealand, and common in North America",
+      "hypernyms": [
+        "oewn-11763763-n"
+      ],
+      "id": "oewn-11764241-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "bulrush"
+    },
+    {
+      "definition": "rush of Australia",
+      "hypernyms": [
+        "oewn-11763763-n"
+      ],
+      "id": "oewn-11764480-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "jointed rush"
+    },
+    {
+      "definition": "low-growing annual rush of damp low-lying ground; nearly cosmopolitan",
+      "hypernyms": [
+        "oewn-11763763-n"
+      ],
+      "id": "oewn-11764577-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "toad rush"
+    },
+    {
+      "definition": "tall rush of temperate regions",
+      "hypernyms": [
+        "oewn-11763763-n"
+      ],
+      "id": "oewn-11764720-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "hard rush"
+    },
+    {
+      "definition": "rush of the Pacific coast of North America",
+      "hypernyms": [
+        "oewn-11763763-n"
+      ],
+      "id": "oewn-11764824-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "salt rush"
+    },
+    {
+      "definition": "tufted wiry rush of wide distribution",
+      "hypernyms": [
+        "oewn-11763763-n"
+      ],
+      "id": "oewn-11764940-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "slender rush"
+    },
+    {
+      "definition": "perennial marsh plant having swordlike leaves and aromatic roots",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11801399-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sweet flag"
+    },
+    {
+      "definition": "plant of wetlands and bogs of temperate regions having small greenish flowers partly enclosed in a white spathe and red berries",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11806600-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "wild calla"
+    },
+    {
+      "definition": "clump-forming deciduous perennial swamp plant of western North America similar to Symplocarpus foetidus but having a yellow spathe",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11809535-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "skunk cabbage"
+    },
+    {
+      "definition": "deciduous perennial low-growing fetid swamp plant of eastern North America having minute flowers enclosed in a mottled greenish or purple cowl-shaped spathe",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-11813211-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "skunk cabbage"
+    },
+    {
+      "definition": "any of various coarse shrubby plants of the genus Iva with small greenish flowers; common in moist areas (as coastal salt marshes) of eastern and central North America",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12005522-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "marsh elder"
+    },
+    {
+      "definition": "tall annual marsh elder common in moist rich soil in central North America that can cause contact dermatitis; produces much pollen that is a major cause of hay fever",
+      "hypernyms": [
+        "oewn-12005522-n"
+      ],
+      "id": "oewn-12005790-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "burweed marsh elder"
+    },
+    {
+      "definition": "grasslike or rushlike plant growing in wet places having solid stems, narrow grasslike leaves and spikelets of inconspicuous flowers",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12170545-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sedge"
+    },
+    {
+      "definition": "African sedge widely cultivated as an ornamental water plant for its terminal umbrellalike cluster of slender grasslike leaves",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12171239-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "umbrella plant"
+    },
+    {
+      "definition": "European sedge having small edible nutlike tubers",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12171486-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "chufa"
+    },
+    {
+      "definition": "European sedge having rough-edged leaves and spikelets of reddish flowers and aromatic roots",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12171687-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "galingale"
+    },
+    {
+      "definition": "tall sedge of the Nile valley yielding fiber that served many purposes in historic times",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12171882-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "papyrus"
+    },
+    {
+      "definition": "a widely distributed perennial sedge having small edible nutlike tubers",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12172132-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "nutgrass"
+    },
+    {
+      "definition": "European maritime sedge naturalized along Atlantic coast of United States; rootstock has properties of sarsaparilla",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12172548-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "sand sedge"
+    },
+    {
+      "definition": "tufted sedge of temperate regions; nearly cosmopolitan",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12172768-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cypress sedge"
+    },
+    {
+      "definition": "any sedge of the genus Eriophorum; north temperate bog plants with tufted spikes",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12173049-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cotton grass"
+    },
+    {
+      "definition": "having densely tufted white cottony or downlike glumes",
+      "hypernyms": [
+        "oewn-12173049-n"
+      ],
+      "id": "oewn-12173239-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "common cotton grass"
+    },
+    {
+      "definition": "widely distributed North American sedge having rigid olive green stems",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12173550-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "hardstem bulrush"
+    },
+    {
+      "definition": "sedge of eastern North America having numerous clustered woolly spikelets",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12173741-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "wool grass"
+    },
+    {
+      "definition": "a sedge of the genus Eleocharis",
+      "hypernyms": [
+        "oewn-12170545-n"
+      ],
+      "id": "oewn-12174097-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "spike rush"
+    },
+    {
+      "definition": "Chinese sedge yielding edible bulb-shaped tubers",
+      "hypernyms": [
+        "oewn-12174097-n"
+      ],
+      "id": "oewn-12174258-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "water chestnut"
+    },
+    {
+      "definition": "fine-leaved aquatic spike rush; popular as aerator for aquariums",
+      "hypernyms": [
+        "oewn-12174097-n"
+      ],
+      "id": "oewn-12174431-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "needle spike rush"
+    },
+    {
+      "definition": "cylindrical-stemmed sedge",
+      "hypernyms": [
+        "oewn-12174097-n"
+      ],
+      "id": "oewn-12174631-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "creeping spike rush"
+    },
+    {
+      "definition": "tall erect herbs with sword-shaped leaves; cosmopolitan in fresh and salt marshes",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12176100-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "cattail"
+    },
+    {
+      "definition": "tall marsh plant with cylindrical seed heads that explode when mature shedding large quantities of down; its long flat leaves are used for making mats and chair seats; of North America, Europe, Asia and North Africa",
+      "hypernyms": [
+        "oewn-12176100-n"
+      ],
+      "id": "oewn-12176290-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "cat's-tail"
+    },
+    {
+      "definition": "reed maces of America, Europe, North Africa, Asia",
+      "hypernyms": [
+        "oewn-12176100-n"
+      ],
+      "id": "oewn-12176634-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "lesser bullrush"
+    },
+    {
+      "definition": "any of various plants of the genus Sabbatia having usually pink cymose flowers; occur from acid bogs to brackish marshes",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12318682-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "sabbatia"
+    },
+    {
+      "definition": "any of several pink-flowered marsh plant of the eastern United States resembling a true centaury",
+      "hypernyms": [
+        "oewn-12318682-n"
+      ],
+      "id": "oewn-12318912-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "marsh pink"
+    },
+    {
+      "definition": "prairie herb with solitary lilac-colored flowers",
+      "hypernyms": [
+        "oewn-12318682-n"
+      ],
+      "id": "oewn-12319154-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "prairia Sabbatia"
+    },
+    {
+      "definition": "any of several rushlike plants, especially of the pine barrens of southern United States",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12626444-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "yellow-eyed grass"
+    },
+    {
+      "definition": "of Australia",
+      "hypernyms": [
+        "oewn-12626444-n"
+      ],
+      "id": "oewn-12626633-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "tall yellow-eye"
+    },
+    {
+      "definition": "marsh plant having clusters of small white or pinkish flowers and broad pointed or rounded leaves",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12632931-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "water plantain"
+    },
+    {
+      "definition": "a variety of water plantain (Alisma gramineum)",
+      "hypernyms": [
+        "oewn-12632931-n"
+      ],
+      "id": "oewn-12633470-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "ribbon-leaved water plantain"
+    },
+    {
+      "definition": "a variety of water plantain (Alisma lanceolatum)",
+      "hypernyms": [
+        "oewn-12632931-n"
+      ],
+      "id": "oewn-12633572-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "narrow-leaved water plantain"
+    },
+    {
+      "definition": "tufted perennial found in shallow water or marshland; sometimes poisons livestock",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12638320-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "arrow grass"
+    },
+    {
+      "definition": "any of various usually evergreen bog plants of the genus Parnassia having broad smooth basal leaves and a single pale flower resembling a buttercup",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12822280-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "parnassia"
+    },
+    {
+      "definition": "plant having ovate leaves in a basal rosette and white starlike flowers netted with green",
+      "hypernyms": [
+        "oewn-12822280-n"
+      ],
+      "id": "oewn-12822541-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 9,
+      "name": "bog star"
+    },
+    {
+      "definition": "showy perennial of marshlands of eastern and central North America having waxy lanceolate leaves and flower with lower part creamy white and upper parts pale pink to deep purple",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12901865-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "shellflower"
+    },
+    {
+      "definition": "plant of western North America and northeastern Asia having prostrate stems with dense racemes of pale violet to lilac flowers",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12911445-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "brooklime"
+    },
+    {
+      "definition": "European plant having low-lying stems with blue flowers; sparsely naturalized in North America",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12911853-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "brooklime"
+    },
+    {
+      "definition": "stout white-flowered perennial found wild in shallow fresh water; northern United States and Asia",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12965937-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "water parsnip"
+    },
+    {
+      "definition": "large stout white-flowered perennial found wild in shallow fresh water; Europe",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12966126-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "greater water parsnip"
+    },
+    {
+      "definition": "an Asiatic herb cultivated in Europe for its sweet edible tuberous root",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-12966309-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "skirret"
+    },
+    {
+      "definition": "a semiaquatic plant that grows in soft wet land; most are monocots: sedge, sphagnum, grasses, cattails, etc.; possibly heath",
+      "hypernyms": [
+        "oewn-13142303-n"
+      ],
+      "id": "oewn-13143123-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "marsh plant"
+    },
+    {
+      "definition": "North American herbaceous perennial of wet places having slender curled racemes of small white flowers",
+      "hypernyms": [
+        "oewn-13143123-n"
+      ],
+      "id": "oewn-13172752-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "lizard's-tail"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

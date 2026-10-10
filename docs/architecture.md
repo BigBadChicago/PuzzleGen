@@ -1292,3 +1292,34 @@ graph nor a game.
   existing queries and letters supplied by this subsystem, so the expensive
   character work stays in the one game that needs it while the letter definition
   stays shared. Full spec in `docs/missing-letters-requirements.md`.
+
+## Phase 7, continued (session 3): the board's fifth gate
+
+### `has_no_category_leak`: the hidden reading must be the only one
+
+A fifth board-level gate joins disjointness, cross-membership, borrowing and
+temptation in `puzzlegen/games/grouping/generate.py`. It refuses a board where a
+tile outside the hidden group carries the hidden category, or where a visible
+group's category is an ancestor of the hidden category, and reports
+`category_leak`.
+
+Where it sits is the whole argument. The content service cannot refuse these
+boards, because every group in them is individually sound and only the pairing
+is broken. The verifier cannot, because it counts partitions on the lexical axis
+and excludes the overlay axis by design: the hidden group is a second reading of
+the same tiles, not a fifth answer, and counting it would make every board
+ambiguous by construction. Cross-membership cannot, because it compares the four
+visible categories with each other and the hidden category is deliberately not
+among them. Generation is the only place left, and the property is a fact about
+a combination of five groups, which is exactly what this module already owns.
+
+It reads `EntityView.type_ids`, the transitive closure of an entity's
+categories, rather than walking the taxonomy, so the gate needs no graph handle.
+`tools/overlay_coverage.py` applies the same gate, because a coverage model that
+counted boards the generator refuses would report capacity that does not exist.
+
+What it does not reach: an overlay category and a lexical category that mean the
+same thing but are unrelated in the graph, `overlay.color` and `chromatic
+color` being the live example. Overlay categories are taxonomy roots, so there
+is no relation to find. That needs an anchor recorded on the overlay category;
+see `docs/decision-log.md`, session 3.

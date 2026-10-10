@@ -131,6 +131,12 @@ Review these. A wrong first sense means the word needs an explicit synset id in 
 
 ## 5. The 22 overlay words still unsupplied after the roots above
 
+**Resolved 2026-10-10. Batch 2 is exported, committed and measured; the table
+below is kept as the analysis that chose it.** What shipped, and what the
+measurement showed, is in section 6.
+
+
+
 Measured with the 16 current roots plus all seven pending roots. These need a second batch.
 
 ```
@@ -156,3 +162,73 @@ iris jasmine mate mower onion rake ram rodent rush walnut
 `mate` (the beverage) is not among the first four noun senses of the word in OEWN, so no root reaches it from the sense the overlay means. It needs either the explicit synset id or removal from the overlay.
 
 Before building this batch, run the fixed `tools/report_lemma_collisions.py` and read its refused parents section.
+
+## 6. What batch 2 actually shipped
+
+Nine roots, exported at depth 6, all committed to `content/seeds/`:
+
+| root | synset id | synsets | overlay words it recovers |
+|---|---|---|---|
+| dairy_product | oewn-07859751-n | 81 | cheese |
+| tool | oewn-04459089-n | 374 | comb, drill, hoe, mower, rake, ram |
+| rodent | oewn-02332053-n | 139 | beaver, rodent |
+| nut | oewn-13157333-n | 31 | coconut, walnut |
+| bulbous_plant | oewn-13155061-n | 180 | iris, onion |
+| vine | oewn-13121436-n | 273 | hop, hops |
+| angiospermous_tree | oewn-13130492-n | 317 | holly, walnut, mate |
+| marsh_plant | oewn-13143123-n | 54 | rush |
+| shrub | oewn-13133423-n | 783 | broom, erica, hemp, jasmine |
+
+Three corrections to the section 5 analysis, each found by exporting the subtree
+and reading the senses rather than by reasoning about the hierarchy:
+
+1. **`mate` is reachable.** Section 5 called it unreachable by any root. It is
+   in `angiospermous_tree`, as the South American holly whose leaves make the
+   drink. The overlay means the beverage and the synset is the tree, so the
+   entity carries a plant parent and a drink's overlay tag; that is the same
+   shape as `rose` the flower and the colour, which the project already
+   accepts. No explicit synset id and no removal needed.
+2. **`heath` is redundant.** Its two targets, `broom` and `erica`, are both
+   inside the `shrub` subtree at depth 6, and `heath` itself appears as a
+   usable visible category in build A2 without being exported as a root. Nine
+   roots instead of ten.
+3. **`shrub` also reaches `cheese`**, as tall mallow. `dairy_product` is
+   exported and passed first so the merged entity takes the dairy definition.
+
+`wordnet-tool.lexicon.json` held the **hand tool** subtree
+(oewn-03494245-n, 164 synsets), not `tool`. Renamed to
+`wordnet-hand_tool.lexicon.json`; the new file under the old name is the real
+`tool` subtree. Every script and doc that names roots was updated. This is the
+kind of mislabel that survives because nothing errors.
+
+### Overlay coverage after batch 2
+
+`overlay_missing` falls from 24 to 2: `coral` (wants the colour sense) and
+`coffee` (wants the brewed sense). Both ride on roots held back with build B
+(`color`) or not yet exported (a beverage root). Nothing else in the 146-member
+overlay is unsupplied. `overlay_words_losing_parents` and
+`merged_categories_losing_parents` are both 0.
+
+### Board coverage, difficulty MEDIUM
+
+Feasible hidden categories per group size, from `build/coverage-A.json` and
+`build/coverage-A2.json`:
+
+```
+group size     5    6    7    8    9
+build A        5    1    0    0    0
+build A2       7    6    2    1    0
+```
+
+Two hidden categories appear that no build had before: `thing with a handle`
+(on `tool`, `shrub`, `wagon`, `hand tool`) and `word that is also a person's
+name` (on `flower`, `edible nut`, `heath`, `herb`). Sizes 6, 7 and 8 go from
+one working category between them to nine. Size 9 is still empty: at that size
+only 57 categories can supply a group at all and 12 overlay words have no home.
+
+**These numbers disagree with the A/B table in the previous handoff** (which
+read 1, 3, 4, 3, 3 for build A across sizes 5 to 9). The committed
+`build/coverage-A.json` says 5, 1, 0, 0, 0, and a fresh rebuild of A reproduces
+that file byte for byte, so the artifact is right and the handoff's table was
+not from it. Board variety across sizes 6 to 9 was never unblocked by build A;
+it is batch 2 that unblocks 6 to 8.

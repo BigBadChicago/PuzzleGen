@@ -9,7 +9,7 @@
 set -euo pipefail
 
 SEEDS=content/seeds
-BASE="bird carnivore fish flavorer flower fruit garment herb insect instrument kitchen planet reptile sport tool vehicle"
+BASE="bird carnivore fish flavorer flower fruit garment herb insect instrument kitchen planet reptile sport hand_tool vehicle"  # hand_tool: this file said "tool" before the 2026-10-10 rename; the subtree is unchanged
 # Listed first so a merged category such as crab takes the crustacean gloss
 # instead of the rowing stroke from sport. Parents merge either way, so order
 # only decides the displayed definition.

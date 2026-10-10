@@ -1069,3 +1069,92 @@ pinned to LF) to end the CRLF/LF churn that made the user's Windows checkout sho
 every tracked text file as modified. Widened the `.gitignore` sqlite rule from
 `*.sqlite3` to `*.sqlite*`, added `*.bak`, and untracked the stray
 `.gitignore.bak`. (commit `e02f7ca`)
+
+## Session 3, 2026-10-10
+
+### Ship A. Game 1's content gate is closed
+
+Build A is the gate build: 16 base roots plus mollusk, crustacean,
+cutting_implement, tableware, power_tool. Build B is held: its only unique wins
+ride on `color`, which introduces the leak below. Recorded with a correction:
+the previous handoff's A/B table said build A gave 1, 3, 4, 3, 3 working hidden
+categories across group sizes 5 to 9. The committed artifact says 5, 1, 0, 0, 0,
+and a rebuild reproduces the artifact byte for byte. Build A unblocked size 5,
+not sizes 6 to 9.
+
+### The hidden reading must be the only one on the board
+
+Chosen over a blacklist of known overlapping pairs, as decided, and implemented
+as `has_no_category_leak` in `puzzlegen/games/grouping/generate.py` with the
+refusal reason `category_leak`.
+
+The rule: no tile outside the hidden group may carry the hidden category, and no
+visible group's category may be an ancestor of the hidden category. The first
+clause is uniqueness of the hidden answer stated directly and it subsumes the
+hierarchy case, since a visible group whose category sits under the hidden one
+has `group_size` tiles all carrying it. The second clause is unreachable in
+practice: a visible category every hidden word carries is also carried by hidden
+words in the other three groups, which `has_no_cross_membership` refuses first.
+Both are read off `EntityView.type_ids`, already the transitive closure, so the
+generator needs no graph handle.
+
+Nothing else in the system refuses this. `has_no_cross_membership` compares the
+four visible categories with each other and the hidden category is deliberately
+not among them. `verify.py` counts partitions on the lexical axis only and
+excludes the overlay axis by design, because counting it would make every board
+ambiguous by construction. Generation is therefore the only place the hidden
+reading's uniqueness can be established.
+
+Mirrored in `tools/overlay_coverage.py`, where the filler pool now excludes
+hidden-category carriers and a board that can only be filled with them is
+reported as `a_filler_tile_is_also_a_hidden_word`, kept distinct from
+`too_few_other_tiles_to_fill_the_groups`. Cost measured on three builds (A, A2,
+B): zero. Coverage is identical with and without the gate, and the gate did not
+fire once on real content. It is a guard against a hole, not a change in
+capacity.
+
+Three fixtures in `tests/unit/test_overlay_coverage.py` gained a sixth cat. With
+five, every filling of the cats group puts `puma` on the board, which answers
+"also a verb" as well as the chosen five do, so those fixtures described boards
+the gate correctly refuses. The tests are about whether a new word reaches a new
+home, so the fixture gained a spare tile rather than the gate gaining an
+exception.
+
+### The colour leak is NOT closed, and the decided rule cannot close it
+
+Measured, not reasoned: build B with the gate still reports the board
+`word that is also a color` over visible groups `airplane`, `finch`, `citrus`,
+`pink`. Two facts explain it.
+
+Overlay categories are taxonomy roots. `overlay.color` has no parents and no
+edge to the lexical `color` category, so no ancestor or descendant relation
+exists between the hidden category and `pink` for any rule to find. The handoff's
+recommended rule, read literally against the graph, has nothing to fire on.
+
+And the `pink` group can be filled without a single extra tagged colour word:
+the curator tagged 13 words as "also a colour" and the `pink` subtree holds
+others that are colours in the lexical sense but carry no overlay tag. The
+uniqueness clause sees no stray carrier and passes the board.
+
+What the board gives away is the visible *label*. "Find the word that is also a
+colour", with one visible group called `pink`, is unfair whether or not a sixth
+tagged word is on the table.
+
+Closing it needs the missing link supplied as content: an optional `anchor` on an
+overlay category naming the lexical category it means (`overlay.color` ->
+`category:color`, oewn-04963771-n). The rule then becomes the decided one and is
+general: a visible group may not be the anchor, nor an ancestor or descendant of
+it. Not blocking, because build A ships without `color`. Open; see the handoff.
+
+### Batch 2 of the lexicon roots, exported and measured
+
+Nine roots, all 22 previously unsupplied overlay words recovered, `overlay_missing`
+down from 24 to 2 (`coral`, `coffee`). Feasible hidden categories by group size
+go from 5, 1, 0, 0, 0 to 7, 6, 2, 1, 0. Detail, the three corrections to the
+section 5 analysis, and the `wordnet-tool` mislabel are in
+`docs/candidate-roots.md` section 6. Reproduced by `docs/rebuild-with-batch2.sh`.
+
+Established while doing it, and worth keeping: a snapshot built with
+`--dev-embeddings` and a freshly exported frequency table reproduces
+`build/coverage-A.json` byte for byte. Coverage applies no embedding gate, so
+coverage work needs no model and no network; only a published snapshot does.

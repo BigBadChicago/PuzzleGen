@@ -17,6 +17,9 @@ itself, exactly as ``puzzlegen/games/grouping/generate.py`` states it:
 * one overlay category supplying ``group_size`` members, every one of them on
   the board, and every visible group giving up at least one
   (``borrowings_for``)
+* no tile outside the hidden group carrying the hidden category, and no
+  chosen category above it (``has_no_category_leak``), because a board whose
+  filler tiles answer the hidden ask has more answers than it wants
 * the four groups sharing at least ``MINIMUM_TEMPTATION`` categories of
   ancestry beyond the ones that define them (``temptation_of``). Measured here
   as what each group's members all share, a lower bound on the real figure,
@@ -444,6 +447,14 @@ UNUSED_GROUP = "a_group_gives_up_no_hidden_member"
 CROSS_MEMBERSHIP = "hidden_member_also_in_another_chosen_parent"
 OVER_BORROWED = "a_group_holds_too_many_hidden_members"
 CANNOT_FILL = "too_few_other_tiles_to_fill_the_groups"
+#: Every way of filling the four groups puts another word of the hidden
+#: category on the board, which gives the hidden ask more answers than it
+#: wants. Distinct from CANNOT_FILL so a content gap is not read as a leak.
+HIDDEN_LEAK = "a_filler_tile_is_also_a_hidden_word"
+#: A chosen visible category is above the hidden category, so its label names
+#: the hidden ask. Overlay categories are taxonomy roots today, so this is
+#: unreachable until an overlay category gains a lexical parent.
+HIDDEN_UNDER_A_CHOSEN_GROUP = "the_hidden_category_sits_under_a_chosen_group"
 
 
 def _shared_ancestry(snapshot: Snapshot, category_id: str) -> frozenset[str]:
@@ -462,7 +473,13 @@ def _quadruple_works(
     hidden: frozenset[str],
     group_size: int,
     ancestry: dict[str, frozenset[str]],
+    hidden_all: frozenset[str] | None = None,
 ) -> tuple[str, str]:
+    """``hidden_all``: every word carrying the hidden category, not only the
+    ``group_size`` chosen for this board. The generator refuses a board whose
+    filler tiles carry the hidden category, so the measurement has to know the
+    whole membership; defaults to the chosen words, which measures the gate as
+    absent rather than inventing carriers a hand-built snapshot never had."""
     chosen = set(categories)
     home_of: dict[str, str] = {}
 
@@ -499,8 +516,23 @@ def _quadruple_works(
                 f"{snapshot.lexical_names.get(home, home)}"
             )
 
+    # Every word of the hidden category that is not one of the chosen five.
+    # A filler tile among them would answer the hidden ask as well as the
+    # intended tiles do, so the board would have more answers than it wants.
+    carriers = (hidden_all if hidden_all is not None else hidden) - hidden
+
+    shared_above = frozenset.intersection(
+        *(snapshot.types_of.get(member, frozenset()) for member in sorted(hidden))
+    ) if hidden else frozenset()
+    above = chosen & shared_above
+    if above:
+        return HIDDEN_UNDER_A_CHOSEN_GROUP, (
+            f"every hidden word is under {named(above)}"
+        )
+
     borrowed = Counter(home_of.values())
     eligible: list[set[str]] = []
+    unfiltered: list[set[str]] = []
     needed: list[int] = []
     for category in categories:
         shortfall = group_size - borrowed[category]
@@ -509,20 +541,26 @@ def _quadruple_works(
                 f"{snapshot.lexical_names.get(category, category)} would hold "
                 f"{borrowed[category]} hidden words but has {group_size} tiles"
             )
-        eligible.append(
-            {
-                entity_id
-                for entity_id in snapshot.lexical_members[category]
-                if entity_id not in home_of
-                and not (
-                    (snapshot.types_of.get(entity_id, frozenset()) & chosen)
-                    - {category}
-                )
-            }
-        )
+        allowed = {
+            entity_id
+            for entity_id in snapshot.lexical_members[category]
+            if entity_id not in home_of
+            and not (
+                (snapshot.types_of.get(entity_id, frozenset()) & chosen)
+                - {category}
+            )
+        }
+        unfiltered.append(set(allowed))
+        eligible.append(allowed - carriers)
         needed.append(shortfall)
 
     if not _can_fill(eligible, needed):
+        # Asked twice, so the two ways of running out are not conflated: a
+        # board that could be filled with hidden words and cannot be filled
+        # without them is the leak, and a board that cannot be filled either
+        # way is short of tiles.
+        if _can_fill(unfiltered, needed):
+            return HIDDEN_LEAK, ""
         return CANNOT_FILL, ""
 
     resemblance = sum(
@@ -615,7 +653,7 @@ def assess(
                 break
             examined += 1
             verdict, detail = _quadruple_works(
-                snapshot, quadruple, hidden, group_size, ancestry
+                snapshot, quadruple, hidden, group_size, ancestry, members
             )
             if verdict == NEEDS_DOMAIN:
                 domain_blocked = True

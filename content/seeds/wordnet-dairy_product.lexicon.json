@@ -1,0 +1,1806 @@
+{
+  "exported": "2026-10-10",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-07859751-n",
+  "senses": [
+    {
+      "definition": "a soft frozen dessert of sweetened flavored yogurt",
+      "forms": [],
+      "id": "oewn-frozen_yogurt__1.13.00..",
+      "lang": "en",
+      "lemma": "frozen yogurt",
+      "synset": "oewn-07631655-n"
+    },
+    {
+      "definition": "milk and butter and cheese",
+      "forms": [],
+      "id": "oewn-dairy_product__1.13.00..",
+      "lang": "en",
+      "lemma": "dairy product",
+      "synset": "oewn-07859751-n"
+    },
+    {
+      "definition": "a white nutritious liquid secreted by mammals and used as food by human beings",
+      "forms": [],
+      "id": "oewn-milk__1.13.01..",
+      "lang": "en",
+      "lemma": "milk",
+      "synset": "oewn-07860018-n"
+    },
+    {
+      "definition": "milk that has turned sour",
+      "forms": [],
+      "id": "oewn-sour_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "sour milk",
+      "synset": "oewn-07860762-n"
+    },
+    {
+      "definition": "milk that has been exposed briefly to high temperatures to destroy microorganisms and prevent fermentation",
+      "forms": [],
+      "id": "oewn-pasteurized_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "pasteurized milk",
+      "synset": "oewn-07861142-n"
+    },
+    {
+      "definition": "milk obtained from dairy cows",
+      "forms": [],
+      "id": "oewn-cows-ap-_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "cows' milk",
+      "synset": "oewn-07861311-n"
+    },
+    {
+      "definition": "the milk of a yak",
+      "forms": [],
+      "id": "oewn-yak-ap-s_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "yak's milk",
+      "synset": "oewn-07861397-n"
+    },
+    {
+      "definition": "the milk of a goat",
+      "forms": [],
+      "id": "oewn-goats-ap-_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "goats' milk",
+      "synset": "oewn-07861471-n"
+    },
+    {
+      "definition": "milk fermented by bacteria; used to treat gastrointestinal disorders",
+      "forms": [],
+      "id": "oewn-acidophilus_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "acidophilus milk",
+      "synset": "oewn-07861547-n"
+    },
+    {
+      "definition": "unpasteurized milk",
+      "forms": [],
+      "id": "oewn-raw_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "raw milk",
+      "synset": "oewn-07861678-n"
+    },
+    {
+      "definition": "milk heated almost to boiling",
+      "forms": [],
+      "id": "oewn-scalded_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "scalded milk",
+      "synset": "oewn-07861751-n"
+    },
+    {
+      "definition": "milk with the fat particles broken up and dispersed uniformly so the cream will not rise",
+      "forms": [],
+      "id": "oewn-homogenized_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "homogenized milk",
+      "synset": "oewn-07861839-n"
+    },
+    {
+      "definition": "milk from dairies regulated by an authorized medical milk commission",
+      "forms": [],
+      "id": "oewn-certified_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "certified milk",
+      "synset": "oewn-07861990-n"
+    },
+    {
+      "definition": "dehydrated milk",
+      "forms": [],
+      "id": "oewn-powdered_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "powdered milk",
+      "synset": "oewn-07862119-n"
+    },
+    {
+      "definition": "dehydrated milk",
+      "forms": [],
+      "id": "oewn-dry_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "dry milk",
+      "synset": "oewn-07862119-n"
+    },
+    {
+      "definition": "dehydrated milk",
+      "forms": [],
+      "id": "oewn-dried_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "dried milk",
+      "synset": "oewn-07862119-n"
+    },
+    {
+      "definition": "dehydrated milk",
+      "forms": [],
+      "id": "oewn-milk_powder__1.13.00..",
+      "lang": "en",
+      "lemma": "milk powder",
+      "synset": "oewn-07862119-n"
+    },
+    {
+      "definition": "dehydrated skimmed milk",
+      "forms": [],
+      "id": "oewn-nonfat_dry_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "nonfat dry milk",
+      "synset": "oewn-07862250-n"
+    },
+    {
+      "definition": "milk concentrated by evaporation",
+      "forms": [],
+      "id": "oewn-evaporated_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "evaporated milk",
+      "synset": "oewn-07862335-n"
+    },
+    {
+      "definition": "sweetened evaporated milk",
+      "forms": [],
+      "id": "oewn-condensed_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "condensed milk",
+      "synset": "oewn-07862447-n"
+    },
+    {
+      "definition": "milk from which the cream has been skimmed",
+      "forms": [],
+      "id": "oewn-skim_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "skim milk",
+      "synset": "oewn-07862533-n"
+    },
+    {
+      "definition": "milk from which the cream has been skimmed",
+      "forms": [],
+      "id": "oewn-skimmed_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "skimmed milk",
+      "synset": "oewn-07862533-n"
+    },
+    {
+      "definition": "milk from which some of the cream has been removed",
+      "forms": [],
+      "id": "oewn-semi-skimmed_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "semi-skimmed milk",
+      "synset": "oewn-07862664-n"
+    },
+    {
+      "definition": "milk from which no constituent (such as fat) has been removed",
+      "forms": [],
+      "id": "oewn-whole_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "whole milk",
+      "synset": "oewn-07862778-n"
+    },
+    {
+      "definition": "milk which has had its fat content reduced",
+      "forms": [],
+      "id": "oewn-low-fat_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "low-fat milk",
+      "synset": "oewn-07862914-n"
+    },
+    {
+      "definition": "residue from making butter from sour raw milk; or pasteurized milk curdled by adding a culture",
+      "forms": [],
+      "id": "oewn-buttermilk__1.13.00..",
+      "lang": "en",
+      "lemma": "buttermilk",
+      "synset": "oewn-07863023-n"
+    },
+    {
+      "definition": "the part of milk containing the butterfat",
+      "forms": [],
+      "id": "oewn-cream__1.13.00..",
+      "lang": "en",
+      "lemma": "cream",
+      "synset": "oewn-07863174-n"
+    },
+    {
+      "definition": "thick cream made from scalded milk",
+      "forms": [],
+      "id": "oewn-clotted_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "clotted cream",
+      "synset": "oewn-07863429-n"
+    },
+    {
+      "definition": "thick cream made from scalded milk",
+      "forms": [],
+      "id": "oewn-devonshire_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "Devonshire cream",
+      "synset": "oewn-07863429-n"
+    },
+    {
+      "definition": "cream with a fat content of 48% or more",
+      "forms": [],
+      "id": "oewn-double_creme__1.13.00..",
+      "lang": "en",
+      "lemma": "double creme",
+      "synset": "oewn-07863561-n"
+    },
+    {
+      "definition": "cream with a fat content of 48% or more",
+      "forms": [],
+      "id": "oewn-heavy_whipping_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "heavy whipping cream",
+      "synset": "oewn-07863561-n"
+    },
+    {
+      "definition": "half milk and half light cream; contains 10% to 18% butterfat",
+      "forms": [],
+      "id": "oewn-half-and-half__1.13.00..",
+      "lang": "en",
+      "lemma": "half-and-half",
+      "synset": "oewn-07863682-n"
+    },
+    {
+      "definition": "contains more than 36% butterfat",
+      "forms": [],
+      "id": "oewn-heavy_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "heavy cream",
+      "synset": "oewn-07863803-n"
+    },
+    {
+      "definition": "cream that has at least 18% butterfat",
+      "forms": [],
+      "id": "oewn-light_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "light cream",
+      "synset": "oewn-07863893-n"
+    },
+    {
+      "definition": "cream that has at least 18% butterfat",
+      "forms": [],
+      "id": "oewn-coffee_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "coffee cream",
+      "synset": "oewn-07863893-n"
+    },
+    {
+      "definition": "cream that has at least 18% butterfat",
+      "forms": [],
+      "id": "oewn-single_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "single cream",
+      "synset": "oewn-07863893-n"
+    },
+    {
+      "definition": "artificially soured light cream",
+      "forms": [],
+      "id": "oewn-sour_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "sour cream",
+      "synset": "oewn-07864069-n"
+    },
+    {
+      "definition": "artificially soured light cream",
+      "forms": [],
+      "id": "oewn-soured_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "soured cream",
+      "synset": "oewn-07864069-n"
+    },
+    {
+      "definition": "cream that has enough butterfat (30% to 36%) to be whipped",
+      "forms": [],
+      "id": "oewn-whipping_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "whipping cream",
+      "synset": "oewn-07864172-n"
+    },
+    {
+      "definition": "cream that has enough butterfat (30% to 36%) to be whipped",
+      "forms": [],
+      "id": "oewn-light_whipping_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "light whipping cream",
+      "synset": "oewn-07864172-n"
+    },
+    {
+      "definition": "an edible emulsion of fat globules made by churning milk or cream; for cooking and table use",
+      "forms": [],
+      "id": "oewn-butter__1.13.00..",
+      "lang": "en",
+      "lemma": "butter",
+      "synset": "oewn-07864314-n"
+    },
+    {
+      "definition": "a rectangular quarter pound block of butter or margarine",
+      "forms": [],
+      "id": "oewn-stick__1.13.00..",
+      "lang": "en",
+      "lemma": "stick",
+      "synset": "oewn-07864621-n"
+    },
+    {
+      "definition": "butter made clear by heating and removing the sediment of milk solids",
+      "forms": [],
+      "id": "oewn-clarified_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "clarified butter",
+      "synset": "oewn-07864747-n"
+    },
+    {
+      "definition": "butter made clear by heating and removing the sediment of milk solids",
+      "forms": [],
+      "id": "oewn-drawn_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "drawn butter",
+      "synset": "oewn-07864747-n"
+    },
+    {
+      "definition": "clarified butter used in Indian cookery",
+      "forms": [],
+      "id": "oewn-ghee__1.13.00..",
+      "lang": "en",
+      "lemma": "ghee",
+      "synset": "oewn-07864912-n"
+    },
+    {
+      "definition": "clarified butter browned slowly and seasoned with vinegar or lemon juice and capers",
+      "forms": [],
+      "id": "oewn-brown_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "brown butter",
+      "synset": "oewn-07865002-n"
+    },
+    {
+      "definition": "clarified butter browned slowly and seasoned with vinegar or lemon juice and capers",
+      "forms": [],
+      "id": "oewn-beurre_noisette__1.13.00..",
+      "lang": "en",
+      "lemma": "beurre noisette",
+      "synset": "oewn-07865002-n"
+    },
+    {
+      "definition": "clarified butter browned slowly and seasoned with lemon juice and parsley",
+      "forms": [],
+      "id": "oewn-meuniere_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "Meuniere butter",
+      "synset": "oewn-07865162-n"
+    },
+    {
+      "definition": "clarified butter browned slowly and seasoned with lemon juice and parsley",
+      "forms": [],
+      "id": "oewn-lemon_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "lemon butter",
+      "synset": "oewn-07865162-n"
+    },
+    {
+      "definition": "a custard-like food made from curdled milk",
+      "forms": [],
+      "id": "oewn-yogurt__1.13.00..",
+      "lang": "en",
+      "lemma": "yogurt",
+      "synset": "oewn-07865312-n"
+    },
+    {
+      "definition": "a custard-like food made from curdled milk",
+      "forms": [],
+      "id": "oewn-yoghurt__1.13.00..",
+      "lang": "en",
+      "lemma": "yoghurt",
+      "synset": "oewn-07865312-n"
+    },
+    {
+      "definition": "a custard-like food made from curdled milk",
+      "forms": [],
+      "id": "oewn-yoghourt__1.13.00..",
+      "lang": "en",
+      "lemma": "yoghourt",
+      "synset": "oewn-07865312-n"
+    },
+    {
+      "definition": "yogurt with sweetened blueberries or blueberry jam",
+      "forms": [],
+      "id": "oewn-blueberry_yogurt__1.13.00..",
+      "lang": "en",
+      "lemma": "blueberry yogurt",
+      "synset": "oewn-07865482-n"
+    },
+    {
+      "definition": "watery part of milk produced when raw milk sours and coagulates",
+      "forms": [],
+      "id": "oewn-whey__1.13.00..",
+      "lang": "en",
+      "lemma": "whey",
+      "synset": "oewn-07865709-n"
+    },
+    {
+      "definition": "coagulated milk; used to make cheese",
+      "forms": [],
+      "id": "oewn-curd__1.13.00..",
+      "lang": "en",
+      "lemma": "curd",
+      "synset": "oewn-07865888-n"
+    },
+    {
+      "definition": "raw milk that has soured and thickened",
+      "forms": [],
+      "id": "oewn-clabber__1.13.00..",
+      "lang": "en",
+      "lemma": "clabber",
+      "synset": "oewn-07866195-n"
+    },
+    {
+      "definition": "a solid food prepared from the pressed curd of milk",
+      "forms": [],
+      "id": "oewn-cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "cheese",
+      "synset": "oewn-07866305-n"
+    },
+    {
+      "definition": "soft unripened cheese made of sweet milk and cream",
+      "forms": [],
+      "id": "oewn-cream_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "cream cheese",
+      "synset": "oewn-07867274-n"
+    },
+    {
+      "definition": "fresh soft French cheese containing at least 60% fat",
+      "forms": [],
+      "id": "oewn-double_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "double cream",
+      "synset": "oewn-07867419-n"
+    },
+    {
+      "definition": "soft mild Italian cream cheese",
+      "forms": [],
+      "id": "oewn-mascarpone__1.13.00..",
+      "lang": "en",
+      "lemma": "mascarpone",
+      "synset": "oewn-07867530-n"
+    },
+    {
+      "definition": "fresh soft French cheese containing at least 72% fat",
+      "forms": [],
+      "id": "oewn-triple_cream__1.13.00..",
+      "lang": "en",
+      "lemma": "triple cream",
+      "synset": "oewn-07867617-n"
+    },
+    {
+      "definition": "fresh soft French cheese containing at least 72% fat",
+      "forms": [],
+      "id": "oewn-triple_creme__1.13.00..",
+      "lang": "en",
+      "lemma": "triple creme",
+      "synset": "oewn-07867617-n"
+    },
+    {
+      "definition": "mild white cheese made from curds of soured skim milk",
+      "forms": [],
+      "id": "oewn-cottage_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "cottage cheese",
+      "synset": "oewn-07867743-n"
+    },
+    {
+      "definition": "mild white cheese made from curds of soured skim milk",
+      "forms": [],
+      "id": "oewn-pot_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "pot cheese",
+      "synset": "oewn-07867743-n"
+    },
+    {
+      "definition": "mild white cheese made from curds of soured skim milk",
+      "forms": [],
+      "id": "oewn-farm_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "farm cheese",
+      "synset": "oewn-07867743-n"
+    },
+    {
+      "definition": "mild white cheese made from curds of soured skim milk",
+      "forms": [],
+      "id": "oewn-farmer-ap-s_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "farmer's cheese",
+      "synset": "oewn-07867743-n"
+    },
+    {
+      "definition": "made by blending several lots of cheese",
+      "forms": [],
+      "id": "oewn-process_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "process cheese",
+      "synset": "oewn-07867902-n"
+    },
+    {
+      "definition": "made by blending several lots of cheese",
+      "forms": [],
+      "id": "oewn-processed_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "processed cheese",
+      "synset": "oewn-07867902-n"
+    },
+    {
+      "definition": "cheese containing a blue mold",
+      "forms": [],
+      "id": "oewn-bleu__1.13.00..",
+      "lang": "en",
+      "lemma": "bleu",
+      "synset": "oewn-07868021-n"
+    },
+    {
+      "definition": "cheese containing a blue mold",
+      "forms": [],
+      "id": "oewn-blue_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "blue cheese",
+      "synset": "oewn-07868021-n"
+    },
+    {
+      "definition": "English blue cheese",
+      "forms": [],
+      "id": "oewn-stilton__1.13.00..",
+      "lang": "en",
+      "lemma": "Stilton",
+      "synset": "oewn-07868205-n"
+    },
+    {
+      "definition": "French blue cheese",
+      "forms": [],
+      "id": "oewn-roquefort__1.13.00..",
+      "lang": "en",
+      "lemma": "Roquefort",
+      "synset": "oewn-07868278-n"
+    },
+    {
+      "definition": "Italian blue cheese",
+      "forms": [],
+      "id": "oewn-gorgonzola__1.13.00..",
+      "lang": "en",
+      "lemma": "gorgonzola",
+      "synset": "oewn-07868352-n"
+    },
+    {
+      "definition": "blue cheese of Denmark",
+      "forms": [],
+      "id": "oewn-danish_blue__1.13.00..",
+      "lang": "en",
+      "lemma": "Danish blue",
+      "synset": "oewn-07868428-n"
+    },
+    {
+      "definition": "blue cheese of Bavaria",
+      "forms": [],
+      "id": "oewn-bavarian_blue__1.13.00..",
+      "lang": "en",
+      "lemma": "Bavarian blue",
+      "synset": "oewn-07868508-n"
+    },
+    {
+      "definition": "soft creamy white cheese; milder than Camembert",
+      "forms": [],
+      "id": "oewn-brie__1.13.00..",
+      "lang": "en",
+      "lemma": "Brie",
+      "synset": "oewn-07868590-n"
+    },
+    {
+      "definition": "semisoft sweet American cheese from whole milk in a brick form",
+      "forms": [],
+      "id": "oewn-brick_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "brick cheese",
+      "synset": "oewn-07868688-n"
+    },
+    {
+      "definition": "rich soft creamy French cheese",
+      "forms": [],
+      "id": "oewn-camembert__1.13.00..",
+      "lang": "en",
+      "lemma": "Camembert",
+      "synset": "oewn-07868809-n"
+    },
+    {
+      "definition": "hard smooth-textured cheese; originally made in Cheddar in southwestern England",
+      "forms": [],
+      "id": "oewn-cheddar__1.13.00..",
+      "lang": "en",
+      "lemma": "cheddar",
+      "synset": "oewn-07868895-n"
+    },
+    {
+      "definition": "hard smooth-textured cheese; originally made in Cheddar in southwestern England",
+      "forms": [],
+      "id": "oewn-cheddar_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "cheddar cheese",
+      "synset": "oewn-07868895-n"
+    },
+    {
+      "definition": "hard smooth-textured cheese; originally made in Cheddar in southwestern England",
+      "forms": [],
+      "id": "oewn-armerican_cheddar__1.13.00..",
+      "lang": "en",
+      "lemma": "Armerican cheddar",
+      "synset": "oewn-07868895-n"
+    },
+    {
+      "definition": "hard smooth-textured cheese; originally made in Cheddar in southwestern England",
+      "forms": [],
+      "id": "oewn-american_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "American cheese",
+      "synset": "oewn-07868895-n"
+    },
+    {
+      "definition": "informal names for American cheddar",
+      "forms": [],
+      "id": "oewn-rat_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "rat cheese",
+      "synset": "oewn-07869101-n"
+    },
+    {
+      "definition": "informal names for American cheddar",
+      "forms": [],
+      "id": "oewn-store_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "store cheese",
+      "synset": "oewn-07869101-n"
+    },
+    {
+      "definition": "a mild yellow English cheese with a crumbly texture",
+      "forms": [],
+      "id": "oewn-cheshire_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "Cheshire cheese",
+      "synset": "oewn-07869208-n"
+    },
+    {
+      "definition": "a smooth firm mild orange-red cheese",
+      "forms": [],
+      "id": "oewn-double_gloucester__1.13.00..",
+      "lang": "en",
+      "lemma": "double Gloucester",
+      "synset": "oewn-07869321-n"
+    },
+    {
+      "definition": "mild yellow Dutch cheese made in balls encased in a red covering",
+      "forms": [],
+      "id": "oewn-edam__1.13.00..",
+      "lang": "en",
+      "lemma": "Edam",
+      "synset": "oewn-07869421-n"
+    },
+    {
+      "definition": "made from goats' milk",
+      "forms": [],
+      "id": "oewn-goat_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "goat cheese",
+      "synset": "oewn-07869536-n"
+    },
+    {
+      "definition": "made from goats' milk",
+      "forms": [],
+      "id": "oewn-chevre__1.13.00..",
+      "lang": "en",
+      "lemma": "chevre",
+      "synset": "oewn-07869536-n"
+    },
+    {
+      "definition": "mild cream-colored Dutch cheese shaped in balls",
+      "forms": [],
+      "id": "oewn-gouda__1.13.00..",
+      "lang": "en",
+      "lemma": "Gouda",
+      "synset": "oewn-07869624-n"
+    },
+    {
+      "definition": "mild cream-colored Dutch cheese shaped in balls",
+      "forms": [],
+      "id": "oewn-gouda_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "Gouda cheese",
+      "synset": "oewn-07869624-n"
+    },
+    {
+      "definition": "hard or semihard cheese grated",
+      "forms": [],
+      "id": "oewn-grated_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "grated cheese",
+      "synset": "oewn-07869738-n"
+    },
+    {
+      "definition": "any cheese originally molded by hand",
+      "forms": [],
+      "id": "oewn-hand_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "hand cheese",
+      "synset": "oewn-07869828-n"
+    },
+    {
+      "definition": "a soft cheese with a strong odor and flavor",
+      "forms": [],
+      "id": "oewn-liederkranz__1.13.00..",
+      "lang": "en",
+      "lemma": "Liederkranz",
+      "synset": "oewn-07869922-n"
+    },
+    {
+      "definition": "a soft white cheese with a very strong pungent odor and flavor",
+      "forms": [],
+      "id": "oewn-limburger__1.13.00..",
+      "lang": "en",
+      "lemma": "Limburger",
+      "synset": "oewn-07870042-n"
+    },
+    {
+      "definition": "mild white Italian cheese",
+      "forms": [],
+      "id": "oewn-mozzarella__1.13.00..",
+      "lang": "en",
+      "lemma": "mozzarella",
+      "synset": "oewn-07870160-n"
+    },
+    {
+      "definition": "semisoft pale-yellow cheese",
+      "forms": [],
+      "id": "oewn-muenster__1.13.00..",
+      "lang": "en",
+      "lemma": "Muenster",
+      "synset": "oewn-07870242-n"
+    },
+    {
+      "definition": "hard dry sharp-flavored Italian cheese; often grated",
+      "forms": [],
+      "id": "oewn-parmesan__1.13.00..",
+      "lang": "en",
+      "lemma": "Parmesan",
+      "synset": "oewn-07870324-n"
+    },
+    {
+      "definition": "fresh unripened cheese of a smooth texture made from pasteurized milk, a starter, and rennet",
+      "forms": [],
+      "id": "oewn-quark_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "quark cheese",
+      "synset": "oewn-07870431-n"
+    },
+    {
+      "definition": "fresh unripened cheese of a smooth texture made from pasteurized milk, a starter, and rennet",
+      "forms": [],
+      "id": "oewn-quark__1.13.00..",
+      "lang": "en",
+      "lemma": "quark",
+      "synset": "oewn-07870431-n"
+    },
+    {
+      "definition": "soft Italian cheese like cottage cheese",
+      "forms": [],
+      "id": "oewn-ricotta__1.13.00..",
+      "lang": "en",
+      "lemma": "ricotta",
+      "synset": "oewn-07870590-n"
+    },
+    {
+      "definition": "cheese formed in long strings twisted together",
+      "forms": [],
+      "id": "oewn-string_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "string cheese",
+      "synset": "oewn-07870683-n"
+    },
+    {
+      "definition": "hard pale yellow cheese with many holes from Switzerland",
+      "forms": [],
+      "id": "oewn-swiss_cheese__1.13.00..",
+      "lang": "en",
+      "lemma": "Swiss cheese",
+      "synset": "oewn-07870789-n"
+    },
+    {
+      "definition": "Swiss cheese with large holes",
+      "forms": [],
+      "id": "oewn-emmenthal__1.13.00..",
+      "lang": "en",
+      "lemma": "Emmenthal",
+      "synset": "oewn-07870958-n"
+    },
+    {
+      "definition": "Swiss cheese with large holes",
+      "forms": [],
+      "id": "oewn-emmental__1.13.00..",
+      "lang": "en",
+      "lemma": "Emmental",
+      "synset": "oewn-07870958-n"
+    },
+    {
+      "definition": "Swiss cheese with large holes",
+      "forms": [],
+      "id": "oewn-emmenthaler__1.13.00..",
+      "lang": "en",
+      "lemma": "Emmenthaler",
+      "synset": "oewn-07870958-n"
+    },
+    {
+      "definition": "Swiss cheese with large holes",
+      "forms": [],
+      "id": "oewn-emmentaler__1.13.00..",
+      "lang": "en",
+      "lemma": "Emmentaler",
+      "synset": "oewn-07870958-n"
+    },
+    {
+      "definition": "Swiss cheese with small holes",
+      "forms": [],
+      "id": "oewn-gruyere__1.13.00..",
+      "lang": "en",
+      "lemma": "Gruyere",
+      "synset": "oewn-07871081-n"
+    },
+    {
+      "definition": "a hard green Swiss cheese made with skim-milk curd and flavored with clover",
+      "forms": [],
+      "id": "oewn-sapsago__1.13.00..",
+      "lang": "en",
+      "lemma": "sapsago",
+      "synset": "oewn-07871164-n"
+    },
+    {
+      "definition": "soft processed American cheese",
+      "forms": [],
+      "id": "oewn-velveeta__1.13.00..",
+      "lang": "en",
+      "lemma": "Velveeta",
+      "synset": "oewn-07871293-n"
+    },
+    {
+      "definition": "butter made from yaks' milk",
+      "forms": [],
+      "id": "oewn-yak_butter__1.13.00..",
+      "lang": "en",
+      "lemma": "yak butter",
+      "synset": "oewn-07872162-n"
+    },
+    {
+      "definition": "milk flavored with chocolate syrup",
+      "forms": [],
+      "id": "oewn-chocolate_milk__1.13.00..",
+      "lang": "en",
+      "lemma": "chocolate milk",
+      "synset": "oewn-07937600-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a soft frozen dessert of sweetened flavored yogurt",
+      "hypernyms": [
+        "oewn-07626967-n",
+        "oewn-07865312-n"
+      ],
+      "id": "oewn-07631655-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 6,
+      "name": "frozen yogurt"
+    },
+    {
+      "definition": "milk and butter and cheese",
+      "hypernyms": [
+        "oewn-07581905-n"
+      ],
+      "id": "oewn-07859751-n",
+      "lang": "en",
+      "max_depth": 7,
+      "min_depth": 6,
+      "name": "dairy product"
+    },
+    {
+      "definition": "a white nutritious liquid secreted by mammals and used as food by human beings",
+      "hypernyms": [
+        "oewn-07859751-n",
+        "oewn-07897775-n"
+      ],
+      "id": "oewn-07860018-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 6,
+      "name": "milk"
+    },
+    {
+      "definition": "milk that has turned sour",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07860762-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "sour milk"
+    },
+    {
+      "definition": "milk that has been exposed briefly to high temperatures to destroy microorganisms and prevent fermentation",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861142-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "pasteurized milk"
+    },
+    {
+      "definition": "milk obtained from dairy cows",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861311-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "cows' milk"
+    },
+    {
+      "definition": "the milk of a yak",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861397-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "yak's milk"
+    },
+    {
+      "definition": "the milk of a goat",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861471-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "goats' milk"
+    },
+    {
+      "definition": "milk fermented by bacteria; used to treat gastrointestinal disorders",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861547-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "acidophilus milk"
+    },
+    {
+      "definition": "unpasteurized milk",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861678-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "raw milk"
+    },
+    {
+      "definition": "milk heated almost to boiling",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861751-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "scalded milk"
+    },
+    {
+      "definition": "milk with the fat particles broken up and dispersed uniformly so the cream will not rise",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861839-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "homogenized milk"
+    },
+    {
+      "definition": "milk from dairies regulated by an authorized medical milk commission",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07861990-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "certified milk"
+    },
+    {
+      "definition": "dehydrated milk",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07862119-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "powdered milk"
+    },
+    {
+      "definition": "dehydrated skimmed milk",
+      "hypernyms": [
+        "oewn-07862119-n"
+      ],
+      "id": "oewn-07862250-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 8,
+      "name": "nonfat dry milk"
+    },
+    {
+      "definition": "milk concentrated by evaporation",
+      "hypernyms": [
+        "oewn-07582955-n",
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07862335-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "evaporated milk"
+    },
+    {
+      "definition": "sweetened evaporated milk",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07862447-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "condensed milk"
+    },
+    {
+      "definition": "milk from which the cream has been skimmed",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07862533-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "skim milk"
+    },
+    {
+      "definition": "milk from which some of the cream has been removed",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07862664-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "semi-skimmed milk"
+    },
+    {
+      "definition": "milk from which no constituent (such as fat) has been removed",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07862778-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "whole milk"
+    },
+    {
+      "definition": "milk which has had its fat content reduced",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07862914-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "low-fat milk"
+    },
+    {
+      "definition": "residue from making butter from sour raw milk; or pasteurized milk curdled by adding a culture",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07863023-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "buttermilk"
+    },
+    {
+      "definition": "the part of milk containing the butterfat",
+      "hypernyms": [
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07863174-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "cream"
+    },
+    {
+      "definition": "thick cream made from scalded milk",
+      "hypernyms": [
+        "oewn-07863174-n"
+      ],
+      "id": "oewn-07863429-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "clotted cream"
+    },
+    {
+      "definition": "cream with a fat content of 48% or more",
+      "hypernyms": [
+        "oewn-07863174-n"
+      ],
+      "id": "oewn-07863561-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "double creme"
+    },
+    {
+      "definition": "half milk and half light cream; contains 10% to 18% butterfat",
+      "hypernyms": [
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07863682-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "half-and-half"
+    },
+    {
+      "definition": "contains more than 36% butterfat",
+      "hypernyms": [
+        "oewn-07863174-n"
+      ],
+      "id": "oewn-07863803-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "heavy cream"
+    },
+    {
+      "definition": "cream that has at least 18% butterfat",
+      "hypernyms": [
+        "oewn-07863174-n"
+      ],
+      "id": "oewn-07863893-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "light cream"
+    },
+    {
+      "definition": "artificially soured light cream",
+      "hypernyms": [
+        "oewn-07863174-n"
+      ],
+      "id": "oewn-07864069-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "sour cream"
+    },
+    {
+      "definition": "cream that has enough butterfat (30% to 36%) to be whipped",
+      "hypernyms": [
+        "oewn-07863174-n"
+      ],
+      "id": "oewn-07864172-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 8,
+      "name": "whipping cream"
+    },
+    {
+      "definition": "an edible emulsion of fat globules made by churning milk or cream; for cooking and table use",
+      "hypernyms": [
+        "oewn-07571428-n",
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07864314-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 5,
+      "name": "butter"
+    },
+    {
+      "definition": "a rectangular quarter pound block of butter or margarine",
+      "hypernyms": [
+        "oewn-07688659-n",
+        "oewn-07864314-n"
+      ],
+      "id": "oewn-07864621-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 6,
+      "name": "stick"
+    },
+    {
+      "definition": "butter made clear by heating and removing the sediment of milk solids",
+      "hypernyms": [
+        "oewn-07864314-n"
+      ],
+      "id": "oewn-07864747-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "clarified butter"
+    },
+    {
+      "definition": "clarified butter used in Indian cookery",
+      "hypernyms": [
+        "oewn-07864747-n"
+      ],
+      "id": "oewn-07864912-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "ghee"
+    },
+    {
+      "definition": "clarified butter browned slowly and seasoned with vinegar or lemon juice and capers",
+      "hypernyms": [
+        "oewn-07864314-n"
+      ],
+      "id": "oewn-07865002-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "brown butter"
+    },
+    {
+      "definition": "clarified butter browned slowly and seasoned with lemon juice and parsley",
+      "hypernyms": [
+        "oewn-07864314-n"
+      ],
+      "id": "oewn-07865162-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Meuniere butter"
+    },
+    {
+      "definition": "a custard-like food made from curdled milk",
+      "hypernyms": [
+        "oewn-07571428-n",
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07865312-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 5,
+      "name": "yogurt"
+    },
+    {
+      "definition": "yogurt with sweetened blueberries or blueberry jam",
+      "hypernyms": [
+        "oewn-07865312-n"
+      ],
+      "id": "oewn-07865482-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "blueberry yogurt"
+    },
+    {
+      "definition": "watery part of milk produced when raw milk sours and coagulates",
+      "hypernyms": [
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07865709-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "whey"
+    },
+    {
+      "definition": "coagulated milk; used to make cheese",
+      "hypernyms": [
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07865888-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "curd"
+    },
+    {
+      "definition": "raw milk that has soured and thickened",
+      "hypernyms": [
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07866195-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 7,
+      "name": "clabber"
+    },
+    {
+      "definition": "a solid food prepared from the pressed curd of milk",
+      "hypernyms": [
+        "oewn-07571428-n",
+        "oewn-07859751-n"
+      ],
+      "id": "oewn-07866305-n",
+      "lang": "en",
+      "max_depth": 8,
+      "min_depth": 5,
+      "name": "cheese"
+    },
+    {
+      "definition": "soft unripened cheese made of sweet milk and cream",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07867274-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "cream cheese"
+    },
+    {
+      "definition": "fresh soft French cheese containing at least 60% fat",
+      "hypernyms": [
+        "oewn-07867274-n"
+      ],
+      "id": "oewn-07867419-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "double cream"
+    },
+    {
+      "definition": "soft mild Italian cream cheese",
+      "hypernyms": [
+        "oewn-07867274-n"
+      ],
+      "id": "oewn-07867530-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "mascarpone"
+    },
+    {
+      "definition": "fresh soft French cheese containing at least 72% fat",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07867617-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "triple cream"
+    },
+    {
+      "definition": "mild white cheese made from curds of soured skim milk",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07867743-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "cottage cheese"
+    },
+    {
+      "definition": "made by blending several lots of cheese",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07867902-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "process cheese"
+    },
+    {
+      "definition": "cheese containing a blue mold",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07868021-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "bleu"
+    },
+    {
+      "definition": "English blue cheese",
+      "hypernyms": [
+        "oewn-07868021-n"
+      ],
+      "id": "oewn-07868205-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "Stilton"
+    },
+    {
+      "definition": "French blue cheese",
+      "hypernyms": [
+        "oewn-07868021-n"
+      ],
+      "id": "oewn-07868278-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "Roquefort"
+    },
+    {
+      "definition": "Italian blue cheese",
+      "hypernyms": [
+        "oewn-07868021-n"
+      ],
+      "id": "oewn-07868352-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "gorgonzola"
+    },
+    {
+      "definition": "blue cheese of Denmark",
+      "hypernyms": [
+        "oewn-07868021-n"
+      ],
+      "id": "oewn-07868428-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "Danish blue"
+    },
+    {
+      "definition": "blue cheese of Bavaria",
+      "hypernyms": [
+        "oewn-07868021-n"
+      ],
+      "id": "oewn-07868508-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "Bavarian blue"
+    },
+    {
+      "definition": "soft creamy white cheese; milder than Camembert",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07868590-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Brie"
+    },
+    {
+      "definition": "semisoft sweet American cheese from whole milk in a brick form",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07868688-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "brick cheese"
+    },
+    {
+      "definition": "rich soft creamy French cheese",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07868809-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Camembert"
+    },
+    {
+      "definition": "hard smooth-textured cheese; originally made in Cheddar in southwestern England",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07868895-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "cheddar"
+    },
+    {
+      "definition": "informal names for American cheddar",
+      "hypernyms": [
+        "oewn-07868895-n"
+      ],
+      "id": "oewn-07869101-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "rat cheese"
+    },
+    {
+      "definition": "a mild yellow English cheese with a crumbly texture",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869208-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Cheshire cheese"
+    },
+    {
+      "definition": "a smooth firm mild orange-red cheese",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869321-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "double Gloucester"
+    },
+    {
+      "definition": "mild yellow Dutch cheese made in balls encased in a red covering",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869421-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Edam"
+    },
+    {
+      "definition": "made from goats' milk",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869536-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "goat cheese"
+    },
+    {
+      "definition": "mild cream-colored Dutch cheese shaped in balls",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869624-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Gouda"
+    },
+    {
+      "definition": "hard or semihard cheese grated",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869738-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "grated cheese"
+    },
+    {
+      "definition": "any cheese originally molded by hand",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869828-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "hand cheese"
+    },
+    {
+      "definition": "a soft cheese with a strong odor and flavor",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07869922-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Liederkranz"
+    },
+    {
+      "definition": "a soft white cheese with a very strong pungent odor and flavor",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870042-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Limburger"
+    },
+    {
+      "definition": "mild white Italian cheese",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870160-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "mozzarella"
+    },
+    {
+      "definition": "semisoft pale-yellow cheese",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870242-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Muenster"
+    },
+    {
+      "definition": "hard dry sharp-flavored Italian cheese; often grated",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870324-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Parmesan"
+    },
+    {
+      "definition": "fresh unripened cheese of a smooth texture made from pasteurized milk, a starter, and rennet",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870431-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "quark cheese"
+    },
+    {
+      "definition": "soft Italian cheese like cottage cheese",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870590-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "ricotta"
+    },
+    {
+      "definition": "cheese formed in long strings twisted together",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870683-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "string cheese"
+    },
+    {
+      "definition": "hard pale yellow cheese with many holes from Switzerland",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07870789-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Swiss cheese"
+    },
+    {
+      "definition": "Swiss cheese with large holes",
+      "hypernyms": [
+        "oewn-07870789-n"
+      ],
+      "id": "oewn-07870958-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "Emmenthal"
+    },
+    {
+      "definition": "Swiss cheese with small holes",
+      "hypernyms": [
+        "oewn-07870789-n"
+      ],
+      "id": "oewn-07871081-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "Gruyere"
+    },
+    {
+      "definition": "a hard green Swiss cheese made with skim-milk curd and flavored with clover",
+      "hypernyms": [
+        "oewn-07870789-n"
+      ],
+      "id": "oewn-07871164-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 7,
+      "name": "sapsago"
+    },
+    {
+      "definition": "soft processed American cheese",
+      "hypernyms": [
+        "oewn-07866305-n"
+      ],
+      "id": "oewn-07871293-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "Velveeta"
+    },
+    {
+      "definition": "butter made from yaks' milk",
+      "hypernyms": [
+        "oewn-07864314-n"
+      ],
+      "id": "oewn-07872162-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 6,
+      "name": "yak butter"
+    },
+    {
+      "definition": "milk flavored with chocolate syrup",
+      "hypernyms": [
+        "oewn-07860018-n"
+      ],
+      "id": "oewn-07937600-n",
+      "lang": "en",
+      "max_depth": 9,
+      "min_depth": 7,
+      "name": "chocolate milk"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

@@ -1,0 +1,754 @@
+{
+  "exported": "2026-10-10",
+  "lexicon": "oewn",
+  "lexicon_schema": 1,
+  "root": "oewn-13157333-n",
+  "senses": [
+    {
+      "definition": "a hard-shelled seed consisting of an edible kernel or meat enclosed in a woody or leathery shell",
+      "forms": [],
+      "id": "oewn-edible_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "edible nut",
+      "synset": "oewn-07753057-n"
+    },
+    {
+      "definition": "nut tasting like roasted chestnuts; a staple food of Australian aborigines",
+      "forms": [],
+      "id": "oewn-bunya_bunya__1.13.00..",
+      "lang": "en",
+      "lemma": "bunya bunya",
+      "synset": "oewn-07753570-n"
+    },
+    {
+      "definition": "pod of the peanut vine containing usually 2 nuts or seeds; \u2018groundnut\u2019 and \u2018monkey nut\u2019 are British terms",
+      "forms": [],
+      "id": "oewn-peanut__1.13.00..",
+      "lang": "en",
+      "lemma": "peanut",
+      "synset": "oewn-07753721-n"
+    },
+    {
+      "definition": "pod of the peanut vine containing usually 2 nuts or seeds; \u2018groundnut\u2019 and \u2018monkey nut\u2019 are British terms",
+      "forms": [],
+      "id": "oewn-earthnut__1.13.02..",
+      "lang": "en",
+      "lemma": "earthnut",
+      "synset": "oewn-07753721-n"
+    },
+    {
+      "definition": "pod of the peanut vine containing usually 2 nuts or seeds; \u2018groundnut\u2019 and \u2018monkey nut\u2019 are British terms",
+      "forms": [],
+      "id": "oewn-goober__1.13.00..",
+      "lang": "en",
+      "lemma": "goober",
+      "synset": "oewn-07753721-n"
+    },
+    {
+      "definition": "pod of the peanut vine containing usually 2 nuts or seeds; \u2018groundnut\u2019 and \u2018monkey nut\u2019 are British terms",
+      "forms": [],
+      "id": "oewn-goober_pea__1.13.00..",
+      "lang": "en",
+      "lemma": "goober pea",
+      "synset": "oewn-07753721-n"
+    },
+    {
+      "definition": "pod of the peanut vine containing usually 2 nuts or seeds; \u2018groundnut\u2019 and \u2018monkey nut\u2019 are British terms",
+      "forms": [],
+      "id": "oewn-groundnut__1.13.01..",
+      "lang": "en",
+      "lemma": "groundnut",
+      "synset": "oewn-07753721-n"
+    },
+    {
+      "definition": "pod of the peanut vine containing usually 2 nuts or seeds; \u2018groundnut\u2019 and \u2018monkey nut\u2019 are British terms",
+      "forms": [],
+      "id": "oewn-monkey_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "monkey nut",
+      "synset": "oewn-07753721-n"
+    },
+    {
+      "definition": "oval-shaped edible seed of the almond tree",
+      "forms": [],
+      "id": "oewn-almond__1.13.00..",
+      "lang": "en",
+      "lemma": "almond",
+      "synset": "oewn-07766562-n"
+    },
+    {
+      "definition": "an almond covered with a sugar coating that is hard and flavored and colored",
+      "forms": [],
+      "id": "oewn-jordan_almond__1.13.00..",
+      "lang": "en",
+      "lemma": "Jordan almond",
+      "synset": "oewn-07766712-n"
+    },
+    {
+      "definition": "edible nutlike seed of the quandong fruit",
+      "forms": [],
+      "id": "oewn-quandong_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "quandong nut",
+      "synset": "oewn-07785441-n"
+    },
+    {
+      "definition": "small sweet triangular nut of any of various beech trees",
+      "forms": [],
+      "id": "oewn-beechnut__1.13.00..",
+      "lang": "en",
+      "lemma": "beechnut",
+      "synset": "oewn-07787058-n"
+    },
+    {
+      "definition": "nut of any of various walnut trees having a wrinkled two-lobed seed with a hard shell",
+      "forms": [],
+      "id": "oewn-walnut__1.13.00..",
+      "lang": "en",
+      "lemma": "walnut",
+      "synset": "oewn-07787188-n"
+    },
+    {
+      "definition": "American walnut having a very hard and thick woody shell",
+      "forms": [],
+      "id": "oewn-black_walnut__1.13.00..",
+      "lang": "en",
+      "lemma": "black walnut",
+      "synset": "oewn-07787381-n"
+    },
+    {
+      "definition": "nut with a wrinkled two-lobed seed and hard but relatively thin shell; widely used in cooking",
+      "forms": [],
+      "id": "oewn-english_walnut__1.13.00..",
+      "lang": "en",
+      "lemma": "English walnut",
+      "synset": "oewn-07787515-n"
+    },
+    {
+      "definition": "three-sided tropical American nut with white oily meat and hard brown shell",
+      "forms": [],
+      "id": "oewn-brazil_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "brazil nut",
+      "synset": "oewn-07787707-n"
+    },
+    {
+      "definition": "three-sided tropical American nut with white oily meat and hard brown shell",
+      "forms": [],
+      "id": "oewn-brazil__1.13.00..",
+      "lang": "en",
+      "lemma": "brazil",
+      "synset": "oewn-07787707-n"
+    },
+    {
+      "definition": "oily egg-shaped nut of an American tree of the walnut family",
+      "forms": [],
+      "id": "oewn-butternut__1.13.01..",
+      "lang": "en",
+      "lemma": "butternut",
+      "synset": "oewn-07787867-n"
+    },
+    {
+      "definition": "a large nutlike seed of a South American tree",
+      "forms": [],
+      "id": "oewn-souari_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "souari nut",
+      "synset": "oewn-07788002-n"
+    },
+    {
+      "definition": "kidney-shaped nut edible only when roasted",
+      "forms": [],
+      "id": "oewn-cashew__1.13.00..",
+      "lang": "en",
+      "lemma": "cashew",
+      "synset": "oewn-07788123-n"
+    },
+    {
+      "definition": "kidney-shaped nut edible only when roasted",
+      "forms": [],
+      "id": "oewn-cashew_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "cashew nut",
+      "synset": "oewn-07788123-n"
+    },
+    {
+      "definition": "edible nut of any of various chestnut trees of the genus Castanea",
+      "forms": [],
+      "id": "oewn-chestnut__1.13.00..",
+      "lang": "en",
+      "lemma": "chestnut",
+      "synset": "oewn-07788250-n"
+    },
+    {
+      "definition": "small nut of either of two small chestnut trees of the southern United States; resembles a hazelnut",
+      "forms": [],
+      "id": "oewn-chincapin__1.13.00..",
+      "lang": "en",
+      "lemma": "chincapin",
+      "synset": "oewn-07788389-n"
+    },
+    {
+      "definition": "small nut of either of two small chestnut trees of the southern United States; resembles a hazelnut",
+      "forms": [],
+      "id": "oewn-chinkapin__1.13.00..",
+      "lang": "en",
+      "lemma": "chinkapin",
+      "synset": "oewn-07788389-n"
+    },
+    {
+      "definition": "small nut of either of two small chestnut trees of the southern United States; resembles a hazelnut",
+      "forms": [],
+      "id": "oewn-chinquapin__1.13.00..",
+      "lang": "en",
+      "lemma": "chinquapin",
+      "synset": "oewn-07788389-n"
+    },
+    {
+      "definition": "nut of any of several trees of the genus Corylus",
+      "forms": [],
+      "id": "oewn-hazelnut__1.13.00..",
+      "lang": "en",
+      "lemma": "hazelnut",
+      "synset": "oewn-07788764-n"
+    },
+    {
+      "definition": "nut of any of several trees of the genus Corylus",
+      "forms": [],
+      "id": "oewn-filbert__1.13.00..",
+      "lang": "en",
+      "lemma": "filbert",
+      "synset": "oewn-07788764-n"
+    },
+    {
+      "definition": "nut of any of several trees of the genus Corylus",
+      "forms": [],
+      "id": "oewn-cobnut__1.13.00..",
+      "lang": "en",
+      "lemma": "cobnut",
+      "synset": "oewn-07788764-n"
+    },
+    {
+      "definition": "nut of any of several trees of the genus Corylus",
+      "forms": [],
+      "id": "oewn-cob__1.13.00..",
+      "lang": "en",
+      "lemma": "cob",
+      "synset": "oewn-07788764-n"
+    },
+    {
+      "definition": "large hard-shelled oval nut with a fibrous husk containing thick white meat surrounding a central cavity filled (when fresh) with fluid or milk",
+      "forms": [],
+      "id": "oewn-coconut__1.13.00..",
+      "lang": "en",
+      "lemma": "coconut",
+      "synset": "oewn-07788911-n"
+    },
+    {
+      "definition": "large hard-shelled oval nut with a fibrous husk containing thick white meat surrounding a central cavity filled (when fresh) with fluid or milk",
+      "forms": [],
+      "id": "oewn-cocoanut__1.13.00..",
+      "lang": "en",
+      "lemma": "cocoanut",
+      "synset": "oewn-07788911-n"
+    },
+    {
+      "definition": "nut of Brazilian or West Indian palms",
+      "forms": [],
+      "id": "oewn-grugru_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "grugru nut",
+      "synset": "oewn-07790158-n"
+    },
+    {
+      "definition": "small hard-shelled nut of North American hickory trees especially the shagbark hickories",
+      "forms": [],
+      "id": "oewn-hickory_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "hickory nut",
+      "synset": "oewn-07790271-n"
+    },
+    {
+      "definition": "nutlike seed with sweet and crisp white meat",
+      "forms": [],
+      "id": "oewn-macadamia_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "macadamia nut",
+      "synset": "oewn-07790572-n"
+    },
+    {
+      "definition": "smooth brown oval nut of south central United States",
+      "forms": [],
+      "id": "oewn-pecan__1.13.00..",
+      "lang": "en",
+      "lemma": "pecan",
+      "synset": "oewn-07790695-n"
+    },
+    {
+      "definition": "edible seed of any of several nut pines especially some pinons of southwestern North America",
+      "forms": [],
+      "id": "oewn-pine_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "pine nut",
+      "synset": "oewn-07790818-n"
+    },
+    {
+      "definition": "edible seed of any of several nut pines especially some pinons of southwestern North America",
+      "forms": [],
+      "id": "oewn-pignolia__1.13.00..",
+      "lang": "en",
+      "lemma": "pignolia",
+      "synset": "oewn-07790818-n"
+    },
+    {
+      "definition": "edible seed of any of several nut pines especially some pinons of southwestern North America",
+      "forms": [],
+      "id": "oewn-pinon_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "pinon nut",
+      "synset": "oewn-07790818-n"
+    },
+    {
+      "definition": "nut of Mediterranean trees having an edible green kernel",
+      "forms": [],
+      "id": "oewn-pistachio__1.13.00..",
+      "lang": "en",
+      "lemma": "pistachio",
+      "synset": "oewn-07791026-n"
+    },
+    {
+      "definition": "nut of Mediterranean trees having an edible green kernel",
+      "forms": [],
+      "id": "oewn-pistachio_nut__1.13.00..",
+      "lang": "en",
+      "lemma": "pistachio nut",
+      "synset": "oewn-07791026-n"
+    },
+    {
+      "definition": "the seed of the Swiss pine",
+      "forms": [],
+      "id": "oewn-cembra_nut__1.20.00..",
+      "lang": "en",
+      "lemma": "cembra nut",
+      "synset": "oewn-11632686-n"
+    },
+    {
+      "definition": "the seed of the Swiss pine",
+      "forms": [],
+      "id": "oewn-cedar_nut__1.20.00..",
+      "lang": "en",
+      "lemma": "cedar nut",
+      "synset": "oewn-11632686-n"
+    },
+    {
+      "definition": "bitter brown seed containing caffein; source of cola extract",
+      "forms": [],
+      "id": "oewn-kola_nut__1.20.02..",
+      "lang": "en",
+      "lemma": "kola nut",
+      "synset": "oewn-12218118-n"
+    },
+    {
+      "definition": "bitter brown seed containing caffein; source of cola extract",
+      "forms": [],
+      "id": "oewn-cola_nut__1.20.00..",
+      "lang": "en",
+      "lemma": "cola nut",
+      "synset": "oewn-12218118-n"
+    },
+    {
+      "definition": "nuts of forest trees (as beechnuts and acorns) accumulated on the ground",
+      "forms": [],
+      "id": "oewn-mast__1.20.00..",
+      "lang": "en",
+      "lemma": "mast",
+      "synset": "oewn-12300881-n"
+    },
+    {
+      "definition": "seed of any oil palm",
+      "forms": [],
+      "id": "oewn-palm_nut__1.20.00..",
+      "lang": "en",
+      "lemma": "palm nut",
+      "synset": "oewn-12611476-n"
+    },
+    {
+      "definition": "seed of any oil palm",
+      "forms": [],
+      "id": "oewn-palm_kernel__1.20.00..",
+      "lang": "en",
+      "lemma": "palm kernel",
+      "synset": "oewn-12611476-n"
+    },
+    {
+      "definition": "usually large hard-shelled seed",
+      "forms": [],
+      "id": "oewn-nut__1.20.00..",
+      "lang": "en",
+      "lemma": "nut",
+      "synset": "oewn-13157333-n"
+    },
+    {
+      "definition": "a small nut",
+      "forms": [],
+      "id": "oewn-nutlet__1.20.00..",
+      "lang": "en",
+      "lemma": "nutlet",
+      "synset": "oewn-13157558-n"
+    },
+    {
+      "definition": "the small hard nutlet of a drupe or drupelet; the seed and the hard endocarp that surrounds it",
+      "forms": [],
+      "id": "oewn-pyrene__1.20.00..",
+      "lang": "en",
+      "lemma": "pyrene",
+      "synset": "oewn-13157640-n"
+    }
+  ],
+  "synsets": [
+    {
+      "definition": "a hard-shelled seed consisting of an edible kernel or meat enclosed in a woody or leathery shell",
+      "hypernyms": [
+        "oewn-13157333-n"
+      ],
+      "id": "oewn-07753057-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "edible nut"
+    },
+    {
+      "definition": "nut tasting like roasted chestnuts; a staple food of Australian aborigines",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07753570-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "bunya bunya"
+    },
+    {
+      "definition": "pod of the peanut vine containing usually 2 nuts or seeds; \u2018groundnut\u2019 and \u2018monkey nut\u2019 are British terms",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07753721-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "peanut"
+    },
+    {
+      "definition": "oval-shaped edible seed of the almond tree",
+      "hypernyms": [
+        "oewn-07753057-n",
+        "oewn-13159085-n"
+      ],
+      "id": "oewn-07766562-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 10,
+      "name": "almond"
+    },
+    {
+      "definition": "an almond covered with a sugar coating that is hard and flavored and colored",
+      "hypernyms": [
+        "oewn-07766562-n"
+      ],
+      "id": "oewn-07766712-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 11,
+      "name": "Jordan almond"
+    },
+    {
+      "definition": "edible nutlike seed of the quandong fruit",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07785441-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "quandong nut"
+    },
+    {
+      "definition": "small sweet triangular nut of any of various beech trees",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07787058-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "beechnut"
+    },
+    {
+      "definition": "nut of any of various walnut trees having a wrinkled two-lobed seed with a hard shell",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07787188-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "walnut"
+    },
+    {
+      "definition": "American walnut having a very hard and thick woody shell",
+      "hypernyms": [
+        "oewn-07787188-n"
+      ],
+      "id": "oewn-07787381-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "black walnut"
+    },
+    {
+      "definition": "nut with a wrinkled two-lobed seed and hard but relatively thin shell; widely used in cooking",
+      "hypernyms": [
+        "oewn-07787188-n"
+      ],
+      "id": "oewn-07787515-n",
+      "lang": "en",
+      "max_depth": 13,
+      "min_depth": 13,
+      "name": "English walnut"
+    },
+    {
+      "definition": "three-sided tropical American nut with white oily meat and hard brown shell",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07787707-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "brazil nut"
+    },
+    {
+      "definition": "oily egg-shaped nut of an American tree of the walnut family",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07787867-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "butternut"
+    },
+    {
+      "definition": "a large nutlike seed of a South American tree",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07788002-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "souari nut"
+    },
+    {
+      "definition": "kidney-shaped nut edible only when roasted",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07788123-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "cashew"
+    },
+    {
+      "definition": "edible nut of any of various chestnut trees of the genus Castanea",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07788250-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "chestnut"
+    },
+    {
+      "definition": "small nut of either of two small chestnut trees of the southern United States; resembles a hazelnut",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07788389-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "chincapin"
+    },
+    {
+      "definition": "nut of any of several trees of the genus Corylus",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07788764-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "hazelnut"
+    },
+    {
+      "definition": "large hard-shelled oval nut with a fibrous husk containing thick white meat surrounding a central cavity filled (when fresh) with fluid or milk",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07788911-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "coconut"
+    },
+    {
+      "definition": "nut of Brazilian or West Indian palms",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07790158-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "grugru nut"
+    },
+    {
+      "definition": "small hard-shelled nut of North American hickory trees especially the shagbark hickories",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07790271-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "hickory nut"
+    },
+    {
+      "definition": "nutlike seed with sweet and crisp white meat",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07790572-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "macadamia nut"
+    },
+    {
+      "definition": "smooth brown oval nut of south central United States",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07790695-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "pecan"
+    },
+    {
+      "definition": "edible seed of any of several nut pines especially some pinons of southwestern North America",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07790818-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "pine nut"
+    },
+    {
+      "definition": "nut of Mediterranean trees having an edible green kernel",
+      "hypernyms": [
+        "oewn-07753057-n"
+      ],
+      "id": "oewn-07791026-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "pistachio"
+    },
+    {
+      "definition": "the seed of the Swiss pine",
+      "hypernyms": [
+        "oewn-13157333-n"
+      ],
+      "id": "oewn-11632686-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "cembra nut"
+    },
+    {
+      "definition": "bitter brown seed containing caffein; source of cola extract",
+      "hypernyms": [
+        "oewn-13157333-n"
+      ],
+      "id": "oewn-12218118-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "kola nut"
+    },
+    {
+      "definition": "nuts of forest trees (as beechnuts and acorns) accumulated on the ground",
+      "hypernyms": [
+        "oewn-13157333-n"
+      ],
+      "id": "oewn-12300881-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "mast"
+    },
+    {
+      "definition": "seed of any oil palm",
+      "hypernyms": [
+        "oewn-13157333-n"
+      ],
+      "id": "oewn-12611476-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "palm nut"
+    },
+    {
+      "definition": "usually large hard-shelled seed",
+      "hypernyms": [
+        "oewn-13156591-n"
+      ],
+      "id": "oewn-13157333-n",
+      "lang": "en",
+      "max_depth": 10,
+      "min_depth": 10,
+      "name": "nut"
+    },
+    {
+      "definition": "a small nut",
+      "hypernyms": [
+        "oewn-13157333-n"
+      ],
+      "id": "oewn-13157558-n",
+      "lang": "en",
+      "max_depth": 11,
+      "min_depth": 11,
+      "name": "nutlet"
+    },
+    {
+      "definition": "the small hard nutlet of a drupe or drupelet; the seed and the hard endocarp that surrounds it",
+      "hypernyms": [
+        "oewn-13157558-n"
+      ],
+      "id": "oewn-13157640-n",
+      "lang": "en",
+      "max_depth": 12,
+      "min_depth": 12,
+      "name": "pyrene"
+    }
+  ],
+  "url": "https://en-word.net/",
+  "version": "2024"
+}

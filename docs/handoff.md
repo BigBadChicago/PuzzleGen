@@ -3,168 +3,147 @@
 First thing a new conversation reads. Verify repository claims directly (file
 sizes, what a lexicon resolves to, whether a build runs) rather than trusting a
 filename or commit message; this project has been burned by stale committed
-artifacts more than once.
+artifacts more than once. Last session found two: a coverage table in this file
+that disagreed with the artifact it claimed to summarise, and a lexicon file
+named for a root it does not hold.
 
-Last verified: 2026-10-10, against the repo on the user's computer.
-
-## FIRST THING: push the pending commit
-
-One local commit is not on origin: `e02f7ca` (the `.gitattributes` line-ending
-fix). The linked-computer shell has no GitHub push credentials, so it could not
-be pushed. Run, in a terminal where GitHub is authenticated (Codespace or local):
-
-`cd ~/Documents/Code/PuzzleGen && git push origin main`
-
-origin is at `4cd9e1b` (seeds + fish depth-8, already pushed, so coverage A and
-B are reproducible there). After the push, origin also has the line-ending fix
-and the repo is fully current.
+Last verified: 2026-10-10, against a fresh clone built and tested from scratch.
 
 ## Where things stand
 
-Phase 7 (game 1, the grouping game) is functionally closed. The project is at a
-deliberate fork: it is becoming a multi-game engine, and the next work is the
-first shared subsystem plus the first second game.
+Game 1 is closed. Ship A is decided and A is the gate build. The second batch of
+lexicon roots is exported, committed and measured. The next work is game 2 and
+the subsystem under it.
 
-### Resolved (all committed; commit ids noted)
+Nothing is pending on origin: `main` is current.
 
-1. **Gap 2 (every board identical) was a code defect, not content thinness.**
-   The prior handoff said the generator offered one candidate and told the next
-   session NOT to touch candidate selection. Wrong, and verified wrong. Root
-   cause: `_ordered` in `puzzlegen/games/grouping/generate.py` used a fixed
-   total order over content properties with candidate id as the final
-   tie-break. Nothing varied by day, and the engine takes the first candidate
-   that verifies (a lookup, not a choice), so every day served at one size
-   produced a byte-identical board. Fixed by (a) round-robin draining of
-   hidden-group candidate streams with a per-group share, and (b) a day-derived
-   shuffle inside each rank (`rng.derive("candidate-order").shuffled(...)`)
-   before the stable sort, so the day key reaches selection while enrichment and
-   temptation still rank. Determinism preserved. Tests:
-   `tests/unit/test_grouping_variety.py`. (commit `453be84`)
+### The build environment, which is now cheaper than the handoff used to assume
 
-2. **`generate_days.py` reported the drawn size, not the served size.** A day
-   tries its drawn size first, then falls back; the tool read the draw, so a run
-   leaning entirely on fallback looked like full size coverage (the "30/30
-   across sizes 5-9" claim rested on this). Fixed to read
-   `outcome.puzzle.payload["group_size"]` and count drawn vs served separately.
-   (commit `453be84`)
+A coverage measurement needs no network and no embedding model. Verified: a
+snapshot built with `--dev-embeddings` plus a frequency table exported on the
+spot reproduces `build/coverage-A.json` byte for byte. Coverage is structural
+and applies no embedding gate. Only a published snapshot needs real vectors.
 
-3. **The lemma-collision report was a false-alarm generator.** It claimed a
-   later sense of a merged category loses its parents; the builder unions them
-   and refuses only a cycle-closing edge. 14 overlay words were reported as
-   losing a parent; a real build showed 0 do. `tools/report_lemma_collisions.py`
-   rewritten to mirror the builder (union parents, refuse only
-   ancestor/descendant edges, follow file order, union hypernym edges across
-   files, loop guard). New test `tests/unit/test_collision_report_matches_builder.py`
-   builds the same files both ways and fails if they disagree. (commit `e9313ed`)
+The test suite needs Python 3.11+ (`StrEnum`). It runs in a cloud container or a
+Codespace; it cannot run from the linked-computer shell, which has Python 3.10
+and a Windows `.venv`. Last full run: **2,278 passing, 0 failing**, 4 skipped. The three
+long-standing content-gap failures in `test_overlay_seed.py` are gone: batch 2
+supplies the words they were waiting for. Read that green with one qualifier,
+stated in the file itself: the tracker measures whether a lexicon *in the
+repository* supplies each overlay word, and `wordnet-color` and
+`wordnet-drug_of_abuse` are committed even though build A does not import them.
+So `coral` and `coffee` pass the tracker while build A still has no definition
+for them.
 
-4. **New lexicon roots committed and pushed (commit `4cd9e1b`).** Seven roots
-   that close most overlay coverage gaps were generated in a prior session but
-   never committed, so the repo could not reproduce `coverage-A` or
-   `coverage-B`. Now on origin: `mollusk`, `crustacean`, `cutting_implement`,
-   `tableware`, `power_tool`, `color`, `drug_of_abuse`, plus `fish` re-exported
-   at depth 8 (617 synsets, was 498 at depth 6; the only root truncated at depth
-   6). `wordnet-shellfish` was dropped (it holds food senses, not the animals;
-   `mollusk` + `crustacean` replace it). `docs/candidate-roots.md` documents the
-   full analysis and a second batch for the remaining 22 unsupplied overlay
-   words. `docs/rebuild-with-new-roots.sh` reproduces the A/B builds.
+WordNet data for `tools/export_wordnet.py` comes from the GitHub release
+(`globalwordnet/english-wordnet`, 2024 edition) and loads with
+`wn.add(path)`; `en-word.net` itself is not reachable from the cloud container.
+The sentence-transformers model is not reachable either, which is why
+`--dev-embeddings` matters.
 
-5. **Line endings fixed (commit `e02f7ca`, NOT yet pushed; see top).** Added
-   `.gitattributes` (`* text=auto eol=lf` + binary guards + `*.sh` LF), so the
-   Windows checkout (CRLF) no longer shows every tracked text file as modified
-   against the LF blobs. Also widened `.gitignore` sqlite rule from `*.sqlite3`
-   to `*.sqlite*` (so `content/graph.sqlite` can never be committed by
-   accident), added `*.bak`, untracked the stray `.gitignore.bak`. Working tree
-   is clean. The ~50 files still showing `w/crlf` in `git ls-files --eol` are
-   the working copy only; git stores LF and converts on commit. Do not "fix"
-   them.
+### Resolved this session (all committed)
 
-### The A/B coverage result (the gate)
+1. **Ship A, and a correction to this file.** The A/B table a previous handoff
+   carried (build A giving 1, 3, 4, 3, 3 working hidden categories across group
+   sizes 5 to 9) is not what the committed artifact says. `build/coverage-A.json`
+   says 5, 1, 0, 0, 0, and a rebuild reproduces it byte for byte. Build A
+   unblocked size 5 only. Sizes 6 to 8 are unblocked by batch 2, below.
 
-Build A = 16 base roots + mollusk, crustacean, cutting_implement, tableware,
-power_tool. Build B = A + color + drug_of_abuse. Difficulty MEDIUM. Distinct
-hidden categories reaching all four homes, by board size:
+2. **The hidden reading must be the only one on the board.** The chosen rule
+   over a blacklist, implemented as `has_no_category_leak` in
+   `puzzlegen/games/grouping/generate.py` (refusal reason `category_leak`),
+   mirrored in `tools/overlay_coverage.py` (`a_filler_tile_is_also_a_hidden_word`).
+   No tile outside the hidden group may carry the hidden category; no visible
+   category may be an ancestor of the hidden one. Measured cost across builds A,
+   A2 and B: zero. It never fired on real content; it is a guard on a hole that
+   nothing else in the system covers, since the verifier excludes the overlay
+   axis by design and cross-membership never sees the hidden category. Tests:
+   `tests/unit/test_grouping_category_leak.py`, and `TestTheLeakGate` in
+   `tests/unit/test_overlay_coverage.py`.
 
-```
-          size5  size6  size7  size8  size9
-build A     1      3      4      3      3
-build B     1      3      4      3      4
-```
+3. **Batch 2 of the lexicon roots.** Nine roots (dairy_product, tool, rodent,
+   nut, bulbous_plant, vine, angiospermous_tree, marsh_plant, shrub), all
+   committed, all exported at depth 6. Every one of the 22 previously unsupplied
+   overlay words is now supplied; `overlay_missing` falls from 24 to 2 (`coral`
+   wants the colour sense, `coffee` the brewed sense, and both ride on roots not
+   in A). Feasible hidden categories by group size go from 5, 1, 0, 0, 0 to
+   7, 6, 2, 1, 0, with two hidden categories no build had before (`thing with a
+   handle`, `word that is also a person's name`). Three corrections to the
+   earlier root analysis, including that `mate` is reachable after all and
+   `heath` is redundant, are in `docs/candidate-roots.md` section 6. Reproduce
+   with `docs/rebuild-with-batch2.sh`.
 
-**Recommendation: ship A.** It unblocks board variety across sizes 6-9 with four
-working hidden categories. **Hold B**: its only unique wins (`thing that can be
-smoked`, `word that is also a person's name`) ride on `color`, which introduces
-a real defect. Confirmed in coverage-B: for the hidden group `word that is also
-a color`, the visible homes include `chromatic color`, `pink` and `red`. A board
-asking the player to find the colour word, with one visible group literally the
-colours, is broken. The generator's leak check misses it because the visible
-group is a sibling category, not the hidden category itself.
+4. **`wordnet-tool.lexicon.json` was the `hand tool` subtree, not `tool`.**
+   Renamed to `wordnet-hand_tool.lexicon.json`; the real `tool` subtree
+   (oewn-04459089-n, 374 synsets) now holds the old name. Scripts and docs
+   updated. A root list that says `tool` and means `hand tool` builds a
+   different snapshot and nothing errors.
 
 ## Open decisions (what the next conversation resolves)
 
-1. **The color leak.**
-   - Rule (recommended): a visible group may not be an ancestor or descendant of
-     the hidden category. General, prevents future leaks of this class.
-   - Blacklist: exclude `chromatic color` and children as visible groups only
-     for the colour hidden group. Narrow, leaves the hole open for the next
-     overlapping pair.
-   Neither has a test yet; the choice determines the test.
+1. **The colour leak is still open, and the rule that was chosen cannot close
+   it.** Measured, not argued: build B with the gate in place still produces the
+   board `word that is also a color` over `airplane`, `finch`, `citrus`, `pink`.
+   Overlay categories are taxonomy roots, so `overlay.color` has no relation to
+   the lexical `color` at all, and the `pink` group fills cleanly from words the
+   curator never tagged as colours. The giveaway is the visible label, not a
+   stray tile.
+   The fix is to supply the missing link as content: an optional `anchor` on an
+   overlay category naming the lexical category it means (`overlay.color` ->
+   `category:color`, oewn-04963771-n). The rule then becomes the decided one and
+   is general: a visible group may not be the anchor, nor an ancestor or
+   descendant of it. Work: a curated-schema field, builder support, the 14
+   overlay categories reviewed for an anchor each, the gate extended, tests.
+   Not blocking: build A ships without `color`, so this is what unblocks build B
+   rather than what holds game 1.
 
-2. **Ship A, yes/no.** If yes, A is the gate build and game 1 is closed.
+2. **The surface form subsystem, then `missing_letters`.** Platform-first was
+   the standing lean and nothing found since argues against it. Design is in
+   `docs/architecture.md` (session 2) and `docs/missing-letters-requirements.md`
+   section 2. Not yet built.
 
-3. **The surface form subsystem (the fork).** The user decided this is an
-   engine-level subsystem, not a helper, bigger than one game. It defines what
-   the letters of an entity are (case folding, diacritics, spaces/hyphens,
-   multi-word collapse), which surface form counts (primary lemma vs a shorter
-   true synonym, e.g. `bowed instrument` for `bowed stringed instrument`), a
-   stable inspectable entity-to-letters mapping, and a precomputed index
-   (character queries run per candidate every daily build). Sits beside the
-   content graph, adds no new content-service operation, games call it.
-   `missing_letters` is its first client. **Pending: build the subsystem before
-   implementing missing_letters (platform-first, the user's lean), or inline and
-   extract later.**
+3. **`missing_letters` needs content before it needs code.** A throwaway probe
+   over build A measured the real constraint, and it is not the letter matching:
+   it is name length against board size. A category of L letters with b blanks
+   needs L minus b marks on distinct tiles, so a board needs at least L minus b
+   plus 1 tiles. At 6 tiles and 2 blanks, 21 of the 88 eligible categories work,
+   and all 21 are short, obscure names (`coho`, `scup`, `myna`, `quahog`); at 8
+   tiles, 27 categories are even eligible and 9 work; at 10 tiles, 17 and 3.
+   Every overlay category fails at ordinary sizes, because their names run 14 to
+   25 letters. So `missing_letters` targets are short, common lexical category
+   names with enough frequency-filtered members, which is a content question the
+   coverage tool for game 2 should answer before any generator is written. Build
+   that tool first (`tools/measure_letters_coverage.py`, the analogue of
+   `measure_coverage.py`), as the requirements doc already says.
 
-4. **`missing_letters` (second game, first subsystem client).** Specified in
-   `missing-letters-requirements.docx` (delivered to the user; fold into `docs/`
-   if wanted in-repo). Settled: SOUND_INCOMPLETE with a stated search bound and a
-   pinned word list; a mark must occur in its own tile's word; multi-word
-   category names permitted with common names favored and shorter-synonym
-   substitution allowed; when difficulty wants more blanks than the data forces,
-   leave a could-have-been-marked tile unmarked to manufacture the extra blank
-   (and record per board which blanks were forced vs manufactured); at least two
-   blanks always; free anagram; one mark per tile max; not every tile marked.
-   Game id `missing_letters`. No coverage tool yet; an analogue of
-   `measure_coverage.py` is the natural next artifact before implementation.
-
-5. **Second batch of roots** (22 still-unsupplied overlay words: beaver, broom,
-   cheese, coconut, comb, drill, erica, hemp, hoe, holly, hop, hops, iris,
-   jasmine, mate, mower, onion, rake, ram, rodent, rush, walnut). Candidates and
-   ids in `docs/candidate-roots.md` section 5, led by `tool` (recovers 6) and
-   `rodent`. `mate` (the beverage) is unreachable by any root; it needs an
-   explicit synset id or removal from the overlay.
+4. **Nothing is red.** The content tracker in `test_overlay_seed.py` went green
+   when batch 2 landed, with the qualifier above. The next content claim worth
+   making is per build rather than per repository: which overlay words build A
+   itself can define.
 
 ## Standing cautions
 
 - **The recurring failure mode is a diagnostic that recomputes a value instead
-  of reading what the engine actually did.** Three instances: a hand-copied
+  of reading what the engine actually did.** Four instances now: a hand-copied
   threshold that drifted, `generate_days.py` reading the drawn size, the
-  collision report's parent-loss logic. When a tool and the engine could
-  disagree about a number, make the tool import the real constant or read the
-  real output, never re-derive it.
+  collision report's parent-loss logic, and this file's own A/B table. When a
+  tool and the engine could disagree about a number, make the tool import the
+  real constant or read the real output, never re-derive it. When a *document*
+  and an artifact could disagree, rebuild the artifact.
+- The second instance of the same shape, worth its own line: a lexicon named for
+  a root it does not hold. Check `root` inside the file, not the filename.
 - Never glob `content/seeds/wordnet-*.lexicon.json`; name exact roots.
   `wordnet-mini` is an 8-synset test fixture a glob would wrongly include.
-- Line endings are now handled by the committed `.gitattributes`. `git status`
-  on the Windows checkout is clean. If a mass of modified text files appears
-  again, the attributes file was lost or bypassed; do not commit that churn.
-- Git on the linked-computer shell has no commit identity by default (set
-  repo-local to the user) and no push credentials, and cannot delete its own
-  `.git` lock/temp files without folder delete permission (grant it at the start
-  of a git-heavy session) or stale `.lock` files make later git commands fail.
-- The test suite needs Python 3.11+ (`StrEnum`). The device shell has only 3.10
-  and the repo `.venv` is a Windows venv, so the suite cannot run from the
-  linked-computer shell; run it in the Codespace. Last full run: 2,262 passing,
-  3 expected content-gap failures (overlay words still unsupplied, the content
-  tracker in `test_overlay_seed.py`, correct to stay red until the second root
-  batch lands).
+- Line endings are handled by the committed `.gitattributes`. If a mass of
+  modified text files appears, the attributes file was lost or bypassed; do not
+  commit that churn.
+- Git on the linked-computer shell has no commit identity by default and no push
+  credentials, and cannot delete its own `.git` lock files without folder delete
+  permission. Committing and pushing from a cloud clone works and is what this
+  session did.
+- Overlay categories are roots in the overlay taxonomy. Any rule phrased as
+  "ancestor or descendant of the hidden category" has nothing to stand on until
+  decision 1 above is done.
 
 ## Reading order
 

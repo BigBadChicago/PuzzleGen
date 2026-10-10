@@ -155,6 +155,68 @@ def has_no_cross_membership(groups: Sequence[GroupView]) -> bool:
     return True
 
 
+def has_no_category_leak(hidden: GroupView, visible: Sequence[GroupView]) -> bool:
+    """The hidden category must describe the hidden tiles and nothing else.
+
+    A regression guard for a board that coverage-B really produced: hidden ask
+    "word that is also a colour", visible groups ``pink``, ``finch``,
+    ``citrus``, ``airplane``. Every group was individually sound, the four
+    visible ones were disjoint and carried none of each other's categories,
+    and the board was still unplayable, because ``rose`` and ``coral`` sit in
+    the ``pink`` group and are themselves colour words. The ask had ten
+    answers and wanted five.
+
+    Nothing else refuses it. ``has_no_cross_membership`` compares the four
+    visible categories with each other and the hidden category is deliberately
+    not among them. The verifier counts partitions on the lexical axis only
+    and excludes the overlay axis by design, since counting it would make
+    every board ambiguous by construction: the hidden group is a second
+    reading of the same tiles, not a fifth answer. So the only place the
+    hidden reading's own uniqueness can be established is here, while the
+    board is being chosen.
+
+    Two clauses, and the first is the one that fires.
+
+    No tile outside the hidden group may carry the hidden category. That is
+    uniqueness of the hidden answer stated directly, and it subsumes the
+    hierarchy case: a visible group whose category sits under the hidden one
+    has five tiles all carrying it, four of which are not hidden members.
+
+    And no visible group's category may be an ancestor of the hidden category,
+    which the first clause does not cover: a hidden group drawn from under a
+    visible group's category gives the hidden answer away through the visible
+    label without putting a single extra tile on the board.
+
+    Preferred over a blacklist of the known overlapping pairs because the
+    relation, not the pair, is what makes the board unfair, and a blacklist
+    leaves the next overlapping pair to be found by a player.
+
+    Membership is read off ``EntityView.type_ids``, which is the full
+    transitive closure of an entity's categories, rather than walked in the
+    taxonomy: the generator holds no graph handle, and the closure is already
+    on every member. Overlay categories are roots with no parents, so a
+    structural ancestor test alone would have passed the colour board.
+    """
+    hidden_category = hidden.shared_category_id
+    if not hidden_category or not hidden.members:
+        return True
+    held = member_ids(hidden)
+    for group in visible:
+        for member in group.members:
+            if member.entity_id in held:
+                continue
+            if hidden_category in member.type_ids:
+                return False
+    hidden_ancestry = frozenset.intersection(
+        *(frozenset(member.type_ids) for member in hidden.members)
+    )
+    for group in visible:
+        own = group.shared_category_id
+        if own and (own == hidden_category or own in hidden_ancestry):
+            return False
+    return True
+
+
 def relatedness_of(groups: Sequence[GroupView], group_size: int) -> float:
     """How related the four groups are, on 0 to 1, for display and ranking.
 
@@ -271,6 +333,7 @@ def shortlist_for(
 SHORTLIST_TOO_SMALL = "shortlist_too_small"
 NOT_DISJOINT = "not_disjoint"
 CROSS_MEMBERSHIP = "cross_membership"
+CATEGORY_LEAK = "category_leak"
 BORROWING_FAILED = "borrowing_failed"
 TEMPTATION_TOO_LOW = "temptation_too_low"
 TEMPTATION_TOO_HIGH = "temptation_too_high"
@@ -370,6 +433,9 @@ def plans_for(
             continue
         if not has_no_cross_membership(combination):
             refuse(CROSS_MEMBERSHIP)
+            continue
+        if not has_no_category_leak(hidden, combination):
+            refuse(CATEGORY_LEAK)
             continue
         borrowings = borrowings_for(hidden, combination)
         if borrowings is None:
@@ -688,6 +754,7 @@ __all__ = [
     "ancestry",
     "borrowings_for",
     "generate_candidates",
+    "has_no_category_leak",
     "has_no_cross_membership",
     "hidden_candidates",
     "is_disjoint",

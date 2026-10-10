@@ -386,7 +386,15 @@ class TestTheProxyOverstates:
 class TestCoverageGain:
     @pytest.fixture
     def three_homes(self, world) -> World:
-        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
+        # Six cats, not five, so the group that holds the overlay word left
+        # over from the hidden five has a spare tile to be filled with
+        # instead. With five, every filling of the cats group puts "puma" on
+        # the board, which answers "also a verb" as well as the chosen five
+        # do, and the leak gate refuses it; this fixture is about whether a
+        # new word reaches a new home, not about that.
+        world.lexical_group(
+            "cats", ["lion", "tiger", "puma", "lynx", "ocelot", "serval"]
+        )
         world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"])
         world.lexical_group("tools", ["hammer", "chisel", "plane", "file", "awl"])
         world.lexical_group("boats", ["ketch", "punt", "yawl", "dinghy", "canoe"])
@@ -474,7 +482,15 @@ def candidate(propose_module, entity_name: str, category_id: str, confidence: fl
 class TestRanking:
     @pytest.fixture
     def three_homes(self, world) -> World:
-        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
+        # Six cats, not five, so the group that holds the overlay word left
+        # over from the hidden five has a spare tile to be filled with
+        # instead. With five, every filling of the cats group puts "puma" on
+        # the board, which answers "also a verb" as well as the chosen five
+        # do, and the leak gate refuses it; this fixture is about whether a
+        # new word reaches a new home, not about that.
+        world.lexical_group(
+            "cats", ["lion", "tiger", "puma", "lynx", "ocelot", "serval"]
+        )
         world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"])
         world.lexical_group("tools", ["hammer", "chisel", "plane", "file", "awl"])
         world.lexical_group("boats", ["ketch", "punt", "yawl", "dinghy", "canoe"])
@@ -637,7 +653,15 @@ class TestCandidateBatch:
     """
 
     def three_homes(self, world: World) -> None:
-        world.lexical_group("cats", ["lion", "tiger", "puma", "lynx", "ocelot"])
+        # Six cats, not five, so the group that holds the overlay word left
+        # over from the hidden five has a spare tile to be filled with
+        # instead. With five, every filling of the cats group puts "puma" on
+        # the board, which answers "also a verb" as well as the chosen five
+        # do, and the leak gate refuses it; this fixture is about whether a
+        # new word reaches a new home, not about that.
+        world.lexical_group(
+            "cats", ["lion", "tiger", "puma", "lynx", "ocelot", "serval"]
+        )
         world.lexical_group("birds", ["robin", "crane", "swift", "finch", "heron"])
         world.lexical_group("tools", ["hammer", "chisel", "plane", "file", "awl"])
         world.lexical_group("boats", ["ketch", "punt", "yawl", "dinghy", "canoe"])
@@ -1428,6 +1452,143 @@ class TestTheVerdictDoesNotDependOnIterationOrder:
 
         assert verdict == overlay_coverage.IN_TWO_GROUPS
         assert detail == "bee is a kind of both P and Q"
+
+
+class TestTheLeakGate:
+    """The tool must refuse the boards the generator refuses.
+
+    ``has_no_category_leak`` in the game refuses a board with a hidden word
+    among the filler tiles. A coverage model that still counted those boards
+    would report capacity the generator cannot use, which is this project's
+    recurring failure: a tool that recomputes a value instead of applying the
+    rule the engine applies.
+    """
+
+    def snapshot(self, *, spare: bool) -> overlay_coverage.Snapshot:
+        """Four groups of five, and a sixth hidden word sitting in one of them.
+
+        ``spare`` gives the P group a sixth tile, so the extra hidden word can
+        be left off the board.
+        """
+        members = {
+            "P": {"p1", "p2", "p3", "p4", "p5"} | ({"p6"} if spare else set()),
+            "Q": {"q1", "q2", "q3", "q4", "q5"},
+            "R": {"r1", "r2", "r3", "r4", "r5"},
+            "S": {"s1", "s2", "s3", "s4", "s5"},
+        }
+        # p1 is the hidden word this board borrows from P; p2 is the one it
+        # does not, and the one that makes the ask ambiguous.
+        hidden_words = frozenset({"p1", "p2", "q1", "r1", "s1", "s2"})
+        return overlay_coverage.Snapshot(
+            lexical_members={c: frozenset(m) for c, m in members.items()},
+            lexical_names={c: c for c in members},
+            overlay_members={"H": hidden_words},
+            overlay_names={"H": "hidden"},
+            types_of={
+                entity: frozenset({category})
+                for category, group in members.items()
+                for entity in group
+            },
+            entity_names={
+                entity: entity for group in members.values() for entity in group
+            },
+        )
+
+    def chosen_five(self) -> frozenset[str]:
+        """Five hidden words touching all four groups, leaving p2 over."""
+        return frozenset({"p1", "q1", "r1", "s1", "s2"})
+
+    def test_a_board_whose_filler_answers_the_ask_is_refused(self):
+        verdict, _ = overlay_coverage._quadruple_works(
+            self.snapshot(spare=False),
+            ("P", "Q", "R", "S"),
+            self.chosen_five(),
+            5,
+            {c: frozenset() for c in "PQRS"},
+            frozenset({"p1", "p2", "q1", "r1", "s1", "s2"}),
+        )
+
+        assert verdict == overlay_coverage.HIDDEN_LEAK
+
+    def test_a_spare_tile_makes_the_same_board_work(self):
+        verdict, _ = overlay_coverage._quadruple_works(
+            self.snapshot(spare=True),
+            ("P", "Q", "R", "S"),
+            self.chosen_five(),
+            5,
+            {c: frozenset() for c in "PQRS"},
+            frozenset({"p1", "p2", "q1", "r1", "s1", "s2"}),
+        )
+
+        assert verdict == overlay_coverage.OK
+
+    def test_running_out_of_tiles_is_not_reported_as_a_leak(self):
+        """The two ways of failing to fill a group stay distinguishable."""
+        snapshot = self.snapshot(spare=False)
+        thin = overlay_coverage.Snapshot(
+            lexical_members={
+                **snapshot.lexical_members,
+                "P": frozenset({"p1", "p2"}),
+            },
+            lexical_names=snapshot.lexical_names,
+            overlay_members=snapshot.overlay_members,
+            overlay_names=snapshot.overlay_names,
+            types_of=snapshot.types_of,
+            entity_names=snapshot.entity_names,
+        )
+
+        verdict, _ = overlay_coverage._quadruple_works(
+            thin,
+            ("P", "Q", "R", "S"),
+            self.chosen_five(),
+            5,
+            {c: frozenset() for c in "PQRS"},
+            frozenset({"p1", "p2", "q1", "r1", "s1", "s2"}),
+        )
+
+        assert verdict == overlay_coverage.CANNOT_FILL
+
+    def test_a_chosen_group_above_the_hidden_category_is_refused(self):
+        """Every hidden word under one chosen group's category.
+
+        Refused, but by the cross-membership gate rather than this one, and
+        the same is true in the game: a visible category that every hidden
+        word carries is also carried by hidden words sitting in the other
+        three groups, which is cross-membership. The assertion is therefore
+        that the board does not pass, not which reason it is filed under,
+        since that is the order the engine applies its gates in and the tool
+        exists to agree with the engine's verdict.
+
+        Unreachable from today's seeds either way, where overlay categories
+        are taxonomy roots. Tested because the gate is a rule about the
+        relation, not about the shape of the current data.
+        """
+        snapshot = self.snapshot(spare=True)
+        types_of = {
+            entity: categories | ({"P"} if entity in self.chosen_five() else frozenset())
+            for entity, categories in snapshot.types_of.items()
+        }
+        above = overlay_coverage.Snapshot(
+            lexical_members=snapshot.lexical_members,
+            lexical_names=snapshot.lexical_names,
+            overlay_members=snapshot.overlay_members,
+            overlay_names=snapshot.overlay_names,
+            types_of=types_of,
+            entity_names=snapshot.entity_names,
+        )
+
+        verdict, detail = overlay_coverage._quadruple_works(
+            above,
+            ("P", "Q", "R", "S"),
+            self.chosen_five(),
+            5,
+            {c: frozenset() for c in "PQRS"},
+            frozenset({"p1", "p2", "q1", "r1", "s1", "s2"}),
+        )
+
+        assert verdict != overlay_coverage.OK
+        assert verdict == overlay_coverage.CROSS_MEMBERSHIP
+        assert detail
 
 
 class TestTheTaggedWordStandsForItsChild:
