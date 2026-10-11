@@ -1,6 +1,6 @@
 {
   "surface_policy": "bad6cbbcbb34af8cd731b14d4410e644c2f778896f7d04ab52829fc2c2e3f00b",
-  "surface_forms": 4813,
+  "surface_forms": 4844,
   "cells": [
     {
       "board_size": 6,
@@ -18,14 +18,14 @@
           "taxonomy": "letters",
           "letters": "gem",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "bird",
           "taxonomy": "letters",
           "letters": "bird",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "bone",
@@ -39,7 +39,7 @@
           "taxonomy": "letters",
           "letters": "fish",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "herb",
@@ -60,7 +60,7 @@
           "taxonomy": "letters",
           "letters": "tree",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "berry",
@@ -81,14 +81,14 @@
           "taxonomy": "letters",
           "letters": "drink",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fruit",
           "taxonomy": "letters",
           "letters": "fruit",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "grain",
@@ -115,7 +115,7 @@
           "taxonomy": "letters",
           "letters": "bird",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "bone",
@@ -129,7 +129,7 @@
           "taxonomy": "letters",
           "letters": "fish",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "herb",
@@ -150,7 +150,7 @@
           "taxonomy": "letters",
           "letters": "tree",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "berry",
@@ -171,14 +171,14 @@
           "taxonomy": "letters",
           "letters": "drink",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fruit",
           "taxonomy": "letters",
           "letters": "fruit",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "grain",
@@ -192,7 +192,7 @@
           "taxonomy": "letters",
           "letters": "metal",
           "marks": 2,
-          "members": 8
+          "members": 12
         }
       ]
     },
@@ -226,14 +226,14 @@
           "taxonomy": "letters",
           "letters": "drink",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fruit",
           "taxonomy": "letters",
           "letters": "fruit",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "grain",
@@ -247,7 +247,7 @@
           "taxonomy": "letters",
           "letters": "metal",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "money",
@@ -275,7 +275,7 @@
           "taxonomy": "letters",
           "letters": "shape",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "spice",
@@ -289,7 +289,7 @@
           "taxonomy": "letters",
           "letters": "sport",
           "marks": 1,
-          "members": 8
+          "members": 12
         }
       ]
     },
@@ -309,56 +309,56 @@
           "taxonomy": "letters",
           "letters": "gem",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "bird",
           "taxonomy": "letters",
           "letters": "bird",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fish",
           "taxonomy": "letters",
           "letters": "fish",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "tree",
           "taxonomy": "letters",
           "letters": "tree",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "drink",
           "taxonomy": "letters",
           "letters": "drink",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fruit",
           "taxonomy": "letters",
           "letters": "fruit",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "metal",
           "taxonomy": "letters",
           "letters": "metal",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "shape",
           "taxonomy": "letters",
           "letters": "shape",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "spice",
@@ -372,21 +372,21 @@
           "taxonomy": "letters",
           "letters": "sport",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fabric",
           "taxonomy": "letters",
           "letters": "fabric",
           "marks": 4,
-          "members": 8
+          "members": 12
         },
         {
           "name": "flower",
           "taxonomy": "letters",
           "letters": "flower",
           "marks": 4,
-          "members": 8
+          "members": 12
         }
       ]
     },
@@ -406,49 +406,49 @@
           "taxonomy": "letters",
           "letters": "bird",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fish",
           "taxonomy": "letters",
           "letters": "fish",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "tree",
           "taxonomy": "letters",
           "letters": "tree",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "drink",
           "taxonomy": "letters",
           "letters": "drink",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fruit",
           "taxonomy": "letters",
           "letters": "fruit",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "metal",
           "taxonomy": "letters",
           "letters": "metal",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "shape",
           "taxonomy": "letters",
           "letters": "shape",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "spice",
@@ -462,28 +462,28 @@
           "taxonomy": "letters",
           "letters": "sport",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fabric",
           "taxonomy": "letters",
           "letters": "fabric",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "flower",
           "taxonomy": "letters",
           "letters": "flower",
           "marks": 3,
-          "members": 8
+          "members": 12
         },
         {
           "name": "insect",
           "taxonomy": "letters",
           "letters": "insect",
           "marks": 3,
-          "members": 8
+          "members": 12
         }
       ]
     },
@@ -503,28 +503,28 @@
           "taxonomy": "letters",
           "letters": "drink",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fruit",
           "taxonomy": "letters",
           "letters": "fruit",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "metal",
           "taxonomy": "letters",
           "letters": "metal",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "shape",
           "taxonomy": "letters",
           "letters": "shape",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "spice",
@@ -538,42 +538,42 @@
           "taxonomy": "letters",
           "letters": "sport",
           "marks": 1,
-          "members": 8
+          "members": 12
         },
         {
           "name": "fabric",
           "taxonomy": "letters",
           "letters": "fabric",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "flower",
           "taxonomy": "letters",
           "letters": "flower",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "insect",
           "taxonomy": "letters",
           "letters": "insect",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "island",
           "taxonomy": "letters",
           "letters": "island",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "mammal",
           "taxonomy": "letters",
           "letters": "mammal",
           "marks": 2,
-          "members": 8
+          "members": 12
         },
         {
           "name": "planet",
@@ -587,74 +587,584 @@
     {
       "board_size": 10,
       "blanks": 2,
-      "playable": 0,
+      "playable": 16,
       "examined": 7080,
       "refused": {
         "name_too_long": 2366,
         "name_unusable": 2,
-        "too_few_members": 4712
+        "too_few_members": 4696
       },
-      "shortlist": []
+      "shortlist": [
+        {
+          "name": "gem",
+          "taxonomy": "letters",
+          "letters": "gem",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "bird",
+          "taxonomy": "letters",
+          "letters": "bird",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "fish",
+          "taxonomy": "letters",
+          "letters": "fish",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "tree",
+          "taxonomy": "letters",
+          "letters": "tree",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "drink",
+          "taxonomy": "letters",
+          "letters": "drink",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "fruit",
+          "taxonomy": "letters",
+          "letters": "fruit",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "metal",
+          "taxonomy": "letters",
+          "letters": "metal",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "shape",
+          "taxonomy": "letters",
+          "letters": "shape",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "sport",
+          "taxonomy": "letters",
+          "letters": "sport",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "fabric",
+          "taxonomy": "letters",
+          "letters": "fabric",
+          "marks": 4,
+          "members": 12
+        },
+        {
+          "name": "flower",
+          "taxonomy": "letters",
+          "letters": "flower",
+          "marks": 4,
+          "members": 12
+        },
+        {
+          "name": "insect",
+          "taxonomy": "letters",
+          "letters": "insect",
+          "marks": 4,
+          "members": 12
+        }
+      ]
     },
     {
       "board_size": 10,
       "blanks": 3,
-      "playable": 0,
+      "playable": 15,
       "examined": 7080,
       "refused": {
         "name_too_long": 1836,
         "name_unusable": 74,
-        "too_few_members": 5170
+        "too_few_members": 5155
       },
-      "shortlist": []
+      "shortlist": [
+        {
+          "name": "bird",
+          "taxonomy": "letters",
+          "letters": "bird",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "fish",
+          "taxonomy": "letters",
+          "letters": "fish",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "tree",
+          "taxonomy": "letters",
+          "letters": "tree",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "drink",
+          "taxonomy": "letters",
+          "letters": "drink",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "fruit",
+          "taxonomy": "letters",
+          "letters": "fruit",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "metal",
+          "taxonomy": "letters",
+          "letters": "metal",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "shape",
+          "taxonomy": "letters",
+          "letters": "shape",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "sport",
+          "taxonomy": "letters",
+          "letters": "sport",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "fabric",
+          "taxonomy": "letters",
+          "letters": "fabric",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "flower",
+          "taxonomy": "letters",
+          "letters": "flower",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "insect",
+          "taxonomy": "letters",
+          "letters": "insect",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "island",
+          "taxonomy": "letters",
+          "letters": "island",
+          "marks": 3,
+          "members": 12
+        }
+      ]
     },
     {
       "board_size": 10,
       "blanks": 4,
-      "playable": 0,
+      "playable": 12,
       "examined": 7080,
       "refused": {
         "name_too_long": 1440,
         "name_unusable": 293,
-        "too_few_members": 5347
+        "too_few_members": 5335
       },
-      "shortlist": []
+      "shortlist": [
+        {
+          "name": "drink",
+          "taxonomy": "letters",
+          "letters": "drink",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "fruit",
+          "taxonomy": "letters",
+          "letters": "fruit",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "metal",
+          "taxonomy": "letters",
+          "letters": "metal",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "shape",
+          "taxonomy": "letters",
+          "letters": "shape",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "sport",
+          "taxonomy": "letters",
+          "letters": "sport",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "fabric",
+          "taxonomy": "letters",
+          "letters": "fabric",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "flower",
+          "taxonomy": "letters",
+          "letters": "flower",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "insect",
+          "taxonomy": "letters",
+          "letters": "insect",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "island",
+          "taxonomy": "letters",
+          "letters": "island",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "mammal",
+          "taxonomy": "letters",
+          "letters": "mammal",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "garment",
+          "taxonomy": "letters",
+          "letters": "garment",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "weather",
+          "taxonomy": "letters",
+          "letters": "weather",
+          "marks": 3,
+          "members": 12
+        }
+      ]
     },
     {
       "board_size": 12,
       "blanks": 2,
-      "playable": 0,
+      "playable": 16,
       "examined": 7080,
       "refused": {
         "name_too_long": 1440,
         "name_unusable": 2,
-        "too_few_members": 5638
+        "too_few_members": 5622
       },
-      "shortlist": []
+      "shortlist": [
+        {
+          "name": "gem",
+          "taxonomy": "letters",
+          "letters": "gem",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "bird",
+          "taxonomy": "letters",
+          "letters": "bird",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "fish",
+          "taxonomy": "letters",
+          "letters": "fish",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "tree",
+          "taxonomy": "letters",
+          "letters": "tree",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "drink",
+          "taxonomy": "letters",
+          "letters": "drink",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "fruit",
+          "taxonomy": "letters",
+          "letters": "fruit",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "metal",
+          "taxonomy": "letters",
+          "letters": "metal",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "shape",
+          "taxonomy": "letters",
+          "letters": "shape",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "sport",
+          "taxonomy": "letters",
+          "letters": "sport",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "fabric",
+          "taxonomy": "letters",
+          "letters": "fabric",
+          "marks": 4,
+          "members": 12
+        },
+        {
+          "name": "flower",
+          "taxonomy": "letters",
+          "letters": "flower",
+          "marks": 4,
+          "members": 12
+        },
+        {
+          "name": "insect",
+          "taxonomy": "letters",
+          "letters": "insect",
+          "marks": 4,
+          "members": 12
+        }
+      ]
     },
     {
       "board_size": 12,
       "blanks": 3,
-      "playable": 0,
+      "playable": 15,
       "examined": 7080,
       "refused": {
         "name_too_long": 1096,
         "name_unusable": 74,
-        "too_few_members": 5910
+        "too_few_members": 5895
       },
-      "shortlist": []
+      "shortlist": [
+        {
+          "name": "bird",
+          "taxonomy": "letters",
+          "letters": "bird",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "fish",
+          "taxonomy": "letters",
+          "letters": "fish",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "tree",
+          "taxonomy": "letters",
+          "letters": "tree",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "drink",
+          "taxonomy": "letters",
+          "letters": "drink",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "fruit",
+          "taxonomy": "letters",
+          "letters": "fruit",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "metal",
+          "taxonomy": "letters",
+          "letters": "metal",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "shape",
+          "taxonomy": "letters",
+          "letters": "shape",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "sport",
+          "taxonomy": "letters",
+          "letters": "sport",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "fabric",
+          "taxonomy": "letters",
+          "letters": "fabric",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "flower",
+          "taxonomy": "letters",
+          "letters": "flower",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "insect",
+          "taxonomy": "letters",
+          "letters": "insect",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "island",
+          "taxonomy": "letters",
+          "letters": "island",
+          "marks": 3,
+          "members": 12
+        }
+      ]
     },
     {
       "board_size": 12,
       "blanks": 4,
-      "playable": 0,
+      "playable": 12,
       "examined": 7080,
       "refused": {
         "name_too_long": 838,
         "name_unusable": 293,
-        "too_few_members": 5949
+        "too_few_members": 5937
       },
-      "shortlist": []
+      "shortlist": [
+        {
+          "name": "drink",
+          "taxonomy": "letters",
+          "letters": "drink",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "fruit",
+          "taxonomy": "letters",
+          "letters": "fruit",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "metal",
+          "taxonomy": "letters",
+          "letters": "metal",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "shape",
+          "taxonomy": "letters",
+          "letters": "shape",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "sport",
+          "taxonomy": "letters",
+          "letters": "sport",
+          "marks": 1,
+          "members": 12
+        },
+        {
+          "name": "fabric",
+          "taxonomy": "letters",
+          "letters": "fabric",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "flower",
+          "taxonomy": "letters",
+          "letters": "flower",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "insect",
+          "taxonomy": "letters",
+          "letters": "insect",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "island",
+          "taxonomy": "letters",
+          "letters": "island",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "mammal",
+          "taxonomy": "letters",
+          "letters": "mammal",
+          "marks": 2,
+          "members": 12
+        },
+        {
+          "name": "garment",
+          "taxonomy": "letters",
+          "letters": "garment",
+          "marks": 3,
+          "members": 12
+        },
+        {
+          "name": "weather",
+          "taxonomy": "letters",
+          "letters": "weather",
+          "marks": 3,
+          "members": 12
+        }
+      ]
     }
   ]
 }

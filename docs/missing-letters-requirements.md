@@ -161,8 +161,9 @@ solver would reach for.
 
 So shortening names, which 4.3 is about, buys nothing on its own: there was
 nothing with enough common members to be worth naming. The route taken instead
-was to pick categories a player recognises, get six to eight common words into
-each, and settle the name afterwards.
+was to pick categories a player recognises, get the common words into each, and
+settle the name afterwards. The first batch stopped at eight members; 6.5
+records why the ceiling moved to twelve and what that opened.
 
 ### 6.2 Why the lexicon cannot supply them
 
@@ -187,19 +188,23 @@ seam `tools/build_snapshot.py` documents for exactly this: a game's own
 taxonomy, optional and repeatable, colliding with neither `wordnet` nor
 `overlay` because category identity already includes the taxonomy.
 
-Thirty categories, six to eight members each, 218 entities. Entity identity is
-by lemma, so a member the graph already holds is the same entity with one more
-membership rather than a duplicate. Measured: the entity total goes from 16,710
-to 16,812, so 102 members were new and 116 merged. Separately, 111 of the 218
-carry a membership outside this taxonomy -- 76 in `wordnet`, 33 in both
-`wordnet` and `overlay`, 2 in `overlay` alone -- and the remaining 107 are
-members of a `letters` category and nothing else. The two figures differ
-because merging is by lemma and does not require the entity it merges with to
-have a membership of its own. That entity total is the only figure game 1
-measures that this file moves.
+Thirty categories, six to twelve members each, 280 entities: sixteen hold
+twelve, four hold eight, three hold seven and seven hold six. A category holds
+twelve only where twelve common members exist, which is why the sizes are
+uneven.
+
+Entity identity is by lemma, so a member the graph already holds is the same
+entity with one more membership rather than a duplicate. Measured: the entity
+total goes from 16,710 without this file to 16,842 with it, so 132 members were
+new and 148 merged. Separately, 143 of the 280 carry a membership outside this
+taxonomy -- 103 in `wordnet`, 37 in both `wordnet` and `overlay`, 3 in
+`overlay` alone -- and the remaining 137 are members of a `letters` category
+and nothing else. The two figures differ because merging is by lemma and does
+not require the entity it merges with to have a membership of its own. That
+entity total is the only figure game 1 measures that this file moves.
 
 Three invariants decide whether a category can be a board, and
-`tests/unit/test_letters_categories.py` pins each: six to eight members, a name
+`tests/unit/test_letters_categories.py` pins each: six to twelve members, a name
 of three to seven letters, and a name its own members can spell at the
 two-blank floor. The third caught three categories as authored. `fruit` had no
 member holding an f, an i or a t; `garment` none holding a g, an m or an n;
@@ -222,20 +227,55 @@ Re-measured on the same build with the file in, medium frequency:
 | 8 | 2 | 20 | 3764 | 3294 | 0 |
 | 8 | 3 | 19 | 2992 | 3995 | 0 |
 | 8 | 4 | 16 | 2366 | 4405 | 0 |
-| 10 | 2 | 0 | 2366 | 4712 | 0 |
-| 12 | 2 | 0 | 1440 | 5638 | 0 |
+| 10 | 2 | 16 | 2366 | 4696 | 0 |
+| 10 | 3 | 15 | 1836 | 5155 | 0 |
+| 10 | 4 | 12 | 1440 | 5335 | 0 |
+| 12 | 2 | 16 | 1440 | 5622 | 0 |
+| 12 | 3 | 15 | 1096 | 5895 | 0 |
+| 12 | 4 | 12 | 838 | 5937 | 0 |
 
-Every one of the thirty is playable at six tiles and the two-blank floor, and
-the twenty with eight members are playable at eight tiles. Ten and twelve tiles
-are zero and expected to be: a ceiling of eight members cannot fill them. A
-board of ten is a deliberate decision about how large a category gets, not a
-gap in this batch, and nothing has established that a solver wants one.
+Every cell has playable content. All thirty work at six tiles and the two-blank
+floor, the twenty with eight or more at eight tiles, and the sixteen with twelve
+at both ten and twelve.
+
+Ten and twelve report the same counts, and that is the content's shape rather
+than a coincidence: no category holds ten or eleven members, so the sixteen
+that fill a board of twelve are exactly the sixteen that fill a board of ten.
+A category sized between the two would separate the columns, and none exists
+because the eleventh and twelfth common member arrive together or not at all.
 
 The refusal columns are almost all WordNet, unchanged from 6.1 and left in the
 table because they are the comparison: 7,050 lexical categories yield nothing
-a player would want, and thirty curated ones yield thirty boards.
+a player would want, and thirty curated ones yield a board at every size.
 
-### 6.5 What this leaves open
+### 6.5 Twelve members, and the two largest boards
+
+The first batch capped members at eight, which left ten and twelve tile boards
+measuring zero: a board needs at least as many eligible members as it has
+tiles, so eight members cannot seat ten. That cap was a decision rather than a
+limit of the content, and the owner decided against it, so sixteen categories
+were extended to twelve members.
+
+The ceiling is now twelve because twelve is the largest board the tool
+measures: a thirteenth member could never become a tile. It is a ceiling and
+not a target. Fourteen categories stayed below it because their common
+vocabulary runs out first, and reaching for a thirteenth word in `liquor` or
+`bone` would mean reaching for a word a player does not know, which is the
+lexicon subtree this taxonomy exists to avoid.
+
+Which sixteen was decided by the vocabulary, not by preference: `bird`, `drink`,
+`fabric`, `fish`, `flower`, `fruit`, `garment`, `gem`, `insect`, `island`,
+`mammal`, `metal`, `shape`, `sport`, `tree`, `weather`. Each has at least
+twelve members in the medium band, most of them more, so the twelve chosen are
+the most recognisable rather than the only ones available.
+
+Extending them did not break the spelling invariant, but it did need the same
+care: `sport` gained `polo` because none of its other members holds a p, and
+`flower` gained `sunflower` for its f and w. The invariant caught neither,
+because both categories were already within their blank budget; they were
+picked to leave the budget slack rather than spend it.
+
+### 6.6 What this leaves open
 
 The curated taxonomy is thirty categories, which is not a year of daily
 puzzles. It is enough to build the generator against, and the shape of a batch

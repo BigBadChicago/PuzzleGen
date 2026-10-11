@@ -45,10 +45,13 @@ coverage = load_tool("measure_letters_coverage")
 SEED = ROOT / "games" / "letters" / "content" / "letters.curated.json"
 
 #: The batch's floor and ceiling on members. The floor is the smallest board
-#: the game generates; the ceiling is where a category stops being a set a
-#: player holds in their head and starts being a lexicon subtree again.
+#: the game generates and the ceiling is the largest, because a member past
+#: the largest board can never become a tile. The ceiling is not a target: a
+#: category holds twelve only where twelve common members exist, and reaching
+#: for a thirteenth would mean reaching for a word a player does not know,
+#: which is the lexicon subtree this taxonomy exists to avoid.
 MIN_MEMBERS = 6
-MAX_MEMBERS = 8
+MAX_MEMBERS = 12
 
 #: The longest name that fits the smallest board. A board needs one more tile
 #: than it has marks, and marks are the name's letters less the blanks, so
@@ -73,12 +76,13 @@ def letters_of(name: str) -> str:
 
 
 class TestTheBatchIsSizedForABoard:
-    def test_every_category_has_six_to_eight_members(self):
+    def test_every_category_has_between_the_floor_and_the_ceiling(self):
         """The route this content took: members first, naming afterwards.
 
         A category below the floor cannot fill the smallest board, and the
         refusal the coverage tool reports for it is the one that blocked
-        every lexicon category.
+        every lexicon category. A category above the ceiling carries members
+        no board can seat.
         """
         too_small = {
             key: len(names)
@@ -107,6 +111,17 @@ class TestTheBatchIsSizedForABoard:
         names = [row["name"] for row in doc["categories"]]
         assert len(keys) == len(set(keys))
         assert len(names) == len(set(names))
+
+
+    def test_some_categories_can_fill_the_largest_board(self):
+        """Ten and twelve tile boards measured zero while the ceiling was
+        eight, because a board needs at least as many members as tiles. This
+        is the content side of that: without a category at the ceiling, the
+        two largest board sizes have nothing to generate from.
+        """
+        sizes = [len(names) for names in members_by_category(document()).values()]
+        assert sum(1 for size in sizes if size >= 12) >= 1
+        assert sum(1 for size in sizes if size >= 10) >= 1
 
 
 class TestTheNamesFitTheBoardsTheyAreFor:
