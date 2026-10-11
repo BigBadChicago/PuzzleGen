@@ -35,9 +35,10 @@ def form(name: str, entity_id: str | None = None):
     return form_for(EntityView(entity_id=entity_id or f"entity:{name}", name=name))
 
 
-def candidate(name: str, *members: str):
+def candidate(name: str, *members: str, taxonomy: str = "wordnet"):
     return letters.Candidate(
         category_id=f"category:{name}",
+        taxonomy=taxonomy,
         form=form(name),
         members=tuple(form(member) for member in members),
     )
@@ -151,6 +152,17 @@ class TestTheSummary:
         """A letter count means nothing without the rules that produced it."""
         summary = letters.summarise({}, letters.SurfaceIndex())
         assert summary["surface_policy"]
+
+    def test_a_shortlist_row_says_which_taxonomy_the_board_came_from(self):
+        """Two taxonomies are measured together, and the whole point of the
+        curated one is that the lexicon could not supply a board. A shortlist
+        that does not say which is which cannot show that."""
+        members = ("salmon", "trout", "herring", "bass", "halibut", "carp")
+        findings = letters.survey(
+            [candidate("fish", *members, taxonomy="letters")], (6,), (2,)
+        )
+        summary = letters.summarise(findings, letters.SurfaceIndex())
+        assert summary["cells"][0]["shortlist"][0]["taxonomy"] == "letters"
 
     def test_the_blank_floor_is_refused_at_the_command_line(self):
         """Measuring below the floor would report boards the game will not

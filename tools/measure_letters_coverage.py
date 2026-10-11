@@ -18,6 +18,14 @@ each refusal was so the answer is actionable rather than a single number.
     python tools/measure_letters_coverage.py
     python tools/measure_letters_coverage.py --db content/graph.sqlite --json out.json
     python tools/measure_letters_coverage.py --difficulty medium --blanks 2 3
+    python tools/measure_letters_coverage.py --taxonomy letters
+
+The measurement on build A2 found the lexicon has the letters and not the
+members: ``letters_unplaceable`` was zero in every cell, and at medium
+frequency exactly one WordNet category had six or more eligible members. So
+game 2 carries a curated taxonomy of its own, ``letters``, whose categories
+are sized for a board rather than inherited from a lexicon, and this tool
+measures both by default.
 
 Exit status is 0 when at least one board size and blank count has a playable
 category, and 1 otherwise, so a build's answer is a command rather than a
@@ -40,10 +48,12 @@ from puzzlegen.core.types import DifficultyBand, ReviewStatus
 from puzzlegen.graph import GraphRepositories, SqliteDocumentStore
 from puzzlegen.surface import SurfaceForm, SurfaceIndex, SurfacePolicy, form_for
 
-#: The taxonomy whose categories are candidate targets. Overlay categories are
-#: not candidates: their names run 14 to 25 letters, which no ordinary board
+#: Taxonomies measured when the command names none. WordNet is the shared
+#: lexicon every build carries; ``letters`` is game 2's own curated taxonomy,
+#: which exists because the lexicon's categories do not have the members. The
+#: overlay is not here: its names run 14 to 25 letters, which no ordinary board
 #: size can hold, and measuring them would only restate that.
-LEXICAL_TAXONOMY = "wordnet"
+DEFAULT_TAXONOMIES = ("wordnet", "letters")
 
 DEFAULT_DB = Path("content/graph.sqlite")
 
@@ -80,6 +90,7 @@ class Finding:
     """One category measured at one board size and blank count."""
 
     category_id: str
+    taxonomy: str
     name: str
     letters: str
     members_eligible: int
@@ -97,6 +108,7 @@ class Finding:
     def as_dict(self) -> dict:
         return {
             "category_id": self.category_id,
+            "taxonomy": self.taxonomy,
             "name": self.name,
             "letters": self.letters,
             "members_eligible": self.members_eligible,
@@ -112,6 +124,7 @@ class Candidate:
     """A category and the member forms that could be its tiles."""
 
     category_id: str
+    taxonomy: str
     form: SurfaceForm
     members: tuple[SurfaceForm, ...]
 
@@ -121,6 +134,7 @@ def load(
     *,
     difficulty: str = "any",
     policy: SurfacePolicy | None = None,
+    taxonomies: tuple[str, ...] = DEFAULT_TAXONOMIES,
 ) -> tuple[list[Candidate], SurfaceIndex]:
     """Every active lexical category with its frequency-passing members.
 
@@ -149,7 +163,15 @@ def load(
 
     index = SurfaceIndex(policy=policy)
     candidates: list[Candidate] = []
-    for category in repos.categories.live(LEXICAL_TAXONOMY):
+    # A build need not carry every taxonomy: game 2's curated file is passed
+    # with --curated, so a build without it measures the lexicon alone rather
+    # than failing on a taxonomy that is simply absent.
+    live = [
+        category
+        for taxonomy in taxonomies
+        for category in repos.categories.live(taxonomy)
+    ]
+    for category in live:
         if category.status is not ReviewStatus.ACTIVE:
             continue
         member_ids = sorted(
@@ -166,6 +188,7 @@ def load(
         candidates.append(
             Candidate(
                 category_id=category.id,
+                taxonomy=category.taxonomy,
                 form=form_for(_category_view(category), index.policy),
                 members=tuple(index.form(member_id) for member_id in member_ids),
             )
@@ -201,6 +224,7 @@ def assess(candidate: Candidate, board_size: int, blanks: int) -> Finding:
     marks = len(letters) - blanks
     base = dict(
         category_id=candidate.category_id,
+        taxonomy=candidate.taxonomy,
         name=candidate.form.display,
         letters=letters,
         members_eligible=len(candidate.members),
@@ -296,6 +320,7 @@ def summarise(
                 "shortlist": [
                     {
                         "name": row.name,
+                        "taxonomy": row.taxonomy,
                         "letters": row.letters,
                         "marks": row.marks_needed,
                         "members": row.members_eligible,
@@ -350,7 +375,8 @@ def render(summary: dict) -> str:
                 "",
                 f"**{cell['board_size']} tiles, {cell['blanks']} blanks**: "
                 + ", ".join(
-                    f"{row['name']} ({row['marks']} marks, {row['members']} members)"
+                    f"{row['name']} [{row['taxonomy']}] "
+                    f"({row['marks']} marks, {row['members']} members)"
                     for row in cell["shortlist"]
                 ),
             ]
@@ -367,9 +393,25 @@ def main(argv: list[str] | None = None) -> int:
         choices=("any", "easy", "medium", "hard", "expert"),
         help="the frequency filter a board of that difficulty would apply",
     )
+    parser.add_argument(
+        "--taxonomy",
+        nargs="+",
+        default=list(DEFAULT_TAXONOMIES),
+        help="taxonomies whose categories are candidate targets",
+    )
     parser.add_argument("--tiles", type=int, nargs="+", default=list(BOARD_SIZES))
     parser.add_argument("--blanks", type=int, nargs="+", default=list(BLANK_COUNTS))
     parser.add_argument("--json", type=Path, help="write the full findings here")
+    parser.add_argument(
+        "--summary-json",
+        type=Path,
+        help=(
+            "write the summary alone here. The full findings are a row per "
+            "category per cell, which is tens of megabytes and not something "
+            "a repository can carry; the summary is the part a document "
+            "quotes, so it is the part CI can compare against."
+        ),
+    )
     args = parser.parse_args(argv)
 
     if not args.db.exists():
@@ -382,11 +424,15 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     repos = GraphRepositories(SqliteDocumentStore(args.db))
-    candidates, index = load(repos, difficulty=args.difficulty)
+    candidates, index = load(
+        repos, difficulty=args.difficulty, taxonomies=tuple(args.taxonomy)
+    )
     findings = survey(candidates, tuple(args.tiles), tuple(args.blanks))
     summary = summarise(findings, index)
     print(render(summary))
 
+    if args.summary_json:
+        args.summary_json.write_text(json.dumps(summary, indent=2) + "\n")
     if args.json:
         args.json.write_text(
             json.dumps(

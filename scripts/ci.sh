@@ -92,7 +92,9 @@ task_tests() {
 
 task_coverage() {
   local status=0 changed=no
-  local artifacts=(build/coverage-A2.json build/lemma-collisions-A2.json)
+  local artifacts=(
+    build/coverage-A2.json build/lemma-collisions-A2.json build/letters-A2.json
+  )
   git show HEAD:build/coverage-A2.json > "$OUT/coverage-A2.committed.json" 2>/dev/null || : > "$OUT/coverage-A2.committed.json"
 
   if ! bash docs/rebuild-with-batch2.sh; then

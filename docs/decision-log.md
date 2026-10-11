@@ -1158,3 +1158,42 @@ Established while doing it, and worth keeping: a snapshot built with
 `--dev-embeddings` and a freshly exported frequency table reproduces
 `build/coverage-A.json` byte for byte. Coverage applies no embedding gate, so
 coverage work needs no model and no network; only a published snapshot does.
+
+### Game 2 gets its own curated taxonomy, because the lexicon has no members
+
+Measured first: on build A2 at medium frequency, `letters_unplaceable` is zero
+in every cell of 6 to 12 tiles by 2 to 4 blanks. The letter matching the
+requirements doc spends four sections on is never the binding constraint. One
+WordNet category in 7,050 has six or more eligible members, and the two
+playable categories are `baby grand` and `police van`.
+
+So the naming work in requirements 4.3 was the wrong lever, and shortening
+names would have bought nothing. The route taken instead, decided by the
+owner: pick categories a player recognises, get six to eight common words into
+each, settle the name afterwards.
+
+`games/letters/content/letters.curated.json`, thirty categories and 218
+entities, imported with `--curated ...:letters`. No new mechanism: that flag
+exists in `tools/build_snapshot.py` for a game's own taxonomy, and this is its
+first caller. Entity identity is by lemma, so 115 of the 218 members are the
+lexicon's own entities with one more membership; 103 are new. The file changes
+exactly one figure game 1 measures, the entity total (16,710 to 16,813), and no
+group, cover or refusal.
+
+All thirty are playable at six tiles and the two-blank floor, twenty at eight
+tiles, none at ten or twelve. Ten and twelve are a decision about how large a
+category gets, not a gap: a ceiling of eight members cannot fill them.
+
+Worth keeping, because it was not obvious: the medium band is `COMMON` and
+`UNCOMMON`, zipf 3.0 to 5.0, so a *very* common word is ineligible at medium.
+`dog`, `car` and `water` are all too common to be tiles there. A frequency
+filter over a lexicon subtree therefore cuts from both ends, which is part of
+why it leaves almost nothing behind.
+
+The third invariant in `tests/unit/test_letters_categories.py` -- that a
+category's own members can spell its own name at two blanks -- caught three
+categories as authored. `fruit` had no member holding an f, an i or a t;
+`garment` none holding a g, an m or an n; `vehicle` one e and no h. All three
+were fixed by changing members rather than the name, and `gemstone` and
+`currency` were renamed to `gem` and `money` only after their members were
+settled, both being eight letters where six tiles admit seven.
