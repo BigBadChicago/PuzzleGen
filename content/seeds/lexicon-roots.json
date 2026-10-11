@@ -1,0 +1,166 @@
+{
+  "lexicon": "oewn:2024",
+  "roots": {
+    "angiospermous_tree": {
+      "depth": 6,
+      "lemma": "angiospermous tree",
+      "synset": "oewn-13130492-n"
+    },
+    "bird": {
+      "depth": 6,
+      "lemma": "bird",
+      "synset": "oewn-01505702-n"
+    },
+    "bulbous_plant": {
+      "depth": 6,
+      "lemma": "bulbous plant",
+      "synset": "oewn-13155061-n"
+    },
+    "carnivore": {
+      "depth": 6,
+      "lemma": "carnivore",
+      "synset": "oewn-02077948-n"
+    },
+    "color": {
+      "depth": 6,
+      "lemma": "color",
+      "synset": "oewn-04963771-n"
+    },
+    "crustacean": {
+      "depth": 6,
+      "lemma": "crustacean",
+      "synset": "oewn-01977414-n"
+    },
+    "cutting_implement": {
+      "depth": 6,
+      "lemma": "cutting implement",
+      "synset": "oewn-03159112-n"
+    },
+    "dairy_product": {
+      "depth": 6,
+      "lemma": "dairy product",
+      "synset": "oewn-07859751-n"
+    },
+    "drug_of_abuse": {
+      "depth": 6,
+      "lemma": "drug of abuse",
+      "synset": "oewn-03253661-n"
+    },
+    "fish": {
+      "depth": 8,
+      "lemma": "fish",
+      "synset": "oewn-02514684-n"
+    },
+    "flavorer": {
+      "depth": 6,
+      "lemma": "flavorer",
+      "synset": "oewn-07825344-n"
+    },
+    "flower": {
+      "depth": 6,
+      "lemma": "flower",
+      "synset": "oewn-11690372-n"
+    },
+    "fruit": {
+      "depth": 6,
+      "lemma": "edible fruit",
+      "synset": "oewn-07721676-n"
+    },
+    "garment": {
+      "depth": 6,
+      "lemma": "garment",
+      "synset": "oewn-03423924-n"
+    },
+    "hand_tool": {
+      "depth": 6,
+      "lemma": "hand tool",
+      "synset": "oewn-03494245-n"
+    },
+    "herb": {
+      "depth": 6,
+      "lemma": "herb",
+      "synset": "oewn-12226211-n"
+    },
+    "insect": {
+      "depth": 6,
+      "lemma": "insect",
+      "synset": "oewn-02162607-n"
+    },
+    "instrument": {
+      "depth": 6,
+      "lemma": "musical instrument",
+      "synset": "oewn-03806455-n"
+    },
+    "kitchen": {
+      "depth": 6,
+      "lemma": "kitchen utensil",
+      "synset": "oewn-03626258-n"
+    },
+    "marsh_plant": {
+      "depth": 6,
+      "lemma": "marsh plant",
+      "synset": "oewn-13143123-n"
+    },
+    "mollusk": {
+      "depth": 6,
+      "lemma": "mollusk",
+      "synset": "oewn-01943377-n"
+    },
+    "nut": {
+      "depth": 6,
+      "lemma": "nut",
+      "synset": "oewn-13157333-n"
+    },
+    "planet": {
+      "depth": 6,
+      "lemma": "planet",
+      "synset": "oewn-09416900-n"
+    },
+    "power_tool": {
+      "depth": 6,
+      "lemma": "power tool",
+      "synset": "oewn-04003842-n"
+    },
+    "reptile": {
+      "depth": 6,
+      "lemma": "reptile",
+      "synset": "oewn-01663732-n"
+    },
+    "rodent": {
+      "depth": 6,
+      "lemma": "rodent",
+      "synset": "oewn-02332053-n"
+    },
+    "shrub": {
+      "depth": 6,
+      "lemma": "shrub",
+      "synset": "oewn-13133423-n"
+    },
+    "sport": {
+      "depth": 6,
+      "lemma": "sport",
+      "synset": "oewn-00524569-n"
+    },
+    "tableware": {
+      "depth": 6,
+      "lemma": "tableware",
+      "synset": "oewn-04389081-n"
+    },
+    "tool": {
+      "depth": 6,
+      "lemma": "tool",
+      "synset": "oewn-04459089-n"
+    },
+    "vehicle": {
+      "depth": 6,
+      "lemma": "vehicle",
+      "synset": "oewn-04531608-n"
+    },
+    "vine": {
+      "depth": 6,
+      "lemma": "vine",
+      "synset": "oewn-13121436-n"
+    }
+  },
+  "roots_schema": 1
+}

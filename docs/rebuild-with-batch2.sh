@@ -18,9 +18,8 @@ SEEDS=content/seeds
 # Game one owns the overlay, so it lives in that game's distribution.
 OVERLAY=games/grouping/content/overlay.curated.json
 # wordnet-tool.lexicon.json was the "hand tool" subtree until 2026-10-10 and is
-# now the "tool" subtree (oewn-04459089-n). Hand tool kept its own file under
-# its own name. A script that still says tool where it means hand tool builds a
-# different snapshot and no error says so.
+# now the "tool" subtree. Hand tool kept its own file under its own name. These
+# are names only: what each one means is in the manifest read below.
 A="mollusk crustacean bird carnivore fish flavorer flower fruit garment herb insect instrument kitchen planet reptile sport hand_tool vehicle cutting_implement tableware power_tool"
 BATCH2="dairy_product tool rodent nut bulbous_plant vine angiospermous_tree marsh_plant shrub"
 
@@ -29,26 +28,31 @@ BATCH2="dairy_product tool rodent nut bulbous_plant vine angiospermous_tree mars
 # runner has no reason to carry: this script has to be runnable both by someone
 # adding a root and by a job that only rebuilds and measures. Set
 # PUZZLEGEN_REEXPORT=1 to export regardless.
-export_root() { # synset-id depth name
-  local out="$SEEDS/wordnet-$3.lexicon.json"
+# Which subtree each root name means comes from the manifest, not from this
+# file. The pairs were duplicated across two scripts and a document, and the
+# copy that said "tool" where it meant "hand tool" is the one that cost a week.
+# tests/unit/test_lexicon_seeds.py holds every committed export to the same
+# manifest, so a disagreement fails on push instead of building a different
+# snapshot in silence.
+MANIFEST=$SEEDS/lexicon-roots.json
+LEXICON=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["lexicon"])' "$MANIFEST")
+export_root() { # name
+  local out="$SEEDS/wordnet-$1.lexicon.json"
   if [ -s "$out" ] && [ -z "${PUZZLEGEN_REEXPORT:-}" ]; then
     echo "have $out"
     return 0
   fi
-  python3 tools/export_wordnet.py --root "$1" --depth "$2" --out "$out"
+  local synset depth
+  read -r synset depth < <(python3 -c 'import json,sys
+root = json.load(open(sys.argv[1]))["roots"][sys.argv[2]]
+print(root["synset"], root["depth"])' "$MANIFEST" "$1")
+  python3 tools/export_wordnet.py --lexicon "$LEXICON" \
+    --root "$synset" --depth "$depth" --out "$out"
 }
 
 # Batch 2. dairy_product is exported and listed before shrub so the merged
 # "cheese" entity takes the dairy gloss rather than tall mallow, the shrub.
-export_root oewn-07859751-n 6 dairy_product
-export_root oewn-04459089-n 6 tool
-export_root oewn-02332053-n 6 rodent
-export_root oewn-13157333-n 6 nut
-export_root oewn-13155061-n 6 bulbous_plant
-export_root oewn-13121436-n 6 vine
-export_root oewn-13130492-n 6 angiospermous_tree
-export_root oewn-13143123-n 6 marsh_plant
-export_root oewn-13133423-n 6 shrub
+for root in $BATCH2; do export_root "$root"; done
 
 # Named explicitly, never globbed: a glob picks up the mini test fixture.
 flags() { for r in "$@"; do printf -- "--lexicon %s/wordnet-%s.lexicon.json " "$SEEDS" "$r"; done; }

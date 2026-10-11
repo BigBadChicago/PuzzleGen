@@ -142,6 +142,17 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     lexicon_id, _, version = args.lexicon.partition(":")
+    if not args.list and not version:
+        # Refused rather than recorded as a sentinel. A seed that names no
+        # edition is reproducible only by accident, the repository's own tests
+        # reject one, and writing the file first means discovering that in CI
+        # with no hint of which argument caused it.
+        print(
+            f"--lexicon {args.lexicon!r} names no edition: pass one as "
+            f"{lexicon_id}:EDITION, such as oewn:2024",
+            file=sys.stderr,
+        )
+        return 2
     wordnet = wn.Wordnet(lexicon=args.lexicon)
 
     if args.list:
@@ -191,7 +202,7 @@ def main(argv: list[str] | None = None) -> int:
     document = {
         "lexicon_schema": 1,
         "lexicon": lexicon_id,
-        "version": version or "unversioned",
+        "version": version,
         "exported": dt.date.today().isoformat(),
         "url": "https://en-word.net/",
         "root": root.id,
