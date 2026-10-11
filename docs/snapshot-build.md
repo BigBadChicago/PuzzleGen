@@ -50,6 +50,20 @@ python tools/export_wordnet.py --root plant --pos n --list
 
 ### The current 32 roots
 
+`content/seeds/lexicon-roots.json` is where a root is declared, and the only
+place. Each entry names the synset id, the lemma that synset carries, the
+depth, and the WordNet edition the ids were resolved against. The rebuild
+script reads it instead of carrying its own copies, and
+`tests/unit/test_lexicon_seeds.py` holds every committed export to it, so a
+file whose subtree disagrees with its name fails on push. The tables below are
+the reasons each root was chosen; the manifest is what a build obeys.
+
+Three names are shorthands, and the manifest records what they really mean:
+`fruit` is `edible fruit`, `instrument` is `musical instrument`, and `kitchen`
+is `kitchen utensil`. Each is the subtree a puzzle wants rather than the one
+the bare word names, and each was undeclared until the manifest existed, which
+is the same shape as the `hand tool` bug with a happier accident behind it.
+
 Sixteen base roots, seven added to close overlay coverage gaps, and nine more in
 batch 2. All at depth 6 except `fish` at depth 8 (it was the only root truncated
 at depth 6, losing 101 synsets).
