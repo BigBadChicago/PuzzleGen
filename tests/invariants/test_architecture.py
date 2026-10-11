@@ -59,16 +59,28 @@ FORBIDDEN_FOR_GAMES = {
 }
 
 #: What a game may import: its own capability types and the shared vocabulary.
+#:
+#: ``puzzlegen.surface`` is here because the surface form subsystem is a
+#: platform capability games call, which is the whole reason it was promoted
+#: from a helper: it owns the decisions about what an entity's letters are, and
+#: a game reasoning about spelling must reach the same answer as curation
+#: tooling and as every other game. It reads entities through the views a game
+#: already holds and touches no store, so it grants no access the port does
+#: not.
 ALLOWED_FOR_GAMES = {
     "puzzlegen.content.port",
     "puzzlegen.content.query",
     "puzzlegen.core",
     "puzzlegen.engine",
+    "puzzlegen.surface",
 }
 
 #: Layer order. A module may import from its own layer and any layer below it,
 #: never above. This is what keeps the dependency direction from inverting.
-LAYERS = ["core", "graph", "providers", "content", "engine", "ops", "cli"]
+#: ``surface`` sits above content and below engine: it consumes entities
+#: through the content layer's views and is called by the engine's games,
+#: which is the dependency direction the subsystem was designed for.
+LAYERS = ["core", "graph", "providers", "content", "surface", "engine", "ops", "cli"]
 
 
 #: Test support, inside the package but not part of the runtime.

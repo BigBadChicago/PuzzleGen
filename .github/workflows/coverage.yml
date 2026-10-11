@@ -17,7 +17,7 @@ on:
     paths:
       - "content/seeds/**"
       - "games/*/content/**"
-      - "games/*/puzzlegen_grouping/**"
+      - "games/*/puzzlegen_*/**"
       - "games/*/tools/**"
       - "puzzlegen/content/**"
       - "puzzlegen/graph/**"
@@ -32,7 +32,7 @@ on:
     paths:
       - "content/seeds/**"
       - "games/*/content/**"
-      - "games/*/puzzlegen_grouping/**"
+      - "games/*/puzzlegen_*/**"
       - "games/*/tools/**"
       - "puzzlegen/content/**"
       - "puzzlegen/graph/**"

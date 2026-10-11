@@ -76,8 +76,19 @@ class TestWhichGamesCiInstalls:
         assert result.returncode == 0
         assert result.stdout.split() == ["games/grouping/"]
 
-    def test_the_repository_itself_discovers_only_packaged_games(self):
+    def test_the_repository_itself_discovers_exactly_its_packaged_games(self):
+        """Read off the tree rather than listed, so adding a game needs no
+        edit here. This assertion used to name ``games/letters`` as the
+        content-only case; that game now carries a pyproject of its own, and a
+        test pinning which directories happen to be packaged today would have
+        to be edited by every game that ships.
+        """
+        packaged = {
+            f"games/{directory.name}/"
+            for directory in (ROOT / "games").iterdir()
+            if (directory / "pyproject.toml").is_file()
+        }
         result = discover(ROOT)
         assert result.returncode == 0
-        assert "games/letters/" not in result.stdout.split()
-        assert "games/grouping/" in result.stdout.split()
+        assert set(result.stdout.split()) == packaged
+        assert "games/grouping/" in packaged
