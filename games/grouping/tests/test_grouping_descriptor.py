@@ -396,11 +396,15 @@ class TestContentRequirements:
             name, _, size = requirement.name.rpartition(":")
             assert requirement.query.group_size == int(size)
 
-    def test_the_days_own_size_is_the_only_required_one(self):
-        size = group_size_for("2026-09-28")
-        required = [r for r in self.requirements() if not r.optional]
+    def test_no_single_size_is_required(self):
+        """A size is a preference, and generation decides across all of them.
 
-        assert {int(r.name.rpartition(":")[2]) for r in required} == {size}
+        Requiring the day's own size failed a day whose content could not
+        cover at that size while a board sat ready one size down: three days
+        in ten on build A2. Whether the day can be served is a question about
+        the whole set of sizes, which only generation can answer.
+        """
+        assert [r for r in self.requirements() if not r.optional] == []
 
     def test_the_group_size_follows_the_day(self):
         sizes = {
@@ -415,12 +419,20 @@ class TestContentRequirements:
         assert requirement.query.limit > VISIBLE_GROUPS
         assert requirement.minimum > VISIBLE_GROUPS
 
-    def test_the_visible_requirement_is_not_optional(self):
-        assert not self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))].optional
+    def test_the_visible_requirement_still_declares_its_minimum(self):
+        """Optional is not unstated.
 
-    def test_the_hidden_requirement_is_not_optional(self):
+        The minimum is what makes the result readable as insufficient, in the
+        rejection counts and in ``unusable_reason``, whether or not it fails
+        the day on its own.
+        """
+        requirement = self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))]
+        assert requirement.minimum == VISIBLE_GROUPS * 2
+
+    def test_the_hidden_requirement_still_declares_its_minimum(self):
         """No hidden group is no game, only four piles."""
-        assert not self.named()[content_module.sized(content_module.HIDDEN, group_size_for('2026-09-28'))].optional
+        requirement = self.named()[content_module.sized(content_module.HIDDEN, group_size_for('2026-09-28'))]
+        assert requirement.minimum == 1
 
     def test_the_enriched_hidden_requirement_is_optional(self):
         """It can only find overlay-to-overlay intersections, and most overlay
@@ -436,9 +448,20 @@ class TestContentRequirements:
         assert requirement.is_met(ContentResult(operation=requirement.query.operation))
 
     def test_an_unmet_required_requirement_does_not(self):
+        """Stated against a required copy, since this game declares none.
+
+        The rule belongs to ``ContentRequirement`` and this game's sizes are
+        all optional, so the guard is asserted on the same query made
+        required rather than dropped.
+        """
+        import dataclasses
+
         from puzzlegen.content.query import ContentResult
 
-        requirement = self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))]
+        requirement = dataclasses.replace(
+            self.named()[content_module.sized(content_module.VISIBLE, group_size_for('2026-09-28'))],
+            optional=False,
+        )
         assert not requirement.is_met(
             ContentResult(operation=requirement.query.operation)
         )

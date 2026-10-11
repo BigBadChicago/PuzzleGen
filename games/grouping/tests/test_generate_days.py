@@ -1,9 +1,15 @@
-"""The end to end driver, against a small world built to make boards.
+"""The end to end driver, against small worlds built to make boards.
 
-The world is four peer parents under one domain, each with six children, and
-an overlay category of five words spread across them, which is exactly what a
-size 5 board needs and nothing a size 6 board can use. So one size generates
-and the others cannot, which is the situation the real content is in.
+``world`` is four peer parents under one domain, each with six children, and
+an overlay category of five words spread across them: exactly what a size 5
+board needs. A day drawing another size is served from size 5 instead, which
+is what the real content does, so this world has no failing day.
+
+``concentrated`` is the same lexicon with its overlay members all under one
+parent. The overlay exists and its words are on the board; no hidden group
+can borrow one tile from each of four visible groups, so no size can be
+served and every day fails. That is the shape a failing day really has, and
+the only way to test one now that an unservable size falls back.
 """
 
 from __future__ import annotations
@@ -48,7 +54,7 @@ def kids(parent: str) -> list[str]:
     return [f"{parent[:2]}{n}" for n in range(1, 7)]
 
 
-def write_world(tmp_path: Path) -> tuple[Path, list[str]]:
+def write_world(tmp_path: Path, *, concentrated: bool = False) -> tuple[Path, list[str]]:
     categories = [{"key": "c.domain", "name": "domain"}]
     entities = []
     words: list[str] = []
@@ -73,7 +79,17 @@ def write_world(tmp_path: Path) -> tuple[Path, list[str]]:
         ),
         encoding="utf-8",
     )
-    hidden = [kids("wagons")[0], kids("wagons")[1], kids("boats")[0], kids("planes")[0], kids("trains")[0]]
+    hidden = (
+        kids("wagons")[:5]
+        if concentrated
+        else [
+            kids("wagons")[0],
+            kids("wagons")[1],
+            kids("boats")[0],
+            kids("planes")[0],
+            kids("trains")[0],
+        ]
+    )
     overlay = tmp_path / "overlay.json"
     overlay.write_text(
         json.dumps(
@@ -131,6 +147,11 @@ def world(tmp_path_factory):
     return write_world(tmp_path_factory.mktemp("world"))
 
 
+@pytest.fixture(scope="module")
+def concentrated(tmp_path_factory):
+    return write_world(tmp_path_factory.mktemp("concentrated"), concentrated=True)
+
+
 class TestARealDay:
     def test_the_supported_size_generates_a_board(self, world):
         db, _ = world
@@ -165,13 +186,27 @@ class TestARealDay:
         assert result.hidden == "shared axis"
         assert sorted(result.visible) == sorted(PARENTS)
 
-    def test_an_unsupported_size_fails_and_says_why(self, world):
+    def test_an_unsupported_size_is_served_from_one_that_works(self, world):
+        """The day keeps its board; only the size gives way.
+
+        Nothing but size 5 can be built from this world, and a day drawing 6
+        used to fail on its own size's requirement while a size 5 board sat
+        ready. Three days in ten on build A2 were lost that way.
+        """
         db, _ = world
 
         [result] = tool.run(db, start=day_of_size(6), days=1, now=NOW)
 
+        assert result.generated, result.reason
+        assert result.group_size == 5
+        assert result.drawn_size == 6
+
+    def test_a_day_no_size_can_serve_fails_and_says_why(self, concentrated):
+        db, _ = concentrated
+
+        [result] = tool.run(db, start=day_of_size(5), days=1, now=NOW)
+
         assert not result.generated
-        assert result.group_size == 6
         assert result.reason.strip()
 
 
@@ -253,9 +288,9 @@ class TestDescribingAFailure:
     def test_a_missing_reason_still_reads(self):
         assert "no reason recorded" in tool.describe_failure(self.outcome(failure=None))
 
-    def test_a_real_failing_day_describes_itself(self, world):
-        db, _ = world
-        [result] = tool.run(db, start=day_of_size(6), days=1, now=NOW)
+    def test_a_real_failing_day_describes_itself(self, concentrated):
+        db, _ = concentrated
+        [result] = tool.run(db, start=day_of_size(5), days=1, now=NOW)
 
         assert not result.generated
         assert result.reason.strip()
@@ -349,10 +384,26 @@ class TestTheReport:
         # could not build.
         assert "size  drew  served" in text
 
-    def test_failures_are_grouped_by_reason(self, world):
-        text = tool.render(self.results(world))
+    def test_failures_are_grouped_by_reason(self):
+        """Stated over results rather than a run.
+
+        Every day of ``world`` is served now, so the section a failing run
+        prints is asserted against the results it renders from.
+        """
+        text = tool.render(
+            [
+                tool.DayResult(day="2026-10-01", group_size=5, generated=True),
+                tool.DayResult(
+                    day="2026-10-02",
+                    group_size=5,
+                    generated=False,
+                    reason="no candidate survived screening",
+                ),
+            ]
+        )
 
         assert "why days failed:" in text
+        assert "no candidate survived screening" in text
 
 
 class TestTheCommandLine:
@@ -367,11 +418,11 @@ class TestTheCommandLine:
         assert code == 0
         assert "BOARD" in capsys.readouterr().out
 
-    def test_a_run_with_a_failed_day_exits_one(self, world, capsys):
-        db, _ = world
+    def test_a_run_with_a_failed_day_exits_one(self, concentrated, capsys):
+        db, _ = concentrated
 
         code = tool.main(
-            ["--db", str(db), "--start", day_of_size(6).isoformat(), "--days", "1",
+            ["--db", str(db), "--start", day_of_size(5).isoformat(), "--days", "1",
              "--now", NOW.isoformat()]
         )
 
