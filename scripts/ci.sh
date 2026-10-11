@@ -33,8 +33,15 @@ publish() {
 }
 
 games() {
+  # A game's content can exist before its code: games/letters carries game 2's
+  # categories and no package yet. Such a directory is skipped, and the skip is
+  # not this function's exit status. It was, while grouping was the only entry
+  # and had a pyproject: a trailing skip made the last `[ -f ]` the function's
+  # status, so `games` returned 1, and under task_install's `set -eE` the ERR
+  # trap fired inside `$(games)` and its summary text became pip's argument
+  # ("===== is not a valid editable requirement").
   for game in games/*/; do
-    [ -f "$game/pyproject.toml" ] && echo "$game"
+    if [ -f "$game/pyproject.toml" ]; then echo "$game"; fi
   done
 }
 
