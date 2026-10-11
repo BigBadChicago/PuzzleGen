@@ -1237,3 +1237,117 @@ for its f and w. Neither was forced by the spelling invariant, which both
 categories already passed inside their blank budget; they were added so the
 budget has slack rather than being spent exactly, since a category at its limit
 breaks on the next member change.
+
+## Session 4, 2026-10-11: game 2's generator
+
+### The engine chooses nothing, so the candidate order is the whole draw
+
+**Decision:** what orders the candidates `generate_candidates` returns, given
+that the pipeline verifies them in list order and keeps the first survivor.
+
+**Options considered:**
+- Fewest manufactured blanks first, then the day's draw.
+- A flat day-shuffle over every candidate.
+- The day's draw over answers first, one board per answer, then the second
+  board of each.
+
+**Chosen:** the third. One board per answer in a day-shuffled answer order.
+
+**Why:** the first option was written first and is the trap this game inherited
+from game 1 by a different route. Game 1 served one board for a month because
+its key ignored the day (line 892 above); this key did not ignore the day, but
+its first bucket was too small for the day to choose inside. Of 4,229 in-band
+medium candidates on build A2, only 90 manufactured nothing, and those 90
+carried five category names between them: ten medium days drew `fabric` five
+times. The preference also double-counted, because `manufactured_share` is
+already a scored difficulty feature, so a board that leaves many tiles alone
+drifts harder and the band gate declines it on an easy day.
+
+A flat shuffle fixed that and left a subtler version of it. A category with
+twelve members yields far more playable boards than one with six, so a uniform
+draw over boards is a weighted draw over answers: 1,430 of 2,440 in-band easy
+candidates were `sport`, and ten easy days drew it eight times. Grouping by
+answer first costs nothing -- every board still gets its turn, one round
+later -- and makes the day's answer uniform over the answers the content
+offers. Ten days at each band gave 2, 4 and 4 distinct answers under the
+manufactured-blanks key and 2, 9 and 4 under a flat shuffle; twenty days at
+each band under the answer-first draw give 5, 13 and 8.
+
+### What answer variety the content can currently support, measured
+
+The residual skew at the outer bands is content, not ordering. Scoring every
+candidate the generator offered across ten days per band on build A2, the
+answers that land in each band at all are 8 at easy, 29 at medium and 13 at
+hard, out of thirty categories; most of the taxonomy bands medium, because the
+score rises with blanks and with the answer's length and a six-letter name at
+two blanks has nowhere easy to go. Within easy, only `sport` and `metal`
+produce an easy board reliably, which is why twenty easy days still drew
+`sport` thirteen times.
+
+This is a curation finding rather than a generator one, and the number to move
+is the count of short category names: easy wants four and five letter answers
+whose members hold most of their letters. It is recorded here rather than
+asserted anywhere, because a test pinning today's answer distribution would
+fail on the next content change for the right reason and read as a regression.
+
+### Difficulty needed two features, not one, to say what "harder" means
+
+**Decision:** which features carry the band score, given the settled rule that
+harder means more blanks and longer words.
+
+**Chosen:** `blank_share` (0.3) and `length_share` (0.2) carry half the score
+between them, with `decoy_share` (0.2), `letter_alternatives` (0.2) and
+`manufactured_share` (0.1) making up the rest.
+
+**Why:** the first version scored the blank share alone, which inverts the
+second half of the rule: two blanks are a smaller part of a seven-letter answer
+than of a three-letter one, so a longer answer read as *easier*. Band
+separation was 7,189 of 10,210 candidates. Adding the length share and
+re-weighting took it to 8,770 of 10,210 at cutoffs (0.42, 0.555), with all
+thirty strict days in band. The per-blank ranges the cutoffs were chosen
+against are 0.317 to 0.445 at two blanks, 0.395 to 0.663 at three and 0.483 to
+0.757 at four; they are pinned in
+`games/letters/tests/test_letters_difficulty.py` so a feature change that moves
+a band fails there rather than showing up as off-target days nobody traces
+back.
+
+The two features also cannot be compared on whole boards, which the test says
+out loud: a longer answer at the same blanks needs more marks, which leaves
+fewer decoys, so no two boards differ in length alone.
+
+### `NO_ALTERNATE_INTERPRETATION`, with the vocabulary pinned per board
+
+**Decision:** what uniqueness means on a board whose answer is a word, and
+what the verifier is allowed to claim about it.
+
+**Chosen:** `NO_ALTERNATE_INTERPRETATION` with
+`SOUND_INCOMPLETE` and a declared bound of 5,000 words; each board records the
+vocabulary it was checked against, being the day's offered category names plus
+the tiles' own memberships. A board whose search covered that whole pinned list
+reports `COMPLETE`.
+
+**Why:** a second solution here is a second *reading* of the same tiles -- a
+category every tile also belongs to, whose name the marks and blanks also
+spell -- and a player giving it would be right and marked wrong. The contract
+names that rather than counting arrangements. The bound is declared because the
+English lexicon is not enumerable within a day's generation, and a
+completeness claim over content that was never read is the failure the
+declaration exists to prevent. Recording the vocabulary per board is what makes
+the claim auditable later: a bound nobody can reconstruct the scope of is a
+number, not evidence. Generation refuses an ambiguous board itself
+(`AMBIGUOUS_ANSWER`), so the verifier rarely has to; all 10,210 candidates
+measured verified with exactly one reading.
+
+### `puzzlegen.surface` is a game-visible platform capability
+
+**Decision:** whether a game may import the surface form subsystem, which the
+architecture invariant's `ALLOWED_FOR_GAMES` did not list.
+
+**Chosen:** yes, with `surface` added to `LAYERS` between `content` and
+`engine`.
+
+**Why:** the subsystem was built for this game (line 1039 above) and does the
+one thing the game cannot do without -- fold a word to the letters a player
+sees -- while holding no repositories and opening no files, so it grants none
+of the access the invariant exists to deny. A game computing its own letter
+folding would be the duplication the subsystem was extracted to remove.

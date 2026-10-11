@@ -1443,3 +1443,50 @@ of the served one, a report re-derived the builder's merge rule, and a handoff
 table disagreed with the artifact it summarised. The first three were fixed by
 making the tool read the real value. The fourth is fixed by rebuilding the
 artifact on every change that could move it.
+
+## Phase 8 (session 4): game two ships
+
+`missing_letters` is the second distribution, laid out the way
+`games/grouping/` is: code in `games/letters/puzzlegen_letters/`, tests in
+`games/letters/tests/`, the day driver in `games/letters/tools/`, and its
+curated taxonomy in `games/letters/content/`. The distribution is
+`puzzlegen-missing-letters`, it depends on `puzzlegen>=0.1.0` and nothing else,
+and the engine finds it through the `puzzlegen.games` entry point
+`missing_letters = "puzzlegen_letters:build_plugin"`. Nothing in the platform
+names it; `scripts/ci.sh` and `scripts/test-all.sh` glob the games directory,
+and the only edit either needed was generalising `coverage.yml`'s path filter
+from game 1's package to `games/*/puzzlegen_*/**`.
+
+What the game owns, module by module:
+
+- `marks.py` -- the character work. Where a marked letter may sit is a
+  bipartite matching between the answer's letter occurrences and the tiles that
+  hold them, solved by Kuhn's augmenting search over slots and members in
+  sorted order, so the placement is reproducible. Forced blanks (letters no
+  member holds) and manufactured blanks (a tile deliberately left unmarked to
+  reach the band's blank count) are distinguished here and recorded per board,
+  per requirement 4.4.
+- `content.py` -- one `FIND_GROUPS` query per board size over taxonomy
+  `letters`, with no similarity, centroid, frequency-spread or covering
+  constraint. The members of `fish` are not semantically near each other in any
+  way the game cares about; the only question is whether their letters spell
+  the category's name, and that question is the game's, not the content
+  service's.
+- `generate.py` -- seven named refusals, each counted, so a day that comes back
+  empty says which constraint to argue with. The ordering is the day's draw
+  over answers first (decision log, session 4).
+- `assemble.py` / `verify.py` -- the payload/solution split is sharper here
+  than on a grouping board because the answer is one word: a payload carrying
+  it anywhere is a board a client reads the answer off. Assembly validates what
+  generation promised rather than trusting it, since a mismatch reaching the
+  verifier costs a whole enumeration to discover.
+- `difficulty.py` -- board size appears nowhere in the score and everywhere in
+  the normalisation, so the bands cut a scale carrying only difficulty.
+- `play.py` -- grading is a pure function of the puzzle and the moves before
+  it, which the session layer requires: it replays the whole ledger on every
+  submission and raises `DeterminismError` if a regrade disagrees.
+
+The one platform change the game needed is `puzzlegen.surface` in
+`ALLOWED_FOR_GAMES`, with `surface` added to `LAYERS`. The subsystem was built
+for this game, holds no repositories and opens no files, so it grants none of
+the access the invariant exists to deny.

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "puzzlegen-missing-letters"
+version = "1.0.0"
+description = "Game two for PuzzleGen: spell the category from the letters its own members carry."
+requires-python = ">=3.11"
+# The platform, and nothing else. A game depends on the capabilities the
+# engine exposes, never on how they are implemented, so there is no snapshot
+# dependency here and no storage dependency: a game that could install one
+# could reach the graph. The surface form subsystem is part of the platform
+# this game depends on, which is the point of it being a subsystem rather
+# than a helper inside this package.
+dependencies = ["puzzlegen>=0.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "hypothesis>=6.98"]
+
+# How the platform finds this game. The registry reads this group and
+# registers what it finds, so installing this distribution adds the game and
+# uninstalling it removes the game, with no edit anywhere in the platform.
+[project.entry-points."puzzlegen.games"]
+missing_letters = "puzzlegen_letters:build_plugin"
+
+[tool.setuptools.packages.find]
+include = ["puzzlegen_letters*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error"]
