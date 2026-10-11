@@ -1175,10 +1175,14 @@ each, settle the name afterwards.
 `games/letters/content/letters.curated.json`, thirty categories and 218
 entities, imported with `--curated ...:letters`. No new mechanism: that flag
 exists in `tools/build_snapshot.py` for a game's own taxonomy, and this is its
-first caller. Entity identity is by lemma, so 115 of the 218 members are the
-lexicon's own entities with one more membership; 103 are new. The file changes
-exactly one figure game 1 measures, the entity total (16,710 to 16,813), and no
-group, cover or refusal.
+first caller. Entity identity is by lemma, so a member the graph already holds
+takes one more membership rather than becoming a duplicate: the entity total
+goes from 16,710 to 16,812, so 102 of the 218 members are new and 116 merged.
+Separately, 111 of the 218 carry a membership outside the new taxonomy, 76 in
+`wordnet`, 33 in both `wordnet` and `overlay` and 2 in `overlay` alone. The two
+figures differ because merging is by lemma and does not require the entity it
+merges with to carry a membership. That entity total is the only figure game 1
+measures that this file moves; no group, cover or refusal changes.
 
 All thirty are playable at six tiles and the two-blank floor, twenty at eight
 tiles, none at ten or twelve. Ten and twelve are a decision about how large a

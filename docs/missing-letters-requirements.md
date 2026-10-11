@@ -188,9 +188,15 @@ taxonomy, optional and repeatable, colliding with neither `wordnet` nor
 `overlay` because category identity already includes the taxonomy.
 
 Thirty categories, six to eight members each, 218 entities. Entity identity is
-by lemma, so a member already in the lexicon is the same entity with one more
-membership rather than a duplicate; 103 of the 218 were new to the graph.
-Adding the file changes exactly one figure game 1 measures, the entity total.
+by lemma, so a member the graph already holds is the same entity with one more
+membership rather than a duplicate. Measured: the entity total goes from 16,710
+to 16,812, so 102 members were new and 116 merged. Separately, 111 of the 218
+carry a membership outside this taxonomy -- 76 in `wordnet`, 33 in both
+`wordnet` and `overlay`, 2 in `overlay` alone -- and the remaining 107 are
+members of a `letters` category and nothing else. The two figures differ
+because merging is by lemma and does not require the entity it merges with to
+have a membership of its own. That entity total is the only figure game 1
+measures that this file moves.
 
 Three invariants decide whether a category can be a board, and
 `tests/unit/test_letters_categories.py` pins each: six to eight members, a name

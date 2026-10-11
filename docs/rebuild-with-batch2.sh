@@ -20,10 +20,10 @@ OVERLAY=games/grouping/content/overlay.curated.json
 # Game two owns its categories for the same reason. They import under their own
 # taxonomy, so they add entities and memberships without touching wordnet or
 # overlay: verified 2026-10-11 that adding them changes exactly one figure in
-# build/coverage-A2.json, the entity total (16,710 to 16,813, the members not
-# already in the lexicon). Every group, cover and refusal game one measures is
-# unchanged, which is why this still reproduces build A2 rather than becoming a
-# build of its own.
+# build/coverage-A2.json, the entity total (16,710 to 16,812, the 102 members the
+# graph did not already hold). Every group, cover and refusal game one measures
+# is unchanged, which is why this still reproduces build A2 rather than becoming
+# a build of its own.
 LETTERS=games/letters/content/letters.curated.json:letters
 # wordnet-tool.lexicon.json was the "hand tool" subtree until 2026-10-10 and is
 # now the "tool" subtree. Hand tool kept its own file under its own name. These

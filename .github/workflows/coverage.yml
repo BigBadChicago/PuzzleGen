@@ -21,6 +21,9 @@ on:
       - "games/*/tools/**"
       - "puzzlegen/content/**"
       - "puzzlegen/graph/**"
+      # The letters measure reads its letters from here, so a change to the
+      # surface policy can move build/letters-A2.json with nothing else touched.
+      - "puzzlegen/surface/**"
       - "tools/build_snapshot.py"
       - "tools/measure_letters_coverage.py"
       - "docs/rebuild-with-batch2.sh"
@@ -33,6 +36,9 @@ on:
       - "games/*/tools/**"
       - "puzzlegen/content/**"
       - "puzzlegen/graph/**"
+      # The letters measure reads its letters from here, so a change to the
+      # surface policy can move build/letters-A2.json with nothing else touched.
+      - "puzzlegen/surface/**"
       - "tools/build_snapshot.py"
       - "tools/measure_letters_coverage.py"
       - "docs/rebuild-with-batch2.sh"
