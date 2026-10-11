@@ -1158,3 +1158,46 @@ Established while doing it, and worth keeping: a snapshot built with
 `--dev-embeddings` and a freshly exported frequency table reproduces
 `build/coverage-A.json` byte for byte. Coverage applies no embedding gate, so
 coverage work needs no model and no network; only a published snapshot does.
+
+### Game 2 gets its own curated taxonomy, because the lexicon has no members
+
+Measured first: on build A2 at medium frequency, `letters_unplaceable` is zero
+in every cell of 6 to 12 tiles by 2 to 4 blanks. The letter matching the
+requirements doc spends four sections on is never the binding constraint. One
+WordNet category in 7,050 has six or more eligible members, and the two
+playable categories are `baby grand` and `police van`.
+
+So the naming work in requirements 4.3 was the wrong lever, and shortening
+names would have bought nothing. The route taken instead, decided by the
+owner: pick categories a player recognises, get six to eight common words into
+each, settle the name afterwards.
+
+`games/letters/content/letters.curated.json`, thirty categories and 218
+entities, imported with `--curated ...:letters`. No new mechanism: that flag
+exists in `tools/build_snapshot.py` for a game's own taxonomy, and this is its
+first caller. Entity identity is by lemma, so a member the graph already holds
+takes one more membership rather than becoming a duplicate: the entity total
+goes from 16,710 to 16,812, so 102 of the 218 members are new and 116 merged.
+Separately, 111 of the 218 carry a membership outside the new taxonomy, 76 in
+`wordnet`, 33 in both `wordnet` and `overlay` and 2 in `overlay` alone. The two
+figures differ because merging is by lemma and does not require the entity it
+merges with to carry a membership. That entity total is the only figure game 1
+measures that this file moves; no group, cover or refusal changes.
+
+All thirty are playable at six tiles and the two-blank floor, twenty at eight
+tiles, none at ten or twelve. Ten and twelve are a decision about how large a
+category gets, not a gap: a ceiling of eight members cannot fill them.
+
+Worth keeping, because it was not obvious: the medium band is `COMMON` and
+`UNCOMMON`, zipf 3.0 to 5.0, so a *very* common word is ineligible at medium.
+`dog`, `car` and `water` are all too common to be tiles there. A frequency
+filter over a lexicon subtree therefore cuts from both ends, which is part of
+why it leaves almost nothing behind.
+
+The third invariant in `tests/unit/test_letters_categories.py` -- that a
+category's own members can spell its own name at two blanks -- caught three
+categories as authored. `fruit` had no member holding an f, an i or a t;
+`garment` none holding a g, an m or an n; `vehicle` one e and no h. All three
+were fixed by changing members rather than the name, and `gemstone` and
+`currency` were renamed to `gem` and `money` only after their members were
+settled, both being eight letters where six tiles admit seven.

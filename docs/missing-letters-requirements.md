@@ -1,9 +1,10 @@
 # missing_letters — Requirements
 
-Specification only. No coverage tool exists for missing_letters yet; unlike the
-game 1 coverage work, nothing here is measured. A coverage measure analogous to
-`measure_coverage.py`, counting how many categories yield a legal board at each
-difficulty, is the natural next artifact before implementation.
+Specification, plus the content the specification turned out to need. The
+coverage measure this doc asked for exists as
+`tools/measure_letters_coverage.py`, and section 6 is what it found and what
+was done about it. Sections 1 to 5 are unmeasured design; section 6 carries
+numbers a tool printed.
 
 Companion to this spec: the surface form subsystem (section 2), an engine-level
 tool missing_letters is the first client of.
@@ -142,3 +143,105 @@ plugin, over members pulled through existing member queries and letters supplied
 by the surface form subsystem. It adds no new operation to the content service,
 keeping the expensive character work in the one game that needs it while the
 shared letter definition stays in the subsystem.
+
+## 6. The content, and why the game has its own taxonomy
+
+Measured, not reasoned. Build A2, medium frequency, 6 to 12 tiles by 2 to 4
+blanks, `tools/measure_letters_coverage.py`.
+
+### 6.1 Membership binds, naming does not
+
+`letters_unplaceable` was zero in every cell. The letter matching this doc
+spends four sections on is never what refuses a board; the constraint section
+1.1 implies and nobody had checked is simply whether a category has members a
+board can hold. At medium frequency the whole lexicon had exactly one category
+with six or more eligible members, and at easy none anywhere. Two categories
+were playable in one cell, `baby grand` and `police van`, neither a name a
+solver would reach for.
+
+So shortening names, which 4.3 is about, buys nothing on its own: there was
+nothing with enough common members to be worth naming. The route taken instead
+was to pick categories a player recognises, get six to eight common words into
+each, and settle the name afterwards.
+
+### 6.2 Why the lexicon cannot supply them
+
+A WordNet category's members are its hyponyms, and the frequency filter the
+game applies cuts across that structure rather than along it. `edible fruit`
+has dozens of hyponyms and few of them are words anyone writes; the eight that
+are sit at four different depths under three different parents. Nothing is
+wrong with the lexicon. It is organised by what a word means, and a board needs
+a set organised by what a player knows, which is a different cut and one no
+import can infer.
+
+Note also that the medium band is `COMMON` and `UNCOMMON`, zipf 3.0 to 5.0, so
+a *very* common word is ineligible at medium. `dog`, `car` and `water` are all
+too common to be tiles there, which is another reason a frequency filter over a
+lexicon subtree does not leave a usable set behind.
+
+### 6.3 The curated taxonomy
+
+`games/letters/content/letters.curated.json`, imported with
+`--curated games/letters/content/letters.curated.json:letters`, which is the
+seam `tools/build_snapshot.py` documents for exactly this: a game's own
+taxonomy, optional and repeatable, colliding with neither `wordnet` nor
+`overlay` because category identity already includes the taxonomy.
+
+Thirty categories, six to eight members each, 218 entities. Entity identity is
+by lemma, so a member the graph already holds is the same entity with one more
+membership rather than a duplicate. Measured: the entity total goes from 16,710
+to 16,812, so 102 members were new and 116 merged. Separately, 111 of the 218
+carry a membership outside this taxonomy -- 76 in `wordnet`, 33 in both
+`wordnet` and `overlay`, 2 in `overlay` alone -- and the remaining 107 are
+members of a `letters` category and nothing else. The two figures differ
+because merging is by lemma and does not require the entity it merges with to
+have a membership of its own. That entity total is the only figure game 1
+measures that this file moves.
+
+Three invariants decide whether a category can be a board, and
+`tests/unit/test_letters_categories.py` pins each: six to eight members, a name
+of three to seven letters, and a name its own members can spell at the
+two-blank floor. The third caught three categories as authored. `fruit` had no
+member holding an f, an i or a t; `garment` none holding a g, an m or an n;
+`vehicle` one e and no h. Each was fixed by changing members, not by changing
+the name, which is the route in 6.1 applied to its own output.
+
+Two categories were renamed, and only after their members were settled:
+`gemstone` to `gem` and `currency` to `money`, both eight letters where the
+smallest board admits seven.
+
+### 6.4 What the batch measures
+
+Re-measured on the same build with the file in, medium frequency:
+
+| tiles | blanks | playable | too long | too few members | unplaceable |
+|---|---|---|---|---|---|
+| 6 | 2 | 30 | 5288 | 1760 | 0 |
+| 6 | 3 | 29 | 4574 | 2403 | 0 |
+| 6 | 4 | 25 | 3764 | 2998 | 0 |
+| 8 | 2 | 20 | 3764 | 3294 | 0 |
+| 8 | 3 | 19 | 2992 | 3995 | 0 |
+| 8 | 4 | 16 | 2366 | 4405 | 0 |
+| 10 | 2 | 0 | 2366 | 4712 | 0 |
+| 12 | 2 | 0 | 1440 | 5638 | 0 |
+
+Every one of the thirty is playable at six tiles and the two-blank floor, and
+the twenty with eight members are playable at eight tiles. Ten and twelve tiles
+are zero and expected to be: a ceiling of eight members cannot fill them. A
+board of ten is a deliberate decision about how large a category gets, not a
+gap in this batch, and nothing has established that a solver wants one.
+
+The refusal columns are almost all WordNet, unchanged from 6.1 and left in the
+table because they are the comparison: 7,050 lexical categories yield nothing
+a player would want, and thirty curated ones yield thirty boards.
+
+### 6.5 What this leaves open
+
+The curated taxonomy is thirty categories, which is not a year of daily
+puzzles. It is enough to build the generator against, and the shape of a batch
+is now established, so the next batches are curation and not design.
+
+Section 4.3's shorter-synonym substitution has no caller yet. `gem` and `money`
+were decided in the file rather than through `SurfacePolicy.preferred`, because
+a curated category can simply be named the short name; the substitution matters
+for lexical categories, whose names are not ours to choose.

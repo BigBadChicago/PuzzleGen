@@ -17,6 +17,14 @@ set -euo pipefail
 SEEDS=content/seeds
 # Game one owns the overlay, so it lives in that game's distribution.
 OVERLAY=games/grouping/content/overlay.curated.json
+# Game two owns its categories for the same reason. They import under their own
+# taxonomy, so they add entities and memberships without touching wordnet or
+# overlay: verified 2026-10-11 that adding them changes exactly one figure in
+# build/coverage-A2.json, the entity total (16,710 to 16,812, the 102 members the
+# graph did not already hold). Every group, cover and refusal game one measures
+# is unchanged, which is why this still reproduces build A2 rather than becoming
+# a build of its own.
+LETTERS=games/letters/content/letters.curated.json:letters
 # wordnet-tool.lexicon.json was the "hand tool" subtree until 2026-10-10 and is
 # now the "tool" subtree. Hand tool kept its own file under its own name. These
 # are names only: what each one means is in the manifest read below.
@@ -58,7 +66,7 @@ for root in $BATCH2; do export_root "$root"; done
 flags() { for r in "$@"; do printf -- "--lexicon %s/wordnet-%s.lexicon.json " "$SEEDS" "$r"; done; }
 
 mkdir -p build/inputs-A2
-python3 tools/build_snapshot.py --write-inputs build/inputs-A2/ $(flags $A $BATCH2) --overlay "$OVERLAY"
+python3 tools/build_snapshot.py --write-inputs build/inputs-A2/ $(flags $A $BATCH2) --overlay "$OVERLAY" --curated "$LETTERS"
 python3 tools/export_frequency.py --terms build/inputs-A2/terms.txt --out build/frequency.A2.json
 
 # What merges, before building: read overlay_missing and the refused parents.
@@ -73,7 +81,12 @@ if [ -n "${PUZZLEGEN_REAL_EMBEDDINGS:-}" ]; then
 fi
 
 rm -f build/graph-A2.sqlite*
-python3 tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json $EMBEDDINGS --overlay "$OVERLAY" $(flags $A $BATCH2)
+python3 tools/build_snapshot.py --db build/graph-A2.sqlite --label 2026-10-10-A2 --now 2026-10-10T00:00:00+00:00 --frequency build/frequency.A2.json $EMBEDDINGS --overlay "$OVERLAY" --curated "$LETTERS" $(flags $A $BATCH2)
 python3 games/grouping/tools/measure_coverage.py --db build/graph-A2.sqlite --difficulty medium --json build/coverage-A2.json
+# The summary is committed and compared; the full findings are a row per
+# category per cell, tens of megabytes, and are written for a curator reading
+# one build rather than for the repository.
+python3 tools/measure_letters_coverage.py --db build/graph-A2.sqlite --difficulty medium \
+  --summary-json build/letters-A2.json --json build/letters-A2.findings.json
 
-echo "done: build/coverage-A2.json"
+echo "done: build/coverage-A2.json and build/letters-A2.json"

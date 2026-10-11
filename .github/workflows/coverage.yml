@@ -21,7 +21,11 @@ on:
       - "games/*/tools/**"
       - "puzzlegen/content/**"
       - "puzzlegen/graph/**"
+      # The letters measure reads its letters from here, so a change to the
+      # surface policy can move build/letters-A2.json with nothing else touched.
+      - "puzzlegen/surface/**"
       - "tools/build_snapshot.py"
+      - "tools/measure_letters_coverage.py"
       - "docs/rebuild-with-batch2.sh"
       - "scripts/ci.sh"
   pull_request:
@@ -32,7 +36,11 @@ on:
       - "games/*/tools/**"
       - "puzzlegen/content/**"
       - "puzzlegen/graph/**"
+      # The letters measure reads its letters from here, so a change to the
+      # surface policy can move build/letters-A2.json with nothing else touched.
+      - "puzzlegen/surface/**"
       - "tools/build_snapshot.py"
+      - "tools/measure_letters_coverage.py"
       - "docs/rebuild-with-batch2.sh"
       - "scripts/ci.sh"
   workflow_dispatch:
@@ -72,10 +80,10 @@ jobs:
         # legitimately moves coverage collects its new numbers.
         if: steps.rebuild.outcome == 'failure' && inputs.commit && github.ref_type == 'branch' && github.ref_name != 'main'
         run: |
-          git diff --quiet -- build/coverage-A2.json build/lemma-collisions-A2.json && exit 1
+          git diff --quiet -- build/coverage-A2.json build/lemma-collisions-A2.json build/letters-A2.json && exit 1
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f build/coverage-A2.json build/lemma-collisions-A2.json
+          git add -f build/coverage-A2.json build/lemma-collisions-A2.json build/letters-A2.json
           git commit -m "Regenerate build A2 coverage artifacts"
           git push origin "HEAD:${GITHUB_REF_NAME}"
           echo "**committed** regenerated artifacts to ${GITHUB_REF_NAME}" >> "$GITHUB_STEP_SUMMARY"
