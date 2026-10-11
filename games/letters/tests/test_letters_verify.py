@@ -146,6 +146,32 @@ class TestTheBoundIsReal:
         assert result.completeness is VerificationCompleteness.SOUND_INCOMPLETE
         assert "lower bound" in result.detail
 
+    def test_it_examines_no_more_words_than_the_budget(self):
+        """The number it reports is the number it read. An earlier version
+        scanned both whole lists and only then compared the count to the
+        budget, which would report a search past the bound the descriptor
+        declares -- the overreaching plugin the engine rejects, written by
+        accident."""
+        result = verify(
+            fish_board(vocabulary=tuple(f"word{n}" for n in range(50))), word_budget=5
+        )
+        assert result.states_examined <= 5
+
+    def test_the_intended_answer_is_read_even_when_the_scan_is_cut_short(self):
+        """Readings are scanned before vocabulary, so a truncated scan still
+        reaches the answer: a board reported unsolvable because its own answer
+        fell past the budget would be the worst kind of wrong."""
+        result = verify(
+            fish_board(vocabulary=tuple(f"word{n}" for n in range(50))), word_budget=1
+        )
+        assert result.solution_count == 1
+
+    def test_a_word_that_is_both_a_reading_and_a_vocabulary_entry_counts_once(self):
+        """The day's offered category names include the answer, so the two
+        lists overlap by construction."""
+        board = fish_board(vocabulary=("fish",))
+        assert verify(board).states_examined == 1
+
     def test_the_engine_refuses_a_board_whose_search_was_cut_short(self):
         result = verify(
             fish_board(vocabulary=tuple(f"word{n}" for n in range(50))), word_budget=5

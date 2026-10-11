@@ -151,8 +151,24 @@ def verify(puzzle: Puzzle, *, word_budget: int = SEARCH_BOUND) -> VerificationRe
     readings = sorted(readings_of(memberships))
     vocabulary = sorted({str(word) for word in puzzle.solution.get("vocabulary", ())})
 
-    examined = len(readings) + len(vocabulary)
-    found = [word for word in readings if spells(word, shown, blanks)]
+    # The scan, built before anything is read, and the budget applies to it
+    # rather than to a count taken afterwards. Readings come first because a
+    # reading is a candidate answer and a vocabulary word is only ever a near
+    # miss, so a truncated scan still finds the intended answer. Unique, so a
+    # word that is both a reading and a vocabulary entry is one word examined
+    # and not two.
+    candidates = set(readings)
+    scan = [*readings, *(word for word in vocabulary if word not in candidates)]
+    budgeted = scan[:word_budget]
+    unexamined = len(scan) - len(budgeted)
+
+    examined = len(budgeted)
+    scanned = set(budgeted)
+    found = [
+        word
+        for word in readings
+        if word in scanned and spells(word, shown, blanks)
+    ]
     # Words the letters admit that the board is not actually about. Not
     # answers, because they are untrue of at least one tile, and not nothing
     # either: they are what a solver's own anagram turns up, so they are the
@@ -160,7 +176,9 @@ def verify(puzzle: Puzzle, *, word_budget: int = SEARCH_BOUND) -> VerificationRe
     near_misses = [
         word
         for word in vocabulary
-        if word not in readings and spells(word, shown, blanks)
+        if word in scanned
+        and word not in candidates
+        and spells(word, shown, blanks)
     ]
 
     metrics = {
@@ -173,14 +191,14 @@ def verify(puzzle: Puzzle, *, word_budget: int = SEARCH_BOUND) -> VerificationRe
 
     detail = ""
     completeness = VerificationCompleteness.COMPLETE
-    if examined > word_budget:
+    if unexamined:
         # A lower bound, and said so. The words beyond the budget are where a
         # second answer would hide, so the count is evidence of nothing on its
         # own and the uniqueness gate is right to refuse it.
         completeness = VerificationCompleteness.SOUND_INCOMPLETE
         detail = (
-            f"stopped after {examined} words; {len(found)} answers found so far "
-            "is a lower bound"
+            f"stopped after {examined} words with {unexamined} unread; "
+            f"{len(found)} answers found so far is a lower bound"
         )
     elif puzzle.solution["answer"] not in found:
         # Verifies, is unique, and marks the player wrong: the most dangerous

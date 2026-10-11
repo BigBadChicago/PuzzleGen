@@ -327,7 +327,9 @@ def ranked(
     ]
 
 
-def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]:
+def generate_candidates(
+    context: GenerationContext, *, salt: str = ""
+) -> Sequence[PuzzleCandidate]:
     """Offer as many boards as the budget allows, best first.
 
     Every size's candidates, the day's own size first, rather than stopping at
@@ -336,6 +338,12 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     unverifiable board at the preferred size lose a day that had workable
     boards one size down. The preference survives as the order, which is where
     a preference belongs when the chooser is downstream.
+
+    ``salt`` is the plugin's own, and it has to be the same one
+    ``get_content_requirements`` used: the size order is a pure function of the
+    day key and the salt, and a salted deployment that asked for content in one
+    order and then ranked it in another would serve the unsalted day's
+    preferred size while claiming a disjoint stream.
     """
     # Cleared first, so a run that returns early cannot leave the previous
     # day's refusals to be reported as its own.
@@ -345,7 +353,7 @@ def generate_candidates(context: GenerationContext) -> Sequence[PuzzleCandidate]
     index = SurfaceIndex(policy=SURFACE_POLICY)
     ordered: list[PuzzleCandidate] = []
 
-    for board_size in board_sizes_for(context.day_key):
+    for board_size in board_sizes_for(context.day_key, salt):
         at_size = _candidates_at(context, board_size, blanks, index, rejected)
         ordered.extend(ranked(at_size, context.rng))
         if len(ordered) >= context.candidate_budget:
@@ -425,14 +433,18 @@ def last_rejections() -> dict[str, int]:
     return dict(_LAST_REJECTIONS)
 
 
-def unusable_reason(context: GenerationContext) -> str | None:
+def unusable_reason(context: GenerationContext, *, salt: str = "") -> str | None:
     """Why today produced nothing, in words a curator can act on.
 
     The content result already counts what each gate rejected; this says which
     of the game's own requirements went unmet, which is the part no engine gate
     can know.
+
+    Takes the same ``salt`` as generation, because it reports the day's own
+    size and that is what the salt moves. A diagnostic naming a size the run
+    never asked for sends a curator to the wrong content.
     """
-    board_size = board_size_for(context.day_key)
+    board_size = board_size_for(context.day_key, salt)
     blanks = blanks_for(context.difficulty_target)
     if blanks < MINIMUM_BLANKS:  # pragma: no cover - the band table sets this
         return f"{blanks} blanks is below the floor of {MINIMUM_BLANKS}"

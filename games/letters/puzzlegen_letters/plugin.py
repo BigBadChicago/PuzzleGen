@@ -72,7 +72,9 @@ class MissingLettersGame:
     def generate_candidates(
         self, context: GenerationContext
     ) -> Sequence[PuzzleCandidate]:
-        return _generate_candidates(context)
+        # The same salt the requirements were asked with, so the size order
+        # generation ranks is the order the content was fetched in.
+        return _generate_candidates(context, salt=self._salt)
 
     def assemble(self, candidate: PuzzleCandidate, rng: DeterministicRng) -> Puzzle:
         return _assemble(candidate, rng)

@@ -13,6 +13,8 @@ cheapest way for an engine to look correct is to be handed only correct games.
 
 from __future__ import annotations
 
+import datetime as dt
+
 import pytest
 
 from puzzlegen.core.errors import RejectionReason
@@ -24,12 +26,17 @@ from puzzlegen.engine.registry import GameRegistry
 from puzzlegen.engine.uniqueness import consistency_problem
 from puzzlegen.engine.verifier import PuzzleVerifier
 from puzzlegen_letters import build_plugin
-from puzzlegen_letters.descriptor import GAME_ID, SEARCH_BOUND
+from puzzlegen_letters.descriptor import (
+    BOARD_SIZES,
+    GAME_ID,
+    SEARCH_BOUND,
+    board_sizes_for,
+)
 from puzzlegen_letters.generate import unusable_reason
 from puzzlegen_letters.plugin import MissingLettersGame
 from puzzlegen_letters.verify import LETTER_ALTERNATIVES
 
-from boards import fish_board
+from boards import context, fish_board, group
 from broken_letters import (
     BROKEN_GAMES,
     GenerousGame,
@@ -40,6 +47,50 @@ from broken_letters import (
 from paths import SNAPSHOT, has_snapshot
 
 DAY = "2026-10-01"
+
+#: One salt, used by every salt test, so a failure names the same stream the
+#: others do.
+SALT = "staging"
+
+#: Twelve members holding the letters of ``fish`` between them, so every board
+#: size can be served from one category and a size-order test is about the
+#: order rather than about which sizes the content happened to supply.
+WIDE = (
+    "salmon",
+    "trout",
+    "herring",
+    "bass",
+    "halibut",
+    "carp",
+    "sole",
+    "perch",
+    "mullet",
+    "anchovy",
+    "sardine",
+    "mackerel",
+)
+
+
+def _day_where_the_salt_moves_the_size() -> str:
+    """A day whose preferred size the salt changes.
+
+    Most days draw the same size either way, and a size-order test on one of
+    those passes whatever generation does with the salt.
+    """
+    for offset in range(400):
+        day = (dt.date(2026, 10, 1) + dt.timedelta(days=offset)).isoformat()
+        if board_sizes_for(day) != board_sizes_for(day, SALT):
+            return day
+    raise AssertionError("no day in a year has a salted size order of its own")
+
+
+def _every_size(day: str) -> GenerationContext:
+    """A context carrying the same category at every supported size."""
+    return context(
+        day=day,
+        band=DifficultyBand.MEDIUM,
+        content={size: [group("fish", WIDE[:size])] for size in BOARD_SIZES},
+    )
 
 
 @pytest.fixture
@@ -110,6 +161,30 @@ class TestThePluginContract:
         plain = MissingLettersGame()
         salted = MissingLettersGame(salt="staging")
         assert plain.describe().game_id == salted.describe().game_id
+
+    def test_a_salted_game_asks_for_content_in_its_own_size_order(self):
+        day = _day_where_the_salt_moves_the_size()
+        plain, salted = (
+            [
+                requirement.query.group_size
+                for requirement in game.get_content_requirements(
+                    difficulty_target=DifficultyBand.MEDIUM, locale="en", day_key=day
+                )
+            ]
+            for game in (MissingLettersGame(), MissingLettersGame(salt=SALT))
+        )
+        assert plain != salted
+
+    def test_and_ranks_the_sizes_in_that_same_order(self):
+        """The two have to agree. Generation recomputed the unsalted order at
+        one point, so a salted deployment fetched content preferring one size
+        and then ranked another first, serving the unsalted day's board while
+        advertising a disjoint stream."""
+        day = _day_where_the_salt_moves_the_size()
+        for game, salt in ((MissingLettersGame(), ""), (MissingLettersGame(salt=SALT), SALT)):
+            candidates = game.generate_candidates(_every_size(day))
+            assert candidates
+            assert candidates[0].payload["board_size"] == board_sizes_for(day, salt)[0]
 
     def test_it_reads_nothing_from_its_environment(self, game, monkeypatch):
         """A game whose output depends on where it ran is a game that cannot
