@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import datetime as dt
 import itertools
-from collections.abc import Iterable, Sequence
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import replace
 
 from ..core.errors import RejectionReason
@@ -54,6 +54,17 @@ MEMBERSHIP_PREDICATE = "is_a"
 #: category makes generation unbounded; with it, an exhausted search reports
 #: INSUFFICIENT_CANDIDATES rather than hanging.
 MAX_COMBINATIONS_EXAMINED = 20_000
+
+#: How much more than its limit a covering group query harvests before
+#: selecting, and the ceiling on that.
+#:
+#: Coverage is a property of the set returned, so there has to be a set to
+#: choose from: harvesting exactly the limit leaves selection nothing to do.
+#: Five times is enough that a category whose members sit in unrelated parents
+#: is reachable, and the cap keeps one query's working set bounded no matter
+#: what limit a caller asks for.
+COVERING_HARVEST_FACTOR = 5
+COVERING_HARVEST_CAP = 500
 
 #: Longest relationship chain a path query will search. Chains beyond this are
 #: not puzzle material; the limit exists to bound the search, not to express a
@@ -562,6 +573,15 @@ class ContentService:
                 )
             )
 
+        # A covering request is satisfied by the set, so the set has to be
+        # chosen rather than taken: harvest more than the limit, then select
+        # from the harvest. Taking the first ``limit`` groups cannot satisfy
+        # coverage except by luck, which is the behaviour the requirement
+        # exists to replace.
+        harvest = query.limit
+        if query.covering_taxonomy is not None:
+            harvest = min(COVERING_HARVEST_CAP, query.limit * COVERING_HARVEST_FACTOR)
+
         groups: list[GroupView] = []
         examined = 0
         for combination, parent_id, children in candidates:
@@ -583,16 +603,111 @@ class ContentService:
             )
             if group is not None:
                 groups.append(group)
-                if len(groups) >= query.limit:
+                if len(groups) >= harvest:
                     break
+
+        detail = ""
+        satisfied = bool(groups)
+        if query.covering_taxonomy is not None:
+            groups, covered = self._covering_selection(groups, memberships, query)
+            if covered < query.minimum_covered_categories:
+                rejected[RejectionReason.COVERAGE_NOT_MET.value] = 1
+                satisfied = False
+                detail = (
+                    f"covered {covered} {query.covering_taxonomy} categories, "
+                    f"{query.minimum_covered_categories} required"
+                )
+            else:
+                detail = f"covering {covered} {query.covering_taxonomy} categories"
 
         return self._finish(
             query,
             groups=tuple(groups),
             examined=examined,
             rejected=rejected,
-            satisfied=bool(groups),
+            satisfied=satisfied,
+            detail=detail,
         )
+
+    def _covering_selection(
+        self,
+        harvest: Sequence[GroupView],
+        memberships: dict[str, tuple[str, ...]],
+        query: ContentQuery,
+    ) -> tuple[list[GroupView], int]:
+        """Pick the groups that carry whole covering categories, then fill up.
+
+        Returns the selection and how many covering categories it covers.
+
+        Cheapest categories first, by how many groups their cover costs. A
+        category covered by three groups and one covered by eleven are worth
+        the same to a caller choosing between second readings, and spending
+        eleven slots on one leaves no room for the others: the selection is a
+        budget problem, and the budget is the caller's limit.
+        """
+        taxonomy = self.taxonomy(query.covering_taxonomy or "")
+        members_needed = query.minimum_covered_members or query.group_size or 0
+        spread_needed = query.minimum_covered_spread
+
+        # Covering category -> which harvested groups hold which of its members.
+        holders: dict[str, dict[int, set[str]]] = {}
+        for position, group in enumerate(harvest):
+            for member in group.members:
+                for category_id in memberships.get(member.entity_id, ()):
+                    if category_id not in taxonomy:
+                        continue
+                    holders.setdefault(category_id, {}).setdefault(
+                        position, set()
+                    ).add(member.entity_id)
+
+        # A cover whose groups all sit under one parent is not a cover a
+        # caller can use: groups under one parent share tiles, and a caller
+        # combining them has one combination and no second try. Each holder's
+        # defining category goes in so the cover can prefer distinct ones.
+        parent_of = {
+            position: (
+                group.shared_category_id or group.shared_category or str(position)
+            )
+            for position, group in enumerate(harvest)
+        }
+
+        covers: list[tuple[int, str, tuple[int, ...]]] = []
+        for category_id, by_group in holders.items():
+            cover = _cover_for(by_group, members_needed, spread_needed, parent_of)
+            if cover is not None:
+                covers.append((len(cover), category_id, cover))
+        covers.sort()
+
+        chosen: list[int] = []
+        taken: set[int] = set()
+        covered = 0
+        for size, _category_id, cover in covers:
+            if len(taken) + len([p for p in cover if p not in taken]) > query.limit:
+                continue
+            for position in cover:
+                if position not in taken:
+                    taken.add(position)
+                    chosen.append(position)
+            covered += 1
+
+        # The rest in harvest order, which is the order the caller would have
+        # received without a covering request: coverage adds groups to the
+        # front of the result, it does not reorder what was already there.
+        #
+        # Measured, not assumed. Spending the leftover slots on more holders of
+        # the covered categories reads like free breadth and is worse: holders
+        # are concentrated in a few parents, a caller combining groups needs
+        # them disjoint, and the harvest order is parent-diverse by
+        # construction. Filler that holds nothing the second axis needs still
+        # supplies the partners the combination search cannot do without.
+        for position in range(len(harvest)):
+            if len(chosen) >= query.limit:
+                break
+            if position not in taken:
+                taken.add(position)
+                chosen.append(position)
+
+        return [harvest[position] for position in chosen], covered
 
     def _candidate_groups(
         self,
@@ -1021,7 +1136,12 @@ class ContentService:
             groups=tuple(kept[: query.limit]),
             examined=base.examined,
             rejected=rejected,
-            satisfied=bool(kept),
+            # The base verdict carries forward: this filter can only remove
+            # groups, so a base that failed to cover cannot be rescued by it,
+            # and recomputing from ``kept`` alone discarded a
+            # COVERAGE_NOT_MET the caller had asked to be told about.
+            satisfied=bool(kept) and base.satisfied,
+            detail=base.detail,
         )
 
     def _secondary_axis(
@@ -1180,3 +1300,66 @@ class ContentService:
             satisfied=met if satisfied is None else satisfied,
             detail=detail,
         )
+
+
+def _cover_for(
+    by_group: Mapping[int, set[str]],
+    members_needed: int,
+    spread_needed: int,
+    parent_of: Mapping[int, str] | None = None,
+) -> tuple[int, ...] | None:
+    """Groups covering ``members_needed`` members over ``spread_needed`` groups.
+
+    One member per group first, fewest-holding groups leading. Spread is the
+    scarce property: taking as many members as each group offers reaches the
+    member count in two or three groups and then cannot spread, while taking
+    one at a time reaches the widest spread the content allows and the member
+    count afterwards from whatever is left. A caller that borrows one member
+    per group needs the spread; none needs the members concentrated.
+
+    None when the content cannot do it, which is the answer that makes a thin
+    snapshot say so at resolve time instead of a month of identical puzzles.
+    """
+    if members_needed <= 0:
+        return ()
+    chosen: dict[int, set[str]] = {}
+    taken: set[str] = set()
+    parents: set[str] = set()
+    parent_of = parent_of or {}
+
+    # Two passes over the holders: groups whose defining category is not in
+    # the cover yet, then the rest. A first pass that took holders in any
+    # order filled the cover with groups under one parent whenever that parent
+    # held several, and those groups overlap, which costs the caller every
+    # combination it could have tried.
+    for only_new_parents in (True, False):
+        for position, owned in sorted(
+            by_group.items(), key=lambda pair: (len(pair[1]), pair[0])
+        ):
+            if len(taken) >= members_needed and len(chosen) >= spread_needed:
+                break
+            parent = parent_of.get(position, str(position))
+            if only_new_parents and parent in parents:
+                continue
+            fresh = owned - taken
+            if not fresh:
+                continue
+            chosen.setdefault(position, set()).add(min(fresh))
+            taken.add(min(fresh))
+            parents.add(parent)
+
+    if len(taken) < members_needed:
+        # Spread is already as wide as the content allows; the remaining
+        # members have to come from groups holding more than one.
+        for position, owned in sorted(by_group.items()):
+            for member in sorted(owned - taken):
+                chosen.setdefault(position, set()).add(member)
+                taken.add(member)
+                if len(taken) >= members_needed:
+                    break
+            if len(taken) >= members_needed:
+                break
+
+    if len(taken) < members_needed or len(chosen) < spread_needed:
+        return None
+    return tuple(sorted(chosen))

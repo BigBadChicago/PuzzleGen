@@ -775,6 +775,7 @@ class TestRejectionsDoNotLeakBetweenDays:
                 day_key=day,
                 content={},
                 rng=DeterministicRng(derive_seed(day, GAME_ID)),
+                candidate_budget=64,
             )
         )
 
@@ -892,6 +893,33 @@ class TestFallingBackToAnotherSize:
         assert generate_candidates(self.context(content, day)) == ()
         reasons = generate_module.last_rejections()
         assert {int(k.split()[1].rstrip(":")) for k in reasons} == set(GROUP_SIZES)
+
+    def test_every_size_is_offered_not_only_the_first_that_works(self):
+        """The preferred size leads; the others follow rather than vanish.
+
+        Stopping at the first size that produced any candidate made candidate
+        existence stand in for verifiability, and they are not the same
+        claim: the engine is what finds out whether a board verifies, and a
+        single unverifiable candidate at the preferred size lost a day whose
+        next size down had workable boards sitting unoffered. Measured on
+        build A2, where exactly that cost 2026-10-01 its board.
+        """
+        day = self.day_of(SIZE)
+        other = next(s for s in GROUP_SIZES if s != SIZE)
+        content = self.sized_content(
+            {SIZE: board(SIZE)["visible"], other: board(other)["visible"]}, day
+        )
+
+        candidates = generate_candidates(self.context(content, day))
+        sizes = [c.payload["group_size"] for c in candidates]
+
+        assert sizes[0] == SIZE
+        assert other in sizes
+        # The preference is the order: every candidate at the day's own size
+        # comes before any at another.
+        assert sizes.index(other) > max(
+            index for index, size in enumerate(sizes) if size == SIZE
+        )
 
     def test_a_fallback_board_is_internally_consistent(self):
         """The hidden group must match the size actually built, not the day's."""

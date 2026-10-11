@@ -36,6 +36,20 @@ class Operation(StrEnum):
     FIND_ENTITIES_BY_DIFFICULTY = "find_entities_by_difficulty"
 
 
+#: Operations whose handler selects its result as a set, and so can honour a
+#: covering request. Accepting ``covering_taxonomy`` on any other operation
+#: would hand back an unconstrained result marked satisfied, which is the
+#: failure the requirement exists to prevent rather than a smaller version of
+#: it. An operation that learns to cover is added here and nowhere else.
+COVERING_OPERATIONS = frozenset(
+    {
+        Operation.FIND_GROUPS,
+        Operation.FIND_PAIRS,
+        Operation.FIND_INTERSECTING_GROUPS,
+    }
+)
+
+
 class GroupingMode(StrEnum):
     """What makes a set of entities a group in a group query.
 
@@ -131,6 +145,47 @@ class ContentQuery:
     #: gives up one tile to the hidden group.
     minimum_intersecting_members: int = 1
 
+    #: Require the returned groups, taken together, to cover whole groups of
+    #: this taxonomy.
+    #:
+    #: ``intersects_taxonomy`` is a constraint on each group on its own: this
+    #: word also means something else. This is a constraint on the result as a
+    #: set: among everything returned, the members of some whole category of
+    #: the covering taxonomy are all present, spread over enough groups to be
+    #: usable. The difference decides whether a cross-cutting second axis is
+    #: reachable or only nearly reachable, and no per-group constraint can
+    #: express it, because whether a category is covered is not a property of
+    #: any one group.
+    #:
+    #: Without it a caller needing both axes draws two independent samples and
+    #: hopes they meet. Measured on game 1's real snapshot: 200 candidate
+    #: second-axis groups, every member of every one of them present in the
+    #: graph, and 199 of 200 unusable because the 40 groups fetched for the
+    #: first axis happened not to contain them. One survived, every day for a
+    #: month, which is a sampling accident reported as a content limit.
+    #:
+    #: Nothing here is about words. A number game whose boards must also be
+    #: readable as "years that were leap years" states the same requirement
+    #: against its own taxonomy.
+    covering_taxonomy: str | None = None
+    #: Members of one covering category the result must contain. Defaults to
+    #: ``group_size``, the common case being a covered group the same size as
+    #: the groups returned.
+    minimum_covered_members: int | None = None
+    #: Distinct returned groups those members must be spread over.
+    #:
+    #: One by default, which asks only that the members be present. A caller
+    #: that will take one member from each returned group raises it: five
+    #: members sitting in two groups cannot be borrowed one per group, and a
+    #: result that satisfied only the member count would still be unusable.
+    minimum_covered_spread: int = 1
+    #: Covering categories the result must cover to count as satisfied.
+    #:
+    #: One is the floor a single puzzle needs. Selection covers as many as the
+    #: limit allows regardless, since the point of the second axis is a choice
+    #: among them rather than one forced reading.
+    minimum_covered_categories: int = 1
+
     #: How a group query decides what a group is. Defaults to the original
     #: rule so nothing that already asks for groups changes behaviour.
     grouping: GroupingMode = GroupingMode.SHARED_CATEGORY
@@ -164,8 +219,55 @@ class ContentQuery:
             raise ValueError("minimum_similarity exceeds maximum_similarity")
         if self.group_size is not None and self.group_size < 2:
             raise ValueError("group_size must be at least 2")
+        self._check_covering()
         if self.taxonomy_depth is not None and self.taxonomy_depth < 0:
             raise ValueError("taxonomy_depth must be non-negative")
+
+    def _check_covering(self) -> None:
+        """A covering request is refused here rather than silently ignored.
+
+        A caller that sets a covering number and no taxonomy believes it has
+        asked for coverage. Accepting that quietly is how a result that meets
+        nothing passes for one that meets everything.
+        """
+        named = self.covering_taxonomy is not None
+        if named and self.operation not in COVERING_OPERATIONS:
+            raise ValueError(
+                f"covering_taxonomy is not honoured by {self.operation}: "
+                f"only {sorted(o.value for o in COVERING_OPERATIONS)} select "
+                "their result as a set"
+            )
+        for name in ("minimum_covered_members", "minimum_covered_spread"):
+            value = getattr(self, name)
+            if value is not None and value < 1:
+                raise ValueError(f"{name} must be at least 1")
+        if self.minimum_covered_categories < 1:
+            raise ValueError("minimum_covered_categories must be at least 1")
+        if named:
+            members = self.minimum_covered_members or self.group_size
+            if members is None:
+                raise ValueError(
+                    "covering_taxonomy needs minimum_covered_members or group_size"
+                )
+            if self.minimum_covered_spread > members:
+                raise ValueError(
+                    "minimum_covered_spread exceeds minimum_covered_members: "
+                    "members cannot spread over more groups than there are members"
+                )
+            return
+        set_without_taxonomy = [
+            name
+            for name, default in (
+                ("minimum_covered_members", None),
+                ("minimum_covered_spread", 1),
+                ("minimum_covered_categories", 1),
+            )
+            if getattr(self, name) != default
+        ]
+        if set_without_taxonomy:
+            raise ValueError(
+                f"{set_without_taxonomy} set without covering_taxonomy"
+            )
 
 
 @dataclass(frozen=True, slots=True)
@@ -319,7 +421,12 @@ class ContentRequirement:
     optional: bool = False
 
     def is_met(self, result: ContentResult) -> bool:
-        return self.optional or len(result) >= self.minimum
+        # ``satisfied`` as well as the count: a result can carry enough groups
+        # and still not be what was asked for. A covering query reports
+        # COVERAGE_NOT_MET with the harvest's filler groups in place, and a
+        # length-only check passed that as met, which is the silent fallback
+        # the covering requirement exists to end.
+        return self.optional or (result.satisfied and len(result) >= self.minimum)
 
 
 def resolve_queries(
