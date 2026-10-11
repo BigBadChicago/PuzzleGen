@@ -143,6 +143,14 @@ def visible_group_query(
         covering_taxonomy=OVERLAY_TAXONOMY,
         minimum_covered_members=group_size,
         minimum_covered_spread=VISIBLE_GROUPS,
+        # And over no more than four, which is the same number read the other
+        # way. A board has four visible groups and the hidden group gives one
+        # tile to each, so for any size above four some of its members have to
+        # share a group. Asking only for a minimum got a cover one group wider
+        # than that every time, since taking one member at a time opens a new
+        # group for each: the request was met and no board could borrow from
+        # the result.
+        maximum_covered_spread=VISIBLE_GROUPS,
         difficulty_band=difficulty_target,
         minimum_confidence=MINIMUM_CONFIDENCE,
         fresh_only=True,

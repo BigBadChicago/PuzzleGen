@@ -673,7 +673,13 @@ class ContentService:
 
         covers: list[tuple[int, str, tuple[int, ...]]] = []
         for category_id, by_group in holders.items():
-            cover = _cover_for(by_group, members_needed, spread_needed, parent_of)
+            cover = _cover_for(
+                by_group,
+                members_needed,
+                spread_needed,
+                parent_of,
+                query.maximum_covered_spread,
+            )
             if cover is not None:
                 covers.append((len(cover), category_id, cover))
         covers.sort()
@@ -1307,6 +1313,7 @@ def _cover_for(
     members_needed: int,
     spread_needed: int,
     parent_of: Mapping[int, str] | None = None,
+    maximum_spread: int | None = None,
 ) -> tuple[int, ...] | None:
     """Groups covering ``members_needed`` members over ``spread_needed`` groups.
 
@@ -1316,6 +1323,14 @@ def _cover_for(
     one at a time reaches the widest spread the content allows and the member
     count afterwards from whatever is left. A caller that borrows one member
     per group needs the spread; none needs the members concentrated.
+
+    ``maximum_spread`` is the ceiling that stops that from going too far. A
+    caller with a fixed number of groups to borrow from cannot use a cover
+    wider than that number, and taking one member at a time opens a new group
+    for every member: measured on build A2, a cover of five members over four
+    groups was asked for and a cover over five groups was returned every time,
+    which satisfies the request as stated and no board can borrow from. Within
+    the ceiling the surplus members come from groups already in the cover.
 
     None when the content cannot do it, which is the answer that makes a thin
     snapshot say so at resolve time instead of a month of identical puzzles.
@@ -1332,14 +1347,34 @@ def _cover_for(
     # order filled the cover with groups under one parent whenever that parent
     # held several, and those groups overlap, which costs the caller every
     # combination it could have tried.
+    # Which holders lead. Fewest-holding first reaches the widest spread, and
+    # that is the right order right up until the ceiling binds: when more
+    # members are wanted than there are groups to put them in, the groups that
+    # can supply the surplus are the only ones a cover can be built on, and
+    # leading with the single holders fills the ceiling with groups that have
+    # nothing left to give and then reports the content cannot do it.
+    concentrate = maximum_spread is not None and members_needed > maximum_spread
+    order = (
+        (lambda pair: (-len(pair[1]), pair[0]))
+        if concentrate
+        else (lambda pair: (len(pair[1]), pair[0]))
+    )
+
+    def at_ceiling(position: int) -> bool:
+        return (
+            maximum_spread is not None
+            and position not in chosen
+            and len(chosen) >= maximum_spread
+        )
+
     for only_new_parents in (True, False):
-        for position, owned in sorted(
-            by_group.items(), key=lambda pair: (len(pair[1]), pair[0])
-        ):
+        for position, owned in sorted(by_group.items(), key=order):
             if len(taken) >= members_needed and len(chosen) >= spread_needed:
                 break
             parent = parent_of.get(position, str(position))
             if only_new_parents and parent in parents:
+                continue
+            if at_ceiling(position):
                 continue
             fresh = owned - taken
             if not fresh:
@@ -1349,9 +1384,12 @@ def _cover_for(
             parents.add(parent)
 
     if len(taken) < members_needed:
-        # Spread is already as wide as the content allows; the remaining
-        # members have to come from groups holding more than one.
+        # Spread is already as wide as the content allows, or as wide as the
+        # caller can use; the remaining members have to come from groups
+        # holding more than one.
         for position, owned in sorted(by_group.items()):
+            if at_ceiling(position):
+                continue
             for member in sorted(owned - taken):
                 chosen.setdefault(position, set()).add(member)
                 taken.add(member)
@@ -1361,5 +1399,7 @@ def _cover_for(
                 break
 
     if len(taken) < members_needed or len(chosen) < spread_needed:
+        return None
+    if maximum_spread is not None and len(chosen) > maximum_spread:
         return None
     return tuple(sorted(chosen))

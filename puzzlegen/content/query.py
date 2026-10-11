@@ -179,6 +179,18 @@ class ContentQuery:
     #: members sitting in two groups cannot be borrowed one per group, and a
     #: result that satisfied only the member count would still be unusable.
     minimum_covered_spread: int = 1
+    #: Distinct returned groups those members may be spread over at most.
+    #:
+    #: Unbounded by default. A caller that borrows one member from each of a
+    #: fixed number of groups sets it to that number, and for any member count
+    #: above it the bound is what makes the cover usable rather than merely
+    #: wide: five members sitting in five groups cannot be borrowed by a board
+    #: that has four, so some of them have to share a group. Selection spreads
+    #: as widely as the content allows otherwise, which is the right default
+    #: for a caller with no such ceiling and the wrong one for a caller with
+    #: it: measured on build A2, every cover of five members opened a fifth
+    #: group rather than taking a second member from one of four.
+    maximum_covered_spread: int | None = None
     #: Covering categories the result must cover to count as satisfied.
     #:
     #: One is the floor a single puzzle needs. Selection covers as many as the
@@ -237,7 +249,11 @@ class ContentQuery:
                 f"only {sorted(o.value for o in COVERING_OPERATIONS)} select "
                 "their result as a set"
             )
-        for name in ("minimum_covered_members", "minimum_covered_spread"):
+        for name in (
+            "minimum_covered_members",
+            "minimum_covered_spread",
+            "maximum_covered_spread",
+        ):
             value = getattr(self, name)
             if value is not None and value < 1:
                 raise ValueError(f"{name} must be at least 1")
@@ -254,12 +270,21 @@ class ContentQuery:
                     "minimum_covered_spread exceeds minimum_covered_members: "
                     "members cannot spread over more groups than there are members"
                 )
+            if (
+                self.maximum_covered_spread is not None
+                and self.maximum_covered_spread < self.minimum_covered_spread
+            ):
+                raise ValueError(
+                    "maximum_covered_spread is below minimum_covered_spread: "
+                    f"{self.maximum_covered_spread} < {self.minimum_covered_spread}"
+                )
             return
         set_without_taxonomy = [
             name
             for name, default in (
                 ("minimum_covered_members", None),
                 ("minimum_covered_spread", 1),
+                ("maximum_covered_spread", None),
                 ("minimum_covered_categories", 1),
             )
             if getattr(self, name) != default
