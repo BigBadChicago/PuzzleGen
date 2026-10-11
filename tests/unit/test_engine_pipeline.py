@@ -16,6 +16,7 @@ from puzzlegen.core.types import (
     VerificationCompleteness,
 )
 from puzzlegen.engine.pipeline import (
+    ON_TARGET_ATTEMPTS,
     GenerationPipeline,
     _contract_satisfied,
     day_key_for,
@@ -29,6 +30,7 @@ from puzzlegen.engine.plugin import (
 )
 from puzzlegen.engine.records import PuzzleStatus
 from puzzlegen.engine.registry import ActivationEvent, GameRegistry
+from puzzlegen.engine.verifier import PuzzleVerifier
 from puzzlegen.engine.storage import EngineRepositories
 from puzzlegen.providers.curated import CuratedJSONProvider
 from puzzlegen.providers.embeddings import DevHashEmbeddingProvider
@@ -709,3 +711,150 @@ class TestTraceAnalysis:
 
     def test_day_key_helper_formats_a_date(self):
         assert day_key_for(dt.date(2026, 9, 26)) == "2026-09-26"
+
+
+class Graded(OddOneOutGame):
+    """A game whose candidates differ in difficulty, as a real one's do.
+
+    ``OddOneOutGame`` scores by option count, which is the same for every
+    candidate it offers, so nothing in the fixture could tell the difficulty
+    search from the behaviour it replaces.
+    """
+
+    def __init__(self, *, scores: list[float], **kwargs) -> None:
+        super().__init__(candidate_count=len(scores), **kwargs)
+        self._scores = scores
+
+    def measure_difficulty(self, puzzle, verification) -> DifficultyMeasurement:
+        index = int(str(puzzle.candidate_id).rsplit(":", 1)[-1])
+        return DifficultyMeasurement(
+            score=self._scores[index],
+            confidence=0.8,
+            features={"candidate_index": float(index)},
+        )
+
+
+class TestDifficultyChoosesTheBoard:
+    """The band is a promise, so difficulty selects rather than only reports.
+
+    Generation offers candidates in its own order of preference and the
+    pipeline used to publish the first one that verified, measuring difficulty
+    afterwards. Measured on build A2 with real vectors: 9 days in 30 served a
+    board outside the requested band, every one of them past a cut point by a
+    thousandth or two, on days that had other candidates.
+    """
+
+    #: Below the 0.3 cutoff is EASY, above it MEDIUM, which is the target.
+    OFF = 0.2
+    ON = 0.5
+
+    def test_a_board_in_the_band_wins_over_an_earlier_one_outside_it(self, world):
+        register(world, Graded(scores=[self.OFF, self.OFF, self.ON, self.ON]))
+        outcome = make_pipeline(world, verifier=PuzzleVerifier(require_on_target=False)).generate(
+            "oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM
+        )
+
+        assert outcome.puzzle is not None
+        assert outcome.evaluation is not None
+        assert outcome.evaluation.off_target is False
+        assert outcome.evaluation.measured_band is DifficultyBand.MEDIUM
+
+    def test_a_day_with_no_board_in_the_band_still_serves_one(self, world):
+        """The band is a preference over boards, not a condition of having one.
+
+        An off-target board is publishable with ``allow_off_target``, so a
+        search that finds nothing in band publishes what this pipeline would
+        have published anyway rather than losing the day.
+        """
+        register(world, Graded(scores=[self.OFF] * 4))
+        outcome = make_pipeline(world, verifier=PuzzleVerifier(require_on_target=False)).generate(
+            "oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM
+        )
+
+        assert outcome.puzzle is not None
+        assert outcome.evaluation is not None
+        assert outcome.evaluation.off_target is True
+        assert outcome.trace.succeeded is True
+
+    def test_the_first_board_is_the_one_served_when_the_search_fails(self, world):
+        """Not the one nearest the band.
+
+        Settling for a nearer board would change which board every such day
+        serves, for no measured reason: candidate order is the generator's own
+        ranking of board quality.
+        """
+        register(world, Graded(scores=[0.1, 0.2, 0.29, 0.1]))
+        outcome = make_pipeline(world, verifier=PuzzleVerifier(require_on_target=False)).generate(
+            "oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM
+        )
+
+        assert outcome.evaluation is not None
+        assert outcome.evaluation.difficulty is not None
+        assert outcome.evaluation.difficulty.score == 0.1
+        assert outcome.trace.selected_candidate_id == f"{DAY}:0"
+
+    def test_the_search_is_bounded(self, world):
+        """Each pass costs a full verification, the most expensive step there is.
+
+        A board in band sits beyond the budget here and is never reached, so
+        the day serves the first one instead.
+        """
+        scores = [self.OFF] * (ON_TARGET_ATTEMPTS + 4)
+        scores[-1] = self.ON
+        register(world, Graded(scores=scores))
+        outcome = make_pipeline(world, verifier=PuzzleVerifier(require_on_target=False)).generate(
+            "oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM
+        )
+
+        assert outcome.evaluation is not None
+        assert outcome.evaluation.off_target is True
+        assert outcome.trace.selected_candidate_id == f"{DAY}:0"
+        passed = next(
+            tally
+            for tally in outcome.trace.candidates_rejected
+            if tally.stage == "difficulty_search"
+        )
+        assert passed.total == ON_TARGET_ATTEMPTS
+
+    def test_a_board_passed_over_is_not_an_assembly_rejection(self, world):
+        """It was sound; the day may yet come back and publish it.
+
+        Counting it with the refusals would read as unusable boards on a day
+        that had good ones.
+        """
+        register(world, Graded(scores=[self.OFF, self.ON]))
+        outcome = make_pipeline(world, verifier=PuzzleVerifier(require_on_target=False)).generate(
+            "oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM
+        )
+
+        stages = {
+            tally.stage: tally.total for tally in outcome.trace.candidates_rejected
+        }
+        assert stages.get("difficulty_search") == 1
+        assert stages.get("assembly", 0) == 0
+
+    def test_strict_mode_still_refuses_the_day(self, world):
+        """``require_on_target`` is a different question and keeps its answer.
+
+        The search prefers a board in band; strict mode demands one. A runner
+        that would rather have no puzzle than an off-target one still gets no
+        puzzle.
+        """
+        register(world, Graded(scores=[self.OFF] * 4))
+        outcome = make_pipeline(
+            world, verifier=PuzzleVerifier(require_on_target=True)
+        ).generate("oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM)
+
+        assert outcome.puzzle is None
+        assert outcome.trace.succeeded is False
+
+    def test_the_choice_is_reproducible(self, world):
+        register(world, Graded(scores=[self.OFF, self.OFF, self.ON, self.ON]))
+        pipeline = make_pipeline(world, verifier=PuzzleVerifier(require_on_target=False))
+        first = pipeline.generate(
+            "oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM
+        )
+        second = pipeline.generate(
+            "oddoneout", DAY, difficulty_target=DifficultyBand.MEDIUM
+        )
+        assert first.trace.selected_candidate_id == second.trace.selected_candidate_id
