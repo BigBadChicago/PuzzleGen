@@ -159,3 +159,153 @@ class TestRecomposition:
         offered = [(group("overlay", ["g0_0", "absent1", "absent2"]), False)]
         result = placeable_hidden_groups(offered, pool(), SIZE)
         assert len(result) == 1
+
+
+def wide_pool(count: int) -> list[GroupView]:
+    """``count`` disjoint visible groups, which is more than a board has."""
+    return [
+        group(f"g{index}", [f"g{index}_{n}" for n in range(SIZE)])
+        for index in range(count)
+    ]
+
+
+class TestTheSubsetIsBorrowable:
+    """A hidden group gives one tile to each of four visible groups.
+
+    So for any size above four, some of its members have to share a visible
+    group. Recomposition used to maximise spread, which is the opposite
+    requirement: a subset sitting in five groups cannot be borrowed from four,
+    and the combination search could only spend its budget discovering that.
+    Measured on build A2 at size 5, six of the fourteen overlay categories had
+    members four disjoint groups could hold and two of the six ever reached a
+    board.
+    """
+
+    def test_a_subset_wider_than_the_board_is_narrowed_to_four_groups(self):
+        """One member in each of six groups, and a second in one of them.
+
+        The widest spread is six groups, which no board can borrow from. The
+        subset has to come from four, so the surplus member is what makes the
+        count: four groups giving one tile each and one giving two.
+        """
+        offered = [
+            (group("overlay", [f"g{index}_0" for index in range(6)] + ["g0_1"]), False)
+        ]
+        result = placeable_hidden_groups(offered, wide_pool(6), SIZE)
+
+        recomposed = [view for view, _ in result if names_of(view) != {
+            *(f"g{index}_0" for index in range(6)), "g0_1"
+        }]
+        assert len(recomposed) == 1
+        homes = {name.split("_")[0] for name in names_of(recomposed[0])}
+        assert len(homes) == VISIBLE_GROUPS
+        assert len(recomposed[0].members) == SIZE
+
+    def test_a_quad_failing_cross_membership_is_passed_over(self):
+        """``g0`` carries ``g1``'s category, so those two cannot share a board.
+
+        The first four groups hold the category's members and are the quad the
+        ranking reaches first. A fifth group holds one too, and the subset has
+        to be built on that one instead. A quad this check skips costs one more
+        iteration here; a subset built on it costs the category its whole share
+        of the candidate budget, spent rediscovering the refusal.
+        """
+        leaky = GroupView(
+            members=(
+                EntityView(
+                    entity_id="entity:g0_0",
+                    name="g0_0",
+                    type_ids=("category:g0", "category:g1"),
+                ),
+                entity("g0_1"),
+            ),
+            shared_category="g0",
+            shared_category_id="category:g0",
+        )
+        pool_views = [leaky, *wide_pool(5)[1:]]
+        offered = [(group("overlay", ["g0_0", "g1_0", "g2_0", "g3_0", "g4_0"]), False)]
+        result = placeable_hidden_groups(offered, pool_views, VISIBLE_GROUPS)
+
+        recomposed = [
+            names_of(view)
+            for view, _ in result
+            if names_of(view) != {"g0_0", "g1_0", "g2_0", "g3_0", "g4_0"}
+        ]
+        assert len(recomposed) == 1
+        # Either of the two is sound; what matters is that the quad holding
+        # both g0 and g1 was not the one chosen.
+        assert not {"g0_0", "g1_0"} <= recomposed[0]
+        assert "g4_0" in recomposed[0]
+
+    def test_a_category_only_an_unusable_quad_can_hold_recomposes_nothing(self):
+        """The same violation with no fifth group to fall back on.
+
+        Four groups hold the members, two of them cannot share a board, and
+        there is nothing else: the honest answer is that this category has no
+        board today, given during recomposition rather than discovered by the
+        search.
+        """
+        leaky = GroupView(
+            members=(
+                EntityView(
+                    entity_id="entity:g0_0",
+                    name="g0_0",
+                    type_ids=("category:g0", "category:g1"),
+                ),
+                entity("g0_1"),
+            ),
+            shared_category="g0",
+            shared_category_id="category:g0",
+        )
+        pool_views = [leaky, *wide_pool(VISIBLE_GROUPS)[1:]]
+        offered = [(group("overlay", ["g0_0", "g1_0", "g2_0", "g3_0"]), False)]
+        result = placeable_hidden_groups(offered, pool_views, VISIBLE_GROUPS)
+        assert [names_of(view) for view, _ in result] == [
+            {"g0_0", "g1_0", "g2_0", "g3_0"}
+        ]
+
+    def test_a_pool_with_no_four_disjoint_groups_recomposes_nothing(self):
+        """Every group shares a tile with every other.
+
+        There is no board here at all, and saying so during recomposition is
+        cheaper than offering a candidate the search has to refuse.
+        """
+        shared = [
+            group(f"g{index}", ["common", f"g{index}_1", f"g{index}_2"])
+            for index in range(6)
+        ]
+        offered = [(group("overlay", ["common", "g1_1", "g2_1", "g3_1"]), False)]
+        result = placeable_hidden_groups(offered, shared, VISIBLE_GROUPS)
+        assert len(result) == 1
+        assert names_of(result[0][0]) == {"common", "g1_1", "g2_1", "g3_1"}
+    def test_a_quad_that_leaks_the_hidden_category_is_passed_over(self):
+        """A tile outside the hidden group carries the hidden category.
+
+        ``g1_1`` is a colour word sitting in a visible group, so a board built
+        on ``g1`` has a "which of these are colours" ask with more answers than
+        the hidden group has tiles. The same rule the search applies, applied
+        while there is still another quad to choose.
+        """
+        colourful = GroupView(
+            members=(
+                entity("g1_0"),
+                EntityView(
+                    entity_id="entity:g1_1",
+                    name="g1_1",
+                    type_ids=("category:g1", "category:overlay"),
+                ),
+            ),
+            shared_category="g1",
+            shared_category_id="category:g1",
+        )
+        pool_views = [wide_pool(5)[0], colourful, *wide_pool(5)[2:]]
+        offered = [(group("overlay", ["g0_0", "g1_0", "g2_0", "g3_0", "g4_0"]), False)]
+        result = placeable_hidden_groups(offered, pool_views, VISIBLE_GROUPS)
+
+        recomposed = [
+            names_of(view)
+            for view, _ in result
+            if names_of(view) != {"g0_0", "g1_0", "g2_0", "g3_0", "g4_0"}
+        ]
+        assert len(recomposed) == 1
+        assert "g1_0" not in recomposed[0]

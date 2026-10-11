@@ -267,6 +267,79 @@ class TestCoverForChoosesUsableCovers:
     def test_none_when_the_members_are_not_there(self):
         assert _cover_for({0: {"a"}, 1: {"b"}}, 3, 2) is None
 
+    def test_the_ceiling_concentrates_the_surplus(self):
+        """Four members, five groups holding one each, a ceiling of three.
+
+        Without the ceiling this cover opens a group per member and comes back
+        four wide, which is the widest spread the content allows and one no
+        caller with three groups can borrow from. The fourth member has to
+        come from a group already in the cover instead.
+        """
+        by_group = {0: {"a", "b"}, 1: {"c"}, 2: {"d"}, 3: {"e"}, 4: {"f"}}
+        unbounded = _cover_for(by_group, 4, 3)
+        assert unbounded is not None and len(unbounded) == 4
+        cover = _cover_for(by_group, 4, 3, None, 3)
+        # Group 0 is the only one with a second member to give, so it is in
+        # the cover and two of the single holders join it.
+        assert cover is not None
+        assert len(cover) == 3
+        assert 0 in cover
+
+    def test_the_ceiling_does_not_commit_to_the_biggest_holders(self):
+        """Four groups holding the same four members, and one holding a fifth.
+
+        Five members over four groups is possible and only by using the
+        small one. Taking the biggest holders first fills the ceiling with
+        groups that overlap and then reports that the content cannot do it,
+        which under a ceiling is a wrong answer rather than a worse cover.
+        """
+        by_group = {
+            0: {"a", "b", "c", "d"},
+            1: {"a", "b", "c", "d"},
+            2: {"a", "b", "c", "d"},
+            3: {"a", "b", "c", "d"},
+            4: {"e"},
+        }
+        cover = _cover_for(by_group, 5, 4, None, 4)
+        assert cover is not None
+        assert len(cover) == 4
+        assert 4 in cover
+
+    def test_a_cover_needs_a_member_of_its_own_for_each_group(self):
+        """Three groups, two of which hold nothing but the same member.
+
+        Every group in a cover gives one member up, so a group whose only
+        member another group has already given is not in the cover. The union
+        is large enough and the cover is still impossible.
+        """
+        by_group = {0: {"a"}, 1: {"a"}, 2: {"b", "c"}}
+        assert _cover_for(by_group, 3, 3, None, 3) is None
+
+    def test_a_group_whose_member_can_move_is_still_usable(self):
+        """The same shape with the shared member available elsewhere.
+
+        Group 2 holds ``a`` as well, so it can take ``b`` and leave ``a`` to
+        group 0. Assigning the smallest free member group by group gets this
+        wrong, which is why the check searches rather than assigns.
+        """
+        by_group = {0: {"a"}, 1: {"b"}, 2: {"a", "b", "c"}}
+        cover = _cover_for(by_group, 3, 3, None, 3)
+        assert cover == (0, 1, 2)
+
+    def test_none_when_the_members_need_more_groups_than_the_ceiling(self):
+        """Every group holds one member, so four members need four groups.
+
+        The honest answer is that this content cannot serve the request, given
+        at resolve time rather than as a cover the caller cannot use.
+        """
+        by_group = {0: {"a"}, 1: {"b"}, 2: {"c"}, 3: {"d"}}
+        assert _cover_for(by_group, 4, 3, None, 3) is None
+
+    def test_the_ceiling_does_not_narrow_a_cover_that_fits(self):
+        """A ceiling is a bound, not a target."""
+        by_group = {0: {"a"}, 1: {"b"}, 2: {"c"}}
+        assert _cover_for(by_group, 3, 3, None, 4) == (0, 1, 2)
+
     def test_holders_under_one_parent_do_not_crowd_out_others(self):
         """Distinct defining categories first.
 
@@ -288,6 +361,7 @@ class TestTheQueryRefusesHalfARequest:
         [
             {"minimum_covered_members": 3},
             {"minimum_covered_spread": 2},
+            {"maximum_covered_spread": 2},
             {"minimum_covered_categories": 2},
         ],
     )
@@ -310,6 +384,19 @@ class TestTheQueryRefusesHalfARequest:
                 covering_taxonomy=OVERLAY,
                 minimum_covered_members=3,
                 minimum_covered_spread=4,
+            )
+
+    def test_the_ceiling_cannot_sit_below_the_floor(self):
+        """Two bounds that cannot both hold is a mistake, not a narrow range."""
+        with pytest.raises(ValueError, match="maximum_covered_spread is below"):
+            ContentQuery(
+                operation=Operation.FIND_GROUPS,
+                taxonomy=TAXONOMY,
+                group_size=5,
+                covering_taxonomy=OVERLAY,
+                minimum_covered_members=5,
+                minimum_covered_spread=4,
+                maximum_covered_spread=3,
             )
 
     def test_a_covering_request_needs_a_member_count_from_somewhere(self):

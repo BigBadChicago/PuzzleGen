@@ -73,6 +73,22 @@ MAX_CANDIDATES = 512
 #: candidate cap.
 MAX_ASSEMBLY_ATTEMPTS = 64
 
+#: Verified boards the pipeline will pass over while looking for one inside the
+#: requested difficulty band.
+#:
+#: A board outside the band is publishable, so this search is worth a bounded
+#: extra cost and not an unbounded one: each pass costs a full verification,
+#: which is the most expensive thing generation does. Measured on build A2 with
+#: real vectors before this existed: 9 days in 30 served a board outside the
+#: band, and every one of them missed by a thousandth or two of the cut point
+#: while the day had other candidates. The generator's order is a preference,
+#: not a verdict, and the band is a product promise, so spending a few
+#: verifications to keep the promise is the right trade.
+#:
+#: Zero turns the search off, and the pipeline then publishes the first board
+#: that verifies, which is what it did before.
+ON_TARGET_ATTEMPTS = 8
+
 
 def day_key_for(date: dt.date) -> str:
     return date.isoformat()
@@ -293,6 +309,16 @@ class GenerationPipeline:
             )
 
         assembled = 0
+        # Boards passed over for being outside the requested band. Its own
+        # stage rather than the assembly rejections, because these are not
+        # refusals: a board here was sound and publishable, and when the search
+        # finds nothing in band the day comes back and publishes the first of
+        # them. A count under "rejected" would read as four unusable boards on
+        # a day that had five good ones.
+        search = _Counter("difficulty_search")
+        chosen: tuple[PuzzleCandidate, Puzzle, EvaluationOutcome | None] | None = None
+        settled: tuple[PuzzleCandidate, Puzzle, EvaluationOutcome | None] | None = None
+
         for candidate in accepted[:MAX_ASSEMBLY_ATTEMPTS]:
             rng = root.derive(f"assemble:{candidate.candidate_id}")
             try:
@@ -318,59 +344,85 @@ class GenerationPipeline:
                 if rejection is not None:
                     assembly.add(*rejection)
                     continue
+                if evaluation.off_target:
+                    # The first one is kept rather than the closest to the
+                    # band. Settling for a board nearer the cut point would
+                    # change which board a day serves on every day the search
+                    # fails, for no measured reason: the generator's order is
+                    # its own ranking of board quality, and difficulty is
+                    # already what this search is selecting on.
+                    if settled is None:
+                        settled = (candidate, puzzle, evaluation)
+                    if search.total < ON_TARGET_ATTEMPTS:
+                        search.add(
+                            RejectionReason.DIFFICULTY_OUT_OF_RANGE,
+                            f"measured {evaluation.measured_band}, kept looking",
+                        )
+                        continue
+                    break
 
-            record = self._draft(
+            chosen = (candidate, puzzle, evaluation)
+            break
+
+        # An off-target board is publishable, so a search that found nothing
+        # in band publishes what it would have published anyway. Only a day
+        # with no verifiable board at all fails.
+        if chosen is None:
+            chosen = settled
+        if chosen is None:
+            return self._fail(
                 descriptor,
                 day_key,
-                seed,
                 difficulty_target,
                 locale,
-                candidate,
-                puzzle,
-                status=(
-                    PuzzleStatus.VERIFIED
-                    if evaluation is not None
-                    else PuzzleStatus.DRAFT
-                ),
-            )
-            trace = self._trace(
-                descriptor,
-                day_key,
-                seed,
-                difficulty_target,
-                locale,
+                reason="no candidate assembled into a valid puzzle",
                 port=port,
                 requirements=requirements,
                 content=content,
                 offered=offered,
                 assembled=assembled,
-                tallies=(screen, assembly),
-                candidate_id=candidate.candidate_id,
-                puzzle_id=record.id,
-                succeeded=True,
-            )
-            with self._engine.transaction():
-                self._engine.puzzles.put(record)
-                self._engine.traces.put(trace)
-            return GenerationOutcome(
-                trace=trace,
-                puzzle=record,
-                candidates_considered=offered,
-                evaluation=evaluation,
+                tallies=(screen, assembly, search),
             )
 
-        return self._fail(
+        candidate, puzzle, evaluation = chosen
+        record = self._draft(
             descriptor,
             day_key,
+            seed,
             difficulty_target,
             locale,
-            reason="no candidate assembled into a valid puzzle",
+            candidate,
+            puzzle,
+            status=(
+                PuzzleStatus.VERIFIED
+                if evaluation is not None
+                else PuzzleStatus.DRAFT
+            ),
+        )
+        trace = self._trace(
+            descriptor,
+            day_key,
+            seed,
+            difficulty_target,
+            locale,
             port=port,
             requirements=requirements,
             content=content,
             offered=offered,
             assembled=assembled,
-            tallies=(screen, assembly),
+            tallies=(screen, assembly, search),
+            candidate_id=candidate.candidate_id,
+            puzzle_id=record.id,
+            succeeded=True,
+        )
+        with self._engine.transaction():
+            self._engine.puzzles.put(record)
+            self._engine.traces.put(trace)
+        return GenerationOutcome(
+            trace=trace,
+            puzzle=record,
+            candidates_considered=offered,
+            evaluation=evaluation,
         )
 
     # -- gates ------------------------------------------------------------

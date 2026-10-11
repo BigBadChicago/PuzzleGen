@@ -533,10 +533,10 @@ def placeable_hidden_groups(
     second overlay axis, is better material than one this function assembled,
     and both are only candidates.
     """
-    home_of: dict[str, int] = {}
+    homes_of: dict[str, set[int]] = {}
     for index, group in enumerate(pool):
         for member in group.members:
-            home_of.setdefault(member.entity_id, index)
+            homes_of.setdefault(member.entity_id, set()).add(index)
 
     by_category: dict[str, list[tuple[GroupView, bool]]] = {}
     for group, enriched in offered:
@@ -544,15 +544,17 @@ def placeable_hidden_groups(
         by_category.setdefault(key, []).append((group, enriched))
 
     recomposed: list[tuple[GroupView, bool]] = []
-    for groups in by_category.values():
+    for category_id, groups in by_category.items():
         members: dict[str, EntityView] = {}
         for group, _enriched in groups:
             for member in group.members:
-                if member.entity_id in home_of:
+                if member.entity_id in homes_of:
                     members.setdefault(member.entity_id, member)
         if len(members) < group_size:
             continue
-        chosen = _spread_over_homes(members, home_of, group_size)
+        chosen = _borrowable_subset(
+            members, homes_of, pool, group_size, category_id=category_id or None
+        )
         if chosen is None:
             continue
         # An enriched view lends its second axis only to members it actually
@@ -600,42 +602,95 @@ def placeable_hidden_groups(
     return result
 
 
-def _spread_over_homes(
+def _borrowable_subset(
     members: dict[str, EntityView],
-    home_of: dict[str, int],
+    homes_of: dict[str, set[int]],
+    pool: Sequence[GroupView],
     group_size: int,
+    *,
+    category_id: str | None = None,
     spread: int = VISIBLE_GROUPS,
 ) -> tuple[EntityView, ...] | None:
-    """``group_size`` members from as many different visible groups as possible.
+    """``group_size`` members that ``spread`` disjoint visible groups can hold.
 
-    One per visible group before any group gives a second, because every
-    visible group has to give up a tile: a subset drawn from three groups is
-    refused by ``borrowings_for`` however well it reads.
+    The subset has to be borrowable, and "borrowable" is a narrower thing than
+    "widely spread". A board has exactly four visible groups and the hidden
+    group gives up one tile to each, so for any size above four some of its
+    members must share a visible group: five members sitting in five different
+    groups cannot be borrowed from four, however well they read together.
+
+    The previous version maximised spread, which is the opposite requirement,
+    and it is why one overlay category served almost every day. Measured on
+    build A2 at size 5: six of the fourteen overlay categories have members
+    four disjoint groups can hold between them, and two of those six ever
+    reached a board, because the subset offered for the other four spread over
+    five groups or more and the combination search could only discover that.
+
+    Groups holding the most members first, so the search reaches a workable
+    set of four early, and bounded by ``VISIBLE_SHORTLIST`` for the same
+    reason the combination search is.
+
+    Disjointness is checked here rather than left to ``plans_for``: because
+    the four hold no tile in common, each chosen member sits in exactly one of
+    them, so "every group holds at least one" is the whole borrowing rule and
+    does not depend on the order the later search happens to try them in.
     """
-    by_home: dict[int, list[str]] = {}
-    for entity_id in sorted(members):
-        by_home.setdefault(home_of[entity_id], []).append(entity_id)
-
-    if len(by_home) < spread:
-        # Refused here rather than offered and refused later. A subset whose
-        # members sit in three groups cannot borrow one from each of four, so
-        # the combination search can only spend its budget discovering that,
-        # and the budget is divided among the candidates offered: an
-        # unusable one makes every usable one poorer.
+    candidates = sorted(
+        {home for entity_id in members for home in homes_of.get(entity_id, ())},
+        key=lambda home: (
+            -sum(1 for entity_id in members if home in homes_of[entity_id]),
+            home,
+        ),
+    )[:VISIBLE_SHORTLIST]
+    if len(candidates) < spread:
         return None
 
-    chosen: list[str] = []
-    for round_index in range(group_size):
-        for home in sorted(by_home):
+    held = {
+        home: [
+            entity_id
+            for entity_id in sorted(members)
+            if home in homes_of[entity_id]
+        ]
+        for home in candidates
+    }
+
+    for quad in itertools.combinations(candidates, spread):
+        visible = [pool[home] for home in quad]
+        if not is_disjoint(visible):
+            continue
+        if not has_no_cross_membership(visible):
+            # The same gates the combination search applies, applied while the
+            # subset is still being chosen. A quad this one skips costs one
+            # more iteration here; a subset built on it costs the category its
+            # whole share of the candidate budget, spent rediscovering the
+            # refusal. Measured on build A2 at size 5: "thing with a handle"
+            # and "thing with wings" each had four disjoint groups and were
+            # losing every board to cross-membership on them alone.
+            continue
+        if any(not held[home] for home in quad):
+            continue
+        # One per group first, which is the rule; the surplus afterwards from
+        # whichever of the four can still supply it.
+        chosen = [held[home][0] for home in quad]
+        taken = set(chosen)
+        for home in quad:
+            for entity_id in held[home]:
+                if len(chosen) >= group_size:
+                    break
+                if entity_id not in taken:
+                    chosen.append(entity_id)
+                    taken.add(entity_id)
             if len(chosen) >= group_size:
                 break
-            if round_index < len(by_home[home]):
-                chosen.append(by_home[home][round_index])
-        if len(chosen) >= group_size:
-            break
-    if len(chosen) < group_size:
-        return None
-    return tuple(members[entity_id] for entity_id in chosen)
+        if len(chosen) != group_size:
+            continue
+        picked = tuple(members[entity_id] for entity_id in chosen)
+        if not has_no_category_leak(
+            GroupView(members=picked, shared_category_id=category_id), visible
+        ):
+            continue
+        return picked
+    return None
 
 
 def payload_for(plan: BoardPlan) -> dict[str, object]:
