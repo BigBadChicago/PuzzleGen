@@ -1169,24 +1169,23 @@ playable categories are `baby grand` and `police van`.
 
 So the naming work in requirements 4.3 was the wrong lever, and shortening
 names would have bought nothing. The route taken instead, decided by the
-owner: pick categories a player recognises, get six to eight common words into
-each, settle the name afterwards.
+owner: pick categories a player recognises, get the common words into each,
+settle the name afterwards.
 
-`games/letters/content/letters.curated.json`, thirty categories and 218
+`games/letters/content/letters.curated.json`, thirty categories and 280
 entities, imported with `--curated ...:letters`. No new mechanism: that flag
 exists in `tools/build_snapshot.py` for a game's own taxonomy, and this is its
 first caller. Entity identity is by lemma, so a member the graph already holds
 takes one more membership rather than becoming a duplicate: the entity total
-goes from 16,710 to 16,812, so 102 of the 218 members are new and 116 merged.
-Separately, 111 of the 218 carry a membership outside the new taxonomy, 76 in
-`wordnet`, 33 in both `wordnet` and `overlay` and 2 in `overlay` alone. The two
+goes from 16,710 to 16,842, so 132 of the 280 members are new and 148 merged.
+Separately, 143 of the 280 carry a membership outside the new taxonomy, 103 in
+`wordnet`, 37 in both `wordnet` and `overlay` and 3 in `overlay` alone. The two
 figures differ because merging is by lemma and does not require the entity it
 merges with to carry a membership. That entity total is the only figure game 1
 measures that this file moves; no group, cover or refusal changes.
 
 All thirty are playable at six tiles and the two-blank floor, twenty at eight
-tiles, none at ten or twelve. Ten and twelve are a decision about how large a
-category gets, not a gap: a ceiling of eight members cannot fill them.
+tiles, and sixteen at both ten and twelve.
 
 Worth keeping, because it was not obvious: the medium band is `COMMON` and
 `UNCOMMON`, zipf 3.0 to 5.0, so a *very* common word is ineligible at medium.
@@ -1201,3 +1200,40 @@ categories as authored. `fruit` had no member holding an f, an i or a t;
 were fixed by changing members rather than the name, and `gemstone` and
 `currency` were renamed to `gem` and `money` only after their members were
 settled, both being eight letters where six tiles admit seven.
+
+### The member ceiling is the largest board, not eight
+
+The first batch capped categories at eight members, which left the ten and
+twelve tile cells measuring zero: a board needs at least as many eligible
+members as tiles, so eight cannot seat ten. The cap was recorded as a decision
+about how large a category should get. The owner decided against it, so sixteen
+categories went to twelve members and every cell of the survey now has
+playable content: thirty at six tiles, twenty at eight, sixteen at ten and
+twelve.
+
+Twelve is the ceiling because twelve is the largest board the tool measures. It
+is a curation rule and not something the measure enforces, which the review of
+this change corrected: `assess` checks only a minimum member count and hands
+every eligible member to `place_marks`, so a thirteenth member would be a
+candidate tile like any other, chosen in place of another rather than in
+addition. What it could not do is make a larger board measurable, since none is
+measured. A thirteenth member therefore buys no coverage and costs vocabulary:
+a category holds twelve only where twelve common members exist, and a
+thirteenth word in `liquor` or `bone` would be a word a player does not know,
+which is the lexicon subtree this taxonomy exists to avoid.
+
+It is a ceiling and not a target. Fourteen categories stayed below it because
+their common vocabulary runs out first.
+
+Worth keeping: ten and twelve report identical counts, and that is the shape of
+the content rather than a coincidence. No category holds ten or eleven members,
+so the sixteen that fill a board of twelve are exactly the sixteen that fill a
+board of ten. A category sized between them would separate the columns and none
+exists, because the eleventh and twelfth common member tend to arrive together.
+
+Two members were added for their letters rather than for the category: `polo`
+to `sport`, whose other eleven members hold no p, and `sunflower` to `flower`
+for its f and w. Neither was forced by the spelling invariant, which both
+categories already passed inside their blank budget; they were added so the
+budget has slack rather than being spent exactly, since a category at its limit
+breaks on the next member change.

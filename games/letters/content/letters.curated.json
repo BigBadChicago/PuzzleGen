@@ -1,10 +1,10 @@
 {
  "curated_schema": 1,
- "version": "2026.10.1",
+ "version": "2026.10.2",
  "updated": "2026-10-11",
  "warnings": [
   "Membership is asserted by a curator, not inferred by tooling. Import this file with taxonomy='letters'.",
-  "Each category is sized for a missing_letters board: six to eight members a player would call common, and a name short enough to mark on that board. Members are chosen for frequency, not for taxonomic completeness; a category here is not a claim about what the word means."
+  "Each category is sized for a missing_letters board: six to twelve members a player would call common, and a name short enough to mark on that board. A category holds twelve only where twelve common members exist; the rest stay smaller rather than reaching for obscure words. Members are chosen for frequency, not for taxonomic completeness; a category here is not a claim about what the word means."
  ],
  "categories": [
   {
@@ -160,6 +160,14 @@
  ],
  "entities": [
   {
+   "key": "e.aluminum",
+   "name": "aluminum",
+   "categories": [
+    "letters.metal"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.amazon",
    "name": "amazon",
    "categories": [
@@ -200,6 +208,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.ash",
+   "name": "ash",
+   "categories": [
+    "letters.tree"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.axe",
    "name": "axe",
    "categories": [
@@ -212,6 +228,14 @@
    "name": "ballet",
    "categories": [
     "letters.dance"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.banana",
+   "name": "banana",
+   "categories": [
+    "letters.fruit"
    ],
    "confidence": 0.95
   },
@@ -257,6 +281,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.bear",
+   "name": "bear",
+   "categories": [
+    "letters.mammal"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.bee",
    "name": "bee",
    "categories": [
@@ -289,6 +321,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.bermuda",
+   "name": "bermuda",
+   "categories": [
+    "letters.island"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.bicycle",
    "name": "bicycle",
    "categories": [
@@ -309,6 +349,14 @@
    "name": "blackberry",
    "categories": [
     "letters.berry"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.blouse",
+   "name": "blouse",
+   "categories": [
+    "letters.garment"
    ],
    "confidence": 0.95
   },
@@ -353,6 +401,22 @@
    "confidence": 0.95
   },
   {
+   "key": "e.brass",
+   "name": "brass",
+   "categories": [
+    "letters.metal"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.breeze",
+   "name": "breeze",
+   "categories": [
+    "letters.weather"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.bronze",
    "name": "bronze",
    "categories": [
@@ -369,6 +433,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.canvas",
+   "name": "canvas",
+   "categories": [
+    "letters.fabric"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.carp",
    "name": "carp",
    "categories": [
@@ -381,6 +453,14 @@
    "name": "cedar",
    "categories": [
     "letters.tree"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.cherry",
+   "name": "cherry",
+   "categories": [
+    "letters.fruit"
    ],
    "confidence": 0.95
   },
@@ -413,6 +493,14 @@
    "name": "coat",
    "categories": [
     "letters.garment"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.cobalt",
+   "name": "cobalt",
+   "categories": [
+    "letters.metal"
    ],
    "confidence": 0.95
   },
@@ -453,6 +541,14 @@
    "name": "copper",
    "categories": [
     "letters.metal"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.coral",
+   "name": "coral",
+   "categories": [
+    "letters.gem"
    ],
    "confidence": 0.95
   },
@@ -530,6 +626,22 @@
    "confidence": 0.95
   },
   {
+   "key": "e.cycling",
+   "name": "cycling",
+   "categories": [
+    "letters.sport"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.cylinder",
+   "name": "cylinder",
+   "categories": [
+    "letters.shape"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.cyprus",
    "name": "cyprus",
    "categories": [
@@ -587,10 +699,42 @@
    "confidence": 0.95
   },
   {
+   "key": "e.dove",
+   "name": "dove",
+   "categories": [
+    "letters.bird"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.dragonfly",
+   "name": "dragonfly",
+   "categories": [
+    "letters.insect"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.dress",
+   "name": "dress",
+   "categories": [
+    "letters.garment"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.drill",
    "name": "drill",
    "categories": [
     "letters.tool"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.drizzle",
+   "name": "drizzle",
+   "categories": [
+    "letters.weather"
    ],
    "confidence": 0.95
   },
@@ -607,6 +751,14 @@
    "name": "eagle",
    "categories": [
     "letters.bird"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.eel",
+   "name": "eel",
+   "categories": [
+    "letters.fish"
    ],
    "confidence": 0.95
   },
@@ -683,8 +835,32 @@
    "confidence": 0.95
   },
   {
+   "key": "e.finch",
+   "name": "finch",
+   "categories": [
+    "letters.bird"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.flannel",
+   "name": "flannel",
+   "categories": [
+    "letters.fabric"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.flea",
    "name": "flea",
+   "categories": [
+    "letters.insect"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.fly",
+   "name": "fly",
    "categories": [
     "letters.insect"
    ],
@@ -715,6 +891,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.garnet",
+   "name": "garnet",
+   "categories": [
+    "letters.gem"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.gin",
    "name": "gin",
    "categories": [
@@ -727,6 +911,14 @@
    "name": "ginger",
    "categories": [
     "letters.spice"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.glove",
+   "name": "glove",
+   "categories": [
+    "letters.garment"
    ],
    "confidence": 0.95
   },
@@ -875,6 +1067,22 @@
    "confidence": 0.95
   },
   {
+   "key": "e.jamaica",
+   "name": "jamaica",
+   "categories": [
+    "letters.island"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.jasmine",
+   "name": "jasmine",
+   "categories": [
+    "letters.flower"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.java",
    "name": "java",
    "categories": [
@@ -947,6 +1155,38 @@
    "confidence": 0.95
   },
   {
+   "key": "e.lemon",
+   "name": "lemon",
+   "categories": [
+    "letters.fruit"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.lemonade",
+   "name": "lemonade",
+   "categories": [
+    "letters.drink"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.lightning",
+   "name": "lightning",
+   "categories": [
+    "letters.weather"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.lilac",
+   "name": "lilac",
+   "categories": [
+    "letters.flower"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.lily",
    "name": "lily",
    "categories": [
@@ -979,10 +1219,42 @@
    "confidence": 0.95
   },
   {
+   "key": "e.locust",
+   "name": "locust",
+   "categories": [
+    "letters.insect"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.lotus",
+   "name": "lotus",
+   "categories": [
+    "letters.flower"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.lung",
    "name": "lung",
    "categories": [
     "letters.organ"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.mackerel",
+   "name": "mackerel",
+   "categories": [
+    "letters.fish"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.madagascar",
+   "name": "madagascar",
+   "categories": [
+    "letters.island"
    ],
    "confidence": 0.95
   },
@@ -1003,6 +1275,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.mantis",
+   "name": "mantis",
+   "categories": [
+    "letters.insect"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.maple",
    "name": "maple",
    "categories": [
@@ -1015,6 +1295,14 @@
    "name": "mars",
    "categories": [
     "letters.planet"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.melon",
+   "name": "melon",
+   "categories": [
+    "letters.fruit"
    ],
    "confidence": 0.95
   },
@@ -1047,6 +1335,22 @@
    "name": "mississippi",
    "categories": [
     "letters.river"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.mist",
+   "name": "mist",
+   "categories": [
+    "letters.weather"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.moose",
+   "name": "moose",
+   "categories": [
+    "letters.mammal"
    ],
    "confidence": 0.95
   },
@@ -1103,6 +1407,14 @@
    "name": "nutmeg",
    "categories": [
     "letters.spice"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.nylon",
+   "name": "nylon",
+   "categories": [
+    "letters.fabric"
    ],
    "confidence": 0.95
   },
@@ -1235,10 +1547,26 @@
    "confidence": 0.95
   },
   {
+   "key": "e.pike",
+   "name": "pike",
+   "categories": [
+    "letters.fish"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.pine",
    "name": "pine",
    "categories": [
     "letters.tree"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.platinum",
+   "name": "platinum",
+   "categories": [
+    "letters.metal"
    ],
    "confidence": 0.95
   },
@@ -1267,6 +1595,22 @@
    "confidence": 0.95
   },
   {
+   "key": "e.polo",
+   "name": "polo",
+   "categories": [
+    "letters.sport"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.poplar",
+   "name": "poplar",
+   "categories": [
+    "letters.tree"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.poppy",
    "name": "poppy",
    "categories": [
@@ -1291,6 +1635,30 @@
    "confidence": 0.95
   },
   {
+   "key": "e.prism",
+   "name": "prism",
+   "categories": [
+    "letters.shape"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.pyramid",
+   "name": "pyramid",
+   "categories": [
+    "letters.shape"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.quartz",
+   "name": "quartz",
+   "categories": [
+    "letters.gem"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.rain",
    "name": "rain",
    "categories": [
@@ -1303,6 +1671,22 @@
    "name": "raspberry",
    "categories": [
     "letters.berry"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.raven",
+   "name": "raven",
+   "categories": [
+    "letters.bird"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.rectangle",
+   "name": "rectangle",
+   "categories": [
+    "letters.shape"
    ],
    "confidence": 0.95
   },
@@ -1460,6 +1844,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.scarf",
+   "name": "scarf",
+   "categories": [
+    "letters.garment"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.screwdriver",
    "name": "screwdriver",
    "categories": [
@@ -1468,10 +1860,26 @@
    "confidence": 0.95
   },
   {
+   "key": "e.seal",
+   "name": "seal",
+   "categories": [
+    "letters.mammal"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.shame",
    "name": "shame",
    "categories": [
     "letters.emotion"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.shark",
+   "name": "shark",
+   "categories": [
+    "letters.fish"
    ],
    "confidence": 0.95
   },
@@ -1508,6 +1916,14 @@
    "confidence": 0.95
   },
   {
+   "key": "e.skiing",
+   "name": "skiing",
+   "categories": [
+    "letters.sport"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.skirt",
    "name": "skirt",
    "categories": [
@@ -1540,6 +1956,22 @@
    "confidence": 0.95
   },
   {
+   "key": "e.soda",
+   "name": "soda",
+   "categories": [
+    "letters.drink"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.sparrow",
+   "name": "sparrow",
+   "categories": [
+    "letters.bird"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.sphere",
    "name": "sphere",
    "categories": [
@@ -1560,6 +1992,14 @@
    "name": "spleen",
    "categories": [
     "letters.organ"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.spruce",
+   "name": "spruce",
+   "categories": [
+    "letters.tree"
    ],
    "confidence": 0.95
   },
@@ -1604,6 +2044,22 @@
    "confidence": 0.95
   },
   {
+   "key": "e.sumatra",
+   "name": "sumatra",
+   "categories": [
+    "letters.island"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.sunflower",
+   "name": "sunflower",
+   "categories": [
+    "letters.flower"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.swan",
    "name": "swan",
    "categories": [
@@ -1616,6 +2072,14 @@
    "name": "sweater",
    "categories": [
     "letters.garment"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.swimming",
+   "name": "swimming",
+   "categories": [
+    "letters.sport"
    ],
    "confidence": 0.95
   },
@@ -1749,6 +2213,22 @@
    "confidence": 0.95
   },
   {
+   "key": "e.turquoise",
+   "name": "turquoise",
+   "categories": [
+    "letters.gem"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.tweed",
+   "name": "tweed",
+   "categories": [
+    "letters.fabric"
+   ],
+   "confidence": 0.95
+  },
+  {
    "key": "e.uniform",
    "name": "uniform",
    "categories": [
@@ -1800,7 +2280,16 @@
    "key": "e.vodka",
    "name": "vodka",
    "categories": [
+    "letters.drink",
     "letters.liquor"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.walnut",
+   "name": "walnut",
+   "categories": [
+    "letters.tree"
    ],
    "confidence": 0.95
   },
@@ -1840,6 +2329,7 @@
    "key": "e.whiskey",
    "name": "whiskey",
    "categories": [
+    "letters.drink",
     "letters.liquor"
    ],
    "confidence": 0.95
@@ -1865,6 +2355,14 @@
    "name": "wine",
    "categories": [
     "letters.drink"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "key": "e.wolf",
+   "name": "wolf",
+   "categories": [
+    "letters.mammal"
    ],
    "confidence": 0.95
   },
