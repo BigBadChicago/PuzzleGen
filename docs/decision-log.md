@@ -1211,11 +1211,19 @@ categories went to twelve members and every cell of the survey now has
 playable content: thirty at six tiles, twenty at eight, sixteen at ten and
 twelve.
 
-Twelve is the ceiling because twelve is the largest board the tool measures and
-a thirteenth member could never be a tile. It is a ceiling and not a target.
-Fourteen categories stayed below it because their common vocabulary runs out
-first, and a thirteenth word in `liquor` or `bone` would be a word a player
-does not know, which is the lexicon subtree this taxonomy exists to avoid.
+Twelve is the ceiling because twelve is the largest board the tool measures. It
+is a curation rule and not something the measure enforces, which the review of
+this change corrected: `assess` checks only a minimum member count and hands
+every eligible member to `place_marks`, so a thirteenth member would be a
+candidate tile like any other, chosen in place of another rather than in
+addition. What it could not do is make a larger board measurable, since none is
+measured. A thirteenth member therefore buys no coverage and costs vocabulary:
+a category holds twelve only where twelve common members exist, and a
+thirteenth word in `liquor` or `bone` would be a word a player does not know,
+which is the lexicon subtree this taxonomy exists to avoid.
+
+It is a ceiling and not a target. Fourteen categories stayed below it because
+their common vocabulary runs out first.
 
 Worth keeping: ten and twelve report identical counts, and that is the shape of
 the content rather than a coincidence. No category holds ten or eleven members,

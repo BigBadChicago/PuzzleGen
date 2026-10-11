@@ -257,11 +257,19 @@ limit of the content, and the owner decided against it, so sixteen categories
 were extended to twelve members.
 
 The ceiling is now twelve because twelve is the largest board the tool
-measures: a thirteenth member could never become a tile. It is a ceiling and
-not a target. Fourteen categories stayed below it because their common
-vocabulary runs out first, and reaching for a thirteenth word in `liquor` or
-`bone` would mean reaching for a word a player does not know, which is the
-lexicon subtree this taxonomy exists to avoid.
+measures. It is a curation rule, not something the measure enforces: `assess`
+checks only that a category has at least as many members as the board has
+tiles, and hands every eligible member to `place_marks`, so a thirteenth
+member would be a candidate tile like any other, chosen in place of another
+rather than in addition to it. What it could not do is make a larger board
+measurable, since none is measured. So a thirteenth member buys no coverage,
+and it costs the thing this taxonomy exists to avoid: a category holds twelve
+only where twelve common members exist, and a thirteenth word in `liquor` or
+`bone` would be a word a player does not know, which is the lexicon subtree
+again.
+
+It is also a ceiling and not a target. Fourteen categories stayed below it
+because their common vocabulary runs out first.
 
 Which sixteen was decided by the vocabulary, not by preference: `bird`, `drink`,
 `fabric`, `fish`, `flower`, `fruit`, `garment`, `gem`, `insect`, `island`,

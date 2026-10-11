@@ -45,11 +45,19 @@ coverage = load_tool("measure_letters_coverage")
 SEED = ROOT / "games" / "letters" / "content" / "letters.curated.json"
 
 #: The batch's floor and ceiling on members. The floor is the smallest board
-#: the game generates and the ceiling is the largest, because a member past
-#: the largest board can never become a tile. The ceiling is not a target: a
-#: category holds twelve only where twelve common members exist, and reaching
-#: for a thirteenth would mean reaching for a word a player does not know,
-#: which is the lexicon subtree this taxonomy exists to avoid.
+#: the game generates: below it the category cannot fill a board at all, and
+#: ``assess`` refuses it with ``too_few_members``.
+#:
+#: The ceiling is the largest board, and it is a curation rule rather than
+#: something the tool enforces. ``assess`` checks only a minimum and hands
+#: every eligible member to ``place_marks``, so a thirteenth member is a
+#: candidate tile like any other -- it would just be chosen in place of
+#: another, not in addition. What it cannot do is unlock a board larger than
+#: the largest one measured. So members past twelve buy no coverage, and what
+#: they cost is the thing this taxonomy exists to avoid: a category holds
+#: twelve only where twelve common members exist, and a thirteenth would mean
+#: reaching for a word a player does not know, which is the lexicon subtree
+#: again.
 MIN_MEMBERS = 6
 MAX_MEMBERS = 12
 
