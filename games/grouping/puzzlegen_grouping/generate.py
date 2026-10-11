@@ -544,7 +544,7 @@ def placeable_hidden_groups(
         by_category.setdefault(key, []).append((group, enriched))
 
     recomposed: list[tuple[GroupView, bool]] = []
-    for groups in by_category.values():
+    for category_id, groups in by_category.items():
         members: dict[str, EntityView] = {}
         for group, _enriched in groups:
             for member in group.members:
@@ -553,7 +553,7 @@ def placeable_hidden_groups(
         if len(members) < group_size:
             continue
         chosen = _borrowable_subset(
-            members, homes_of, pool, group_size, category_id=key or None
+            members, homes_of, pool, group_size, category_id=category_id or None
         )
         if chosen is None:
             continue

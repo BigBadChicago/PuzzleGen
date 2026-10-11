@@ -1324,19 +1324,23 @@ def _cover_for(
     count afterwards from whatever is left. A caller that borrows one member
     per group needs the spread; none needs the members concentrated.
 
-    ``maximum_spread`` is the ceiling that stops that from going too far. A
+    ``maximum_spread`` is the ceiling that this order cannot be adapted to,
+    so a request carrying one is answered by ``_bounded_cover`` instead. A
     caller with a fixed number of groups to borrow from cannot use a cover
     wider than that number, and taking one member at a time opens a new group
     for every member: measured on build A2, a cover of five members over four
     groups was asked for and a cover over five groups was returned every time,
-    which satisfies the request as stated and no board can borrow from. Within
-    the ceiling the surplus members come from groups already in the cover.
+    which satisfies the request as stated and no board can borrow from.
 
     None when the content cannot do it, which is the answer that makes a thin
     snapshot say so at resolve time instead of a month of identical puzzles.
     """
     if members_needed <= 0:
         return ()
+    if maximum_spread is not None:
+        return _bounded_cover(
+            by_group, members_needed, spread_needed, parent_of or {}, maximum_spread
+        )
     chosen: dict[int, set[str]] = {}
     taken: set[str] = set()
     parents: set[str] = set()
@@ -1347,34 +1351,14 @@ def _cover_for(
     # order filled the cover with groups under one parent whenever that parent
     # held several, and those groups overlap, which costs the caller every
     # combination it could have tried.
-    # Which holders lead. Fewest-holding first reaches the widest spread, and
-    # that is the right order right up until the ceiling binds: when more
-    # members are wanted than there are groups to put them in, the groups that
-    # can supply the surplus are the only ones a cover can be built on, and
-    # leading with the single holders fills the ceiling with groups that have
-    # nothing left to give and then reports the content cannot do it.
-    concentrate = maximum_spread is not None and members_needed > maximum_spread
-    order = (
-        (lambda pair: (-len(pair[1]), pair[0]))
-        if concentrate
-        else (lambda pair: (len(pair[1]), pair[0]))
-    )
-
-    def at_ceiling(position: int) -> bool:
-        return (
-            maximum_spread is not None
-            and position not in chosen
-            and len(chosen) >= maximum_spread
-        )
-
     for only_new_parents in (True, False):
-        for position, owned in sorted(by_group.items(), key=order):
+        for position, owned in sorted(
+            by_group.items(), key=lambda pair: (len(pair[1]), pair[0])
+        ):
             if len(taken) >= members_needed and len(chosen) >= spread_needed:
                 break
             parent = parent_of.get(position, str(position))
             if only_new_parents and parent in parents:
-                continue
-            if at_ceiling(position):
                 continue
             fresh = owned - taken
             if not fresh:
@@ -1384,12 +1368,9 @@ def _cover_for(
             parents.add(parent)
 
     if len(taken) < members_needed:
-        # Spread is already as wide as the content allows, or as wide as the
-        # caller can use; the remaining members have to come from groups
-        # holding more than one.
+        # Spread is already as wide as the content allows; the remaining
+        # members have to come from groups holding more than one.
         for position, owned in sorted(by_group.items()):
-            if at_ceiling(position):
-                continue
             for member in sorted(owned - taken):
                 chosen.setdefault(position, set()).add(member)
                 taken.add(member)
@@ -1400,6 +1381,102 @@ def _cover_for(
 
     if len(taken) < members_needed or len(chosen) < spread_needed:
         return None
-    if maximum_spread is not None and len(chosen) > maximum_spread:
-        return None
     return tuple(sorted(chosen))
+
+#: Holder groups the bounded search considers, most useful first.
+#:
+#: The search is exhaustive over these, so the width decides its cost:
+#: C(16, 4) is 1,820 subsets, which is nothing next to the combination search
+#: the caller runs afterwards. A snapshot where a category has more than
+#: sixteen holder groups has plenty of covers and loses nothing by the cap.
+COVER_SEARCH_WIDTH = 16
+
+
+def _distinct_members(
+    positions: Sequence[int], by_group: Mapping[int, set[str]]
+) -> bool:
+    """Whether each group can be given a member of its own.
+
+    A cover's groups each have to give up one member, so a cover where two
+    groups can only offer the same member is not one. Taking the smallest
+    free member per group in turn gets this wrong: the group that could have
+    shared takes the only member another group holds. So a group that finds
+    its member taken asks the holder to move, which is the standard augmenting
+    search and is exact.
+    """
+    owner: dict[str, int] = {}
+
+    def assign(position: int, seen: set[str]) -> bool:
+        for member in sorted(by_group[position]):
+            if member in seen:
+                continue
+            seen.add(member)
+            if member not in owner or assign(owner[member], seen):
+                owner[member] = position
+                return True
+        return False
+
+    return all(assign(position, set()) for position in positions)
+
+
+def _bounded_cover(
+    by_group: Mapping[int, set[str]],
+    members_needed: int,
+    spread_needed: int,
+    parent_of: Mapping[int, str],
+    maximum_spread: int,
+) -> tuple[int, ...] | None:
+    """The narrowest cover of at most ``maximum_spread`` groups, or None.
+
+    Exhaustive rather than greedy, because under a ceiling greedy is wrong
+    rather than merely suboptimal. Committing to the groups holding the most
+    members fills the ceiling with groups that overlap and then reports that
+    the content cannot do it: four groups holding ``{a, b, c, d}`` each and a
+    fifth holding ``{e}`` can cover five members over four groups, and only by
+    using the fifth.
+
+    Groups that uniquely hold a member lead the candidate list for the same
+    reason. A cover needing that member has no alternative to its holder,
+    however little else that holder carries, so ranking by size alone can cut
+    the one group the cover needs out of the search.
+
+    Smallest cover first, since a caller spending a budget on several
+    categories pays per group, and the widest spread of parents among those,
+    since groups under one parent overlap and a caller combining them has one
+    combination and no second try.
+    """
+    holders: dict[str, list[int]] = {}
+    for position, owned in by_group.items():
+        for member in owned:
+            holders.setdefault(member, []).append(position)
+    unique_to = {
+        positions[0] for positions in holders.values() if len(positions) == 1
+    }
+    candidates = sorted(
+        by_group,
+        key=lambda position: (
+            position not in unique_to,
+            -len(by_group[position]),
+            position,
+        ),
+    )[:COVER_SEARCH_WIDTH]
+
+    for size in range(max(spread_needed, 1), maximum_spread + 1):
+        best: tuple[int, tuple[int, ...]] | None = None
+        for combination in itertools.combinations(candidates, size):
+            covered = set().union(*(by_group[position] for position in combination))
+            if len(covered) < members_needed:
+                continue
+            if not _distinct_members(combination, by_group):
+                continue
+            parents = len(
+                {
+                    parent_of.get(position, str(position))
+                    for position in combination
+                }
+            )
+            if best is None or -parents < best[0]:
+                best = (-parents, combination)
+        if best is not None:
+            return tuple(sorted(best[1]))
+    return None

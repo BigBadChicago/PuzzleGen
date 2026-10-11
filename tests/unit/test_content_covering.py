@@ -285,6 +285,47 @@ class TestCoverForChoosesUsableCovers:
         assert len(cover) == 3
         assert 0 in cover
 
+    def test_the_ceiling_does_not_commit_to_the_biggest_holders(self):
+        """Four groups holding the same four members, and one holding a fifth.
+
+        Five members over four groups is possible and only by using the
+        small one. Taking the biggest holders first fills the ceiling with
+        groups that overlap and then reports that the content cannot do it,
+        which under a ceiling is a wrong answer rather than a worse cover.
+        """
+        by_group = {
+            0: {"a", "b", "c", "d"},
+            1: {"a", "b", "c", "d"},
+            2: {"a", "b", "c", "d"},
+            3: {"a", "b", "c", "d"},
+            4: {"e"},
+        }
+        cover = _cover_for(by_group, 5, 4, None, 4)
+        assert cover is not None
+        assert len(cover) == 4
+        assert 4 in cover
+
+    def test_a_cover_needs_a_member_of_its_own_for_each_group(self):
+        """Three groups, two of which hold nothing but the same member.
+
+        Every group in a cover gives one member up, so a group whose only
+        member another group has already given is not in the cover. The union
+        is large enough and the cover is still impossible.
+        """
+        by_group = {0: {"a"}, 1: {"a"}, 2: {"b", "c"}}
+        assert _cover_for(by_group, 3, 3, None, 3) is None
+
+    def test_a_group_whose_member_can_move_is_still_usable(self):
+        """The same shape with the shared member available elsewhere.
+
+        Group 2 holds ``a`` as well, so it can take ``b`` and leave ``a`` to
+        group 0. Assigning the smallest free member group by group gets this
+        wrong, which is why the check searches rather than assigns.
+        """
+        by_group = {0: {"a"}, 1: {"b"}, 2: {"a", "b", "c"}}
+        cover = _cover_for(by_group, 3, 3, None, 3)
+        assert cover == (0, 1, 2)
+
     def test_none_when_the_members_need_more_groups_than_the_ceiling(self):
         """Every group holds one member, so four members need four groups.
 
