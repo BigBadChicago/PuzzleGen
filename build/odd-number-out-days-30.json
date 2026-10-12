@@ -1,0 +1,877 @@
+[
+  {
+    "answer": 66,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-01",
+    "difficulty": 0.457,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 42,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 85,
+    "tiles": [
+      "10",
+      "20",
+      "66",
+      "75",
+      "80",
+      "85",
+      "95"
+    ]
+  },
+  {
+    "answer": 54,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-02",
+    "difficulty": 0.572,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "multiple of three",
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 30,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 56,
+    "tiles": [
+      "25",
+      "36",
+      "49",
+      "54",
+      "81"
+    ]
+  },
+  {
+    "answer": 44,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-03",
+    "difficulty": 0.568,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 36,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 39,
+    "tiles": [
+      "39",
+      "44",
+      "51",
+      "60",
+      "66",
+      "78"
+    ]
+  },
+  {
+    "answer": 10,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-04",
+    "difficulty": 0.45,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 36,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 89,
+    "tiles": [
+      "10",
+      "42",
+      "45",
+      "93",
+      "96",
+      "99"
+    ]
+  },
+  {
+    "answer": 93,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-05",
+    "difficulty": 0.465,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "prime number",
+    "readings": 1,
+    "readings_examined": 18,
+    "reason": "",
+    "reasons": [
+      "prime number"
+    ],
+    "spread": 80,
+    "tiles": [
+      "13",
+      "17",
+      "23",
+      "67",
+      "71",
+      "93"
+    ]
+  },
+  {
+    "answer": 71,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-06",
+    "difficulty": 0.504,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 42,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 57,
+    "tiles": [
+      "33",
+      "39",
+      "48",
+      "51",
+      "71",
+      "72",
+      "90"
+    ]
+  },
+  {
+    "answer": 40,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-07",
+    "difficulty": 0.512,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 42,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 69,
+    "tiles": [
+      "27",
+      "36",
+      "39",
+      "40",
+      "66",
+      "96"
+    ]
+  },
+  {
+    "answer": 58,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-08",
+    "difficulty": 0.49,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 36,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 65,
+    "tiles": [
+      "16",
+      "25",
+      "36",
+      "49",
+      "58",
+      "81"
+    ]
+  },
+  {
+    "answer": 87,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-09",
+    "difficulty": 0.506,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "prime number",
+    "readings": 1,
+    "readings_examined": 10,
+    "reason": "",
+    "reasons": [
+      "prime number"
+    ],
+    "spread": 56,
+    "tiles": [
+      "31",
+      "53",
+      "79",
+      "83",
+      "87"
+    ]
+  },
+  {
+    "answer": 57,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-10",
+    "difficulty": 0.596,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number",
+      "multiple of ten"
+    ],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 25,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 50,
+    "tiles": [
+      "20",
+      "57",
+      "60",
+      "65",
+      "70"
+    ]
+  },
+  {
+    "answer": 48,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-11",
+    "difficulty": 0.552,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number"
+    ],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 36,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 48,
+    "tiles": [
+      "16",
+      "25",
+      "36",
+      "48",
+      "49",
+      "64"
+    ]
+  },
+  {
+    "answer": 83,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-12",
+    "difficulty": 0.569,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 20,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 48,
+    "tiles": [
+      "48",
+      "51",
+      "83",
+      "93",
+      "96"
+    ]
+  },
+  {
+    "answer": 53,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-13",
+    "difficulty": 0.561,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 35,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 40,
+    "tiles": [
+      "45",
+      "53",
+      "60",
+      "80",
+      "85"
+    ]
+  },
+  {
+    "answer": 53,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-14",
+    "difficulty": 0.499,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 56,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 75,
+    "tiles": [
+      "10",
+      "15",
+      "25",
+      "53",
+      "65",
+      "80",
+      "85"
+    ]
+  },
+  {
+    "answer": 68,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-15",
+    "difficulty": 0.474,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 35,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 75,
+    "tiles": [
+      "21",
+      "27",
+      "39",
+      "66",
+      "68",
+      "72",
+      "96"
+    ]
+  },
+  {
+    "answer": 25,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-16",
+    "difficulty": 0.539,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 49,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 53,
+    "tiles": [
+      "25",
+      "45",
+      "48",
+      "54",
+      "60",
+      "72",
+      "78"
+    ]
+  },
+  {
+    "answer": 11,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-17",
+    "difficulty": 0.504,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 42,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 74,
+    "tiles": [
+      "11",
+      "30",
+      "35",
+      "45",
+      "60",
+      "85"
+    ]
+  },
+  {
+    "answer": 11,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-18",
+    "difficulty": 0.462,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 35,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 82,
+    "tiles": [
+      "11",
+      "39",
+      "48",
+      "57",
+      "78",
+      "84",
+      "93"
+    ]
+  },
+  {
+    "answer": 30,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-19",
+    "difficulty": 0.49,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 49,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 65,
+    "tiles": [
+      "16",
+      "25",
+      "30",
+      "36",
+      "49",
+      "64",
+      "81"
+    ]
+  },
+  {
+    "answer": 23,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-20",
+    "difficulty": 0.53,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 25,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 65,
+    "tiles": [
+      "16",
+      "23",
+      "49",
+      "64",
+      "81"
+    ]
+  },
+  {
+    "answer": 43,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-21",
+    "difficulty": 0.482,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 42,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 70,
+    "tiles": [
+      "10",
+      "15",
+      "43",
+      "70",
+      "75",
+      "80"
+    ]
+  },
+  {
+    "answer": 87,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-22",
+    "difficulty": 0.52,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 30,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 67,
+    "tiles": [
+      "20",
+      "35",
+      "40",
+      "45",
+      "87"
+    ]
+  },
+  {
+    "answer": 77,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-23",
+    "difficulty": 0.479,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 28,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 72,
+    "tiles": [
+      "24",
+      "42",
+      "54",
+      "57",
+      "75",
+      "77",
+      "96"
+    ]
+  },
+  {
+    "answer": 72,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-24",
+    "difficulty": 0.553,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number",
+      "multiple of three"
+    ],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 35,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 62,
+    "tiles": [
+      "10",
+      "25",
+      "45",
+      "60",
+      "72"
+    ]
+  },
+  {
+    "answer": 74,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-25",
+    "difficulty": 0.458,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "multiple of three",
+    "readings": 1,
+    "readings_examined": 10,
+    "reason": "",
+    "reasons": [
+      "multiple of three"
+    ],
+    "spread": 84,
+    "tiles": [
+      "12",
+      "72",
+      "74",
+      "78",
+      "96"
+    ]
+  },
+  {
+    "answer": 68,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-26",
+    "difficulty": 0.53,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number"
+    ],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 25,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 65,
+    "tiles": [
+      "16",
+      "25",
+      "64",
+      "68",
+      "81"
+    ]
+  },
+  {
+    "answer": 66,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-27",
+    "difficulty": 0.57,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number",
+      "multiple of three"
+    ],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 25,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 65,
+    "tiles": [
+      "16",
+      "36",
+      "49",
+      "66",
+      "81"
+    ]
+  },
+  {
+    "answer": 47,
+    "board_size": 5,
+    "completeness": "COMPLETE",
+    "day": "2026-10-28",
+    "difficulty": 0.524,
+    "drawn_size": 5,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "odd number"
+    ],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 30,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 65,
+    "tiles": [
+      "16",
+      "25",
+      "47",
+      "64",
+      "81"
+    ]
+  },
+  {
+    "answer": 38,
+    "board_size": 6,
+    "completeness": "COMPLETE",
+    "day": "2026-10-29",
+    "difficulty": 0.515,
+    "drawn_size": 6,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [
+      "even number"
+    ],
+    "on_target": true,
+    "property_name": "multiple of five",
+    "readings": 1,
+    "readings_examined": 36,
+    "reason": "",
+    "reasons": [
+      "multiple of five"
+    ],
+    "spread": 70,
+    "tiles": [
+      "10",
+      "38",
+      "40",
+      "45",
+      "75",
+      "80"
+    ]
+  },
+  {
+    "answer": 55,
+    "board_size": 7,
+    "completeness": "COMPLETE",
+    "day": "2026-10-30",
+    "difficulty": 0.49,
+    "drawn_size": 7,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_readings": [],
+    "on_target": true,
+    "property_name": "square number",
+    "readings": 1,
+    "readings_examined": 49,
+    "reason": "",
+    "reasons": [
+      "square number"
+    ],
+    "spread": 65,
+    "tiles": [
+      "16",
+      "25",
+      "36",
+      "49",
+      "55",
+      "64",
+      "81"
+    ]
+  }
+]

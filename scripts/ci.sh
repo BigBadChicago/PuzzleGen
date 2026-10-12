@@ -161,44 +161,68 @@ task_snapshot() {
   return "$status"
 }
 
+# The three games the symbolic snapshot serves, and where each writes its run.
+#
+# One line per game rather than a glob, because the day driver's flags and the
+# summary renderer are the game's own: a glob would have to guess both. Adding
+# a fourth symbolic game is a line here, which is the right size of edit for
+# a claim this file is making on that game's behalf.
+SYMBOLIC_GAMES="figures:shape-trio numbers:odd-number-out digits:digit-lock"
+
 task_symbolic() {
   # The shipping claim for the symbolic games, rebuilt rather than trusted.
   #
   # Affordable in a way the lexical snapshot is not: the content is three
   # declarations, so there is no model, no network and no lexicon, and the
-  # whole build takes seconds. That makes it the one day run this repository
+  # whole build takes seconds. That makes these the day runs this repository
   # can regenerate on every change and compare to what is committed, which is
   # the same mechanism coverage.yml applies to the coverage artifacts and for
   # the same reason: a committed artifact that no longer matches the code is
   # this project's recurring failure.
   local days="${DAYS:-30}" start="${START:-2026-10-01}" difficulty="${DIFFICULTY:-medium}"
-  local json=build/shape-trio-days-30.json status=0 changed=no
+  local status=0 changed=no
   if ! bash docs/build-symbolic-snapshot.sh; then
     printf '### Symbolic\n\n**build failed**: see the log above this summary\n' > "$SUMMARY"
     publish
     return 1
   fi
-  # Written to the committed path so a diff is the comparison, pinned to the
-  # snapshot's own time because content past its review date is refused stale.
-  python3 games/figures/tools/generate_days.py --db build/graph-symbolic.sqlite \
-    --start "$start" --days "$days" --difficulty "$difficulty" \
-    --now "$SYMBOLIC_NOW" --json "$json" || status=$?
-  if [ ! -s "$json" ]; then
-    printf '### Symbolic\n\n**day generation failed**: see the log above this summary\n' > "$SUMMARY"
-    publish
-    return 1
-  fi
-  # status rather than diff, so an untracked run counts as changed. A plain
-  # `git diff` is empty for a file git has never seen, which would report a
-  # brand new day run as matching the committed one.
-  if [ -n "$(git status --porcelain -- "$json")" ]; then
-    changed=yes
-    status=1
-  fi
+
+  : > "$OUT/symbolic.md"
+  for entry in $SYMBOLIC_GAMES; do
+    local game="${entry%%:*}" slug="${entry##*:}" json
+    json="build/$slug-days-$days.json"
+    # Written to the committed path so a diff is the comparison, pinned to the
+    # snapshot's own time because content past its review date is refused
+    # stale.
+    python3 "games/$game/tools/generate_days.py" --db build/graph-symbolic.sqlite \
+      --start "$start" --days "$days" --difficulty "$difficulty" \
+      --now "$SYMBOLIC_NOW" --json "$json" || status=$?
+    if [ ! -s "$json" ]; then
+      printf '### Symbolic\n\n**%s: day generation failed**: see the log above\n' \
+        "$game" > "$SUMMARY"
+      publish
+      return 1
+    fi
+    # Two checks, because build/ is gitignored and one of them alone is
+    # blind. `git status --porcelain` reports a modified tracked file and says
+    # nothing at all about an ignored untracked one, so a brand new game's
+    # run would be reported as matching a committed run that does not exist.
+    # The ls-files check is what catches that.
+    if ! git ls-files --error-unmatch "$json" >/dev/null 2>&1; then
+      changed=yes
+      status=1
+    elif [ -n "$(git status --porcelain -- "$json")" ]; then
+      changed=yes
+      status=1
+    fi
+    python3 scripts/ci_summary.py "$slug-days" "$json" >> "$OUT/symbolic.md"
+    printf '\n' >> "$OUT/symbolic.md"
+  done
+
   {
-    printf '### Symbolic snapshot\n\n- days from %s at %s\n- committed run changed: %s\n\n' \
+    printf '### Symbolic snapshot\n\n- days from %s at %s\n- committed runs changed: %s\n\n' \
       "$start" "$difficulty" "$changed"
-    python3 scripts/ci_summary.py trio-days "$json"
+    cat "$OUT/symbolic.md"
   } > "$SUMMARY"
   publish
   return "$status"
