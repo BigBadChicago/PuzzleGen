@@ -97,6 +97,13 @@ class RejectionReason(StrEnum):
     TAXONOMY_DEPTH_MISMATCH = "TAXONOMY_DEPTH_MISMATCH"
     WORD_FREQUENCY_MISMATCH = "WORD_FREQUENCY_MISMATCH"
     FREQUENCY_SPREAD_TOO_WIDE = "FREQUENCY_SPREAD_TOO_WIDE"
+    #: The entity asserts the queried predicate with a value outside the
+    #: bounds the query set. Its own reason rather than a silent absence from
+    #: the pool, because a numeric game asking for the two-digit squares and
+    #: getting nothing needs to know whether the predicate was missing or
+    #: every value fell outside the window: the first wants a different
+    #: predicate, the second a wider one.
+    VALUE_OUT_OF_RANGE = "VALUE_OUT_OF_RANGE"
 
     # Governance gates
     STALE_SOURCE = "STALE_SOURCE"

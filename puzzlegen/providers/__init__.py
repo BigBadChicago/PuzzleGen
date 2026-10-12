@@ -31,6 +31,11 @@ from .frequency import (
     band_for_zipf,
     band_spread,
 )
+from .generated import (
+    FigureProvider,
+    NumberRangeProvider,
+    spoken_number,
+)
 from .wordnet import WordNetLexiconProvider
 
 __all__ = [
@@ -39,9 +44,11 @@ __all__ = [
     "DevHashEmbeddingProvider",
     "EmbeddingDescriptor",
     "EmbeddingProvider",
+    "FigureProvider",
     "FrequencyProvider",
     "FrequencyScore",
     "NullFrequencyProvider",
+    "NumberRangeProvider",
     "ProviderBundle",
     "ProviderDescriptor",
     "ProviderError",
@@ -59,5 +66,6 @@ __all__ = [
     "centroid",
     "cosine",
     "order_categories",
+    "spoken_number",
     "validate_bundle",
 ]

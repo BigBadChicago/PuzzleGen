@@ -21,6 +21,7 @@ from .query import (
     Operation,
     PathView,
     RelationshipView,
+    ResultOrder,
     resolve_queries,
 )
 from .review import (
@@ -73,6 +74,7 @@ __all__ = [
     "GroupSimilarity",
     "GroupView",
     "GroupingMode",
+    "ResultOrder",
     "ImportReport",
     "LeacockChodorowSimilarity",
     "NormalizationError",

@@ -67,12 +67,20 @@ FORBIDDEN_FOR_GAMES = {
 #: tooling and as every other game. It reads entities through the views a game
 #: already holds and touches no store, so it grants no access the port does
 #: not.
+#:
+#: ``puzzlegen.symbols`` is here on exactly the same terms. It owns the
+#: decisions about what an entity looks like when it is not a word -- the
+#: glyph a client draws, the label a reader says, the position on a scale --
+#: and a game over digits, numbers or simple objects must reach the same
+#: answers as every other game and as the engine's own presentation layer. It
+#: too reads only the views a game already holds.
 ALLOWED_FOR_GAMES = {
     "puzzlegen.content.port",
     "puzzlegen.content.query",
     "puzzlegen.core",
     "puzzlegen.engine",
     "puzzlegen.surface",
+    "puzzlegen.symbols",
 }
 
 #: Layer order. A module may import from its own layer and any layer below it,
@@ -80,7 +88,21 @@ ALLOWED_FOR_GAMES = {
 #: ``surface`` sits above content and below engine: it consumes entities
 #: through the content layer's views and is called by the engine's games,
 #: which is the dependency direction the subsystem was designed for.
-LAYERS = ["core", "graph", "providers", "content", "surface", "engine", "ops", "cli"]
+#: ``symbols`` is a peer of ``surface``: same position, same reason, and
+#: neither imports the other. The layer rule alone does not say that, since a
+#: module may import from its own layer, so
+#: ``TestTheFormSubsystemsStayPeers`` says it.
+LAYERS = [
+    "core",
+    "graph",
+    "providers",
+    "content",
+    "surface",
+    "symbols",
+    "engine",
+    "ops",
+    "cli",
+]
 
 
 #: Test support, inside the package but not part of the runtime.
@@ -387,6 +409,76 @@ class TestLayerDirection:
                 if "repositories" in module or "store" in module:
                     violations.append(f"{path.relative_to(ROOT)} imports {module!r}")
         assert not violations, "games must own no storage:\n" + "\n".join(violations)
+
+
+class TestTheFormSubsystemsStayPeers:
+    """``surface`` and ``symbols`` answer different questions, separately.
+
+    One says what an entity's letters are, the other what it looks like when
+    it is not a word. They sit on the same layer, which the layer rule permits
+    importing across, and they must not: a letter question answered through a
+    glyph would make a lexical board depend on a figure's drawing, and a glyph
+    derived from a spelling is the shortcut that would put ``periwinkle`` on a
+    tile sized for ``7``. Each reads entity views and nothing else.
+    """
+
+    def test_neither_form_subsystem_imports_the_other(self):
+        pairs = (("surface", "symbols"), ("symbols", "surface"))
+        violations: list[str] = []
+        for layer, other in pairs:
+            for path in python_files(PACKAGE / layer):
+                for module in imported_modules(path):
+                    if module.startswith(f"puzzlegen.{other}"):
+                        violations.append(
+                            f"{path.relative_to(ROOT)} imports {module!r}"
+                        )
+        assert not violations, (
+            "the form subsystems are peers and must stay independent:\n"
+            + "\n".join(violations)
+        )
+
+    def test_neither_form_subsystem_reaches_the_graph_or_a_provider(self):
+        """Both consume views, so neither needs the layers that produce them."""
+        forbidden = {
+            "puzzlegen.graph",
+            "puzzlegen.providers",
+            "puzzlegen.content.service",
+            "puzzlegen.content.snapshots",
+        }
+        violations: list[str] = []
+        for layer in ("surface", "symbols"):
+            for path in python_files(PACKAGE / layer):
+                for module in imported_modules(path):
+                    banned = is_forbidden(module, forbidden)
+                    if banned:
+                        violations.append(
+                            f"{path.relative_to(ROOT)} imports {module!r}"
+                        )
+        assert not violations, (
+            "a form subsystem reads entity views, never the store behind "
+            "them:\n" + "\n".join(violations)
+        )
+
+    def test_the_glyph_predicates_agree_with_the_provider_that_emits_them(self):
+        """One string, two modules, and no table in a third place.
+
+        The symbolic form subsystem reads predicates a provider writes. They
+        are separate layers and cannot import each other, so the names are
+        duplicated by necessity, and a silent disagreement would be a board
+        with no glyphs and no error. This is the check that makes the
+        duplication safe.
+        """
+        from puzzlegen.providers import generated
+        from puzzlegen.symbols import forms
+
+        for name in ("GLYPH", "SPOKEN", "VALUE"):
+            provider_side = getattr(generated, name)
+            subsystem_side = getattr(forms, f"{name}_PREDICATE")
+            assert provider_side == subsystem_side, (
+                f"the provider writes {provider_side!r} and the subsystem "
+                f"reads {subsystem_side!r}"
+            )
+        assert generated.SYMBOL_KIND == forms.KIND_PREDICATE
 
 
 class TestProviderIsolation:

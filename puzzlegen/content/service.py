@@ -34,6 +34,7 @@ from .query import (
     Operation,
     PathView,
     RelationshipView,
+    ResultOrder,
 )
 from .representatives import choose_representatives
 from .similarity import (
@@ -80,6 +81,39 @@ DIFFICULTY_TO_FREQUENCY: dict[DifficultyBand, tuple[FrequencyBand, ...]] = {
     DifficultyBand.HARD: (FrequencyBand.UNCOMMON, FrequencyBand.RARE),
     DifficultyBand.EXPERT: (FrequencyBand.RARE, FrequencyBand.OBSCURE),
 }
+
+
+def _numeric(fact: Fact) -> float | None:
+    """A fact's value as a number, or ``None`` when it is not one.
+
+    Booleans first, because ``isinstance(True, int)`` is true in Python and a
+    flag sorted as zero or one would put every unordered entity in the middle
+    of a numeric board rather than at its end.
+    """
+    value = fact.value.as_python()
+    if isinstance(value, bool) or value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    return None
+
+
+def _within(fact: Fact, query: ContentQuery) -> bool:
+    """Whether a fact's value falls inside the query's window.
+
+    A non-numeric value is outside every window rather than inside it. The
+    alternative is a string value passing a numeric bound it was never
+    compared against, which is the silent acceptance the query layer refuses
+    a windowless operation for.
+    """
+    value = _numeric(fact)
+    if value is None:
+        return False
+    if query.predicate_at_least is not None and value < query.predicate_at_least:
+        return False
+    if query.predicate_at_most is not None and value > query.predicate_at_most:
+        return False
+    return True
 
 
 class ContentService:
@@ -393,7 +427,12 @@ class ContentService:
         index = self.taxonomy(query.taxonomy)
 
         if query.predicate is not None:
-            pool = [e for e in pool if self._asserts(e.id, query)]
+            pool = [e for e in pool if self._asserts(e.id, query, rejected)]
+
+        # Ordering before the limit, which is the whole reason it is part of
+        # the request. Truncating an id-ordered pool and sorting the remainder
+        # would hand a caller a sorted sample of an arbitrary slice.
+        pool = self._ordered(pool, query)
 
         views = tuple(
             self._view(entity, query, game_id, taxonomy=index)
@@ -401,12 +440,67 @@ class ContentService:
         )
         return self._finish(query, views=views, examined=len(pool), rejected=rejected)
 
-    def _asserts(self, entity_id: str, query: ContentQuery) -> bool:
+    def _asserts(
+        self,
+        entity_id: str,
+        query: ContentQuery,
+        rejected: dict[str, int] | None = None,
+    ) -> bool:
         facts = self._repos.facts.by_subject_predicate(entity_id, query.predicate or "")
         usable = [f for f in facts if f.status is ReviewStatus.ACTIVE]
-        if query.predicate_value is None:
+        if query.predicate_value is not None:
+            return any(f.value.as_python() == query.predicate_value for f in usable)
+        if query.predicate_at_least is None and query.predicate_at_most is None:
             return bool(usable)
-        return any(f.value.as_python() == query.predicate_value for f in usable)
+        if not usable:
+            return False
+        # Any value inside the window keeps the entity. An entity asserting
+        # the same predicate twice is unusual and legal -- two sources, two
+        # values -- and refusing it because one of them falls outside would
+        # make the result depend on which fact was written first.
+        inside = any(_within(f, query) for f in usable)
+        if not inside and rejected is not None:
+            key = RejectionReason.VALUE_OUT_OF_RANGE.value
+            rejected[key] = rejected.get(key, 0) + 1
+        return inside
+
+    def _ordered(
+        self, pool: Sequence[Entity], query: ContentQuery
+    ) -> list[Entity]:
+        """``pool`` in the order the query asked for.
+
+        An entity with no numeric value under the ordering predicate sorts
+        last, with its id breaking the tie, rather than raising. Reaching here
+        means it passed the predicate filter, so it does assert the predicate;
+        what it does not have is a number, and a board that asked for an order
+        should lose that tile to the end rather than lose the whole day.
+        """
+        if query.order is ResultOrder.ID:
+            return list(pool)
+        descending = query.order is ResultOrder.PREDICATE_DESCENDING
+        predicate = query.predicate or ""
+
+        def rank(entity: Entity) -> tuple[int, float, str]:
+            value = self._numeric_value(entity.id, predicate)
+            if value is None:
+                return (1, 0.0, entity.id)
+            return (0, -value if descending else value, entity.id)
+
+        return sorted(pool, key=rank)
+
+    def _numeric_value(self, entity_id: str, predicate: str) -> float | None:
+        """The smallest active numeric value of ``predicate`` on an entity.
+
+        The smallest rather than any, so two facts asserting different values
+        order the entity reproducibly instead of by write order.
+        """
+        found = [
+            _numeric(fact)
+            for fact in self._repos.facts.by_subject_predicate(entity_id, predicate)
+            if fact.status is ReviewStatus.ACTIVE
+        ]
+        numbers = [value for value in found if value is not None]
+        return min(numbers) if numbers else None
 
     def _find_siblings(
         self, query: ContentQuery, game_id: str | None

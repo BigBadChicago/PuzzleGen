@@ -36,6 +36,40 @@ Two modes:
         --curated content/seeds/numbers.curated.json:parity \\
         --frequency content/seeds/frequency.json \\
         --embeddings content/seeds/embeddings.json
+
+    # a snapshot with no words in it at all
+    python tools/build_snapshot.py --db build/graph-symbolic.sqlite \\
+        --label symbolic.1 \\
+        --generated numbers:0-99:numbers \\
+        --generated figures:default:figures
+
+A lexicon is no longer required, and that is a decision rather than a
+loosening. ``--lexicon`` was mandatory because every content source this tool
+knew about was lexical, so a build with none was a build with nothing. It is
+now one source among three, and a snapshot of digits, numbers and simple
+figures is a legitimate snapshot that happens to contain no words: requiring a
+WordNet export to build one would make a lexicon the price of entry for games
+that have no use for it. What is still required is *some* source, which is
+what the tool checks instead.
+
+``--generated`` names a provider whose content is a declaration rather than a
+file, as ``path:taxonomy`` is for a curated one. Each value is
+``kind:declaration:taxonomy``:
+
+* ``numbers:LOW-HIGH:TAXONOMY`` -- every integer from LOW to HIGH, with the
+  properties that sort it. ``numbers:0-9:digits`` and ``numbers:0-99:numbers``
+  in one build give a digits taxonomy and a numbers taxonomy over the same
+  entities, which is the shared graph doing on numbers what it does on words.
+* ``figures:default:TAXONOMY`` -- the default attribute space of simple
+  figures. ``default`` is the only declaration the flag accepts today; a
+  smaller space is a legitimate thing to want and will be a syntax here when
+  something wants it, rather than a syntax guessing at what it would be.
+
+Frequency and embeddings are both optional and neither is meaningful for
+generated content: a figure has no corpus frequency and the vector of a
+triangle is a vector of its English name. A symbolic build therefore passes
+neither, and the snapshot is publishable, because the gates that need them are
+the ones only a lexical game asks for.
 """
 
 from __future__ import annotations
@@ -56,6 +90,7 @@ from puzzlegen.content.snapshots import (
 )
 from puzzlegen.graph import GraphRepositories, InMemoryDocumentStore, SqliteDocumentStore
 from puzzlegen.providers.curated import CuratedJSONProvider
+from puzzlegen.providers.generated import FigureProvider, NumberRangeProvider
 from puzzlegen.providers.embeddings import DevHashEmbeddingProvider, TableEmbeddingProvider
 from puzzlegen.providers.frequency import TableFrequencyProvider
 from puzzlegen.providers.wordnet import WordNetLexiconProvider
@@ -102,11 +137,78 @@ def parse_curated_spec(value: str) -> tuple[Path, str]:
     return Path(path_part), taxonomy
 
 
+#: The generated-provider kinds ``--generated`` understands.
+#:
+#: A fixed set rather than an import path, because a flag that could name any
+#: importable class would let a build run arbitrary code chosen on a command
+#: line. The cost is that a new generated provider needs a line here; that is
+#: the right cost for the thing this tool does.
+GENERATED_KINDS = ("numbers", "figures")
+
+
+def parse_generated_spec(value: str) -> tuple[str, str, str]:
+    """``kind:declaration:taxonomy`` -> the three parts, validated.
+
+    Split from the right like ``--curated``, so the taxonomy is unambiguous,
+    then from the left for the kind, which leaves the declaration in the
+    middle holding whatever colons it wants. Nothing does today; a range uses
+    a hyphen precisely so this stays true.
+    """
+    rest, _, taxonomy = value.rpartition(":")
+    kind, _, declaration = rest.partition(":")
+    if not kind or not declaration or not taxonomy:
+        raise ValueError(
+            f"--generated expects kind:declaration:taxonomy, got {value!r}"
+        )
+    if kind not in GENERATED_KINDS:
+        raise ValueError(
+            f"--generated kind {kind!r} is not one of "
+            f"{', '.join(GENERATED_KINDS)}"
+        )
+    if taxonomy in RESERVED_TAXONOMIES:
+        raise ValueError(
+            f"--generated taxonomy {taxonomy!r} is reserved "
+            f"({', '.join(sorted(RESERVED_TAXONOMIES))})"
+        )
+    return kind, declaration, taxonomy
+
+
+def generated_provider(
+    kind: str, declaration: str, taxonomy: str, now: dt.datetime
+) -> object:
+    """One provider from its declaration.
+
+    The declaration is the provider's version string as well as its content,
+    so a build that widened a range cannot claim to be the same source as the
+    one before it. That property lives in the provider; this only parses.
+    """
+    if kind == "numbers":
+        low, _, high = declaration.partition("-")
+        if not high:
+            raise ValueError(
+                f"a numbers declaration is LOW-HIGH, got {declaration!r}"
+            )
+        return NumberRangeProvider(
+            int(low),
+            int(high),
+            name=taxonomy,
+            kind="DIGIT" if int(high) <= 9 else "NUMBER",
+            root_name="digit" if int(high) <= 9 else "number",
+            now=now,
+        )
+    if declaration != "default":
+        raise ValueError(
+            f"the only figure declaration is 'default', got {declaration!r}"
+        )
+    return FigureProvider(name=taxonomy, now=now)
+
+
 def input_lists(
     lexicons: list[Path],
     overlay: Path | None,
     now: dt.datetime,
     extra_curated: tuple[tuple[Path, str], ...] = (),
+    generated: tuple[tuple[str, str, str], ...] = (),
 ) -> tuple[list[str], list[str]]:
     """The two lists the export commands consume.
 
@@ -126,7 +228,9 @@ def input_lists(
     repos = GraphRepositories(InMemoryDocumentStore())
     try:
         builder = SnapshotBuilder(repos, now=now)
-        for provider, options in providers(lexicons, overlay, now, extra_curated):
+        for provider, options in providers(
+            lexicons, overlay, now, extra_curated, generated
+        ):
             builder.import_provider(provider, **options)
         entities = sorted(repos.entities.iter_all(), key=lambda e: e.canonical_name)
         terms = [e.canonical_name for e in entities]
@@ -142,8 +246,9 @@ def write_inputs(
     overlay: Path | None,
     now: dt.datetime,
     extra_curated: tuple[tuple[Path, str], ...] = (),
+    generated: tuple[tuple[str, str, str], ...] = (),
 ) -> tuple[Path, Path]:
-    terms, texts = input_lists(lexicons, overlay, now, extra_curated)
+    terms, texts = input_lists(lexicons, overlay, now, extra_curated, generated)
     directory.mkdir(parents=True, exist_ok=True)
     terms_path = directory / "terms.txt"
     texts_path = directory / "texts.txt"
@@ -157,6 +262,7 @@ def providers(
     overlay: Path | None,
     now: dt.datetime,
     extra_curated: tuple[tuple[Path, str], ...] = (),
+    generated: tuple[tuple[str, str, str], ...] = (),
 ) -> list[tuple]:
     """Lexicon imports first, then the overlay, then any game's own taxonomy.
 
@@ -192,6 +298,19 @@ def providers(
         chosen.append(
             (
                 CuratedJSONProvider(path, name=taxonomy, now=now),
+                {"taxonomy": taxonomy, "entity_identity": "lemma"},
+            )
+        )
+    # Generated content last, and the ordering is load bearing for exactly one
+    # reason: where a generated entity is also a lexical one -- "seven" is a
+    # word as well as a number -- the merge keeps the earlier record's
+    # definition, so a lexicon's gloss survives a number range importing over
+    # it. The reverse would replace "a cardinal number" with "the number
+    # seven" and lose the sense a lexical game reads.
+    for kind, declaration, taxonomy in generated:
+        chosen.append(
+            (
+                generated_provider(kind, declaration, taxonomy, now),
                 {"taxonomy": taxonomy, "entity_identity": "lemma"},
             )
         )
@@ -280,7 +399,7 @@ def existing_content(repos) -> dict[str, int]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--lexicon", action="append", required=True, type=Path)
+    parser.add_argument("--lexicon", action="append", default=[], type=Path)
     parser.add_argument("--overlay", type=Path, default=OVERLAY_SEED)
     parser.add_argument(
         "--curated",
@@ -293,6 +412,18 @@ def main(argv: list[str] | None = None) -> int:
             "under, for a game's own content. Repeatable. Taxonomy must not "
             "be 'wordnet' or 'overlay', and each --curated needs a distinct "
             "taxonomy."
+        ),
+    )
+    parser.add_argument(
+        "--generated",
+        action="append",
+        default=[],
+        metavar="KIND:DECLARATION:TAXONOMY",
+        type=parse_generated_spec,
+        help=(
+            "a provider whose content is a declaration rather than a file, "
+            "and the taxonomy it imports under. Repeatable. "
+            "numbers:LOW-HIGH:TAXONOMY or figures:default:TAXONOMY."
         ),
     )
     parser.add_argument("--write-inputs", type=Path, default=None)
@@ -328,11 +459,24 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    curated_taxonomies = [taxonomy for _, taxonomy in args.curated]
-    duplicated = {t for t in curated_taxonomies if curated_taxonomies.count(t) > 1}
+    taxonomies = [taxonomy for _, taxonomy in args.curated] + [
+        taxonomy for _, _, taxonomy in args.generated
+    ]
+    duplicated = {t for t in taxonomies if taxonomies.count(t) > 1}
     if duplicated:
         print(
-            f"--curated taxonomy given more than once: {', '.join(sorted(duplicated))}",
+            f"taxonomy given more than once: {', '.join(sorted(duplicated))}",
+            file=sys.stderr,
+        )
+        return 2
+
+    # Some source, rather than a lexical one. A build with no content at all
+    # would seal an empty snapshot, which every later gate would then report
+    # as a content shortage rather than as the empty build it is.
+    if not args.lexicon and not args.curated and not args.generated:
+        print(
+            "nothing to import: pass at least one --lexicon, --curated or "
+            "--generated",
             file=sys.stderr,
         )
         return 2
@@ -372,6 +516,7 @@ def main(argv: list[str] | None = None) -> int:
             args.overlay,
             dt.datetime.fromisoformat(args.now) if args.now else dt.datetime.now(dt.timezone.utc),
             tuple(args.curated),
+            tuple(args.generated),
         )
         print(f"wrote {terms_path}\nwrote {texts_path}")
         return 0
@@ -412,7 +557,13 @@ def main(argv: list[str] | None = None) -> int:
 
         meta, report = SnapshotBuilder(repos, now=now).build(
             args.label,
-            providers(args.lexicon, args.overlay, now, tuple(args.curated)),
+            providers(
+                args.lexicon,
+                args.overlay,
+                now,
+                tuple(args.curated),
+                tuple(args.generated),
+            ),
             frequency=frequency,
             embeddings=embeddings,
             policy=ActivationPolicy(minimum_confidence=args.minimum_confidence),
