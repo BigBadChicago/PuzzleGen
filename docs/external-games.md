@@ -44,6 +44,12 @@ sandbox, and the sandbox is not the first thing to build.
 | 200,000 candidates offered | all consumed, 63.8 MiB resident growth, run succeeded |
 | `Puzzle` payload ceiling | none; 8 MiB accepted |
 | RNG from a seed and a label | reproduced byte for byte |
+| WASM sandbox instantiation | 34.5 us median, 86.7 us p95 |
+| WASM call, 416 B marshalled both ways | 53.5 us median |
+| WASM call, 1,694 B marshalled both ways | 55.6 us median |
+| WASM call, 20 kB marshalled both ways | 88.8 us median |
+| WASM fuel exhaustion on a runaway loop | deterministic trap, 0 fuel left, repeatable |
+| WASM fuel metering overhead | 122.9 us against 59.5 us on a 100k iteration loop |
 
 How each was taken. The suite figures are `scripts/test-all.sh`, with and
 without `bash docs/build-symbolic-snapshot.sh` having run. The round trip is 30
@@ -54,7 +60,12 @@ symbolic snapshot, plus both lexical games' own fixtures, every `payload`,
 size, parent and child both CPython 3.13. The cold starts are 10 spawns each,
 timed to first reply. The call counts come from a counting proxy around
 `replay_state`. The candidate flood and the payload ceiling were run through the
-real pipeline and the real type.
+real pipeline and the real type. The WASM figures are wasmtime 49.0.0 with
+`consume_fuel` enabled, against a hand written module exporting the
+pointer-and-length ABI in section 1, summing its input bytes so the call does
+work proportional to its argument; 200 instantiations and 300 calls per size.
+They measure a game written in a language that compiles to WASM, which is the
+caveat that matters and is taken up in option B.
 
 Two reproduction notes. The hop and cold start figures are this container's and
 will differ on other hardware; what matters is their ratio to the work they
@@ -141,29 +152,75 @@ machine will not enforce the same thing, which is a correctness difference
 between CI and production unless the weaker configuration is the tested one.
 
 **B. WebAssembly.** The plugin is compiled to WASM and run in an embedded
-runtime with an explicit import list. Nothing is reachable that the host does
-not hand in.
+runtime with an explicit import list, exchanging bytes through the module's
+linear memory rather than through a pipe. The host writes a payload at an
+offset, calls an export with a pointer and a length, and reads an offset and a
+length back. Nothing is reachable that the host does not hand in.
 
-*Benefits.* The strongest isolation of the four and the only one that is the
-same on every host, because the sandbox is the runtime rather than the
-operating system. Startup is far cheaper than a process, so the 337.6 ms is
-not paid. Memory is bounded by the module's linear memory, which is a hard
-number rather than an `setrlimit` guess. Determinism is also better: a WASM
-module has no clock, no entropy source and no filesystem unless one is
-imported, which closes by construction the ways a plugin could become
-nondeterministic.
+*Benefits.* Measured here rather than assumed, and the numbers are decisive on
+every axis except one.
 
-*Costs.* It changes what a game is. The five existing games are Python, and
-Python in WASM means shipping a CPython or Pyodide build inside the sandbox,
-which gives back most of the startup saving and adds a large dependency the
-platform would then own. The alternative is that external games are written in
-a language that targets WASM directly, which makes the external authoring
-experience different from the first party one, and the first party games become
-the only ones exercising the Python path. The protocol surface also has to
-cross a C ABI rather than a pipe, so every boundary type needs a
-representation decision that a JSON pipe does not need. This is the right
-answer for a plugin ecosystem of hundreds; it is a large bet to place on the
-first external author.
+Instantiation is 34.5 us median against the subprocess worker's 337.6 ms, which
+is about 9,800 times cheaper and removes the cost that option A has to build a
+worker pool to amortise. A sandbox per generation, or per call, becomes
+affordable, which is a stronger isolation posture than a pooled worker that
+survives between days.
+
+A call with the real payload marshalled in both directions is 53.5 us at
+416 B and 55.6 us at 1,694 B, against the pipe's 100.8 us and roughly 112 us,
+so about twice as cheap at the sizes these games actually use, and four times
+at 20 kB. Worth being precise about the magnitude: this is a factor of two, not
+an order of magnitude, and most of the 53.5 us is the Python binding rather than
+the sandbox.
+
+The isolation is the same on every host, because the sandbox is the runtime and
+not the operating system, which removes option A's worst property: a
+development machine and a production container enforcing different things.
+
+Determinism is better by construction rather than by policy. A module has no
+clock, no entropy and no filesystem unless one is imported, so the ways a
+plugin could quietly stop being reproducible are closed by the absence of the
+capability rather than by an invariant nobody can enforce across a process
+boundary. Section 3 sets out the capability matrix this implies.
+
+Compute is bounded deterministically. A fuel budget is spent per instruction,
+so a runaway loop traps at a point that depends on the work done and not on how
+fast the machine is: measured, a loop given 100,000 fuel traps with 0 fuel
+remaining, repeatably. That is a materially better answer than a wall clock
+timeout, which is what option A has available and which makes whether a puzzle
+generates depend on machine speed. Metering is not free, at 122.9 us against
+59.5 us on a tight 100,000 iteration loop, which is roughly a doubling of
+compute-bound work and nothing at all on the real boards, whose verifies run
+0.05 ms to 11.82 ms.
+
+Memory is a hard page count rather than an `setrlimit` guess. A 256 page cap is
+16 MiB, which is generous against the measured payloads of 416 B to 1,694 B and
+would have trapped the 200,000 candidate flood that consumed 63.8 MiB in
+process.
+
+*Costs.* One cost, and it is the whole of the decision: it changes what a game
+is written in.
+
+All five games are Python depending on nothing but `puzzlegen`. Python in WASM
+means shipping a CPython or Pyodide build inside the sandbox, and that is the
+number this document does not have: the compiled trivial module above is 14,040
+bytes, and a Python runtime is several orders larger, so the instantiation and
+size figures measured here do not transfer to a Python game and should not be
+quoted as though they do. Measuring that is the first thing anybody choosing
+this option should do, and it is open question 7.
+
+The alternative is that external games are written in a language that targets
+WASM directly. Then the measurements above apply in full, and the cost moves
+from runtime weight to a split authoring model: first party games in Python,
+external games in something else, and the Python path exercised only by the
+games the project writes itself. That is a real cost and it is a smaller one
+than it first sounds, because an external author is already working against a
+published protocol rather than against the Python types.
+
+The protocol also has to cross a pointer-and-length ABI rather than a pipe, so
+every boundary type needs a representation decision. In practice this is
+smaller than it sounds too, because the decision is already made: the types are
+JSON and the ABI carries JSON bytes.
 
 **C. A separate service.** The plugin runs as its own network service, and the
 engine calls it over HTTP or gRPC.
@@ -214,31 +271,50 @@ The four are not really alternatives on one axis. B and C buy isolation by
 changing what a game is, A buys it by changing how a game is called, and D buys
 it by declining to run unreviewed code.
 
-Two measurements decide the order. First, the holes in section 1 mean that
-today a hostile game needs no sandbox escape: it reaches the store through an
-attribute walk on an object it was handed. Second, section 6 shows it does not
-even need that to do the damage that matters, because it can publish a puzzle
-with a fabricated answer through the engine's own accepted gates. Isolation
-contains the expensive attack and leaves the cheap one untouched. Building A
-first would be building the stronger wall around the unlocked door.
+Two measurements decide what comes first. The holes in section 1 mean a hostile
+game today needs no sandbox escape: it reaches the store through an attribute
+walk on an object it was handed. And section 6 shows it does not even need that
+to do the damage that matters, because it can publish a puzzle with a
+fabricated answer through the engine's own accepted gates. Isolation contains
+the expensive attack and leaves the cheap one untouched, so whichever sandbox is
+chosen, building it before the follow-up work in this document would be building
+the stronger wall around the unlocked door.
 
-**Recommended: D now, A staged behind a named trigger, B reconsidered only if
-the trigger fires at scale, C rejected.**
+**Recommended: D now, with the follow-up work first; then A or B behind a named
+trigger; C rejected.**
 
-Concretely. Adopt signature verification and review as the policy for the next
-few external games, because at the current count a maintainer's reading is both
-affordable and strictly better than anything automated. Build A when the first
-author arrives whom the project does not want to review, which is a decision
-someone makes rather than a threshold that is crossed silently. Specify the
-protocol now, because specifying it is cheap and it is what keeps the boundary
-types honest while five more games are written; implementing the transport is
-the expensive half and can wait. C is rejected on reproducibility, which is not
-a cost to be traded but a promise the manifest exists to keep.
+C is rejected outright, and on one ground rather than on cost:
+reproducibility. A remote service can change its own code between a generation
+and its replay and nothing in the manifest would record that it did, which is
+not a trade to be made but the promise the manifest exists to keep.
 
-B stays open rather than rejected. If external games become a real ecosystem,
-its advantages are decisive and its cost is a one time investment; the reason
-not to start there is that the first external author does not justify making
-the first party games second class citizens in their own engine.
+D is right now because at five first party games a maintainer's reading is both
+affordable and strictly better than anything automated, and because signing is
+what makes that reading bind to the bytes that get installed.
+
+**A against B is the interesting choice, and it reduces to one question.** On
+every axis this document could measure, B wins: instantiation 34.5 us against
+337.6 ms, a call about twice as cheap at real payload sizes, identical
+enforcement on every host rather than host specific sandbox configuration,
+determinism by absent capability rather than by unenforceable policy, a
+deterministic fuel budget rather than a determinism-breaking wall clock
+timeout, and memory as a hard page count. A has exactly one advantage left, and
+it is not performance: a game stays Python, which is what all five existing
+games are and what the only authoring experience the project has is built
+around.
+
+So the question is whether an external game must be written in Python. If it
+must, A is the answer and its costs in section 8 are what the project pays. If
+it need not be, B is better on everything measured here, and the thing to
+measure before committing is the one number this document lacks: what a Python
+runtime inside the sandbox costs, if Python is kept anyway.
+
+That is a sharper framing than "A now, B if it scales", and it is a sharpening
+rather than a reversal: the order of work does not change, because the
+follow-up items come first either way and the protocol specification is shared
+between them. What changes is that B should not be treated as the expensive
+option to defer. It is the cheaper option at runtime and the more expensive one
+to adopt, and those are different things.
 
 ## 2. The protocol as a wire format
 
@@ -336,6 +412,44 @@ regenerates three committed thirty day runs and fails if any moved, in seconds,
 with no network and no model. That mechanism is exactly the right one for an
 external game, and it is the strongest determinism control available here
 because it tests the output rather than the author's promises.
+
+### The capability matrix a sandbox should deny by default
+
+Option A can only ask a plugin not to read a clock. Option B can make the clock
+absent. Either way the list of what to deny is the same, and writing it down is
+what turns "the plugin should be deterministic" into something a configuration
+enforces. Deny by default, inject explicitly:
+
+- **Clocks: mocked.** A real clock breaks reproducibility. Inject the day
+  key's own midnight UTC, so a plugin that reads the time reads the same time
+  on every replay.
+- **Randomness: denied.** Every draw comes from the seed and label the protocol
+  passes, which is the only source the manifest records.
+- **Network: denied.** A plugin that can fetch can make a puzzle depend on
+  something no snapshot hash covers.
+- **Filesystem: denied, except a captured `stderr`.** A game holds no
+  filesystem today and should hold none out of process.
+- **Environment: denied, except engine-set flags.** The invariant suite already
+  forbids a game reading the environment in tree.
+- **Compute: a fuel budget, not a wall clock.** See below.
+- **Memory: a hard page count.** 256 pages is 16 MiB, against measured payloads
+  of 416 B to 1,694 B.
+
+The compute row is the one worth arguing about, and it changed my answer. A
+wall clock timeout is the obvious bound and it is determinism-hostile: whether
+a puzzle generates at all would depend on how fast the machine was that day,
+which is exactly the class of thing the seed, the snapshot hash and the version
+set exist to eliminate. A deterministic instruction budget does not have that
+property. Measured under wasmtime: a loop given 100,000 fuel traps with 0 fuel
+remaining, repeatably across runs, and metering costs 122.9 us against 59.5 us
+on a tight 100,000 iteration loop.
+
+In process there is no equivalent, which is worth saying plainly rather than
+pretending otherwise. A cooperative deadline checked between plugin calls
+bounds the pipeline and not the call, so an in-process budget is an
+approximation and a sandboxed one is the real thing. That is an argument for a
+sandbox that this document did not have before, and it applies to B rather than
+to A, since a subprocess has a wall clock and no instruction counter.
 
 One thing does not change. Grading stays a pure function of the puzzle and the
 prior moves, `replay_state` still replays the ledger, and `DeterminismError`
@@ -645,8 +759,11 @@ submission. Measured: 1, 10, 50, 100, 250 and 500 calls at the corresponding
 submission counts, 1.24 ms in process at the 500 move cap. Out of process at
 per-call hops, one submission at the cap costs 56 ms of transport and a maximal
 session costs 14.0 s. So the protocol needs a `replay(puzzle, moves)` verb
-that returns the final state and the per-move outcomes in one exchange. With
-that, a submission is two hops regardless of ledger length.
+that returns the per-move state deltas and outcomes in one exchange. With that,
+a submission is two hops regardless of ledger length. The deltas rather than
+the terminal state only, because `replay_state` walks every move anyway, so
+the per-move record is already computed and discarding it means recomputing it
+whenever anything wants a step by step account.
 
 ### Operational complexity
 
@@ -681,6 +798,78 @@ games keep exactly the path they have today. That also means the hop cost is
 only paid by games whose authors were not reviewed, which is the right place
 for it.
 
+## Proposals considered and not taken
+
+Recorded with reasons rather than dropped, because a design document that
+silently discards a reviewed idea is worse than one that says why.
+
+**Mounting the graph into the sandbox as a read-only data substrate.** The
+proposal is to map a compressed graph or an embedded SQLite snapshot into the
+plugin's memory so a generator can query categories and associations offline at
+near-zero latency, instead of asking for content. Rejected, and it is the one
+idea here that would be a regression rather than a trade.
+
+The port is not a latency device, it is where governance happens. A query
+through it passes `PolicyService`, which applies the minimum confidence and
+freshness gates, and it returns `EntityView`s with provenance, source, review
+status and confidence stripped, which `TestContentPortSurface` enforces field
+by field. A memory mapped snapshot bypasses all of it: the plugin would read
+records that are `CANDIDATE` or `QUARANTINED` as readily as `ACTIVE`, would see
+which provider supplied a fact, and would be choosing content against a policy
+nobody applied. `ContentPort` exposing no `store`, `service` or `connection` is
+an invariant with its own test, and handing the same access in through linear
+memory satisfies the letter of it while inverting the point.
+
+The latency problem it solves is also not one this engine has. A game declares
+its requirements up front and `satisfy` runs them in one batch, which is
+exactly why a plugin can sit behind a process boundary without paying a round
+trip per lookup, and the measured port usage for a real day is two queries.
+
+**Executing plugins on the client, mobile or otherwise.** Several of the
+proposed benefits assume the sandbox runs on a player's device: subprocess
+limits under mobile memory pressure, background task culling, an offline ready
+daily payload. That is not this architecture. There is no client in this
+repository: `puzzlegen/ops` and `puzzlegen/cli` do not exist, and the surface
+that would call `SessionService` is out of scope by the decision taken at the
+start of phase 6. Generation is a once daily batch, and grading is explicitly
+engine side "never in the client, because the client is never given the
+solution". So the mobile objection to option A is real in general and does not
+apply here, and if a client-side execution model is ever wanted it is a much
+larger decision than the transport, because it means giving a device the
+solution.
+
+**Compiling game declarations ahead of time into small WASM binaries.** A
+declaration in this repository is content, three strings such as
+`numbers:0-99:numbers` naming a platform generator, a range and a taxonomy. It
+is not game logic and there is nothing in it to compile. A game's mechanics are
+its eleven plugin methods, written in Python today. So AOT compilation is a real
+option for a game written in a WASM-targeting language and it is not a way
+around the Python question in option B; the 14,040 byte module measured here is
+a hand written one, not a compiled game.
+
+**Platform-owned generators as a limit on novel mechanics.** This critique is
+partly a category error and partly right, and the right part is worth keeping.
+Generators produce entities and facts; they do not define mechanics. An
+external game inventing a symbol matching rule or an intersecting word
+mechanic writes it in `generate_candidates`, `assemble` and `verify`, which are
+entirely its own, and decision 10 does not touch that. What decision 10 limits
+is the *content shape* an external game can introduce, and that limit is real:
+a game needing entities no existing generator produces is blocked on a platform
+change. Section 5 already records it as a real limit, and the mitigation is to
+widen the generator set rather than to let external code into the provider
+layer, because a provider runs at snapshot build time with write access to
+governed records and is the last place untrusted code belongs.
+
+**Signatures generated inside the sandbox to prove a share is genuine.**
+Rejected on threat model. A signature produced by the sandbox is produced by
+code the attacker controls in the case it is meant to defend against, and in
+this architecture there is nothing to forge: the client never holds the
+solution, grading runs engine side, and the share artifact is built by the
+engine from semantic tokens the descriptor declares, through a codepoint
+allowlist and a leak redactor. A share's integrity is already a property of
+where it is built rather than of a signature attached afterwards. Signing is
+the right mechanism one layer out, over the distribution, which is section 7.
+
 ## Follow-up work this proposes
 
 Named here rather than implemented. Each is small, each is independent of the
@@ -714,11 +903,15 @@ verifier's cost.
 sequence, so the cap applies to consumption and not only to screening. Add a
 size cap to `Puzzle.payload` and `Puzzle.solution` in the shape the share layer
 already uses, measured against the largest real board (1,694 B) with
-generous headroom. Add a wall clock budget per plugin call, which in process
-means a cooperative deadline the pipeline checks between calls and out of
-process means a pipe timeout. The first two are small and self contained; the
-third is only fully solvable out of process and should be written as the
-in-process approximation now and replaced later.
+generous headroom. For compute, add a cooperative deadline the pipeline
+checks between plugin calls, and label it an approximation rather than a
+budget, because a wall clock bound is determinism-hostile: whether a day
+generates would start to depend on machine speed. The deterministic version is
+an instruction budget and it needs a sandbox, so the honest in-process fix
+bounds the pipeline's own loop and leaves the call unbounded. The first two
+items are small and self contained; the third should be written down as a known
+approximation so that adopting a sandbox later is an improvement to it rather
+than a discovery.
 
 **F4. Close the three invariant evasions, and say what the invariants are
 for.** Add `builtins` to `FORBIDDEN_FOR_GAMES`; extend the banned call scan to
@@ -748,19 +941,28 @@ phase 8 wording invites the opposite reading.
    a `DeterministicRng`.** Measured to reconstruct the stream byte for byte.
    `exclude_ids` crosses as a sorted list, which is what the canonicaliser
    already emits.
-5. **The protocol has a batched `replay(puzzle, moves)` verb.** Per-call
-   grading makes a maximal session cost 14.0 s of transport; this is a
-   precondition for out-of-process play, not an optimisation.
+5. **The protocol has a batched `replay(puzzle, moves)` verb returning a
+   per-move state delta, not only the terminal grade.** Per-call grading makes
+   a maximal session cost 14.0 s of transport, so batching is a precondition
+   for out-of-process play rather than an optimisation. Returning the deltas
+   rather than the final state costs nothing extra on the wire at these
+   payload sizes and is what `replay_state` already computes internally, so
+   the richer return is free; it also gives the engine the per-move record it
+   would otherwise have to recompute by replaying again.
 6. **The transport is opt in per distribution, never global.** The five first
    party games keep the in-process path and pay none of the cost.
 7. **A separate network service is rejected.** It cannot keep the
    reproducibility promise the manifest exists to make, because a remote
    service can change its own code between a generation and its replay and
    nothing would record that it did.
-8. **WASM stays open rather than chosen.** Its isolation and determinism
-   properties are the best of the four; the reason not to start there is that
-   it makes Python games second class in their own engine for the sake of an
-   author who does not yet exist.
+8. **WASM is not the expensive option to defer; it is the cheaper option at
+   runtime and the more expensive one to adopt.** Measured, it beats the
+   subprocess on instantiation (34.5 us against 337.6 ms), on call cost
+   (roughly twice as cheap at real payload sizes), on host consistency, and on
+   both determinism controls that matter, since a fuel budget bounds compute
+   without making generation depend on machine speed. Its single cost is the
+   authoring language, which is also the whole of the decision between it and
+   the subprocess.
 9. **An external game brings content as a declaration, not as a curated
    file, to begin with.** A declaration is a few reviewable lines and is
    reproducible by construction. The rule can be relaxed later without
@@ -781,6 +983,16 @@ phase 8 wording invites the opposite reading.
     promise.** Neither is checkable in general by the engine; both are recorded
     so a failure is attributable. The terminal `solved=True` case is checkable
     and belongs in the protocol specification.
+15. **Compute is bounded by an instruction budget, not a wall clock.** A
+    timeout makes whether a day generates depend on how fast the machine was,
+    which is the class of thing the seed, the snapshot hash and the version set
+    exist to eliminate. A fuel budget traps deterministically and repeatably,
+    measured. In process no equivalent exists, so the in-process bound is
+    labelled an approximation rather than presented as a budget.
+16. **A sandbox denies clocks, randomness, network, filesystem and the
+    environment by default and injects explicitly.** The matrix is in section
+    3. Option A can only ask for this; option B can make the capabilities
+    absent, which is the difference between a policy and a property.
 
 ## Open questions
 
@@ -807,3 +1019,10 @@ phase 8 wording invites the opposite reading.
    their JSON representability is a property of the code; a specification an
    external author reads has to live somewhere that is not a Python module, and
    nothing in the repository currently plays that role.
+7. **Must an external game be written in Python?** This is now the question
+   that decides between the subprocess and WASM, and it is the only axis on
+   which the subprocess still wins. If Python is required, the next thing to
+   measure is what a CPython or Pyodide build inside a sandbox costs to
+   instantiate and to ship, which is the one number this document does not
+   have and should not be guessed at. If it is not required, WASM is better on
+   everything measured here and the cost moves to a split authoring model.
