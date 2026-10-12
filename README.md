@@ -31,13 +31,25 @@ games and, by an enforced invariant, names none of them.
 
 ```
 pip install -e ".[dev]"
-pip install -e games/grouping
+for game in games/*/; do pip install -e "$game"; done
 scripts/test-all.sh
 ```
 
-Two suites run, not one: the platform's, which must pass with no game
-installed, and each game's. A single run over both would hide the first
+Several suites run, not one: the platform's, which must pass with no game
+installed, and each game's. A single run over all of them would hide the first
 property, which is the one that makes the module boundary real.
+
+Five games are in the tree. Two are lexical and three are not, which is the
+point of the three: a platform whose every game reads a lexicon has
+demonstrated that one kind of content works, not that content is replaceable.
+
+| directory | game | content |
+|---|---|---|
+| `games/grouping` | four visible groups and a fifth nobody mentions | WordNet plus a curated overlay |
+| `games/letters` | spell the category from its own members' letters | a curated taxonomy |
+| `games/figures` | one trio of simple figures among figures that nearly are | a generated attribute space |
+| `games/numbers` | a row of numbers and the one that does not belong | generated integers |
+| `games/digits` | a code of digits and the clues that entail it | generated digits |
 
 The platform registers its test fixtures as a pytest plugin
 (`puzzlegen.testing`), so a game's tests get a graph to build content in with
@@ -47,6 +59,11 @@ Snapshot-building tools (`tools/export_*.py`) require the extra dependencies
 in `pip install -e ".[snapshot]"`. The engine itself never imports them. A
 coverage measurement needs neither: it is structural, so a build with
 `--dev-embeddings` measures it exactly.
+
+The three non-lexical games need none of it at all. Their content is three
+declarations on a command line, so `docs/build-symbolic-snapshot.sh` builds
+the snapshot they read in seconds with no model, no network and no lexicon,
+and reproduces it byte for byte.
 
 ## Builds run in GitHub Actions
 
@@ -60,6 +77,7 @@ dozen lines rather than a build log.
 | `tests` | push to main, PRs, dispatch | platform alone, then every suite, on 3.11 and 3.13 |
 | `coverage artifacts` | content changes, dispatch | rebuilds A2 and fails if the committed coverage files differ; dispatched on a branch with `commit` set, it commits them instead |
 | `snapshot` | dispatch only | A2 with real vectors, then days; snapshot, vectors and days uploaded as an artifact |
+| `symbolic snapshot` | symbolic game or platform changes, dispatch | rebuilds the symbolic snapshot and the three committed day runs, and fails if any differs |
 
 The same tasks run locally: `scripts/ci.sh tests`, `scripts/ci.sh coverage`,
-`DAYS=5 scripts/ci.sh snapshot`.
+`DAYS=5 scripts/ci.sh snapshot`, `scripts/ci.sh symbolic`.

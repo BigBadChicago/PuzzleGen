@@ -7,23 +7,57 @@ artifacts more than once. Last session found two: a coverage table in this file
 that disagreed with the artifact it claimed to summarise, and a lexicon file
 named for a root it does not hold.
 
-Last verified: 2026-10-10, against a fresh clone built and tested from scratch.
+Last verified: 2026-10-12, against the full suite and a freshly rebuilt
+symbolic snapshot.
 
 ## Where things stand
 
-Game 1 is closed. Ship A is decided and A is the gate build. The second batch of
-lexicon roots is exported, committed and measured. The next work is game 2 and
-the subsystem under it.
+Five games are installed and every suite is green. Games one and two are the
+lexical pair; games three, four and five are over content that is not words,
+which is what phase 9 was for.
 
-Nothing is pending on origin: `main` is current.
+Nothing is pending on origin beyond the branch this session pushed.
+
+Last full run: **3,926 passing, 0 failing** (2,093 platform, 731 grouping, 248
+letters, 270 figures, 288 numbers, 296 digits), plus 2,091 passing with every
+game uninstalled, the 2 differences being the guards that refuse to let the
+boundary suite pass vacuously. That second run is what keeps the platform's
+independence from a game an actual property rather than a claim.
+
+### The games
+
+| directory | game id | content | ships |
+|---|---|---|---|
+| `games/grouping` | `grouping` | lexical, WordNet plus an overlay | `build/days-30.json` |
+| `games/letters` | `missing_letters` | lexical, its own curated taxonomy | -- |
+| `games/figures` | `shape_trio` | simple objects, generated | `build/shape-trio-days-30.json` |
+| `games/numbers` | `odd_number_out` | numbers, generated | `build/odd-number-out-days-30.json` |
+| `games/digits` | `digit_lock` | digits, generated | `build/digit-lock-days-30.json` |
+
+### Two snapshots, and only one of them is expensive
+
+`docs/rebuild-with-batch2.sh` builds **A2**, the lexical snapshot games one and
+two read. It needs WordNet exports, a frequency table and an embedding model,
+and it is slow for good reasons.
+
+`docs/build-symbolic-snapshot.sh` builds the **symbolic** snapshot games
+three, four and five read. It needs none of those: the content is three
+declarations on a command line, the build takes seconds, and it reproduces
+byte for byte. 181 entities, 1,758 facts, 40 categories, no words in it at
+all.
+
+That difference is why `scripts/ci.sh symbolic` can do what the lexical
+pipeline cannot: rebuild the snapshot *and* regenerate all three committed day
+runs on every change, failing if any moved. Verified 2026-10-12: a fresh
+build reproduces all three runs byte for byte.
 
 ### Where the work happens: the cloud, not a local checkout
 
 The repository is the environment. A Codespace or any container built from
 `.devcontainer/` gets Python 3.13, the platform and every game installed, and
 can run the whole suite and rebuild a snapshot with no local toolchain. That is
-now the canonical place to work. A checkout on a personal machine is a
-convenience mirror: pull it or delete it, nothing depends on it.
+the canonical place to work. A checkout on a personal machine is a convenience
+mirror: pull it or delete it, nothing depends on it.
 
 The reasons are concrete rather than preference. The suite needs Python 3.11 or
 later for `StrEnum`, and the Windows checkout had 3.10 with a Windows `.venv`.
@@ -32,7 +66,7 @@ own `.git` lock files, so a `pull` there half applies and then wedges. And none
 of the heavy inputs are local: lexicons come from a GitHub release, frequency
 from pypi, and coverage needs no model at all.
 
-CI runs in two workflows. `tests.yml` runs the platform suite **with no game
+CI runs in three workflows. `tests.yml` runs the platform suite **with no game
 installed**, then every suite with the games installed, on Python 3.11 and
 3.13; the first step is what keeps the platform's independence from a game an
 actual property rather than a claim. `coverage.yml` rebuilds build A2 and fails
@@ -40,114 +74,91 @@ if `build/coverage-A2.json` or the collision report has changed, which retires
 the last form of this project's recurring bug: a committed number that no
 longer matches what the code produces. It pins `wordfreq`, because frequency
 bands decide which entities can be tiles and an upstream release would
-otherwise look like a content regression.
-
-A coverage measurement needs no network and no embedding model. Verified: a
-snapshot built with `--dev-embeddings` plus a frequency table exported on the
-spot reproduces `build/coverage-A.json` byte for byte, because coverage is
-structural and applies no embedding gate. Only a published snapshot needs real
-vectors. WordNet data for `tools/export_wordnet.py` comes from the GitHub
-release (`globalwordnet/english-wordnet`, 2024 edition) and loads with
-`wn.add(path)`; `en-word.net` itself is not reachable from a sandboxed runner,
-and `docs/rebuild-with-batch2.sh` therefore skips any root whose lexicon is
-already committed.
-
-Last full run: **2,281 passing, 0 failing** (1,568 platform, 713 game one), plus
-1,566 passing with the game uninstalled, the 2 differences being the guards
-that refuse to let the boundary suite pass vacuously.
+otherwise look like a content regression. `symbolic.yml` does the same for the
+symbolic snapshot and the three day runs.
 
 ### Resolved this session (all committed)
 
-0. **Games are distributions now, and the cloud is the environment.** Game one
-   moved to `games/grouping/` with its own pyproject, package, tests, tools and
-   content, advertised through the `puzzlegen.games` entry point group;
-   `GameRegistry.discover()` registers what is installed. `--overlay` lost its
-   default in `tools/build_snapshot.py`, because the overlay is one game's
-   taxonomy. `puzzlegen/testing` is new: the fixtures a game's tests need, as a
-   pytest plugin, so a game's test setup is one short conftest. Two new
-   invariants state the property: the platform imports no game and holds no
-   game id as a literal, checked against what is installed. `.devcontainer/`
-   and two CI workflows make a cloud container the place this is built and
-   measured. Details in `docs/architecture.md` phase 8.
+0. **The platform can hold content that is not words, and three games prove
+   it.** Four platform changes and three game distributions; details in
+   `docs/architecture.md` phase 9 and `docs/decision-log.md` part 5. The short
+   version: `puzzlegen/symbols` is a peer of `puzzlegen.surface` and owns the
+   glyph, the spoken label and the ordinal; `puzzlegen/providers/generated.py`
+   holds two providers whose content is a declaration rather than a file;
+   `ContentQuery` gained a value window and a value ordering, honoured only by
+   the operations that select entities one at a time; and
+   `tools/build_snapshot.py` no longer requires a lexicon.
 
+   What did not change is worth as much: the query layer, the policy service,
+   the pipeline, the verifier, the uniqueness contracts and the session and
+   share layers were already domain-neutral and needed nothing. Phase 3's "the
+   graph is not about words" held.
 
-1. **Ship A, and a correction to this file.** The A/B table a previous handoff
-   carried (build A giving 1, 3, 4, 3, 3 working hidden categories across group
-   sizes 5 to 9) is not what the committed artifact says. `build/coverage-A.json`
-   says 5, 1, 0, 0, 0, and a rebuild reproduces it byte for byte. Build A
-   unblocked size 5 only. Sizes 6 to 8 are unblocked by batch 2, below.
+1. **Three contracts that had never been exercised now are.** `shape_trio` is
+   the first game to promise `COMPLETE` verification over a real combinatorial
+   space (220 triples at twelve tiles, all enumerated). `digit_lock` is the
+   first to declare `UNIQUE_DEDUCTION`, and the first whose generator stops on
+   "exactly one code survives" rather than "the secret survives" -- which is
+   what that contract means and differs precisely when a board is not
+   deducible. `odd_number_out` is the first game whose content has a scale.
 
-2. **The hidden reading must be the only one on the board.** The chosen rule
-   over a blacklist, implemented as `has_no_category_leak` in
-   `puzzlegen/games/grouping/generate.py` (refusal reason `category_leak`),
-   mirrored in `tools/overlay_coverage.py` (`a_filler_tile_is_also_a_hidden_word`).
-   No tile outside the hidden group may carry the hidden category; no visible
-   category may be an ancestor of the hidden one. Measured cost across builds A,
-   A2 and B: zero. It never fired on real content; it is a guard on a hole that
-   nothing else in the system covers, since the verifier excludes the overlay
-   axis by design and cross-membership never sees the hidden category. Tests:
-   `tests/unit/test_grouping_category_leak.py`, and `TestTheLeakGate` in
-   `tests/unit/test_overlay_coverage.py`.
+2. **Two invented numbers, caught by measuring.** `shape_trio`'s hard band
+   originally targeted a decoy density of 0.38, which is above anything either
+   board size produces, so a hard day would have ranked its candidates by an
+   unreachable number. And the difficulty cut points were first fitted over
+   every candidate the generator offers, which is the right sample for game two
+   and the wrong one here: these bands change only the generator's ordering, so
+   over all candidates the best possible pair bands 43% correctly. Fitted over
+   the engine's own search window the same model bands 90%. Both are recorded
+   with their measurements in the descriptors.
 
-3. **Batch 2 of the lexicon roots.** Nine roots (dairy_product, tool, rodent,
-   nut, bulbous_plant, vine, angiospermous_tree, marsh_plant, shrub), all
-   committed, all exported at depth 6. Every one of the 22 previously unsupplied
-   overlay words is now supplied; `overlay_missing` falls from 24 to 2 (`coral`
-   wants the colour sense, `coffee` the brewed sense, and both ride on roots not
-   in A). Feasible hidden categories by group size go from 5, 1, 0, 0, 0 to
-   7, 6, 2, 1, 0, with two hidden categories no build had before (`thing with a
-   handle`, `word that is also a person's name`). Three corrections to the
-   earlier root analysis, including that `mate` is reachable after all and
-   `heath` is redundant, are in `docs/candidate-roots.md` section 6. Reproduce
-   with `docs/rebuild-with-batch2.sh`.
-
-4. **`wordnet-tool.lexicon.json` was the `hand tool` subtree, not `tool`.**
-   Renamed to `wordnet-hand_tool.lexicon.json`; the real `tool` subtree
-   (oewn-04459089-n, 374 synsets) now holds the old name. Scripts and docs
-   updated. A root list that says `tool` and means `hand tool` builds a
-   different snapshot and nothing errors.
+3. **A fixture that was wrong in the way fixtures are.** The figure tests'
+   padding figures were hand-picked to "look unrelated" and one of them closed
+   a second trio with a member of the seed trio: three circles whose fill,
+   count and colour were each all different. Looks-unrelated is not a property
+   the rule knows about. They are now produced by the same construction the
+   generator uses, and a test asserts the property on the built board.
 
 ## Open decisions (what the next conversation resolves)
 
 1. **The colour leak is still open, and the rule that was chosen cannot close
-   it.** Measured, not argued: build B with the gate in place still produces the
-   board `word that is also a color` over `airplane`, `finch`, `citrus`, `pink`.
-   Overlay categories are taxonomy roots, so `overlay.color` has no relation to
-   the lexical `color` at all, and the `pink` group fills cleanly from words the
-   curator never tagged as colours. The giveaway is the visible label, not a
-   stray tile.
+   it.** Unchanged from the last session and still the clearest piece of work
+   available on game one. Measured, not argued: build B with the category-leak
+   gate in place still produces the board `word that is also a color` over
+   `airplane`, `finch`, `citrus`, `pink`. Overlay categories are taxonomy
+   roots, so `overlay.color` has no relation to the lexical `color` at all, and
+   the `pink` group fills cleanly from words the curator never tagged as
+   colours. The giveaway is the visible label, not a stray tile.
    The fix is to supply the missing link as content: an optional `anchor` on an
    overlay category naming the lexical category it means (`overlay.color` ->
-   `category:color`, oewn-04963771-n). The rule then becomes the decided one and
-   is general: a visible group may not be the anchor, nor an ancestor or
+   `category:color`, oewn-04963771-n). The rule then becomes the decided one
+   and is general: a visible group may not be the anchor, nor an ancestor or
    descendant of it. Work: a curated-schema field, builder support, the 14
    overlay categories reviewed for an anchor each, the gate extended, tests.
-   Not blocking: build A ships without `color`, so this is what unblocks build B
-   rather than what holds game 1.
+   Not blocking: build A ships without `color`.
 
-2. **The surface form subsystem, then `missing_letters`.** Platform-first was
-   the standing lean and nothing found since argues against it. Design is in
-   `docs/architecture.md` (session 2) and `docs/missing-letters-requirements.md`
-   section 2. Not yet built.
+2. **Nothing on the symbolic side is red, and three things are thin.** Stated
+   as candidates rather than as work that needs doing.
 
-3. **`missing_letters` needs content before it needs code.** A throwaway probe
-   over build A measured the real constraint, and it is not the letter matching:
-   it is name length against board size. A category of L letters with b blanks
-   needs L minus b marks on distinct tiles, so a board needs at least L minus b
-   plus 1 tiles. At 6 tiles and 2 blanks, 21 of the 88 eligible categories work,
-   and all 21 are short, obscure names (`coho`, `scup`, `myna`, `quahog`); at 8
-   tiles, 27 categories are even eligible and 9 work; at 10 tiles, 17 and 3.
-   Every overlay category fails at ordinary sizes, because their names run 14 to
-   25 letters. So `missing_letters` targets are short, common lexical category
-   names with enough frequency-filtered members, which is a content question the
-   coverage tool for game 2 should answer before any generator is written. Build
-   that tool first (`tools/measure_letters_coverage.py`, the analogue of
-   `measure_coverage.py`), as the requirements doc already says.
+   The `odd_number_out` difficulty model cannot discover that a familiar
+   property on a tight board is harder than its tier says, because obscurity
+   carries the largest weight and is a step function of the tier. The same
+   shape of limit applies to `digit_lock`. Both are the right trade until
+   there is play data, and both are recorded in their descriptors.
 
-4. **Nothing is red.** The content tracker in `test_overlay_seed.py` went green
-   when batch 2 landed, with the qualifier above. The next content claim worth
-   making is per build rather than per repository: which overlay words build A
-   itself can define.
+   `odd_number_out`'s obscure tier is thin: ten two-digit numbers are
+   triangular and five are Fibonacci, so hard boards are mostly triangular.
+   Widening the window would fix it and would cost the property that makes
+   digit count universal, so it is a real trade rather than an oversight.
+
+   `digit_lock` could state facts the digits taxonomy already holds and this
+   release does not use -- `digit_sum`, `is_square` -- which would widen the
+   easy band's lever. `PROPERTY_KINDS` is read rather than written down in
+   the places that count it, so a fourth kind is a change in one module.
+
+3. **The subprocess sandbox is still unbuilt.** Unchanged, and now with five
+   games rather than two behind the import-time invariants. The sandbox
+   remains the stronger mechanism for code that never enters the repository.
 
 ## Standing cautions
 
@@ -172,6 +183,18 @@ that refuse to let the boundary suite pass vacuously.
 - Overlay categories are roots in the overlay taxonomy. Any rule phrased as
   "ancestor or descendant of the hidden category" has nothing to stand on until
   decision 1 above is done.
+- A difficulty scale is calibrated over the boards the engine *reaches*, not
+  over every candidate the generator offers, unless the band changes which
+  boards exist. Game two is the one case where it does. Getting this wrong
+  does not fail: it produces a model that bands 43% correctly and looks like a
+  bad model rather than a bad sample.
+- A band target has to be reachable. Both symbolic number games had a target
+  outside what their content can produce in a first draft, and the symptom in
+  both cases is not an error but a ranking that silently becomes a shuffle.
+- `build/` is gitignored, so `git status --porcelain` says nothing about a
+  committed artifact that was never committed. A check on a build artifact
+  needs `git ls-files` as well, which is how the symbolic day runs are
+  checked.
 
 ## Reading order
 
