@@ -140,6 +140,32 @@ class TestVerificationResultConsistency:
         )
         assert uniqueness.consistency_problem(record) is not None
 
+    def test_a_truncated_list_naming_nothing_is_flagged(self):
+        """Truncation has to list something to be a truncation.
+
+        "I found more than I am listing" is only meaningful alongside what is
+        listed. An empty list with a positive count is the shape that turns
+        the verifier's intended-solution comparison into a no-op, which is how
+        a plugin publishes an answer nothing verified.
+        """
+        record = VerificationResult(
+            solvable=True,
+            solution_count=1,
+            solutions=(),
+            solutions_truncated=True,
+        )
+        problem = uniqueness.consistency_problem(record)
+        assert problem is not None
+        assert "listed no solution at all" in problem
+
+    def test_an_untruncated_empty_list_is_not_a_consistency_problem(self):
+        """A verifier may decline to report values at all.
+
+        That is handled by the verifier, which refuses the puzzle for having
+        nothing to compare against, rather than here as a contradiction.
+        """
+        assert uniqueness.consistency_problem(result(solutions=())) is None
+
     def test_a_complete_claim_with_no_states_examined_is_flagged(self):
         record = result(states_examined=0)
         assert "examined no states" in uniqueness.consistency_problem(record)
@@ -357,13 +383,12 @@ class TestPuzzleVerifier:
         assert outcome.reason is RejectionReason.UNFAIR_COMBINATION
         assert "stated solution" in outcome.detail
 
-    def test_a_truncated_solution_list_skips_the_intended_check(self):
-        """Truncation is honoured, but the contract still has to hold.
+    def test_the_contract_is_judged_before_the_intended_solution(self):
+        """Order matters, and this is the case that shows it.
 
-        A truncated list means the engine cannot confirm the intended answer
-        is among those found, so that check is skipped. The solution count
-        itself is unaffected, which is why this one is refused on the
-        contract rather than accepted.
+        Five solutions under a single-solution contract is refused on the
+        contract, which is reached first. The intended-solution comparison
+        never runs, so the detail names the count rather than the answer.
         """
         plugin = self._Plugin(
             verification=result(
@@ -377,6 +402,79 @@ class TestPuzzleVerifier:
         )
         assert outcome.reason is RejectionReason.MULTIPLE_SOLUTIONS
         assert "stated solution" not in outcome.detail
+
+    def test_a_truncated_list_omitting_the_intended_solution_is_rejected(self):
+        """Truncation excuses the solutions not listed, never the comparison.
+
+        A verifier that stopped collecting still found the intended answer if
+        the puzzle is sound, so its absence from a truncated list is evidence
+        against the puzzle rather than an artifact of the truncation. Reached
+        here with EXACTLY_N, because a single-solution contract cannot have a
+        truncated list at all: one listed against a count of one is already a
+        consistency problem.
+        """
+        plugin = self._Plugin(
+            verification=result(
+                solution_count=3,
+                solutions=({"answer": "z"},),
+                solutions_truncated=True,
+            )
+        )
+        outcome = PuzzleVerifier().evaluate(
+            self.puzzle(),
+            plugin,
+            descriptor(
+                uniqueness_contract=UniquenessContract.EXACTLY_N,
+                expected_solution_count=3,
+            ),
+            DifficultyBand.MEDIUM,
+        )
+        assert outcome.reason is RejectionReason.UNFAIR_COMBINATION
+        assert "not an excuse" in outcome.detail
+
+    def test_a_truncated_list_holding_the_intended_solution_is_accepted(self):
+        """The honest case, which is what the three shipped verifiers produce.
+
+        They cap their list and keep collecting the count, so the intended
+        answer is present and the puzzle is sound.
+        """
+        plugin = self._Plugin(
+            verification=result(
+                solution_count=3,
+                solutions=({"answer": "a"}, {"answer": "z"}),
+                solutions_truncated=True,
+            )
+        )
+        outcome = PuzzleVerifier(require_on_target=False).evaluate(
+            self.puzzle(),
+            plugin,
+            descriptor(
+                uniqueness_contract=UniquenessContract.EXACTLY_N,
+                expected_solution_count=3,
+            ),
+            DifficultyBand.MEDIUM,
+        )
+        assert outcome.accepted
+
+    def test_a_fabricated_answer_behind_an_empty_truncated_list_is_refused(self):
+        """The attack this gate exists for, end to end through the verifier.
+
+        A plugin claiming a complete enumeration of one solution, listing
+        none, and marking the list truncated, used to have its stated answer
+        accepted without comparison. It is now a protocol error.
+        """
+        plugin = self._Plugin(
+            verification=result(solutions=(), solutions_truncated=True)
+        )
+        outcome = PuzzleVerifier().evaluate(
+            self.puzzle(solution={"answer": "fabricated"}),
+            plugin,
+            descriptor(),
+            DifficultyBand.MEDIUM,
+        )
+        assert not outcome.accepted
+        assert outcome.reason is RejectionReason.PLUGIN_PROTOCOL_ERROR
+        assert "listed no solution at all" in outcome.detail
 
     def test_an_off_target_band_is_rejected_by_default(self):
         plugin = self._Plugin(

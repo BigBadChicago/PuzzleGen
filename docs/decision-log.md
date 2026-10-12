@@ -1599,3 +1599,72 @@ inside the measured range and the ranges are in the descriptor. The same check
 caught `odd_number_out`'s board sizes: five of the two-digit numbers are
 Fibonacci, so a seven-tile board at the obscure tier would have needed six of
 the five there are.
+
+## Part 6: the truncation gate
+
+### A truncated solution list must name at least one solution
+
+**Decision:** what the engine does when a game's verifier reports that it
+stopped collecting solution values.
+
+Found by probing the engine's gates with a deliberately dishonest verifier
+rather than by reading the code. `shape_trio` declares `EXACTLY_ONE` with
+`COMPLETE` verification, which is the strictest combination in the repository.
+A real generated board, with its stated trio replaced by three tile ids that
+are not on the board, returned with `solutions=()`, `solutions_truncated=True`,
+`solution_count=1` and `COMPLETE`, was **accepted**: `accepted=True`,
+`reason=None`, empty detail.
+
+The verifier compares the board's stated answer against the solutions the
+verifier listed, and returned early without comparing when the list was marked
+truncated. `consistency_problem` did not catch it either, because its rule is
+about a truncated list that names *every* solution, and zero named against a
+count of one is not that case.
+
+**Options considered:**
+- Remove the skip and always require the comparison. Truncation is a real
+  state: a verifier that finds thousands of solutions caps what it lists, and
+  the three games that truncate do so at eight. Removing the skip would make
+  the intended answer's absence from a capped list fatal, which it is not when
+  the cap is the reason.
+- Require the intended solution to be first in the list. Makes the comparison
+  work, and pins an ordering the protocol has no other reason to care about,
+  which is a constraint on every verifier for the benefit of one check.
+- Require evidence inside the truncation: at least one solution named, and the
+  comparison run against what was named.
+
+**Chosen:** the third, as two rules. `consistency_problem` refuses a truncated
+list that names no solution at all while claiming a positive count. The
+verifier then compares whenever anything is listed, and a truncated list that
+omits the intended answer is refused as `UNFAIR_COMBINATION` rather than
+skipped.
+
+**Why:** a verifier that found a solution can name one, so the empty case is
+never a legitimate truncation, and refusing it costs nothing. And truncation
+excuses the solutions a verifier did not list, never the comparison itself: if
+the puzzle is sound its intended answer was found, so that answer's absence
+from a capped list is evidence against the puzzle rather than an artifact of
+the cap. The two rules together mean the comparison can no longer be turned
+off by the plugin being compared.
+
+**Measured cost: zero.** All three games that truncate do so as
+`solutions_truncated=len(found) > 8` and still list eight, so the new rule
+fires on nothing they produce. Verified by running thirty days for each of the
+three generated-content games with the rules in place: 30 boards of 30 for
+each, no new refusals. A test asserts the honest property directly, that the
+real verifier always lists something and lists fewer than it counted when it
+truncates, so the guard's zero cost is a checked claim rather than a remark.
+
+**New fixture.** `PhantomSolutionGame` is the sixth deliberately broken
+grouping game, and the first whose board is sound and whose *report* is the
+lie. It reports an honest state count and an honest solution count and simply
+declines to say what it found. The existing `UnexaminedGame` is its relative
+and is caught on the state count; nothing caught this one.
+
+**Ordering note, worth recording because a test now pins it.** The contract is
+judged before the intended solution. Five solutions under a single-solution
+contract is refused on the count, and the answer comparison never runs, which
+is why a single-solution contract cannot have a truncated list at all: one
+listed against a count of one is already a consistency problem. The
+intended-solution path is therefore reachable only under `EXACTLY_N` and the
+contracts that admit more than one solution, which is what the new tests use.

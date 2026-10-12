@@ -394,31 +394,36 @@ contracts need no type change.
 **The verifier checks that the puzzle's declared answer is among what the
 solver actually found.** A puzzle that verifies, is unique, and marks the
 correct player wrong is the single most dangerous failure mode; one hash
-comparison catches it (skipped only when the solver explicitly marks its
-solution list truncated).
+comparison catches it. A verifier that truncates its solution list must still
+name at least one solution, and the comparison runs against what it named: see
+the correction below, and `docs/decision-log.md` part 6.
 
 **Self-contradictory verification results are protocol errors, not content
 rejections** (`uniqueness.consistency_problem`): a result claiming complete
 enumeration having examined zero states, or claiming truncation while
 listing every solution, is a bug in the game's verifier.
 
-**Correction (2026-10-12), on the two bullets above.** Both overstate what is
-enforced, and the gap matters for a game whose author was not reviewed. Both
-measured against the code, not read off it; details and reproduction in
+**Correction (2026-10-12), on the two bullets above.** Both overstated what
+was enforced, and the gap mattered for a game whose author was not reviewed.
+Both measured against the code, not read off it; details and reproduction in
 `docs/external-games.md` sections 6 and 7.
 
-The truncation skip is the plugin's choice, which makes the answer comparison
-optional rather than near universal. A verifier returning `solutions=()` with
-`solutions_truncated=True`, `solution_count=1` and `COMPLETE` is accepted with
-its stated answer never compared to anything, and `consistency_problem` does
-not catch it, because zero solutions listed against a count of one is not
-"claiming truncation while listing every solution". Measured against
-`shape_trio`, the strictest combination in the repository: a board whose stated
-trio is three tile ids that are not on the board is accepted, `accepted=True`
-and `reason=None`. The fix is not to remove the skip, since truncation is a
-legitimate state, but to require evidence inside it: at least one listed
-solution to compare against, and an empty list with a positive count treated as
-a protocol error.
+**The truncation skip is fixed.** It had made the answer comparison optional at
+the plugin's choice. A verifier returning `solutions=()` with
+`solutions_truncated=True`, `solution_count=1` and `COMPLETE` was accepted with
+its stated answer never compared to anything, and `consistency_problem` did not
+catch it, because zero solutions listed against a count of one is not "claiming
+truncation while listing every solution". Measured against `shape_trio`, the
+strictest combination in the repository: a board whose stated trio was three
+tile ids not on the board was accepted, `accepted=True` and `reason=None`.
+
+Two rules now close it, at zero measured cost to the five games. A truncated
+list that names no solution at all is a protocol error, because a verifier that
+found a solution can name one. And the comparison runs whenever anything is
+listed, because truncation excuses the solutions a verifier did not list and
+never the comparison itself. `PhantomSolutionGame` is the sixth broken fixture
+and the first whose board is sound and whose report is the lie. Reasoning and
+the options not taken are in `docs/decision-log.md` part 6.
 
 `states_examined` is a claim the plugin supplies, and the `search_bound` every
 descriptor declares never constrains a published puzzle.

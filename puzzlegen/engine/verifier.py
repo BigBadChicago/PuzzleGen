@@ -160,17 +160,27 @@ class PuzzleVerifier:
         A puzzle whose stated solution the solver cannot reach is broken in
         the most dangerous way: it verifies, it is unique, and it marks the
         player wrong. Checking costs one hash and catches it.
+
+        Truncation excuses the solutions a verifier did not list, never the
+        comparison itself. A verifier that stopped collecting still found the
+        intended answer if the puzzle is sound, so its absence from a truncated
+        list is evidence against the puzzle rather than an artifact of the
+        truncation. The empty case cannot arrive here at all: a truncated list
+        naming nothing is refused as a protocol error by
+        ``uniqueness.consistency_problem``, which runs first.
         """
         if not verification.solutions:
-            if verification.solutions_truncated:
-                return None
             return "verifier reported no solution values to compare against"
         intended = stable_hash(dict(puzzle.solution))
         found = {stable_hash(dict(solution)) for solution in verification.solutions}
         if intended in found:
             return None
         if verification.solutions_truncated:
-            return None
+            return (
+                "the puzzle's stated solution is not among the solutions the "
+                "verifier listed, and a truncated list is not an excuse for "
+                "omitting the intended one"
+            )
         return "the puzzle's stated solution is not among those the solver found"
 
     def _measure(
