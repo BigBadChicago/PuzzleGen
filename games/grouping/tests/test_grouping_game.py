@@ -29,6 +29,7 @@ from broken_grouping import (
     DriftingGame,
     GenerousGame,
     LoudShareGame,
+    PhantomSolutionGame,
     SilentToleranceGame,
     UnexaminedGame,
 )
@@ -135,6 +136,7 @@ class TestTheBrokenFixtures:
         assert set(BROKEN_GAMES) == {
             "silent_tolerance",
             "unexamined",
+            "phantom_solution",
             "drifting",
             "generous",
             "loud_share",
@@ -144,6 +146,32 @@ class TestTheBrokenFixtures:
         for cls, reason in BROKEN_GAMES.values():
             assert reason
             assert issubclass(cls, GroupingGame)
+
+    def test_withholding_every_solution_is_rejected(self, puzzle, verifier):
+        """A truncated list that names nothing is a comparison against nothing.
+
+        Run against a real board rather than a fabricated one, because the
+        point is that the board itself is fine and the verifier's report is
+        what lies. The engine must refuse it on the report.
+        """
+        broken = PhantomSolutionGame()
+        outcome = verifier.evaluate(
+            puzzle, broken, broken.describe(), DifficultyBand.MEDIUM
+        )
+        assert not outcome.accepted
+        assert outcome.reason is RejectionReason.PLUGIN_PROTOCOL_ERROR
+        assert "listed no solution at all" in outcome.detail
+
+    def test_the_honest_game_lists_what_it_found(self, puzzle, game):
+        """The guard above costs the real game nothing, which is why it is safe.
+
+        Its verifier caps the list it reports and keeps counting, so there is
+        always something to compare the board's answer against.
+        """
+        honest = game.verify(puzzle)
+        assert honest.solutions
+        if honest.solutions_truncated:
+            assert len(honest.solutions) < honest.solution_count
 
     def test_withholding_the_collapse_evidence_is_rejected(self, puzzle, verifier):
         """One solution might mean unique, or might mean nothing was compared,

@@ -8,7 +8,7 @@ that disagreed with the artifact it claimed to summarise, and a lexicon file
 named for a root it does not hold.
 
 Last verified: 2026-10-12, against the full suite and a freshly rebuilt
-symbolic snapshot.
+symbolic snapshot, after the truncation gate landed.
 
 ## Where things stand
 
@@ -18,8 +18,8 @@ which is what phase 9 was for.
 
 Nothing is pending on origin beyond the branch this session pushed.
 
-Last full run: **3,926 passing, 0 failing** (2,093 platform, 731 grouping, 248
-letters, 270 figures, 288 numbers, 296 digits), plus 2,091 passing with every
+Last full run: **3,933 passing, 0 failing** (2,098 platform, 733 grouping, 248
+letters, 270 figures, 288 numbers, 296 digits), plus 2,096 passing with every
 game uninstalled, the 2 differences being the guards that refuse to let the
 boundary suite pass vacuously. That second run is what keeps the platform's
 independence from a game an actual property rather than a claim.
@@ -79,7 +79,23 @@ symbolic snapshot and the three day runs.
 
 ### Resolved this session (all committed)
 
-0. **The platform can hold content that is not words, and three games prove
+0. **A game could publish an answer nothing verified, and now cannot.** Found
+   by probing the gates with a dishonest verifier rather than by reading the
+   code: a real `shape_trio` board with its stated trio replaced by three tile
+   ids not on the board, reported with `solutions=()` and
+   `solutions_truncated=True`, was accepted. `shape_trio` is `EXACTLY_ONE` with
+   `COMPLETE` verification, the strictest combination here. Two rules close it:
+   a truncated list naming no solution is a protocol error, and the comparison
+   runs against whatever was named. Measured cost to the five games: zero, and
+   a test asserts that zero rather than remarking on it. `PhantomSolutionGame`
+   is the sixth broken fixture, the first whose board is sound and whose report
+   is the lie. Reasoning in `docs/decision-log.md` part 6.
+
+   Worth carrying forward as method: this was the fourth promise found to be
+   weaker than its prose, and all four were found by attacking the engine
+   rather than reading it. The other three are listed under open decision 4.
+
+1. **The platform can hold content that is not words, and three games prove
    it.** Four platform changes and three game distributions; details in
    `docs/architecture.md` phase 9 and `docs/decision-log.md` part 5. The short
    version: `puzzlegen/symbols` is a peer of `puzzlegen.surface` and owns the
@@ -94,7 +110,7 @@ symbolic snapshot and the three day runs.
    share layers were already domain-neutral and needed nothing. Phase 3's "the
    graph is not about words" held.
 
-1. **Three contracts that had never been exercised now are.** `shape_trio` is
+2. **Three contracts that had never been exercised now are.** `shape_trio` is
    the first game to promise `COMPLETE` verification over a real combinatorial
    space (220 triples at twelve tiles, all enumerated). `digit_lock` is the
    first to declare `UNIQUE_DEDUCTION`, and the first whose generator stops on
@@ -102,7 +118,7 @@ symbolic snapshot and the three day runs.
    what that contract means and differs precisely when a board is not
    deducible. `odd_number_out` is the first game whose content has a scale.
 
-2. **Two invented numbers, caught by measuring.** `shape_trio`'s hard band
+3. **Two invented numbers, caught by measuring.** `shape_trio`'s hard band
    originally targeted a decoy density of 0.38, which is above anything either
    board size produces, so a hard day would have ranked its candidates by an
    unreachable number. And the difficulty cut points were first fitted over
@@ -112,7 +128,7 @@ symbolic snapshot and the three day runs.
    the engine's own search window the same model bands 90%. Both are recorded
    with their measurements in the descriptors.
 
-3. **A fixture that was wrong in the way fixtures are.** The figure tests'
+4. **A fixture that was wrong in the way fixtures are.** The figure tests'
    padding figures were hand-picked to "look unrelated" and one of them closed
    a second trio with a member of the seed trio: three circles whose fill,
    count and colour were each all different. Looks-unrelated is not a property
@@ -159,6 +175,24 @@ symbolic snapshot and the three day runs.
 3. **The subprocess sandbox is still unbuilt.** Unchanged, and now with five
    games rather than two behind the import-time invariants. The sandbox
    remains the stronger mechanism for code that never enters the repository.
+   `docs/external-games.md` is the design work, and its conclusion is that the
+   sandbox is not the next thing to build: the import invariants do not
+   constrain a hostile author at all, which is measured there, so the
+   correctness gates come first. The truncation gate above was the first of
+   them. Three remain, named in that document as F2, F3 and F4.
+
+4. **Three more promises are weaker than their prose, and one cannot be
+   fixed.** Measured, not argued, in `docs/external-games.md`. `states_examined`
+   is a plugin's claim and the `search_bound` every descriptor declares never
+   constrains a published puzzle. Candidate consumption, payload size,
+   presentation, hints and solution lists are all unbounded, and the engine has
+   no timeout or memory limit anywhere. The import invariants have three
+   evasions, and a fourth, an attribute walk from the granted port to the
+   content service, cannot be closed by any amount of parsing: five designs for
+   hiding it were attacked and all five were reached, because `__closure__`,
+   `__globals__` and `__class__` are ordinary attributes. That last one is a
+   ceiling on the mechanism rather than a task, and the suite's docstring
+   should say so.
 
 ## Standing cautions
 

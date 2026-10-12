@@ -137,6 +137,21 @@ def consistency_problem(verification: VerificationResult) -> str | None:
     ):
         return "marked truncated but listed every solution"
     if (
+        verification.solutions_truncated
+        and not verification.solutions
+        and verification.solution_count > 0
+    ):
+        # A verifier that found a solution can name one. Truncation says "there
+        # were more than I am listing", which is only meaningful if it lists
+        # something, and an empty list is what turns the intended-solution
+        # comparison in the verifier into a no-op. Without this rule a plugin
+        # publishes any answer it likes by claiming a truncated enumeration it
+        # never performed.
+        return (
+            "marked truncated and listed no solution at all; a verifier that "
+            "found one can name one"
+        )
+    if (
         verification.completeness is VerificationCompleteness.COMPLETE
         and verification.states_examined == 0
         and verification.solution_count > 0

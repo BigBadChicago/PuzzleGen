@@ -1,4 +1,4 @@
-"""Five broken grouping games, each breaking one promise on purpose.
+"""Six broken grouping games, each breaking one promise on purpose.
 
 They exist to prove the engine catches what it claims to. A gate that has
 never rejected anything is a gate nobody has tested, and the cheapest way for
@@ -87,6 +87,36 @@ class UnexaminedGame(GroupingGame):
         )
 
 
+class PhantomSolutionGame(GroupingGame):
+    """Publishes an answer nothing verified, by claiming a truncated list.
+
+    The dangerous relative of ``UnexaminedGame``. That one claims a complete
+    enumeration having examined nothing, which the engine catches on the state
+    count. This one reports an honest state count and an honest solution count
+    and simply declines to say what it found, marking the list truncated.
+
+    Truncation is a legitimate state: a verifier that finds thousands of
+    solutions caps what it lists. What makes this a lie is listing none of
+    them, because the engine compares the board's stated answer against the
+    listed solutions, and an empty list is a comparison against nothing. A
+    board whose answer is pure invention then verifies, satisfies its
+    contract, publishes, and marks a correct player wrong.
+    """
+
+    def verify(self, puzzle: Puzzle) -> VerificationResult:
+        honest = super().verify(puzzle)
+        return VerificationResult(
+            solvable=honest.solvable,
+            solution_count=honest.solution_count,
+            completeness=honest.completeness,
+            states_examined=honest.states_examined,
+            solutions=(),
+            solutions_truncated=True,
+            metrics=dict(honest.metrics),
+            detail="answer withheld behind a truncation that lists nothing",
+        )
+
+
 class DriftingGame(GroupingGame):
     """Grades the same move differently on a second look.
 
@@ -168,6 +198,11 @@ class LoudShareGame(GroupingGame):
 #: assert the set is complete rather than trusting that five classes above are
 #: the five that were meant.
 BROKEN_GAMES = {
+    "phantom_solution": (
+        PhantomSolutionGame,
+        "withholds every solution behind a truncated list, so the board's "
+        "stated answer is compared against nothing",
+    ),
     "silent_tolerance": (
         SilentToleranceGame,
         "claims a tolerance collapse without reporting collapsed_solutions",
@@ -196,6 +231,7 @@ __all__ = [
     "DriftingGame",
     "GenerousGame",
     "LoudShareGame",
+    "PhantomSolutionGame",
     "SilentToleranceGame",
     "UnexaminedGame",
 ]
