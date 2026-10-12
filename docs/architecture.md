@@ -402,6 +402,35 @@ rejections** (`uniqueness.consistency_problem`): a result claiming complete
 enumeration having examined zero states, or claiming truncation while
 listing every solution, is a bug in the game's verifier.
 
+**Correction (2026-10-12), on the two bullets above.** Both overstate what is
+enforced, and the gap matters for a game whose author was not reviewed. Both
+measured against the code, not read off it; details and reproduction in
+`docs/external-games.md` sections 6 and 7.
+
+The truncation skip is the plugin's choice, which makes the answer comparison
+optional rather than near universal. A verifier returning `solutions=()` with
+`solutions_truncated=True`, `solution_count=1` and `COMPLETE` is accepted with
+its stated answer never compared to anything, and `consistency_problem` does
+not catch it, because zero solutions listed against a count of one is not
+"claiming truncation while listing every solution". Measured against
+`shape_trio`, the strictest combination in the repository: a board whose stated
+trio is three tile ids that are not on the board is accepted, `accepted=True`
+and `reason=None`. The fix is not to remove the skip, since truncation is a
+legitimate state, but to require evidence inside it: at least one listed
+solution to compare against, and an empty list with a positive count treated as
+a protocol error.
+
+`states_examined` is a claim the plugin supplies, and the `search_bound` every
+descriptor declares never constrains a published puzzle.
+`PuzzleVerifier._completeness_problem` returns immediately when a result says
+`COMPLETE`, so the bound is consulted only on the `SOUND_INCOMPLETE` path, and
+that path publishes nothing because an incomplete enumeration satisfies no
+uniqueness contract. On the publishable path the only check on the count is
+`consistency_problem`'s, which fires on exactly zero: `states_examined=1`
+claiming a complete enumeration of a board that honestly examines 84 states is
+accepted. The count is therefore telemetry and the bound is documentation,
+which is not how either reads in the descriptors.
+
 **Three reusable exhaustive solver shapes live in the engine**
 (`puzzlegen.engine.solvers`), so no game reimplements search and gets
 completeness reporting subtly wrong:
