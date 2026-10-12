@@ -6,6 +6,7 @@
 #   scripts/ci.sh tests                platform alone, then every suite
 #   scripts/ci.sh coverage             rebuild A2, measure, compare to committed
 #   scripts/ci.sh snapshot             A2 with real vectors, then generate days
+#   scripts/ci.sh symbolic             rebuild the symbolic snapshot and its days
 #
 # Each task writes build/ci/summary.md, appends it to the job's step summary
 # when there is one, and prints it last between markers, so the final lines of
@@ -23,6 +24,10 @@ SUMMARY="$OUT/summary.md"
 # Same values as docs/rebuild-with-batch2.sh, which builds the snapshot read here.
 DB=build/graph-A2.sqlite
 NOW=2026-10-10T00:00:00+00:00
+# Same value as docs/build-symbolic-snapshot.sh, which builds the snapshot the
+# symbolic task reads. Separate from NOW above so the two builds can move
+# independently; they happen to agree today.
+SYMBOLIC_NOW=2026-10-10T00:00:00+00:00
 
 publish() {
   [ -n "${GITHUB_STEP_SUMMARY:-}" ] && cat "$SUMMARY" >> "$GITHUB_STEP_SUMMARY"
@@ -156,6 +161,73 @@ task_snapshot() {
   return "$status"
 }
 
+# The three games the symbolic snapshot serves, and where each writes its run.
+#
+# One line per game rather than a glob, because the day driver's flags and the
+# summary renderer are the game's own: a glob would have to guess both. Adding
+# a fourth symbolic game is a line here, which is the right size of edit for
+# a claim this file is making on that game's behalf.
+SYMBOLIC_GAMES="figures:shape-trio numbers:odd-number-out digits:digit-lock"
+
+task_symbolic() {
+  # The shipping claim for the symbolic games, rebuilt rather than trusted.
+  #
+  # Affordable in a way the lexical snapshot is not: the content is three
+  # declarations, so there is no model, no network and no lexicon, and the
+  # whole build takes seconds. That makes these the day runs this repository
+  # can regenerate on every change and compare to what is committed, which is
+  # the same mechanism coverage.yml applies to the coverage artifacts and for
+  # the same reason: a committed artifact that no longer matches the code is
+  # this project's recurring failure.
+  local days="${DAYS:-30}" start="${START:-2026-10-01}" difficulty="${DIFFICULTY:-medium}"
+  local status=0 changed=no
+  if ! bash docs/build-symbolic-snapshot.sh; then
+    printf '### Symbolic\n\n**build failed**: see the log above this summary\n' > "$SUMMARY"
+    publish
+    return 1
+  fi
+
+  : > "$OUT/symbolic.md"
+  for entry in $SYMBOLIC_GAMES; do
+    local game="${entry%%:*}" slug="${entry##*:}" json
+    json="build/$slug-days-$days.json"
+    # Written to the committed path so a diff is the comparison, pinned to the
+    # snapshot's own time because content past its review date is refused
+    # stale.
+    python3 "games/$game/tools/generate_days.py" --db build/graph-symbolic.sqlite \
+      --start "$start" --days "$days" --difficulty "$difficulty" \
+      --now "$SYMBOLIC_NOW" --json "$json" || status=$?
+    if [ ! -s "$json" ]; then
+      printf '### Symbolic\n\n**%s: day generation failed**: see the log above\n' \
+        "$game" > "$SUMMARY"
+      publish
+      return 1
+    fi
+    # Two checks, because build/ is gitignored and one of them alone is
+    # blind. `git status --porcelain` reports a modified tracked file and says
+    # nothing at all about an ignored untracked one, so a brand new game's
+    # run would be reported as matching a committed run that does not exist.
+    # The ls-files check is what catches that.
+    if ! git ls-files --error-unmatch "$json" >/dev/null 2>&1; then
+      changed=yes
+      status=1
+    elif [ -n "$(git status --porcelain -- "$json")" ]; then
+      changed=yes
+      status=1
+    fi
+    python3 scripts/ci_summary.py "$slug-days" "$json" >> "$OUT/symbolic.md"
+    printf '\n' >> "$OUT/symbolic.md"
+  done
+
+  {
+    printf '### Symbolic snapshot\n\n- days from %s at %s\n- committed runs changed: %s\n\n' \
+      "$start" "$difficulty" "$changed"
+    cat "$OUT/symbolic.md"
+  } > "$SUMMARY"
+  publish
+  return "$status"
+}
+
 task="${1:-}"
 shift || true
 case "$task" in
@@ -163,5 +235,6 @@ case "$task" in
   tests) task_tests ;;
   coverage) task_coverage ;;
   snapshot) task_snapshot ;;
+  symbolic) task_symbolic ;;
   *) sed -n '2,15p' "$0"; exit 2 ;;
 esac

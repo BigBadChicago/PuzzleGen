@@ -140,3 +140,134 @@ class TestRenderDays:
         assert "- generated: 0/1" in out
         assert "- group sizes: none" in out
         assert "not generated: unknown (1)" in out
+
+
+def trio_day(**overrides) -> dict:
+    day = {
+        "day": "2026-10-01",
+        "generated": True,
+        "board_size": 9,
+        "trios": 1,
+        "completeness": "COMPLETE",
+        "varying": ["shape", "fill"],
+        "tiles": ["a", "b", "c"],
+        "on_target": True,
+    }
+    return {**day, **overrides}
+
+
+def odd_day(**overrides) -> dict:
+    day = {
+        "day": "2026-10-01",
+        "generated": True,
+        "board_size": 5,
+        "readings": 1,
+        "completeness": "COMPLETE",
+        "property_name": "even number",
+        "tiles": ["10", "12", "14", "16", "51"],
+        "on_target": True,
+    }
+    return {**day, **overrides}
+
+
+def lock_day(**overrides) -> dict:
+    day = {
+        "day": "2026-10-01",
+        "generated": True,
+        "code_length": 3,
+        "survivors": 1,
+        "completeness": "COMPLETE",
+        "clues": 5,
+        "facts": 1,
+        "code": "147",
+        "on_target": True,
+    }
+    return {**day, **overrides}
+
+
+class TestTheSymbolicDayRenderers:
+    """One renderer per symbolic game, because each run is about that game's
+    own claim and a shared renderer would report the union of three.
+
+    What is pinned here is that the line carrying each contract's claim is the
+    one a reader cannot miss: a board with two trios, two readable tiles or
+    two surviving codes is the contract broken, and a summary that rendered it
+    as a count among others would be a summary nobody notices.
+    """
+
+    def test_a_clean_trio_run_says_one_trio_per_board(self):
+        out = ci_summary.render_trio_days([trio_day(), trio_day(day="2026-10-02")])
+        assert "generated: 2/2" in out
+        assert "trios per board: 1x2" in out
+        assert "COMPLETE x2" in out
+
+    def test_a_trio_run_with_two_trios_on_a_board_shows_it(self):
+        out = ci_summary.render_trio_days([trio_day(), trio_day(trios=2)])
+        assert "1x1" in out and "2x1" in out
+
+    def test_one_board_every_day_is_visible_in_a_trio_run(self):
+        out = ci_summary.render_trio_days([trio_day(), trio_day(day="2026-10-02")])
+        assert "distinct boards: 1" in out
+
+    def test_a_clean_odd_run_says_one_readable_tile(self):
+        out = ci_summary.render_odd_days([odd_day(), odd_day(day="2026-10-02")])
+        assert "readable tiles per board: 1 x2" in out
+        assert "even number x2" in out
+
+    def test_an_odd_run_with_two_readable_tiles_shows_it(self):
+        out = ci_summary.render_odd_days([odd_day(), odd_day(readings=2)])
+        assert "1 x1" in out and "2 x1" in out
+
+    def test_a_clean_lock_run_says_one_surviving_code(self):
+        out = ci_summary.render_lock_days([lock_day(), lock_day(day="2026-10-02")])
+        assert "surviving codes per board: 1 x2" in out
+        assert "clue rows: 5 x2" in out
+
+    def test_a_lock_run_with_two_survivors_shows_it(self):
+        out = ci_summary.render_lock_days([lock_day(), lock_day(survivors=2)])
+        assert "1 x1" in out and "2 x1" in out
+
+    def test_a_failed_day_is_named_in_every_renderer(self):
+        failed = {"day": "2026-10-02", "generated": False, "reason": "no board"}
+        for render, day in (
+            (ci_summary.render_trio_days, trio_day()),
+            (ci_summary.render_odd_days, odd_day()),
+            (ci_summary.render_lock_days, lock_day()),
+        ):
+            out = render([day, {**failed, **{k: v for k, v in day.items()
+                                             if k in ("board_size", "code_length")}}])
+            assert "generated: 1/2" in out
+            assert "no board" in out
+
+    def test_a_run_off_target_is_visible(self):
+        out = ci_summary.render_lock_days([lock_day(), lock_day(on_target=False)])
+        assert "on target band: 1/2" in out
+
+    def test_a_counter_puts_an_unknown_value_last(self):
+        from collections import Counter
+
+        rendered = ci_summary._counts(Counter({None: 1, 2: 1, 1: 3}))
+        assert rendered == "1 x3, 2 x1, None x1"
+
+    def test_an_empty_counter_says_none(self):
+        from collections import Counter
+
+        assert ci_summary._counts(Counter()) == "none"
+
+    def test_the_cli_renders_each_symbolic_run(self, tmp_path, capsys):
+        for kind, day in (
+            ("shape-trio-days", trio_day()),
+            ("odd-number-out-days", odd_day()),
+            ("digit-lock-days", lock_day()),
+        ):
+            path = tmp_path / f"{kind}.json"
+            path.write_text(json.dumps([day]), encoding="utf-8")
+            assert ci_summary.main([kind, str(path)]) == 0
+            assert "generated: 1/1" in capsys.readouterr().out
+
+    def test_the_old_name_still_renders_a_trio_run(self, tmp_path, capsys):
+        """Kept so an older caller keeps working."""
+        path = tmp_path / "days.json"
+        path.write_text(json.dumps([trio_day()]), encoding="utf-8")
+        assert ci_summary.main(["trio-days", str(path)]) == 0
+        assert "Days (shape trio)" in capsys.readouterr().out

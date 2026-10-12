@@ -1490,3 +1490,182 @@ The one platform change the game needed is `puzzlegen.surface` in
 `ALLOWED_FOR_GAMES`, with `surface` added to `LAYERS`. The subsystem was built
 for this game, holds no repositories and opens no files, so it grants none of
 the access the invariant exists to deny.
+
+## Phase 9: content that is not words
+
+The request that opened this phase was to make the engine able to create and
+play games over digits, numbers and simple objects, and to prove it by
+shipping one. The first thing worth recording is what did *not* have to
+change.
+
+The query layer, the policy service, the generation pipeline, the verifier,
+the uniqueness contracts, the session layer and the share layer were all
+already domain-neutral. `ContentQuery.intersects_taxonomy` carried a comment
+about a number game asking for `notable_years`; `ValueKind` had INTEGER and
+NUMBER members nothing used; `ActivationPolicy.require_frequency_for_entities`
+defaulted to false. Phase 3's "the graph is not about words" was a real claim
+and it held. What was not neutral was the two ends: everything that *produced*
+content read a lexicon or a hand-authored file, and nothing gave an entity a
+form a client could draw.
+
+### Four platform changes, each the smallest one that closes a real gap
+
+**`puzzlegen/symbols`, the symbolic form subsystem.** A peer of
+`puzzlegen.surface`, on the same layer, answering a different question. One
+place decides what an entity looks like when it is not a word: the glyph a
+client draws, the label a reader says, and the position on a scale where it
+has one. All three are read from facts rather than from the name, because a
+figure named `two solid red triangles` is drawn as a glyph and a digit named
+`7` is read as `seven`, so a subsystem guessing either from spelling would be
+wrong in both directions. It holds a policy, a per-entity form, an index with
+a fingerprint, and a glyph-collision report -- the symbolic counterpart of a
+lemma collision, and a sharper problem: two words that spell the same thing
+are a curiosity, two tiles drawn identically are a board the player cannot
+operate.
+
+The two subsystems are peers that do not import each other.
+`TestTheFormSubsystemsStayPeers` says so, because the layer rule does not: a
+module may import from its own layer. The same test checks that the predicate
+names the provider writes and the subsystem reads agree, which is the one
+coupling between two layers that cannot import each other and so is the one
+place a silent disagreement could produce a board with no glyphs and no error.
+
+**`puzzlegen/providers/generated.py`, content that is a declaration.**
+`NumberRangeProvider` emits every integer in a range with the properties that
+sort it; `FigureProvider` emits every combination of a small attribute space.
+Both are pure functions of their constructor arguments, and the declaration is
+the version string, so a widened range is a different source rather than the
+same one at a different time. Writing eighty-one figures and a hundred numbers
+out as curated JSON would have been several thousand committed lines whose
+every value these modules compute, which is this project's recurring failure
+in its purest form.
+
+Their facts are `SOURCED` with `SourceKind.COMPUTED` on the descriptor, not
+`ProvenanceClass.COMPUTED`. That class means derived from other graph records
+and the model enforces it with `derived_from`; these have no graph inputs, and
+the source is the generator.
+
+**A value window and a value ordering on `ContentQuery`.**
+`predicate_at_least`, `predicate_at_most` and `order`, honoured by the four
+operations that select entities one at a time and refused on the others the
+way a covering request is. The window is convenience. The ordering is not: a
+query has a limit, the service applies it, and a caller sorting what came back
+has sorted whichever fifty entities came first in id order -- which for numbers
+is lexicographic, 1, 10, 100, 11. The sort has to happen where the whole pool
+is still visible.
+
+**A snapshot need not be lexical.** `--lexicon` is no longer required and
+`--generated kind:declaration:taxonomy` is new. Some source is still required;
+a lexical one is not. `docs/build-symbolic-snapshot.sh` builds the snapshot
+these three games read: 181 entities, 1,758 facts, 40 categories, no model, no
+network, no lexicon, seconds to run, and reproducible byte for byte.
+
+### What the shared graph does on content that is not words
+
+The symbolic snapshot imports the same `NumberRangeProvider` twice, as a
+`digits` taxonomy over nought to nine and a `numbers` taxonomy over nought to
+ninety-nine. Where they overlap they name the same entities: the snapshot
+holds 181 entities rather than 191, and `seven` is one record with two
+memberships. That is phase 1's normalisation claim holding on content it was
+not designed around, and it is why a digit board and a number board share
+dependencies rather than duplicating them.
+
+### The three games
+
+| game | content | contract | verification | first in the repository to |
+|---|---|---|---|---|
+| `shape_trio` | simple objects | `EXACTLY_ONE` | `COMPLETE` | promise COMPLETE, over a real combinatorial space |
+| `odd_number_out` | numbers | `EXACTLY_ONE` | `SOUND_INCOMPLETE` declared, COMPLETE returned | need the numeric query vocabulary |
+| `digit_lock` | digits | `UNIQUE_DEDUCTION` | `COMPLETE` | declare a deduction contract |
+
+Three rather than one, because one game demonstrates that a game can be built
+and three demonstrate that the content is replaceable, which is the
+architecture's actual claim. Each found something the others would not have.
+
+**`shape_trio`** is a board of figures with exactly one trio: three whose
+shape, fill, count and colour are each all the same or all different. Its
+construction is the phase's nicest result. At three values per attribute any
+two figures determine exactly one third, so a board's trios are exactly its
+pairs whose completion is also present; seed a board with one trio, then add
+only figures that complete no pair already down, and the board has exactly one
+trio by construction. Measured against the alternative: over a thousand random
+draws, exactly one trio came up 422 times at nine tiles and 147 at twelve,
+while the construction built 500 of 500 at both sizes. The verifier enumerates
+every triple independently anyway, because a check sharing the generator's
+shortcut would share its bugs.
+
+It is also the game most exposed to the accessibility gate, and the exposure
+is its own content: two figures can differ only in colour. The answer is in
+three parts -- the glyph carries shape and fill, the count is how many glyphs a
+tile draws, and the colour is carried as a named attribute every tile prints
+as a word as well as a hue -- so a board stays operable for a player who cannot
+see the difference.
+
+**`odd_number_out`** is a row of numbers, all but one sharing a property the
+graph holds, in ascending order. It is the first game whose content has a
+scale and the first to need both new query constraints: the window keeps the
+board from giving its answer away by size, and the ordering is what makes the
+board's own order a property of the content rather than of a client's sort.
+Its verifier counts *tiles*, not property-and-tile pairs, because a board whose
+odd number is picked out by two properties has one answer and two arguments
+for it.
+
+**`digit_lock`** is a secret code of distinct digits and the clues that entail
+it: guesses with their exact and misplaced counts, and facts about the code
+read off the digit entities' own `is_prime` and `parity`. Those facts travel
+with the board through assembly into the solution, so the clue a player reads,
+the generator's elimination and the verifier's enumeration are one set of
+facts. The first draft had the verifier recompute primality in one line, which
+is the one line that could make a board unsolvable from what it shows.
+
+Its contract is `UNIQUE_DEDUCTION` rather than `EXACTLY_ONE`, and the
+generator's stopping rule is why: it adds clues until exactly one code in the
+whole space survives, not until the secret is among the survivors. The two
+differ precisely when the board is not deducible, and a board with two
+survivors has one intended answer and no argument for it.
+
+### How the difficulty scales were calibrated, and the mistake that forced it
+
+All three games' cut points are fitted over the first eight candidates of each
+day -- the window the engine's in-band search looks at -- rather than over every
+candidate the generator offers. Game two's thresholds were fitted the other
+way and correctly so, because its band changes the board: a hard day withholds
+four letters and an easy one two. These three bands change only the
+generator's *ordering*. Fitted over every candidate, `shape_trio`'s best
+possible pair of cut points bands 43% of them correctly, which measures the
+sample and not the scale; over the search window the same model bands 90%, and
+both number games band 100%.
+
+The 100% is recorded with its caveat in both descriptors. A clean separation is
+usually a sign of a tautology and here it is partly one: the heaviest feature
+in each model is what the band selects on. Each game has a test asserting the
+other features still move a board inside its band, and `odd_number_out` has one
+asserting that the *unranked* ranges overlap, so the band promise rests on the
+ranking as much as on the scale.
+
+Two numbers were invented before being measured, and both would have been
+invisible. `shape_trio`'s hard band originally targeted a decoy density of
+0.38, which is above anything either board size produces -- a hard day would
+have ranked its candidates by an unreachable number, which is a shuffle. And
+`odd_number_out`'s seven-tile boards at the obscure tier would have needed six
+of the five Fibonacci numbers in its window. Both are now measured, with the
+ranges in the descriptors and tests that re-measure them.
+
+### Shipping, and what makes it auditable
+
+All three ship a committed month: thirty consecutive days against the symbolic
+snapshot, every day a board, every board verified unique under the contract it
+declares, every board inside the band it asked for, and every month holding
+twenty-nine or thirty distinct boards.
+
+`scripts/ci.sh symbolic` rebuilds the snapshot and all three runs and fails if
+any has changed, which is the mechanism `coverage.yml` applies to the lexical
+coverage artifacts. It is affordable here in a way it is not for the lexical
+snapshot: the content is three declarations, so the whole build and three
+months of days take seconds. Two blind spots were closed in writing it. The
+committed-run check used `git status` alone, which says nothing about an
+ignored untracked file -- and `build/` is gitignored, so a brand new game's run
+would have been reported as matching a committed run that does not exist. And
+each game gets its own summary renderer rather than sharing one, because each
+run is about the claim that game's contract makes: one trio per board, one
+readable tile, one surviving code.

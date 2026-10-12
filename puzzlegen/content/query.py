@@ -50,6 +50,50 @@ COVERING_OPERATIONS = frozenset(
 )
 
 
+#: Operations that select entities one at a time, and so can honour a
+#: constraint or an ordering over a fact's value.
+#:
+#: The same arrangement ``COVERING_OPERATIONS`` uses, for the same reason: a
+#: group query can be given a value window and could not honour it without
+#: deciding whether the window applies to every member or to any of them,
+#: which is a question the caller has to answer rather than one this layer
+#: should guess. A group operation that learns to take a window is added here
+#: and nowhere else.
+VALUE_OPERATIONS = frozenset(
+    {
+        Operation.FIND_ENTITIES,
+        Operation.FIND_CATEGORY_MEMBERS,
+        Operation.FIND_ENTITIES_BY_FREQUENCY,
+        Operation.FIND_ENTITIES_BY_DIFFICULTY,
+    }
+)
+
+
+class ResultOrder(StrEnum):
+    """How an entity result is ordered.
+
+    Ordering is part of the request rather than something a caller does
+    afterwards, for one reason that only shows up on content with a scale: a
+    query has a limit, the service applies it, and the fifty entities a
+    caller receives are whichever fifty came first in id order. A number game
+    asking for the integers under a hundred and sorting the answer gets a
+    sorted sample of an arbitrary fifty, not the first fifty numbers. The sort
+    has to happen on the side of the limit where the whole pool is still
+    visible, which is here.
+
+    ``ID`` is the default and is what every existing caller gets. It is not an
+    absence of ordering: entity ids are derived from natural keys and the pool
+    is sorted by them, so a result is reproducible either way.
+    """
+
+    #: Entity id order. Reproducible, and unrelated to any value.
+    ID = "id"
+    #: Ascending by the queried predicate's value.
+    PREDICATE_ASCENDING = "predicate_ascending"
+    #: Descending by the queried predicate's value.
+    PREDICATE_DESCENDING = "predicate_descending"
+
+
 class GroupingMode(StrEnum):
     """What makes a set of entities a group in a group query.
 
@@ -99,6 +143,21 @@ class ContentQuery:
     predicate: str | None = None
     #: Restrict to entities asserting this predicate with this value.
     predicate_value: Any | None = None
+    #: Lower bound on the queried predicate's numeric value, inclusive.
+    #:
+    #: Inclusive on both ends, because the bounds a caller states are the ones
+    #: a player would state: "the two-digit numbers" is ten to ninety-nine,
+    #: and a half-open window would make every caller write the arithmetic to
+    #: avoid an off-by-one that no test of theirs could see.
+    #:
+    #: Numeric only. A string value is ordered by nothing a caller and this
+    #: layer would agree about, and a bound that silently compared
+    #: lexicographically would answer "is 'nine' at least 'five'" with a yes.
+    predicate_at_least: float | None = None
+    #: Upper bound on the queried predicate's numeric value, inclusive.
+    predicate_at_most: float | None = None
+    #: How the result is ordered. See :class:`ResultOrder`.
+    order: ResultOrder = ResultOrder.ID
 
     similarity_strategy: str | None = None
     minimum_similarity: float | None = None
@@ -232,8 +291,53 @@ class ContentQuery:
         if self.group_size is not None and self.group_size < 2:
             raise ValueError("group_size must be at least 2")
         self._check_covering()
+        self._check_values()
         if self.taxonomy_depth is not None and self.taxonomy_depth < 0:
             raise ValueError("taxonomy_depth must be non-negative")
+
+    def _check_values(self) -> None:
+        """A value window or a value ordering is refused here, never ignored.
+
+        The same rule the covering checker applies. A caller that set a bound
+        and an operation that cannot honour it believes it asked for a window,
+        and accepting that quietly is how an unconstrained result passes for a
+        constrained one. Both failures are the caller's to fix, and both are
+        cheap to state precisely.
+        """
+        ordered = self.order is not ResultOrder.ID
+        bounded = (
+            self.predicate_at_least is not None or self.predicate_at_most is not None
+        )
+        if not ordered and not bounded:
+            return
+        if self.operation not in VALUE_OPERATIONS:
+            raise ValueError(
+                f"a value window or ordering is not honoured by {self.operation}: "
+                f"only {sorted(o.value for o in VALUE_OPERATIONS)} select "
+                "entities one at a time"
+            )
+        if self.predicate is None:
+            raise ValueError(
+                "a value window or ordering needs a predicate to read the "
+                "value from"
+            )
+        if (
+            self.predicate_at_least is not None
+            and self.predicate_at_most is not None
+            and self.predicate_at_least > self.predicate_at_most
+        ):
+            raise ValueError(
+                f"predicate_at_least exceeds predicate_at_most: "
+                f"{self.predicate_at_least} > {self.predicate_at_most}"
+            )
+        if bounded and self.predicate_value is not None:
+            # An exact value and a window are two different questions, and a
+            # caller asking both has one of them wrong. Answering the
+            # intersection would be answering neither.
+            raise ValueError(
+                "predicate_value and a value window cannot both be set: one "
+                "asks for a value, the other for a range"
+            )
 
     def _check_covering(self) -> None:
         """A covering request is refused here rather than silently ignored.

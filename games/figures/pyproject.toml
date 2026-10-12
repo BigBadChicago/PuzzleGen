@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "puzzlegen-shape-trio"
+version = "1.0.0"
+description = "Game three for PuzzleGen: one trio of simple figures, among figures that nearly are."
+requires-python = ">=3.11"
+# The platform, and nothing else. A game depends on the capabilities the
+# engine exposes, never on how they are implemented, so there is no snapshot
+# dependency here and no storage dependency: a game that could install one
+# could reach the graph. The symbolic form subsystem is part of the platform
+# this game depends on, which is the point of it being a subsystem rather
+# than a helper inside this package: the glyph a tile draws and the label a
+# reader hears have to be the same ones every other game and the engine's own
+# presentation layer would reach.
+dependencies = ["puzzlegen>=0.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "hypothesis>=6.98"]
+
+# How the platform finds this game. The registry reads this group and
+# registers what it finds, so installing this distribution adds the game and
+# uninstalling it removes the game, with no edit anywhere in the platform.
+[project.entry-points."puzzlegen.games"]
+shape_trio = "puzzlegen_figures:build_plugin"
+
+[tool.setuptools.packages.find]
+include = ["puzzlegen_figures*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error"]

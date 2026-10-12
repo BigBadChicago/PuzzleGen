@@ -121,6 +121,132 @@ def render_days(days: list[dict]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def render_trio_days(days: list[dict]) -> str:
+    """A figure game's day run, which has a different shape from game one's.
+
+    Its own renderer rather than a generalisation of ``render_days``, because
+    the two measure different things and a shared renderer would have to read
+    both shapes and report the union. Game one's run is about whether a board
+    formed at all and which hidden group it used; this one's is about whether
+    every board held exactly one trio under a complete enumeration, which is
+    the claim the game's contract makes and the only one worth a summary.
+    """
+    generated = [d for d in days if d.get("generated")]
+    trios = Counter(d.get("trios") for d in generated)
+    completeness = Counter(d.get("completeness") for d in generated)
+    sizes = Counter(d["board_size"] for d in generated)
+    varying = Counter(len(d.get("varying") or ()) for d in generated)
+    reasons = Counter(
+        d.get("reason") or "unknown" for d in days if not d.get("generated")
+    )
+    on_target = sum(1 for d in generated if d.get("on_target"))
+    boards = {tuple(d.get("tiles") or ()) for d in generated}
+    lines = [
+        "### Days (shape trio)",
+        "",
+        f"- generated: {len(generated)}/{len(days)}",
+        f"- on target band: {on_target}/{len(generated)}",
+        # The contract's own claim. Anything but {1: n} means a board shipped
+        # whose answer was not unique or did not exist.
+        f"- trios per board: {', '.join(f'{k}x{v}' for k, v in sorted(trios.items(), key=lambda kv: (kv[0] is None, kv[0]))) or 'none'}",
+        f"- enumeration: {', '.join(f'{k} x{v}' for k, v in completeness.items()) or 'none'}",
+        # One distinct board across every day would satisfy every line above.
+        f"- distinct boards: {len(boards)}",
+        f"- board sizes: {', '.join(f'{k}x{v}' for k, v in sorted(sizes.items())) or 'none'}",
+        f"- trio varied on: {', '.join(f'{k} attributes x{v}' for k, v in sorted(varying.items())) or 'none'}",
+    ]
+    if reasons:
+        lines.append(
+            "- not generated: "
+            + ", ".join(f"{r} ({n})" for r, n in reasons.most_common())
+        )
+    return "\n".join(lines) + "\n"
+
+
+def render_odd_days(days: list[dict]) -> str:
+    """A number game's day run.
+
+    Its own renderer rather than a shared one, for the reason
+    ``render_trio_days`` is: each game's run is about the claim that game's
+    contract makes, and a renderer reading every shape would report the union
+    of them. Here the claim is one readable tile under a complete scan of the
+    day's vocabulary.
+    """
+    generated = [d for d in days if d.get("generated")]
+    readings = Counter(d.get("readings") for d in generated)
+    completeness = Counter(d.get("completeness") for d in generated)
+    properties = Counter(d.get("property_name") for d in generated)
+    sizes = Counter(d["board_size"] for d in generated)
+    reasons = Counter(
+        d.get("reason") or "unknown" for d in days if not d.get("generated")
+    )
+    on_target = sum(1 for d in generated if d.get("on_target"))
+    boards = {tuple(d.get("tiles") or ()) for d in generated}
+    lines = [
+        "### Days (odd number out)",
+        "",
+        f"- generated: {len(generated)}/{len(days)}",
+        f"- on target band: {on_target}/{len(generated)}",
+        f"- readable tiles per board: {_counts(readings)}",
+        f"- scan: {_counts(completeness)}",
+        f"- distinct boards: {len(boards)}",
+        f"- board sizes: {_counts(sizes)}",
+        f"- properties: {_counts(properties)}",
+    ]
+    if reasons:
+        lines.append(
+            "- not generated: "
+            + ", ".join(f"{r} ({n})" for r, n in reasons.most_common())
+        )
+    return "\n".join(lines) + "\n"
+
+
+def render_lock_days(days: list[dict]) -> str:
+    """A digit game's day run.
+
+    The claim is one surviving code under an enumeration of the whole space,
+    so the survivor count leads. The clue count follows because it is what the
+    band's lever moves: a run whose easy days show as many clue rows as its
+    hard ones is a run where the lever stopped working.
+    """
+    generated = [d for d in days if d.get("generated")]
+    survivors = Counter(d.get("survivors") for d in generated)
+    completeness = Counter(d.get("completeness") for d in generated)
+    clues = Counter(d.get("clues") for d in generated)
+    facts = Counter(d.get("facts") for d in generated)
+    lengths = Counter(d["code_length"] for d in generated)
+    reasons = Counter(
+        d.get("reason") or "unknown" for d in days if not d.get("generated")
+    )
+    on_target = sum(1 for d in generated if d.get("on_target"))
+    lines = [
+        "### Days (digit lock)",
+        "",
+        f"- generated: {len(generated)}/{len(days)}",
+        f"- on target band: {on_target}/{len(generated)}",
+        f"- surviving codes per board: {_counts(survivors)}",
+        f"- enumeration: {_counts(completeness)}",
+        f"- distinct codes: {len({d.get('code') for d in generated})}",
+        f"- code lengths: {_counts(lengths)}",
+        f"- clue rows: {_counts(clues)}",
+        f"- stated facts: {_counts(facts)}",
+    ]
+    if reasons:
+        lines.append(
+            "- not generated: "
+            + ", ".join(f"{r} ({n})" for r, n in reasons.most_common())
+        )
+    return "\n".join(lines) + "\n"
+
+
+def _counts(counter: Counter) -> str:
+    """A counter as "value xN, value xN", with None sorting last."""
+    if not counter:
+        return "none"
+    ordered = sorted(counter.items(), key=lambda kv: (kv[0] is None, kv[0]))
+    return ", ".join(f"{key} x{count}" for key, count in ordered)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="kind", required=True)
@@ -132,6 +258,12 @@ def main(argv: list[str] | None = None) -> int:
     coverage.add_argument("--changed", choices=["yes", "no"], default=None)
     days = sub.add_parser("days")
     days.add_argument("days", type=Path)
+    for name in ("shape-trio-days", "odd-number-out-days", "digit-lock-days"):
+        symbolic = sub.add_parser(name)
+        symbolic.add_argument("days", type=Path)
+    # Kept so an older caller keeps working; the new name is shape-trio-days.
+    trio = sub.add_parser("trio-days")
+    trio.add_argument("days", type=Path)
     args = parser.parse_args(argv)
 
     if args.kind == "tests":
@@ -140,6 +272,12 @@ def main(argv: list[str] | None = None) -> int:
         old = json.loads(args.old.read_text()) if args.old and args.old.stat().st_size else None
         changed = None if args.changed is None else args.changed == "yes"
         out = render_coverage(json.loads(args.new.read_text()), old, changed)
+    elif args.kind in ("trio-days", "shape-trio-days"):
+        out = render_trio_days(json.loads(args.days.read_text()))
+    elif args.kind == "odd-number-out-days":
+        out = render_odd_days(json.loads(args.days.read_text()))
+    elif args.kind == "digit-lock-days":
+        out = render_lock_days(json.loads(args.days.read_text()))
     else:
         out = render_days(json.loads(args.days.read_text()))
     sys.stdout.write(out)

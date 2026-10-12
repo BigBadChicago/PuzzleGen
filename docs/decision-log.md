@@ -1351,3 +1351,251 @@ one thing the game cannot do without -- fold a word to the letters a player
 sees -- while holding no repositories and opening no files, so it grants none
 of the access the invariant exists to deny. A game computing its own letter
 folding would be the duplication the subsystem was extracted to remove.
+
+## Part 5: the symbolic turn (games three, four and five)
+
+Every decision below was forced by one request: make the engine able to create
+and play games over digits, numbers and simple objects. The platform's query
+layer, policy and pipeline turned out to be domain-neutral already, with
+comments anticipating a number game; what was not neutral was everything that
+produced or presented content. These are the choices that closed that gap and
+the three games that exercised it.
+
+### Content that is a declaration rather than a file
+
+**Decision:** where eighty-one simple figures and a hundred numbers come from.
+
+**Options considered:**
+- Curated JSON files, one row per entity, as game one's overlay and game two's
+  categories are.
+- A provider that generates them from a declaration.
+- A platform module of constants the games import directly, bypassing the
+  graph.
+
+**Chosen:** a provider that generates them, `puzzlegen/providers/generated.py`.
+
+**Why:** the third option is not available -- a game that imported content
+would bypass every gate in the content service, which the architecture
+invariants refuse -- so the real choice is between a file and a generator. The
+integers from zero to ninety-nine are not a dataset. Neither is the product of
+three shapes, three fills, three colours and three counts. Written out as
+curated JSON they are several thousand committed lines whose every value a
+twenty-line function computes, which is this project's recurring failure in
+its purest form: an artifact that can drift from the code that should have
+produced it. The generator makes the declaration the content, so the
+snapshot's hash is a function of the declaration and a widened range is a
+different source rather than the same one at a different time.
+
+The cost is that the content is only as reviewable as the code, which for
+arithmetic is an improvement and for a curated taxonomy would not be. That is
+why this is a new provider rather than a replacement for the curated one.
+
+### `ProvenanceClass.SOURCED` for a computed fact
+
+**Decision:** which provenance class a generated fact carries, given that it
+is plainly the output of a computation.
+
+**Chosen:** `SOURCED`, with `SourceKind.COMPUTED` on the descriptor.
+
+**Why:** `COMPUTED` in this system means derived from other records in the
+graph, and the model enforces that by requiring `derived_from`: a COMPUTED
+fact is invalidated when its inputs are retracted. These facts have no inputs
+in the graph. The source is the generator itself, which is what the
+descriptor's kind records, and a derivation list naming the entity its own
+fact is about would be a formality standing in for information.
+
+### A value window and a value ordering on the query
+
+**Decision:** how a game asks for the numbers between ten and ninety-nine, in
+ascending order.
+
+**Options considered:**
+- Fetch and filter in the game.
+- Add numeric bounds to `ContentQuery`.
+- Add bounds and an ordering.
+
+**Chosen:** bounds and an ordering, honoured only by the operations that
+select entities one at a time, refused elsewhere the way a covering request
+is.
+
+**Why:** the bounds are convenience and the ordering is not. A query has a
+limit, the service applies it, and the fifty entities a caller receives are
+whichever fifty came first in id order -- which for numbers is lexicographic:
+1, 10, 100, 11. A game sorting what came back has sorted a sorted sample of
+an arbitrary slice and cannot tell from the result. The sort has to happen
+where the whole pool is still visible, which is in the service. Filtering in
+the game was rejected for the reason the architecture gives generally: a game
+that pre-filters duplicates a gate it cannot see the inputs to.
+
+### A second form subsystem rather than widening the first
+
+**Decision:** where the glyph a client draws, the label a reader says and the
+position on a scale come from, for an entity that is not a word.
+
+**Options considered:**
+- Widen `puzzlegen.surface` to answer them.
+- A new peer subsystem, `puzzlegen.symbols`.
+- Let each game decide.
+
+**Chosen:** a peer subsystem, with `symbols` added to `LAYERS` beside
+`surface` and to `ALLOWED_FOR_GAMES`.
+
+**Why:** the third option is what would have happened by default and is the
+one the surface subsystem was extracted to prevent: two games over digits
+would answer "what does a seven look like" differently, and the engine could
+not announce a tile in a game it did not ship with. Between the first two, the
+subsystems answer different questions and must not be able to answer each
+other's: a letter question answered through a glyph would make a lexical board
+depend on a figure's drawing, and a glyph derived from a spelling is the
+shortcut that would put `periwinkle` on a tile sized for `7`. They are peers
+that do not import each other, which the layer rule does not say on its own --
+a module may import from its own layer -- so a new invariant says it.
+
+All three answers come from facts rather than from the name. A figure named
+"two solid red triangles" is drawn as a glyph and a digit named "7" is read as
+"seven", so a subsystem guessing either from spelling would be wrong in both
+directions.
+
+### A snapshot need not be lexical
+
+**Decision:** whether `tools/build_snapshot.py` should keep requiring
+`--lexicon`.
+
+**Chosen:** no. Some source is required; a lexical one is not.
+
+**Why:** the flag was mandatory because every content source the tool knew
+about was lexical, so a build with none was a build with nothing. It is now
+one source among three, and a snapshot of digits, numbers and figures is a
+legitimate snapshot that happens to contain no words. Requiring a WordNet
+export to build one would make a lexicon the price of entry for games that
+have no use for it.
+
+### Three games rather than one
+
+**Decision:** how many games to build over the new content, given that one
+would have demonstrated that the engine can.
+
+**Chosen:** three, one per kind of content: `shape_trio` over simple objects,
+`odd_number_out` over numbers, `digit_lock` over digits.
+
+**Why:** one game demonstrates that a game can be built; three demonstrate
+that the content is replaceable, which is the architecture's actual claim.
+They also exercise three different engine contracts that between them cover
+what was untested: `shape_trio` is the first `EXACTLY_ONE` with `COMPLETE`
+verification, `digit_lock` is the first `UNIQUE_DEDUCTION`, and
+`odd_number_out` is the first game to need the numeric query vocabulary.
+Each one found something the others would not have.
+
+### A board's trios are its pairs whose completion is present
+
+**Decision:** how `shape_trio` builds a board with exactly one valid trio.
+
+**Options considered:**
+- Draw n figures and keep the boards that happen to hold one.
+- Seed a trio and add only figures that complete no pair already down.
+
+**Chosen:** the construction.
+
+**Why:** measured rather than argued. Over a thousand random draws at each
+size, exactly one trio came up 422 times at nine tiles and 147 at twelve, so
+rejection sampling throws away more than half the work at the smaller size and
+six boards in seven at the larger. The construction built 500 of 500 at both
+sizes with no refusal of any kind, and it is available because at three values
+per attribute any two figures determine exactly one third. The verifier
+enumerates every triple anyway, independently, because a check sharing the
+generator's shortcut would share its bugs.
+
+### Two reasons are not two answers
+
+**Decision:** what `odd_number_out`'s verifier counts, given that a board's
+odd number can be picked out by more than one property.
+
+**Chosen:** tiles, not property-and-tile pairs.
+
+**Why:** the answer a player gives is a tile. A board whose odd number is the
+only one that is neither even nor a multiple of three has one answer and two
+arguments for it, and a player giving that tile is right under either, so the
+board is easier rather than ambiguous. A verifier counting pairs would report
+two solutions and have a perfectly good board refused for being too generous.
+What makes a board ambiguous is a second *tile* being readable, which is two
+players giving two tiles and the game marking one of them wrong.
+
+### The digit facts travel with the board
+
+**Decision:** where `digit_lock`'s verifier gets the primality it needs to
+evaluate a clue like "exactly two of the digits are prime".
+
+**Options considered:**
+- Recompute it: one line, `digit in (2, 3, 5, 7)`.
+- Carry the graph's facts through assembly into the solution.
+
+**Chosen:** carry them.
+
+**Why:** the one line is the one line that could make a board unsolvable from
+what it shows. The clue's truth was established against the content's facts;
+if the verifier used its own, a build whose digit taxonomy differed from
+textbook arithmetic would produce a board whose clue said one thing and whose
+verifier said another -- solvable from the content and unsolvable from the
+board, or the reverse. Carrying them makes the clue, the generator's
+elimination and the verifier's enumeration one set of facts. It is also what
+makes the property clues content rather than decoration: a different digits
+taxonomy produces different clues, consistently.
+
+### The stopping rule is "exactly one survives", not "the secret survives"
+
+**Decision:** when `digit_lock` stops adding clues.
+
+**Chosen:** when exactly one code in the whole space is consistent with every
+clue.
+
+**Why:** the two rules differ precisely when the board is not deducible. Every
+clue is true of the secret by construction, so the secret never leaves the
+surviving set and "the secret survives" is satisfied from the first clue
+onwards. A board with two survivors has one intended answer and no argument
+for it: a solver who reasons correctly to the end holds two codes and a coin.
+That is the board `UNIQUE_DEDUCTION` promises not to ship, and the contract
+was chosen over `EXACTLY_ONE` to say so.
+
+### Difficulty thresholds fitted over the boards the engine reaches
+
+**Decision:** which sample a game's difficulty cut points are measured over.
+
+**Options considered:**
+- Every candidate the generator offers, as game two's were.
+- The first few of each day, which is the window the engine's in-band search
+  looks at.
+
+**Chosen:** the search window, for all three games.
+
+**Why:** forced by a measurement that read wrong at first. Game two's band
+changes the board -- a hard day withholds four letters and an easy one two --
+so its candidates at one band are boards that could not exist at another.
+These three bands change only the generator's *ordering*: the content is the
+same every day and the band decides which boards are offered first. Fitted
+over all of them, `shape_trio`'s three bands are nearly indistinguishable and
+the best possible pair of cut points bands 43% correctly, which measures the
+sample rather than the scale. Over the search window the same model bands 90%,
+and the number games band 100%.
+
+The 100% is recorded with its own caveat in both descriptors, because a clean
+separation is usually a sign of a tautology and here it is partly one: the
+heaviest feature in each model is the thing the band selects on. Both games
+have a test asserting that the other features still move a board inside its
+band, and `odd_number_out` has one asserting that the unranked ranges do
+overlap -- so the band promise rests on the ranking as much as on the scale,
+which is better written down than discovered later.
+
+### Band targets have to be reachable
+
+**Decision:** nothing, in the end. Recorded because the first draft was wrong
+in a way that would have been invisible.
+
+`shape_trio`'s band targets were written as decoy densities of 0.18, 0.28 and
+0.38 before anything was measured. The measurement found the share runs 0.024
+to 0.202 at nine tiles and 0.045 to 0.150 at twelve, so the hard target was
+above anything either size can produce: a hard day would have ranked its
+candidates by an unreachable number, which is a shuffle. The targets are now
+inside the measured range and the ranges are in the descriptor. The same check
+caught `odd_number_out`'s board sizes: five of the two-digit numbers are
+Fibonacci, so a seven-tile board at the obscure tier would have needed six of
+the five there are.
