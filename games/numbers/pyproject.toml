@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "puzzlegen-odd-number-out"
+version = "1.0.0"
+description = "Game four for PuzzleGen: a row of numbers, and the one of them that does not belong."
+requires-python = ">=3.11"
+# The platform, and nothing else. A game depends on the capabilities the
+# engine exposes, never on how they are implemented, so there is no snapshot
+# dependency here and no storage dependency: a game that could install one
+# could reach the graph. What this game needs beyond the port is the symbolic
+# form subsystem, for the glyph a tile draws and the words a reader hears,
+# and the content layer's numeric vocabulary, for the value window and the
+# ascending order. Both are platform capabilities rather than helpers in this
+# package, which is what lets a second game over numbers reach the same
+# answers.
+dependencies = ["puzzlegen>=0.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "hypothesis>=6.98"]
+
+# How the platform finds this game. The registry reads this group and
+# registers what it finds, so installing this distribution adds the game and
+# uninstalling it removes the game, with no edit anywhere in the platform.
+[project.entry-points."puzzlegen.games"]
+odd_number_out = "puzzlegen_numbers:build_plugin"
+
+[tool.setuptools.packages.find]
+include = ["puzzlegen_numbers*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error"]
