@@ -1,0 +1,1070 @@
+[
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-01",
+    "difficulty": 0.643,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25ee3b",
+      "\u25a13r",
+      "\u25cb2b",
+      "\u25a13b",
+      "\u25cf2r",
+      "\u25a11b",
+      "\u25b23g",
+      "\u25a83g",
+      "\u25b33r"
+    ],
+    "trio": [
+      "entity:three-hollow-red-triangles",
+      "entity:three-solid-green-triangles",
+      "entity:three-striped-blue-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "fill"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-02",
+    "difficulty": 0.633,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25b23g",
+      "\u25cd1g",
+      "\u25cb1r",
+      "\u25b32b",
+      "\u25a13r",
+      "\u25cb2r",
+      "\u25ee2b",
+      "\u25cf2r",
+      "\u25a11b",
+      "\u25a81r",
+      "\u25b32g",
+      "\u25ee1b"
+    ],
+    "trio": [
+      "entity:one-striped-blue-triangle",
+      "entity:one-striped-green-circle",
+      "entity:one-striped-red-square"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-03",
+    "difficulty": 0.63,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25ee1b",
+      "\u25cd2b",
+      "\u25b22b",
+      "\u25a01b",
+      "\u25ee1r",
+      "\u25cb1r",
+      "\u25a83r",
+      "\u25cf3r",
+      "\u25cf3b"
+    ],
+    "trio": [
+      "entity:one-solid-blue-square",
+      "entity:three-solid-blue-circles",
+      "entity:two-solid-blue-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-04",
+    "difficulty": 0.593,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a02b",
+      "\u25cd1r",
+      "\u25b21b",
+      "\u25b31r",
+      "\u25b22g",
+      "\u25ee2r",
+      "\u25cf3g",
+      "\u25ee3r",
+      "\u25cf2r"
+    ],
+    "trio": [
+      "entity:two-solid-blue-squares",
+      "entity:two-solid-green-triangles",
+      "entity:two-solid-red-circles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-05",
+    "difficulty": 0.568,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a11g",
+      "\u25cb3g",
+      "\u25b33b",
+      "\u25b32g",
+      "\u25cf2r",
+      "\u25a83g",
+      "\u25ee3g",
+      "\u25ee1b",
+      "\u25a03b"
+    ],
+    "trio": [
+      "entity:one-hollow-green-square",
+      "entity:three-hollow-green-circles",
+      "entity:two-hollow-green-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-06",
+    "difficulty": 0.578,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 23,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cb3b",
+      "\u25cd2r",
+      "\u25b22r",
+      "\u25cb2r",
+      "\u25ee3g",
+      "\u25cf2g",
+      "\u25b31g",
+      "\u25ee3r",
+      "\u25b31r",
+      "\u25ee1r",
+      "\u25cf3r",
+      "\u25ee1b"
+    ],
+    "trio": [
+      "entity:one-hollow-red-triangle",
+      "entity:three-striped-red-triangles",
+      "entity:two-solid-red-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "fill"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-07",
+    "difficulty": 0.555,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a11r",
+      "\u25a13g",
+      "\u25a12g",
+      "\u25a12b",
+      "\u25a83r",
+      "\u25b31b",
+      "\u25b23b",
+      "\u25b31r",
+      "\u25b33g"
+    ],
+    "trio": [
+      "entity:one-hollow-red-square",
+      "entity:three-hollow-green-squares",
+      "entity:two-hollow-blue-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "count"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-08",
+    "difficulty": 0.58,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cd2r",
+      "\u25cd2b",
+      "\u25a02b",
+      "\u25cb3b",
+      "\u25a83g",
+      "\u25cb2g",
+      "\u25a01g",
+      "\u25cf1b",
+      "\u25cd1g"
+    ],
+    "trio": [
+      "entity:one-solid-blue-circle",
+      "entity:three-hollow-blue-circles",
+      "entity:two-striped-blue-circles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "count",
+      "fill"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-09",
+    "difficulty": 0.588,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25b22b",
+      "\u25b23g",
+      "\u25cd3b",
+      "\u25a12b",
+      "\u25ee3b",
+      "\u25a82b",
+      "\u25cf2b",
+      "\u25b33g",
+      "\u25b22r",
+      "\u25cd3g",
+      "\u25b32g",
+      "\u25a83r"
+    ],
+    "trio": [
+      "entity:three-striped-blue-triangles",
+      "entity:three-striped-green-circles",
+      "entity:three-striped-red-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-10",
+    "difficulty": 0.593,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cd3r",
+      "\u25a12b",
+      "\u25b21r",
+      "\u25a83b",
+      "\u25a03g",
+      "\u25a01r",
+      "\u25ee2g",
+      "\u25a13g",
+      "\u25a03r"
+    ],
+    "trio": [
+      "entity:three-hollow-green-squares",
+      "entity:three-solid-red-squares",
+      "entity:three-striped-blue-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "fill"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-11",
+    "difficulty": 0.6,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a13b",
+      "\u25cd1r",
+      "\u25cd2g",
+      "\u25a11r",
+      "\u25b22b",
+      "\u25cb3b",
+      "\u25cf3r",
+      "\u25a83b",
+      "\u25cf1g",
+      "\u25b32b",
+      "\u25cb2r",
+      "\u25b23g"
+    ],
+    "trio": [
+      "entity:one-striped-red-circle",
+      "entity:three-solid-red-circles",
+      "entity:two-hollow-red-circles"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "fill"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-12",
+    "difficulty": 0.58,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25b23g",
+      "\u25a83b",
+      "\u25cb3g",
+      "\u25ee2r",
+      "\u25cd2g",
+      "\u25a02b",
+      "\u25b22g",
+      "\u25b32g",
+      "\u25a82b"
+    ],
+    "trio": [
+      "entity:two-striped-blue-squares",
+      "entity:two-striped-green-circles",
+      "entity:two-striped-red-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-13",
+    "difficulty": 0.6,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cb3b",
+      "\u25ee2b",
+      "\u25ee3b",
+      "\u25a11b",
+      "\u25b22r",
+      "\u25cf1g",
+      "\u25cd2g",
+      "\u25a81b",
+      "\u25b23g",
+      "\u25cd1r",
+      "\u25b32b",
+      "\u25cb2g"
+    ],
+    "trio": [
+      "entity:one-hollow-blue-square",
+      "entity:three-hollow-blue-circles",
+      "entity:two-hollow-blue-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-14",
+    "difficulty": 0.6,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a03g",
+      "\u25b21g",
+      "\u25a01b",
+      "\u25b33r",
+      "\u25b23b",
+      "\u25a13b",
+      "\u25cd1b",
+      "\u25b32g",
+      "\u25a82r",
+      "\u25cf1b",
+      "\u25cb2b",
+      "\u25a82b"
+    ],
+    "trio": [
+      "entity:one-solid-blue-square",
+      "entity:three-hollow-blue-squares",
+      "entity:two-striped-blue-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "fill"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-15",
+    "difficulty": 0.6,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a03r",
+      "\u25a83b",
+      "\u25cd2r",
+      "\u25b23b",
+      "\u25a12r",
+      "\u25cd3r",
+      "\u25b21g",
+      "\u25cd1b",
+      "\u25cf2g",
+      "\u25b31b",
+      "\u25cf3g",
+      "\u25cf1r"
+    ],
+    "trio": [
+      "entity:three-solid-blue-triangles",
+      "entity:three-solid-green-circles",
+      "entity:three-solid-red-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-16",
+    "difficulty": 0.623,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 23,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cd2g",
+      "\u25a81r",
+      "\u25cd3r",
+      "\u25ee1r",
+      "\u25a13r",
+      "\u25cf3r",
+      "\u25ee2g",
+      "\u25b32b",
+      "\u25a01b",
+      "\u25b31b",
+      "\u25a82r",
+      "\u25a02b"
+    ],
+    "trio": [
+      "entity:one-striped-red-triangle",
+      "entity:three-striped-red-circles",
+      "entity:two-striped-red-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-17",
+    "difficulty": 0.618,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25b21b",
+      "\u25a81r",
+      "\u25a11r",
+      "\u25a12b",
+      "\u25cf1r",
+      "\u25a83r",
+      "\u25a13r",
+      "\u25cf2g",
+      "\u25a11g"
+    ],
+    "trio": [
+      "entity:one-hollow-green-square",
+      "entity:three-hollow-red-squares",
+      "entity:two-hollow-blue-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "count"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-18",
+    "difficulty": 0.6,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cd1b",
+      "\u25cd2g",
+      "\u25b23b",
+      "\u25ee1b",
+      "\u25ee1g",
+      "\u25cf3g",
+      "\u25b33r",
+      "\u25a82r",
+      "\u25cf2r",
+      "\u25b23r",
+      "\u25cb2g",
+      "\u25a83g"
+    ],
+    "trio": [
+      "entity:one-striped-green-triangle",
+      "entity:three-striped-green-squares",
+      "entity:two-striped-green-circles"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-19",
+    "difficulty": 0.583,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cb2b",
+      "\u25a11g",
+      "\u25a81b",
+      "\u25cf1b",
+      "\u25b21g",
+      "\u25ee3g",
+      "\u25cb3r",
+      "\u25cd3g",
+      "\u25cd2b",
+      "\u25cf2r",
+      "\u25cf3g",
+      "\u25a01g"
+    ],
+    "trio": [
+      "entity:one-solid-blue-circle",
+      "entity:three-solid-green-circles",
+      "entity:two-solid-red-circles"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "colour",
+      "count"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-20",
+    "difficulty": 0.617,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25b21r",
+      "\u25ee1g",
+      "\u25cd3g",
+      "\u25a83g",
+      "\u25b32g",
+      "\u25b23b",
+      "\u25a11g",
+      "\u25cd1r",
+      "\u25cb1g",
+      "\u25a82g",
+      "\u25ee3r",
+      "\u25a02r"
+    ],
+    "trio": [
+      "entity:one-striped-green-triangle",
+      "entity:three-striped-green-circles",
+      "entity:two-striped-green-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-21",
+    "difficulty": 0.59,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 23,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a03r",
+      "\u25a02g",
+      "\u25a12g",
+      "\u25ee3b",
+      "\u25cd2r",
+      "\u25cb2g",
+      "\u25ee2g",
+      "\u25b31g",
+      "\u25cb2r",
+      "\u25b23r",
+      "\u25b22g",
+      "\u25b32r"
+    ],
+    "trio": [
+      "entity:two-hollow-green-circles",
+      "entity:two-solid-green-squares",
+      "entity:two-striped-green-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "fill",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-22",
+    "difficulty": 0.607,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 23,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a01g",
+      "\u25cd1g",
+      "\u25cd2g",
+      "\u25cb1r",
+      "\u25a83g",
+      "\u25b21g",
+      "\u25a81r",
+      "\u25a83b",
+      "\u25cb3b",
+      "\u25b32b",
+      "\u25ee3g",
+      "\u25a11g"
+    ],
+    "trio": [
+      "entity:one-hollow-green-square",
+      "entity:one-solid-green-triangle",
+      "entity:one-striped-green-circle"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "fill",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-23",
+    "difficulty": 0.58,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25b22b",
+      "\u25cf3b",
+      "\u25b32b",
+      "\u25cd1b",
+      "\u25cf3g",
+      "\u25a13g",
+      "\u25ee2g",
+      "\u25a83g",
+      "\u25cd1g"
+    ],
+    "trio": [
+      "entity:one-striped-green-circle",
+      "entity:three-striped-green-squares",
+      "entity:two-striped-green-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-24",
+    "difficulty": 0.583,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25ee3b",
+      "\u25a03g",
+      "\u25cd2g",
+      "\u25cf2b",
+      "\u25cd3b",
+      "\u25a82b",
+      "\u25a02g",
+      "\u25cf3r",
+      "\u25cd1b",
+      "\u25a12b",
+      "\u25cf2g",
+      "\u25b31b"
+    ],
+    "trio": [
+      "entity:one-striped-blue-circle",
+      "entity:three-striped-blue-triangles",
+      "entity:two-striped-blue-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-25",
+    "difficulty": 0.618,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a01g",
+      "\u25a82r",
+      "\u25cd2g",
+      "\u25a81b",
+      "\u25cb3g",
+      "\u25b23g",
+      "\u25a82b",
+      "\u25ee2b",
+      "\u25cb2b"
+    ],
+    "trio": [
+      "entity:two-striped-blue-triangles",
+      "entity:two-striped-green-circles",
+      "entity:two-striped-red-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-26",
+    "difficulty": 0.583,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a11r",
+      "\u25ee3b",
+      "\u25a02g",
+      "\u25a11g",
+      "\u25a02b",
+      "\u25cd2b",
+      "\u25cf1b",
+      "\u25cd2r",
+      "\u25a03r",
+      "\u25b22r",
+      "\u25a01r",
+      "\u25cf1r"
+    ],
+    "trio": [
+      "entity:one-solid-red-circle",
+      "entity:three-solid-red-squares",
+      "entity:two-solid-red-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "count",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 12,
+    "completeness": "COMPLETE",
+    "day": "2026-10-27",
+    "difficulty": 0.6,
+    "drawn_size": 12,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 22,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25b33b",
+      "\u25a01r",
+      "\u25b33g",
+      "\u25cf1r",
+      "\u25a83b",
+      "\u25cf2r",
+      "\u25a02b",
+      "\u25a03b",
+      "\u25b31r",
+      "\u25ee1g",
+      "\u25a02g",
+      "\u25cb1g"
+    ],
+    "trio": [
+      "entity:one-solid-red-square",
+      "entity:three-solid-blue-squares",
+      "entity:two-solid-green-squares"
+    ],
+    "trios": 1,
+    "triples_examined": 220,
+    "varying": [
+      "colour",
+      "count"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-28",
+    "difficulty": 0.593,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a81r",
+      "\u25cb2g",
+      "\u25a01r",
+      "\u25cd3g",
+      "\u25b21r",
+      "\u25cd1b",
+      "\u25cb1b",
+      "\u25b33b",
+      "\u25cb1r"
+    ],
+    "trio": [
+      "entity:one-hollow-red-circle",
+      "entity:one-solid-red-triangle",
+      "entity:one-striped-red-square"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "fill",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-29",
+    "difficulty": 0.605,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25a12g",
+      "\u25a12r",
+      "\u25a11b",
+      "\u25b32b",
+      "\u25cb3r",
+      "\u25cb2r",
+      "\u25cf1g",
+      "\u25cf1r",
+      "\u25b21g"
+    ],
+    "trio": [
+      "entity:two-hollow-blue-triangles",
+      "entity:two-hollow-green-squares",
+      "entity:two-hollow-red-circles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  },
+  {
+    "board_size": 9,
+    "completeness": "COMPLETE",
+    "day": "2026-10-30",
+    "difficulty": 0.605,
+    "drawn_size": 9,
+    "generated": true,
+    "measured_band": "MEDIUM",
+    "near_misses": 8,
+    "on_target": true,
+    "reason": "",
+    "tiles": [
+      "\u25cb2b",
+      "\u25a12g",
+      "\u25b33g",
+      "\u25ee3b",
+      "\u25cb1r",
+      "\u25ee1b",
+      "\u25b32r",
+      "\u25b31g",
+      "\u25ee3r"
+    ],
+    "trio": [
+      "entity:two-hollow-blue-circles",
+      "entity:two-hollow-green-squares",
+      "entity:two-hollow-red-triangles"
+    ],
+    "trios": 1,
+    "triples_examined": 84,
+    "varying": [
+      "colour",
+      "shape"
+    ]
+  }
+]

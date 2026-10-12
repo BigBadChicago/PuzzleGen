@@ -1,0 +1,85 @@
+name: symbolic snapshot
+
+# Rebuilds the symbolic snapshot and its committed day run, and fails if the
+# run has changed.
+#
+# The same mechanism coverage.yml applies to the coverage artifacts, applied to
+# the one day run this repository can afford to regenerate. The lexical
+# snapshot needs WordNet, a frequency table and an embedding model; this one
+# needs three declarations on a command line, so the whole build and a month of
+# days take seconds. That makes the shipping claim for the figure game
+# something CI checks rather than something a session once observed.
+#
+# Dispatched with commit=true on a branch, it commits the regenerated run to
+# that branch instead of failing, so a change that legitimately moves the days
+# gets its artifact without a session rebuilding it.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "games/figures/**"
+      - "puzzlegen/content/**"
+      - "puzzlegen/engine/**"
+      - "puzzlegen/graph/**"
+      - "puzzlegen/providers/generated.py"
+      - "puzzlegen/symbols/**"
+      - "tools/build_snapshot.py"
+      - "docs/build-symbolic-snapshot.sh"
+      - "scripts/ci.sh"
+      - "scripts/ci_summary.py"
+  pull_request:
+    paths:
+      - "games/figures/**"
+      - "puzzlegen/content/**"
+      - "puzzlegen/engine/**"
+      - "puzzlegen/graph/**"
+      - "puzzlegen/providers/generated.py"
+      - "puzzlegen/symbols/**"
+      - "tools/build_snapshot.py"
+      - "docs/build-symbolic-snapshot.sh"
+      - "scripts/ci.sh"
+      - "scripts/ci_summary.py"
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "Commit the regenerated day run to the dispatched branch (never main)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install
+        run: scripts/ci.sh install
+
+      - name: Rebuild the symbolic snapshot and its days
+        id: rebuild
+        # A requested commit turns a changed artifact into work for the next
+        # step rather than a red job.
+        continue-on-error: ${{ inputs.commit == true && github.ref_type == 'branch' && github.ref_name != 'main' }}
+        run: scripts/ci.sh symbolic
+
+      - name: Commit the regenerated day run
+        # Main only moves through review; a branch is where a change that
+        # legitimately moves the days collects its new artifact.
+        if: steps.rebuild.outcome == 'failure' && inputs.commit && github.ref_type == 'branch' && github.ref_name != 'main'
+        run: |
+          test -n "$(git status --porcelain -- build/shape-trio-days-30.json)" || exit 1
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f build/shape-trio-days-30.json
+          git commit -m "Regenerate the shape trio day run"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "**committed** the regenerated day run to ${GITHUB_REF_NAME}" >> "$GITHUB_STEP_SUMMARY"
