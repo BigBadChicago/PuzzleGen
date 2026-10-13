@@ -29,6 +29,11 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from ..core import ids
 from ..core.hashing import canonical_json, stable_hash
+from ..core.versions import (
+    ENGINE_VERSION,
+    SCORING_VERSION,
+    SESSION_SCHEMA_VERSION,
+)
 
 #: Hard cap on ledger length. A session document holds its own moves, so the
 #: cap is what keeps one document bounded; it is far above any real puzzle.
@@ -352,6 +357,40 @@ class MoveRecord(_Frozen):
         return stable_hash([self.kind.value, dict(self.payload)])
 
 
+class RulesVersion(_Frozen):
+    """Everything that can change the grade a transcript produces.
+
+    Distinct from the manifest's :class:`~puzzlegen.engine.records.VersionSet`,
+    which pins *generation*. A puzzle can be byte-identical and still grade
+    differently, because telemetry derivation, the scoring contract and a
+    game's own scoring function all move on their own cadence. A transcript
+    that recorded only the generation versions cannot be graded under the
+    semantics that applied when it was played, and a replay that grades it
+    under today's produces a plausible wrong number -- which is worse than an
+    error, because it will be used.
+
+    ``game`` is the version the manifest recorded, reused rather than minted
+    again, so a session and the puzzle it was played on never disagree about
+    which release of the game they mean.
+    """
+
+    engine: str = ENGINE_VERSION
+    game: str
+    scoring: str = SCORING_VERSION
+    session_schema: int = SESSION_SCHEMA_VERSION
+
+    def is_honoured_by(self, current: "RulesVersion") -> bool:
+        """Whether ``current`` grades under exactly these rules.
+
+        Exact equality on every component, deliberately. There is no notion of
+        a compatible scoring change: a change that cannot alter a grade does
+        not bump these versions, so a difference here means a difference in
+        the number, and tolerating it would be the silent regrade this record
+        exists to prevent.
+        """
+        return self == current
+
+
 class SessionRecord(_Frozen):
     """One player's play of one published puzzle.
 
@@ -368,6 +407,8 @@ class SessionRecord(_Frozen):
     day_key: str
     kind: SessionKind = SessionKind.LIVE
     state: SessionState = SessionState.IN_PROGRESS
+    #: The grading semantics as they were when play started, never updated.
+    rules: RulesVersion
     started_at: dt.datetime
     last_activity_at: dt.datetime
     expires_at: dt.datetime

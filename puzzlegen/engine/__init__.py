@@ -28,6 +28,7 @@ from .records import (
     VersionSet,
 )
 from .registry import ActivationEvent, GameRegistry, RegisteredGame
+from .replay import ReplayService, RulesVersionError
 from .runner import DailyRunner, DayResult
 from .solvers import (
     SearchResult,
@@ -83,6 +84,8 @@ __all__ = [
     "PuzzleRepository",
     "PuzzleStatus",
     "RegisteredGame",
+    "ReplayService",
+    "RulesVersionError",
     "RejectionTally",
     "Score",
     "SessionTelemetry",

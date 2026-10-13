@@ -36,6 +36,7 @@ from .sessions import (
     MoveKind,
     MoveOutcome,
     MoveRecord,
+    RulesVersion,
     ScoreRecord,
     SessionKind,
     SessionRecord,
@@ -159,6 +160,10 @@ class SessionService:
             game_id=manifest.game_id,
             day_key=manifest.day_key,
             kind=kind,
+            # Stamped from the manifest's game version rather than from the
+            # registry, so the session names the release of the game the
+            # board was built by even if a newer one is loaded now.
+            rules=RulesVersion(game=manifest.versions.game),
             started_at=now,
             last_activity_at=now,
             expires_at=expires_at,

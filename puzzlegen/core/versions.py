@@ -21,6 +21,20 @@ CONTENT_SCHEMA_VERSION = 1
 #: Shape of a published puzzle document.
 PUZZLE_FORMAT_VERSION = 1
 
+#: Rules that turn a move ledger into a grade. Bumped when telemetry
+#: derivation, the scoring contract or a shipped game's scoring function
+#: changes in a way that can alter the number a finished session produces.
+#:
+#: Separate from :data:`ENGINE_VERSION` because grading can change without
+#: generation changing, and a transcript recorded under one grading rule must
+#: not be silently graded under another.
+SCORING_VERSION = "1.0.0"
+
+#: Shape of a session document, including its inline move ledger. Recorded on
+#: the session so a replay can refuse a transcript whose ledger it would have
+#: to reinterpret rather than read.
+SESSION_SCHEMA_VERSION = 1
+
 #: Shape of a share artifact. Split from the puzzle format because share text
 #: is pasted into third-party surfaces and changes on a different cadence.
 SHARE_FORMAT_VERSION = 1

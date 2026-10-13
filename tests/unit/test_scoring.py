@@ -30,6 +30,7 @@ from puzzlegen.engine.sessions import (
     MoveOutcome,
     MoveRecord,
     SessionKind,
+    RulesVersion,
     SessionRecord,
     SessionState,
     StreakRecord,
@@ -73,6 +74,7 @@ def a_session(*, moves=(), state=SessionState.COMPLETED, kind=SessionKind.LIVE, 
         started_at=NOW,
         last_activity_at=NOW,
         expires_at=NOW + dt.timedelta(hours=12),
+        rules=RulesVersion(game="1.0.0"),
     )
     for move in moves:
         session = session.with_move(move)
@@ -229,6 +231,7 @@ class TestRanking:
                 started_at=NOW,
                 last_activity_at=NOW,
                 expires_at=NOW + dt.timedelta(hours=12),
+                rules=RulesVersion(game="1.0.0"),
             ).with_move(submit(1, correct=True, seconds=seconds))
             session = session.terminated(SessionState.COMPLETED, session.last_activity_at)
             session_repos.sessions.put(session)
