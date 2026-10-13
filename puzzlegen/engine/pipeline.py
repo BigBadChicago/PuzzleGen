@@ -48,7 +48,9 @@ from .plugin import (
     PuzzleCandidate,
     VerificationResult,
 )
+from .commitment import dependency_root, new_salt
 from .records import (
+    DependencySalt,
     DifficultySummary,
     GenerationInputs,
     GenerationTrace,
@@ -594,8 +596,23 @@ class GenerationPipeline:
                 f"{measured_band}, requested {puzzle.inputs.difficulty_target}"
             )
 
+        manifest_id = ids.for_manifest(puzzle.id)
+        # One salt per manifest, reused on a republish. A republish that minted
+        # a second salt would compute a second root over the same dependency
+        # set, and the manifest repository's immutability check would read the
+        # day as rewritten.
+        salt = self._engine.dependency_salts.for_manifest(manifest_id) or (
+            DependencySalt(
+                id=ids.for_dependency_salt(manifest_id),
+                manifest_id=manifest_id,
+                game_id=puzzle.game_id,
+                day_key=puzzle.day_key,
+                salt=new_salt(),
+                created_at=self._now,
+            )
+        )
         manifest = PuzzleManifest(
-            id=ids.for_manifest(puzzle.id),
+            id=manifest_id,
             puzzle_id=puzzle.id,
             game_id=puzzle.game_id,
             day_key=puzzle.day_key,
@@ -605,11 +622,17 @@ class GenerationPipeline:
             verification=summary,
             difficulty=difficulty_summary,
             fact_refs=puzzle.fact_refs,
+            dependency_root=dependency_root(puzzle.fact_refs, salt.salt),
+            dependency_salt_id=salt.id,
             puzzle_content_hash=puzzle.content_hash(),
             published_at=self._now,
         )
 
         with self._engine.transaction():
+            # The salt first: a manifest whose root nobody can reproduce is a
+            # commitment to nothing, so the order matters if the transaction
+            # is ever replaced by something weaker.
+            self._engine.dependency_salts.put(salt)
             self._engine.manifests.put(manifest)
             self._engine.puzzles.set_status(puzzle.id, PuzzleStatus.PUBLISHED)
             self._record_dependencies(manifest)

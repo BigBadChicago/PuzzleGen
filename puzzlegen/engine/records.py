@@ -166,6 +166,57 @@ class PuzzleRecord(_Frozen):
         )
 
 
+class DependencySalt(_Frozen):
+    """The salt one day's dependency commitment was built with.
+
+    Stored apart from the manifest because it is released on a different
+    schedule. The root is safe to show a player mid-play; the salt is what
+    makes the leaves enumerable, so publishing it while the board is live
+    would hand out the dependency list the root exists to withhold.
+
+    ``released_at`` is the whole state machine: unset means the day is still
+    closed to verification, set means anybody may now rebuild the leaves and
+    check a membership proof. It is set once and never cleared, because a
+    salt that has been published cannot be unpublished.
+    """
+
+    record: Literal["dependency_salt"] = "dependency_salt"
+    id: str
+    manifest_id: str
+    game_id: str
+    day_key: str
+    salt: str = Field(min_length=32)
+    created_at: dt.datetime
+    released_at: dt.datetime | None = None
+    schema_version: int = PUZZLE_FORMAT_VERSION
+
+    @model_validator(mode="after")
+    def _check(self) -> Self:
+        ids.require(self.id, ids.SALT)
+        ids.require(self.manifest_id, ids.MANIFEST)
+        if self.id != ids.for_dependency_salt(self.manifest_id):
+            raise ValueError(
+                "a salt id must be minted from its manifest id, so a day has "
+                "one commitment salt rather than a history of them"
+            )
+        object.__setattr__(self, "created_at", _utc(self.created_at))
+        if self.released_at is not None:
+            object.__setattr__(self, "released_at", _utc(self.released_at))
+            if self.released_at < self.created_at:
+                raise ValueError("a salt cannot be released before it existed")
+        return self
+
+    @property
+    def is_released(self) -> bool:
+        return self.released_at is not None
+
+    def released(self, at: dt.datetime) -> "DependencySalt":
+        """This salt, marked released. Idempotent on an already-released one."""
+        if self.released_at is not None:
+            return self
+        return self.model_copy(update={"released_at": _utc(at)})
+
+
 class PuzzleManifest(_Frozen):
     """The immutable published record of one daily puzzle.
 
@@ -184,9 +235,25 @@ class PuzzleManifest(_Frozen):
     verification: VerificationSummary
     difficulty: DifficultySummary
     fact_refs: tuple[str, ...]
+    #: Salted Merkle root over ``fact_refs``. The only dependency field that
+    #: is safe to show during play, and what every later verification
+    #: references: a retraction names a ref and a proof, and the player checks
+    #: both against the root on the board they actually played.
+    dependency_root: str = Field(min_length=64, max_length=64)
+    #: The :class:`DependencySalt` the root was built with. Held by id rather
+    #: than by value so the manifest can be published while the salt is not.
+    dependency_salt_id: str
     #: Hash of the puzzle record this manifest published.
     puzzle_content_hash: str
     published_at: dt.datetime
+    #: An authority's signature over :meth:`manifest_hash`.
+    #:
+    #: Unset, and deliberately so. Sealing needs a key custody answer this
+    #: release does not have, and inventing a key list here would commit the
+    #: project to one. The field and :meth:`is_sealed` exist so that adding
+    #: the answer later is a value change rather than a schema change on
+    #: already-published days.
+    seal: str | None = None
     schema_version: int = PUZZLE_FORMAT_VERSION
 
     @model_validator(mode="after")
@@ -201,14 +268,37 @@ class PuzzleManifest(_Frozen):
             )
         if not self.fact_refs:
             raise ValueError("a manifest must record its dependencies")
+        if len(set(self.fact_refs)) != len(self.fact_refs):
+            raise ValueError("fact_refs must be distinct")
+        ids.require(self.dependency_salt_id, ids.SALT)
+        if self.dependency_salt_id != ids.for_dependency_salt(self.id):
+            raise ValueError(
+                "a manifest's salt id must be the one minted from its own id"
+            )
         object.__setattr__(self, "published_at", _utc(self.published_at))
         return self
 
     def manifest_hash(self) -> str:
-        """Identity of this manifest's content, for tamper detection."""
+        """Identity of this manifest's content, for tamper detection.
+
+        ``seal`` is excluded because the seal is a signature *over* this hash:
+        including it would make the hash change when the seal is attached,
+        and the manifest repository's immutability check would then read a
+        newly sealed day as a rewritten one.
+        """
         return stable_hash(
-            self.model_dump(mode="json", exclude={"published_at"})
+            self.model_dump(mode="json", exclude={"published_at", "seal"})
         )
+
+    @property
+    def is_sealed(self) -> bool:
+        return bool(self.seal)
+
+    def commits_to(self, refs: tuple[str, ...], salt: str) -> bool:
+        """Whether this manifest's root is the commitment over ``refs``."""
+        from .commitment import dependency_root
+
+        return self.dependency_root == dependency_root(refs, salt)
 
     def public_view(self) -> dict[str, Any]:
         """The part of a manifest that is safe to show a player.
@@ -223,6 +313,10 @@ class PuzzleManifest(_Frozen):
         return {
             "game_id": self.game_id,
             "day_key": self.day_key,
+            # The commitment, not the commitment's contents. A player holding
+            # this can check a later retraction against the board they played
+            # and can learn nothing from it before the salt is released.
+            "dependency_root": self.dependency_root,
             "difficulty_band": str(self.difficulty.measured_band),
             "uniqueness_contract": str(self.verification.uniqueness_contract),
             "game_version": self.versions.game,

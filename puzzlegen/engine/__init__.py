@@ -1,5 +1,14 @@
 """The engine: plugin contract, registry, generation, records and storage."""
 
+from .commitment import (
+    CommitmentError,
+    ProofStep,
+    dependency_root,
+    leaf_hash,
+    membership_proof,
+    new_salt,
+    verify_membership,
+)
 from .pipeline import GenerationOutcome, GenerationPipeline, day_key_for
 from .plugin import (
     AccessibilityDeclaration,
@@ -17,6 +26,7 @@ from .plugin import (
     VerificationResult,
 )
 from .records import (
+    DependencySalt,
     DifficultySummary,
     GenerationInputs,
     GenerationTrace,
@@ -28,7 +38,14 @@ from .records import (
     VersionSet,
 )
 from .registry import ActivationEvent, GameRegistry, RegisteredGame
+from .release import ReleaseCertificate, check_release
 from .replay import ReplayService, RulesVersionError
+from .retraction import (
+    RetractedDay,
+    Retraction,
+    RetractionService,
+    retract_many,
+)
 from .runner import DailyRunner, DayResult
 from .solvers import (
     SearchResult,
@@ -39,6 +56,7 @@ from .solvers import (
     minimal_paths,
 )
 from .storage import (
+    DependencySaltRepository,
     EngineRepositories,
     ManifestRepository,
     PuzzleRepository,
@@ -94,5 +112,20 @@ __all__ = [
     "VerificationResult",
     "VerificationSummary",
     "VersionSet",
+    "CommitmentError",
+    "DependencySalt",
+    "DependencySaltRepository",
+    "ProofStep",
+    "ReleaseCertificate",
+    "RetractedDay",
+    "Retraction",
+    "RetractionService",
+    "check_release",
+    "dependency_root",
+    "leaf_hash",
+    "membership_proof",
+    "new_salt",
+    "retract_many",
+    "verify_membership",
     "day_key_for",
 ]

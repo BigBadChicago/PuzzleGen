@@ -37,6 +37,10 @@ LINK: Final = "link"
 SCORE: Final = "score"
 STREAK: Final = "streak"
 SHARE: Final = "share"
+#: The salt a day's dependency commitment was built with. Its own kind
+#: because it is stored apart from the manifest and released on a different
+#: schedule: the root is publishable during play, the salt only after.
+SALT: Final = "salt"
 
 _KINDS: Final = frozenset(
     {
@@ -58,6 +62,7 @@ _KINDS: Final = frozenset(
         SCORE,
         STREAK,
         SHARE,
+        SALT,
     }
 )
 
@@ -158,6 +163,11 @@ def for_puzzle(day_key: str, game_id: str, content_hash: str) -> str:
 
 def for_manifest(puzzle_id: str) -> str:
     return mint(MANIFEST, puzzle_id)
+
+
+def for_dependency_salt(manifest_id: str) -> str:
+    """One salt per manifest, so a republish cannot mint a second."""
+    return mint(SALT, manifest_id)
 
 
 def for_dependency(manifest_id: str, ref_kind: str, ref_id: str) -> str:

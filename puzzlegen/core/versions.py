@@ -19,7 +19,12 @@ ENGINE_VERSION = "0.1.0"
 CONTENT_SCHEMA_VERSION = 1
 
 #: Shape of a published puzzle document.
-PUZZLE_FORMAT_VERSION = 1
+#:
+#: 2 added the dependency commitment to a manifest: ``dependency_root``,
+#: ``dependency_salt_id`` and the unset ``seal``. A v1 manifest committed to
+#: nothing publishable about its dependencies, so it is not readable as a v2
+#: document and is rejected rather than defaulted.
+PUZZLE_FORMAT_VERSION = 2
 
 #: Rules that turn a move ledger into a grade. Bumped when telemetry
 #: derivation, the scoring contract or a shipped game's scoring function
