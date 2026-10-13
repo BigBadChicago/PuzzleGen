@@ -1,0 +1,1956 @@
+{
+  "days": [
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-01",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-02",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-03",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-04",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-05",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-06",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-07",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-08",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-09",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-10",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-11",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-12",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-13",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-14",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-15",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-16",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-17",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-18",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-19",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-20",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-21",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-22",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-23",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-24",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-25",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-26",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-27",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 12 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-28",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 5 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-29",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 6 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "boards": [
+        "digit_lock",
+        "odd_number_out",
+        "shape_trio"
+      ],
+      "day": "2026-10-30",
+      "measurements": [
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 10 fact(s) digit_lock reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "digit_lock",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "shape_trio reads none of the 7 fact(s) odd_number_out reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "odd_number_out",
+          "leak": 0.0,
+          "to": "shape_trio"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "digit_lock reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "digit_lock"
+        },
+        {
+          "after": 1,
+          "before": 1,
+          "detail": "odd_number_out reads none of the 9 fact(s) shape_trio reveals, so its answer cannot narrow this board",
+          "facts_applied": 0,
+          "from": "shape_trio",
+          "leak": 0.0,
+          "to": "odd_number_out"
+        }
+      ],
+      "violations": []
+    }
+  ],
+  "not_measured": [],
+  "record": "coupling_report"
+}
