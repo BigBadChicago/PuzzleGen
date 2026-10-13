@@ -42,6 +42,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from puzzlegen.content.policy import ContentPolicy, PolicyService
 from puzzlegen.content.service import ContentService
 from puzzlegen.core.types import DifficultyBand
+from puzzlegen.engine.capabilities import (
+    CapabilityObserver,
+    check_profile,
+    write_profile,
+)
 from puzzlegen.engine.pipeline import GenerationPipeline
 from puzzlegen.engine.registry import GameRegistry
 from puzzlegen.engine.storage import EngineRepositories
@@ -203,6 +208,7 @@ def run(
     label: str | None = None,
     now: dt.datetime | None = None,
     strict: bool = True,
+    observer: CapabilityObserver | None = None,
 ) -> list[DayResult]:
     now = now or dt.datetime.now(dt.timezone.utc)
     repos = GraphRepositories(SqliteDocumentStore(db))
@@ -229,10 +235,15 @@ def run(
             verifier=PuzzleVerifier(require_on_target=strict),
         )
 
+        if observer is not None:
+            observer.snapshot_id = meta.id
+
         results = []
         for offset in range(days):
             day = (start + dt.timedelta(days=offset)).isoformat()
             outcome = pipeline.generate(GAME_ID, day, difficulty_target=difficulty)
+            if observer is not None:
+                observer.observe_trace(outcome.trace)
             results.append(result_of(day, outcome))
         return results
     finally:
@@ -338,6 +349,17 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     parser.add_argument("--json", type=Path, default=None)
+    parser.add_argument(
+        "--capability-profile",
+        type=Path,
+        default=None,
+        help=(
+            "write the observed capability profile here. The profile is "
+            "measured from this run's own port usage, never declared, so a "
+            "game that starts touching a new taxonomy shows up as a diff "
+            "against the committed copy."
+        ),
+    )
     args = parser.parse_args(argv)
 
     if not args.db.exists():
@@ -347,6 +369,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.now is not None and args.now.tzinfo is None:
         parser.error("--now must be timezone aware")
 
+    observer = CapabilityObserver(
+        game_id=GAME_ID,
+        game_version=OddNumberOutGame().describe().game_version,
+    )
     try:
         results = run(
             args.db,
@@ -356,6 +382,7 @@ def main(argv: list[str] | None = None) -> int:
             label=args.label,
             now=args.now,
             strict=not args.lenient,
+            observer=observer,
         )
     except SnapshotError as error:
         print(str(error), file=sys.stderr)
@@ -369,6 +396,17 @@ def main(argv: list[str] | None = None) -> int:
             encoding="utf-8",
         )
         print(f"json: {args.json}")
+    if args.capability_profile is not None:
+        # Written whether or not every day generated. A failed day still
+        # consumed content, and a profile that only covered successes would
+        # understate exactly the games worth watching.
+        profile = observer.profile()
+        write_profile(args.capability_profile, profile)
+        print(f"capabilities: {args.capability_profile}")
+        diff = check_profile(args.capability_profile, profile)
+        if diff is not None and not diff.is_empty:
+            for line in diff.describe():
+                print(f"  capability change: {line}", file=sys.stderr)
     return 0 if all(r.generated for r in results) else 1
 
 

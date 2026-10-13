@@ -189,14 +189,16 @@ task_symbolic() {
 
   : > "$OUT/symbolic.md"
   for entry in $SYMBOLIC_GAMES; do
-    local game="${entry%%:*}" slug="${entry##*:}" json
+    local game="${entry%%:*}" slug="${entry##*:}" json profile
     json="build/$slug-days-$days.json"
+    profile="build/$slug-capabilities.json"
     # Written to the committed path so a diff is the comparison, pinned to the
     # snapshot's own time because content past its review date is refused
     # stale.
     python3 "games/$game/tools/generate_days.py" --db build/graph-symbolic.sqlite \
       --start "$start" --days "$days" --difficulty "$difficulty" \
-      --now "$SYMBOLIC_NOW" --json "$json" || status=$?
+      --now "$SYMBOLIC_NOW" --json "$json" \
+      --capability-profile "$profile" || status=$?
     if [ ! -s "$json" ]; then
       printf '### Symbolic\n\n**%s: day generation failed**: see the log above\n' \
         "$game" > "$SUMMARY"
@@ -208,13 +210,20 @@ task_symbolic() {
     # nothing at all about an ignored untracked one, so a brand new game's
     # run would be reported as matching a committed run that does not exist.
     # The ls-files check is what catches that.
-    if ! git ls-files --error-unmatch "$json" >/dev/null 2>&1; then
-      changed=yes
-      status=1
-    elif [ -n "$(git status --porcelain -- "$json")" ]; then
-      changed=yes
-      status=1
-    fi
+    #
+    # The capability profile goes through the same two checks. It is observed
+    # from the run's own port usage rather than declared, so a game that
+    # starts reaching into a taxonomy nobody approved shows up here as a
+    # changed file a reviewer reads, not as a discovery later.
+    for artifact in "$json" "$profile"; do
+      if ! git ls-files --error-unmatch "$artifact" >/dev/null 2>&1; then
+        changed=yes
+        status=1
+      elif [ -n "$(git status --porcelain -- "$artifact")" ]; then
+        changed=yes
+        status=1
+      fi
+    done
     python3 scripts/ci_summary.py "$slug-days" "$json" >> "$OUT/symbolic.md"
     printf '\n' >> "$OUT/symbolic.md"
   done

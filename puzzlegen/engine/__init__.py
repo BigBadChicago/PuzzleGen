@@ -1,5 +1,15 @@
 """The engine: plugin contract, registry, generation, records and storage."""
 
+from .capabilities import (
+    CapabilityDiff,
+    CapabilityObserver,
+    CapabilityProfile,
+    check_profile,
+    diff_profiles,
+    profile_from_traces,
+    read_profile,
+    write_profile,
+)
 from .commitment import (
     CommitmentError,
     ProofStep,
@@ -112,7 +122,15 @@ __all__ = [
     "VerificationResult",
     "VerificationSummary",
     "VersionSet",
+    "CapabilityDiff",
+    "CapabilityObserver",
+    "CapabilityProfile",
     "CommitmentError",
+    "check_profile",
+    "diff_profiles",
+    "profile_from_traces",
+    "read_profile",
+    "write_profile",
     "DependencySalt",
     "DependencySaltRepository",
     "ProofStep",

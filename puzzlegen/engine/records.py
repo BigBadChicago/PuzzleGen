@@ -372,6 +372,12 @@ class GenerationTrace(_Frozen):
     failure_reason: str | None = None
     port_queries: int = 0
     port_results: int = 0
+    #: Taxonomies the game's queries named during this run, and the operations
+    #: it used. Recorded on the trace so a capability profile can be built
+    #: from stored runs rather than only from a live port, which is what lets
+    #: CI regenerate and diff a committed profile.
+    port_taxonomies: tuple[str, ...] = ()
+    port_operations: dict[str, int] = Field(default_factory=dict)
     created_at: dt.datetime
     schema_version: int = PUZZLE_FORMAT_VERSION
 

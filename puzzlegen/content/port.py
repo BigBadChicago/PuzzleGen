@@ -44,20 +44,61 @@ class PortBudget:
 
 @dataclass
 class PortUsage:
-    """What a plugin actually consumed. Recorded in generation telemetry."""
+    """What a plugin actually consumed. Recorded in generation telemetry.
+
+    ``taxonomies`` is what makes this a capability record rather than a
+    counter. A game's reach is not how many queries it ran but which parts of
+    the graph it looked at, and a game that starts touching a taxonomy nobody
+    expected is the thing worth noticing. Observed here rather than declared
+    in a descriptor, so a new taxonomy becomes a diff a reviewer reads instead
+    of a discovery after the fact.
+
+    One set insert per query, on the only hot path this change touches.
+    """
 
     queries: int = 0
     results: int = 0
     rejected: dict[str, int] = field(default_factory=dict)
     operations: dict[str, int] = field(default_factory=dict)
+    #: Every taxonomy a query named, whether as the search taxonomy or as a
+    #: cross-cutting constraint. A game reaching a second axis has reached it
+    #: whichever field carried the name.
+    taxonomies: set[str] = field(default_factory=set)
 
-    def record(self, result: ContentResult) -> None:
+    @property
+    def operation_kinds(self) -> frozenset[str]:
+        """The distinct operations used.
+
+        Derived from ``operations`` rather than tracked beside it: a second
+        field holding the same information is a second field that can
+        disagree with the first.
+        """
+        return frozenset(self.operations)
+
+    def record(self, query: ContentQuery, result: ContentResult) -> None:
         self.queries += 1
         self.results += len(result)
         key = str(result.operation)
         self.operations[key] = self.operations.get(key, 0) + 1
+        self.taxonomies.update(taxonomies_named_by(query))
         for reason, count in result.rejected.items():
             self.rejected[reason] = self.rejected.get(reason, 0) + count
+
+
+#: Query fields that name a taxonomy. Listed rather than inferred from the
+#: field name, because a field added later that happens to end in "taxonomy"
+#: should not silently join this set, and one that does not should be
+#: addable here without a rename.
+TAXONOMY_FIELDS = ("taxonomy", "intersects_taxonomy", "covering_taxonomy")
+
+
+def taxonomies_named_by(query: ContentQuery) -> frozenset[str]:
+    """Every taxonomy one query reaches into."""
+    return frozenset(
+        value
+        for value in (getattr(query, name, None) for name in TAXONOMY_FIELDS)
+        if value
+    )
 
 
 class ContentPort:
@@ -178,7 +219,7 @@ class ContentPort:
             query = replace(query, limit=self._budget.max_results_per_query)
 
         result = self._service.execute(query, game_id=self._game_id)
-        self._usage.record(result)
+        self._usage.record(query, result)
 
         if self._usage.results > self._budget.max_total_results:
             raise BoundaryViolationError(

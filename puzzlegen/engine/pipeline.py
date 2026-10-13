@@ -802,6 +802,10 @@ class GenerationPipeline:
             failure_reason=failure_reason,
             port_queries=port.usage.queries if port else 0,
             port_results=port.usage.results if port else 0,
+            port_taxonomies=(
+                tuple(sorted(port.usage.taxonomies)) if port else ()
+            ),
+            port_operations=dict(port.usage.operations) if port else {},
             created_at=self._now,
         )
 
