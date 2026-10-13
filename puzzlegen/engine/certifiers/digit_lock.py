@@ -233,21 +233,18 @@ def certifier() -> Certifier:
     return DigitLockCertifier()
 
 
-#: The vocabulary this board names its answers in.
+#: The one predicate this game's answers assert: the named digit sits at the
+#: given position in the code, or, with a value of ``False``, is not in the
+#: code at all.
 #:
-#: Not ``"entity"``, and that is the whole point of the field. A digit_lock
-#: payload names digits as digits -- the board shows a glyph and a label per
-#: digit and never the entity id behind it -- so there is no mapping from a
-#: code to the graph entities the board drew from, and a leak measured against
-#: a board that does name entities would come out as exactly zero. That zero
-#: would be false, and a false zero is the failure a quantity exists to
-#: prevent. So this space is comparable with another digit_lock board and with
-#: nothing else, and every other pairing reports unknown.
-#:
-#: The fix, if a day ever wants to couple this game to another, is for the
-#: payload or the record to carry the digit-to-entity mapping. That is a change
-#: to what a board publishes, not to this measurement.
-NAMESPACE = "digit_lock/digit"
+#: Worth one more note than the other games'. A digit_lock payload names
+#: digits as digits -- a glyph and a label per digit, never the entity id
+#: behind it -- so even if another game defined a predicate about the same
+#: digit entities, this board's facts would be about different refs. Coupling
+#: this game to another would need the payload or the record to carry the
+#: digit-to-entity mapping, which is a change to what a board publishes rather
+#: than to this measurement.
+DIGIT_AT = "digit_lock/digit_at"
 
 
 def _admits(answer: tuple[int, ...], fact: Fact) -> bool:
@@ -315,10 +312,10 @@ def space(
     if solution is not None and "code" in solution:
         code = tuple(int(digit) for digit in solution["code"])
         revealed = tuple(
-            Fact(ref=str(digit), value=position)
+            Fact(predicate=DIGIT_AT, ref=str(digit), value=position)
             for position, digit in enumerate(code)
         ) + tuple(
-            Fact(ref=str(digit), value=False)
+            Fact(predicate=DIGIT_AT, ref=str(digit), value=False)
             for digit in digits
             if digit not in code
         )
@@ -326,8 +323,14 @@ def space(
         answers=tuple(answers),
         admits=_admits,
         revealed=revealed,
-        namespace=NAMESPACE,
+        predicates=frozenset({DIGIT_AT}),
     )
 
 
-__all__ = ["GAME_ID", "NAMESPACE", "DigitLockCertifier", "certifier", "space"]
+__all__ = [
+    "GAME_ID",
+    "DIGIT_AT",
+    "DigitLockCertifier",
+    "certifier",
+    "space",
+]

@@ -42,16 +42,26 @@ from typing import Any, Protocol, runtime_checkable
 class Fact:
     """One thing solving a board tells you.
 
-    A ref and a value rather than a bare entity id, because "the answer is
-    this tile" and "this tile is not in the answer" are different facts about
-    the same entity and constrain another board differently.
+    Three parts, and the first is the one that took a measurement over thirty
+    real days to get right. A fact is not an entity id and a flag; it is a
+    *predicate* applied to a ref with a value. "This tile is not in my trio"
+    and "this tile is not the odd one out" are different claims about the same
+    entity, and a model that recorded both as ``(tile, False)`` would have one
+    board's fact silently read as the other board's -- which measured a leak
+    of 1.0 between two games that in fact share nothing. The predicate is what
+    makes a fact composable only where it means the same thing.
+
+    Predicates are namespaced by the game that defines them, because a
+    predicate is part of a game's rules and two games' notions of "is in the
+    answer" are not the same notion.
     """
 
+    predicate: str
     ref: str
     value: Any = True
 
     def __str__(self) -> str:
-        return f"{self.ref}={self.value}"
+        return f"{self.predicate}({self.ref})={self.value}"
 
 
 @runtime_checkable
@@ -75,6 +85,16 @@ class SolutionSpace(Protocol):
         """The facts solving this board reveals, when its answer is known."""
         ...
 
+    def understands(self) -> Iterable[str]:
+        """The predicates :meth:`constrain` can actually read.
+
+        A space is handed only the facts it declares it understands. Without
+        this, a fact from another game reaches ``constrain`` as an unfamiliar
+        predicate and whatever that method does with it is a measurement of a
+        coincidence rather than of the rules.
+        """
+        ...
+
 
 @dataclass(frozen=True, slots=True)
 class EnumeratedSpace:
@@ -87,23 +107,19 @@ class EnumeratedSpace:
     ``admits`` is supplied by the caller: it decides what one fact means to
     one answer, which is the only game-specific knowledge in this module.
 
-    ``namespace`` is what makes a cross-game figure meaningful. A fact is only
-    a fact about the same thing in both boards if both boards name things the
-    same way. Two boards that drew from the same entities but describe their
-    answers in different vocabularies would measure a leak of exactly zero,
-    and that zero would be false -- which is the one failure mode a quantity
-    is supposed to prevent. So a space declares its vocabulary and a
-    measurement across two different ones is unknown, not zero.
+    ``predicates`` is what keeps a figure meaningful. It names the predicates
+    ``admits`` can read, and a measurement applies nothing else. A space that
+    accepted every fact handed to it would be interpreting another game's
+    rules under its own, which is exactly the error a measurement over real
+    boards caught: two games sharing entities but no predicate measured a leak
+    of 1.0, because each read the other's "not in my answer" as its own.
     """
 
     answers: tuple[Any, ...]
     admits: Any  # Callable[[Any, Fact], bool]; typed loosely to stay hashable
     revealed: tuple[Fact, ...] = ()
-    #: ``"entity"`` where the board names graph entity ids, which is what
-    #: makes a figure comparable with another board's. A game whose payload
-    #: names things in its own terms declares its own namespace and is
-    #: therefore not comparable with any other.
-    namespace: str = "entity"
+    #: Predicates this space can read. A fact outside this set is not applied.
+    predicates: frozenset[str] = frozenset()
 
     def enumerate(self) -> Iterable[Any]:
         return self.answers
@@ -115,11 +131,14 @@ class EnumeratedSpace:
             ),
             admits=self.admits,
             revealed=self.revealed,
-            namespace=self.namespace,
+            predicates=self.predicates,
         )
 
     def facts(self) -> Iterable[Fact]:
         return self.revealed
+
+    def understands(self) -> Iterable[str]:
+        return self.predicates
 
     def __len__(self) -> int:
         return len(self.answers)
@@ -194,21 +213,6 @@ def measure_leak(
             ),
         )
 
-    source_namespace = getattr(source, "namespace", "entity")
-    target_namespace = getattr(target, "namespace", "entity")
-    if source_namespace != target_namespace:
-        return LeakMeasurement(
-            source_game_id=source_game_id,
-            target_game_id=target_game_id,
-            leak=None,
-            detail=(
-                f"{source_game_id} names its answers in the "
-                f"{source_namespace!r} vocabulary and {target_game_id} in "
-                f"{target_namespace!r}; a figure across two vocabularies "
-                "would be a zero that means nothing was compared"
-            ),
-        )
-
     before = list(target.enumerate())
     if not before:
         return LeakMeasurement(
@@ -222,9 +226,14 @@ def measure_leak(
             ),
         )
 
-    facts = list(source.facts())
+    # Only the facts the target's own rules can read. A target handed a
+    # predicate it does not define would be interpreting another game's rules
+    # under its own, and the figure would measure that misreading.
+    understood = frozenset(target.understands())
+    offered = list(source.facts())
+    applicable = [fact for fact in offered if fact.predicate in understood]
     narrowed = target
-    for fact in facts:
+    for fact in applicable:
         narrowed = narrowed.constrain(fact)
     after = list(narrowed.enumerate())
     return LeakMeasurement(
@@ -233,7 +242,16 @@ def measure_leak(
         leak=1.0 - (len(after) / len(before)),
         space_before=len(before),
         space_after=len(after),
-        facts_applied=len(facts),
+        facts_applied=len(applicable),
+        detail=(
+            ""
+            if applicable or not offered
+            else (
+                f"{target_game_id} reads none of the "
+                f"{len(offered)} fact(s) {source_game_id} reveals, so its "
+                "answer cannot narrow this board"
+            )
+        ),
     )
 
 

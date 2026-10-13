@@ -145,6 +145,12 @@ def certifier() -> Certifier:
     return OddNumberOutCertifier()
 
 
+#: The one predicate this game's answers assert. Namespaced for the same
+#: reason as every other: "is the odd one out" is this game's claim and no
+#: other game's, however similar another game's wording.
+IS_ODD_ONE_OUT = "odd_number_out/is_odd_one_out"
+
+
 def _admits(answer: str, fact: Fact) -> bool:
     return (fact.ref == answer) if fact.value else (fact.ref != answer)
 
@@ -185,9 +191,21 @@ def space(
     if solution is not None and "answer" in solution:
         answer = str(solution["answer"])
         revealed = tuple(
-            Fact(ref=tile, value=tile == answer) for tile in sorted(tiles)
+            Fact(predicate=IS_ODD_ONE_OUT, ref=tile, value=tile == answer)
+            for tile in sorted(tiles)
         )
-    return EnumeratedSpace(answers=answers, admits=_admits, revealed=revealed)
+    return EnumeratedSpace(
+        answers=answers,
+        admits=_admits,
+        revealed=revealed,
+        predicates=frozenset({IS_ODD_ONE_OUT}),
+    )
 
 
-__all__ = ["GAME_ID", "OddNumberOutCertifier", "certifier", "space"]
+__all__ = [
+    "GAME_ID",
+    "IS_ODD_ONE_OUT",
+    "OddNumberOutCertifier",
+    "certifier",
+    "space",
+]

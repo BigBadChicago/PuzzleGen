@@ -1038,6 +1038,11 @@ class TestCertifierIndependence:
         """
         allowed = {
             "puzzlegen.engine.certify",
+            # The coupling types, because a certifier is also where a game's
+            # solution space is derived: the space is the same enumeration the
+            # certifier already runs, and deriving it twice would let the two
+            # disagree about what a board admits.
+            "puzzlegen.engine.coupling",
             "puzzlegen.engine.solvers",
             "puzzlegen.core",
         }

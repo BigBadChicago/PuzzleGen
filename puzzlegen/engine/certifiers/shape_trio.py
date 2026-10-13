@@ -162,12 +162,20 @@ def certifier() -> Certifier:
     return ShapeTrioCertifier()
 
 
+#: The one predicate this game's answers assert.
+#:
+#: Namespaced, and the namespace is load bearing. "This tile is not in my
+#: trio" is not "this tile is not the odd one out", and an unnamespaced fact
+#: would let another game's answer be read as this one's.
+IN_TRIO = "shape_trio/in_trio"
+
+
 def _admits(answer: frozenset[str], fact: Fact) -> bool:
     """Whether a candidate trio is still possible given one fact.
 
-    ``value`` true means the named tile is in the answer, false means it is
-    not. Both directions matter: another board ruling a tile out narrows this
-    one as surely as ruling it in.
+    ``value`` true means the named tile is in the trio, false means it is
+    not. Both directions matter: a board ruling a tile out narrows this one
+    as surely as ruling it in.
     """
     return (fact.ref in answer) if fact.value else (fact.ref not in answer)
 
@@ -211,15 +219,21 @@ def space(
         # Every tile on the board, in or out. A board whose answer is known
         # tells you about the tiles it excludes as well as the ones it names.
         revealed = tuple(
-            Fact(ref=tile_id, value=tile_id in answer)
+            Fact(predicate=IN_TRIO, ref=tile_id, value=tile_id in answer)
             for tile_id in sorted(tiles)
         )
-    return EnumeratedSpace(answers=answers, admits=_admits, revealed=revealed)
+    return EnumeratedSpace(
+        answers=answers,
+        admits=_admits,
+        revealed=revealed,
+        predicates=frozenset({IN_TRIO}),
+    )
 
 
 __all__ = [
     "GAME_ID",
     "DEFAULT_TRIO",
+    "IN_TRIO",
     "ShapeTrioCertifier",
     "certifier",
     "space",

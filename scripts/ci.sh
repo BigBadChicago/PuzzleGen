@@ -228,10 +228,44 @@ task_symbolic() {
     printf '\n' >> "$OUT/symbolic.md"
   done
 
+  # Cross-board information flow, over the same days. A report rather than a
+  # gate: nothing has declared what a daily set's coupling should be, and a
+  # gate against an undeclared target would assert a product decision.
+  # --require-independent turns this same run into the gate once it is
+  # declared. The artifact goes through the same staleness checks as the rest.
+  local coupling="build/symbolic-coupling-$days.json"
+  # Restricted to the symbolic games, because a day has four active slots and
+  # five games are installed: without this the three this snapshot can serve
+  # would compete with two it cannot, and which three got measured would be
+  # decided by discovery order.
+  # The slug is the artifact's filename stem and uses hyphens; a game id uses
+  # underscores. One translation, here, rather than a second list to keep in
+  # step with the first.
+  local coupling_games=""
+  for entry in $SYMBOLIC_GAMES; do
+    local slug="${entry##*:}"
+    coupling_games="$coupling_games --game ${slug//-/_}"
+  done
+  # shellcheck disable=SC2086
+  python3 tools/measure_coupling.py --db build/graph-symbolic.sqlite \
+    --start "$start" --days "$days" --difficulty "$difficulty" \
+    --now "$SYMBOLIC_NOW" --json "$coupling" $coupling_games \
+    > "$OUT/coupling.txt" || status=$?
+  if ! git ls-files --error-unmatch "$coupling" >/dev/null 2>&1; then
+    changed=yes
+    status=1
+  elif [ -n "$(git status --porcelain -- "$coupling")" ]; then
+    changed=yes
+    status=1
+  fi
+
   {
     printf '### Symbolic snapshot\n\n- days from %s at %s\n- committed runs changed: %s\n\n' \
       "$start" "$difficulty" "$changed"
     cat "$OUT/symbolic.md"
+    printf '\n#### Cross-board information flow\n\n```\n'
+    cat "$OUT/coupling.txt"
+    printf '```\n'
   } > "$SUMMARY"
   publish
   return "$status"
