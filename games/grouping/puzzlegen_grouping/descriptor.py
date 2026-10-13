@@ -47,12 +47,27 @@ GROUP_SIZES = tuple(range(MIN_GROUP_SIZE, MAX_GROUP_SIZE + 1))
 #: it being identifiable by counting.
 HIDDEN_GROUPS = 1
 
-#: States the partition enumerator may examine before it gives up. Sized for
-#: the worst day rather than the average: 36 tiles into four groups of 9 is a
-#: far larger search than 20 into groups of 5, and a budget sized for the mean
-#: would fail only on the widest boards, which is the least debuggable way for
-#: a budget to be wrong.
-SEARCH_BOUND = 2_000_000
+#: States the partition enumerator may examine before it gives up.
+#:
+#: Measured rather than guessed, by running the enumeration to exhaustion on a
+#: board of each size whose tiles carry nothing but their own group's category
+#: -- the shape with the least to prune on, so the most states to walk:
+#:
+#:     group size        5       6        7          8           9
+#:     states to exhaust  5,005  40,301  336,488  2,881,169  25,122,407
+#:
+#: So the bound is sized for the widest board the game serves, with headroom
+#: for a content change that makes the worst case a few per cent worse. The
+#: previous 2,000,000 was below the cost of a 32-tile board, which meant the
+#: two widest of the five sizes could only ever report SOUND_INCOMPLETE and
+#: the uniqueness gate refused them -- a board size the game advertises and
+#: could not publish.
+#:
+#: It stays a bound, and the declared completeness stays SOUND_INCOMPLETE. A
+#: larger budget moves where the search gives up; it does not make the search
+#: complete, and a day that overruns is still refused rather than published on
+#: a lower bound.
+SEARCH_BOUND = 32_000_000
 
 #: Substream label for the day's board-size draw. Named as a constant because
 #: both the content layer and the generator must derive the same size from the

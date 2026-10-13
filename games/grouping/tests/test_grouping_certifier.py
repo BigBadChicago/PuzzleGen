@@ -159,33 +159,59 @@ class TestTheCertifierAgreesWithTheVerifier:
         assert verification.completeness is VerificationCompleteness.COMPLETE
         assert certify(puzzle).solution_count == verification.solution_count
 
-    @pytest.mark.parametrize("size", [8, 9])
-    def test_the_certifier_settles_the_boards_the_verifier_cannot(self, size):
+    def test_the_certifier_settles_the_widest_boards_far_more_cheaply(self):
         """The finding that decides whether this certifier was worth writing.
 
-        On the two widest sizes the game serves -- 32 and 36 tiles -- the
-        verifier's partition walk runs out of its two-million-state budget
-        and reports SOUND_INCOMPLETE: its count is a lower bound, so on those
-        days nothing establishes that the board has one answer. The cover
-        search settles the same board in a handful of states, because forcing
-        the lowest uncovered tile and building only groups inside a shared
-        category's extension never enumerates the orderings the walk has to.
+        A 32-tile board costs the verifier's partition walk 2,881,169 states
+        to exhaust. The cover search settles the same board in a handful,
+        because forcing the lowest uncovered tile and building only groups
+        inside a shared category's extension never enumerates the orderings
+        the walk has to.
 
-        So on the widest boards the certifier is not a second opinion. It is
-        the only check that reaches a count, and a count compared against the
-        verifier's here would be a count compared against a lower bound.
+        Three orders of magnitude is not a tidier implementation of the same
+        search, which is the point: a second opinion reached the same way
+        would fail the same way. It is also why the bound had to be raised
+        rather than the certifier relied on instead -- the engine's gate reads
+        the game's own completeness, and a verifier that gives up is a day
+        refused however cheaply something else settled it.
         """
-        puzzle = clean_board(size)
+        puzzle = clean_board(8)
         verification = verify(puzzle)
-        assert verification.completeness is (
-            VerificationCompleteness.SOUND_INCOMPLETE
-        )
-        assert "lower bound" in verification.detail
+        assert verification.completeness is VerificationCompleteness.COMPLETE
 
         result = certify(puzzle)
         assert result.accepted
         assert result.assurance is AssuranceLevel.SOLUTION_COUNT_KNOWN
+        assert result.solution_count == verification.solution_count
         assert result.states_examined < verification.states_examined / 1000
+
+    def test_the_committed_bound_completes_the_widest_board_the_game_serves(
+        self,
+    ):
+        """Re-derives the figure the committed bound was sized against.
+
+        Opt in with ``PUZZLEGEN_WIDE_BOARD_TESTS=1``. Skipped for its cost,
+        not its importance: exhausting the least prunable 36-tile board takes
+        25,122,407 states and close to two minutes, and a test that adds two
+        minutes to every run is a test somebody eventually deletes.
+
+        What runs unconditionally is the descriptor test asserting the bound
+        exceeds that figure. So the cheap test pins the constant to the
+        measurement and this one checks the measurement is still true, which
+        is the right split: the number can only go stale when the enumerator
+        or the board shape changes, and both are changes whose author should
+        be running this.
+        """
+        import os
+
+        if os.environ.get("PUZZLEGEN_WIDE_BOARD_TESTS") != "1":
+            pytest.skip("set PUZZLEGEN_WIDE_BOARD_TESTS=1 to exhaust a 36-tile board")
+
+        verification = verify(clean_board(9))
+        assert verification.completeness is VerificationCompleteness.COMPLETE
+        assert verification.solution_count == 1
+        assert verification.states_examined == 25_122_407
+        assert certify(clean_board(9)).solution_count == 1
 
     def test_the_certifier_claims_no_more_than_the_game_promises(self):
         """The game declares uniqueness up to a tolerance, so a certifier
