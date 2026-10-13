@@ -19,7 +19,12 @@ from puzzlegen.engine.certify import (
     default_registry,
     differential,
 )
-from puzzlegen.engine.certifiers import digit_lock, odd_number_out, shape_trio
+from puzzlegen.engine.certifiers import (
+    digit_lock,
+    grouping,
+    odd_number_out,
+    shape_trio,
+)
 
 
 class TestAssurance:
@@ -56,21 +61,36 @@ class TestTheRegistry:
         with pytest.raises(ValueError, match="already registered"):
             registry.register(digit_lock.certifier())
 
-    def test_the_default_registry_ships_the_three_symbolic_games(self):
+    def test_the_default_registry_ships_the_games_that_have_a_certifier(self):
         assert default_registry().game_ids() == (
             "digit_lock",
+            "grouping",
             "odd_number_out",
             "shape_trio",
         )
 
-    def test_every_shipped_certifier_proves_uniqueness(self):
-        """All three spaces are enumerable, so none settles for less."""
+    def test_assurance_is_not_uniform_across_the_shipped_certifiers(self):
+        """Three enumerable spaces prove uniqueness; grouping cannot.
+
+        Asserted rather than left implicit, because a certifier whose claim
+        quietly rose to match the others would be the overreach this levelling
+        exists to prevent. The three symbolic games enumerate their whole
+        space, so they prove uniqueness. Grouping's cover search is bounded
+        and its count is of collapsed classes, so its strongest claim is the
+        count -- which is what UNIQUE_UP_TO_TOLERANCE already promises and no
+        more.
+        """
         registry = default_registry()
-        for game_id in registry.game_ids():
-            assert (
-                registry.get(game_id).assurance
-                is AssuranceLevel.UNIQUENESS_PROVED
-            )
+        claims = {
+            game_id: registry.get(game_id).assurance
+            for game_id in registry.game_ids()
+        }
+        assert claims == {
+            "digit_lock": AssuranceLevel.UNIQUENESS_PROVED,
+            "grouping": AssuranceLevel.SOLUTION_COUNT_KNOWN,
+            "odd_number_out": AssuranceLevel.UNIQUENESS_PROVED,
+            "shape_trio": AssuranceLevel.UNIQUENESS_PROVED,
+        }
 
 
 # -- digit_lock ------------------------------------------------------------
@@ -526,3 +546,218 @@ class TestTheDifferential:
         """The certifier was never offered a board."""
         outcome = self.Outcome(None, False, None)
         assert differential(outcome, default_registry()) is None
+
+
+def grouping_board(
+    groups=None,
+    memberships=None,
+    *,
+    group_size=2,
+    group_count=2,
+):
+    """A grouping board, by default the smallest one the rules allow.
+
+    Two groups of two, which is enough for every rule under test: group
+    validity, label incomparability and the tolerance collapse all turn on
+    relations between groups rather than on board size, and a real 20-tile
+    board would hide which relation a failing test was about.
+    """
+    groups = groups or (("a1", "a2"), ("b1", "b2"))
+    memberships = memberships or {
+        "a1": ["alpha", "thing"],
+        "a2": ["alpha", "thing"],
+        "b1": ["beta", "thing"],
+        "b2": ["beta", "thing"],
+    }
+    tiles = [tile for group in groups for tile in group]
+    payload = {
+        "game_id": "grouping",
+        "group_size": group_size,
+        "group_count": group_count,
+        "tiles": [{"id": tile, "label": tile} for tile in tiles],
+        "hidden_group_exists": True,
+        "hidden_group_size": group_size,
+    }
+    solution = {
+        "groups": [
+            {
+                "index": index,
+                "category": None,
+                "category_id": None,
+                "members": list(group),
+            }
+            for index, group in enumerate(groups)
+        ],
+        "assignment": {
+            tile: index for index, group in enumerate(groups) for tile in group
+        },
+        "hidden": {"category": None, "category_id": None, "members": []},
+        "borrowings": [],
+        "memberships": memberships,
+    }
+    return payload, solution
+
+
+class TestGrouping:
+    """The certifier for the one game whose verifier is a search of its own.
+
+    Its value rests on taking a different route to the count: the game walks
+    tiles into groups, this covers the board from the categories inward. These
+    tests are about the rules, and the differential test over real days is
+    what checks the two routes agree.
+    """
+
+    def certify(self, payload, solution) -> CertificateResult:
+        return grouping.certifier().certify(payload, solution)
+
+    def test_a_board_whose_groups_each_share_a_category_is_certified(self):
+        result = self.certify(*grouping_board())
+        assert result.accepted, result.reasons
+        assert result.solution_count == 1
+        assert result.assurance is AssuranceLevel.SOLUTION_COUNT_KNOWN
+
+    def test_a_category_the_whole_board_shares_cannot_justify_a_group(self):
+        """The half of the validity rule that makes uniqueness provable.
+
+        Every tile here is a thing and nothing else, so "these are all
+        things" is the only reason on offer and it justifies any partition.
+        """
+        result = self.certify(
+            *grouping_board(
+                memberships={
+                    "a1": ["thing"],
+                    "a2": ["thing"],
+                    "b1": ["thing"],
+                    "b2": ["thing"],
+                }
+            )
+        )
+        assert result.rejected
+        assert "shares no category beyond" in result.reasons[0]
+
+    def test_two_groups_whose_labels_nest_are_refused(self):
+        """One group split in two, which a player would be right to contest.
+
+        Four of the six tiles are craft and two of those are also gliders, so
+        the gliders and the remaining craft have no pair of incomparable
+        labels: the second group's only reason is ``craft``, whose extension
+        contains the first group's outright.
+
+        Three groups rather than two, and the reason is worth stating: with
+        two groups covering the board, any label spanning both is a label the
+        whole board carries, so it is universal and the group fails the
+        validity rule before labelling is ever reached. Nesting is only
+        reachable from three groups up, which is why a two-group fixture
+        cannot test this rule at all.
+        """
+        result = self.certify(
+            *grouping_board(
+                groups=(("a1", "a2"), ("b1", "b2"), ("c1", "c2")),
+                memberships={
+                    "a1": ["glider", "craft", "thing"],
+                    "a2": ["glider", "craft", "thing"],
+                    "b1": ["craft", "thing"],
+                    "b2": ["craft", "thing"],
+                    "c1": ["beta", "thing"],
+                    "c2": ["beta", "thing"],
+                },
+                group_count=3,
+            )
+        )
+        assert result.rejected
+        assert "cannot be given distinct labels" in result.reasons[0]
+
+    def test_a_second_defensible_grouping_is_refused(self):
+        """Two readings, and the board can only mark one of them right."""
+        result = self.certify(
+            *grouping_board(
+                memberships={
+                    "a1": ["alpha", "red", "thing"],
+                    "a2": ["alpha", "blue", "thing"],
+                    "b1": ["beta", "red", "thing"],
+                    "b2": ["beta", "blue", "thing"],
+                }
+            )
+        )
+        assert result.rejected
+        assert result.solution_count == 2
+        assert "survive the tolerance collapse" in result.reasons[0]
+
+    def test_indistinguishable_tiles_do_not_count_as_a_second_grouping(self):
+        """The tolerance the game declares, and no more than it.
+
+        ``a1`` and ``a2`` carry exactly the same distinguishing categories, so
+        a grouping that swaps them is the same puzzle. Without the collapse
+        this board would report rivals and the certifier would disagree with
+        the verifier on every real board, since real tiles repeat signatures.
+        """
+        payload, solution = grouping_board(
+            groups=(("a1", "a2", "a3"), ("b1", "b2", "b3")),
+            memberships={
+                "a1": ["alpha", "thing"],
+                "a2": ["alpha", "thing"],
+                "a3": ["alpha", "thing"],
+                "b1": ["beta", "thing"],
+                "b2": ["beta", "thing"],
+                "b3": ["beta", "thing"],
+            },
+            group_size=3,
+        )
+        result = self.certify(payload, solution)
+        assert result.accepted, result.reasons
+        assert result.solution_count == 1
+
+    def test_a_stated_group_that_is_not_a_partition_is_refused(self):
+        payload, solution = grouping_board()
+        solution["groups"][1]["members"] = ["b1", "b1"]
+        result = self.certify(payload, solution)
+        assert result.rejected
+        assert "not a partition of the board" in result.reasons[0]
+
+    def test_a_board_whose_tile_count_is_not_the_shape_it_claims(self):
+        payload, solution = grouping_board()
+        payload["group_size"] = 3
+        result = self.certify(payload, solution)
+        assert result.rejected
+        assert any("not 2 groups of 3" in reason for reason in result.reasons)
+
+    def test_a_tile_with_no_memberships_cannot_be_judged(self):
+        payload, solution = grouping_board()
+        del solution["memberships"]["b2"]
+        result = self.certify(payload, solution)
+        assert result.rejected
+        assert any("carry no category memberships" in r for r in result.reasons)
+
+    def test_a_board_that_is_not_a_grouping_board_is_refused_not_crashed(self):
+        result = self.certify({"game_id": "grouping"}, {})
+        assert result.rejected
+        assert result.solution_count is None
+        assert "not readable as a grouping board" in result.reasons[0]
+
+    def test_an_exhausted_budget_lowers_the_claim_rather_than_faking_it(self):
+        """The honest ceiling, and the reason the claim is per result.
+
+        A truncated search has established that the stated grouping is valid
+        and nothing about whether another exists. Reporting a count from it
+        would be reporting a lower bound as though it were the count.
+        """
+        payload, solution = grouping_board()
+        certifier = grouping.GroupingCertifier(state_budget=1)
+        result = certifier.certify(payload, solution)
+        assert result.accepted
+        assert result.assurance is AssuranceLevel.ANSWER_VALID
+        assert result.solution_count is None
+        assert "lower bound" in result.detail
+
+    def test_the_strongest_claim_is_not_uniqueness_proved(self):
+        """Because the count is of collapsed classes, not of assignments.
+
+        The game declares UNIQUE_UP_TO_TOLERANCE, so a certifier claiming
+        uniqueness would be claiming more than the contract does.
+        """
+        assert grouping.certifier().assurance is (
+            AssuranceLevel.SOLUTION_COUNT_KNOWN
+        )
+        assert not grouping.certifier().assurance.at_least(
+            AssuranceLevel.UNIQUENESS_PROVED
+        )

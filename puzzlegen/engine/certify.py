@@ -168,10 +168,10 @@ def default_registry() -> CertifierRegistry:
     does not import every certifier, and so a certifier module's own imports
     stay visible to the independence test as that module's imports.
     """
-    from .certifiers import digit_lock, odd_number_out, shape_trio
+    from .certifiers import digit_lock, grouping, odd_number_out, shape_trio
 
     registry = CertifierRegistry()
-    for module in (digit_lock, odd_number_out, shape_trio):
+    for module in (digit_lock, grouping, odd_number_out, shape_trio):
         registry.register(module.certifier())
     return registry
 
