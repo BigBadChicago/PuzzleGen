@@ -48,6 +48,7 @@ from .plugin import (
     PuzzleCandidate,
     VerificationResult,
 )
+from .certify import CertifierRegistry, default_registry
 from .commitment import dependency_root, new_salt
 from .records import (
     DependencySalt,
@@ -147,6 +148,7 @@ class GenerationPipeline:
         seed_salt: str = "",
         port_budget: PortBudget | None = None,
         verifier: PuzzleVerifier | None = None,
+        certifiers: CertifierRegistry | None = None,
     ) -> None:
         if not snapshot.sealed:
             raise ContentError(
@@ -169,6 +171,13 @@ class GenerationPipeline:
         # which is what makes "generate many, filter hard" include the
         # expensive filters rather than only the cheap ones.
         self._verifier = verifier
+        # The engine's own second opinion, applied as a publication gate
+        # where a certifier exists for the game. Deliberately not a
+        # generation gate: a certifier that rejected candidates would be
+        # absorbed into the search and its disagreements would show up as a
+        # thinner day rather than as a finding. At publication a refusal
+        # stops the day and says why.
+        self._certifiers = certifiers if certifiers is not None else default_registry()
 
     # -- versions ---------------------------------------------------------
 
@@ -594,6 +603,15 @@ class GenerationPipeline:
             raise ContentError(
                 f"{RejectionReason.DIFFICULTY_OUT_OF_RANGE}: measured "
                 f"{measured_band}, requested {puzzle.inputs.difficulty_target}"
+            )
+
+        certificate = self._certifiers.certify(
+            puzzle.game_id, puzzle.payload, puzzle.solution
+        )
+        if certificate is not None and certificate.rejected:
+            raise ContentError(
+                f"{RejectionReason.VERIFICATION_UNSOUND}: the engine's own "
+                f"check refuses this board -- {certificate.describe()}"
             )
 
         manifest_id = ids.for_manifest(puzzle.id)

@@ -204,6 +204,50 @@ class Disagreement:
         )
 
 
+def differential(outcome: Any, registry: CertifierRegistry) -> Disagreement | None:
+    """Compare a certifier's verdict with the one generation accepted.
+
+    ``None`` means no disagreement, which includes the two cases where there
+    is nothing to compare: no certifier for the game, and a run that produced
+    no board. A failed run is not a disagreement -- the certifier was never
+    offered a board -- and reporting it as one would bury real findings under
+    every content-starved day.
+
+    Takes the outcome structurally rather than by type, so this module does
+    not import the pipeline it is called from.
+    """
+    puzzle = getattr(outcome, "puzzle", None)
+    evaluation = getattr(outcome, "evaluation", None)
+    if puzzle is None or not registry.has(puzzle.game_id):
+        return None
+    result = registry.certify(puzzle.game_id, puzzle.payload, puzzle.solution)
+    if result is None:
+        return None
+
+    verification = getattr(evaluation, "verification", None) if evaluation else None
+    verifier_count = (
+        verification.solution_count if verification is not None else None
+    )
+    verifier_accepted = bool(getattr(outcome, "succeeded", False))
+    # Verdicts, not acceptances: equality of outcome with an unequal count is
+    # two checks agreeing by luck, and it is exactly the case where a
+    # generator and a verifier share a mistaken reading of the rules.
+    if (
+        result.accepted == verifier_accepted
+        and result.solution_count == verifier_count
+    ):
+        return None
+    return Disagreement(
+        game_id=puzzle.game_id,
+        day_key=getattr(getattr(outcome, "trace", None), "day_key", ""),
+        certifier_accepted=result.accepted,
+        verifier_accepted=verifier_accepted,
+        certifier_count=result.solution_count,
+        verifier_count=verifier_count,
+        reasons=result.reasons,
+    )
+
+
 __all__ = [
     "AssuranceLevel",
     "CertificateResult",
@@ -211,4 +255,5 @@ __all__ = [
     "CertifierRegistry",
     "Disagreement",
     "default_registry",
+    "differential",
 ]

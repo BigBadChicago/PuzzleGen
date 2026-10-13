@@ -48,6 +48,11 @@ from puzzlegen.engine.capabilities import (
     check_profile,
     write_profile,
 )
+from puzzlegen.engine.certify import (
+    Disagreement,
+    default_registry,
+    differential,
+)
 from puzzlegen.engine.pipeline import GenerationPipeline
 from puzzlegen.engine.registry import GameRegistry
 from puzzlegen.engine.storage import EngineRepositories
@@ -223,6 +228,7 @@ def run(
     now: dt.datetime | None = None,
     strict: bool = True,
     observer: CapabilityObserver | None = None,
+    disagreements: list[Disagreement] | None = None,
 ) -> list[DayResult]:
     now = now or dt.datetime.now(dt.timezone.utc)
     repos = GraphRepositories(SqliteDocumentStore(db))
@@ -258,6 +264,14 @@ def run(
             outcome = pipeline.generate(GAME_ID, day, difficulty_target=difficulty)
             if observer is not None:
                 observer.observe_trace(outcome.trace)
+            if disagreements is not None:
+                # The engine's own check on the board the game just proposed.
+                # A disagreement here is the finding the certifier exists for:
+                # the generator and the verifier share an author, so only an
+                # independent reading can catch them agreeing wrongly.
+                found = differential(outcome, default_registry())
+                if found is not None:
+                    disagreements.append(found)
             results.append(result_of(day, outcome))
         return results
     finally:
@@ -383,6 +397,7 @@ def main(argv: list[str] | None = None) -> int:
         game_id=GAME_ID,
         game_version=ShapeTrioGame().describe().game_version,
     )
+    disagreements: list[Disagreement] = []
     try:
         results = run(
             args.db,
@@ -393,6 +408,7 @@ def main(argv: list[str] | None = None) -> int:
             now=args.now,
             strict=not args.lenient,
             observer=observer,
+            disagreements=disagreements,
         )
     except SnapshotError as error:
         print(str(error), file=sys.stderr)
@@ -417,6 +433,15 @@ def main(argv: list[str] | None = None) -> int:
         if diff is not None and not diff.is_empty:
             for line in diff.describe():
                 print(f"  capability change: {line}", file=sys.stderr)
+    if disagreements:
+        print(
+            f"\n{len(disagreements)} day(s) where the engine's own check "
+            "disagreed with the game's verifier:",
+            file=sys.stderr,
+        )
+        for disagreement in disagreements:
+            print(f"  {disagreement.describe()}", file=sys.stderr)
+        return 1
     return 0 if all(r.generated for r in results) else 1
 
 

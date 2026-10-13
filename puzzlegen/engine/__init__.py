@@ -10,6 +10,15 @@ from .capabilities import (
     read_profile,
     write_profile,
 )
+from .certify import (
+    AssuranceLevel,
+    CertificateResult,
+    Certifier,
+    CertifierRegistry,
+    Disagreement,
+    default_registry,
+    differential,
+)
 from .commitment import (
     CommitmentError,
     ProofStep,
@@ -125,7 +134,14 @@ __all__ = [
     "CapabilityDiff",
     "CapabilityObserver",
     "CapabilityProfile",
+    "AssuranceLevel",
+    "CertificateResult",
+    "Certifier",
+    "CertifierRegistry",
     "CommitmentError",
+    "Disagreement",
+    "default_registry",
+    "differential",
     "check_profile",
     "diff_profiles",
     "profile_from_traces",
