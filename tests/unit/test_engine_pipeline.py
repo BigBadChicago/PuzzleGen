@@ -508,6 +508,75 @@ class TestPublication:
         )
         assert "fact_refs" not in public and "puzzle_content_hash" not in public
 
+    def test_a_board_that_does_not_rebuild_is_not_published(self, world):
+        """The release gate, on the one board that fails it.
+
+        Reproducibility was a field in the manifest and nothing had ever run
+        the recipe. Publishing a day whose recipe does not produce it would
+        put a reproducibility claim on the one day that cannot honour it, and
+        a player holding the manifest is the one who would discover that.
+        """
+        pipeline, outcome, game, verification, difficulty = self._generate(world)
+        altered = outcome.puzzle.model_copy(
+            update={"payload": {**outcome.puzzle.payload, "prompt": "edited"}}
+        )
+
+        with pytest.raises(ContentError, match="did not rebuild from its own recipe"):
+            pipeline.publish(
+                altered,
+                verification=verification,
+                difficulty=difficulty,
+                measured_band=DifficultyBand.MEDIUM,
+                descriptor=game.describe(),
+                generation_id=outcome.trace.id,
+            )
+
+        assert world["engine"].manifests.for_day(DAY) == []
+
+    def test_a_recipe_that_cannot_be_rebuilt_at_all_is_also_refused(self, world):
+        """An inconclusive check refuses, or the gate is decorative.
+
+        A day whose rebuild errors has an unproven reproducibility claim, not
+        a satisfied one, and the two must not reach the same outcome.
+        """
+        pipeline, outcome, game, verification, difficulty = self._generate(world)
+        unbuildable = outcome.puzzle.model_copy(
+            update={
+                "inputs": outcome.puzzle.inputs.model_copy(
+                    update={"game_id": "no-such-game"}
+                )
+            }
+        )
+
+        with pytest.raises(ContentError, match="did not rebuild from its own recipe"):
+            pipeline.publish(
+                unbuildable,
+                verification=verification,
+                difficulty=difficulty,
+                measured_band=DifficultyBand.MEDIUM,
+                descriptor=game.describe(),
+                generation_id=outcome.trace.id,
+            )
+
+    def test_the_rebuild_records_no_second_generation(self, world):
+        """The check is evidence about a day, not another generation of it.
+
+        A persisted rebuild would leave the trace log claiming every
+        published day was generated twice, which is the log a reviewer uses
+        to work out what actually happened.
+        """
+        pipeline, outcome, game, verification, difficulty = self._generate(world)
+        before = world["engine"].traces.count()
+        pipeline.publish(
+            outcome.puzzle,
+            verification=verification,
+            difficulty=difficulty,
+            measured_band=DifficultyBand.MEDIUM,
+            descriptor=game.describe(),
+            generation_id=outcome.trace.id,
+        )
+        assert world["engine"].traces.count() == before
+
     def test_an_unsolvable_puzzle_cannot_be_published(self, world):
         pipeline, outcome, game, _, difficulty = self._generate(world)
         with pytest.raises(ContentError):

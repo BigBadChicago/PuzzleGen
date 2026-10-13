@@ -13,6 +13,12 @@ So the honest version of "reproducible" is not a field. It is a check that
 ran, with a result recorded: this module regenerates from the manifest's own
 ``inputs`` and compares the content hash.
 
+The pipeline runs it as a gate, one moment before the manifest exists: a day
+that will not rebuild from its own recipe is refused rather than published
+with a reproducibility claim it is the one day unable to honour. That costs
+one extra generation per published day, which is what a check that actually
+ran costs.
+
 The regeneration itself is a callable the caller supplies. The check must not
 own a pipeline, a snapshot or a registry: doing so would make it a second
 generation path, and a second generation path is the thing whose disagreement
@@ -89,7 +95,31 @@ def check_release(
     *,
     checked_at: dt.datetime | None = None,
 ) -> ReleaseCertificate:
-    """Rebuild the puzzle this manifest published and compare it.
+    """Rebuild the puzzle this manifest published and compare it."""
+    return check_rebuild(
+        manifest.inputs,
+        manifest.puzzle_content_hash,
+        regenerate,
+        manifest_id=manifest.id,
+        checked_at=checked_at,
+    )
+
+
+def check_rebuild(
+    inputs: GenerationInputs,
+    published_content_hash: str,
+    regenerate: Regenerator,
+    *,
+    manifest_id: str = "",
+    checked_at: dt.datetime | None = None,
+) -> ReleaseCertificate:
+    """Rebuild from a recipe and compare the result against a known hash.
+
+    The primitive, taking the recipe rather than the manifest, because the
+    check is most useful one moment *before* there is a manifest: a day that
+    will not rebuild should not be published, and a gate that could only run
+    on a published manifest would be reporting on a day already served.
+    ``manifest_id`` is then empty, which is honest -- there is not one yet.
 
     Compares the content hash rather than the records, because a puzzle's
     content hash is defined over exactly the fields that make it the same
@@ -98,14 +128,14 @@ def check_release(
     means nothing.
     """
     base = {
-        "manifest_id": manifest.id,
-        "day_key": manifest.day_key,
-        "game_id": manifest.game_id,
-        "published_content_hash": manifest.puzzle_content_hash,
+        "manifest_id": manifest_id,
+        "day_key": inputs.day_key,
+        "game_id": inputs.game_id,
+        "published_content_hash": published_content_hash,
         "checked_at": checked_at,
     }
     try:
-        rebuilt = regenerate(manifest.inputs)
+        rebuilt = regenerate(inputs)
     except Exception as exc:  # noqa: BLE001 - any failure is one finding
         return ReleaseCertificate(
             **base,
@@ -115,9 +145,14 @@ def check_release(
     rebuilt_hash = rebuilt.content_hash()
     return ReleaseCertificate(
         **base,
-        reproduced=rebuilt_hash == manifest.puzzle_content_hash,
+        reproduced=rebuilt_hash == published_content_hash,
         regenerated_content_hash=rebuilt_hash,
     )
 
 
-__all__ = ["ReleaseCertificate", "Regenerator", "check_release"]
+__all__ = [
+    "Regenerator",
+    "ReleaseCertificate",
+    "check_rebuild",
+    "check_release",
+]
