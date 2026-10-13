@@ -189,14 +189,16 @@ task_symbolic() {
 
   : > "$OUT/symbolic.md"
   for entry in $SYMBOLIC_GAMES; do
-    local game="${entry%%:*}" slug="${entry##*:}" json
+    local game="${entry%%:*}" slug="${entry##*:}" json profile
     json="build/$slug-days-$days.json"
+    profile="build/$slug-capabilities.json"
     # Written to the committed path so a diff is the comparison, pinned to the
     # snapshot's own time because content past its review date is refused
     # stale.
     python3 "games/$game/tools/generate_days.py" --db build/graph-symbolic.sqlite \
       --start "$start" --days "$days" --difficulty "$difficulty" \
-      --now "$SYMBOLIC_NOW" --json "$json" || status=$?
+      --now "$SYMBOLIC_NOW" --json "$json" \
+      --capability-profile "$profile" || status=$?
     if [ ! -s "$json" ]; then
       printf '### Symbolic\n\n**%s: day generation failed**: see the log above\n' \
         "$game" > "$SUMMARY"
@@ -208,21 +210,62 @@ task_symbolic() {
     # nothing at all about an ignored untracked one, so a brand new game's
     # run would be reported as matching a committed run that does not exist.
     # The ls-files check is what catches that.
-    if ! git ls-files --error-unmatch "$json" >/dev/null 2>&1; then
-      changed=yes
-      status=1
-    elif [ -n "$(git status --porcelain -- "$json")" ]; then
-      changed=yes
-      status=1
-    fi
+    #
+    # The capability profile goes through the same two checks. It is observed
+    # from the run's own port usage rather than declared, so a game that
+    # starts reaching into a taxonomy nobody approved shows up here as a
+    # changed file a reviewer reads, not as a discovery later.
+    for artifact in "$json" "$profile"; do
+      if ! git ls-files --error-unmatch "$artifact" >/dev/null 2>&1; then
+        changed=yes
+        status=1
+      elif [ -n "$(git status --porcelain -- "$artifact")" ]; then
+        changed=yes
+        status=1
+      fi
+    done
     python3 scripts/ci_summary.py "$slug-days" "$json" >> "$OUT/symbolic.md"
     printf '\n' >> "$OUT/symbolic.md"
   done
+
+  # Cross-board information flow, over the same days. A report rather than a
+  # gate: nothing has declared what a daily set's coupling should be, and a
+  # gate against an undeclared target would assert a product decision.
+  # --require-independent turns this same run into the gate once it is
+  # declared. The artifact goes through the same staleness checks as the rest.
+  local coupling="build/symbolic-coupling-$days.json"
+  # Restricted to the symbolic games, because a day has four active slots and
+  # five games are installed: without this the three this snapshot can serve
+  # would compete with two it cannot, and which three got measured would be
+  # decided by discovery order.
+  # The slug is the artifact's filename stem and uses hyphens; a game id uses
+  # underscores. One translation, here, rather than a second list to keep in
+  # step with the first.
+  local coupling_games=""
+  for entry in $SYMBOLIC_GAMES; do
+    local slug="${entry##*:}"
+    coupling_games="$coupling_games --game ${slug//-/_}"
+  done
+  # shellcheck disable=SC2086
+  python3 tools/measure_coupling.py --db build/graph-symbolic.sqlite \
+    --start "$start" --days "$days" --difficulty "$difficulty" \
+    --now "$SYMBOLIC_NOW" --json "$coupling" $coupling_games \
+    > "$OUT/coupling.txt" || status=$?
+  if ! git ls-files --error-unmatch "$coupling" >/dev/null 2>&1; then
+    changed=yes
+    status=1
+  elif [ -n "$(git status --porcelain -- "$coupling")" ]; then
+    changed=yes
+    status=1
+  fi
 
   {
     printf '### Symbolic snapshot\n\n- days from %s at %s\n- committed runs changed: %s\n\n' \
       "$start" "$difficulty" "$changed"
     cat "$OUT/symbolic.md"
+    printf '\n#### Cross-board information flow\n\n```\n'
+    cat "$OUT/coupling.txt"
+    printf '```\n'
   } > "$SUMMARY"
   publish
   return "$status"

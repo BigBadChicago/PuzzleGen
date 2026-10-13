@@ -48,7 +48,10 @@ from puzzlegen.engine.identity import (  # noqa: E402
     IdentityService,
     SessionSecrets,
 )
+from puzzlegen.core.hashing import stable_hash  # noqa: E402
+from puzzlegen.engine.commitment import dependency_root  # noqa: E402
 from puzzlegen.engine.records import (  # noqa: E402
+    DependencySalt,
     DifficultySummary,
     GenerationInputs,
     PuzzleManifest,
@@ -161,6 +164,7 @@ def build_published_day(
     game_id: str = "oddoneout",
     day_key: str = DAY,
     created_at: dt.datetime = PLAY_START,
+    game_version: str = "1.0.0",
 ) -> PuzzleManifest:
     """A published puzzle and manifest, ready to be played.
 
@@ -176,7 +180,7 @@ def build_published_day(
         snapshot_content_hash="snapshot-hash",
         difficulty_target=DifficultyBand.MEDIUM,
     )
-    versions = VersionSet(game="1.0.0", protocol=PLUGIN_PROTOCOL_VERSION)
+    versions = VersionSet(game=game_version, protocol=PLUGIN_PROTOCOL_VERSION)
     puzzle = PuzzleRecord(
         id=_ids.for_puzzle(day_key, game_id, "content-hash"),
         game_id=game_id,
@@ -200,8 +204,22 @@ def build_published_day(
         created_at=created_at,
     )
     engine_repos.puzzles.put(puzzle)
+    manifest_id = _ids.for_manifest(puzzle.id)
+    # Derived from the manifest id rather than random, so a test asserting on
+    # a root gets the same root twice, and distinct per day, so two days do
+    # not share a root and a test about one day's proof not carrying to
+    # another is not vacuous. Production mints a random salt.
+    salt = DependencySalt(
+        id=_ids.for_dependency_salt(manifest_id),
+        manifest_id=manifest_id,
+        game_id=game_id,
+        day_key=day_key,
+        salt=stable_hash(["fixture-salt", manifest_id]),
+        created_at=created_at,
+    )
+    engine_repos.dependency_salts.put(salt)
     manifest = PuzzleManifest(
-        id=_ids.for_manifest(puzzle.id),
+        id=manifest_id,
         puzzle_id=puzzle.id,
         game_id=game_id,
         day_key=day_key,
@@ -222,6 +240,8 @@ def build_published_day(
             confidence=0.8,
         ),
         fact_refs=puzzle.fact_refs,
+        dependency_root=dependency_root(puzzle.fact_refs, salt.salt),
+        dependency_salt_id=salt.id,
         puzzle_content_hash=puzzle.content_hash(),
         published_at=created_at,
     )

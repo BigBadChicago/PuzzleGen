@@ -457,6 +457,64 @@ still fires on a regrade disagreement. The `DriftingGame` fixture that keeps a
 counter across calls is caught identically in or out of process, because the
 check is on the outputs.
 
+## 3a. The unit of a cost certificate, if one is ever built
+
+Specified, not built, and deliberately so: building a tracer now means
+maintaining one against a design nobody has committed to. What follows is the
+decision about the *unit*, written down while the reasoning is fresh, so that
+whoever schedules the work inherits an answer rather than the argument.
+
+**The unit is a hash over a trace, not an instruction count.** Specifically, a
+hash over the ordered sequence of `(module, qualname, lineno)` events that the
+plugin's own frames pass through, with an instruction count retained beside it
+as a diagnostic rather than as the certificate's content.
+
+Three reasons, each of which an instruction count fails.
+
+**It survives interpreter change.** A bytecode or opcode count is a count of
+the interpreter's choices, not of the plugin's work. CPython's specialising
+adaptive interpreter rewrites instructions at runtime, and a minor release that
+specialises one more loop shape changes every count without any plugin
+changing. A certificate whose value moves when the interpreter is upgraded is a
+certificate that has to be reissued on every upgrade, which means it certifies
+the interpreter rather than the code. The line and function events a trace
+visits are properties of the source.
+
+**The set of modules a trace visits is a review artifact, and a cheap one.**
+The sorted set of modules appearing in the trace is a shorter, more honest
+answer to "what did this code actually touch" than the source is, and unlike a
+static import scan it cannot be evaded by an attribute walk, a `getattr`, or
+any of the three evasions F4 closes and the fourth it cannot. A plugin that
+reaches something it should not has a module in its trace that should not be
+there, and nothing it can do to the source changes that without changing the
+behaviour. An instruction count conveys none of this: two plugins with
+identical counts can touch entirely different code.
+
+**It is a field in the admission manifest, not a separate measurement.** The
+certificate belongs with the capability profile and the version set, in the
+record a reviewer already reads for an admission run, rather than as a number
+somebody has to go and look up.
+
+**The recording context matters and is easy to get wrong.** The plugin must be
+imported *inside* the traced context. A module-level `import subprocess` is not
+a call: it executes once, at import time, before any `generate_candidates`
+frame exists, and a tracer installed around the call sees nothing of it. So
+the trace must begin before the plugin's module is first imported, and the
+import itself is part of what is recorded. A certificate recorded around the
+calls alone would certify the one part of a plugin that cannot smuggle
+anything and miss the part that can.
+
+**What stays a diagnostic.** The instruction count, the wall clock figure, and
+`states_examined` are all retained beside the hash and none of them is the
+certificate. They answer "did this get more expensive", which is a useful
+question with a different tolerance for drift: a diagnostic may move between
+interpreter releases, and the certificate may not.
+
+This interacts with the compute row above rather than replacing it. A trace
+hash is evidence about what code ran; a fuel budget is a bound on how much of
+it runs. Neither substitutes for the other, and the sandbox argument in section
+3 is unaffected.
+
 ## 4. Resource budgets
 
 `PortBudget` bounds queries at 64, results per query at 200 and total results
@@ -912,6 +970,12 @@ bounds the pipeline's own loop and leaves the call unbounded. The first two
 items are small and self contained; the third should be written down as a known
 approximation so that adopting a sandbox later is an improvement to it rather
 than a discovery.
+
+**F3a. If a cost certificate is scheduled, its unit is already decided.**
+Section 3a records it: a hash over the plugin's own `(module, qualname,
+lineno)` trace events, the plugin imported inside the traced context, and the
+instruction count retained as a diagnostic. No code until the work is
+scheduled; the decision is written down so it is not re-argued.
 
 **F4. Close the three invariant evasions, and say what the invariants are
 for.** Add `builtins` to `FORBIDDEN_FOR_GAMES`; extend the banned call scan to

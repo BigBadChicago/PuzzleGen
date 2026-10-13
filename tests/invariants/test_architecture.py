@@ -775,6 +775,11 @@ class TestSessionCheckerItself:
 
 TOOLS = ROOT / "tools"
 
+#: The engine's own per-game validators. Exempt from the literal check in
+#: ``TestThePlatformNamesNoGame`` and subject to the stricter import rule in
+#: ``TestCertifierIndependence``.
+CERTIFIERS = PACKAGE / "engine" / "certifiers"
+
 #: Statuses no module may assign except the one that owns the gate.
 GUARDED_STATUS = {"APPROVED", "ACTIVE"}
 
@@ -877,6 +882,19 @@ class TestThePlatformNamesNoGame:
 
     Game ids are read from what is installed rather than listed here, so this
     test cannot go stale and cannot be satisfied by renaming a game.
+
+    ``puzzlegen/engine/certifiers/`` is the one exemption, and it is an
+    exemption from the literal check only. A certifier is the engine's own
+    independent reading of one game's rules, and it exists precisely because
+    the game's generator and verifier share an author: it has to name the game
+    whose boards it judges, or it could not be selected for them. What it
+    still may not do is import that game, which is both the import check above
+    and ``TestCertifierIndependence`` below; the second is stricter, because it
+    forbids the import even of a game that is not installed.
+
+    The exemption is a directory, not a flag a module can set for itself, so
+    adding a module to it is a visible decision rather than an annotation
+    somebody can copy.
     """
 
     def game_names(self) -> tuple[set[str], set[str]]:
@@ -890,6 +908,9 @@ class TestThePlatformNamesNoGame:
 
     def platform_files(self) -> list[pathlib.Path]:
         return [*python_files(PACKAGE), *python_files(TOOLS)]
+
+    def certifier_files(self) -> list[pathlib.Path]:
+        return python_files(CERTIFIERS)
 
     def test_a_game_is_installed_to_check_against(self):
         ids, packages = self.game_names()
@@ -912,12 +933,147 @@ class TestThePlatformNamesNoGame:
     def test_no_platform_module_holds_a_game_id_as_a_literal(self):
         ids, packages = self.game_names()
         wanted = ids | packages
+        exempt = set(self.certifier_files())
         offenders: dict[str, list[str]] = {}
         for path in self.platform_files():
+            if path in exempt:
+                continue
             named = sorted(wanted & string_literals(path))
             if named:
                 offenders[str(path.relative_to(ROOT))] = named
         assert not offenders, f"the platform names a game: {offenders}"
+
+    def test_a_certifier_names_exactly_the_game_it_judges(self):
+        """The exemption is narrow, and checked rather than assumed.
+
+        A certifier module may name its own game, which it must. It may not
+        name another, which would mean one game's check was selected for a
+        different game's boards.
+        """
+        ids, packages = self.game_names()
+        if not ids:
+            requires_a_game("no game installed, so there is nothing to match")
+        offenders: dict[str, list[str]] = {}
+        for path in self.certifier_files():
+            literals = string_literals(path)
+            named = sorted((ids | packages) & literals)
+            own = path.stem
+            wrong = [value for value in named if value != own]
+            if wrong:
+                offenders[str(path.relative_to(ROOT))] = wrong
+        assert not offenders, (
+            "a certifier names a game other than the one its filename says it "
+            f"judges: {offenders}"
+        )
+
+
+class TestCertifierIndependence:
+    """A certifier may not import the game whose boards it judges.
+
+    This is the test that makes the second opinion a second opinion. A
+    certifier is the engine's own reading of one game's rules, and its entire
+    value is that it was arrived at separately: the game's generator and its
+    verifier share an author, a reading of the rules, and usually a helper
+    module, so when they agree on a false answer nothing in the system
+    disagrees. A certifier that imported the game's deduction helpers and
+    called them would pass every differential test and check nothing, and no
+    type system can tell the difference.
+
+    So the rule is structural and mechanical. A certifier module may import
+    the standard library and ``puzzlegen.engine.solvers``; it may not import
+    anything from any game distribution, installed or not. The consequence is
+    deliberate duplication -- the ``digit_lock`` certifier re-derives the code
+    space and the clue arithmetic that ``lock.py`` already holds -- and the
+    duplication is the point.
+
+    Games are matched by the filesystem layout rather than by what is
+    installed, because a certifier importing a game that happens not to be
+    installed in this environment is the same violation.
+    """
+
+    def certifier_files(self) -> list[pathlib.Path]:
+        return python_files(CERTIFIERS)
+
+    def game_package_names(self) -> set[str]:
+        """Every game distribution's package name, from the repository."""
+        names: set[str] = set()
+        for root in GAME_DISTRIBUTIONS:
+            for path in root.iterdir():
+                if path.is_dir() and (path / "__init__.py").exists():
+                    names.add(path.name)
+        for entry in entry_points(group=GAME_ENTRY_POINT_GROUP):
+            names.add(entry.value.split(":", 1)[0].split(".", 1)[0])
+        return {name for name in names if name}
+
+    def test_there_is_at_least_one_certifier_to_check(self):
+        assert self.certifier_files(), (
+            "no certifier modules found; this suite would pass vacuously"
+        )
+
+    def test_no_certifier_imports_any_game(self):
+        games = self.game_package_names()
+        assert games, "no game distributions found to check against"
+        offenders: dict[str, list[str]] = {}
+        for path in self.certifier_files():
+            named = sorted(
+                module
+                for module in imported_modules(path)
+                if module.split(".", 1)[0] in games
+            )
+            if named:
+                offenders[str(path.relative_to(ROOT))] = named
+        assert not offenders, (
+            "a certifier imports the game it is supposed to check "
+            "independently; it would agree with it by construction:\n"
+            + "\n".join(f"  {path}: {mods}" for path, mods in offenders.items())
+        )
+
+    def test_a_certifier_imports_only_the_engines_own_search_shapes(self):
+        """Nothing from content, graph, providers or storage either.
+
+        A certifier reads a payload and a solution it was handed. One that
+        reached the graph would be checking the board against content rather
+        than against the rules the player is shown, which is a different
+        claim.
+        """
+        allowed = {
+            "puzzlegen.engine.certify",
+            # The coupling types, because a certifier is also where a game's
+            # solution space is derived: the space is the same enumeration the
+            # certifier already runs, and deriving it twice would let the two
+            # disagree about what a board admits.
+            "puzzlegen.engine.coupling",
+            "puzzlegen.engine.solvers",
+            "puzzlegen.core",
+        }
+        offenders: dict[str, list[str]] = {}
+        for path in self.certifier_files():
+            named = sorted(
+                module
+                for module in imported_modules(path)
+                if module.startswith("puzzlegen")
+                and not any(
+                    module == ok or module.startswith(ok + ".")
+                    for ok in allowed
+                )
+            )
+            if named:
+                offenders[str(path.relative_to(ROOT))] = named
+        assert not offenders, (
+            "a certifier reaches past the rules it is checking: " f"{offenders}"
+        )
+
+    def test_every_certifier_declares_an_assurance_level(self):
+        from puzzlegen.engine.certify import AssuranceLevel, default_registry
+
+        registry = default_registry()
+        assert registry.game_ids()
+        for game_id in registry.game_ids():
+            certifier = registry.get(game_id)
+            assert isinstance(certifier.assurance, AssuranceLevel), (
+                f"certifier for {game_id} declares no assurance level, so an "
+                "acceptance from it means nothing in particular"
+            )
 
 
 class TestTestSupportStaysOutOfTheRuntime:

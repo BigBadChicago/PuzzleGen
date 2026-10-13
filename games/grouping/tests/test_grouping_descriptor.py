@@ -87,8 +87,15 @@ class TestTheUniquenessPromise:
         assert DESCRIPTOR.search_bound == SEARCH_BOUND
 
     def test_the_bound_is_sized_for_the_widest_board(self):
-        """36 tiles into four groups of 9, not the average day."""
-        assert SEARCH_BOUND >= 10 ** 6
+        """36 tiles into four groups of 9, not the average day.
+
+        The figure is the measured cost of exhausting the least prunable
+        36-tile board, recorded beside the constant. Asserted here so that
+        lowering the bound back under the widest board's cost fails a test
+        rather than quietly returning the game to a state where its two
+        widest sizes could not be published.
+        """
+        assert SEARCH_BOUND > 25_122_407
 
 
 class TestBoardShape:

@@ -569,6 +569,7 @@ class TestContentPort:
         port.find_groups(category="canine", group_size=3, limit=2)
         assert port.usage.queries == 2
         assert port.usage.operations["find_entities"] == 1
+        assert port.usage.taxonomies == {"default"}
 
     def test_issued_ids_accumulate(self, port):
         port.find_entities(category="feline")

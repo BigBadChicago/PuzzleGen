@@ -21,6 +21,7 @@ from puzzlegen.engine.sessions import (
     MoveOutcome,
     MoveRecord,
     SessionKind,
+    RulesVersion,
     SessionRecord,
     SessionState,
 )
@@ -71,6 +72,7 @@ def a_session(*, state=SessionState.COMPLETED, kind=SessionKind.LIVE, wrong=1):
         started_at=NOW,
         last_activity_at=NOW,
         expires_at=NOW + dt.timedelta(hours=12),
+        rules=RulesVersion(game="1.0.0"),
     )
     sequence = 1
     for index in range(wrong):

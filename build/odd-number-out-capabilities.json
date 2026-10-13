@@ -1,0 +1,15 @@
+{
+  "days_observed": 30,
+  "game_id": "odd_number_out",
+  "game_version": "1.0.0",
+  "max_queries_in_a_run": 1,
+  "max_results_in_a_run": 90,
+  "operations": [
+    "find_category_members"
+  ],
+  "record": "capability_profile",
+  "snapshot_id": "snapshot:symbolic-1",
+  "taxonomies": [
+    "numbers"
+  ]
+}

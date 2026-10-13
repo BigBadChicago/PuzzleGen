@@ -48,7 +48,10 @@ from .plugin import (
     PuzzleCandidate,
     VerificationResult,
 )
+from .certify import CertifierRegistry, default_registry
+from .commitment import dependency_root, new_salt
 from .records import (
+    DependencySalt,
     DifficultySummary,
     GenerationInputs,
     GenerationTrace,
@@ -59,6 +62,7 @@ from .records import (
     VerificationSummary,
     VersionSet,
 )
+from .release import check_rebuild
 from .registry import GameRegistry
 from .storage import EngineRepositories
 from .verifier import EvaluationOutcome, PuzzleVerifier
@@ -145,6 +149,7 @@ class GenerationPipeline:
         seed_salt: str = "",
         port_budget: PortBudget | None = None,
         verifier: PuzzleVerifier | None = None,
+        certifiers: CertifierRegistry | None = None,
     ) -> None:
         if not snapshot.sealed:
             raise ContentError(
@@ -167,6 +172,13 @@ class GenerationPipeline:
         # which is what makes "generate many, filter hard" include the
         # expensive filters rather than only the cheap ones.
         self._verifier = verifier
+        # The engine's own second opinion, applied as a publication gate
+        # where a certifier exists for the game. Deliberately not a
+        # generation gate: a certifier that rejected candidates would be
+        # absorbed into the search and its disagreements would show up as a
+        # thinner day rather than as a finding. At publication a refusal
+        # stops the day and says why.
+        self._certifiers = certifiers if certifiers is not None else default_registry()
 
     # -- versions ---------------------------------------------------------
 
@@ -215,7 +227,15 @@ class GenerationPipeline:
         *,
         difficulty_target: DifficultyBand = DifficultyBand.MEDIUM,
         locale: str = "en",
+        persist: bool = True,
     ) -> GenerationOutcome:
+        """Generate one day's board.
+
+        ``persist`` off runs the whole path and writes nothing, which is what
+        the release check needs: a rebuild is evidence about a day, not a
+        second generation of it, and storing its record and trace would make
+        the trace log claim the day was generated twice.
+        """
         entry = self._registry.get(game_id)
         descriptor = entry.descriptor
         plugin = entry.plugin
@@ -229,6 +249,7 @@ class GenerationPipeline:
                 reason=(
                     f"game does not support difficulty band {difficulty_target}"
                 ),
+            persist=persist,
             )
         if locale not in descriptor.supported_locales:
             return self._fail(
@@ -237,6 +258,7 @@ class GenerationPipeline:
                 difficulty_target,
                 locale,
                 reason=f"game does not support locale {locale!r}",
+            persist=persist,
             )
 
         seed = derive_seed(day_key, game_id, self._seed_salt)
@@ -259,6 +281,7 @@ class GenerationPipeline:
                 reason=f"content boundary violation: {exc}",
                 port=port,
                 requirements=requirements,
+            persist=persist,
             )
 
         unmet = [r.name for r in requirements if not r.is_met(content[r.name])]
@@ -275,6 +298,7 @@ class GenerationPipeline:
                 port=port,
                 requirements=requirements,
                 content=content,
+            persist=persist,
             )
 
         context = GenerationContext(
@@ -306,6 +330,7 @@ class GenerationPipeline:
                 content=content,
                 offered=offered,
                 tallies=(screen, assembly),
+            persist=persist,
             )
 
         assembled = 0
@@ -382,6 +407,7 @@ class GenerationPipeline:
                 offered=offered,
                 assembled=assembled,
                 tallies=(screen, assembly, search),
+            persist=persist,
             )
 
         candidate, puzzle, evaluation = chosen
@@ -415,9 +441,10 @@ class GenerationPipeline:
             puzzle_id=record.id,
             succeeded=True,
         )
-        with self._engine.transaction():
-            self._engine.puzzles.put(record)
-            self._engine.traces.put(trace)
+        if persist:
+            with self._engine.transaction():
+                self._engine.puzzles.put(record)
+                self._engine.traces.put(trace)
         return GenerationOutcome(
             trace=trace,
             puzzle=record,
@@ -594,8 +621,44 @@ class GenerationPipeline:
                 f"{measured_band}, requested {puzzle.inputs.difficulty_target}"
             )
 
+        certificate = self._certifiers.certify(
+            puzzle.game_id, puzzle.payload, puzzle.solution
+        )
+        if certificate is not None and certificate.rejected:
+            raise ContentError(
+                f"{RejectionReason.VERIFICATION_UNSOUND}: the engine's own "
+                f"check refuses this board -- {certificate.describe()}"
+            )
+
+        release = check_rebuild(
+            puzzle.inputs,
+            puzzle.content_hash(),
+            self._regenerate,
+            checked_at=self._now,
+        )
+        if release.refuses_publication:
+            raise ContentError(
+                f"{RejectionReason.VERIFICATION_UNSOUND}: the day did not "
+                f"rebuild from its own recipe -- {release.describe()}"
+            )
+
+        manifest_id = ids.for_manifest(puzzle.id)
+        # One salt per manifest, reused on a republish. A republish that minted
+        # a second salt would compute a second root over the same dependency
+        # set, and the manifest repository's immutability check would read the
+        # day as rewritten.
+        salt = self._engine.dependency_salts.for_manifest(manifest_id) or (
+            DependencySalt(
+                id=ids.for_dependency_salt(manifest_id),
+                manifest_id=manifest_id,
+                game_id=puzzle.game_id,
+                day_key=puzzle.day_key,
+                salt=new_salt(),
+                created_at=self._now,
+            )
+        )
         manifest = PuzzleManifest(
-            id=ids.for_manifest(puzzle.id),
+            id=manifest_id,
             puzzle_id=puzzle.id,
             game_id=puzzle.game_id,
             day_key=puzzle.day_key,
@@ -605,11 +668,17 @@ class GenerationPipeline:
             verification=summary,
             difficulty=difficulty_summary,
             fact_refs=puzzle.fact_refs,
+            dependency_root=dependency_root(puzzle.fact_refs, salt.salt),
+            dependency_salt_id=salt.id,
             puzzle_content_hash=puzzle.content_hash(),
             published_at=self._now,
         )
 
         with self._engine.transaction():
+            # The salt first: a manifest whose root nobody can reproduce is a
+            # commitment to nothing, so the order matters if the transaction
+            # is ever replaced by something weaker.
+            self._engine.dependency_salts.put(salt)
             self._engine.manifests.put(manifest)
             self._engine.puzzles.set_status(puzzle.id, PuzzleStatus.PUBLISHED)
             self._record_dependencies(manifest)
@@ -683,6 +752,31 @@ class GenerationPipeline:
 
     # -- tracing ----------------------------------------------------------
 
+    def _regenerate(self, inputs: GenerationInputs) -> PuzzleRecord:
+        """Rebuild one puzzle from its own recipe, writing nothing.
+
+        The recipe's own difficulty target and locale, not the caller's: the
+        check asks whether this recipe still produces this board, and feeding
+        it today's defaults would answer a different question. The seed is not
+        passed because the pipeline derives it from the day, the game and its
+        salt -- so a pipeline configured with a different salt rebuilds a
+        different board and the check fails, which is correct. A salt change
+        does move every day's output.
+        """
+        outcome = self.generate(
+            inputs.game_id,
+            inputs.day_key,
+            difficulty_target=inputs.difficulty_target,
+            locale=inputs.locale,
+            persist=False,
+        )
+        if outcome.puzzle is None:
+            raise ContentError(
+                f"the recipe for {inputs.day_key} {inputs.game_id} produced no "
+                f"board on rebuild: {outcome.trace.failure_reason}"
+            )
+        return outcome.puzzle
+
     def _fail(
         self,
         descriptor: GameDescriptor,
@@ -697,6 +791,7 @@ class GenerationPipeline:
         offered: int = 0,
         assembled: int = 0,
         tallies: Sequence[_Counter] = (),
+        persist: bool = True,
     ) -> GenerationOutcome:
         seed = derive_seed(day_key, descriptor.game_id, self._seed_salt)
         trace = self._trace(
@@ -714,7 +809,8 @@ class GenerationPipeline:
             succeeded=False,
             failure_reason=reason,
         )
-        self._engine.traces.put(trace)
+        if persist:
+            self._engine.traces.put(trace)
         return GenerationOutcome(trace=trace, candidates_considered=offered)
 
     def _trace(
@@ -779,6 +875,10 @@ class GenerationPipeline:
             failure_reason=failure_reason,
             port_queries=port.usage.queries if port else 0,
             port_results=port.usage.results if port else 0,
+            port_taxonomies=(
+                tuple(sorted(port.usage.taxonomies)) if port else ()
+            ),
+            port_operations=dict(port.usage.operations) if port else {},
             created_at=self._now,
         )
 

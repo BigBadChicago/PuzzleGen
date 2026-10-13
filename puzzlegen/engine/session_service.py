@@ -36,6 +36,7 @@ from .sessions import (
     MoveKind,
     MoveOutcome,
     MoveRecord,
+    RulesVersion,
     ScoreRecord,
     SessionKind,
     SessionRecord,
@@ -116,7 +117,9 @@ class SessionService:
         manifest = self._engine.manifests.get(manifest_id)
         if manifest is None:
             raise NotFoundError("manifests", manifest_id)
-        self._playable_game(manifest.game_id)
+        self._playable_game(
+            manifest.game_id, game_version=manifest.versions.game
+        )
         puzzle_record = self._engine.puzzles.require(manifest.puzzle_id)
         if puzzle_record.status is PuzzleStatus.INVALIDATED:
             raise ConflictError(
@@ -159,6 +162,12 @@ class SessionService:
             game_id=manifest.game_id,
             day_key=manifest.day_key,
             kind=kind,
+            # Stamped from the manifest's game version rather than from the
+            # registry, so the session names the release of the game the
+            # board was built by. _playable_game has already refused a loaded
+            # game at any other version, so the two agree here by check
+            # rather than by hope.
+            rules=RulesVersion(game=manifest.versions.game),
             started_at=now,
             last_activity_at=now,
             expires_at=expires_at,
@@ -193,7 +202,9 @@ class SessionService:
     def _expire_if_due(self, session: SessionRecord) -> SessionRecord:
         if session.is_terminal or self._clock.now() < session.expires_at:
             return session
-        game = self._playable_game(session.game_id)
+        game = self._playable_game(
+            session.game_id, game_version=session.rules.game
+        )
         puzzle = puzzle_from_record(self._engine.puzzles.require(session.puzzle_id))
         expired = self._terminate(
             session, SessionState.EXPIRED, at=session.expires_at, presave=False
@@ -215,7 +226,9 @@ class SessionService:
     ) -> MoveResult:
         """Grade and record one move."""
         session = self.resume(session_id)
-        game = self._playable_game(session.game_id)
+        game = self._playable_game(
+            session.game_id, game_version=session.rules.game
+        )
         puzzle = puzzle_from_record(self._engine.puzzles.require(session.puzzle_id))
 
         replayed = self._replay_if_seen(
@@ -269,7 +282,9 @@ class SessionService:
         under-reported by a client that simply declines to mention it.
         """
         session = self.resume(session_id)
-        game = self._playable_game(session.game_id)
+        game = self._playable_game(
+            session.game_id, game_version=session.rules.game
+        )
         puzzle = puzzle_from_record(self._engine.puzzles.require(session.puzzle_id))
 
         existing = session.move_at(sequence)
@@ -305,7 +320,9 @@ class SessionService:
         one of them is a decision the player made.
         """
         session = self.resume(session_id)
-        game = self._playable_game(session.game_id)
+        game = self._playable_game(
+            session.game_id, game_version=session.rules.game
+        )
         puzzle = puzzle_from_record(self._engine.puzzles.require(session.puzzle_id))
         existing = session.move_at(sequence)
         if existing is not None and existing.kind is MoveKind.GIVE_UP:
@@ -342,7 +359,9 @@ class SessionService:
         session = self.resume(session_id)
         if session.is_terminal:
             return session
-        game = self._playable_game(session.game_id)
+        game = self._playable_game(
+            session.game_id, game_version=session.rules.game
+        )
         puzzle = puzzle_from_record(self._engine.puzzles.require(session.puzzle_id))
         session = self._terminate(
             session, SessionState.ABANDONED, at=self._clock.now(), presave=False
@@ -371,7 +390,9 @@ class SessionService:
         moves have already established.
         """
         session = self.resume(session_id)
-        game = self._playable_game(session.game_id)
+        game = self._playable_game(
+            session.game_id, game_version=session.rules.game
+        )
         puzzle = puzzle_from_record(self._engine.puzzles.require(session.puzzle_id))
         state, _ = replay_state(session, game.plugin, puzzle)
         return game.plugin.render(puzzle, state, session.locale)
@@ -386,15 +407,32 @@ class SessionService:
 
     # -- internals -----------------------------------------------------------
 
-    def _playable_game(self, game_id: str) -> RegisteredGame:
+    def _playable_game(
+        self, game_id: str, *, game_version: str | None = None
+    ) -> RegisteredGame:
         """Resolve a game and refuse the ones that cannot carry a session.
 
-        Two gates, both stated rather than assumed. A game must implement the
+        Three gates, all stated rather than assumed. A game must implement the
         1.1 play methods, and its accessibility declaration must be complete:
         the declaration has existed since phase 4 and was enforced nowhere, so
         a game could promise nothing and still ship.
+
+        ``game_version`` is the third. A session records the rules it is
+        played under, but every move, hint and score afterwards is produced by
+        whichever release of the game is loaded now. Without this check a
+        deployment mid-session, or a practice session opened on an old
+        manifest, would write a transcript that names one ruleset and was
+        graded by another -- the exact substitution the replay service exists
+        to refuse, happening before the replay.
         """
         game = self._registry.get(game_id)
+        if game_version is not None and game.descriptor.game_version != game_version:
+            raise ConflictError(
+                f"game {game_id} is loaded at version "
+                f"{game.descriptor.game_version}, but this session's rules are "
+                f"{game_version}; playing on would produce a transcript graded "
+                "by rules it does not name"
+            )
         missing = [m for m in PLAY_METHODS if not hasattr(game.plugin, m)]
         if missing:
             raise ConfigurationError(

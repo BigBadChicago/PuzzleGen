@@ -30,6 +30,7 @@ from puzzlegen.engine.sessions import (
     MoveRecord,
     OffsetDayWindow,
     SessionKind,
+    RulesVersion,
     SessionRecord,
     SessionState,
     UtcDayWindow,
@@ -55,6 +56,7 @@ def make_session(**overrides) -> SessionRecord:
         "started_at": NOW,
         "last_activity_at": NOW,
         "expires_at": NOW + dt.timedelta(hours=12),
+        "rules": RulesVersion(game="1.0.0"),
     }
     fields.update(overrides)
     return SessionRecord(**fields)

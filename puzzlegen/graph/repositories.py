@@ -46,6 +46,14 @@ class DocumentRepository(Generic[T]):
     collection: ClassVar[str]
     model: ClassVar[type[BaseModel]]
     indexed_fields: ClassVar[tuple[str, ...]] = ()
+    #: Schema version a stored document in this collection must carry.
+    #:
+    #: Per repository rather than global because the engine's records version
+    #: on their own cadence: a manifest's shape can change without the graph
+    #: models changing. Checking every collection against the content schema
+    #: version made the two indistinguishable, so a bump to one would have
+    #: made the other's documents unreadable.
+    schema_version: ClassVar[int] = CONTENT_SCHEMA_VERSION
 
     def __init__(self, store: DocumentStore) -> None:
         self._store = store
@@ -67,10 +75,10 @@ class DocumentRepository(Generic[T]):
 
     def _load(self, document: dict[str, Any]) -> T:
         version = document.get("schema_version")
-        if version is not None and version != CONTENT_SCHEMA_VERSION:
+        if version is not None and version != self.schema_version:
             raise SchemaVersionError(
-                f"{self.collection} document written with content schema "
-                f"v{version}, engine expects v{CONTENT_SCHEMA_VERSION}"
+                f"{self.collection} document written with schema "
+                f"v{version}, engine expects v{self.schema_version}"
             )
         return self.model.model_validate(document)  # type: ignore[return-value]
 
