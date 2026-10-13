@@ -417,9 +417,11 @@ def main(argv: list[str] | None = None) -> int:
         # consumed content, and a profile that only covered successes would
         # understate exactly the games worth watching.
         profile = observer.profile()
+        # Diffed before it is written, because writing first would compare the
+        # new profile with itself and report a change never.
+        diff = check_profile(args.capability_profile, profile)
         write_profile(args.capability_profile, profile)
         print(f"capabilities: {args.capability_profile}")
-        diff = check_profile(args.capability_profile, profile)
         if diff is not None and not diff.is_empty:
             for line in diff.describe():
                 print(f"  capability change: {line}", file=sys.stderr)

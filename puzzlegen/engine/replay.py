@@ -21,7 +21,7 @@ from ..core.versions import (
     SESSION_SCHEMA_VERSION,
 )
 from .plugin import Puzzle
-from .records import PuzzleManifest
+from .records import PuzzleManifest, content_hash_of
 from .registry import GameRegistry
 from .scoring import ScoringService
 from .sessions import RulesVersion, ScoreRecord, SessionRecord
@@ -34,6 +34,16 @@ class RulesVersionError(PuzzleGenError):
     walking an archive has to be able to tell "this transcript belongs to an
     older ruleset" apart from "this transcript is malformed". The first is an
     expected outcome of replaying history and the second is a bug.
+    """
+
+
+class ReplayBindingError(PuzzleGenError):
+    """The board or manifest offered is not the one this session played.
+
+    Separate from :class:`RulesVersionError` because the two are different
+    failures with different remedies: moved rules mean this release cannot
+    grade the transcript at all, while a mismatched board means the caller
+    fetched the wrong one and a correct replay is still available.
     """
 
 
@@ -87,11 +97,16 @@ class ReplayService:
     ) -> ScoreRecord:
         """Grade a transcript, or refuse because its rules have moved.
 
-        The plugin and the difficulty score come from the registry and the
-        manifest rather than from the caller, so a replay cannot be handed a
-        different game or a different difficulty than the one played.
+        The plugin comes from the registry rather than the caller, and the
+        board and its manifest are checked against the session before
+        anything is evaluated. Pinning the rules and then grading against
+        whatever board was passed in would leave the easier substitution
+        open: the difficulty score comes off the manifest and the telemetry
+        comes off the puzzle, so another day's manifest buys a different
+        score under a rules check that still passes.
         """
         self.require_honoured(session)
+        self.require_bound(session, puzzle, manifest)
         plugin = self._registry.get(session.game_id).plugin
         return self._scoring.evaluate(
             session,
@@ -103,6 +118,52 @@ class ReplayService:
             # differing in a timestamp nobody changed.
             scored_at=session.ended_at,
         )
+
+    def require_bound(
+        self,
+        session: SessionRecord,
+        puzzle: Puzzle,
+        manifest: PuzzleManifest,
+    ) -> None:
+        """Raise unless this board and manifest are the ones this session played.
+
+        Four checks rather than one, because they fail for different reasons
+        and a caller needs to know which. The manifest's id is the binding a
+        session actually stores; the game and day guard a manifest whose id
+        was somehow minted from the right puzzle but describes another day;
+        and the content hash is the only thing that ties the board in hand to
+        the one published, since a puzzle carries no id of its own here.
+        """
+        if manifest.id != session.manifest_id:
+            raise ReplayBindingError(
+                f"session {session.id} was played on manifest "
+                f"{session.manifest_id}, not {manifest.id}"
+            )
+        if manifest.puzzle_id != session.puzzle_id:
+            raise ReplayBindingError(
+                f"manifest {manifest.id} publishes puzzle "
+                f"{manifest.puzzle_id}, but session {session.id} played "
+                f"{session.puzzle_id}"
+            )
+        if (manifest.game_id, manifest.day_key) != (
+            session.game_id,
+            session.day_key,
+        ):
+            raise ReplayBindingError(
+                f"manifest {manifest.id} is {manifest.game_id} on "
+                f"{manifest.day_key}, but session {session.id} played "
+                f"{session.game_id} on {session.day_key}"
+            )
+        content_hash = content_hash_of(
+            puzzle.game_id, puzzle.payload, puzzle.solution, puzzle.fact_refs
+        )
+        if content_hash != manifest.puzzle_content_hash:
+            raise ReplayBindingError(
+                f"the board passed for session {session.id} hashes to "
+                f"{content_hash}, but manifest {manifest.id} published "
+                f"{manifest.puzzle_content_hash}; this is not the board that "
+                "was played"
+            )
 
     def require_honoured(self, session: SessionRecord) -> None:
         """Raise unless the recorded rules are this release's rules."""
@@ -130,4 +191,4 @@ class ReplayService:
         )
 
 
-__all__ = ["ReplayService", "RulesVersionError"]
+__all__ = ["ReplayBindingError", "ReplayService", "RulesVersionError"]

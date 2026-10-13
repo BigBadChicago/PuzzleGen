@@ -172,10 +172,7 @@ def as_documents(reports: list[CouplingReport]) -> list[dict]:
     return [
         {
             "day": report.day_key,
-            "boards": sorted(
-                {m.source_game_id for m in report.measurements}
-                | {m.target_game_id for m in report.measurements}
-            ),
+            "boards": list(report.boards),
             "measurements": [
                 {
                     "from": m.source_game_id,

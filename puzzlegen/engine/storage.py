@@ -54,15 +54,54 @@ class PuzzleRepository(DocumentRepository[PuzzleRecord]):
             if p.status is PuzzleStatus.PUBLISHED
         ]
 
+    def put(self, record: PuzzleRecord) -> None:
+        """Write a puzzle, refusing to overwrite an invalidated one.
+
+        Generation is deterministic, so regenerating a retracted day produces
+        the same record and would otherwise write it straight back over the
+        retraction. That is the one way a board whose salt has already been
+        released could become playable again, and it needs no bad input to
+        happen -- only a rerun of the pipeline that built the day originally.
+        """
+        existing = self.get(record.id)
+        if existing is not None and existing.status is PuzzleStatus.INVALIDATED:
+            raise ConflictError(
+                f"puzzle {record.id} was invalidated and cannot be rewritten; "
+                "a retracted board stays retracted, and republishing it would "
+                "serve a day whose dependency salt is already public"
+            )
+        super().put(record)
+
     def set_status(self, puzzle_id: str, status: PuzzleStatus) -> PuzzleRecord:
+        """Move a puzzle's status. ``INVALIDATED`` is terminal.
+
+        Terminal here rather than on the record, because a status transition
+        is a fact about a stored puzzle and the record cannot see the one it
+        is replacing. Retraction is the engine's only irreversible act: it
+        publishes a membership proof and releases the day's salt, neither of
+        which can be taken back, so a later status that contradicts them
+        would make the published evidence a lie.
+        """
         record = self.require(puzzle_id)
+        if (
+            record.status is PuzzleStatus.INVALIDATED
+            and status is not PuzzleStatus.INVALIDATED
+        ):
+            raise ConflictError(
+                f"puzzle {puzzle_id} is invalidated, which is terminal; "
+                f"it cannot become {status}"
+            )
         updated = record.model_copy(update={"status": status})
         # Bypasses the immutability rule on manifests deliberately: a puzzle's
         # status must remain writable so a retracted fact can mark it
         # invalidated. Its payload and solution never change, because
         # model_copy on a frozen model produces a new record and the content
         # hash is computed from payload and solution only.
-        super().put(updated)
+        #
+        # Straight to the base write, past this class's own overwrite guard:
+        # the transition check above is the authoritative one here, and the
+        # guard would otherwise refuse a repeated retraction of the same day.
+        DocumentRepository.put(self, updated)
         return updated
 
 

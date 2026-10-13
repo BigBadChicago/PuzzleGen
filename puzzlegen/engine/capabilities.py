@@ -169,6 +169,11 @@ class CapabilityDiff:
     ceilings_changed: tuple[tuple[str, int, int], ...] = ()
     version_changed: tuple[str, str] | None = None
     snapshot_changed: tuple[str, str] | None = None
+    #: How many days each profile saw, as ``(committed, observed)``. Part of
+    #: the diff because it is what makes the rest of it comparable: a run over
+    #: fewer days reaches less content, so matching taxonomies prove nothing
+    #: and an unchanged ceiling is not an unchanged ceiling.
+    days_changed: tuple[int, int] | None = None
 
     @property
     def is_empty(self) -> bool:
@@ -180,6 +185,7 @@ class CapabilityDiff:
             or self.ceilings_changed
             or self.version_changed
             or self.snapshot_changed
+            or self.days_changed
         )
 
     @property
@@ -194,6 +200,12 @@ class CapabilityDiff:
 
     def describe(self) -> tuple[str, ...]:
         lines: list[str] = []
+        if self.days_changed:
+            lines.append(
+                f"days observed {self.days_changed[0]} -> "
+                f"{self.days_changed[1]}, so the two profiles did not see the "
+                "same amount of content"
+            )
         if self.version_changed:
             lines.append(
                 f"game version {self.version_changed[0]} -> "
@@ -245,6 +257,11 @@ def diff_profiles(
         snapshot_changed=(
             (committed.snapshot_id, observed.snapshot_id)
             if committed.snapshot_id != observed.snapshot_id
+            else None
+        ),
+        days_changed=(
+            (committed.days_observed, observed.days_observed)
+            if committed.days_observed != observed.days_observed
             else None
         ),
     )

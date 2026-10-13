@@ -164,6 +164,7 @@ def build_published_day(
     game_id: str = "oddoneout",
     day_key: str = DAY,
     created_at: dt.datetime = PLAY_START,
+    game_version: str = "1.0.0",
 ) -> PuzzleManifest:
     """A published puzzle and manifest, ready to be played.
 
@@ -179,7 +180,7 @@ def build_published_day(
         snapshot_content_hash="snapshot-hash",
         difficulty_target=DifficultyBand.MEDIUM,
     )
-    versions = VersionSet(game="1.0.0", protocol=PLUGIN_PROTOCOL_VERSION)
+    versions = VersionSet(game=game_version, protocol=PLUGIN_PROTOCOL_VERSION)
     puzzle = PuzzleRecord(
         id=_ids.for_puzzle(day_key, game_id, "content-hash"),
         game_id=game_id,

@@ -50,6 +50,30 @@ class _Frozen(BaseModel):
     model_config = ConfigDict(frozen=True, extra="forbid")
 
 
+def content_hash_of(
+    game_id: str,
+    payload: Any,
+    solution: Any,
+    fact_refs: Any,
+) -> str:
+    """The canonical hash of a board's content.
+
+    A function rather than only a method on :class:`PuzzleRecord`, because the
+    stored record and the plugin-facing :class:`~puzzlegen.engine.plugin.Puzzle`
+    both need it and a second copy of the formula is a second answer that can
+    disagree with the first. Anything that compares a board in hand against a
+    published manifest -- a replay, a release check -- goes through here.
+    """
+    return stable_hash(
+        {
+            "game_id": game_id,
+            "payload": payload,
+            "solution": solution,
+            "fact_refs": sorted(fact_refs),
+        }
+    )
+
+
 def _utc(value: dt.datetime) -> dt.datetime:
     if value.tzinfo is None:
         raise ValueError("timestamps must be timezone-aware UTC")
@@ -156,13 +180,8 @@ class PuzzleRecord(_Frozen):
 
     def content_hash(self) -> str:
         """Hash of the puzzle itself, excluding status and timestamps."""
-        return stable_hash(
-            {
-                "game_id": self.game_id,
-                "payload": self.payload,
-                "solution": self.solution,
-                "fact_refs": sorted(self.fact_refs),
-            }
+        return content_hash_of(
+            self.game_id, self.payload, self.solution, self.fact_refs
         )
 
 

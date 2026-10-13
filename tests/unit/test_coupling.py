@@ -34,6 +34,24 @@ from tests.unit.test_certify import (
 )
 
 
+def as_document_of(reports, not_measured=()):
+    """The committed artifact's own serializer, imported where it lives.
+
+    The tool is not a package, so it is loaded by path rather than imported:
+    testing a reimplementation of the serializer would test the wrong thing,
+    since the point is the shape of the file CI compares.
+    """
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
+    try:
+        import measure_coupling
+    finally:
+        sys.path.pop(0)
+    return measure_coupling.as_document(reports, not_measured)
+
+
 #: The predicate the arithmetic tests use. One predicate, so every space
 #: below reads every other's facts and the figures are about the arithmetic
 #: rather than about predicate matching, which has its own tests.
@@ -452,16 +470,7 @@ class TestTheReportArtifact:
     did."""
 
     def test_the_document_names_the_games_it_could_not_activate(self):
-        import sys
-        from pathlib import Path
-
-        sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
-        try:
-            import measure_coupling
-        finally:
-            sys.path.pop(0)
-
-        document = measure_coupling.as_document(
+        document = as_document_of(
             [check_day("2026-10-01", {})], ("left_out",)
         )
         assert document["record"] == "coupling_report"
@@ -474,3 +483,17 @@ class TestTheReportArtifact:
         report = check_day("2026-10-01", {"alpha": tile_space(["a"])})
         assert report.measurements == ()
         assert report.passes
+
+    def test_a_day_records_what_it_served_even_with_nothing_to_measure(self):
+        """The board list cannot be recovered from the measurements.
+
+        One board produces no pairs, so a report that derived its board list
+        from its measurements described a day that served nothing -- which is
+        exactly the day a reader would want to look into.
+        """
+        report = check_day("2026-10-01", {"alpha": tile_space(["a"])})
+        assert report.boards == ("alpha",)
+
+        document = as_document_of([report])
+        assert document["days"][0]["boards"] == ["alpha"]
+        assert document["days"][0]["measurements"] == []

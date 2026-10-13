@@ -250,6 +250,23 @@ class TestTheDiff:
         diff = diff_profiles(self.base(), self.base(snapshot_id="snapshot:x"))
         assert diff.snapshot_changed == ("", "snapshot:x")
 
+    def test_a_shorter_run_is_not_an_unchanged_profile(self):
+        """The one way every other field can match and mean nothing.
+
+        A five-day run reaches less content than a thirty-day one, so it will
+        name fewer taxonomies and record lower ceilings -- unless the five
+        days happen to cover the same ground, in which case every field
+        matches and the diff would have called a partial observation
+        equivalent to the committed one.
+        """
+        diff = diff_profiles(
+            self.base(days_observed=30), self.base(days_observed=5)
+        )
+        assert diff.days_changed == (30, 5)
+        assert not diff.is_empty
+        assert not diff.widens_reach
+        assert "days observed 30 -> 5" in diff.describe()[0]
+
     def test_profiles_for_different_games_cannot_be_diffed(self):
         with pytest.raises(ValueError, match="different games"):
             diff_profiles(self.base(), self.base(game_id="other"))

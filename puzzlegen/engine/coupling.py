@@ -317,6 +317,11 @@ class CouplingReport:
     """One day's measurements, and which declarations they fail."""
 
     day_key: str
+    #: Every game that served a board this day, measured or not. Recorded
+    #: rather than recovered from the measurements, because a day with one
+    #: board has no pairs to recover it from and would otherwise serialize as
+    #: a day that served nothing.
+    boards: tuple[str, ...] = ()
     measurements: tuple[LeakMeasurement, ...] = ()
     violations: tuple[tuple[CouplingTarget, LeakMeasurement], ...] = ()
 
@@ -382,6 +387,7 @@ def check_day(
             violations.append((target, measurement))
     return CouplingReport(
         day_key=day_key,
+        boards=tuple(sorted(spaces)),
         measurements=measurements,
         violations=tuple(violations),
     )

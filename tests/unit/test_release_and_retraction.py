@@ -12,6 +12,7 @@ import datetime as dt
 import pytest
 
 from puzzlegen.core import ids
+from puzzlegen.core.errors import ConflictError
 from puzzlegen.core.types import DependencyRefKind
 from puzzlegen.engine.commitment import verify_membership
 from puzzlegen.engine.records import PuzzleStatus
@@ -308,3 +309,53 @@ class TestTheSaltRecord:
         released = engine_repos.dependency_salts.release_day(DAY, PLAY_START)
         assert len(released) == 2
         assert all(salt.is_released for salt in released)
+
+
+class TestRetractionIsIrreversible:
+    """A retraction publishes evidence, so nothing may contradict it later.
+
+    Retracting releases the day's salt and hands out a membership proof. Both
+    are public the moment they are issued and neither can be recalled, so a
+    board that becomes playable again afterwards makes the published evidence
+    describe a day that is still being served. Generation is deterministic,
+    which is what makes this reachable without any bad input: rerunning the
+    pipeline on a retracted day produces the same record and used to write it
+    straight back over the retraction.
+    """
+
+    def test_a_retracted_puzzle_cannot_be_rewritten(
+        self, engine_repos, dependencies, retraction
+    ):
+        manifest = publish_and_record(engine_repos, dependencies)
+        record = engine_repos.puzzles.require(manifest.puzzle_id)
+        retraction.retract("fact:one", reason="withdrawn", at=PLAY_START)
+
+        with pytest.raises(ConflictError, match="invalidated"):
+            engine_repos.puzzles.put(record)
+
+        assert (
+            engine_repos.puzzles.require(manifest.puzzle_id).status
+            is PuzzleStatus.INVALIDATED
+        )
+
+    def test_a_retracted_puzzle_cannot_be_republished(
+        self, engine_repos, dependencies, retraction
+    ):
+        manifest = publish_and_record(engine_repos, dependencies)
+        retraction.retract("fact:one", reason="withdrawn", at=PLAY_START)
+
+        with pytest.raises(ConflictError, match="terminal"):
+            engine_repos.puzzles.set_status(
+                manifest.puzzle_id, PuzzleStatus.PUBLISHED
+            )
+
+    def test_retracting_the_same_day_twice_is_not_an_error(
+        self, engine_repos, dependencies, retraction
+    ):
+        manifest = publish_and_record(engine_repos, dependencies)
+        retraction.retract("fact:one", reason="withdrawn", at=PLAY_START)
+        retraction.retract("fact:one", reason="withdrawn again", at=PLAY_START)
+        assert (
+            engine_repos.puzzles.require(manifest.puzzle_id).status
+            is PuzzleStatus.INVALIDATED
+        )
