@@ -17,6 +17,7 @@ import pytest
 from puzzlegen.engine.plugin import SessionTelemetry
 from puzzlegen_digits.descriptor import SHARE_TOKENS
 from puzzlegen_digits.lock import CodeError, verdict
+from puzzlegen_digits.witness import witness_for
 from puzzlegen_digits.play import (
     DIFFICULTY_BONUS,
     MAX_MISTAKES,
@@ -128,27 +129,81 @@ class TestGrading:
 
 
 class TestHints:
-    def test_the_first_hint_names_a_digit_without_a_position(self, puzzle):
+    """The hints are derived from the witness, so these test the derivation.
+
+    What a hint *says* is no longer a property of this module -- it is the
+    cheapest statement the board's clues force -- so the tests are about the
+    ladder's shape rather than about three sentences.
+    """
+
+    def ladder(self, puzzle, count=14):
+        return [
+            get_hint(puzzle, empty_state(puzzle), used)
+            for used in range(count)
+        ]
+
+    def test_the_hints_run_cheapest_first(self, puzzle):
+        """Each rung gives at least as much away as the one before it."""
+        witness = witness_for(puzzle)
+        costs = [step.information for step in witness.steps]
+        assert costs == sorted(costs)
+
+    def test_the_first_hint_is_an_exclusion(self, puzzle):
+        """An exclusion over ten digits removes less space than an inclusion.
+
+        The authored ladder opened by naming a digit that *is* in the code.
+        Measured, that is the dearer statement, and the derived ladder offers
+        the cheaper one.
+        """
         hint = get_hint(puzzle, empty_state(puzzle), 0)
-        assert str(CODE[0]) in hint.text
-        assert "starts" not in hint.text
+        assert "is not in the code" in hint.text
 
-    def test_the_second_hint_names_a_position(self, puzzle):
-        hint = get_hint(puzzle, empty_state(puzzle), 1)
-        assert "starts with" in hint.text
+    def test_each_hint_differs_from_the_one_before(self, puzzle):
+        texts = [hint.text for hint in self.ladder(puzzle)]
+        assert len(set(texts)) == len(texts)
 
-    def test_the_third_hint_names_the_digits_unordered_and_is_the_last(self, puzzle):
-        hint = get_hint(puzzle, empty_state(puzzle), 2)
-        for digit in CODE:
-            assert str(digit) in hint.text
-        assert "in some order" in hint.text
-        assert hint.exhausted
+    def test_a_hint_cites_the_rows_it_was_read_off(self, puzzle):
+        hint = get_hint(puzzle, empty_state(puzzle), 0)
+        assert hint.reveals
+        assert all(
+            ref.startswith(("clue:", "fact:")) for ref in hint.reveals
+        )
+
+    def test_the_dear_end_of_the_ladder_costs_more(self, puzzle):
+        """The cost is read off the measurement, not chosen per sentence."""
+        dear = [
+            hint
+            for hint in self.ladder(puzzle)
+            if hint.cost == 2
+        ]
+        assert dear, "no rung of this board's ladder is charged as expensive"
+
+    def test_the_ladder_ends_before_the_code_does(self, puzzle):
+        """Exhaustion is a refusal to spoil, not an absence of true claims."""
+        last = self.ladder(puzzle, count=40)[-1]
+        assert last.exhausted
+        assert last.cost == 0
 
     def test_no_hint_gives_the_code_in_order(self, puzzle):
-        """A fourth would be the code, so there is no fourth."""
+        """A statement that alone determines the code is never offered."""
         spelled = "".join(str(digit) for digit in CODE)
-        for used in range(6):
-            assert spelled not in get_hint(puzzle, empty_state(puzzle), used).text
+        for hint in self.ladder(puzzle, count=40):
+            assert spelled not in hint.text
+
+    def test_a_hint_the_player_already_bought_is_skipped(self, puzzle):
+        """An attempt told nothing of its digits is in the code is knowledge.
+
+        The first rung of the ladder is an exclusion, and a player whose own
+        guess established that exclusion is not offered it back.
+        """
+        missing = [digit for digit in range(10) if digit not in CODE][:3]
+        state = {
+            **empty_state(puzzle),
+            "attempts": [{"guess": missing, "exact": 0, "misplaced": 0}],
+        }
+        offered = get_hint(puzzle, state, 0).text
+        for digit in missing:
+            assert f"The digit {digit} is not in the code" != offered
 
     def test_a_finished_puzzle_offers_nothing(self, puzzle):
         hint = get_hint(puzzle, {**empty_state(puzzle), "complete": True}, 0)

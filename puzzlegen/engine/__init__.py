@@ -98,6 +98,16 @@ from .storage import (
 
 from .uniqueness import UniquenessVerdict
 from .verifier import DifficultyCalibration, EvaluationOutcome, PuzzleVerifier
+from .witness import (
+    Deduction,
+    DeductionWitness,
+    WitnessError,
+    build_witness,
+    deduction_for,
+    entails,
+    next_deduction,
+    remaining,
+)
 
 __all__ = [
     "AccessibilityDeclaration",
@@ -188,4 +198,12 @@ __all__ = [
     "retract_many",
     "verify_membership",
     "day_key_for",
+    "Deduction",
+    "DeductionWitness",
+    "WitnessError",
+    "build_witness",
+    "deduction_for",
+    "entails",
+    "next_deduction",
+    "remaining",
 ]
