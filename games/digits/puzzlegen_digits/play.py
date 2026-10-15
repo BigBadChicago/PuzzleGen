@@ -30,6 +30,7 @@ from puzzlegen.engine.plugin import (
 
 from .assemble import answer_code, board_digits, board_facts, board_guesses
 from .lock import CodeError, check_code, verdict
+from .witness import next_step
 
 #: Wrong codes a player gets before the lock stays shut.
 #:
@@ -183,33 +184,49 @@ def _miss_note(
     return "Not it. " + ", ".join(parts)
 
 
-def get_hint(puzzle: Puzzle, state: Mapping[str, Any], hints_used: int) -> Hint:
-    """Help, in increasing order of how much it gives away.
+#: Where a deduction stops being cheap. A statement removing nine tenths of
+#: the code space or more is the expensive end of the ladder and is charged
+#: accordingly, which is the one judgement in the hint path that is a price
+#: rather than a measurement.
+DEAR_ABOVE = 0.9
 
-    Never the code. The first hint names a digit that is in it, with nothing
-    about where. The second names the digit in the first position, which is one
-    position of several. The third names every digit the code uses, unordered,
-    which leaves the player arranging them -- real work at four digits, where
-    the orders number twenty-four, and nearly a reveal at three, where they
-    number six. That is why the third is the last: a fourth would be the code.
+
+def get_hint(puzzle: Puzzle, state: Mapping[str, Any], hints_used: int) -> Hint:
+    """The cheapest deduction the board's clues force and the player lacks.
+
+    Derived, not authored. ``witness.next_step`` walks this board's witness --
+    every statement about the code, ordered by how much of the code space it
+    removes -- skips the ones the player's own attempts already established,
+    and returns the next rung. Its cost is read off the same measurement: a
+    statement that removes nine tenths of the space or more is charged two,
+    the rest one.
+
+    The ladder runs out before the answer does. A statement that alone
+    determines the code is never offered, so ``exhausted`` here means there is
+    nothing true left to say that is not a reveal -- which is the whole claim
+    the witness exists to make good on.
     """
     current = _current(puzzle, state)
     if current["complete"]:
         return Hint(text="This puzzle is already finished", cost=0, exhausted=True)
 
-    code = answer_code(puzzle)
-    if hints_used == 0:
-        return Hint(text=f"The digit {code[0]} is in the code", cost=1)
-    if hints_used == 1:
-        return Hint(text=f"The code starts with {code[0]}", cost=1)
+    step = next_step(puzzle, current, hints_used)
+    if step is None:
+        return Hint(
+            text=(
+                "There is nothing left to tell you that would not be the code "
+                "itself"
+            ),
+            cost=0,
+            exhausted=True,
+        )
     return Hint(
-        text=(
-            "The code uses "
-            + ", ".join(str(digit) for digit in sorted(code))
-            + ", in some order"
-        ),
-        cost=2,
-        exhausted=True,
+        text=step.statement,
+        reveals=step.justification,
+        cost=2 if step.information >= DEAR_ABOVE else 1,
+        # Exhausted when the rung after this one would be a reveal or does not
+        # exist, so a client can stop offering before the refusal above.
+        exhausted=next_step(puzzle, current, hints_used + 1) is None,
     )
 
 
@@ -373,6 +390,7 @@ def create_share_artifact(
 
 
 __all__ = [
+    "DEAR_ABOVE",
     "DIFFICULTY_BONUS",
     "MAX_MISTAKES",
     "PENALTY_PER_HINT",

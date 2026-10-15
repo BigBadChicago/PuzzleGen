@@ -1,4 +1,2046 @@
 {
+  "cross_references": [
+    {
+      "day": "2026-10-01",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-02",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-03",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-04",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-05",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-06",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-07",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-08",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-09",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-10",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-11",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-12",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-13",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-14",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-15",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-16",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-17",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-18",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-19",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-20",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-21",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-22",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-23",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-24",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-25",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-26",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-27",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-28",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-29",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    },
+    {
+      "day": "2026-10-30",
+      "references": [
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "digit_lock",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "shape_trio has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "odd_number_out",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "shape_trio"
+        },
+        {
+          "advantage": null,
+          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "digit_lock"
+        },
+        {
+          "advantage": null,
+          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "facts_offered": 0,
+          "from": "shape_trio",
+          "solvable_alone": false,
+          "steps_after": null,
+          "steps_before": null,
+          "to": "odd_number_out"
+        }
+      ],
+      "set": "symbolic",
+      "undeclared": [],
+      "violations": []
+    }
+  ],
   "days": [
     {
       "boards": [
@@ -1951,6 +3993,95 @@
       "violations": []
     }
   ],
+  "declaration": {
+    "games": [
+      "digit_lock",
+      "odd_number_out",
+      "shape_trio"
+    ],
+    "name": "symbolic",
+    "pairs": [
+      {
+        "advantage": [
+          0.0,
+          0.0
+        ],
+        "from": "digit_lock",
+        "leak": [
+          0.0,
+          0.0
+        ],
+        "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+        "to": "odd_number_out"
+      },
+      {
+        "advantage": [
+          0.0,
+          0.0
+        ],
+        "from": "digit_lock",
+        "leak": [
+          0.0,
+          0.0
+        ],
+        "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+        "to": "shape_trio"
+      },
+      {
+        "advantage": [
+          0.0,
+          0.0
+        ],
+        "from": "odd_number_out",
+        "leak": [
+          0.0,
+          0.0
+        ],
+        "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+        "to": "digit_lock"
+      },
+      {
+        "advantage": [
+          0.0,
+          0.0
+        ],
+        "from": "odd_number_out",
+        "leak": [
+          0.0,
+          0.0
+        ],
+        "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+        "to": "shape_trio"
+      },
+      {
+        "advantage": [
+          0.0,
+          0.0
+        ],
+        "from": "shape_trio",
+        "leak": [
+          0.0,
+          0.0
+        ],
+        "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+        "to": "digit_lock"
+      },
+      {
+        "advantage": [
+          0.0,
+          0.0
+        ],
+        "from": "shape_trio",
+        "leak": [
+          0.0,
+          0.0
+        ],
+        "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+        "to": "odd_number_out"
+      }
+    ],
+    "record": "daily_set_declaration"
+  },
   "not_measured": [],
   "record": "coupling_report"
 }

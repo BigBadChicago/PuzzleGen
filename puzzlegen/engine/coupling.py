@@ -393,6 +393,278 @@ def check_day(
     )
 
 
+@dataclass(frozen=True, slots=True)
+class Window:
+    """A closed interval a measurement has to land in.
+
+    Its own type because a daily set declares two different quantities with
+    the same shape, and a pair of floats named ``minimum`` and ``maximum``
+    twice over is a pair of floats somebody will eventually swap.
+    """
+
+    minimum: float = 0.0
+    maximum: float = 0.0
+
+    def __post_init__(self) -> None:
+        for name in ("minimum", "maximum"):
+            value = getattr(self, name)
+            if not 0.0 <= value <= 1.0:
+                raise ValueError(f"{name} must lie on [0, 1], got {value}")
+        if self.minimum > self.maximum:
+            raise ValueError("a window's minimum cannot exceed its maximum")
+
+    @property
+    def is_zero(self) -> bool:
+        return self.minimum == 0.0 and self.maximum == 0.0
+
+    def admits(self, value: float | None) -> bool:
+        """Whether ``value`` lands in the window. ``None`` never does.
+
+        An unknown is not a zero. A daily set may not couple a game that
+        cannot report, and the independent default is a declaration like any
+        other: an unmeasurable pair fails it rather than passing unexamined.
+        """
+        if value is None:
+            return False
+        return self.minimum <= value <= self.maximum
+
+    def describe(self) -> str:
+        return f"[{self.minimum}, {self.maximum}]"
+
+    def as_document(self) -> list[float]:
+        return [self.minimum, self.maximum]
+
+    @classmethod
+    def from_document(cls, document: Any) -> "Window":
+        low, high = document
+        return cls(minimum=float(low), maximum=float(high))
+
+
+@dataclass(frozen=True, slots=True)
+class PairIntent:
+    """What a daily set intends one ordered pair of its boards to be.
+
+    Two windows, because the two questions a coupled set raises are not the
+    same question and collapsing them would make one of them unaskable.
+
+    ``leak`` is the safety bound, over the solver's space: how much of board
+    B's *answer* board A's answer gives away. A board whose answer is
+    derivable from outside its own clues is broken however the set is
+    designed, so this window stays at zero for every pair the project has
+    declared so far.
+
+    ``advantage`` is the mechanic, over board B's deduction work: how much of
+    the reasoning B still demands A's answer saves. This is the quantity a
+    coupled set wants in the open interval -- more than nothing, so the
+    cross-reference is worth finding, and less than everything, so B is still
+    a puzzle. It is a different measurement from ``leak`` and not a rescaling
+    of it: a uniquely-solvable board has a leak of zero by construction and
+    can still have a large advantage, which is precisely the position a
+    deliberately linked set wants to be in.
+    """
+
+    source_game_id: str
+    target_game_id: str
+    leak: Window = Window()
+    advantage: Window = Window()
+    #: Why this pair is declared the way it is. Carried into the artifact,
+    #: because a window of [0.2, 0.5] with no stated reason is a number
+    #: nobody can review.
+    note: str = ""
+
+    def __post_init__(self) -> None:
+        if self.source_game_id == self.target_game_id:
+            raise ValueError("a board is not coupled to itself")
+        if self.leak.maximum >= 1.0:
+            raise ValueError(
+                "a declaration may not permit a leak of 1.0; that is one "
+                "board printing another's answer, which no mechanic needs"
+            )
+        if self.advantage.maximum >= 1.0:
+            raise ValueError(
+                "a declaration may not permit an advantage of 1.0; a "
+                "cross reference that finishes the other board's deduction "
+                "has made that board not worth playing"
+            )
+        if self.advantage.minimum > 0.0 and self.leak.maximum > 0.0:
+            raise ValueError(
+                "a pair cannot declare both a required advantage and a "
+                "permitted leak: the mechanic is a shortcut through the "
+                "target's reasoning, and a set that also lets its answer "
+                "escape has made the shortcut load bearing"
+            )
+
+    @property
+    def is_coupled(self) -> bool:
+        """Whether this pair intends a mechanic rather than independence."""
+        return self.advantage.maximum > 0.0
+
+    def as_target(self) -> CouplingTarget:
+        """The leak half, in the form :func:`check_day` already reads."""
+        return CouplingTarget(
+            source_game_id=self.source_game_id,
+            target_game_id=self.target_game_id,
+            minimum=self.leak.minimum,
+            maximum=self.leak.maximum,
+        )
+
+    def as_document(self) -> dict[str, Any]:
+        return {
+            "from": self.source_game_id,
+            "to": self.target_game_id,
+            "leak": self.leak.as_document(),
+            "advantage": self.advantage.as_document(),
+            "note": self.note,
+        }
+
+    @classmethod
+    def from_document(cls, document: Mapping[str, Any]) -> "PairIntent":
+        return cls(
+            source_game_id=str(document["from"]),
+            target_game_id=str(document["to"]),
+            leak=Window.from_document(document.get("leak", [0.0, 0.0])),
+            advantage=Window.from_document(document.get("advantage", [0.0, 0.0])),
+            note=str(document.get("note", "")),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class DailySetDeclaration:
+    """What one daily set says its boards are to each other.
+
+    The thing the measurement was always missing. ``check_day`` with no
+    declarations is a report and gates nothing, which was the honest state
+    while nobody had said what a day's coupling should be; a declaration is
+    that statement, committed, so a day that was supposed to be independent
+    fails loudly instead of being checked against nothing.
+
+    Every ordered pair of the set's games must be declared. Not for tidiness:
+    a pair nobody declared is a pair nobody checked, and the failure mode of
+    the thing this gate exists to prevent -- a leak nobody intended -- is
+    exactly a pair that fell off the list when a game was added.
+    """
+
+    name: str
+    game_ids: tuple[str, ...]
+    pairs: tuple[PairIntent, ...]
+
+    def __post_init__(self) -> None:
+        if not self.name:
+            raise ValueError("a daily set declaration must be named")
+        if len(set(self.game_ids)) != len(self.game_ids):
+            raise ValueError("a daily set lists each game once")
+        if len(self.game_ids) < 2:
+            raise ValueError(
+                "a daily set with fewer than two boards has no pair to declare"
+            )
+        declared = {(p.source_game_id, p.target_game_id) for p in self.pairs}
+        if len(declared) != len(self.pairs):
+            raise ValueError("a pair is declared twice")
+        expected = set(_pairs(self.game_ids))
+        missing = sorted(expected - declared)
+        extra = sorted(declared - expected)
+        if missing:
+            raise ValueError(
+                "every ordered pair must be declared; these are not: "
+                + ", ".join(f"{a} -> {b}" for a, b in missing)
+            )
+        if extra:
+            raise ValueError(
+                "these pairs name a game the set does not serve: "
+                + ", ".join(f"{a} -> {b}" for a, b in extra)
+            )
+
+    @property
+    def coupled_pairs(self) -> tuple[PairIntent, ...]:
+        return tuple(pair for pair in self.pairs if pair.is_coupled)
+
+    def targets(self) -> tuple[CouplingTarget, ...]:
+        """The leak windows, for :func:`check_day`."""
+        return tuple(pair.as_target() for pair in self.pairs)
+
+    def intent_for(self, source: str, target: str) -> PairIntent | None:
+        for pair in self.pairs:
+            if (pair.source_game_id, pair.target_game_id) == (source, target):
+                return pair
+        return None
+
+    def covers(self, game_ids: Iterable[str]) -> tuple[str, ...]:
+        """Games present on a day that this declaration says nothing about.
+
+        Returned rather than raised, because a day serving a game the
+        declaration does not know is a legitimate thing to report and a
+        caller decides whether it is a failure. What it is not is safe: an
+        undeclared board is an unchecked board.
+        """
+        return tuple(sorted(set(game_ids) - set(self.game_ids)))
+
+    def as_document(self) -> dict[str, Any]:
+        return {
+            "record": "daily_set_declaration",
+            "name": self.name,
+            "games": list(self.game_ids),
+            "pairs": [pair.as_document() for pair in self.pairs],
+        }
+
+    @classmethod
+    def from_document(cls, document: Mapping[str, Any]) -> "DailySetDeclaration":
+        return cls(
+            name=str(document["name"]),
+            game_ids=tuple(str(game) for game in document["games"]),
+            pairs=tuple(
+                PairIntent.from_document(pair) for pair in document["pairs"]
+            ),
+        )
+
+    @classmethod
+    def independent(
+        cls, name: str, game_ids: Iterable[str], *, note: str = ""
+    ) -> "DailySetDeclaration":
+        """Declare every ordered pair independent and uncoupled."""
+        ids = tuple(sorted(set(game_ids)))
+        return cls(
+            name=name,
+            game_ids=ids,
+            pairs=tuple(
+                PairIntent(
+                    source_game_id=source, target_game_id=target, note=note
+                )
+                for source, target in _pairs(ids)
+            ),
+        )
+
+
+def read_declaration(path: Any) -> DailySetDeclaration | None:
+    """Read a committed declaration, or ``None`` if there is not one.
+
+    ``None`` rather than an exception, so a caller can tell "nobody has
+    declared this set's coupling" from "the declaration is wrong". The two
+    call for different behaviour: the first is the state the project was in
+    until this file existed, and the second is a build failure.
+    """
+    import json
+    import pathlib
+
+    source = pathlib.Path(path)
+    if not source.exists():
+        return None
+    return DailySetDeclaration.from_document(
+        json.loads(source.read_text(encoding="utf-8"))
+    )
+
+
+def write_declaration(path: Any, declaration: DailySetDeclaration) -> None:
+    import json
+    import pathlib
+
+    target = pathlib.Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        json.dumps(declaration.as_document(), indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
 def independent_targets(game_ids: Iterable[str]) -> tuple[CouplingTarget, ...]:
     """Declare every ordered pair independent.
 
@@ -455,6 +727,9 @@ def _pairs(ids: Sequence[str]) -> Iterator[tuple[str, str]]:
 __all__ = [
     "CouplingReport",
     "CouplingTarget",
+    "DailySetDeclaration",
+    "PairIntent",
+    "Window",
     "EnumeratedSpace",
     "Fact",
     "LeakMeasurement",
@@ -465,4 +740,6 @@ __all__ = [
     "independent_targets",
     "measure_day",
     "measure_leak",
+    "read_declaration",
+    "write_declaration",
 ]

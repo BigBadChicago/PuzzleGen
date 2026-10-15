@@ -22,17 +22,23 @@ from .certify import (
 from .coupling import (
     CouplingReport,
     CouplingTarget,
+    DailySetDeclaration,
     EnumeratedSpace,
     Fact,
     LeakMeasurement,
+    PairIntent,
     SolutionSpace,
+    Window,
     check_day,
     default_spaces,
     independent_targets,
     measure_day,
     measure_leak,
+    read_declaration,
     spaces_for_day,
+    write_declaration,
 )
+from .crossref import CrossReference, CrossReferenceReport
 from .commitment import (
     CommitmentError,
     ProofStep,
@@ -74,6 +80,8 @@ from .registry import ActivationEvent, GameRegistry, RegisteredGame
 from .release import ReleaseCertificate, check_release
 from .replay import ReplayService, RulesVersionError
 from .retraction import (
+    RestorationService,
+    RestoredStreak,
     RetractedDay,
     Retraction,
     RetractionService,
@@ -98,6 +106,16 @@ from .storage import (
 
 from .uniqueness import UniquenessVerdict
 from .verifier import DifficultyCalibration, EvaluationOutcome, PuzzleVerifier
+from .witness import (
+    Deduction,
+    DeductionWitness,
+    WitnessError,
+    build_witness,
+    deduction_for,
+    entails,
+    next_deduction,
+    remaining,
+)
 
 __all__ = [
     "AccessibilityDeclaration",
@@ -155,6 +173,11 @@ __all__ = [
     "CommitmentError",
     "CouplingReport",
     "CouplingTarget",
+    "CrossReference",
+    "CrossReferenceReport",
+    "DailySetDeclaration",
+    "PairIntent",
+    "Window",
     "EnumeratedSpace",
     "Fact",
     "LeakMeasurement",
@@ -164,7 +187,9 @@ __all__ = [
     "independent_targets",
     "measure_day",
     "measure_leak",
+    "read_declaration",
     "spaces_for_day",
+    "write_declaration",
     "Disagreement",
     "default_registry",
     "differential",
@@ -177,6 +202,8 @@ __all__ = [
     "DependencySaltRepository",
     "ProofStep",
     "ReleaseCertificate",
+    "RestorationService",
+    "RestoredStreak",
     "RetractedDay",
     "Retraction",
     "RetractionService",
@@ -188,4 +215,12 @@ __all__ = [
     "retract_many",
     "verify_membership",
     "day_key_for",
+    "Deduction",
+    "DeductionWitness",
+    "WitnessError",
+    "build_witness",
+    "deduction_for",
+    "entails",
+    "next_deduction",
+    "remaining",
 ]

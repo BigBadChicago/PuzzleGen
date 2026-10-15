@@ -365,6 +365,145 @@ class TestStreaks:
         session = a_session(state=SessionState.IN_PROGRESS)
         assert scoring.advance_streak(session) is None
 
+class TestExcusedDays:
+    """A day a retraction withdrew must not count against a player.
+
+    The property every test here circles is monotonicity: excusing a day can
+    lengthen a run and can never shorten one. A correction that took a day
+    back from somebody because the platform got the content wrong would be
+    worse than no correction, so it is pinned rather than assumed.
+    """
+
+    def played(self, scoring, session_repos, days):
+        for day in days:
+            session = a_session(moves=(submit(1, correct=True),), day=day)
+            session_repos.sessions.put(session)
+            scoring.advance_streak(session)
+
+    def test_a_withdrawn_day_bridges_a_gap(self, scoring, session_repos):
+        """Monday and Wednesday with Tuesday withdrawn is a run of two."""
+        self.played(scoring, session_repos, ("2026-09-21", "2026-09-23"))
+        player = ids.for_player("tok")
+        assert scoring.rebuild_streak(player, "oddoneout").current == 1
+        restored = scoring.rebuild_streak(
+            player, "oddoneout", excused={"2026-09-22"}
+        )
+        assert restored.current == 2
+        assert restored.longest == 2
+
+    def test_several_withdrawn_days_in_a_row_bridge_together(
+        self, scoring, session_repos
+    ):
+        self.played(scoring, session_repos, ("2026-09-21", "2026-09-25"))
+        restored = scoring.rebuild_streak(
+            ids.for_player("tok"),
+            "oddoneout",
+            excused={"2026-09-22", "2026-09-23", "2026-09-24"},
+        )
+        assert restored.current == 2
+
+    def test_an_unexcused_day_inside_the_gap_still_breaks_it(
+        self, scoring, session_repos
+    ):
+        """The bridge is every day in the gap, not any day in it."""
+        self.played(scoring, session_repos, ("2026-09-21", "2026-09-25"))
+        restored = scoring.rebuild_streak(
+            ids.for_player("tok"),
+            "oddoneout",
+            excused={"2026-09-22", "2026-09-24"},
+        )
+        assert restored.current == 1
+
+    def test_a_withdrawn_day_the_player_completed_still_advances(
+        self, scoring, session_repos
+    ):
+        """Excusing cannot take back a day already banked.
+
+        The player completed all three days and the middle one was later
+        withdrawn. Dropping it would leave a run of one on either side; it
+        counts, so the run stays at three.
+        """
+        days = ("2026-09-21", "2026-09-22", "2026-09-23")
+        self.played(scoring, session_repos, days)
+        restored = scoring.rebuild_streak(
+            ids.for_player("tok"), "oddoneout", excused={"2026-09-22"}
+        )
+        assert restored.current == 3
+
+    def test_excusing_never_shortens_a_run(self, scoring, session_repos):
+        days = ("2026-09-20", "2026-09-21", "2026-09-22", "2026-09-25")
+        self.played(scoring, session_repos, days)
+        player = ids.for_player("tok")
+        plain = scoring.rebuild_streak(player, "oddoneout")
+        for excused in ({"2026-09-21"}, {"2026-09-23"}, set(days), {"2026-09-24"}):
+            restored = scoring.rebuild_streak(
+                player, "oddoneout", excused=excused
+            )
+            assert restored.current >= plain.current
+            assert restored.longest >= plain.longest
+
+    def test_excusing_a_day_nobody_played_changes_nothing(
+        self, scoring, session_repos
+    ):
+        self.played(scoring, session_repos, ("2026-09-21", "2026-09-22"))
+        player = ids.for_player("tok")
+        plain = scoring.rebuild_streak(player, "oddoneout")
+        restored = scoring.rebuild_streak(
+            player, "oddoneout", excused={"2025-01-01"}
+        )
+        assert restored.current == plain.current
+
+    def test_rebuilding_twice_reaches_the_same_answer(
+        self, scoring, session_repos
+    ):
+        """A restoration is re-runnable, so it has to be idempotent."""
+        self.played(scoring, session_repos, ("2026-09-21", "2026-09-23"))
+        player = ids.for_player("tok")
+        first = scoring.rebuild_streak(player, "oddoneout", excused={"2026-09-22"})
+        second = scoring.rebuild_streak(player, "oddoneout", excused={"2026-09-22"})
+        assert (first.current, first.longest) == (second.current, second.longest)
+
+    def test_a_bridged_streak_still_reads_as_live(self, scoring, session_repos):
+        """Otherwise the display rule would undo the restoration.
+
+        The player last played two days before today with the day between
+        withdrawn, which the ordinary rule calls dead.
+        """
+        self.played(scoring, session_repos, ("2026-09-25",))
+        streak = scoring.rebuild_streak(
+            ids.for_player("tok"), "oddoneout", excused={"2026-09-26"}
+        )
+        assert not scoring.streak_is_live(streak, "2026-09-27")
+        assert scoring.streak_is_live(
+            streak, "2026-09-27", excused={"2026-09-26"}
+        )
+
+    def test_a_live_streak_stays_live_without_any_excusing(
+        self, scoring, session_repos
+    ):
+        self.played(scoring, session_repos, ("2026-09-26",))
+        streak = scoring.rebuild_streak(ids.for_player("tok"), "oddoneout")
+        assert scoring.streak_is_live(streak, "2026-09-27")
+
+    def test_a_dead_streak_is_not_revived_by_an_unrelated_excusing(
+        self, scoring, session_repos
+    ):
+        self.played(scoring, session_repos, ("2026-09-20",))
+        streak = scoring.rebuild_streak(ids.for_player("tok"), "oddoneout")
+        assert not scoring.streak_is_live(
+            streak, "2026-09-27", excused={"2026-09-26"}
+        )
+
+    def test_a_day_key_that_is_not_a_date_is_refused(self, scoring, session_repos):
+        self.played(scoring, session_repos, ("2026-09-21",))
+        with pytest.raises(ValueError, match="ISO day keys"):
+            scoring.streak_is_live(
+                scoring.rebuild_streak(ids.for_player("tok"), "oddoneout"),
+                "not-a-day",
+            )
+
+
+class TestStreakRebuilds:
     def test_a_back_filled_day_rebuilds_from_history(self, scoring, session_repos):
         recent = a_session(moves=(submit(1, correct=True),), day="2026-09-27")
         session_repos.sessions.put(recent)

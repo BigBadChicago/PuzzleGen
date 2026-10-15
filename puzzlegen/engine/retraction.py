@@ -20,6 +20,17 @@ dependency commitment to exist.
    released salt, and a membership proof for the retracted ref. A player holds
    the root from the public view of the manifest they played; the proof plus
    the salt carries the named ref to that root, and nothing else does.
+
+The fourth thing a withdrawal owes is to the player rather than to the record,
+and it is :class:`RestorationService`. A player whose run ended on a board
+built from a fact the platform has since admitted was wrong lost that run to
+our error, and marking the day ``INVALIDATED`` does nothing about it. So a
+withdrawn day is *excused*: it bridges a gap in a streak rather than breaking
+it, and a withdrawn day the player completed still advances one. Excusing can
+therefore only lengthen a run and never shorten it, which is the property that
+makes the restoration safe to run unattended -- the alternative, a correction
+that takes a day back from somebody because we got the content wrong, is worse
+than no correction.
 """
 
 from __future__ import annotations
@@ -31,6 +42,8 @@ from dataclasses import dataclass, field
 from ..graph.repositories import DependencyRepository
 from .commitment import ProofStep, membership_proof
 from .records import PuzzleStatus
+from .scoring import ScoringService
+from .session_storage import SessionRepositories
 from .storage import EngineRepositories
 
 
@@ -184,6 +197,117 @@ class RetractionService:
         )
 
 
+@dataclass(frozen=True, slots=True)
+class RestoredStreak:
+    """One player's streak, before and after a withdrawn day was excused.
+
+    Both figures rather than the gain alone, because the useful question
+    after a restoration is what a player is now told their run is, and a
+    caller holding only the difference has to read the record again to say.
+    """
+
+    player_id: str
+    game_id: str
+    before: int
+    after: int
+    longest_before: int
+    longest_after: int
+
+    @property
+    def gained(self) -> int:
+        return self.after - self.before
+
+    @property
+    def changed(self) -> bool:
+        return self.after != self.before or self.longest_after != self.longest_before
+
+    def describe(self) -> str:
+        return (
+            f"{self.player_id} {self.game_id}: {self.before} -> {self.after} "
+            f"(longest {self.longest_before} -> {self.longest_after})"
+        )
+
+
+class RestorationService:
+    """Gives back what a withdrawn day cost the people who played it.
+
+    Separate from :class:`RetractionService` because the two have different
+    authorities and different failure modes. A retraction is one transaction
+    over published records and must be all or nothing. A restoration walks
+    players, is idempotent per player, and must be re-runnable: a player who
+    comes back and plays after the retraction has a streak that needs
+    recomputing again, and a second run over the same retraction has to reach
+    the same answer rather than compound the first.
+    """
+
+    def __init__(
+        self,
+        engine: EngineRepositories,
+        sessions: SessionRepositories,
+        scoring: ScoringService,
+    ) -> None:
+        self._engine = engine
+        self._sessions = sessions
+        self._scoring = scoring
+
+    def excused_days(self, game_id: str) -> frozenset[str]:
+        """Day keys of this game that a retraction has withdrawn.
+
+        Read from the puzzles' own status rather than from a retraction
+        document. A player's streak has to account for *every* day withdrawn
+        so far, not only the ones this retraction named, and the status index
+        is the one place that holds all of them.
+        """
+        return frozenset(
+            puzzle.day_key for puzzle in self._engine.puzzles.invalidated(game_id)
+        )
+
+    def affected(self, retraction: "Retraction") -> dict[str, set[str]]:
+        """Player ids by game id, for the days this retraction withdrew.
+
+        Only players with a live session on one of those boards. A player who
+        never saw the day was not cost anything by it, and rebuilding every
+        streak in the store to find that out would make the cost of a
+        retraction the size of the player base.
+        """
+        players: dict[str, set[str]] = {}
+        for day in retraction.days:
+            for player_id in self._sessions.sessions.players_on_day(
+                day.day_key, day.game_id
+            ):
+                players.setdefault(day.game_id, set()).add(player_id)
+        return players
+
+    def restore(self, retraction: "Retraction") -> tuple[RestoredStreak, ...]:
+        """Rebuild the streak of everyone who played a withdrawn board.
+
+        Returns only the players whose figures moved. A player whose run was
+        not in fact broken by the bad day has nothing restored, and reporting
+        them as restored would overstate what the retraction did -- which, on
+        a feature whose whole claim is that the correction is verifiable, is
+        the one thing it must not do.
+        """
+        restored: list[RestoredStreak] = []
+        for game_id, player_ids in self.affected(retraction).items():
+            excused = self.excused_days(game_id)
+            for player_id in sorted(player_ids):
+                before = self._scoring.streak_for(player_id, game_id)
+                after = self._scoring.rebuild_streak(
+                    player_id, game_id, excused=excused
+                )
+                outcome = RestoredStreak(
+                    player_id=player_id,
+                    game_id=game_id,
+                    before=before.current,
+                    after=after.current,
+                    longest_before=before.longest,
+                    longest_after=after.longest,
+                )
+                if outcome.changed:
+                    restored.append(outcome)
+        return tuple(restored)
+
+
 def retract_many(
     service: RetractionService,
     ref_ids: Sequence[str],
@@ -203,6 +327,8 @@ def retract_many(
 
 
 __all__ = [
+    "RestorationService",
+    "RestoredStreak",
     "RetractedDay",
     "Retraction",
     "RetractionService",
