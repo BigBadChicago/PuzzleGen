@@ -17,7 +17,20 @@ from puzzlegen.core.types import DependencyRefKind
 from puzzlegen.engine.commitment import verify_membership
 from puzzlegen.engine.records import PuzzleStatus
 from puzzlegen.engine.release import check_release
-from puzzlegen.engine.retraction import RetractionService, retract_many
+from puzzlegen.engine.retraction import (
+    RestorationService,
+    RetractionService,
+    retract_many,
+)
+from puzzlegen.engine.sessions import (
+    MoveKind,
+    MoveOutcome,
+    MoveRecord,
+    RulesVersion,
+    SessionKind,
+    SessionRecord,
+    SessionState,
+)
 
 from conftest import DAY, PLAY_START, build_published_day
 
@@ -359,3 +372,201 @@ class TestRetractionIsIrreversible:
             engine_repos.puzzles.require(manifest.puzzle_id).status
             is PuzzleStatus.INVALIDATED
         )
+
+
+@pytest.fixture
+def restoration(engine_repos, session_repos, scoring) -> RestorationService:
+    return RestorationService(engine_repos, session_repos, scoring)
+
+
+def play(session_repos, scoring, manifest, *, player_id, completed=True):
+    """One player's live session on a published board, graded and banked.
+
+    Built from the manifest the retraction will withdraw, so the session the
+    restoration finds is the session that board actually served.
+    """
+    kind = SessionKind.LIVE
+    session = SessionRecord(
+        id=ids.for_session(player_id, manifest.id, kind.value),
+        player_id=player_id,
+        manifest_id=manifest.id,
+        puzzle_id=manifest.puzzle_id,
+        game_id=manifest.game_id,
+        day_key=manifest.day_key,
+        kind=kind,
+        started_at=PLAY_START,
+        last_activity_at=PLAY_START,
+        expires_at=PLAY_START + dt.timedelta(hours=12),
+        rules=RulesVersion(game="1.0.0"),
+    ).with_move(
+        MoveRecord(
+            sequence=1,
+            kind=MoveKind.SUBMIT,
+            outcome=MoveOutcome.CORRECT if completed else MoveOutcome.INCORRECT,
+            server_at=PLAY_START,
+            payload={"choice": "opt_d"},
+        )
+    )
+    session = session.terminated(
+        SessionState.COMPLETED if completed else SessionState.ABANDONED,
+        PLAY_START,
+    )
+    session_repos.sessions.put(session)
+    scoring.advance_streak(session)
+    return session
+
+
+class TestTheWithdrawnDayIndex:
+    def test_an_untouched_store_has_withdrawn_nothing(self, engine_repos):
+        assert engine_repos.puzzles.invalidated() == []
+
+    def test_a_retracted_day_shows_up_in_the_index(
+        self, engine_repos, dependencies, retraction
+    ):
+        manifest = publish_and_record(engine_repos, dependencies)
+        retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        withdrawn = engine_repos.puzzles.invalidated()
+        assert [p.day_key for p in withdrawn] == [manifest.day_key]
+
+    def test_the_index_filters_by_game(
+        self, engine_repos, dependencies, retraction
+    ):
+        publish_and_record(engine_repos, dependencies, game_id="oddoneout")
+        publish_and_record(engine_repos, dependencies, game_id="grouping")
+        retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        assert len(engine_repos.puzzles.invalidated()) == 2
+        assert len(engine_repos.puzzles.invalidated("grouping")) == 1
+
+
+class TestRestoringAStreak:
+    """What a retraction owes the people who played the withdrawn board.
+
+    The claim B3 makes is that a correction is verifiable *and* made good.
+    Marking a day INVALIDATED is the first half; a player whose run the bad
+    fact ended is the second, and these tests are about that half.
+    """
+
+    def test_a_player_whose_run_the_bad_day_broke_is_restored(
+        self, engine_repos, dependencies, retraction, restoration, session_repos, scoring
+    ):
+        """Played the day before and the day after, lost the run to our error.
+
+        DAY is the withdrawn board and the player abandoned it, which under
+        the ordinary rule resets the run to nothing. Excused, the day neither
+        counts as a play -- they did not complete it -- nor breaks what it
+        sits between, so the two days they did complete join up into a run of
+        two.
+        """
+        player_id = ids.for_player("tok")
+        before_day = "2026-09-26"
+        after_day = "2026-09-28"
+        for day in (before_day, after_day):
+            played = publish_and_record(engine_repos, dependencies, day_key=day)
+            play(session_repos, scoring, played, player_id=player_id)
+        withdrawn = publish_and_record(engine_repos, dependencies, day_key=DAY)
+        play(session_repos, scoring, withdrawn, player_id=player_id, completed=False)
+
+        assert scoring.streak_for(player_id, "oddoneout").current == 0
+        document = retraction.retract(
+            "fact:one", reason="the fact was wrong", at=PLAY_START
+        )
+        restored = restoration.restore(document)
+        assert [item.player_id for item in restored] == [player_id]
+        assert restored[0].before == 0
+        assert restored[0].after == 2
+        assert restored[0].gained == 2
+
+    def test_a_player_the_bad_day_did_not_cost_is_not_reported(
+        self, engine_repos, dependencies, retraction, restoration, session_repos, scoring
+    ):
+        """Reporting them would overstate what the retraction did."""
+        player_id = ids.for_player("tok")
+        withdrawn = publish_and_record(engine_repos, dependencies, day_key=DAY)
+        play(session_repos, scoring, withdrawn, player_id=player_id)
+        document = retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        assert restoration.restore(document) == ()
+
+    def test_a_player_who_never_saw_the_day_is_not_touched(
+        self, engine_repos, dependencies, retraction, restoration, session_repos, scoring
+    ):
+        """Rebuilding every streak in the store to find this out would make a
+        retraction cost the size of the player base.
+
+        The other day is published without its dependency edges, so the
+        retracted ref's blast radius does not reach it -- which is what a day
+        resting on different content looks like from here.
+        """
+        publish_and_record(engine_repos, dependencies, day_key=DAY)
+        other = build_published_day(engine_repos, day_key="2026-09-26")
+        play(session_repos, scoring, other, player_id=ids.for_player("absent"))
+        document = retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        assert not any(restoration.affected(document).values())
+        assert restoration.restore(document) == ()
+
+    def test_a_practice_session_is_owed_nothing(
+        self, engine_repos, dependencies, retraction, restoration, session_repos
+    ):
+        """Nothing about a practice run bears on a streak."""
+        manifest = publish_and_record(engine_repos, dependencies, day_key=DAY)
+        player_id = ids.for_player("tok")
+        kind = SessionKind.PRACTICE
+        session = SessionRecord(
+            id=ids.for_session(player_id, manifest.id, kind.value),
+            player_id=player_id,
+            manifest_id=manifest.id,
+            puzzle_id=manifest.puzzle_id,
+            game_id=manifest.game_id,
+            day_key=manifest.day_key,
+            kind=kind,
+            started_at=PLAY_START,
+            last_activity_at=PLAY_START,
+            expires_at=PLAY_START + dt.timedelta(hours=12),
+            rules=RulesVersion(game="1.0.0"),
+        ).terminated(SessionState.COMPLETED, PLAY_START)
+        session_repos.sessions.put(session)
+        document = retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        assert restoration.restore(document) == ()
+
+    def test_restoring_twice_reaches_the_same_answer(
+        self, engine_repos, dependencies, retraction, restoration, session_repos, scoring
+    ):
+        """A restoration has to be re-runnable, so it is idempotent."""
+        player_id = ids.for_player("tok")
+        for day in ("2026-09-26", "2026-09-28"):
+            played = publish_and_record(engine_repos, dependencies, day_key=day)
+            play(session_repos, scoring, played, player_id=player_id)
+        publish_and_record(engine_repos, dependencies, day_key=DAY)
+        document = retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        first = restoration.restore(document)
+        second = restoration.restore(document)
+        assert [item.after for item in first] == [2]
+        # Nothing moves on the second pass, so nothing is reported.
+        assert second == ()
+
+    def test_the_excused_set_holds_every_day_withdrawn_so_far(
+        self, engine_repos, dependencies, retraction, restoration
+    ):
+        """Not only the days this retraction named.
+
+        A player's streak has to bridge every withdrawn day, so a second
+        retraction's days must be in the set the first one's players are
+        rebuilt against.
+        """
+        for day in (DAY, "2026-09-26"):
+            publish_and_record(engine_repos, dependencies, day_key=day)
+        retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        assert restoration.excused_days("oddoneout") == {DAY, "2026-09-26"}
+
+    def test_a_restoration_names_both_figures(
+        self, engine_repos, dependencies, retraction, restoration, session_repos, scoring
+    ):
+        player_id = ids.for_player("tok")
+        for day in ("2026-09-26", "2026-09-28"):
+            played = publish_and_record(engine_repos, dependencies, day_key=day)
+            play(session_repos, scoring, played, player_id=player_id)
+        publish_and_record(engine_repos, dependencies, day_key=DAY)
+        document = retraction.retract("fact:one", reason="wrong", at=PLAY_START)
+        item = restoration.restore(document)[0]
+        assert item.changed
+        assert str(item.before) in item.describe()
+        assert str(item.after) in item.describe()

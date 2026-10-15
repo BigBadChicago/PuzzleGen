@@ -20,7 +20,7 @@ are per game: a single scale across games would be comparable and wrong.
 from __future__ import annotations
 
 import datetime as dt
-from collections.abc import Mapping
+from collections.abc import Collection, Mapping
 from typing import Any
 
 from ..core import ids
@@ -131,6 +131,38 @@ def _previous_day(day_key: str) -> str:
             f"streaks need ISO day keys; {day_key!r} is not one"
         ) from exc
     return (day - dt.timedelta(days=1)).isoformat()
+
+
+def _bridged(
+    earlier: str, later: str, excused: frozenset[str], *, inclusive: bool = False
+) -> bool:
+    """Whether nothing unexcused lies between two day keys.
+
+    Adjacent days are bridged with no excusing at all, which is the ordinary
+    streak rule; a wider gap is bridged only when every day in it was
+    withdrawn. ``inclusive`` extends the span to ``later`` itself, for the
+    caller asking whether a run reaches today rather than whether two plays
+    join up.
+
+    Walks the gap a day at a time and stops at the first day nobody withdrew,
+    so the cost is the length of the excused run rather than of the gap.
+    """
+    try:
+        start = dt.date.fromisoformat(earlier)
+        end = dt.date.fromisoformat(later)
+    except ValueError as exc:
+        raise ValueError(
+            f"streaks need ISO day keys; {earlier!r} or {later!r} is not one"
+        ) from exc
+    if end < start:
+        return False
+    last = end if inclusive else end - dt.timedelta(days=1)
+    day = start + dt.timedelta(days=1)
+    while day <= last:
+        if day.isoformat() not in excused:
+            return False
+        day += dt.timedelta(days=1)
+    return True
 
 
 class ScoringService:
@@ -325,21 +357,37 @@ class ScoringService:
         self._repos.streaks.put(updated)
         return updated
 
-    def rebuild_streak(self, player_id: str, game_id: str) -> StreakRecord:
+    def rebuild_streak(
+        self,
+        player_id: str,
+        game_id: str,
+        excused: Collection[str] = (),
+    ) -> StreakRecord:
         """Recompute a streak from every completed day on record.
 
         The authority is the session history, not the streak record; the
         record is a cache like a score is, and this is how it is rebuilt when
         history arrives out of order.
+
+        ``excused`` is day keys a retraction withdrew. Such a day bridges a
+        gap rather than breaking it: a player who played Monday and Wednesday
+        with Tuesday withdrawn has a run of two, because Tuesday's board
+        rested on a fact the platform has since admitted was wrong and the
+        gap is the platform's. A withdrawn day the player *did* complete
+        still advances the streak, so excusing one can only lengthen a run
+        and never shorten it -- a player is not charged for our error in
+        either direction, and a restoration that could take a day back would
+        be a worse thing to ship than no restoration at all.
         """
         days = self._repos.sessions.completed_days(player_id, game_id)
+        forgiven = frozenset(excused)
         current = 0
         longest = 0
         previous: str | None = None
         for day in days:
             if previous is not None and day == previous:
                 continue
-            if previous is not None and _previous_day(day) == previous:
+            if previous is not None and _bridged(previous, day, forgiven):
                 current += 1
             else:
                 current = 1
@@ -357,16 +405,30 @@ class ScoringService:
         self._repos.streaks.put(updated)
         return updated
 
-    def streak_is_live(self, streak: StreakRecord, today: str) -> bool:
+    def streak_is_live(
+        self,
+        streak: StreakRecord,
+        today: str,
+        excused: Collection[str] = (),
+    ) -> bool:
         """Whether a stored streak is still alive as of ``today``.
 
         A streak whose last day is two days back is already broken, but
         nothing has written that yet because the player has not come back.
         Callers asking what to display need the answer before the reset.
+
+        ``excused`` has to be accepted here too. A restoration that bridged a
+        withdrawn day and then had the display rule call the result dead
+        would have restored nothing a player could see.
         """
         if streak.current == 0 or streak.last_day_key is None:
             return False
-        return streak.last_day_key in (today, _previous_day(today))
+        forgiven = frozenset(excused)
+        if streak.last_day_key in (today, _previous_day(today)):
+            return True
+        return streak.last_day_key < today and _bridged(
+            streak.last_day_key, _previous_day(today), forgiven, inclusive=True
+        )
 
     # -- reading -------------------------------------------------------------
 

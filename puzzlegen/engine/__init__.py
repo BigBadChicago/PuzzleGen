@@ -74,6 +74,8 @@ from .registry import ActivationEvent, GameRegistry, RegisteredGame
 from .release import ReleaseCertificate, check_release
 from .replay import ReplayService, RulesVersionError
 from .retraction import (
+    RestorationService,
+    RestoredStreak,
     RetractedDay,
     Retraction,
     RetractionService,
@@ -187,6 +189,8 @@ __all__ = [
     "DependencySaltRepository",
     "ProofStep",
     "ReleaseCertificate",
+    "RestorationService",
+    "RestoredStreak",
     "RetractedDay",
     "Retraction",
     "RetractionService",

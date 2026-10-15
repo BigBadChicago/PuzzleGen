@@ -161,6 +161,19 @@ class SessionRepository(DocumentRepository[SessionRecord]):
     def on_day(self, player_id: str, day_key: str) -> list[SessionRecord]:
         return self.find(player_day=f"{player_id}|{day_key}")
 
+    def players_on_day(self, day_key: str, game_id: str) -> list[str]:
+        """Player ids with a live session on one game's board on one day.
+
+        Practice sessions are left out for the same reason
+        :meth:`completed_days` leaves them out: nothing about a practice run
+        bears on a streak, so a practice-only player is not someone a
+        retraction owes anything to.
+        """
+        sessions = self.find(day_key=day_key, game_id=game_id)
+        return sorted(
+            {s.player_id for s in sessions if s.kind is SessionKind.LIVE}
+        )
+
     def open_before(self, cutoff_day_key: str) -> list[SessionRecord]:
         """Sessions still open on a day already past.
 

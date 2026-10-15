@@ -47,6 +47,21 @@ class PuzzleRepository(DocumentRepository[PuzzleRecord]):
             return self.find(day_key=day_key)
         return self.find(day_game=f"{day_key}|{game_id}")
 
+    def invalidated(self, game_id: str | None = None) -> list[PuzzleRecord]:
+        """Every withdrawn puzzle, for one game or across all of them.
+
+        The list a streak restoration is built from: a day a retraction
+        withdrew is a day the platform may not count against a player, and
+        the status is where that is written down. Read from the status index
+        rather than from a retraction document, because retractions are
+        published artifacts and the status is the stored state -- a second
+        day withdrawn by a second retraction has to show up here too.
+        """
+        found = self.find(status=str(PuzzleStatus.INVALIDATED))
+        if game_id is not None:
+            found = [p for p in found if p.game_id == game_id]
+        return sorted(found, key=lambda p: (p.day_key, p.game_id))
+
     def published(self, day_key: str) -> list[PuzzleRecord]:
         return [
             p
