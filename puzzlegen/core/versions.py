@@ -52,7 +52,15 @@ SHARE_FORMAT_VERSION = 1
 #: major version, so a 1.0 plugin still loads and still generates; what it
 #: cannot do is have a session started against it, which the session service
 #: reports by name rather than by an attribute error mid-play.
-PLUGIN_PROTOCOL_VERSION = "1.1.0"
+#:
+#: 1.2.0 added ``witness``, and added it as a declared capability rather than
+#: as a required method: a game announces it in
+#: ``GameDescriptor.supplies_witness`` and the engine calls it only where that
+#: is set. Additive again, so every 1.1 game loads unchanged. The declaration
+#: is what makes the absence of a witness readable -- a game that cannot emit
+#: its own deduction says so, instead of the engine discovering it by calling
+#: a method that is not there.
+PLUGIN_PROTOCOL_VERSION = "1.2.0"
 
 
 @dataclass(frozen=True, slots=True)

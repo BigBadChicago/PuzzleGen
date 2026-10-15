@@ -63,6 +63,7 @@ from .plugin import (
     SessionTelemetry,
     ShareArtifact,
     VerificationResult,
+    WitnessingGame,
 )
 from .records import (
     DependencySalt,
@@ -115,6 +116,7 @@ from .witness import (
     entails,
     next_deduction,
     remaining,
+    walk,
 )
 
 __all__ = [
@@ -221,6 +223,8 @@ __all__ = [
     "build_witness",
     "deduction_for",
     "entails",
+    "WitnessingGame",
     "next_deduction",
     "remaining",
+    "walk",
 ]

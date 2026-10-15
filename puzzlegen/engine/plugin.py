@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
-from typing import Any, Protocol, runtime_checkable
+from typing import TYPE_CHECKING, Any, Protocol, runtime_checkable
 
 from ..content.port import ContentPort
 from ..content.query import ContentRequirement, ContentResult
@@ -28,6 +28,13 @@ from ..core.types import (
     VerificationCompleteness,
 )
 from ..core.versions import PLUGIN_PROTOCOL_VERSION
+
+# A witness is described here and built in ``engine.witness``, which reads a
+# game's space through ``engine.coupling``. Imported for real, the protocol
+# would depend at runtime on the measurement machinery whose shape it is only
+# naming.
+if TYPE_CHECKING:
+    from .witness import DeductionWitness
 
 
 @dataclass(frozen=True, slots=True)
@@ -206,6 +213,15 @@ class GameDescriptor:
     difficulty_thresholds: DifficultyThresholds = field(
         default_factory=DifficultyThresholds
     )
+    #: Whether this game implements ``witness`` (protocol 1.2).
+    #:
+    #: Declared rather than discovered. A witness is the elimination a
+    #: generator already did, kept instead of thrown away, and a game that
+    #: builds its boards by search genuinely has none to emit: there is no
+    #: reason sequence to hand over. So the absence is a fact about the game
+    #: worth stating, and a caller that wants a witness can ask whether one
+    #: exists without calling a method to find out.
+    supplies_witness: bool = False
     #: The complete vocabulary this game's share artifacts may use. A token
     #: outside it is a protocol error, not a content rejection, which is what
     #: lets the engine hold a codepoint allowlist for share text.
@@ -570,6 +586,36 @@ class GamePlugin(Protocol):
     def create_share_artifact(
         self, puzzle: Puzzle, telemetry: SessionTelemetry, day_key: str
     ) -> ShareArtifact: ...
+
+
+@runtime_checkable
+class WitnessingGame(Protocol):
+    """A game that can emit the deduction its generator already did.
+
+    A protocol of its own rather than a twelfth method on
+    :class:`GamePlugin`, because ``GamePlugin`` is checked structurally: every
+    game asserts it conforms, and folding an optional method into it would
+    make four games that conform perfectly stop being plugins. The required
+    surface stays required, and this names the capability beside it.
+
+    A game implements this when it builds its boards by elimination and so has
+    a reason sequence to hand over, and declares it in
+    ``GameDescriptor.supplies_witness``. The two must agree: the declaration
+    is what a caller reads, and the registry refuses a game whose declaration
+    this protocol does not back up.
+    """
+
+    def witness(self, puzzle: Puzzle) -> "DeductionWitness":
+        """The deductions this board's own clues force, cheapest first.
+
+        What is returned is a claim the caller can check rather than a hint it
+        has to believe: every statement's cost is counted over the board's
+        unconstrained space, so
+        :meth:`puzzlegen.engine.witness.DeductionWitness.holds_up` can
+        re-derive the whole witness against that space without trusting the
+        game that produced it.
+        """
+        ...
 
 
 def build_port_context(

@@ -243,6 +243,10 @@ def build_descriptor() -> GameDescriptor:
         supported_locales=("en",),
         verification_completeness=VerificationCompleteness.COMPLETE,
         search_bound=SEARCH_BOUND,
+        # Declarable for the same reason the completeness promise is: the
+        # generator reaches one code by eliminating the rest, so the reason
+        # is in hand and the hints are derived from it rather than written.
+        supplies_witness=True,
         accessibility=ACCESSIBILITY,
         difficulty_thresholds=DIFFICULTY_THRESHOLDS,
         share_tokens=SHARE_TOKENS,

@@ -17,9 +17,10 @@ import pytest
 from puzzlegen.engine.plugin import SessionTelemetry
 from puzzlegen_digits.descriptor import SHARE_TOKENS
 from puzzlegen_digits.lock import CodeError, verdict
-from puzzlegen_digits.witness import witness_for
+from puzzlegen_digits.witness import upcoming, witness_for
 from puzzlegen_digits.play import (
     DIFFICULTY_BONUS,
+    MAX_HINTS,
     MAX_MISTAKES,
     PENALTY_PER_HINT,
     PENALTY_PER_MISTAKE,
@@ -136,11 +137,9 @@ class TestHints:
     ladder's shape rather than about three sentences.
     """
 
-    def ladder(self, puzzle, count=14):
-        return [
-            get_hint(puzzle, empty_state(puzzle), used)
-            for used in range(count)
-        ]
+    def ladder(self, puzzle, count=MAX_HINTS, state=None):
+        board = empty_state(puzzle) if state is None else state
+        return [get_hint(puzzle, board, used) for used in range(count)]
 
     def test_the_hints_run_cheapest_first(self, puzzle):
         """Each rung gives at least as much away as the one before it."""
@@ -160,7 +159,7 @@ class TestHints:
 
     def test_each_hint_differs_from_the_one_before(self, puzzle):
         texts = [hint.text for hint in self.ladder(puzzle)]
-        assert len(set(texts)) == len(texts)
+        assert len(set(texts)) == len(texts) == MAX_HINTS
 
     def test_a_hint_cites_the_rows_it_was_read_off(self, puzzle):
         hint = get_hint(puzzle, empty_state(puzzle), 0)
@@ -170,19 +169,65 @@ class TestHints:
         )
 
     def test_the_dear_end_of_the_ladder_costs_more(self, puzzle):
-        """The cost is read off the measurement, not chosen per sentence."""
-        dear = [
-            hint
-            for hint in self.ladder(puzzle)
-            if hint.cost == 2
-        ]
-        assert dear, "no rung of this board's ladder is charged as expensive"
+        """The cost is read off the measurement, not chosen per sentence.
+
+        Measured against what the player holds, so the dear rungs are not at
+        a fixed depth: on an empty board the three hints this game sells are
+        all cheap exclusions, and the same board offers a statement worth two
+        to a player who has already ruled three digits out, because half of
+        what they have left turns on it.
+        """
+        missing = [digit for digit in range(10) if digit not in CODE][:3]
+        state = {
+            **empty_state(puzzle),
+            "attempts": [{"guess": missing, "exact": 0, "misplaced": 0}],
+        }
+        assert all(hint.cost == 1 for hint in self.ladder(puzzle))
+        assert any(
+            hint.cost == 2 for hint in self.ladder(puzzle, state=state)
+        ), "no rung of this board's ladder is charged as expensive"
 
     def test_the_ladder_ends_before_the_code_does(self, puzzle):
         """Exhaustion is a refusal to spoil, not an absence of true claims."""
         last = self.ladder(puzzle, count=40)[-1]
         assert last.exhausted
         assert last.cost == 0
+
+    def test_the_board_sells_only_as_many_hints_as_it_declares(self, puzzle):
+        """The cap, which is a policy and not a claim about deduction.
+
+        The witness on this board holds fourteen statements and the walk
+        offers ten of them before the next would be the code. What a player
+        can buy is three, and the fourth request is refused while there is
+        still plenty left that would be true to say.
+        """
+        ladder = self.ladder(puzzle, count=MAX_HINTS + 2)
+        assert all(not hint.exhausted for hint in ladder[: MAX_HINTS - 1])
+        assert ladder[MAX_HINTS - 1].exhausted
+        assert all(hint.cost == 0 for hint in ladder[MAX_HINTS:])
+        assert len(upcoming(puzzle, empty_state(puzzle), 0, count=40)) > MAX_HINTS
+
+    def test_the_rungs_are_re_costed_against_what_the_player_holds(self, puzzle):
+        """The walk, not an index into the witness.
+
+        Read absolutely, this board's ladder opens with seven exclusions
+        before its first inclusion. Re-costed as the player accumulates them,
+        the fourth exclusion is dearer than the first inclusion, so the two
+        kinds interleave -- and three of the witness's statements go vacuous
+        on the way, which is why they are dropped rather than sold.
+        """
+        absolute = [step.statement for step in witness_for(puzzle).steps]
+        walked = [
+            step.statement
+            for step in upcoming(puzzle, empty_state(puzzle), 0, count=40)
+        ]
+        assert walked != absolute[: len(walked)]
+        assert len(walked) < len(absolute)
+        kinds = ["not in" in statement for statement in walked]
+        assert kinds != sorted(kinds, reverse=True), (
+            "the walk should interleave inclusions among the exclusions; "
+            "all exclusions first is the absolute order"
+        )
 
     def test_no_hint_gives_the_code_in_order(self, puzzle):
         """A statement that alone determines the code is never offered."""

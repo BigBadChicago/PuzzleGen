@@ -30,7 +30,7 @@ from puzzlegen.engine.plugin import (
 
 from .assemble import answer_code, board_digits, board_facts, board_guesses
 from .lock import CodeError, check_code, verdict
-from .witness import next_step
+from .witness import upcoming
 
 #: Wrong codes a player gets before the lock stays shut.
 #:
@@ -184,34 +184,60 @@ def _miss_note(
     return "Not it. " + ", ".join(parts)
 
 
-#: Where a deduction stops being cheap. A statement removing nine tenths of
-#: the code space or more is the expensive end of the ladder and is charged
-#: accordingly, which is the one judgement in the hint path that is a price
-#: rather than a measurement.
-DEAR_ABOVE = 0.9
+#: Where a deduction stops being cheap: half of what the player still has.
+#:
+#: The one judgement in the hint path that is a price rather than a
+#: measurement, and the threshold is over what remains rather than over the
+#: empty board. Nine tenths was the figure while hints were costed
+#: absolutely, where the last rungs of the ladder reach 0.9 and above. Costed
+#: against what the player holds, nothing does: each statement is the cheapest
+#: thing left to say at the time it is offered, so the measured rungs of a
+#: four-digit board run from a third to two thirds and a threshold of 0.9
+#: would price every hint the same while appearing to price two.
+DEAR_ABOVE = 0.5
+
+#: Hints one board will sell, however many true things are left to say.
+#:
+#: A policy, not a deduction: the witness on a four-digit board holds fourteen
+#: statements and could hand out most of them before the next one would be the
+#: code, which is a player talked through their own puzzle rather than helped
+#: with it. Three matches the authored ladder this game replaced, whose third
+#: rung already reported itself exhausted, so the cap is where it has always
+#: been and is now stated rather than implied by having run out of sentences.
+MAX_HINTS = 3
 
 
 def get_hint(puzzle: Puzzle, state: Mapping[str, Any], hints_used: int) -> Hint:
     """The cheapest deduction the board's clues force and the player lacks.
 
-    Derived, not authored. ``witness.next_step`` walks this board's witness --
-    every statement about the code, ordered by how much of the code space it
-    removes -- skips the ones the player's own attempts already established,
-    and returns the next rung. Its cost is read off the same measurement: a
-    statement that removes nine tenths of the space or more is charged two,
-    the rest one.
+    Derived, not authored. ``witness.upcoming`` walks this board's witness --
+    every statement about the code the board's clues force -- skipping the
+    ones the player's own attempts already established, and re-costing what is
+    left against what they hold rather than against the empty board, so the
+    fourth hint is the cheapest thing left to say *to them*. Its price is read
+    off the same measurement: a statement that removes nine tenths of what
+    remains or more is charged two, the rest one.
 
     The ladder runs out before the answer does. A statement that alone
-    determines the code is never offered, so ``exhausted`` here means there is
-    nothing true left to say that is not a reveal -- which is the whole claim
-    the witness exists to make good on.
+    determines the code is never offered, so that claim holds however the cap
+    is set; ``MAX_HINTS`` stops the ladder earlier still, and ``exhausted``
+    reports whichever limit this board reaches first.
     """
     current = _current(puzzle, state)
     if current["complete"]:
         return Hint(text="This puzzle is already finished", cost=0, exhausted=True)
+    if hints_used >= MAX_HINTS:
+        return Hint(
+            text=f"This board offers {MAX_HINTS} hints, and you have had them",
+            cost=0,
+            exhausted=True,
+        )
 
-    step = next_step(puzzle, current, hints_used)
-    if step is None:
+    # Two rungs from one walk: the one to hand over, and whether anything
+    # follows it. Asked separately, the second question would re-count the
+    # whole code space to answer about a hint nobody has requested.
+    offered = upcoming(puzzle, current, hints_used, count=2)
+    if not offered:
         return Hint(
             text=(
                 "There is nothing left to tell you that would not be the code "
@@ -220,13 +246,15 @@ def get_hint(puzzle: Puzzle, state: Mapping[str, Any], hints_used: int) -> Hint:
             cost=0,
             exhausted=True,
         )
+    step = offered[0]
     return Hint(
         text=step.statement,
         reveals=step.justification,
         cost=2 if step.information >= DEAR_ABOVE else 1,
-        # Exhausted when the rung after this one would be a reveal or does not
-        # exist, so a client can stop offering before the refusal above.
-        exhausted=next_step(puzzle, current, hints_used + 1) is None,
+        # Exhausted when the cap stops at this rung, or when the rung after it
+        # would be the code or does not exist, so a client can stop offering
+        # before the refusal above.
+        exhausted=hints_used + 1 >= MAX_HINTS or len(offered) < 2,
     )
 
 
@@ -392,6 +420,7 @@ def create_share_artifact(
 __all__ = [
     "DEAR_ABOVE",
     "DIFFICULTY_BONUS",
+    "MAX_HINTS",
     "MAX_MISTAKES",
     "PENALTY_PER_HINT",
     "PENALTY_PER_MISTAKE",

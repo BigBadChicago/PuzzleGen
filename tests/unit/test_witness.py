@@ -21,6 +21,7 @@ from puzzlegen.engine.witness import (
     entails,
     next_deduction,
     remaining,
+    walk,
 )
 
 HAS = "toy/has"
@@ -425,3 +426,147 @@ class TestTheLadder:
     def test_remaining_is_what_a_cross_reference_is_measured_against(self):
         assert len(remaining(self.ladder())) == 4
         assert len(remaining(self.ladder(), [has("a")])) == 3
+
+
+class TestTheMarginalWalk:
+    """The ladder re-costed as it is climbed, which is what a player feels.
+
+    Every figure here is over the same twenty-four arrangements. Three
+    inclusions each leave eighteen of them when counted from the empty board,
+    so the absolute ladder cannot tell them apart; counted one after another
+    they leave eighteen, twelve and six, which is the whole reason this
+    function exists.
+    """
+
+    def witness(self):
+        board = space()
+        return build_witness(
+            game_id="toy",
+            assurance=AssuranceLevel.UNIQUENESS_PROVED,
+            space=board,
+            candidates=[
+                deduction_for("a is present", [has("a")], board),
+                deduction_for("b is present", [has("b")], board),
+                deduction_for("c is present", [has("c")], board),
+                deduction_for("d is absent", [has("d", False)], board),
+                deduction_for("a is first", [at("a", 0)], board),
+                deduction_for("b is second", [at("b", 1)], board),
+            ],
+        )
+
+    def test_each_step_is_counted_over_what_the_last_one_left(self):
+        walked = walk(self.witness(), space(), limit=4)
+        assert [(s.space_before, s.space_after) for s in walked] == [
+            (24, 18),
+            (18, 12),
+            (12, 6),
+            (6, 2),
+        ]
+
+    def test_the_absolute_ladder_cannot_order_what_the_walk_can(self):
+        """Three statements tie at eighteen absolutely and separate here."""
+        absolute = [step.space_after for step in self.witness().steps]
+        assert absolute[:3] == [18, 18, 18]
+        walked = walk(self.witness(), space(), limit=3)
+        assert [step.space_after for step in walked] == [18, 12, 6]
+
+    def test_a_statement_that_has_gone_vacuous_is_dropped(self):
+        """'d is absent' follows from a, b and c being present.
+
+        Absolutely it is one of the dearest statements on the board, removing
+        three quarters of the space. Offered fourth, it removes nothing, and a
+        hint that removes nothing is not a hint.
+        """
+        assert "d is absent" in [s.statement for s in self.witness().steps]
+        assert "d is absent" not in [
+            s.statement for s in walk(self.witness(), space(), limit=6)
+        ]
+
+    def test_the_walk_stops_before_the_answer(self):
+        """Two arrangements left is a position; one is the answer."""
+        walked = walk(self.witness(), space(), limit=6)
+        assert len(walked) == 4
+        assert walked[-1].space_after == 2
+
+    def test_a_caller_that_asks_for_a_reveal_gets_the_rest(self):
+        walked = walk(self.witness(), space(), limit=6, allow_reveal=True)
+        assert len(walked) > 4
+        assert walked[4].space_after == 1
+
+    def test_the_walk_is_not_a_witness_and_cannot_be_made_one(self):
+        """The invariant this function exists outside of.
+
+        A witness's steps are all counted over one space, which is what makes
+        their order checkable by anyone holding the board. A walk's steps are
+        counted over four different spaces, so wrapping one in a witness is
+        refused rather than quietly accepted -- the costs would read as
+        comparable when they are not.
+        """
+        walked = walk(self.witness(), space(), limit=4)
+        with pytest.raises(WitnessError):
+            DeductionWitness(
+                game_id="toy",
+                assurance=AssuranceLevel.UNIQUENESS_PROVED,
+                steps=walked,
+                space=24,
+            )
+
+    def test_what_the_player_already_holds_shortens_the_walk(self):
+        """Holding 'd is absent' leaves six arrangements and one thing to say.
+
+        The three inclusions are all vacuous against it, which is the same
+        drop as above reached from the other direction: knowledge the player
+        brought rather than knowledge the ladder gave them.
+        """
+        walked = walk(self.witness(), space(), [has("d", False)], limit=6)
+        assert [s.statement for s in walked] == ["a is first"]
+        assert walked[0].space_before == 6
+
+    def test_a_fact_the_space_cannot_read_is_not_applied(self):
+        """Another game's predicate narrows nothing here, as in coupling."""
+        walked = walk(
+            self.witness(),
+            space(),
+            [Fact(predicate="other/thing", ref="a", value=True)],
+            limit=1,
+        )
+        assert walked[0].space_before == 24
+
+    def test_a_limit_of_nothing_walks_nothing(self):
+        assert walk(self.witness(), space(), limit=0) == ()
+
+    def test_the_same_board_walks_the_same_way_twice(self):
+        """A hint is re-derived from its count when a session is regraded."""
+        first = walk(self.witness(), space(), limit=4)
+        second = walk(self.witness(), space(), limit=4)
+        assert [s.statement for s in first] == [s.statement for s in second]
+
+    def test_a_walk_below_the_assurance_floor_is_refused(self):
+        board = space()
+        weak = build_witness(
+            game_id="toy",
+            assurance=AssuranceLevel.ANSWER_VALID,
+            space=board,
+            candidates=[deduction_for("a is present", [has("a")], board)],
+        )
+        with pytest.raises(WitnessError):
+            walk(
+                weak,
+                board,
+                limit=1,
+                floor=AssuranceLevel.UNIQUENESS_PROVED,
+            )
+
+    def test_a_negative_limit_is_refused(self):
+        with pytest.raises(WitnessError):
+            walk(self.witness(), space(), limit=-1)
+
+    def test_an_exhausted_witness_walks_nothing(self):
+        board = space()
+        empty = build_witness(
+            game_id="toy",
+            assurance=AssuranceLevel.UNIQUENESS_PROVED,
+            space=board,
+            candidates=[],
+        )
+        assert walk(empty, board, limit=3) == ()

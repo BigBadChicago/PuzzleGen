@@ -1,4 +1,5 @@
-"""The eleven methods, bound to the modules that implement them.
+"""The eleven methods and the one optional twelfth, bound to the modules
+that implement them.
 
 A thin class on purpose. Everything it does lives in a module the engine gates
 separately, and keeping the plugin itself trivial is what stops the protocol
@@ -28,6 +29,7 @@ from puzzlegen.engine.plugin import (
     ShareArtifact,
     VerificationResult,
 )
+from puzzlegen.engine.witness import DeductionWitness
 
 # Functions, not modules. The package exports ``verify`` and ``assemble`` as
 # names, so ``from . import verify`` would bind the function that shadows the
@@ -44,6 +46,7 @@ from .play import grade_move as _grade_move
 from .play import render as _render
 from .play import score as _score
 from .verify import verify as _verify
+from .witness import witness_for as _witness_for
 
 
 class DigitLockGame:
@@ -99,6 +102,9 @@ class DigitLockGame:
         self, puzzle: Puzzle, state: Mapping[str, Any], hints_used: int
     ) -> Hint:
         return _get_hint(puzzle, state, hints_used)
+
+    def witness(self, puzzle: Puzzle) -> DeductionWitness:
+        return _witness_for(puzzle)
 
     def render(
         self, puzzle: Puzzle, state: Mapping[str, Any], locale: str
