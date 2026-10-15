@@ -13,6 +13,9 @@ import pytest
 from puzzlegen.engine.certifiers import digit_lock, odd_number_out, shape_trio
 from puzzlegen.engine.coupling import (
     CouplingTarget,
+    DailySetDeclaration,
+    PairIntent,
+    Window,
     EnumeratedSpace,
     Fact,
     check_day,
@@ -20,7 +23,9 @@ from puzzlegen.engine.coupling import (
     independent_targets,
     measure_day,
     measure_leak,
+    read_declaration,
     spaces_for_day,
+    write_declaration,
 )
 
 from tests.unit.test_certify import (
@@ -497,3 +502,203 @@ class TestTheReportArtifact:
         document = as_document_of([report])
         assert document["days"][0]["boards"] == ["alpha"]
         assert document["days"][0]["measurements"] == []
+
+
+class TestTheWindow:
+    def test_a_window_admits_its_endpoints(self):
+        window = Window(minimum=0.2, maximum=0.5)
+        assert window.admits(0.2) and window.admits(0.5)
+        assert not window.admits(0.19) and not window.admits(0.51)
+
+    def test_an_unknown_never_lands_in_a_window(self):
+        """Including the zero window, which is the independent default.
+
+        An unmeasurable pair fails its declaration rather than passing as
+        unexamined. Treating an unknown as a zero is how a leak ships.
+        """
+        assert not Window().admits(None)
+        assert not Window(minimum=0.0, maximum=1.0 - 1e-9).admits(None)
+
+    def test_a_window_outside_the_unit_interval_is_refused(self):
+        with pytest.raises(ValueError):
+            Window(minimum=-0.1, maximum=0.5)
+        with pytest.raises(ValueError):
+            Window(minimum=0.0, maximum=1.5)
+
+    def test_an_inverted_window_is_refused(self):
+        with pytest.raises(ValueError):
+            Window(minimum=0.6, maximum=0.4)
+
+    def test_a_window_survives_a_round_trip(self):
+        window = Window(minimum=0.1, maximum=0.4)
+        assert Window.from_document(window.as_document()) == window
+
+
+class TestPairIntent:
+    def test_the_default_pair_is_independent_and_uncoupled(self):
+        pair = PairIntent(source_game_id="a", target_game_id="b")
+        assert pair.leak.is_zero and pair.advantage.is_zero
+        assert not pair.is_coupled
+
+    def test_a_pair_declaring_an_advantage_is_coupled(self):
+        pair = PairIntent(
+            source_game_id="a",
+            target_game_id="b",
+            advantage=Window(minimum=0.2, maximum=0.6),
+        )
+        assert pair.is_coupled
+
+    def test_a_board_is_not_coupled_to_itself(self):
+        with pytest.raises(ValueError):
+            PairIntent(source_game_id="a", target_game_id="a")
+
+    def test_a_declaration_may_not_permit_a_leak_of_one(self):
+        """That is one board printing another's answer."""
+        with pytest.raises(ValueError, match="leak of 1.0"):
+            PairIntent(
+                source_game_id="a",
+                target_game_id="b",
+                leak=Window(minimum=0.0, maximum=1.0),
+            )
+
+    def test_a_declaration_may_not_permit_an_advantage_of_one(self):
+        """A shortcut that finishes the board has done the puzzle."""
+        with pytest.raises(ValueError, match="advantage of 1.0"):
+            PairIntent(
+                source_game_id="a",
+                target_game_id="b",
+                advantage=Window(minimum=0.5, maximum=1.0),
+            )
+
+    def test_a_pair_cannot_require_an_advantage_and_permit_a_leak(self):
+        """The mechanic is a shortcut, so the answer may not also escape."""
+        with pytest.raises(ValueError, match="load bearing"):
+            PairIntent(
+                source_game_id="a",
+                target_game_id="b",
+                leak=Window(minimum=0.0, maximum=0.3),
+                advantage=Window(minimum=0.2, maximum=0.6),
+            )
+
+    def test_the_leak_half_is_the_target_check_day_already_reads(self):
+        pair = PairIntent(
+            source_game_id="a",
+            target_game_id="b",
+            leak=Window(minimum=0.0, maximum=0.2),
+        )
+        target = pair.as_target()
+        assert isinstance(target, CouplingTarget)
+        assert (target.minimum, target.maximum) == (0.0, 0.2)
+
+
+class TestTheDailySetDeclaration:
+    def test_the_independent_default_declares_every_ordered_pair(self):
+        declaration = DailySetDeclaration.independent("set", ("a", "b", "c"))
+        assert len(declaration.pairs) == 6
+        assert declaration.coupled_pairs == ()
+
+    def test_a_pair_left_undeclared_is_refused(self):
+        """A pair nobody declared is a pair nobody checked.
+
+        This is the failure the gate exists to prevent: a game added to the
+        set and a pair that quietly fell off the list.
+        """
+        declaration = DailySetDeclaration.independent("set", ("a", "b"))
+        with pytest.raises(ValueError, match="not"):
+            DailySetDeclaration(
+                name="set",
+                game_ids=("a", "b", "c"),
+                pairs=declaration.pairs,
+            )
+
+    def test_a_pair_naming_a_game_the_set_does_not_serve_is_refused(self):
+        with pytest.raises(ValueError, match="does not serve"):
+            DailySetDeclaration(
+                name="set",
+                game_ids=("a", "b"),
+                pairs=(
+                    PairIntent(source_game_id="a", target_game_id="b"),
+                    PairIntent(source_game_id="b", target_game_id="a"),
+                    PairIntent(source_game_id="a", target_game_id="z"),
+                ),
+            )
+
+    def test_a_pair_declared_twice_is_refused(self):
+        with pytest.raises(ValueError, match="twice"):
+            DailySetDeclaration(
+                name="set",
+                game_ids=("a", "b"),
+                pairs=(
+                    PairIntent(source_game_id="a", target_game_id="b"),
+                    PairIntent(source_game_id="a", target_game_id="b"),
+                    PairIntent(source_game_id="b", target_game_id="a"),
+                ),
+            )
+
+    def test_a_set_of_one_board_has_nothing_to_declare(self):
+        with pytest.raises(ValueError, match="fewer than two"):
+            DailySetDeclaration(name="set", game_ids=("a",), pairs=())
+
+    def test_an_unnamed_set_is_refused(self):
+        with pytest.raises(ValueError, match="named"):
+            DailySetDeclaration.independent("", ("a", "b"))
+
+    def test_a_board_the_declaration_says_nothing_about_is_reported(self):
+        declaration = DailySetDeclaration.independent("set", ("a", "b"))
+        assert declaration.covers(("a", "b")) == ()
+        assert declaration.covers(("a", "b", "z")) == ("z",)
+
+    def test_the_declaration_survives_a_round_trip(self):
+        declaration = DailySetDeclaration(
+            name="set",
+            game_ids=("a", "b"),
+            pairs=(
+                PairIntent(
+                    source_game_id="a",
+                    target_game_id="b",
+                    advantage=Window(minimum=0.2, maximum=0.6),
+                    note="a licenses a shortcut through b",
+                ),
+                PairIntent(source_game_id="b", target_game_id="a"),
+            ),
+        )
+        assert (
+            DailySetDeclaration.from_document(declaration.as_document())
+            == declaration
+        )
+
+    def test_reading_a_missing_declaration_is_not_an_error(self, tmp_path):
+        """Nobody having declared a set is a state, not a failure."""
+        assert read_declaration(tmp_path / "nothing.json") is None
+
+    def test_a_written_declaration_reads_back(self, tmp_path):
+        declaration = DailySetDeclaration.independent("set", ("a", "b"))
+        path = tmp_path / "sets" / "set.json"
+        write_declaration(path, declaration)
+        assert read_declaration(path) == declaration
+
+    def test_the_committed_symbolic_set_declares_the_three_games(self):
+        """The artifact CI gates against, read rather than described."""
+        import pathlib
+
+        root = pathlib.Path(__file__).resolve().parents[2]
+        declaration = read_declaration(root / "content/daily-sets/symbolic.json")
+        assert declaration is not None
+        assert declaration.game_ids == (
+            "digit_lock",
+            "odd_number_out",
+            "shape_trio",
+        )
+        assert len(declaration.pairs) == 6
+        assert declaration.coupled_pairs == ()
+        assert all(pair.note for pair in declaration.pairs)
+
+    def test_the_committed_set_gates_the_games_it_declares(self):
+        """Its leak windows are the targets a day is measured against."""
+        import pathlib
+
+        root = pathlib.Path(__file__).resolve().parents[2]
+        declaration = read_declaration(root / "content/daily-sets/symbolic.json")
+        targets = declaration.targets()
+        assert len(targets) == 6
+        assert all(target.maximum == 0.0 for target in targets)

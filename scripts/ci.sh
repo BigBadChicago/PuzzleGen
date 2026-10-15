@@ -228,12 +228,14 @@ task_symbolic() {
     printf '\n' >> "$OUT/symbolic.md"
   done
 
-  # Cross-board information flow, over the same days. A report rather than a
-  # gate: nothing has declared what a daily set's coupling should be, and a
-  # gate against an undeclared target would assert a product decision.
-  # --require-independent turns this same run into the gate once it is
-  # declared. The artifact goes through the same staleness checks as the rest.
+  # Cross-board information flow, over the same days, gated against the set's
+  # own committed declaration: per ordered pair, the leak it may have over the
+  # solver's space and the advantage it may have over the target's remaining
+  # deduction work. Every pair of the declared games must appear, so a pair
+  # that falls off the list when a game is added fails here rather than going
+  # unchecked. The artifact goes through the same staleness checks as the rest.
   local coupling="build/symbolic-coupling-$days.json"
+  local declaration="content/daily-sets/symbolic.json"
   # Restricted to the symbolic games, because a day has four active slots and
   # five games are installed: without this the three this snapshot can serve
   # would compete with two it cannot, and which three got measured would be
@@ -249,8 +251,8 @@ task_symbolic() {
   # shellcheck disable=SC2086
   python3 tools/measure_coupling.py --db build/graph-symbolic.sqlite \
     --start "$start" --days "$days" --difficulty "$difficulty" \
-    --now "$SYMBOLIC_NOW" --json "$coupling" $coupling_games \
-    > "$OUT/coupling.txt" || status=$?
+    --now "$SYMBOLIC_NOW" --json "$coupling" --declaration "$declaration" \
+    $coupling_games > "$OUT/coupling.txt" || status=$?
   if ! git ls-files --error-unmatch "$coupling" >/dev/null 2>&1; then
     changed=yes
     status=1

@@ -1,0 +1,89 @@
+{
+  "games": [
+    "digit_lock",
+    "odd_number_out",
+    "shape_trio"
+  ],
+  "name": "symbolic",
+  "pairs": [
+    {
+      "advantage": [
+        0.0,
+        0.0
+      ],
+      "from": "digit_lock",
+      "leak": [
+        0.0,
+        0.0
+      ],
+      "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+      "to": "odd_number_out"
+    },
+    {
+      "advantage": [
+        0.0,
+        0.0
+      ],
+      "from": "digit_lock",
+      "leak": [
+        0.0,
+        0.0
+      ],
+      "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+      "to": "shape_trio"
+    },
+    {
+      "advantage": [
+        0.0,
+        0.0
+      ],
+      "from": "odd_number_out",
+      "leak": [
+        0.0,
+        0.0
+      ],
+      "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+      "to": "digit_lock"
+    },
+    {
+      "advantage": [
+        0.0,
+        0.0
+      ],
+      "from": "odd_number_out",
+      "leak": [
+        0.0,
+        0.0
+      ],
+      "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+      "to": "shape_trio"
+    },
+    {
+      "advantage": [
+        0.0,
+        0.0
+      ],
+      "from": "shape_trio",
+      "leak": [
+        0.0,
+        0.0
+      ],
+      "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+      "to": "digit_lock"
+    },
+    {
+      "advantage": [
+        0.0,
+        0.0
+      ],
+      "from": "shape_trio",
+      "leak": [
+        0.0,
+        0.0
+      ],
+      "note": "Declared independent. The three symbolic games namespace their predicates per game, so no board reads another's facts and every measured leak over thirty days is exactly zero. Coupling a pair needs a board to publish the entity behind a tile rather than only its glyph, which is a change to what a day publishes; until that is decided this set is gated at independence rather than left unchecked.",
+      "to": "odd_number_out"
+    }
+  ],
+  "record": "daily_set_declaration"
+}

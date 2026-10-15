@@ -232,6 +232,16 @@ class DeductionWitness:
             fact for step in self.steps for fact in step.establishes
         )
 
+    def predicates(self) -> frozenset[str]:
+        """The predicates this witness's steps are stated in.
+
+        What a cross reference filters another board's facts against: a fact
+        in a predicate no step of this witness uses settles no step of it,
+        and applying one anyway would be reading another game's rules under
+        this game's.
+        """
+        return frozenset(fact.predicate for fact in self.facts())
+
     def describe(self) -> tuple[str, ...]:
         return (
             f"{self.game_id}: {len(self.steps)} deduction(s) over "
