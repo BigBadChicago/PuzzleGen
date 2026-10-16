@@ -8,6 +8,9 @@ Start here:
 
 - `docs/architecture.md` — full decision record, every phase.
 - `docs/handoff.md` — current status and what to do next.
+- `docs/platform/` — the platform documents: vision, requirements, the
+  cartridge model, the developer guide, certification, policy, security,
+  operations and roadmap.
 
 ## Layout
 
