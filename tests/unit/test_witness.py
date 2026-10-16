@@ -428,6 +428,38 @@ class TestTheLadder:
         assert len(remaining(self.ladder(), [has("a")])) == 3
 
 
+class TestEntailmentOnABoardThatAdmitsNothing:
+    """The one case where vacuous truth would be a confident wrong answer."""
+
+    def test_an_empty_space_entails_nothing(self):
+        """Counted naively this is true of every statement.
+
+        A space with no answers is a contradiction, and a check written as
+        "the facts remove none of the answers" passes trivially when there
+        are none. A board whose clues admit nothing would then emit a witness
+        of statements that are all false of it.
+        """
+        assert not entails(space(answers=()), [has("a")])
+
+    def test_a_board_with_no_answers_builds_an_empty_witness(self):
+        """Which is what a caller can act on: an exhausted witness."""
+        board = space()
+        broken = space(answers=())
+        candidates = [
+            deduction_for("a is present", [has("a")], board),
+            deduction_for("d is absent", [has("d", False)], board),
+        ]
+        built = build_witness(
+            game_id="toy",
+            assurance=AssuranceLevel.UNIQUENESS_PROVED,
+            space=board,
+            candidates=[
+                step for step in candidates if entails(broken, step.establishes)
+            ],
+        )
+        assert built.exhausted
+
+
 class TestTheMarginalWalk:
     """The ladder re-costed as it is climbed, which is what a player feels.
 

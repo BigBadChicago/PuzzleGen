@@ -481,11 +481,24 @@ def entails(space: SolutionSpace, facts: Sequence[Fact]) -> bool:
     checked is that the board's own clues already force it. Passed the
     survivors of the clue set, this is that check, and it is the difference
     between a hint a player could have derived and one they could not.
+
+    An empty space entails nothing, which is the one case worth stating
+    outright: see the comment below.
     """
+    before = len(list(space.enumerate()))
+    if before == 0:
+        # A space with no answers is a contradiction, and everything follows
+        # from a contradiction: counted naively, every statement would be
+        # entailed and a board whose clues admit nothing would emit a full
+        # witness of statements that are all false of it. So the guard
+        # refuses here rather than passing on vacuous truth, which is what
+        # turns a broken board into an empty witness instead of a confident
+        # one.
+        return False
     narrowed = space
     for fact in facts:
         narrowed = narrowed.constrain(fact)
-    return len(list(narrowed.enumerate())) == len(list(space.enumerate()))
+    return len(list(narrowed.enumerate())) == before
 
 
 __all__ = [

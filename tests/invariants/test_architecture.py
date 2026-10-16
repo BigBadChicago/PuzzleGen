@@ -1333,14 +1333,11 @@ class TestModulesLiveWhereTheyBelong:
 #: A name here is not a verdict that the game cannot have one. Every entry
 #: below is a game whose hints are three sentences a person wrote and then
 #: judged by eye, with the reason naming what its witness would have to state.
-#: Three of the four have an enumerable space already, in the certifier that
-#: measures their coupling, so the work is owed rather than impossible.
+#: odd_number_out was such an entry until its witness was written, and what
+#: the measurement found there is the argument for the rest: its authored
+#: ladder was one rung that removed nothing followed by two that named the
+#: answer.
 WITHOUT_A_WITNESS: dict[str, str] = {
-    "odd_number_out": (
-        "authored ladder; a witness needs statements about which tiles share "
-        "the property and which one misses it, in a predicate the board's "
-        "space can read"
-    ),
     "shape_trio": (
         "authored ladder; a witness needs statements about which tiles are in "
         "the trio and which attributes it varies on"
