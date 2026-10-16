@@ -18,6 +18,31 @@ which is what phase 9 was for.
 
 Nothing is pending on origin beyond the branch this session pushed.
 
+**The platform documents exist, in `docs/platform/`.** Sixteen documents written
+against `main`: product vision, numbered requirements with whether each is
+built, the cartridge model, the developer guide, certification, versioning,
+content policy, developer terms, privacy, the threat model, fairness,
+accessibility, operations, release, roadmap and a glossary, plus
+`open-questions.md`, which records the owner's decisions and the options each
+one beat.
+
+**Eight product decisions are settled and should not be re-asked.** Five slots
+per player; a cached future day stored encrypted with window wide keys; an
+account merge the player chooses, with the unchosen history retained; general
+audience with a strict privacy posture; free for now, revisited before the
+first outside cartridge is certified; a retraction notice on next open with no
+push; logs kept thirty days with milestones promoted into records; and a
+curated content file permitted where no declaration expresses the content,
+under the four conditions in `platform/content-policy.md`. Each is in the
+requirement it binds and in `decision-log.md` with its reasoning.
+
+**All of that work is decided and unbuilt.** The player's slot library, the
+thin client, the encrypted cache window, the merge flow, the retraction notice,
+log retention and the content file conditions are requirements with no code
+behind them. `platform/roadmap.md` orders them, and its reading is that the
+player facing layer is now the bottleneck: five games and no client means the
+platform's flexibility is unproven against a real player.
+
 Last full run: **3,933 passing, 0 failing** (2,098 platform, 733 grouping, 248
 letters, 270 figures, 288 numbers, 296 digits), plus 2,096 passing with every
 game uninstalled, the 2 differences being the guards that refuse to let the
@@ -236,6 +261,11 @@ symbolic snapshot and the three day runs.
 2. Files attached to the conversation.
 3. Project memory and docs.
 4. Repository files (lowest priority; can be stale).
+
+`CLAUDE.md` carries the documentation rule, which every session follows:
+a decision, plan or finding is recorded when a file states it, says why and
+says where it stands. `docs/documentation-rule.md` is the routing table for
+which document owns which subject.
 
 ## Response conventions
 

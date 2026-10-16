@@ -37,6 +37,22 @@ is the reference; the handoff document is the gate.
 - Third invariant: the shared graph is production infrastructure with its own
   quality, freshness, provenance, review and dependency lifecycle.
 
+Product identity, stated by the owner and recorded here because the engine
+decisions below only make sense against it. The full documents are in
+`docs/platform/`; this is the shape they assume.
+
+- PuzzleGen is a mobile platform where a person plays the daily puzzles they
+  chose, not a single game. The working name is PuzzleGen.
+- A game is a cartridge: its own distribution, added and removed through the
+  platform itself, decoupled from the platform while using its data and engine.
+  New games can come from outside authors.
+- A player holds a fixed number of cartridge slots, five, and swaps cartridges
+  in and out at will. This is distinct from `DEFAULT_MAX_ACTIVE`, the
+  operator's generation budget, which is four.
+- The platform's own correctness cannot depend on which cartridges exist, which
+  is why the invariant that the platform names no game is enforced by a test
+  rather than by convention.
+
 ## Toolchain and language
 
 - Python 3.11+ for the engine. Rationale: WordNet, wordfreq, embeddings, and

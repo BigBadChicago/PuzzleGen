@@ -1779,3 +1779,49 @@ platform with thirty corpora and a graph nobody reads.
 Removing a cartridge erases the cartridge's content and does not touch the
 player's play history, which re-adding restores. The cartridge owns its content;
 the platform owns the player's record.
+
+## Process decision (2026-10-16): a decision is not recorded until a file states it
+
+The rule is in `CLAUDE.md`, so every session reads it without being asked, and
+`docs/documentation-rule.md` holds the routing table it points at. README.md
+points at both.
+
+**Why it is a rule rather than a habit.** This project's named recurring
+failure is an artifact and a statement about it drifting apart: a hand copied
+threshold that drifted, a tool that recomputed a value instead of reading the
+engine's output, a table in `handoff.md` that disagreed with the artifact it
+claimed to summarise, a lexicon named for a root it does not hold. A decision
+left in a conversation is the same failure one step earlier, and it is worse in
+one way: there is no artifact to compare it against, so nothing can detect that
+it was lost.
+
+**What the rule requires.** Four parts. Written in the session it is made, not
+at the end of the phase. Written in the document that owns the subject, one
+subject to one document, by the routing table. Written with the reason and what
+it was chosen over, because an outcome with no reason is reversed by whoever
+only sees the cost. And written with its state: decided and built, decided and
+unbuilt, measured and unresolved, or specified and staged behind a named
+trigger.
+
+**The second record.** A decision that changes what the code does is recorded
+twice, in the owning document and as the check that enforces it, and where a
+test can hold the rule the test is the record while prose points at it. The
+platform already works this way: the invariant that the platform names no game,
+the assertion that identity material never comes from the deterministic
+generator, the assertion that the engine imports no token handling, and
+`WITHOUT_A_WITNESS` naming each game that supplies none with its reason.
+
+**What the rule deliberately does not claim.** It does not make a document an
+authority. A document says what was decided and why; the code and the artifacts
+say what is true. When they disagree the code is right and the document is a
+bug, which is the same ordering `handoff.md` already applies to its own numbers.
+
+**Swept into the documents in the same session**, which is the rule applied to
+itself: the product identity the owner stated (a mobile platform, cartridges
+added through the platform itself, a five slot player library against the
+operator's four active games) is now in `architecture.md` under project
+identity, where the engine decisions that assume it can be read against it; and
+`handoff.md` records that the platform documents exist, that eight product
+decisions are settled and should not be re-asked, and that every one of them is
+decided and unbuilt, with the roadmap's reading that the player facing layer is
+now the bottleneck.

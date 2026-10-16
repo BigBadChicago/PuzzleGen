@@ -32,6 +32,11 @@ intentions is the failure mode this project has already named.
 | [glossary.md](glossary.md) | every term this project invented | drafted |
 | [open-questions.md](open-questions.md) | the eight decisions taken, and why | answered |
 
+`docs/documentation-rule.md` says which document owns which subject, and
+`CLAUDE.md` carries the rule that a decision is not recorded until a file
+states it, says why and says where it stands. Everything in this folder follows
+that rule, which is why each document names its own gaps.
+
 ## Reading order for a newcomer
 
 1. `product-vision.md`, for what is being built.
