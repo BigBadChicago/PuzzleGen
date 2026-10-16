@@ -70,6 +70,50 @@ letters MUST filter its reachable output against a blocklist, and the filter
 runs at generation, not at review, because review sees thirty days and the game
 will run for years.
 
+## Part three: content a cartridge ships
+
+A cartridge draws its content from the graph through a declaration, which the
+platform rebuilds rather than trusts. That is the default and it stays the
+default. Where no declaration can express the content, the cartridge may ship a
+curated content file: a data file inside the distribution listing the items its
+boards are built from.
+
+The platform has one already. `games/letters/content/letters.curated.json` is a
+hand built taxonomy of thirty categories with six to twelve common members each,
+and it exists because measurement forced it: in that game the letter matching is
+never the binding constraint, membership is, and at medium frequency one WordNet
+category in 7,050 held six or more eligible members. A category's members are
+its hyponyms and a frequency filter cuts across that structure rather than along
+it, so no import produces a set organised by what a player knows.
+
+A shipped file is permitted under four conditions, all of them checkable:
+
+1. **Reviewed as content.** At certification, against this policy, including the
+   strings the generator can reach from it rather than only the strings in it.
+   This is the review a declaration does not need, because a declaration draws
+   on content the graph already governs.
+2. **Pinned and hashed.** The file is pinned to the cartridge version and its
+   hash is recorded in every manifest generated from it, so a board traces to
+   the exact bytes it came from. A retraction can then name the content that
+   caused it rather than the game that shipped it.
+3. **Served by the platform, read only at runtime.** A cartridge never writes to
+   it, and nothing a cartridge produces persists on a player's device. Removing
+   a cartridge erases the cartridge's content and touches nothing of the
+   player's play history, which the platform owns.
+4. **Logged as a missing generator.** Every approved file is recorded with what
+   the content is and why no declaration expresses it.
+
+Condition 4 is the one that keeps the platform's organising sentence true. A
+file serves one game; a generator serves every later game that wanted the same
+shape. The log is the input to building that generator, and approving files
+without recording why is how a platform ends up with thirty corpora and a graph
+nobody reads.
+
+What a shipped file does not become: a route around the rest of this policy. The
+content refusals in part one and the board refusals in part two apply to it in
+full, and a game that arranges letters still filters its reachable output at
+generation.
+
 ## Locale and language
 
 A game declares `supported_locales`. The content policy applies in the locale
@@ -98,6 +142,7 @@ attribution obligations of that source are met in the client's about surface.
 |---|---|
 | graph admission | curator review, with provenance recorded per record |
 | cartridge certification | thirty day run read by a human, plus the share vocabulary and leak checks by machine |
+| a shipped content file | reviewed as content at certification, hashed into every manifest built from it, and logged as a missing generator |
 | cartridge runtime | the game's own generation time filter, which is the author's obligation |
 | after publication | retraction, which withdraws the day and restores affected streaks |
 

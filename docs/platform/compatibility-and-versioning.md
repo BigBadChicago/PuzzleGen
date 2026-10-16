@@ -14,6 +14,7 @@ from its original is indistinguishable from a bug.
 | `ENGINE_VERSION` | generation, verification, difficulty, scoring behaviour in the engine | any change that can alter output bytes | the manifest, a rebuild check |
 | `CONTENT_SCHEMA_VERSION` | the shape of graph records | any incompatible change to the graph models | a snapshot, which is rejected rather than misread if the version is wrong |
 | `PUZZLE_FORMAT_VERSION` | the shape of a published puzzle document | any change to what a manifest holds | the client, the browser shell, a rebuild check |
+| a shipped content file's hash | the exact content bytes a board came from | the cartridge ships different content | a manifest, a retraction, a rebuild check |
 | `SCORING_VERSION` | the rules that turn a move ledger into a grade | telemetry derivation, the scoring contract, or a shipped game's scoring function changes in a way that can alter a number | a session record, a replay |
 | `SESSION_SCHEMA_VERSION` | the shape of a session document and its inline ledger | the ledger would have to be reinterpreted rather than read | a replay, which refuses rather than guesses |
 | `SHARE_FORMAT_VERSION` | the shape of a share artifact | share text changes | third party surfaces, which is why it is split from the puzzle format |
@@ -26,6 +27,14 @@ transcript recorded under one grading rule must not be silently graded under
 another. `SHARE_FORMAT_VERSION` is separate from `PUZZLE_FORMAT_VERSION` because
 share text is pasted into surfaces the platform does not control and changes on
 a different cadence.
+
+**Recording a content file's hash in every manifest is a manifest change**, so
+the decision to require it (condition 2 in `content-policy.md`) costs a
+`PUZZLE_FORMAT_VERSION` bump when it is built, and a client that cannot read the
+new version refuses the day rather than rendering it partially. That is the
+coupling the condition buys: a board traces to the exact content bytes behind
+it, so a retraction can name the content rather than the game. It was accepted
+deliberately.
 
 ## The protocol version in particular
 

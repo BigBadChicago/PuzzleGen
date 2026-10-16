@@ -1,8 +1,8 @@
 # Decisions, and what is still open
 
-The eight questions the platform documents were waiting on. Seven are answered
-and are now recorded in the documents they affect; the eighth is open and the
-analysis it was waiting for is at the end.
+The eight questions the platform documents were waiting on. All eight are
+answered and recorded in the documents they affect. Nothing in this file is
+pending; it is kept as the record of what was decided and why.
 
 Answered 2026-10-16 by the project owner.
 
@@ -86,76 +86,73 @@ it to a log is the bug, and promoting it is the fix.
 
 Recorded in `privacy-and-data.md` and `operations-runbook.md`.
 
-## Open
+## 8. A curated content file is allowed, under four conditions
 
-### 8. May a third party cartridge ship a curated content file?
+Answered yes to the four conditions below, and yes to condition 2 in
+particular, which is the one that costs something.
 
-The owner's inclination is yes, with conditions, and the conditions as stated
-describe a different kind of data than a content file is. The distinction is
-the whole of this question, so it is set out before the recommendation.
+The distinction that made this question worth asking, because the owner's
+initial conditions described a different kind of data:
 
-**What a curated content file is.** A data file shipped inside the cartridge,
-listing the actual items its boards are built from. The platform has one
-already: `games/letters/content/letters.curated.json` is a hand built taxonomy
-of thirty categories with six to twelve common members each, and the game that
-reads it spells a category's name from its own members' letters.
+**A curated content file** is a data file shipped inside the cartridge, listing
+the items its boards are built from. The platform has one:
+`games/letters/content/letters.curated.json`, a hand built taxonomy of thirty
+categories with six to twelve common members each.
 
-**What a declaration is instead.** A few lines naming a slice of the governed
-graph, which the platform rebuilds from the graph itself. Nothing is trusted,
-because nothing is shipped: the content is reproduced on the platform's side
-from content the platform governs.
+**A declaration** is the alternative, and remains the default: a few lines
+naming a slice of the governed graph, which the platform rebuilds itself.
+Nothing is trusted because nothing is shipped.
 
-**What a file buys an author.** Content the graph does not hold, and content
-organised the way a player thinks rather than the way a source does. This is not
-hypothetical here. It was measured on the letters game: the letter matching is
-never the binding constraint, membership is, and at medium frequency one WordNet
-category in 7,050 had six or more eligible members, because a category's members
-are its hyponyms and a frequency filter cuts across that structure rather than
-along it. No import produces a set organised by what a player knows. The
-curated file exists because measurement forced it, not because it was easier.
+**Why the exception is real rather than a convenience.** It was measured on the
+letters game. The letter matching is never the binding constraint, membership
+is, and at medium frequency one WordNet category in 7,050 held six or more
+eligible members, because a category's members are its hyponyms and a frequency
+filter cuts across that structure rather than along it. No import produces a set
+organised by what a player knows.
 
-**What a file costs the platform.** Four things. The content is ungoverned, so
-nobody checked its provenance, licence, freshness or its reachable strings. The
-board's quality cannot be traced back to the graph. The content cannot be
-regenerated, only trusted, which removes the one check that does not depend on a
-reviewer's attention. And it weakens the sentence the whole platform is
-organised around: one governed body of facts, many lenses. A cartridge carrying
-its own corpus is a separate game that happens to run here.
+**What a file costs the platform.** The content is ungoverned, so nobody checked
+its provenance, licence, freshness or reachable strings. A board's quality
+cannot be traced back to the graph. The content cannot be regenerated, only
+trusted, which removes the one check that does not depend on a reviewer's
+attention. And a cartridge carrying its own corpus is a separate game that
+happens to run here.
 
-**Where the owner's conditions land.** "The data does not enter the engine"
-cannot hold for content: the generator reads it to build a board, so content
-that never reached the engine could not produce a puzzle. "Erased when the game
-is removed, and no caching of old game data without approval" is the right rule,
-and it is the right rule for a different thing: anything a cartridge would
-accumulate on a player's device or about a player. Today a cartridge has no
-storage, no player identifier and no device access at all, so that rule is
-already satisfied by absence rather than by policy, and it is worth writing down
-so it stays satisfied.
+**Why content must enter the engine.** The generator reads the file to build a
+board, so content that never reached the engine could not produce a puzzle. The
+rule the owner stated, erased on removal and no caching of old game data without
+approval, is the right rule for a different thing: anything a cartridge would
+keep on a player's device or about a player. Today a cartridge has no storage,
+no player identifier and no device access, so it holds by absence, and it is now
+written down so it stays held.
 
-One tension to be explicit about, because answer 1 and answer 3 depend on it:
-"erased when the game is removed" must not reach a player's play history.
-Removing a cartridge frees the slot and keeps the history, and re-adding it
-restores it. Two different owners of two different kinds of data: the cartridge
-owns its content, the platform owns the player's record.
+The separation that answers 1 and 3 depend on: removing a cartridge erases the
+cartridge's content and keeps the player's play history, which re-adding
+restores. The cartridge owns its content; the platform owns the player's record.
 
-**Recommendation.** Yes, with four conditions, all of them checkable:
+### The rule
 
-1. The file is reviewed at certification as content, not as code, against
-   `content-policy.md`, including its reachable strings.
+1. The file is reviewed at certification as content, against
+   `content-policy.md`, including the strings the generator can reach from it.
 2. The file is pinned to the cartridge version and its hash is recorded in every
-   manifest generated from it, so a board can be traced to the exact bytes it
-   came from.
-3. The file is served by the platform and is read only at runtime. A cartridge
+   manifest generated from it.
+3. The file is served by the platform and read only at runtime. A cartridge
    never writes to it, and nothing a cartridge produces persists on a device.
-4. Every approved file is logged as a missing generator, with what the content
-   is and why no declaration expresses it. The log is the input to building the
-   generator that makes the next such file unnecessary.
+4. Every approved file is logged as a missing generator, with what the content is
+   and why no declaration expresses it.
 
-Condition 4 is the one that keeps the doctrine intact. A file serves one game; a
+**What condition 2 costs, accepted deliberately.** A hash in the manifest is a
+manifest change, so building it costs a `PUZZLE_FORMAT_VERSION` bump, and a
+client that cannot read the new version refuses the day rather than rendering it
+partially. What it buys is that a board traces to the exact content bytes behind
+it, so a retraction can name the content that caused it rather than the game
+that shipped it.
+
+Condition 4 is what keeps the doctrine intact. A file serves one game; a
 generator serves every later game that wanted the same shape. Approving files
-without recording why is how a platform wakes up with thirty corpora and one
-graph nobody reads.
+without recording why is how a platform ends up with thirty corpora and a graph
+nobody reads.
 
-**What is still needed from the owner:** confirmation of those four conditions,
-and in particular whether condition 2, a hash in every manifest, is worth the
-coupling it adds between a cartridge's content and the published day.
+Recorded in `content-policy.md` part three, `platform-requirements.md` C7 and
+C10 to C13 and L9, `cartridge-model.md`, `publishing-and-certification.md`,
+`game-developer-guide.md`, `privacy-and-data.md` and
+`compatibility-and-versioning.md`.

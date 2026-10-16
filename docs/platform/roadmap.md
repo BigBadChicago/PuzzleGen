@@ -84,6 +84,12 @@ decides that; it is not a threshold crossed quietly. The measured analysis is in
 and the more expensive adoption, with the authoring language being the whole of
 the decision.
 
+**10a. The generators that make shipped content files unnecessary.**
+Every approved content file is logged as a missing generator, naming the content
+and why no declaration expressed it. That log is this item's input: a file serves
+one game, a generator serves every later game that wanted the same shape.
+Ready to start when: the log holds two entries that want the same shape.
+
 **11. Locales beyond English.**
 A game can declare a locale today and the platform has no blocklist for it, so
 it cannot be certified there. Closing that is a platform gap, not an author's
@@ -118,6 +124,5 @@ changed on them afterwards. Until then there is no revenue share in
 `developer-terms.md`, no purchase mechanism in the requirements, and no question
 of what a paid cartridge would mean for the five slot cap.
 
-Whether a third party cartridge may ship a curated content file is the one
-question still genuinely open. The analysis, and the four conditions
-recommended, are in `open-questions.md`.
+Nothing else in these documents is waiting on a decision. The eight that were
+are recorded in `open-questions.md`.

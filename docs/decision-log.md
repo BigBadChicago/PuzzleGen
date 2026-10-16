@@ -1731,3 +1731,51 @@ because membership, not letter matching, was the binding constraint, at one
 WordNet category in 7,050 with six or more eligible members at medium
 frequency), and four recommended conditions are in
 `docs/platform/open-questions.md`.
+
+## Platform decision (2026-10-16): a third party cartridge may ship a curated content file
+
+The eighth and last of the open platform questions. Answered yes, with four
+conditions, and yes specifically to the condition that costs something.
+
+**The distinction the question turned on.** A curated content file is a data
+file shipped inside the cartridge listing the items its boards are built from. A
+declaration is a few lines naming a slice of the governed graph, which the
+platform rebuilds rather than trusts. The owner's initial conditions ("the data
+does not enter the engine", "erased when the game is removed") described
+accumulated data rather than generated content: content must enter the engine,
+because the generator reads it to build a board, so a file that never reached
+the engine could not produce a puzzle. The erase rule is the right rule for
+anything a cartridge would keep on a device or about a player, which today holds
+by absence because a cartridge has no storage, no player identifier and no
+device access. It is now written down so it stays held.
+
+**Why the exception is real.** Measured on the letters game: the letter matching
+is never the binding constraint, membership is, and at medium frequency one
+WordNet category in 7,050 held six or more eligible members, because a
+category's members are its hyponyms and a frequency filter cuts across that
+structure rather than along it. `letters.curated.json` exists because
+measurement forced it.
+
+**The rule.** A declaration stays the default. Where none can express the
+content, a file is permitted if it is (1) reviewed at certification as content,
+including the strings the generator can reach from it, (2) pinned to the
+cartridge version with its hash recorded in every manifest generated from it,
+(3) served by the platform and read only at runtime, with nothing a cartridge
+produces persisting on a device, and (4) logged as a missing generator with what
+the content is and why no declaration expresses it.
+
+**What condition 2 costs, accepted knowingly.** A hash in the manifest is a
+manifest change, so building it costs a `PUZZLE_FORMAT_VERSION` bump and a
+client that cannot read the new version refuses the day rather than rendering it
+partially. What it buys is traceability from a board to the exact content bytes
+behind it, so a retraction can name the content rather than the game.
+
+**What condition 4 is for.** A file serves one game; a generator serves every
+later game that wanted the same shape. The log is the input to building that
+generator, and it is the only thing standing between this exception and a
+platform with thirty corpora and a graph nobody reads.
+
+**Separation worth stating, because two earlier answers depend on it.**
+Removing a cartridge erases the cartridge's content and does not touch the
+player's play history, which re-adding restores. The cartridge owns its content;
+the platform owns the player's record.

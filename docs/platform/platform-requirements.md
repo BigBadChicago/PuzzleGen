@@ -17,6 +17,7 @@ purpose and most of these requirements are not its job.
 | L1 | A player MUST hold a library of at most **5** slots, each holding one cartridge. Five is a platform constant, not per player, and is separate from the operator's generation budget in L6. | decided, not built |
 | L2 | A player MUST be able to add a cartridge to a free slot, and remove one from an occupied slot, at any time, without contacting support. | not built |
 | L3 | Removing a cartridge MUST keep that game's play history, streak and best scores. Re-adding it MUST restore them. | not built; session records are keyed by game so the data survives |
+| L9 | Removing a cartridge MUST erase the cartridge's own content and anything it held, and MUST NOT touch the player's play history. Two different owners: the cartridge owns its content, the platform owns the player's record. | decided, not built |
 | L4 | Adding a cartridge with no free slot MUST refuse and name which cartridge would have to be removed, never silently evict. | not built |
 | L5 | A cartridge the platform has deactivated MUST remain in a player's slot, readable in history, and marked as producing no new days. | not built |
 | L6 | The platform MUST bound how many games it generates days for, separately from the player's slot count. | built: `DEFAULT_MAX_ACTIVE = 4` in `puzzlegen/engine/registry.py` |
@@ -98,7 +99,11 @@ determined person with their own device, and it is not trying to.
 | C4 | The engine MUST refuse, at discovery, a cartridge whose protocol minor is below what play requires. | built |
 | C5 | A cartridge MUST declare its uniqueness contract and verification completeness, and the engine MUST check results against the declaration. | built |
 | C6 | A cartridge MUST pass the accessibility gate before a session can be started against it. | built: `accessibility.py` |
-| C7 | A third party cartridge MUST bring content as a reproducible declaration, not a curated file. | policy decided, not enforced in code |
+| C7 | A third party cartridge MAY ship a curated content file where no declaration can express its content, under C10 to C13. A declaration remains the default. | decided, not enforced in code |
+| C10 | A shipped content file MUST be reviewed at certification as content, against `content-policy.md`, including the strings its generator can reach. | decided, not built |
+| C11 | A shipped content file MUST be pinned to the cartridge version, and its hash MUST be recorded in every manifest generated from it. | decided, not built |
+| C12 | A shipped content file MUST be served by the platform and read only at runtime. A cartridge MUST NOT write to it, and nothing a cartridge produces MAY persist on a player's device. | decided, not built |
+| C13 | Every approved content file MUST be logged as a missing generator, naming the content and why no declaration expresses it. | decided, not built |
 | C8 | A third party cartridge SHOULD run isolated from the host process. | staged; see `docs/external-games.md` |
 | C9 | Compute MUST be bounded by an instruction budget rather than a wall clock, where isolation exists. | decided; in-process bound is labelled an approximation |
 

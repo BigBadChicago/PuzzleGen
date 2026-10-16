@@ -81,11 +81,24 @@ def get_content_requirements(self, ...):
     # a declaration of the slice, not a file you shipped
 ```
 
-A third party game brings its content as a declaration, which the platform can
-reproduce from the graph, rather than as a curated file, which the platform
-could only trust. Generator kinds are platform owned: you pick from the
-declarations that exist. If no generator produces the shape you need, that is a
-platform change and a conversation, not a workaround.
+A declaration is the default: the platform reproduces it from the graph rather
+than trusting a file you shipped. Generator kinds are platform owned, so you
+pick from the declarations that exist.
+
+Where no declaration can express your content, you may ship a curated content
+file instead, and you must say why no declaration expresses it. Four conditions
+apply, and three of them land on you: the file is reviewed as content, including
+the strings your generator can reach from it; it is pinned to your cartridge
+version and its hash goes into every manifest built from it; and it is read only
+at runtime, so your game never writes to it and never persists anything on a
+player's device. The fourth is ours: the file is logged as a missing generator,
+and the generator that makes it unnecessary is the platform's work to do.
+
+The first party precedent is `games/letters/content/letters.curated.json`, and
+it is worth reading before you argue for a file, because it shows what "no
+declaration expresses this" looks like when it is measured rather than asserted:
+membership binds, not letter matching, at one WordNet category in 7,050 with six
+or more eligible members at medium frequency.
 
 Two cautions that have cost this project real time:
 
@@ -207,4 +220,4 @@ engine disagreeing about a number.
 - [ ] Accessibility declaration complete; a session starts.
 - [ ] Share artifacts use only declared tokens and pass the leak check.
 - [ ] No clock, network, filesystem, environment or unseeded randomness.
-- [ ] Content arrives as a declaration.
+- [ ] Content arrives as a declaration, or a shipped file carries a statement of why no declaration expresses it and a hash in every manifest.

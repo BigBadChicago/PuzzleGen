@@ -37,6 +37,12 @@ you. We do not sell anything and there are no advertisers.
   and a seeded generator. It has no player identifier, no session, no network and
   no storage, and the platform's invariants assert it imports nothing that would
   give it any of those.
+- Nothing a cartridge produces persists on a player's device. Where a cartridge
+  ships its own content file, that file is served by the platform and is read
+  only, and removing the cartridge erases the cartridge's content. What removal
+  never touches is the player's play history: the cartridge owns its content,
+  the platform owns the player's record, and answer L3 depends on that
+  separation.
 
 ## Two design decisions that carry the privacy properties
 

@@ -57,9 +57,15 @@ service it receives or that acts on its output.
 
 ## What a cartridge may not do
 
-- **It may not own knowledge.** Content comes from the graph through a declared
-  requirement. A cartridge that carries its own corpus is a cartridge whose
-  content nobody governs.
+- **It may not own knowledge, by default.** Content comes from the graph through
+  a declared requirement. A cartridge carrying its own corpus is a cartridge
+  whose content nobody governs, which is why a shipped content file is the
+  exception and carries four conditions rather than being the ordinary path. See
+  `content-policy.md`.
+- **It may not keep anything.** It has no storage, no player identifier and no
+  device access, so nothing it produces persists on a player's device, and
+  removing it erases its content. What removal never touches is the player's
+  play history, which the platform owns.
 - **It may not define a new generator kind.** It picks a declaration from what
   the platform's generators produce. A game needing a content shape no generator
   makes needs a platform change, and that step is deliberately governed.
@@ -85,10 +91,17 @@ and no copied conftest. See `game-developer-guide.md`.
 ### 2. Declared
 
 The author writes a content declaration: a few reviewable lines naming the slice
-of the graph the game draws on, reproducible by construction. A third party
-cartridge brings a declaration rather than a curated file, because a declaration
-can be reviewed in a minute and rebuilt from the graph, and a file can only be
-trusted.
+of the graph the game draws on, reproducible by construction. A declaration is
+the default, because it can be reviewed in a minute and rebuilt from the graph,
+where a file can only be trusted.
+
+Where no declaration can express the content, the author may instead ship a
+curated content file, under the four conditions in `content-policy.md`. The
+platform's own letters game is the worked example of why the exception exists:
+membership, not letter matching, was the binding constraint, and at medium
+frequency one WordNet category in 7,050 had six or more eligible members,
+because a category's members are its hyponyms and a frequency filter cuts across
+that structure rather than along it.
 
 ### 3. Submitted
 
