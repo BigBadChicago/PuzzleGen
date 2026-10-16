@@ -45,6 +45,7 @@ goes in the one that owns the subject and the other links to it.
 | an attacker, a trust boundary, or what stops neither | `platform/security-and-threat-model.md` |
 | daily fairness, retraction, scoring integrity | `platform/fairness-and-integrity.md` |
 | what every game must do for every player | `platform/accessibility-standard.md` |
+| an interface or client design decision | `platform/interface-principles.md` |
 | running the daily pipeline, incidents, retention | `platform/operations-runbook.md` |
 | how a change reaches a player, and rollback | `platform/release-process.md` |
 | what is being built now, next, later | `platform/roadmap.md` |

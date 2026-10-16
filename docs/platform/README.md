@@ -26,6 +26,7 @@ intentions is the failure mode this project has already named.
 | [security-and-threat-model.md](security-and-threat-model.md) | who the attacker is and what stops them | drafted, isolation staged |
 | [fairness-and-integrity.md](fairness-and-integrity.md) | why every player gets the same puzzle, and what happens when they did not | drafted |
 | [accessibility-standard.md](accessibility-standard.md) | what every game must be able to do for every player | drafted, gate enforced in code |
+| [interface-principles.md](interface-principles.md) | what the client must be, given what the engine decided | drafted, nothing built |
 | [operations-runbook.md](operations-runbook.md) | running the daily pipeline, and what to do when it breaks | drafted, no on call |
 | [release-process.md](release-process.md) | how a change reaches a player | drafted |
 | [roadmap.md](roadmap.md) | what is being built now, next, later | drafted |
