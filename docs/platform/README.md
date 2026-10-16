@@ -30,6 +30,7 @@ intentions is the failure mode this project has already named.
 | [release-process.md](release-process.md) | how a change reaches a player | drafted |
 | [roadmap.md](roadmap.md) | what is being built now, next, later | drafted |
 | [glossary.md](glossary.md) | every term this project invented | drafted |
+| [open-questions.md](open-questions.md) | the decisions these documents are waiting on | open |
 
 ## Reading order for a newcomer
 
