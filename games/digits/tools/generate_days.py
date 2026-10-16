@@ -63,6 +63,8 @@ from puzzlegen.graph import (
 from puzzlegen_digits.descriptor import CODE_LENGTHS, GAME_ID, code_length_for
 from puzzlegen_digits.generate import last_rejections
 from puzzlegen_digits.plugin import DigitLockGame
+from puzzlegen_digits.witness import check as check_witness
+from puzzlegen_digits.witness import witness_for
 
 DEFAULT_DB = Path("build/graph-symbolic.sqlite")
 
@@ -93,6 +95,22 @@ class DayResult:
     measured_band: str | None = None
     on_target: bool | None = None
     tiles: tuple[str, ...] = ()
+    #: The hint ladder's shape, reported per board rather than per fixture.
+    #:
+    #: The suite checks the witness over boards somebody chose; these are the
+    #: boards that ship, so a content change that alters the ladder shows up
+    #: here as a diff a reviewer reads rather than as a discovery later.
+    #:
+    #: ``witness_findings`` re-derives the whole claim a hint rests on: every
+    #: step counted correctly over the code space, every step entailed by the
+    #: clues, and no step a reveal. Nothing about a board's content can make
+    #: that list non-empty -- the builder drops a statement the clues do not
+    #: force -- which is the point: it fails when the witness and the space
+    #: stop agreeing, and that is a code change, which is why it runs on
+    #: every commit and not only over the fixtures.
+    witness_steps: int | None = None
+    witness_reveals: int | None = None
+    witness_findings: tuple[str, ...] = ()
     reason: str = ""
 
 
@@ -170,6 +188,10 @@ def result_of(day: str, outcome) -> DayResult:
     verification = evaluation.verification if evaluation else None
     payload = outcome.puzzle.payload
     solution = outcome.puzzle.solution
+    # Built twice: once for the figures and once inside the check, which
+    # re-derives it against the space to decide whether it holds up. The
+    # second pass is the point, so sharing the first would defeat it.
+    witness = witness_for(outcome.puzzle)
     return DayResult(
         day=day,
         code_length=int(payload["code_length"]),
@@ -203,6 +225,9 @@ def result_of(day: str, outcome) -> DayResult:
             + f" {row['exact']}/{row['misplaced']}"
             for row in payload["clues"]
         ),
+        witness_steps=len(witness.steps),
+        witness_reveals=sum(step.is_reveal for step in witness.steps),
+        witness_findings=check_witness(outcome.puzzle),
     )
 
 
@@ -304,6 +329,15 @@ def render(results: list[DayResult]) -> str:
                 f"    code {r.code}; {r.clues} clue rows, {r.facts} stated "
                 f"facts, {r.before_last} alive before the last clue"
             )
+            findings = (
+                ""
+                if not r.witness_findings
+                else f", {len(r.witness_findings)} FINDING(S)"
+            )
+            lines.append(
+                f"    witness: {r.witness_steps} deductions, "
+                f"{r.witness_reveals} reveals{findings}"
+            )
             lines.append(f"    clues: {' | '.join(r.tiles)}")
         else:
             lines.append(f"{r.day}  {r.code_length} digits  none   {r.reason}")
@@ -319,6 +353,15 @@ def render(results: list[DayResult]) -> str:
     )
     alive = {r.survivors for r in results if r.generated}
     lines.append(f"survivors per board: {sorted(alive)}")
+    ladders = Counter(r.witness_steps for r in results if r.generated)
+    lines.append(
+        "deductions per board: "
+        + ", ".join(f"{n} x{c}" for n, c in sorted(ladders.items()))
+    )
+    lines.append(
+        "boards offering a reveal: "
+        + str(sum(bool(r.witness_reveals) for r in results if r.generated))
+    )
     lines.append("digits  drew  served")
     for length, (built, total) in by_size(results).items():
         lines.append(f"{length:>6}  {total:>4}  {built:>6}")
@@ -426,6 +469,16 @@ def main(argv: list[str] | None = None) -> int:
         if diff is not None and not diff.is_empty:
             for line in diff.describe():
                 print(f"  capability change: {line}", file=sys.stderr)
+    unsound = [r for r in results if r.witness_findings]
+    if unsound:
+        print(
+            f"\n{len(unsound)} day(s) whose hint witness does not hold up:",
+            file=sys.stderr,
+        )
+        for result in unsound:
+            for finding in result.witness_findings:
+                print(f"  {result.day}: {finding}", file=sys.stderr)
+        return 1
     if disagreements:
         print(
             f"\n{len(disagreements)} day(s) where the engine's own check "

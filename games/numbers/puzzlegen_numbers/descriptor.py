@@ -279,6 +279,11 @@ def build_descriptor() -> GameDescriptor:
         supported_locales=("en",),
         verification_completeness=VerificationCompleteness.SOUND_INCOMPLETE,
         search_bound=SEARCH_BOUND,
+        # The readings are derived by elimination, so the reason is in hand
+        # and the hints are read off it. The witness declares ANSWER_VALID
+        # rather than borrowing the stronger word, for the same reason the
+        # promise above is the weaker one: the vocabulary is bounded.
+        supplies_witness=True,
         accessibility=ACCESSIBILITY,
         difficulty_thresholds=DIFFICULTY_THRESHOLDS,
         share_tokens=SHARE_TOKENS,

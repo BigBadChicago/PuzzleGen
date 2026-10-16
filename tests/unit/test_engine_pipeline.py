@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
+from dataclasses import replace
 
 import pytest
 
@@ -28,7 +29,10 @@ from puzzlegen.engine.plugin import (
     PuzzleCandidate,
     VerificationResult,
 )
+from puzzlegen.engine.certify import AssuranceLevel
+from puzzlegen.engine.coupling import EnumeratedSpace, Fact
 from puzzlegen.engine.records import PuzzleStatus
+from puzzlegen.engine.witness import build_witness, deduction_for
 from puzzlegen.engine.registry import ActivationEvent, GameRegistry
 from puzzlegen.engine.verifier import PuzzleVerifier
 from puzzlegen.engine.storage import EngineRepositories
@@ -217,6 +221,67 @@ class TestRegistry:
 
         with pytest.raises(ConfigurationError):
             world["registry"].register(Ancient())
+
+    def test_refuses_a_declared_witness_without_the_method(self, world):
+        """The declaration is what callers read, so it has to be backed up."""
+
+        class Claiming(OddOneOutGame):
+            def describe(self):
+                return replace(super().describe(), supplies_witness=True)
+
+        with pytest.raises(ConfigurationError, match="supplies_witness"):
+            world["registry"].register(Claiming())
+
+    def test_refuses_a_witness_method_that_is_not_declared(self, world):
+        """The other direction, and the one that would fail silently.
+
+        An undeclared witness is never called, so the board measures as having
+        no deductions at all rather than as having unread ones -- and a daily
+        set's cross-reference gate reads that as nothing to couple to. A false
+        zero is worse than a refusal to load, so this is refused too.
+        """
+
+        class Quiet(OddOneOutGame):
+            def witness(self, puzzle):
+                raise AssertionError("never called")
+
+        with pytest.raises(ConfigurationError, match="declare supplies_witness"):
+            world["registry"].register(Quiet())
+
+    def test_a_declared_witness_is_reached_through_the_registry(self, world):
+        board = EnumeratedSpace(
+            answers=((1,), (2,), (3,)),
+            admits=lambda answer, fact: answer[0] == int(fact.ref),
+            predicates=frozenset({"toy/is"}),
+        )
+        built = build_witness(
+            game_id="oddoneout",
+            assurance=AssuranceLevel.UNIQUENESS_PROVED,
+            space=board,
+            candidates=[
+                deduction_for(
+                    "it is the first one",
+                    [Fact(predicate="toy/is", ref="1", value=True)],
+                    board,
+                )
+            ],
+        )
+
+        class Witnessing(OddOneOutGame):
+            def describe(self):
+                return replace(super().describe(), supplies_witness=True)
+
+            def witness(self, puzzle):
+                return built
+
+        game = world["registry"].register(Witnessing())
+        assert game.witness(puzzle=None) is built
+
+    def test_asking_a_game_that_supplies_none_says_so(self, world):
+        """Not ``None``: a caller here has misread the descriptor."""
+        game = world["registry"].register(OddOneOutGame())
+        with pytest.raises(ConfigurationError, match="does not supply"):
+            game.witness(puzzle=None)
 
     def test_activation_is_required_for_scheduling(self, world):
         world["registry"].register(OddOneOutGame())

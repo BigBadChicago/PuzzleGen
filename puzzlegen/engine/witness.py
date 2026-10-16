@@ -29,6 +29,15 @@ that alone determines the answer is refused unless a caller explicitly asks
 for a reveal, which is what "cannot spoil" means operationally: the ladder
 runs out before the answer does.
 
+**A witness is absolute; what one player is handed is a walk.** The costs in a
+witness are counted over the empty board, because that is what makes them
+checkable by anyone holding the puzzle. A player three hints in is not on the
+empty board, and measured, the difference reorders the ladder and makes some
+of its rungs vacuous. :func:`walk` re-costs what is unspent against what the
+player holds. Its result is a sequence rather than a witness, and the two are
+kept apart on purpose: the fixed ordering is the evidence, and the marginal
+one is the help.
+
 **Assurance is declared, never implied.** A witness is not a uniqueness
 proof. It says the statements in it are true of the stated answer and that
 their costs are exact; whether the answer is the *only* one is the
@@ -41,7 +50,7 @@ floor, and a game whose space is not enumerable declares
 from __future__ import annotations
 
 from collections.abc import Iterable, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from .certify import AssuranceLevel
 from .coupling import Fact, SolutionSpace
 
@@ -332,6 +341,96 @@ def next_deduction(
     return None
 
 
+def walk(
+    witness: DeductionWitness,
+    space: SolutionSpace,
+    known: Iterable[Fact] = (),
+    *,
+    limit: int,
+    floor: AssuranceLevel = AssuranceLevel.ANSWER_VALID,
+    allow_reveal: bool = False,
+) -> tuple[Deduction, ...]:
+    """The next ``limit`` statements, each costed against the ones before it.
+
+    :func:`next_deduction` reads the ladder absolutely: a step's cost is its
+    narrowing of the board's unconstrained space, fixed when the witness was
+    built and checkable by anyone against that space alone. That is what a
+    witness has to be. It is not what a player experiences by their third
+    hint, because the first two have already narrowed the space the third
+    would be measured over.
+
+    Measured on a four-digit board, the two orders differ. The absolute ladder
+    offers seven exclusions before its first inclusion; re-costed as the
+    player accumulates them, the fourth exclusion is dearer than the first
+    inclusion and the two kinds interleave. Some statements go further than
+    reordering: a digit the player can already rule out from earlier rungs
+    removes nothing once they are held, and a statement that removes nothing
+    is not a hint.
+
+    So this walk re-costs every unspent statement against the space the
+    player's knowledge actually leaves, takes the cheapest, applies it and
+    repeats, dropping each statement that has gone vacuous rather than
+    offering it at a cost of nothing. The result is a sequence, not a witness:
+    its costs rise and fall as earlier rungs are applied, so it cannot satisfy
+    :class:`DeductionWitness`'s cheapest-first invariant and is deliberately
+    not wrapped in one. The witness stays absolute and verifiable; this is
+    what one player is handed at request time.
+
+    ``limit`` is required rather than defaulted, because each step re-counts
+    every unspent statement over the narrowed space: the walk costs about
+    ``limit`` times the witness's length in enumerations, and a caller that
+    wants two rungs should not pay for fourteen.
+    """
+    if not witness.assurance.at_least(floor):
+        raise WitnessError(
+            f"{witness.game_id}'s witness is assured at {witness.assurance}, "
+            f"below the {floor} this caller requires"
+        )
+    if limit < 0:
+        raise WitnessError("a walk cannot be shorter than no steps")
+    readable = frozenset(space.understands())
+    held = frozenset(known)
+    current = space
+    for fact in held:
+        if fact.predicate in readable:
+            current = current.constrain(fact)
+    unspent = list(remaining(witness, held))
+    walked: list[Deduction] = []
+    while unspent and len(walked) < limit:
+        before = len(list(current.enumerate()))
+        costed: list[tuple[int, str, Deduction, SolutionSpace]] = []
+        for step in unspent:
+            narrowed = current
+            for fact in step.establishes:
+                if fact.predicate in readable:
+                    narrowed = narrowed.constrain(fact)
+            after = len(list(narrowed.enumerate()))
+            if after == before or after == 0:
+                # Dropped, not offered: either what the player holds already
+                # forces this statement, or -- on a board whose uniqueness
+                # contract did not in fact hold -- it contradicts what they
+                # hold. Neither is something to charge a hint for.
+                continue
+            costed.append((after, step.statement, step, narrowed))
+        if not costed:
+            break
+        # Cheapest first, ties broken on text, exactly as the absolute ladder
+        # is ordered: the same two boards must produce the same walk, because
+        # a hint is re-derived from the count when a session is regraded.
+        costed.sort(key=lambda row: (-row[0], row[1]))
+        after, _, step, narrowed = costed[0]
+        marginal = replace(step, space_before=before, space_after=after)
+        if marginal.is_reveal and not allow_reveal:
+            # The ladder still runs out before the answer does, now against
+            # the player's own accumulated knowledge rather than against the
+            # empty board: the stronger of the two claims.
+            break
+        walked.append(marginal)
+        current = narrowed
+        unspent.remove(step)
+    return tuple(walked)
+
+
 def remaining(
     witness: DeductionWitness, known: Iterable[Fact] = ()
 ) -> tuple[Deduction, ...]:
@@ -382,11 +481,24 @@ def entails(space: SolutionSpace, facts: Sequence[Fact]) -> bool:
     checked is that the board's own clues already force it. Passed the
     survivors of the clue set, this is that check, and it is the difference
     between a hint a player could have derived and one they could not.
+
+    An empty space entails nothing, which is the one case worth stating
+    outright: see the comment below.
     """
+    before = len(list(space.enumerate()))
+    if before == 0:
+        # A space with no answers is a contradiction, and everything follows
+        # from a contradiction: counted naively, every statement would be
+        # entailed and a board whose clues admit nothing would emit a full
+        # witness of statements that are all false of it. So the guard
+        # refuses here rather than passing on vacuous truth, which is what
+        # turns a broken board into an empty witness instead of a confident
+        # one.
+        return False
     narrowed = space
     for fact in facts:
         narrowed = narrowed.constrain(fact)
-    return len(list(narrowed.enumerate())) == len(list(space.enumerate()))
+    return len(list(narrowed.enumerate())) == before
 
 
 __all__ = [
@@ -398,4 +510,5 @@ __all__ = [
     "entails",
     "next_deduction",
     "remaining",
+    "walk",
 ]

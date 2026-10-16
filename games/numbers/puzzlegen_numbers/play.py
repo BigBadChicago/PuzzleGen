@@ -30,6 +30,7 @@ from puzzlegen.engine.plugin import (
 
 from .assemble import board_tiles, board_values
 from .verify import near_miss_for
+from .witness import upcoming
 
 #: Wrong numbers a player gets before the board closes.
 #:
@@ -38,6 +39,15 @@ from .verify import near_miss_for
 #: tries would let a player exhaust it and a share would say nothing. Three is
 #: enough to test a reading, be wrong, and think again.
 MAX_MISTAKES = 3
+
+#: Hints one board will sell, however many true things are left to say.
+#:
+#: A policy, not a deduction. The derived ladder on a five-tile board has
+#: three rungs before the next one would name the answer, and on a seven-tile
+#: board it has five; three is what the authored ladder sold and what this
+#: game's scoring is tuned against, so the cap keeps the price of help where
+#: it was while the help itself changed.
+MAX_HINTS = 3
 
 #: Points.
 #:
@@ -185,61 +195,53 @@ def _miss_note(puzzle: Puzzle, tile: str, out_of_tries: bool) -> str:
 
 
 def get_hint(puzzle: Puzzle, state: Mapping[str, Any], hints_used: int) -> Hint:
-    """Help, in increasing order of how much it gives away.
+    """The cheapest deduction the board forces and the player does not hold.
 
-    Never the answer. The first hint says how many of the numbers share the
-    property, which is a restatement of the rule and helps a player who has
-    misread the board. The second names the property's kind without naming it:
-    whether it is about divisibility, about a sequence, or about size. The
-    third names the property outright, which leaves the player to apply it to
-    every tile and find the one it misses -- real work on an obscure property,
-    and a reveal on an easy one, which is why there is no fourth.
+    Derived, not authored. ``witness.upcoming`` walks this board's witness --
+    every statement about which tile is the odd one out, ordered by how much
+    of the tile row it removes -- skips what the player's own wrong guesses
+    already established, and re-costs what is left against what they hold.
+
+    Every rung costs one. Not a shrug: an exclusion removes one tile, so the
+    rungs of a five-tile board run from a fifth to a third of what remains,
+    and a two-tier price would be a fiction dressed as a measurement. The
+    board charges per hint in ``score`` instead, where the number is about the
+    award and not about the statement.
+
+    What this replaced is worth recording, because the measurement is the
+    argument. The old first hint restated the rule and removed nothing; the
+    old second and third named the property's kind and then the property, and
+    on a board with one reading each of those narrows the tiles to the one it
+    distinguishes -- both reveals. The ladder was one rung that said nothing
+    followed by two that said everything, and nobody could see that while the
+    cost of a sentence was a number somebody chose.
     """
     current = _current(puzzle, state)
     if current["complete"]:
         return Hint(text="This puzzle is already finished", cost=0, exhausted=True)
-
-    board_size = int(puzzle.payload["board_size"])
-    name = str(puzzle.solution.get("property", ""))
-
-    if hints_used == 0:
+    if hints_used >= MAX_HINTS:
         return Hint(
-            text=f"{board_size - 1} of the {board_size} share it; one does not",
-            cost=1,
+            text=f"This board offers {MAX_HINTS} hints, and you have had them",
+            cost=0,
+            exhausted=True,
         )
-    if hints_used == 1:
-        return Hint(text=f"It is about {_kind_of(name)}", cost=1)
+
+    # Two rungs from one walk: the one to hand over, and whether anything
+    # follows it.
+    offered = upcoming(puzzle, current, hints_used, count=2)
+    if not offered:
+        return Hint(
+            text="There is nothing left to tell you that would not be the answer",
+            cost=0,
+            exhausted=True,
+        )
+    step = offered[0]
     return Hint(
-        text=f"All but one are {name}",
-        cost=2,
-        exhausted=True,
+        text=step.statement,
+        reveals=step.reveals,
+        cost=1,
+        exhausted=hints_used + 1 >= MAX_HINTS or len(offered) < 2,
     )
-
-
-#: What kind of thing a property is, for the second hint.
-#:
-#: A coarse grouping rather than a per-property sentence, because the hint's
-#: job is to narrow the search without naming the property: "it is about
-#: divisibility" rules out the sequences and leaves four candidates. Keyed by
-#: substring so a new category of the same kind needs no entry here, with a
-#: fallback that says the honest thing rather than guessing.
-_KINDS = (
-    ("multiple", "divisibility"),
-    ("even", "divisibility"),
-    ("odd", "divisibility"),
-    ("prime", "how many factors it has"),
-    ("square", "a shape you can make from it"),
-    ("triangular", "a shape you can make from it"),
-    ("Fibonacci", "a sequence"),
-    ("digit", "how it is written"),
-)
-
-
-def _kind_of(name: str) -> str:
-    for needle, kind in _KINDS:
-        if needle.lower() in name.lower():
-            return kind
-    return "something arithmetic"
 
 
 def score(puzzle: Puzzle, telemetry: SessionTelemetry) -> Score:
@@ -379,6 +381,7 @@ def create_share_artifact(
 
 __all__ = [
     "DIFFICULTY_BONUS",
+    "MAX_HINTS",
     "MAX_MISTAKES",
     "PENALTY_PER_HINT",
     "PENALTY_PER_MISTAKE",

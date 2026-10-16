@@ -20,7 +20,7 @@ from importlib.metadata import entry_points
 
 from ..core.errors import ConfigurationError, ConflictError
 from ..core.versions import PLUGIN_PROTOCOL_VERSION, SemVer
-from .plugin import GameDescriptor, GamePlugin
+from .plugin import GameDescriptor, GamePlugin, Puzzle, WitnessingGame
 
 #: Entry point group every game distribution advertises itself in.
 #:
@@ -60,6 +60,24 @@ class RegisteredGame:
     def game_id(self) -> str:
         return self.descriptor.game_id
 
+    def witness(self, puzzle: Puzzle):
+        """This board's deduction witness, where the game supplies one.
+
+        The one route to a witness, so the declaration is read in a single
+        place and a caller cannot reach a game's ``witness`` method without
+        passing the check that it was declared. ``ConfigurationError`` rather
+        than a return of ``None``, because by here the declaration has already
+        been checked at registration: a caller asking a game that does not
+        supply one has misread the descriptor, which is a wiring mistake and
+        not a board without hints.
+        """
+        if not self.descriptor.supplies_witness:
+            raise ConfigurationError(
+                f"game {self.game_id!r} does not supply a deduction witness; "
+                "its descriptor says so, and its hints are authored"
+            )
+        return self.plugin.witness(puzzle)
+
 
 class GameRegistry:
     """Holds installed games and the history of which were live when."""
@@ -76,6 +94,7 @@ class GameRegistry:
     def register(self, plugin: GamePlugin) -> RegisteredGame:
         descriptor = plugin.describe()
         self._check_protocol(descriptor)
+        self._check_witness(descriptor, plugin)
 
         if descriptor.game_id in self._games:
             existing = self._games[descriptor.game_id].descriptor
@@ -102,6 +121,32 @@ class GameRegistry:
                 f"game {descriptor.game_id!r} speaks protocol "
                 f"{descriptor.protocol_version}, engine speaks "
                 f"{PLUGIN_PROTOCOL_VERSION}"
+            )
+
+    def _check_witness(
+        self, descriptor: GameDescriptor, plugin: GamePlugin
+    ) -> None:
+        """The witness declaration and the method must agree, both ways.
+
+        A declaration without the method is the obvious error. The reverse is
+        refused too, and for a sharper reason: the daily set's cross-reference
+        gate treats an unmeasured board as one no pair may couple to, so a
+        game that could emit a witness and forgot to declare it would not
+        fail, it would quietly measure as having no deductions at all. A false
+        zero is worse than a refusal to load.
+        """
+        implemented = isinstance(plugin, WitnessingGame)
+        if descriptor.supplies_witness and not implemented:
+            raise ConfigurationError(
+                f"game {descriptor.game_id!r} declares supplies_witness and "
+                "has no witness method, so nothing can read the deduction it "
+                "claims to keep"
+            )
+        if implemented and not descriptor.supplies_witness:
+            raise ConfigurationError(
+                f"game {descriptor.game_id!r} implements witness and does not "
+                "declare supplies_witness; undeclared, it measures as a board "
+                "with no deductions rather than as one with unread ones"
             )
 
     def unregister(self, game_id: str, *, day_key: str) -> None:

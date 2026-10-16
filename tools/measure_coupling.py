@@ -164,6 +164,7 @@ def run(
         for offset in range(days):
             day = (start + dt.timedelta(days=offset)).isoformat()
             boards = {}
+            puzzles = {}
             for game_id in game_ids:
                 outcome = pipeline.generate(
                     game_id, day, difficulty_target=difficulty
@@ -173,6 +174,7 @@ def run(
                         outcome.puzzle.payload,
                         outcome.puzzle.solution,
                     )
+                    puzzles[game_id] = outcome.puzzle
             spaces = spaces_for_day(boards)
             if declaration is not None:
                 targets = declaration.targets()
@@ -182,23 +184,44 @@ def run(
                 targets = ()
             reports.append(check_day(day, spaces, targets))
             if declaration is not None:
-                # No witness builders are passed, so every board's remaining
-                # work is unmeasured. That is sound against a declaration
-                # whose pairs are all uncoupled -- only a pair declaring a
-                # mechanic has to supply a witness -- and it is why a set
-                # that starts coupling a pair will fail here until the
-                # target's witness reaches this tool.
+                # From the games themselves, not from a certifier. A space is
+                # re-derived independently on purpose, because it is what the
+                # safety bound is measured over and a game must not be able to
+                # certify its own board. A witness is the opposite kind of
+                # claim: it is the elimination the generator actually did, so
+                # it can only come from the generator -- and it is re-checked
+                # against the independent space rather than believed. A game
+                # that declares no witness stays unmeasured here, which is why
+                # a set that starts coupling a pair fails this gate until the
+                # target game supplies one.
                 crossings.append(
                     crossref.check_day(
                         day,
                         spaces,
-                        crossref.witnesses_for(boards),
+                        witnesses_for_day(registry, puzzles),
                         declaration,
                     )
                 )
         return reports, crossings, tuple(not_activated)
     finally:
         repos.close()
+
+
+def witnesses_for_day(registry, puzzles):
+    """A witness per board, for the games that declare one.
+
+    ``None`` for a game that declares none, which the cross-reference check
+    reads as unmeasured and therefore uncouplable. Absence has to mean that
+    rather than "no deductions left": a board measured as having nothing to
+    deduce would make every reference to it look like a free shortcut.
+    """
+    built = {}
+    for game_id, puzzle in puzzles.items():
+        game = registry.get(game_id)
+        built[game_id] = (
+            game.witness(puzzle) if game.descriptor.supplies_witness else None
+        )
+    return built
 
 
 def as_documents(reports: list[CouplingReport]) -> list[dict]:

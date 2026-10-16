@@ -15,6 +15,7 @@ from puzzlegen.engine.plugin import SessionTelemetry
 from puzzlegen_numbers.descriptor import SHARE_TOKENS
 from puzzlegen_numbers.play import (
     DIFFICULTY_BONUS,
+    MAX_HINTS,
     MAX_MISTAKES,
     PENALTY_PER_HINT,
     PENALTY_PER_MISTAKE,
@@ -28,6 +29,8 @@ from puzzlegen_numbers.play import (
     render,
     score,
 )
+
+from puzzlegen_numbers.witness import upcoming
 
 from boards import make_puzzle
 
@@ -135,23 +138,54 @@ class TestGrading:
 
 
 class TestHints:
-    def test_the_first_hint_restates_the_rule(self, puzzle):
-        hint = get_hint(puzzle, empty_state(puzzle), 0)
-        assert str(puzzle.payload["board_size"] - 1) in hint.text
+    """The hints are derived from the witness, so these test the derivation.
 
-    def test_the_second_hint_names_the_kind_without_the_property(self, puzzle):
-        hint = get_hint(puzzle, empty_state(puzzle), 1)
-        assert puzzle.solution["property"] not in hint.text
-        assert hint.text
+    What a hint *says* is no longer a property of this module -- it is the
+    cheapest statement the board forces -- so the tests are about the ladder's
+    shape rather than about three sentences.
+    """
 
-    def test_the_third_hint_names_the_property_and_is_the_last(self, puzzle):
-        hint = get_hint(puzzle, empty_state(puzzle), 2)
-        assert puzzle.solution["property"] in hint.text
-        assert hint.exhausted
+    def ladder(self, puzzle, count=MAX_HINTS, state=None):
+        board = empty_state(puzzle) if state is None else state
+        return [get_hint(puzzle, board, used) for used in range(count)]
+
+    def test_every_hint_rules_a_tile_out(self, puzzle):
+        """The derived ladder is exclusion, which is what cheapest means here.
+
+        An exclusion removes one tile of five. Naming the property's kind
+        removes four, because on a board with one reading the only tile any
+        property distinguishes is the answer -- which is why the authored
+        ladder's second and third rungs are gone.
+        """
+        for hint in self.ladder(puzzle):
+            assert "is not the one" in hint.text
+
+    def test_the_rungs_get_dearer_as_they_accumulate(self, puzzle):
+        """Costed against what the player holds, not against the empty board.
+
+        A fifth of five tiles, then a quarter of four, then a third of three.
+        Absolutely every exclusion costs the same, so a ladder read off the
+        witness in order could not tell these apart.
+        """
+        walked = upcoming(puzzle, empty_state(puzzle), 0, count=MAX_HINTS)
+        assert [(s.space_before, s.space_after) for s in walked] == [
+            (5, 4),
+            (4, 3),
+            (3, 2),
+        ]
+
+    def test_each_hint_differs_from_the_one_before(self, puzzle):
+        texts = [hint.text for hint in self.ladder(puzzle)]
+        assert len(set(texts)) == len(texts) == MAX_HINTS
+
+    def test_a_hint_speaks_only_about_the_tile_it_names(self, puzzle):
+        """What a client highlights, so it may not include the answer."""
+        for hint in self.ladder(puzzle):
+            assert len(hint.reveals) == 1
+            assert answer_of(puzzle) not in hint.reveals
 
     def test_no_hint_names_the_answer(self, puzzle):
-        """Even the last one leaves the player applying the property to every
-        tile to find the one it misses."""
+        """The ladder stops with two tiles standing rather than one."""
         values = {t["id"]: t["value"] for t in puzzle.payload["tiles"]}
         answer = str(values[answer_of(puzzle)])
         for used in range(6):
@@ -159,28 +193,35 @@ class TestHints:
             assert answer not in hint.text
             assert answer_of(puzzle) not in hint.reveals
 
+    def test_the_ladder_stops_before_the_last_tile(self, puzzle):
+        """Two tiles left is a position; one is the answer."""
+        walked = upcoming(puzzle, empty_state(puzzle), 0, count=20)
+        assert len(walked) == 3
+        assert walked[-1].space_after == 2
+
+    def test_a_wrong_guess_is_not_sold_back(self, puzzle):
+        """A player told their tile is wrong holds that exclusion exactly."""
+        wrong = next(
+            tile["id"]
+            for tile in puzzle.payload["tiles"]
+            if tile["id"] != answer_of(puzzle)
+        )
+        state = {**empty_state(puzzle), "guesses": [wrong]}
+        for hint in self.ladder(puzzle, state=state):
+            assert wrong not in hint.reveals
+
+    def test_the_board_sells_only_as_many_hints_as_it_declares(self, puzzle):
+        ladder = self.ladder(puzzle, count=MAX_HINTS + 2)
+        assert ladder[MAX_HINTS - 1].exhausted
+        assert all(hint.cost == 0 for hint in ladder[MAX_HINTS:])
+
+    def test_every_rung_costs_the_same(self, puzzle):
+        """Because every exclusion removes one tile; a tier would be fiction."""
+        assert {hint.cost for hint in self.ladder(puzzle)} == {1}
+
     def test_a_finished_puzzle_offers_nothing(self, puzzle):
         hint = get_hint(puzzle, {**empty_state(puzzle), "complete": True}, 0)
         assert hint.exhausted and hint.cost == 0
-
-    @pytest.mark.parametrize(
-        "name,kind",
-        [
-            ("even number", "divisibility"),
-            ("multiple of three", "divisibility"),
-            ("prime number", "factors"),
-            ("Fibonacci number", "sequence"),
-        ],
-    )
-    def test_the_kind_groups_properties_coarsely(self, name, kind):
-        """Coarse on purpose: the hint narrows the search without naming the
-        property."""
-        puzzle = make_puzzle(property_name=name)
-        assert kind in get_hint(puzzle, empty_state(puzzle), 1).text
-
-    def test_an_unrated_property_still_gets_a_second_hint(self):
-        puzzle = make_puzzle(property_name="numbers nobody has classified")
-        assert get_hint(puzzle, empty_state(puzzle), 1).text
 
 
 class TestScoring:

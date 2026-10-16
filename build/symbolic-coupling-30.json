@@ -4,13 +4,13 @@
       "day": "2026-10-01",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -24,13 +24,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -44,23 +44,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -72,13 +72,13 @@
       "day": "2026-10-02",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -92,13 +92,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -112,23 +112,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -140,13 +140,13 @@
       "day": "2026-10-03",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -160,13 +160,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -180,23 +180,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -208,13 +208,13 @@
       "day": "2026-10-04",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -228,13 +228,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -248,23 +248,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -276,13 +276,13 @@
       "day": "2026-10-05",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -296,13 +296,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -316,23 +316,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -344,13 +344,13 @@
       "day": "2026-10-06",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -364,13 +364,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -384,23 +384,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -412,13 +412,13 @@
       "day": "2026-10-07",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -432,13 +432,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -452,23 +452,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -480,13 +480,13 @@
       "day": "2026-10-08",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -500,13 +500,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -520,23 +520,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -548,13 +548,13 @@
       "day": "2026-10-09",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -568,13 +568,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -588,23 +588,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -616,13 +616,13 @@
       "day": "2026-10-10",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -636,13 +636,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -656,23 +656,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -684,13 +684,13 @@
       "day": "2026-10-11",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -704,13 +704,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -724,23 +724,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -752,13 +752,13 @@
       "day": "2026-10-12",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -772,13 +772,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -792,23 +792,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -820,13 +820,13 @@
       "day": "2026-10-13",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -840,13 +840,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -860,23 +860,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -888,13 +888,13 @@
       "day": "2026-10-14",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -908,13 +908,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -928,23 +928,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -956,13 +956,13 @@
       "day": "2026-10-15",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -976,13 +976,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -996,23 +996,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -1024,13 +1024,13 @@
       "day": "2026-10-16",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -1044,13 +1044,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -1064,23 +1064,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -1092,13 +1092,13 @@
       "day": "2026-10-17",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -1112,13 +1112,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -1132,23 +1132,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -1160,13 +1160,13 @@
       "day": "2026-10-18",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -1180,13 +1180,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -1200,23 +1200,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -1228,13 +1228,13 @@
       "day": "2026-10-19",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -1248,13 +1248,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -1268,23 +1268,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -1296,13 +1296,13 @@
       "day": "2026-10-20",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -1316,13 +1316,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -1336,23 +1336,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -1364,13 +1364,13 @@
       "day": "2026-10-21",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -1384,13 +1384,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -1404,23 +1404,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -1432,13 +1432,13 @@
       "day": "2026-10-22",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -1452,13 +1452,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -1472,23 +1472,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -1500,13 +1500,13 @@
       "day": "2026-10-23",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -1520,13 +1520,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -1540,23 +1540,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],
@@ -1568,13 +1568,13 @@
       "day": "2026-10-24",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -1588,13 +1588,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -1608,23 +1608,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -1636,13 +1636,13 @@
       "day": "2026-10-25",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -1656,13 +1656,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -1676,23 +1676,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -1704,13 +1704,13 @@
       "day": "2026-10-26",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -1724,13 +1724,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
@@ -1744,23 +1744,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 15,
+          "steps_before": 15,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -1772,13 +1772,13 @@
       "day": "2026-10-27",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -1792,13 +1792,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -1812,23 +1812,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -1840,13 +1840,13 @@
       "day": "2026-10-28",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         },
         {
@@ -1860,13 +1860,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -1880,23 +1880,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 5,
+          "steps_before": 5,
           "to": "odd_number_out"
         }
       ],
@@ -1908,13 +1908,13 @@
       "day": "2026-10-29",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         },
         {
@@ -1928,13 +1928,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -1948,23 +1948,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 6,
+          "steps_before": 6,
           "to": "odd_number_out"
         }
       ],
@@ -1976,13 +1976,13 @@
       "day": "2026-10-30",
       "references": [
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts digit_lock's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "digit_lock",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         },
         {
@@ -1996,13 +1996,13 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts odd_number_out's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "odd_number_out",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
@@ -2016,23 +2016,23 @@
           "to": "shape_trio"
         },
         {
-          "advantage": null,
-          "detail": "digit_lock has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "digit_lock reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 14,
+          "steps_before": 14,
           "to": "digit_lock"
         },
         {
-          "advantage": null,
-          "detail": "odd_number_out has no enumerable space or no witness, so the advantage is unknown rather than zero",
+          "advantage": 0.0,
+          "detail": "odd_number_out reads none of the facts shape_trio's answer reveals, so its answer cannot shorten this board",
           "facts_offered": 0,
           "from": "shape_trio",
-          "solvable_alone": false,
-          "steps_after": null,
-          "steps_before": null,
+          "solvable_alone": true,
+          "steps_after": 7,
+          "steps_before": 7,
           "to": "odd_number_out"
         }
       ],

@@ -1321,3 +1321,125 @@ class TestModulesLiveWhereTheyBelong:
             ):
                 collisions.append(str(path.relative_to(ROOT)))
         assert not collisions, f"shadow package module names: {collisions}"
+
+
+#: Installed games that supply no deduction witness, and why each does not.
+#:
+#: The rule: an installed game either supplies a witness or is named here with
+#: a reason. A new game satisfies one or the other, and a new game that does
+#: neither fails this suite rather than quietly shipping authored hints whose
+#: cost nobody measured -- which is the state the witness was written to end.
+#:
+#: A name here is not a verdict that the game cannot have one. Every entry
+#: below is a game whose hints are three sentences a person wrote and then
+#: judged by eye, with the reason naming what its witness would have to state.
+#: odd_number_out was such an entry until its witness was written, and what
+#: the measurement found there is the argument for the rest: its authored
+#: ladder was one rung that removed nothing followed by two that named the
+#: answer.
+WITHOUT_A_WITNESS: dict[str, str] = {
+    "shape_trio": (
+        "authored ladder; a witness needs statements about which tiles are in "
+        "the trio and which attributes it varies on"
+    ),
+    "missing_letters": (
+        "authored ladder; a witness needs statements about the answer's "
+        "letters counted over the words the board's tiles admit, which is a "
+        "space drawn from the lexicon rather than from the board"
+    ),
+    "grouping": (
+        "authored ladder; a witness needs statements about which tiles share "
+        "a group, counted over the groupings the board admits, and the "
+        "overlay axis adds a second answer to state them about"
+    ),
+}
+
+
+class TestEveryGameAccountsForItsWitness:
+    """A game derives its hints or says why it does not. No third option.
+
+    ``GamePlugin`` cannot carry this rule: a witness is optional, so a game
+    without one is structurally conformant and nothing about loading it would
+    fail. The rule is therefore held here, where the question asked is not
+    "does this game work" but "has somebody decided about this game".
+
+    What a missing decision costs is specific. A board with no witness is
+    unmeasured, a daily set may not couple a pair to an unmeasured board, and
+    its hints are priced by whoever wrote them -- so a game shipped without
+    either a witness or an entry below is a game whose help nobody can check
+    and whose place in a daily set is silently unavailable.
+    """
+
+    def games(self):
+        from puzzlegen.engine.registry import GameRegistry
+
+        registry = GameRegistry(max_active=99)
+        registry.discover()
+        return list(registry)
+
+    def test_a_game_is_installed_to_check_against(self):
+        if not self.games():
+            requires_a_game(
+                "no game is installed, so the witness rule has nothing to "
+                "hold"
+            )
+
+    def test_every_installed_game_supplies_a_witness_or_names_a_reason(self):
+        undecided = [
+            game.game_id
+            for game in self.games()
+            if not game.descriptor.supplies_witness
+            and game.game_id not in WITHOUT_A_WITNESS
+        ]
+        assert not undecided, (
+            "these games neither supply a deduction witness nor appear in "
+            "WITHOUT_A_WITNESS with a reason, so their hints are authored and "
+            "unaccounted for: " + ", ".join(sorted(undecided))
+        )
+
+    def test_a_game_that_supplies_a_witness_is_not_also_exempt(self):
+        """Otherwise the list outlives the reason it was written for."""
+        both = [
+            game.game_id
+            for game in self.games()
+            if game.descriptor.supplies_witness
+            and game.game_id in WITHOUT_A_WITNESS
+        ]
+        assert not both, (
+            "these games supply a witness and are still named as having none; "
+            "remove the entry: " + ", ".join(sorted(both))
+        )
+
+    def test_every_exemption_names_an_installed_game(self):
+        """A name for a game nobody installs is a reason nobody can check."""
+        installed = {game.game_id for game in self.games()}
+        if not installed:
+            requires_a_game("no game is installed to match the exemptions")
+        unknown = sorted(set(WITHOUT_A_WITNESS) - installed)
+        assert not unknown, (
+            "WITHOUT_A_WITNESS names games that are not installed: "
+            + ", ".join(unknown)
+        )
+
+    def test_every_exemption_gives_a_reason(self):
+        empty = sorted(
+            game_id
+            for game_id, reason in WITHOUT_A_WITNESS.items()
+            if len(reason.split()) < 5
+        )
+        assert not empty, (
+            "an exemption is a decision, so it carries a reason somebody can "
+            "disagree with: " + ", ".join(empty)
+        )
+
+    def test_a_declared_witness_is_reachable_through_the_registry(self):
+        """The declaration is worth nothing if the route to it is not wired."""
+        supplying = [
+            game for game in self.games() if game.descriptor.supplies_witness
+        ]
+        if not supplying:
+            requires_a_game("no installed game supplies a witness")
+        for game in supplying:
+            assert callable(getattr(game.plugin, "witness", None)), (
+                f"{game.game_id} declares a witness the registry cannot call"
+            )

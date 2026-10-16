@@ -32,6 +32,18 @@ authored version named a digit that was. That is not a style choice; an
 exclusion over ten digits removes less of the space than an inclusion does,
 and the whole claim of the witness is that the cheapest true thing is offered
 first.
+
+**What is offered is the witness re-costed, not the witness read in order.**
+The witness is absolute: every cost is counted over the empty board, which is
+what makes it checkable by anyone holding the puzzle. A player on their fourth
+hint is not on the empty board. Measured, the difference is real -- seven
+exclusions lead the absolute ladder, four lead the walk, and three of the
+later exclusions have gone vacuous by the time they would be reached -- so
+:func:`upcoming` walks the witness marginally through
+:func:`puzzlegen.engine.witness.walk` instead of indexing it. The ladder is
+also capped per board by ``play.MAX_HINTS``, which is a policy about how much
+help a daily puzzle should sell rather than a claim about deduction, and so
+lives with the mistake limit and not here.
 """
 
 from __future__ import annotations
@@ -49,7 +61,7 @@ from puzzlegen.engine.witness import (
     build_witness,
     deduction_for,
     entails,
-    next_deduction,
+    walk,
 )
 
 from .assemble import answer_code, board_digits, board_facts, board_guesses
@@ -255,16 +267,42 @@ def known_facts(puzzle: Puzzle, state: Mapping[str, Any]) -> tuple[Fact, ...]:
     return tuple(dict.fromkeys(held))
 
 
+def upcoming(
+    puzzle: Puzzle,
+    state: Mapping[str, Any],
+    hints_used: int,
+    count: int = 1,
+) -> tuple[Deduction, ...]:
+    """The next ``count`` deductions to offer, costed as the player will feel.
+
+    A marginal walk rather than a read off the witness, because the witness is
+    ordered by each statement's narrowing of the empty board and that stops
+    describing a player who already holds three rungs of it. The walk re-costs
+    what is unspent against what they hold, so the fourth hint is the cheapest
+    thing left to say *to them* and a rung their earlier hints already forced
+    is dropped instead of being charged for.
+
+    ``count`` is asked for rather than taken one at a time so a caller that
+    needs to know whether a rung after this one exists pays for one walk and
+    not two; the walk re-enumerates the code space per unspent statement per
+    step, which is affordable once and visible twice.
+    """
+    walked = walk(
+        witness_for(puzzle),
+        code_space(puzzle),
+        known_facts(puzzle, state),
+        limit=hints_used + count,
+        floor=AssuranceLevel.ANSWER_VALID,
+    )
+    return walked[hints_used:]
+
+
 def next_step(
     puzzle: Puzzle, state: Mapping[str, Any], hints_used: int
 ) -> Deduction | None:
     """The next deduction to offer, or ``None`` when only the answer is left."""
-    return next_deduction(
-        witness_for(puzzle),
-        known_facts(puzzle, state),
-        given=hints_used,
-        floor=AssuranceLevel.ANSWER_VALID,
-    )
+    offered = upcoming(puzzle, state, hints_used)
+    return offered[0] if offered else None
 
 
 def check(puzzle: Puzzle) -> tuple[str, ...]:
@@ -306,5 +344,6 @@ __all__ = [
     "known_facts",
     "next_step",
     "survivor_space",
+    "upcoming",
     "witness_for",
 ]
