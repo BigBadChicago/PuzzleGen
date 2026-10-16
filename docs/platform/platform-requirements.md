@@ -14,7 +14,7 @@ purpose and most of these requirements are not its job.
 
 | id | requirement | state |
 |---|---|---|
-| L1 | A player MUST hold a library of at most `N` slots, each holding one cartridge. `N` is a platform constant, not per player. | not built |
+| L1 | A player MUST hold a library of at most **5** slots, each holding one cartridge. Five is a platform constant, not per player, and is separate from the operator's generation budget in L6. | decided, not built |
 | L2 | A player MUST be able to add a cartridge to a free slot, and remove one from an occupied slot, at any time, without contacting support. | not built |
 | L3 | Removing a cartridge MUST keep that game's play history, streak and best scores. Re-adding it MUST restore them. | not built; session records are keyed by game so the data survives |
 | L4 | Adding a cartridge with no free slot MUST refuse and name which cartridge would have to be removed, never silently evict. | not built |
@@ -41,6 +41,7 @@ drop one.
 | D6 | Days MUST be generated ahead of time, not on demand at a player's request. | built: generation is a dispatched build |
 | D7 | A retracted day MUST NOT count against the streak of a player who played it. | built: `RestorationService` |
 | D8 | The platform MUST be able to publish a replacement day for a retracted day key. | built |
+| D9 | A player whose day was retracted MUST see an in-app notice on next open, carrying the reason and what changed. No push notification. | decided, not built |
 
 ## 3. Play, scoring and sharing
 
@@ -65,11 +66,14 @@ drop one.
 | O3 | A corrected day MUST overwrite a cached day on the client, with no prompt. | specified, client not built |
 | O4 | A board played offline MUST be graded on reconnection, and the grade MUST be the server's. | specified, client not built |
 | O5 | A client MUST refuse a cached day whose puzzle format version it cannot read, rather than rendering it partially. | specified, client not built |
-| O6 | Cached days ahead of today MUST NOT be readable as puzzles before their day key. | not designed; see open questions |
+| O6 | Cached days ahead of today MUST be stored encrypted and MUST NOT be readable as puzzles before their day key. | decided, not built |
+| O7 | Each cache refresh MUST deliver the unlock keys for the whole cached window, not for one day, so a player offline across a day boundary can open a day they already hold. | decided, not built |
 
-O6 is the one genuinely unresolved requirement in this section. Caching two days
-ahead and keeping them unreadable until their day arrives are in tension, and
-the resolution is a design decision, not an implementation detail.
+O6 and O7 are one decision. Caching two days ahead and keeping them unreadable
+until their day arrives are in tension, and the resolution is to cache them
+encrypted with window wide keys: the offline guarantee survives, and reading
+tomorrow's board early costs more than curiosity. It does not defeat a
+determined person with their own device, and it is not trying to.
 
 ## 5. Identity and accounts
 
@@ -81,7 +85,8 @@ the resolution is a design decision, not an implementation detail.
 | I4 | Identity material MUST NOT come from the deterministic generator. | built, and asserted by an invariant test |
 | I5 | A player MUST be able to hold several device credentials, labelled, and revoke one. | built: capped at ten, revoked rather than deleted |
 | I6 | Binding a provider subject already bound to another player MUST refuse rather than repoint. | built: raises `MergeRequired` |
-| I7 | Account merge MUST have a decided product behaviour before provider sign in ships. | open product decision |
+| I7 | On `MergeRequired`, the platform MUST ask the player which history continues, showing each side's games, streaks and day counts. | decided, not built |
+| I8 | The history the player did not choose MUST be retained rather than deleted, so a wrong choice is recoverable. | decided, not built |
 
 ## 6. The cartridge contract
 
@@ -105,11 +110,12 @@ the resolution is a design decision, not an implementation detail.
 | R2 | The operator MUST be alerted when an active game has no published day for the next day key. | not built |
 | R3 | Retracting a day MUST produce a preview of what it affects before it is applied. | built: `RetractionService.preview` |
 | R4 | A build artifact a document cites MUST be rebuilt rather than hand updated. | built as a practice, checked in CI |
+| R5 | Server logs MUST be kept 30 days. A value that will matter beyond that MUST be promoted into a record rather than left in a log. | decided, not built |
 
 ## Out of scope for first release
 
 - Multiplayer or head to head play.
-- Any in app purchase or subscription mechanism.
+- Any in app purchase or subscription mechanism. The platform is free for now, and that is revisited before the first outside cartridge is certified, not after.
 - Player authored cartridges from inside the app.
 - Localisation beyond the locales a game declares in `supported_locales`.
 - A web client. The browser shell consumes published manifests as static JSON

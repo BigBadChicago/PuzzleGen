@@ -12,11 +12,9 @@ flexibility is unproven against a real player.
 ## Now
 
 **1. The player's library and slots.**
-The product idea nobody has built. A fixed number of slots, add and remove at
-will, history surviving removal. Requirements L1 to L5 and L8 in
-`platform-requirements.md`.
-Ready when: the slot count is decided and the add, remove and re-add paths keep
-session history intact.
+The product idea nobody has built. Five slots, add and remove at will, history
+surviving removal. Requirements L1 to L5 and L8 in `platform-requirements.md`.
+Ready when: the add, remove and re-add paths keep session history intact.
 
 **2. The thin client, first version.**
 Today's puzzle, played, graded server side, for the games in the player's slots.
@@ -26,9 +24,11 @@ text pastes correctly.
 **3. The cache window.**
 Rolling five days: today, two past, two ahead. Refresh after a play while
 connected, otherwise on next connection. A corrected day overwrites with no
-prompt.
-Blocked on: requirement O6, keeping days ahead unreadable before their day key.
-That is a design decision, and it is in the open questions.
+prompt. Days ahead of today are stored encrypted, with the unlock keys for the
+whole window delivered on each refresh, which is what keeps a player offline
+across a day boundary able to open a day they already hold.
+Ready when: a day ahead of its date cannot be read, and a day that has arrived
+can be, with no connection in between.
 
 **4. Operational alerting.**
 Requirement R2. An active game with no published day for tomorrow must page
@@ -46,12 +46,15 @@ Ready to start when: the children and jurisdiction questions in
 `privacy-and-data.md` have answers, because they change what deletion must
 guarantee.
 
-**6. Account merge.**
+**6. Account merge, as a player's choice.**
 `MergeRequired` is raised today rather than guessed at, which is correct and is
-also a dead end for the player who hit it. Merge is a product decision nobody
-has made, and picking a winner silently discards somebody's real play.
-Ready when: the merge behaviour is decided, including which history wins and
-whether the player chooses.
+also a dead end for the player who hit it. The decision is that the player
+chooses which history continues, shown each side's games, streaks and day
+counts, with the unchosen history retained rather than deleted so a wrong choice
+is recoverable.
+Ready when: the choice can be deferred without locking either account, and what
+was chosen is recorded.
+Costs more than the alternatives did: this is a player facing flow, not a rule.
 
 **7. The cartridge catalogue.**
 Listing, description, and the add flow, in the client. Needed before any third
@@ -108,8 +111,13 @@ is item 10 and this is a mitigation rather than a fix.
 
 ## Undecided enough to not be scheduled
 
-Monetisation is the largest. There is no business model, so there is no revenue
-share in `developer-terms.md`, no purchase mechanism in the requirements, and no
-plan for what a paid cartridge would mean for the slot cap. This is not a gap in
-the documents; it is a decision waiting on the owner, and the documents are
-written so that a decision can be dropped in rather than requiring a rewrite.
+Monetisation is decided as free for now, which is a decision with a deadline
+rather than a permanent answer: it is revisited before the first outside
+cartridge is certified, because the terms an author ships under cannot be
+changed on them afterwards. Until then there is no revenue share in
+`developer-terms.md`, no purchase mechanism in the requirements, and no question
+of what a paid cartridge would mean for the five slot cap.
+
+Whether a third party cartridge may ship a curated content file is the one
+question still genuinely open. The analysis, and the four conditions
+recommended, are in `open-questions.md`.

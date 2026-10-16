@@ -1668,3 +1668,66 @@ is why a single-solution contract cannot have a truncated list at all: one
 listed against a count of one is already a consistency problem. The
 intended-solution path is therefore reachable only under `EXACTLY_N` and the
 contracts that admit more than one solution, which is what the new tests use.
+
+## Platform decisions (2026-10-16): the player's side of the product
+
+Seven decisions the platform documents in `docs/platform/` were waiting on,
+answered by the owner. Each is recorded in the document it affects; this entry
+is the record of the decision itself and of what it commits the project to.
+
+**A player holds five cartridges.** A platform constant, separate from
+`DEFAULT_MAX_ACTIVE = 4`, which is the operator's generation budget. The two
+numbers serve different purposes and collapsing them would mean listing a fifth
+game forces every player to drop one. Five rather than three because a cap can
+be raised without a migration and cannot be lowered without taking something
+away from everybody.
+
+**A day cached ahead of its date is cached encrypted.** The client keeps its
+rolling five day window and a future day is unreadable until its day key. The
+keys delivered on each refresh cover the whole window rather than one day, which
+is the detail that matters: a player offline across a day boundary must still be
+able to open a day they already hold, and a per day key release would need the
+connection they do not have. This is a cost increase for early reading, not a
+defence against a determined person with their own device, and the threat model
+says so.
+
+**An account merge is the player's choice.** `MergeRequired` continues to be
+raised rather than guessed at, and the player is then shown each side's games,
+streaks and day counts and asked which history continues. The unchosen history
+is retained, not deleted, so a wrong choice is recoverable. This is the most
+expensive of the three options considered: it is a player facing flow with a
+deferrable decision and a recorded outcome, rather than a rule. It was chosen
+because the alternatives either discard somebody's real play or compute a streak
+from a union the player never agreed to.
+
+**General audience, with a strict privacy posture.** The defence against having
+child players is collecting nothing worth worrying about, rather than a
+declaration: no advertising identifier, no third party analytics, no location,
+nothing collected by a cartridge. The market by market obligations still need a
+lawyer before the first store submission.
+
+**Free, for now.** A decision with a deadline rather than a permanent answer. It
+is revisited before the first outside cartridge is certified, because an author
+who ships under free terms cannot have commercial ones applied to them
+afterwards.
+
+**A retraction shows an in-app notice on next open.** Carrying the reason and
+what changed, with no push notification. Restoring a streak silently reads to the
+player as lost data, which is the problem the notice solves; a retraction is not
+urgent enough to interrupt anybody.
+
+**Logs are kept thirty days, and milestones are promoted.** The retention number
+is safe only because of the rule beside it: a value that will matter beyond
+thirty days is promoted into a record rather than left in a log. Milestones,
+streak events, retractions and merge choices are records. When a question three
+months from now could only be answered from a log line, the fix is to write the
+record, not to extend retention.
+
+**Still open: whether a third party cartridge may ship a curated content file.**
+The owner's inclination is yes with conditions, and the conditions as stated
+describe data a cartridge accumulates rather than content it generates from. The
+distinction, the measured first party precedent (`letters.curated.json` exists
+because membership, not letter matching, was the binding constraint, at one
+WordNet category in 7,050 with six or more eligible members at medium
+frequency), and four recommended conditions are in
+`docs/platform/open-questions.md`.
