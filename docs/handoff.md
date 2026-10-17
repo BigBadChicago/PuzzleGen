@@ -36,7 +36,22 @@ curated content file permitted where no declaration expresses the content,
 under the four conditions in `platform/content-policy.md`. Each is in the
 requirement it binds and in `decision-log.md` with its reasoning.
 
-**All of that work is decided and unbuilt.** The player's slot library, the
+**The engine's complexity ceiling moved, and the engine side is built.**
+Protocol `1.3.0` adds three declared capabilities: a second and third round of
+content questions that may depend on the earlier rounds' results, boards made
+of stages whose gating the engine verifies rather than believes, and difficulty
+reported per axis with the banded score recomputed from the axes. Additive, so
+all five games load and generate with no edits.
+`PUZZLE_FORMAT_VERSION` is now `3`. Two things to know before building on it:
+**no shipped game is staged yet**, so the capability is proved only by
+`tests/unit/test_staging.py` and the chained fixture game beside it; and **a
+staged game may not declare a witness**, which the descriptor refuses, because
+a witness's costs are counted over one unconstrained space and that is the
+wrong space for every stage after the first. Per stage witnesses and a hint
+walk that picks the active stage are specified and unbuilt. The design is
+`architecture.md` phase 10 and the reasoning is `decision-log.md`.
+
+**All of that platform document work is decided and unbuilt.** The player's slot library, the
 thin client, the encrypted cache window, the merge flow, the retraction notice,
 log retention and the content file conditions are requirements with no code
 behind them. `platform/roadmap.md` orders them, and its reading is that the
@@ -218,6 +233,25 @@ symbolic snapshot and the three day runs.
    `__globals__` and `__class__` are ordinary attributes. That last one is a
    ceiling on the mechanism rather than a task, and the suite's docstring
    should say so.
+
+### The first staged cartridge is undecided
+
+The engine can now publish a board made of gated stages and nothing uses it.
+Two readings, and the choice is the owner's:
+
+- **A new game.** A sixth cartridge built around a chain, which proves the
+  capability against real content and real difficulty calibration. Costs a
+  game's worth of work, and the first staged board is also the first authored
+  hint ladder since the witness rule, because a staged game may not declare a
+  witness.
+- **A second lens over content a game already uses.** Cheaper, and it tests
+  the capability where the content is known to hold up. Weaker as evidence,
+  because the interesting question about stages is whether the content can
+  sustain a second stage that is genuinely undecided before the first.
+
+Either way the per stage witness is the piece to build first if the hints
+matter, because an authored ladder on a staged board is the exact thing
+`witness.py` exists to avoid.
 
 ## Standing cautions
 

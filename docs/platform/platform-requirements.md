@@ -52,7 +52,7 @@ drop one.
 | P2 | Grading MUST be performed where the answer is not exposed to the client. | built: server grading via `session_service.py` |
 | P3 | Every move MUST be recorded in a ledger, under the scoring version in force. | built: `SESSION_SCHEMA_VERSION`, `SCORING_VERSION` |
 | P4 | A transcript recorded under one scoring version MUST NOT be silently regraded under another. | built |
-| P5 | A hint MUST be derived from the elimination the generator performed, where the game supplies a witness. | built: `witness.py`, protocol 1.2.0 |
+| P5 | A hint MUST be derived from the elimination the generator performed, where the game supplies a witness. | built: `witness.py`, protocol 1.2.0. A staged board supplies none; see C18 |
 | P6 | A hint MUST be charged at the cost the player experiences, not at an authored cost. | built |
 | P7 | Share text MUST pass a leak check before it leaves the platform. | built: `ShareService`, `ShareLeak` |
 | P8 | Share text MUST use only the vocabulary the game declared. | built: `share_tokens` on the descriptor |
@@ -104,6 +104,11 @@ determined person with their own device, and it is not trying to.
 | C11 | A shipped content file MUST be pinned to the cartridge version, and its hash MUST be recorded in every manifest generated from it. | decided, not built |
 | C12 | A shipped content file MUST be served by the platform and read only at runtime. A cartridge MUST NOT write to it, and nothing a cartridge produces MAY persist on a player's device. | decided, not built |
 | C13 | Every approved content file MUST be logged as a missing generator, naming the content and why no declaration expresses it. | decided, not built |
+| C14 | Where a cartridge declares stages, the engine MUST verify each stage under that stage's own contract, not only the board's. | built: `staging.py`, protocol 1.3.0 |
+| C15 | Where a stage declares a dependency, the engine MUST establish that the stage is not already decided without it, and is decided with it. | built: `STAGE_NOT_GATED`, `STAGE_UNDETERMINED` |
+| C16 | A cartridge reporting difficulty axes MUST declare how they reduce to its banded score, and the engine MUST recompute the reduction and refuse a score that is not it. | built: `DifficultyReduction` |
+| C17 | A cartridge asking more than one round of content questions MUST receive every round through the platform's port, under the same gates and budget as the first. | built: `content_rounds`, `refine_content_requirements` |
+| C18 | A cartridge whose boards carry stages MUST NOT declare a witness, until a witness can be costed per stage. | built: refused by `GameDescriptor` |
 | C8 | A third party cartridge SHOULD run isolated from the host process. | staged; see `docs/external-games.md` |
 | C9 | Compute MUST be bounded by an instruction budget rather than a wall clock, where isolation exists. | decided; in-process bound is labelled an approximation |
 

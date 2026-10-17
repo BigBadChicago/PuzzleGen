@@ -8,6 +8,7 @@ member's value is its own name.
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from enum import StrEnum
 from typing import Annotated
 
@@ -109,6 +110,38 @@ class DifficultyBand(StrEnum):
     MEDIUM = "MEDIUM"
     HARD = "HARD"
     EXPERT = "EXPERT"
+
+
+class DifficultyReduction(StrEnum):
+    """How a difficulty measurement with several axes becomes one banded number.
+
+    A puzzle built in stages, or one whose work splits into unlike kinds, has
+    more than one difficulty and a single scalar is a lie about both. The axes
+    are measured separately and reduced here, and the reduction is *declared*
+    so the engine can check that the number a game banded against is the one
+    its own axes produce.
+
+    ``MAXIMUM`` is the right default for a staged board: a board is as hard as
+    its hardest stage, because a player who cannot pass stage two never sees
+    stage three, and a mean would let a punishing stage hide behind two easy
+    ones. ``MEAN`` suits axes a player meets at once, where the work really
+    does average.
+    """
+
+    #: No axes. ``score`` stands alone, which is every game before 1.3.
+    NONE = "NONE"
+    MAXIMUM = "MAXIMUM"
+    MEAN = "MEAN"
+
+    def apply(self, axes: "Mapping[str, float]") -> float:
+        values = list(axes.values())
+        if not values:
+            raise ValueError("a reduction needs at least one axis")
+        if self is DifficultyReduction.MAXIMUM:
+            return max(values)
+        if self is DifficultyReduction.MEAN:
+            return sum(values) / len(values)
+        raise ValueError(f"{self} reduces no axes; it declares their absence")
 
 
 class UniquenessContract(StrEnum):

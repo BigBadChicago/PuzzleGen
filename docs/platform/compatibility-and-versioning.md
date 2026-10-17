@@ -38,7 +38,7 @@ deliberately.
 
 ## The protocol version in particular
 
-`PLUGIN_PROTOCOL_VERSION` is `1.2.0`. Its history is the model for how it moves:
+`PLUGIN_PROTOCOL_VERSION` is `1.3.0`. Its history is the model for how it moves:
 
 - `1.0` the original contract.
 - `1.1` added `grade_move` and `get_hint`. Additive within the major, so a 1.0
@@ -49,6 +49,19 @@ deliberately.
   required method. A cartridge announces it in `supplies_witness` and the engine
   calls it only where that is set. Additive again, so every 1.1 cartridge loads
   unchanged.
+- `1.3` raised what a board may be, as three more declared capabilities:
+  `content_rounds` above 1 with `refine_content_requirements`, `staged` with
+  `verify_part`, and `difficulty_reduction` above `NONE` with
+  `DifficultyMeasurement.axes`. A cartridge declaring none of the three is a
+  single round, single stage, single axis cartridge, which is what every 1.2
+  cartridge already is, so all five shipped games load and generate unchanged.
+  The engine decision and what it was for is in `../architecture.md`.
+
+`PUZZLE_FORMAT_VERSION` is `3`, bumped by that same change: a record now carries
+its stages, a verification summary carries one entry per stage, and a difficulty
+summary carries the axes the score was reduced from. A version 2 document has no
+stages and no axes, which is not the same fact as a version 3 document recording
+none, so it is refused rather than defaulted.
 
 Two rules the engine enforces:
 

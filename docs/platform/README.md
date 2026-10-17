@@ -17,7 +17,7 @@ intentions is the failure mode this project has already named.
 | [product-vision.md](product-vision.md) | what PuzzleGen is, who it is for, what it refuses to be | drafted |
 | [platform-requirements.md](platform-requirements.md) | what the platform must do, as testable requirements | drafted, player library unbuilt |
 | [cartridge-model.md](cartridge-model.md) | what a cartridge is and its whole lifecycle | drafted, install path partly built |
-| [game-developer-guide.md](game-developer-guide.md) | how to write a game against the engine | drafted, matches protocol 1.2.0 |
+| [game-developer-guide.md](game-developer-guide.md) | how to write a game against the engine | drafted, matches protocol 1.3.0 |
 | [publishing-and-certification.md](publishing-and-certification.md) | how a cartridge gets listed, and how it gets pulled | drafted, process unstaffed |
 | [compatibility-and-versioning.md](compatibility-and-versioning.md) | what a version number promises | drafted |
 | [content-policy.md](content-policy.md) | what a cartridge and the graph may contain | drafted, needs owner review |

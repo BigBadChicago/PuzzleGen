@@ -23,6 +23,7 @@ from ..core import ids
 from ..core.hashing import stable_hash
 from ..core.types import (
     DifficultyBand,
+    DifficultyReduction,
     UniquenessContract,
     VerificationCompleteness,
 )
@@ -55,6 +56,7 @@ def content_hash_of(
     payload: Any,
     solution: Any,
     fact_refs: Any,
+    parts: Any = (),
 ) -> str:
     """The canonical hash of a board's content.
 
@@ -63,15 +65,24 @@ def content_hash_of(
     both need it and a second copy of the formula is a second answer that can
     disagree with the first. Anything that compares a board in hand against a
     published manifest -- a replay, a release check -- goes through here.
+
+    ``parts`` enters the hash only when there are some. A staged board has to
+    commit to its stages: its ``solution`` already carries every stage's
+    answer, so a changed answer moves the hash, but a changed *clue* in stage
+    two, or a changed contract, or a changed dependency would not, and a
+    rebuild check that cannot see those is checking the easy half. A flat
+    board hashes exactly as it did before stages existed, which is what keeps
+    every already-published day's hash still its own.
     """
-    return stable_hash(
-        {
-            "game_id": game_id,
-            "payload": payload,
-            "solution": solution,
-            "fact_refs": sorted(fact_refs),
-        }
-    )
+    document: dict[str, Any] = {
+        "game_id": game_id,
+        "payload": payload,
+        "solution": solution,
+        "fact_refs": sorted(fact_refs),
+    }
+    if parts:
+        document["parts"] = parts
+    return stable_hash(document)
 
 
 def _utc(value: dt.datetime) -> dt.datetime:
@@ -119,6 +130,29 @@ class GenerationInputs(_Frozen):
         return self
 
 
+class PartVerificationSummary(_Frozen):
+    """What was established about one stage of a composite board.
+
+    Both counts are recorded, because only the pair is evidence. The stage's
+    answer count under its predecessors is its contract; the count it admitted
+    knowing nothing is the proof that its place in the chain was earned. A
+    record holding only the first could not tell a gated stage from an
+    independent one, which is exactly the claim a staged board makes.
+    """
+
+    part_id: str
+    solution_count: int = Field(ge=0)
+    completeness: VerificationCompleteness
+    states_examined: int = Field(default=0, ge=0)
+    uniqueness_contract: UniquenessContract
+    contract_satisfied: bool
+    #: Answers this stage admitted before its predecessors were known. Unset
+    #: for an entry stage, which has no predecessors and is never asked.
+    solutions_alone: int | None = Field(default=None, ge=0)
+    requires: tuple[str, ...] = ()
+    solution_hash: str = ""
+
+
 class VerificationSummary(_Frozen):
     """What verification proved, recorded rather than asserted."""
 
@@ -132,6 +166,8 @@ class VerificationSummary(_Frozen):
     #: against the published one without the manifest carrying the answer.
     solution_hash: str = ""
     detail: str = ""
+    #: One entry per stage, in playable order. Empty for a flat board.
+    parts: tuple[PartVerificationSummary, ...] = ()
 
 
 class DifficultySummary(_Frozen):
@@ -140,6 +176,12 @@ class DifficultySummary(_Frozen):
     score: float = Field(ge=0.0, le=1.0)
     confidence: float = Field(ge=0.0, le=1.0)
     features: dict[str, float] = Field(default_factory=dict)
+    #: The separately measured difficulties the score was reduced from, and
+    #: the rule that reduced them. Recorded together: the axes without the
+    #: rule cannot be checked against the score, and a later analysis asking
+    #: why a day banded as it did needs both.
+    axes: dict[str, float] = Field(default_factory=dict)
+    reduction: DifficultyReduction = DifficultyReduction.NONE
 
     @property
     def on_target(self) -> bool:
@@ -161,6 +203,11 @@ class PuzzleRecord(_Frozen):
     status: PuzzleStatus = PuzzleStatus.DRAFT
     payload: dict[str, Any]
     solution: dict[str, Any]
+    #: The stages this board is played in, each as its own document. Empty for
+    #: a flat board. Stored rather than left inside ``payload`` so a rebuild
+    #: compares stage against stage, and so a stage's contract is readable
+    #: without a game loaded.
+    parts: tuple[dict[str, Any], ...] = ()
     presentation: dict[str, Any] = Field(default_factory=dict)
     fact_refs: tuple[str, ...]
     inputs: GenerationInputs
@@ -181,7 +228,7 @@ class PuzzleRecord(_Frozen):
     def content_hash(self) -> str:
         """Hash of the puzzle itself, excluding status and timestamps."""
         return content_hash_of(
-            self.game_id, self.payload, self.solution, self.fact_refs
+            self.game_id, self.payload, self.solution, self.fact_refs, self.parts
         )
 
 

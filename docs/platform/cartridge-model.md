@@ -49,6 +49,8 @@ A cartridge supplies a lens and nothing else. Concretely, it implements the
 | `render()` | a presentation model, not pixels |
 | `create_share_artifact()` | share content, in its declared vocabulary |
 | `witness()` | optional, protocol 1.2.0, where the game has a real elimination |
+| `refine_content_requirements()` | optional, protocol 1.3.0, a later round of content questions informed by the earlier ones |
+| `verify_part()` | optional, protocol 1.3.0, one stage of a composite board proved, given the stages already solved |
 
 What it does not supply, and must not try to: storage, identity, scheduling,
 session management, the accessibility layer's wording, the share leak check, the

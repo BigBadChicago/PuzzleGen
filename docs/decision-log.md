@@ -1825,3 +1825,75 @@ identity, where the engine decisions that assume it can be read against it; and
 decisions are settled and should not be re-asked, and that every one of them is
 decided and unbuilt, with the roadmap's reading that the player facing layer is
 now the bottleneck.
+
+## Engine decision (2026-10-17): a board may have stages, and the stages are checked
+
+Asked to increase the complexity of the games the engine can create and work it
+into the same model, the choice was where to put the complexity, not whether to
+allow it. Four options, and the first three are the ones that look cheaper.
+
+**Option 1: let games hide their complexity in the payload.** Already possible.
+`Puzzle.payload` is opaque, a game may put a chain of stages in it, and
+`grade_move` already receives replayed state, so a game could run a multi stage
+board today with no protocol change at all. Benefit: nothing to build. Cost:
+every engine guarantee is written over a thing with an answer and a contract, so
+a hidden stage gets none of them. A board whose first stage has one answer and
+whose second has four satisfies a whole-board uniqueness count of one. The
+engine would publish an ambiguous stage and tell the player it was proved. That
+is the failure this project is named for, one level deeper than before.
+
+**Option 2: a second plugin kind for complex games.** A `CompositeGame`
+protocol with its own pipeline. Benefit: the simple path stays simple. Cost: two
+pipelines means two sets of gates, and the second set drifts from the first. The
+platform's doctrine is one engine between many lenses; a second engine for the
+interesting lenses is the opposite.
+
+**Option 3: a protocol major bump.** Express stages as the normal case and
+update the five games. Benefit: one model, no optional surface. Cost: the most
+expensive action in the system, invalidating every cartridge, for a capability
+no shipped game needs yet. `compatibility-and-versioning.md` sets the bar: show
+the declared-capability pattern cannot carry it. It can.
+
+**Chosen: option 4, three declared capabilities inside protocol 1.3.** Content
+rounds, stages and difficulty axes, each announced on the descriptor and called
+only where announced, as `1.2` did for the witness. All five shipped games load
+and generate unchanged, with no edits; a game declaring none of the three is
+exactly the game it was. What it costs: three more optional verbs on the
+boundary, two more rejection reasons, a `PUZZLE_FORMAT_VERSION` bump to 3 for
+the stages and axes a record now carries, and a verifier that calls a game's own
+`verify_part` twice per gated stage. The design and the measurements behind each
+piece are in `architecture.md` under phase 10.
+
+**Why the gate is measured rather than declared.** A stage could have said "I
+come after that one" and been believed. The engine instead asks the game's own
+verifier what the stage admits knowing nothing, and what it admits knowing its
+predecessors. The first count is what separates a chain from an ordering in the
+interface: one answer there means the stages are independent and the chain is
+decoration. The cost is a second verification per gated stage, which is linear
+and bounded by the eight stage ceiling. The benefit is that "solving this
+unlocks that" becomes a published number rather than a claim, in the same way
+`crossref.py` made a licensed cross-board shortcut a measured advantage rather
+than a promise.
+
+**Why the score is recomputed from the axes.** A game could report axes and band
+against whatever number it liked. The bands are read against the score, so a
+punishing stage measured honestly could still be published as EASY and the axes
+would be decoration. The engine applies the declared reduction and refuses a
+score that is not it. `MAXIMUM` is the recommended reduction for stages, because
+a player who cannot pass stage two never sees stage three.
+
+**What was deliberately not built, with the reason.** A staged board has no
+witness, and `GameDescriptor` refuses `staged` with `supplies_witness` rather
+than accepting one. A witness's costs are counted over the board's unconstrained
+space; after the first stage that space is already cut by the previous answer,
+so every later rung prices as nearly free and the ladder orders nothing. The
+honest options were a mis-costed ladder, a silent exception to the standing
+witness rule, or a refusal that names the gap. The refusal is the record, the
+per-stage witness is specified and unbuilt, and the standing rule that every
+game answers for its witness (`WITHOUT_A_WITNESS`) is answered by the refusal
+rather than evaded.
+
+**What remains open.** No shipped game is staged. The capability is proved by
+`tests/unit/test_staging.py` and the chained fixture beside it, and whether the
+first staged cartridge should be a new game or a second lens over existing
+content is undecided.

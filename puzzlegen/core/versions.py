@@ -24,7 +24,12 @@ CONTENT_SCHEMA_VERSION = 1
 #: ``dependency_salt_id`` and the unset ``seal``. A v1 manifest committed to
 #: nothing publishable about its dependencies, so it is not readable as a v2
 #: document and is rejected rather than defaulted.
-PUZZLE_FORMAT_VERSION = 2
+#: 3 added composite puzzles and multi-axis difficulty: a record carries its
+#: ``parts``, a verification summary carries one entry per part, and a
+#: difficulty summary carries the axes the score was reduced from. A v2
+#: document has no parts and no axes, which is not the same fact as a v3
+#: document recording none, so it is rejected rather than defaulted.
+PUZZLE_FORMAT_VERSION = 3
 
 #: Rules that turn a move ledger into a grade. Bumped when telemetry
 #: derivation, the scoring contract or a shipped game's scoring function
@@ -60,7 +65,27 @@ SHARE_FORMAT_VERSION = 1
 #: is what makes the absence of a witness readable -- a game that cannot emit
 #: its own deduction says so, instead of the engine discovering it by calling
 #: a method that is not there.
-PLUGIN_PROTOCOL_VERSION = "1.2.0"
+#: 1.3.0 raised the complexity ceiling, and did it by adding three declared
+#: capabilities rather than by adding required methods:
+#:
+#: * ``content_rounds`` above 1, with ``refine_content_requirements``. A game
+#:   may ask a second question that depends on what the first round returned,
+#:   which is what a chain, a path or a lattice needs and what one blind round
+#:   cannot express. The game still never holds the port: every round is
+#:   satisfied by the engine, through the same gates and the same budget.
+#: * ``staged``, with ``verify_part``. A puzzle may carry ``parts``, each with
+#:   its own answer, its own uniqueness contract and the parts it depends on.
+#:   The engine verifies each part twice, so "this stage is unlocked by that
+#:   one" becomes a checked claim instead of a comment.
+#: * ``difficulty_reduction`` above ``NONE``, with
+#:   ``DifficultyMeasurement.axes``. A board with several kinds of work
+#:   reports them separately and declares how they reduce to the one number
+#:   its bands are read against.
+#:
+#: Additive, so every 1.2 game loads and runs unchanged: a game declaring none
+#: of the three is a single-part, single-round, single-axis game, which is
+#: exactly what it was before.
+PLUGIN_PROTOCOL_VERSION = "1.3.0"
 
 
 @dataclass(frozen=True, slots=True)
