@@ -11,6 +11,9 @@ Start here:
 - `docs/platform/` — the platform documents: vision, requirements, the
   cartridge model, the developer guide, certification, policy, security,
   operations and roadmap.
+- `docs/documentation-rule.md` — where a decision, plan or finding gets
+  written, and what counts as having written it. The rule itself is in
+  `CLAUDE.md`, which every session reads.
 
 ## Layout
 

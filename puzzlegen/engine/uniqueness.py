@@ -50,11 +50,40 @@ class UniquenessVerdict:
         return self.satisfied
 
 
+@dataclass(frozen=True, slots=True)
+class ContractClaim:
+    """A contract and the evidence it needs, detached from who declared it.
+
+    A game declares one for its boards and a composite board's stage declares
+    one of its own, and the rule for honouring a contract is identical in both
+    cases. Taking the claim rather than the descriptor is what keeps it
+    identical: a stage checked by a second, kinder copy of these rules is a
+    stage the engine does not really check.
+    """
+
+    contract: UniquenessContract
+    expected_solution_count: int | None = None
+
+    @classmethod
+    def of(cls, descriptor: GameDescriptor) -> "ContractClaim":
+        return cls(
+            contract=descriptor.uniqueness_contract,
+            expected_solution_count=descriptor.expected_solution_count,
+        )
+
+
 def check(
     descriptor: GameDescriptor, verification: VerificationResult
 ) -> UniquenessVerdict:
     """Whether a verification result honours the game's declared contract."""
-    contract = descriptor.uniqueness_contract
+    return check_claim(ContractClaim.of(descriptor), verification)
+
+
+def check_claim(
+    claim: ContractClaim, verification: VerificationResult
+) -> UniquenessVerdict:
+    """Whether a verification result honours one contract claim."""
+    contract = claim.contract
     count = verification.solution_count
 
     def verdict(ok: bool, reason: str = "") -> UniquenessVerdict:
@@ -84,7 +113,7 @@ def check(
         return verdict(False, f"{contract} requires exactly one solution, found {count}")
 
     if contract is UniquenessContract.EXACTLY_N:
-        expected = descriptor.expected_solution_count
+        expected = claim.expected_solution_count
         if expected is None:
             return verdict(False, "EXACTLY_N declared without a count")
         if count == expected:

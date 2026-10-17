@@ -85,6 +85,68 @@ project runs on can be misread as "build for every future".
   needs a content shape no platform generator produces needs a platform change,
   and that is deliberate: the governed step is where quality comes from.
 
+## What kinds of game this engine can carry
+
+Asked on 2026-10-17 whether anything outside puzzles fits, and the answer is
+worth keeping because the framing is what makes it answerable. **This is not a
+puzzle engine. It is a verifiable daily engine**, and the four properties it
+really requires are these: the board is the same for every player that day, the
+answer is provable or bounded by a declared tolerance, play is a sequence of
+discrete graded moves, and nothing persists on the player's device. Any genre
+meeting those four fits, whether or not anybody would call it a puzzle. A genre
+failing one of them does not need a better cartridge, it needs a platform
+change, and the change is named below.
+
+A determination, not a decision: nothing here commits the project to building
+any of it, and no listed genre has been chosen.
+
+**Fits with no engine work.** Each of these rests on a contract the engine
+already enforces, which is why the cost is a cartridge rather than a platform
+change.
+
+| genre | the contract it already has |
+|---|---|
+| trivia and quiz | `EXACTLY_ONE` over a governed fact, with distractors chosen by measured semantic distance rather than by taste |
+| ranking and ordering | `UNIQUE_ORDERING`, plus the content layer's value ordering (`PREDICATE_ASCENDING`) |
+| estimation, closest guess, higher or lower | `UNIQUE_UP_TO_TOLERANCE`, which refuses a board unless the game reports how many answers it collapsed |
+| route finding over relations | `UNIQUE_MINIMAL_PATH`, which refuses a board where no longer route exists, and `FIND_RELATIONSHIP_PATTERNS` with the 1.3 content rounds to find one |
+| wagering on your own answer | a scoring model over any of the above, from telemetry the session layer already records |
+
+Three of those five contracts are in the vocabulary and used by no shipped
+game, which makes ranking and estimation the cheapest widening of the
+catalogue available: a sixth cartridge in either shape proves a genre with no
+platform work at all. Trivia is the most commercially obvious and the most
+content hungry, because it wants breadth the graph does not have yet.
+
+**Fits with one named addition.**
+
+- **Identification games** (what is this, where is this) need images or audio as
+  a governed content kind. The content layer governs words, numbers and
+  generated symbols today. The cost is asset storage, review, licensing, and a
+  non-visual channel for every state, which `accessibility-standard.md` will
+  demand rather than suggest.
+- **A serialized daily story** works where each day is a small deduction and
+  the narrative is presentation. The story carries no gate, so the gate stays
+  in the board.
+
+**Structurally refused, with the property each one breaks.** These are not
+missing features; each contradicts something the platform is built on, so each
+belongs in the non-goals above rather than on a roadmap.
+
+| genre | what it breaks |
+|---|---|
+| realtime or reflex play | grading happens where the answer is not exposed, so every input makes a round trip, and the engine measures elapsed time rather than input timing |
+| head to head multiplayer | there is no shared session, no matchmaking and no server authoritative state between players. Asynchronous comparison of one day already works through share artifacts, and that is a platform feature rather than a game kind |
+| creative or judged play (drawing, writing, voting) | the engine's central act is proving a board before publishing it, and there is nothing to prove |
+| progression, collection, idle, RPG shapes | a cartridge keeps nothing and removal erases its content, so a game whose point is accumulated state fights the cartridge bargain deliberately |
+| betting on real world events | an unresolved future fact cannot be verified before publication, which is the one step the pipeline will not skip |
+| memory games over a player's own history | the board is the same for everybody by design. A board derived from what one player saw needs per player derivation, which costs the fairness property the daily model rests on |
+
+That last one is the only refusal with a cheap implementation and an expensive
+consequence, so it is the one to watch: per player boards would also complicate
+sharing, retraction and the rebuild check, each of which assumes one board per
+day per game.
+
 ## How we will know it worked
 
 - A game written by somebody outside the project is listed, played, and needed

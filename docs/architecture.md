@@ -37,6 +37,22 @@ is the reference; the handoff document is the gate.
 - Third invariant: the shared graph is production infrastructure with its own
   quality, freshness, provenance, review and dependency lifecycle.
 
+Product identity, stated by the owner and recorded here because the engine
+decisions below only make sense against it. The full documents are in
+`docs/platform/`; this is the shape they assume.
+
+- PuzzleGen is a mobile platform where a person plays the daily puzzles they
+  chose, not a single game. The working name is PuzzleGen.
+- A game is a cartridge: its own distribution, added and removed through the
+  platform itself, decoupled from the platform while using its data and engine.
+  New games can come from outside authors.
+- A player holds a fixed number of cartridge slots, five, and swaps cartridges
+  in and out at will. This is distinct from `DEFAULT_MAX_ACTIVE`, the
+  operator's generation budget, which is four.
+- The platform's own correctness cannot depend on which cartridges exist, which
+  is why the invariant that the platform names no game is enforced by a test
+  rather than by convention.
+
 ## Toolchain and language
 
 - Python 3.11+ for the engine. Rationale: WordNet, wordfreq, embeddings, and
@@ -1703,3 +1719,122 @@ would have been reported as matching a committed run that does not exist. And
 each game gets its own summary renderer rather than sharing one, because each
 run is about the claim that game's contract makes: one trio per board, one
 readable tile, one surviving code.
+
+## Phase 10: what a board is allowed to be (protocol 1.3)
+
+Decided and built, engine side. No shipped game uses any of it yet, and the
+one thing it deliberately does not carry is named at the end.
+
+### What actually capped complexity, measured against the code
+
+The ask was for the engine to create more complex games inside the same model.
+The first job was to find where the ceiling was, because three of the four
+answers people reach for were already wrong here: the content layer is
+relational (`FIND_RELATIONSHIP_PATTERNS`, `FIND_INTERSECTING_GROUPS`), the
+uniqueness vocabulary already covers orderings, deductions and minimal paths,
+and two boards on one day can already be deliberately linked with a measured
+advantage (`engine/crossref.py`). The real ceiling was in three places.
+
+1. **Content was asked for once, before the game had seen anything.**
+   `get_content_requirements` is handed a band, a locale and a day key, the
+   port satisfies it, and the game receives a frozen mapping and no port. Every
+   query a game can write is therefore context free. That is enough for a board
+   drawn from a pool and it is not enough for a board whose shape is discovered
+   while building it, which is what a chain, a path or a lattice is. This was
+   the binding constraint.
+2. **A board was one answer, checked once.** `Puzzle.solution` is one mapping
+   and the verifier counts answers to the whole board. A board in stages had to
+   hide its stages inside the opaque payload, and a board whose first stage has
+   one answer and whose second has four passes a whole-board count of one. Every
+   engine guarantee is written over a thing with an answer and a contract, so
+   hidden stages get none of them.
+3. **Difficulty was one scalar.** A board with two unlike kinds of work gets an
+   average that is wrong for both, and the bands are read against that one
+   number.
+
+### Three declared capabilities, no new required methods
+
+Protocol `1.3.0`, additive, so all five shipped games load and generate
+unchanged. The pattern is the one `1.2` set and
+`platform/compatibility-and-versioning.md` records: add the verb, declare the
+capability on the descriptor, call it only where declared.
+
+- **`content_rounds` with `refine_content_requirements`.** A game may ask up to
+  three rounds, and each later round sees the earlier rounds' results. The game
+  still never holds the port: it returns requirements, the engine satisfies them
+  through the same gates, ledger and budget. A name an earlier round answered is
+  refused rather than merged, because merging silently overwrites a result the
+  game has already read. A declared round the game cannot serve is a protocol
+  error, since the declaration is what the day's cost was budgeted against.
+- **`staged` with `verify_part`.** A board may carry up to eight `PuzzlePart`s,
+  each with its own payload, answer, uniqueness contract and `requires`. The
+  board's `solution` carries each stage's answer under that stage's id, so
+  grading, sharing, retraction and the dependency commitment keep reading one
+  answer object and know nothing about stages.
+- **`difficulty_reduction` with `DifficultyMeasurement.axes`.** A board reports
+  one difficulty per kind of work, declares `MAXIMUM` or `MEAN`, and the engine
+  recomputes the reduction and refuses a score that is not it. A staged board
+  must report an axis per stage.
+
+### The gate is a measurement, which is the whole point
+
+A stage naming a predecessor is making a claim, and the claim is checkable, so
+it is checked (`engine/staging.py`). For every gated stage the engine calls the
+game's own `verify_part` twice:
+
+- knowing nothing, where the stage must **not** report exactly one answer. One
+  answer there means the ordering is decoration: the stages could be played in
+  any order and the board is independent puzzles wearing a chain's clothes.
+  Rejected as `STAGE_NOT_GATED`.
+- knowing the predecessors' answers, where the stage must satisfy its own
+  contract and its own stated answer must be among those its verifier reached.
+  Failure is `STAGE_UNDETERMINED`: a board that verifies whole and cannot be
+  finished in its own declared order, which is worse than an ambiguous flat
+  board.
+
+Zero answers is admissible in the first call and the reason is worth keeping: a
+stage whose clues read the previous answer may have no consistent answer until
+that answer exists. That is inapplicability rather than ambiguity, and both are
+honest forms of "not yet decided". Distinguishing them would turn a game's
+internal representation of an unanswered clue into a protocol rule.
+
+The uniqueness rules are read from one place for a board and for a stage alike:
+`uniqueness.ContractClaim` detaches a contract from who declared it, so a stage
+is never checked by a second, kinder copy of the rules.
+
+### What a staged board commits to
+
+`PUZZLE_FORMAT_VERSION` is `3`. A record carries its stages as documents, a
+verification summary carries one entry per stage, and a difficulty summary
+carries the axes and the reduction that made the score. Two of those are there
+for a specific failure:
+
+- **Both stage counts are recorded**, the answers a stage admits under its
+  predecessors and the answers it admitted knowing nothing. Only the pair is
+  evidence; a record holding the first alone could not tell a gated stage from
+  an independent one, which is exactly the claim a staged board makes.
+- **Stages enter the content hash**, but only when there are some. A board's
+  `solution` already carries every stage's answer, so a changed answer moves the
+  hash either way; a changed *clue* in stage two, or a changed contract, or a
+  changed dependency would not, and a rebuild check that cannot see those is
+  checking the easy half. A flat board hashes exactly as it did before stages
+  existed, which is what keeps every already-published day's hash its own.
+
+### What this does not give, and the refusal that says so
+
+**A staged board has no witness, and the engine refuses the declaration.** A
+witness's rung costs are counted over the board's unconstrained space, which is
+what makes them checkable by anyone holding the puzzle. On a staged board that
+space is the wrong denominator for every stage after the first: stage two's
+statements are measured against a space stage one's answer has already cut, so
+they price as nearly free and the ladder orders nothing. Per stage witnesses,
+and a hint walk that picks the active stage, are specified and unbuilt. Until
+they exist `GameDescriptor` refuses `staged` together with `supplies_witness`,
+so a staged game's hints are authored and the standing rule that every game
+answers for its witness is answered honestly rather than by a mis-costed
+ladder.
+
+Also unbuilt: no shipped game is staged. The capability is proved by
+`tests/unit/test_staging.py` and the chained fixture game beside it, including
+the two mutants that make the gate's failures visible, and a sixth cartridge
+that uses it is the next piece of work rather than part of this one.

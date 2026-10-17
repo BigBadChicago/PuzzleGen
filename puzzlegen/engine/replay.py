@@ -155,7 +155,11 @@ class ReplayService:
                 f"{session.game_id} on {session.day_key}"
             )
         content_hash = content_hash_of(
-            puzzle.game_id, puzzle.payload, puzzle.solution, puzzle.fact_refs
+            puzzle.game_id,
+            puzzle.payload,
+            puzzle.solution,
+            puzzle.fact_refs,
+            tuple(part.as_document() for part in puzzle.parts),
         )
         if content_hash != manifest.puzzle_content_hash:
             raise ReplayBindingError(

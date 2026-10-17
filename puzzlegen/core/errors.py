@@ -130,6 +130,15 @@ class RejectionReason(StrEnum):
     AMBIGUOUS_CLUE = "AMBIGUOUS_CLUE"
     DIFFICULTY_OUT_OF_RANGE = "DIFFICULTY_OUT_OF_RANGE"
     VERIFICATION_UNSOUND = "VERIFICATION_UNSOUND"
+    #: A later stage of a composite puzzle was already determined without the
+    #: stage it declares it depends on. The dependency is then decoration: a
+    #: player could solve the stages in any order, so the board is a set of
+    #: independent puzzles presented as a chain.
+    STAGE_NOT_GATED = "STAGE_NOT_GATED"
+    #: A stage is still not determined once every stage it depends on is
+    #: solved. The board cannot be finished by playing it in its own declared
+    #: order, which is worse than ambiguity: there is no path at all.
+    STAGE_UNDETERMINED = "STAGE_UNDETERMINED"
 
     # Plugin gates
     PLUGIN_TIMEOUT = "PLUGIN_TIMEOUT"

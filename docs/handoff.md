@@ -18,6 +18,46 @@ which is what phase 9 was for.
 
 Nothing is pending on origin beyond the branch this session pushed.
 
+**The platform documents exist, in `docs/platform/`.** Sixteen documents written
+against `main`: product vision, numbered requirements with whether each is
+built, the cartridge model, the developer guide, certification, versioning,
+content policy, developer terms, privacy, the threat model, fairness,
+accessibility, operations, release, roadmap and a glossary, plus
+`open-questions.md`, which records the owner's decisions and the options each
+one beat.
+
+**Eight product decisions are settled and should not be re-asked.** Five slots
+per player; a cached future day stored encrypted with window wide keys; an
+account merge the player chooses, with the unchosen history retained; general
+audience with a strict privacy posture; free for now, revisited before the
+first outside cartridge is certified; a retraction notice on next open with no
+push; logs kept thirty days with milestones promoted into records; and a
+curated content file permitted where no declaration expresses the content,
+under the four conditions in `platform/content-policy.md`. Each is in the
+requirement it binds and in `decision-log.md` with its reasoning.
+
+**The engine's complexity ceiling moved, and the engine side is built.**
+Protocol `1.3.0` adds three declared capabilities: a second and third round of
+content questions that may depend on the earlier rounds' results, boards made
+of stages whose gating the engine verifies rather than believes, and difficulty
+reported per axis with the banded score recomputed from the axes. Additive, so
+all five games load and generate with no edits.
+`PUZZLE_FORMAT_VERSION` is now `3`. Two things to know before building on it:
+**no shipped game is staged yet**, so the capability is proved only by
+`tests/unit/test_staging.py` and the chained fixture game beside it; and **a
+staged game may not declare a witness**, which the descriptor refuses, because
+a witness's costs are counted over one unconstrained space and that is the
+wrong space for every stage after the first. Per stage witnesses and a hint
+walk that picks the active stage are specified and unbuilt. The design is
+`architecture.md` phase 10 and the reasoning is `decision-log.md`.
+
+**All of that platform document work is decided and unbuilt.** The player's slot library, the
+thin client, the encrypted cache window, the merge flow, the retraction notice,
+log retention and the content file conditions are requirements with no code
+behind them. `platform/roadmap.md` orders them, and its reading is that the
+player facing layer is now the bottleneck: five games and no client means the
+platform's flexibility is unproven against a real player.
+
 Last full run: **3,933 passing, 0 failing** (2,098 platform, 733 grouping, 248
 letters, 270 figures, 288 numbers, 296 digits), plus 2,096 passing with every
 game uninstalled, the 2 differences being the guards that refuse to let the
@@ -194,6 +234,25 @@ symbolic snapshot and the three day runs.
    ceiling on the mechanism rather than a task, and the suite's docstring
    should say so.
 
+### The first staged cartridge is undecided
+
+The engine can now publish a board made of gated stages and nothing uses it.
+Two readings, and the choice is the owner's:
+
+- **A new game.** A sixth cartridge built around a chain, which proves the
+  capability against real content and real difficulty calibration. Costs a
+  game's worth of work, and the first staged board is also the first authored
+  hint ladder since the witness rule, because a staged game may not declare a
+  witness.
+- **A second lens over content a game already uses.** Cheaper, and it tests
+  the capability where the content is known to hold up. Weaker as evidence,
+  because the interesting question about stages is whether the content can
+  sustain a second stage that is genuinely undecided before the first.
+
+Either way the per stage witness is the piece to build first if the hints
+matter, because an authored ladder on a staged board is the exact thing
+`witness.py` exists to avoid.
+
 ## Standing cautions
 
 - **The recurring failure mode is a diagnostic that recomputes a value instead
@@ -236,6 +295,11 @@ symbolic snapshot and the three day runs.
 2. Files attached to the conversation.
 3. Project memory and docs.
 4. Repository files (lowest priority; can be stale).
+
+`CLAUDE.md` carries the documentation rule, which every session follows:
+a decision, plan or finding is recorded when a file states it, says why and
+says where it stands. `docs/documentation-rule.md` is the routing table for
+which document owns which subject.
 
 ## Response conventions
 

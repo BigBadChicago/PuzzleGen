@@ -1,6 +1,6 @@
 # Game developer guide
 
-How to write a PuzzleGen game. Written against protocol `1.2.0`.
+How to write a PuzzleGen game. Written against protocol `1.3.0`.
 
 If you read one thing first, read this: the platform will not publish a board
 your own verifier did not accept, and it will refuse your game if a thirty day
@@ -71,6 +71,69 @@ later hold you to is declared there. The fields that carry real consequences:
 | `difficulty_thresholds` | where your scale cuts into bands. Calibrate against the boards the engine reaches, not every candidate you offer. |
 | `supplies_witness` | whether you implement `witness()`. Declared, not discovered, because a game that searches for its boards has no reason sequence to hand over, and the absence is a fact worth stating. |
 | `share_tokens` | the complete vocabulary your share artifacts may use. A token outside it is a protocol error. |
+| `content_rounds` | how many rounds of content questions you ask. 1 unless you implement `refine_content_requirements()`. Declaring more and implementing none is a protocol error, not a smaller promise quietly honoured. |
+| `staged` | whether your boards carry stages. Declaring it and assembling a flat board is refused, because your gating would then be verified against nothing. |
+| `difficulty_reduction` | how your axes make the one number your bands are read against. `NONE` unless you report axes. |
+
+## Boards with more than one part
+
+Three capabilities, added together in 1.3, exist for boards a single
+declarative round and a single answer cannot express. Each is optional and each
+is declared.
+
+**A second content round.** One round can only ask context free questions:
+every query is written before you have seen anything. That is enough for a
+board drawn from a pool and not enough for a board whose shape you discover
+while building it, which is most of what a chain, a path or a lattice needs.
+Declare `content_rounds=2` (three is the ceiling) and implement
+`refine_content_requirements(round_index, results, ...)`, returning the
+requirements the first round's results told you to ask for. Return nothing to
+end the rounds early. You never hold the port: you return requirements and the
+engine satisfies them, through the same gates, the same ledger and the same
+budget as round one. A name an earlier round already answered is refused rather
+than merged, because a silent overwrite means you read content under a name no
+gate associates with it.
+
+**Stages.** Declare `staged=True`, give each board `parts` (eight is the
+ceiling), and implement
+`verify_part(puzzle, part_id, known)`. A `PuzzlePart` carries its own payload,
+its own answer, its own uniqueness contract and the `requires` it depends on,
+and the board's `solution` carries each stage's answer under that stage's id, so
+grading, sharing and retraction keep reading one answer object.
+
+The gate is the part worth understanding, because it is checked rather than
+believed. For every stage that names a predecessor, the engine calls your
+`verify_part` twice:
+
+- with `known={}`, and your stage must *not* report exactly one answer. One
+  answer there means the dependency is decoration: the stages could be played
+  in any order, and the board is a set of independent puzzles wearing a chain's
+  clothes. Zero is fine, and means your stage's clues are not yet applicable.
+- with `known` holding the predecessors' answers, and your stage must satisfy
+  its own contract exactly, and its own stated answer must be among the ones
+  your verifier reached.
+
+A stage that fails the first check is rejected as `STAGE_NOT_GATED`; one that
+fails the second as `STAGE_UNDETERMINED`, which is a board with no path through
+it. Cycles, a `requires` naming no declared stage, and a board where every
+stage depends on another are refused at assembly, since none of them has a
+first move.
+
+One restriction while per stage witnesses do not exist: **a staged game may not
+declare `supplies_witness`.** A witness's rung costs are counted over the
+board's unconstrained space, which is the wrong denominator for every stage
+after the first, so the ladder would price stage two's statements as nearly
+free. Hints for a staged board are authored for now, and the engine refuses the
+declaration rather than letting you ship a mis-costed ladder.
+
+**Difficulty axes.** A staged board has a difficulty per stage, and averaging
+them describes neither. Report `DifficultyMeasurement.axes`, one entry per
+stage (and the engine requires one per stage on a staged board), declare
+`difficulty_reduction=MAXIMUM` or `MEAN`, and set `score` to that reduction of
+your own axes. `MAXIMUM` is usually right for stages: a player who cannot pass
+stage two never sees stage three. The engine recomputes the reduction and
+refuses a score that is not it, because the bands are read against the score
+and axes that do not produce it are decoration.
 
 ## Content
 
@@ -81,11 +144,24 @@ def get_content_requirements(self, ...):
     # a declaration of the slice, not a file you shipped
 ```
 
-A third party game brings its content as a declaration, which the platform can
-reproduce from the graph, rather than as a curated file, which the platform
-could only trust. Generator kinds are platform owned: you pick from the
-declarations that exist. If no generator produces the shape you need, that is a
-platform change and a conversation, not a workaround.
+A declaration is the default: the platform reproduces it from the graph rather
+than trusting a file you shipped. Generator kinds are platform owned, so you
+pick from the declarations that exist.
+
+Where no declaration can express your content, you may ship a curated content
+file instead, and you must say why no declaration expresses it. Four conditions
+apply, and three of them land on you: the file is reviewed as content, including
+the strings your generator can reach from it; it is pinned to your cartridge
+version and its hash goes into every manifest built from it; and it is read only
+at runtime, so your game never writes to it and never persists anything on a
+player's device. The fourth is ours: the file is logged as a missing generator,
+and the generator that makes it unnecessary is the platform's work to do.
+
+The first party precedent is `games/letters/content/letters.curated.json`, and
+it is worth reading before you argue for a file, because it shows what "no
+declaration expresses this" looks like when it is measured rather than asserted:
+membership binds, not letter matching, at one WordNet category in 7,050 with six
+or more eligible members at medium frequency.
 
 Two cautions that have cost this project real time:
 
@@ -207,4 +283,4 @@ engine disagreeing about a number.
 - [ ] Accessibility declaration complete; a session starts.
 - [ ] Share artifacts use only declared tokens and pass the leak check.
 - [ ] No clock, network, filesystem, environment or unseeded randomness.
-- [ ] Content arrives as a declaration.
+- [ ] Content arrives as a declaration, or a shipped file carries a statement of why no declaration expresses it and a hash in every manifest.

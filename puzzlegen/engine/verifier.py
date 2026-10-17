@@ -19,8 +19,12 @@ from dataclasses import dataclass, field
 
 from ..core.errors import RejectionReason
 from ..core.hashing import stable_hash
-from ..core.types import DifficultyBand, VerificationCompleteness
-from . import uniqueness
+from ..core.types import (
+    DifficultyBand,
+    DifficultyReduction,
+    VerificationCompleteness,
+)
+from . import staging, uniqueness
 from .plugin import (
     DifficultyMeasurement,
     GameDescriptor,
@@ -28,6 +32,11 @@ from .plugin import (
     Puzzle,
     VerificationResult,
 )
+from .staging import PartOutcome
+
+#: How far a game's banded score may sit from the reduction of its own axes
+#: before the engine calls it a protocol error rather than arithmetic.
+AXIS_TOLERANCE = 1e-6
 
 
 @dataclass(frozen=True, slots=True)
@@ -43,6 +52,11 @@ class EvaluationOutcome:
     #: True when the puzzle is valid but missed its requested band. Kept
     #: distinct from rejection so a caller can choose to publish it anyway.
     off_target: bool = False
+    #: One entry per stage of a composite board, empty for a flat one. Carried
+    #: out of here because the manifest records what was established per
+    #: stage: a board that passed its gating and a board that had no stages to
+    #: gate must not look alike in the published record.
+    parts: tuple[PartOutcome, ...] = ()
 
     def rejection(self) -> tuple[RejectionReason, str] | None:
         if self.accepted:
@@ -118,7 +132,37 @@ class PuzzleVerifier:
                 detail=mismatch,
             )
 
-        return self._measure(puzzle, plugin, descriptor, target, verification)
+        declared = self._staging_declaration_problem(puzzle, descriptor)
+        if declared is not None:
+            return EvaluationOutcome(
+                accepted=False,
+                verification=verification,
+                reason=RejectionReason.PLUGIN_PROTOCOL_ERROR,
+                detail=declared,
+            )
+
+        staged = staging.check_parts(puzzle, plugin)
+        if not staged:
+            return EvaluationOutcome(
+                accepted=False,
+                verification=verification,
+                reason=staged.reason or RejectionReason.STRUCTURAL_RULE_VIOLATION,
+                detail=staged.detail,
+            )
+        degraded_stage = staging.completeness_problem(
+            staged.outcomes, descriptor.verification_completeness
+        )
+        if degraded_stage is not None:
+            return EvaluationOutcome(
+                accepted=False,
+                verification=verification,
+                reason=RejectionReason.VERIFICATION_UNSOUND,
+                detail=degraded_stage,
+            )
+
+        return self._measure(
+            puzzle, plugin, descriptor, target, verification, staged.outcomes
+        )
 
     # -- steps ------------------------------------------------------------
 
@@ -133,6 +177,28 @@ class PuzzleVerifier:
                 reason=RejectionReason.PLUGIN_PROTOCOL_ERROR,
                 detail=f"verifier raised {type(exc).__name__}: {exc}",
             )
+
+    def _staging_declaration_problem(
+        self, puzzle: Puzzle, descriptor: GameDescriptor
+    ) -> str | None:
+        """Whether the board's stages and the game's declaration agree.
+
+        Both directions are errors, and the second is the one worth the check.
+        A flat board from a staged game would have its gating verified against
+        no stages at all, so the declaration would read as a kept promise
+        while nothing was checked.
+        """
+        if puzzle.parts and not descriptor.staged:
+            return (
+                "the board carries stages but the game does not declare "
+                "staged; stage gating is only verified where it is declared"
+            )
+        if descriptor.staged and not puzzle.parts:
+            return (
+                "the game declares staged and assembled a board with no "
+                "stages, so its staging was verified against nothing"
+            )
+        return None
 
     def _completeness_problem(
         self, verification: VerificationResult, descriptor: GameDescriptor
@@ -190,6 +256,7 @@ class PuzzleVerifier:
         descriptor: GameDescriptor,
         target: DifficultyBand,
         verification: VerificationResult,
+        parts: tuple[PartOutcome, ...] = (),
     ) -> EvaluationOutcome:
         try:
             difficulty = plugin.measure_difficulty(puzzle, verification)
@@ -199,6 +266,17 @@ class PuzzleVerifier:
                 verification=verification,
                 reason=RejectionReason.PLUGIN_PROTOCOL_ERROR,
                 detail=f"difficulty model raised {type(exc).__name__}: {exc}",
+            )
+
+        axes = self._axis_problem(puzzle, descriptor, difficulty)
+        if axes is not None:
+            return EvaluationOutcome(
+                accepted=False,
+                verification=verification,
+                difficulty=difficulty,
+                reason=RejectionReason.PLUGIN_PROTOCOL_ERROR,
+                detail=axes,
+                parts=parts,
             )
 
         band = descriptor.band_for(difficulty.score)
@@ -213,6 +291,7 @@ class PuzzleVerifier:
                 reason=RejectionReason.DIFFICULTY_OUT_OF_RANGE,
                 detail=f"measured {band}, requested {target}",
                 off_target=True,
+                parts=parts,
             )
 
         return EvaluationOutcome(
@@ -221,7 +300,59 @@ class PuzzleVerifier:
             difficulty=difficulty,
             measured_band=band,
             off_target=not on_target,
+            parts=parts,
         )
+
+    def _axis_problem(
+        self,
+        puzzle: Puzzle,
+        descriptor: GameDescriptor,
+        difficulty: DifficultyMeasurement,
+    ) -> str | None:
+        """Whether the axes, the declared reduction and the score agree.
+
+        Three failures, and the third is why this check exists at all. Axes
+        with no declared reduction are unreadable: nobody downstream knows
+        what they were supposed to make. A reduction with no axes is a promise
+        with nothing behind it. And a score that is not the reduction of the
+        axes is the real hazard, because the bands are read against the score:
+        a game could measure a punishing stage honestly and still band the
+        board EASY. The axes are then decoration, which is the failure this
+        project is named for.
+        """
+        reduction = descriptor.difficulty_reduction
+        if reduction is DifficultyReduction.NONE:
+            if difficulty.axes:
+                return (
+                    "difficulty axes were reported but the game declares no "
+                    "reduction, so nothing downstream knows what they make"
+                )
+            return None
+        if not difficulty.axes:
+            return (
+                f"game declares the {reduction} reduction and reported no "
+                "difficulty axes to reduce"
+            )
+        expected = reduction.apply(difficulty.axes)
+        if abs(expected - difficulty.score) > AXIS_TOLERANCE:
+            return (
+                f"the score {difficulty.score} is not the {reduction} of the "
+                f"reported axes, which is {expected}; the bands are read "
+                "against the score, so the axes would be decoration"
+            )
+        if puzzle.parts:
+            missing = [
+                part.part_id
+                for part in puzzle.parts
+                if part.part_id not in difficulty.axes
+            ]
+            if missing:
+                return (
+                    f"a staged board must report a difficulty axis per stage; "
+                    f"stages {missing} have none, so their difficulty is "
+                    "averaged into a number that names no stage"
+                )
+        return None
 
 
 @dataclass

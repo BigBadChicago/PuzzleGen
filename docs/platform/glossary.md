@@ -41,9 +41,24 @@ dependencies used, so a regenerated board that differs from its original is a
 detectable fault rather than a mystery.
 
 **Protocol version.** The version of the engine to cartridge contract,
-`PLUGIN_PROTOCOL_VERSION`, currently `1.2.0`. The engine refuses a cartridge
+`PLUGIN_PROTOCOL_VERSION`, currently `1.3.0`. The engine refuses a cartridge
 whose major version differs, and refuses at discovery a minor below what play
 needs.
+
+**Stage.** One part of a composite board, with its own answer, its own
+uniqueness contract and the stages it depends on
+(`PuzzlePart`, `puzzlegen/engine/plugin.py`). A stage naming a predecessor is
+making a claim the engine checks twice: that the stage is not decided before
+that predecessor is solved, and that it is decided afterwards.
+
+**Gated.** Of a stage: not answerable until the stage it depends on is solved.
+Measured as a count rather than asserted, which is what separates a chain from
+an ordering in the interface (`puzzlegen/engine/staging.py`).
+
+**Difficulty axis.** One separately measured difficulty of a board, on the same
+scale as the board's score. A board with several kinds of work reports one axis
+per kind and declares how they reduce to the single number its bands are read
+against, so a punishing stage cannot average away behind two easy ones.
 
 **Retraction.** Withdrawing a published day because it was wrong. A retracted
 day stops counting against the player who played it

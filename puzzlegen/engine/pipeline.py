@@ -17,6 +17,7 @@ from __future__ import annotations
 import datetime as dt
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
+from typing import Any
 
 from ..content.port import ContentPort, PortBudget
 from ..content.query import ContentRequirement
@@ -28,7 +29,12 @@ from ..core.errors import (
     RejectionReason,
 )
 from ..core.rng import DeterministicRng, derive_seed
-from ..core.types import DependencyRefKind, DifficultyBand, UniquenessContract
+from ..core.types import (
+    DependencyRefKind,
+    DifficultyBand,
+    DifficultyReduction,
+    UniquenessContract,
+)
 from ..core.versions import (
     CONTENT_SCHEMA_VERSION,
     ENGINE_VERSION,
@@ -46,13 +52,16 @@ from .plugin import (
     GenerationContext,
     Puzzle,
     PuzzleCandidate,
+    RefiningGame,
     VerificationResult,
 )
+from .staging import PartOutcome
 from .certify import CertifierRegistry, default_registry
 from .commitment import dependency_root, new_salt
 from .records import (
     DependencySalt,
     DifficultySummary,
+    PartVerificationSummary,
     GenerationInputs,
     GenerationTrace,
     PuzzleManifest,
@@ -270,8 +279,32 @@ class GenerationPipeline:
                 difficulty_target=difficulty_target, locale=locale, day_key=day_key
             )
         )
+        content: dict[str, Any] = {}
         try:
             content = port.satisfy(requirements)
+            for round_index in range(2, descriptor.content_rounds + 1):
+                asked = self._refine(
+                    plugin,
+                    descriptor,
+                    round_index,
+                    content,
+                    difficulty_target=difficulty_target,
+                    locale=locale,
+                    day_key=day_key,
+                )
+                if not asked:
+                    break
+                clashes = [r.name for r in asked if r.name in content]
+                if clashes:
+                    # Merging would overwrite a result the game has already
+                    # read, and a game reading the overwritten one is reading
+                    # content under a name no gate associates with it.
+                    raise BoundaryViolationError(
+                        f"round {round_index} asked again for the names "
+                        f"{clashes}, which earlier rounds already answered"
+                    )
+                requirements.extend(asked)
+                content.update(port.satisfy(asked))
         except BoundaryViolationError as exc:
             return self._fail(
                 descriptor,
@@ -454,6 +487,49 @@ class GenerationPipeline:
 
     # -- gates ------------------------------------------------------------
 
+    def _refine(
+        self,
+        plugin: GamePlugin,
+        descriptor: GameDescriptor,
+        round_index: int,
+        content: Mapping[str, Any],
+        *,
+        difficulty_target: DifficultyBand,
+        locale: str,
+        day_key: str,
+    ) -> list[ContentRequirement]:
+        """One later round of content questions.
+
+        A game declaring more than one round and not implementing the method
+        is a protocol error rather than a game that gets one round: the
+        declaration is what the engine budgeted for, and quietly honouring the
+        smaller promise would hide the mistake until a day came out thin.
+        """
+        if not isinstance(plugin, RefiningGame):
+            raise BoundaryViolationError(
+                f"game {descriptor.game_id!r} declares "
+                f"{descriptor.content_rounds} content rounds but does not "
+                "implement refine_content_requirements"
+            )
+        try:
+            asked = list(
+                plugin.refine_content_requirements(
+                    round_index,
+                    content,
+                    difficulty_target=difficulty_target,
+                    locale=locale,
+                    day_key=day_key,
+                )
+            )
+        except BoundaryViolationError:
+            raise
+        except Exception as exc:  # noqa: BLE001 - plugins are untrusted
+            raise BoundaryViolationError(
+                f"refine_content_requirements raised "
+                f"{type(exc).__name__} in round {round_index}: {exc}"
+            ) from exc
+        return asked
+
     def _screen_candidates(
         self,
         candidates: Sequence[PuzzleCandidate],
@@ -547,10 +623,13 @@ class GenerationPipeline:
         )
         payload = dict(puzzle.payload)
         solution = dict(puzzle.solution)
+        parts = tuple(part.as_document() for part in puzzle.ordered_parts())
         record_id = ids.for_puzzle(
             day_key,
             descriptor.game_id,
-            _puzzle_fingerprint(descriptor.game_id, payload, solution, puzzle.fact_refs),
+            _puzzle_fingerprint(
+                descriptor.game_id, payload, solution, puzzle.fact_refs, parts
+            ),
         )
         return PuzzleRecord(
             id=record_id,
@@ -559,6 +638,7 @@ class GenerationPipeline:
             status=status,
             payload=payload,
             solution=solution,
+            parts=parts,
             presentation=dict(puzzle.presentation),
             fact_refs=tuple(dict.fromkeys(puzzle.fact_refs)),
             inputs=inputs,
@@ -578,6 +658,7 @@ class GenerationPipeline:
         descriptor: GameDescriptor,
         generation_id: str,
         allow_off_target: bool = False,
+        parts: tuple[PartOutcome, ...] = (),
     ) -> PuzzleManifest:
         """Publish a verified puzzle.
 
@@ -587,7 +668,16 @@ class GenerationPipeline:
         puzzle outside its requested difficulty band is refused unless the
         caller explicitly accepts it. Solvability alone publishes nothing.
         """
-        summary = self._summarise_verification(verification, descriptor)
+        summary = self._summarise_verification(verification, descriptor, parts)
+        if len(puzzle.parts) != len(summary.parts):
+            # The record's stages and the evaluation's stage outcomes come
+            # from different calls, and a mismatch means the proof in hand is
+            # not the proof for this board.
+            raise ContentError(
+                f"{RejectionReason.VERIFICATION_UNSOUND}: the board carries "
+                f"{len(puzzle.parts)} stages and the verification establishes "
+                f"{len(summary.parts)}"
+            )
         if not summary.solvable:
             raise ContentError(f"{RejectionReason.NO_SOLUTION}: puzzle is unsolvable")
         # Completeness is checked before the contract, because a degraded
@@ -607,6 +697,12 @@ class GenerationPipeline:
                 f"{descriptor.uniqueness_contract} with "
                 f"{summary.solution_count} solutions"
             )
+        unsatisfied = [p.part_id for p in summary.parts if not p.contract_satisfied]
+        if unsatisfied:
+            raise ContentError(
+                f"{RejectionReason.UNIQUENESS_CONTRACT_VIOLATED}: stages "
+                f"{unsatisfied} do not satisfy their own contracts"
+            )
 
         difficulty_summary = DifficultySummary(
             target=puzzle.inputs.difficulty_target,
@@ -614,7 +710,18 @@ class GenerationPipeline:
             score=difficulty.score,
             confidence=difficulty.confidence,
             features=dict(difficulty.features),
+            axes=dict(difficulty.axes),
+            reduction=descriptor.difficulty_reduction,
         )
+        if descriptor.difficulty_reduction is not DifficultyReduction.NONE:
+            reduced = descriptor.difficulty_reduction.apply(difficulty.axes)
+            if abs(reduced - difficulty.score) > 1e-6:
+                raise ContentError(
+                    f"{RejectionReason.VERIFICATION_UNSOUND}: the banded score "
+                    f"{difficulty.score} is not the "
+                    f"{descriptor.difficulty_reduction} of the measured axes, "
+                    f"which is {reduced}"
+                )
         if not difficulty_summary.on_target and not allow_off_target:
             raise ContentError(
                 f"{RejectionReason.DIFFICULTY_OUT_OF_RANGE}: measured "
@@ -711,16 +818,38 @@ class GenerationPipeline:
             descriptor=descriptor,
             generation_id=outcome.trace.id,
             allow_off_target=allow_off_target,
+            parts=evaluation.parts,
         )
 
     def _summarise_verification(
-        self, verification: VerificationResult, descriptor: GameDescriptor
+        self,
+        verification: VerificationResult,
+        descriptor: GameDescriptor,
+        parts: tuple[PartOutcome, ...] = (),
     ) -> VerificationSummary:
         from ..core.hashing import stable_hash
 
         satisfied = bool(uniqueness.check(descriptor, verification))
         solution_hash = (
             stable_hash(verification.solutions[0]) if verification.solutions else ""
+        )
+        part_summaries = tuple(
+            PartVerificationSummary(
+                part_id=outcome.part_id,
+                solution_count=outcome.verification.solution_count,
+                completeness=outcome.verification.completeness,
+                states_examined=outcome.verification.states_examined,
+                uniqueness_contract=outcome.uniqueness_contract,
+                contract_satisfied=outcome.contract_satisfied,
+                solutions_alone=outcome.solutions_alone,
+                requires=outcome.requires,
+                solution_hash=(
+                    stable_hash(outcome.verification.solutions[0])
+                    if outcome.verification.solutions
+                    else ""
+                ),
+            )
+            for outcome in parts
         )
         return VerificationSummary(
             solvable=verification.solvable,
@@ -731,6 +860,7 @@ class GenerationPipeline:
             contract_satisfied=satisfied,
             solution_hash=solution_hash,
             detail=verification.detail,
+            parts=part_summaries,
         )
 
     def _record_dependencies(self, manifest: PuzzleManifest) -> None:
@@ -919,15 +1049,19 @@ def _puzzle_fingerprint(
     payload: Mapping,
     solution: Mapping,
     fact_refs: Sequence[str],
+    parts: Sequence[Mapping] = (),
 ) -> str:
     from ..core.hashing import short_hash
 
-    return short_hash(
-        {
-            "game": game_id,
-            "payload": payload,
-            "solution": solution,
-            "refs": sorted(fact_refs),
-        },
-        16,
-    )
+    # ``parts`` enters only when there are some, for the reason
+    # ``records.content_hash_of`` gives: a flat board keeps the id it would
+    # always have had.
+    document: dict[str, Any] = {
+        "game": game_id,
+        "payload": payload,
+        "solution": solution,
+        "refs": sorted(fact_refs),
+    }
+    if parts:
+        document["parts"] = list(parts)
+    return short_hash(document, 16)

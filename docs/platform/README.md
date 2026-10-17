@@ -17,7 +17,7 @@ intentions is the failure mode this project has already named.
 | [product-vision.md](product-vision.md) | what PuzzleGen is, who it is for, what it refuses to be | drafted |
 | [platform-requirements.md](platform-requirements.md) | what the platform must do, as testable requirements | drafted, player library unbuilt |
 | [cartridge-model.md](cartridge-model.md) | what a cartridge is and its whole lifecycle | drafted, install path partly built |
-| [game-developer-guide.md](game-developer-guide.md) | how to write a game against the engine | drafted, matches protocol 1.2.0 |
+| [game-developer-guide.md](game-developer-guide.md) | how to write a game against the engine | drafted, matches protocol 1.3.0 |
 | [publishing-and-certification.md](publishing-and-certification.md) | how a cartridge gets listed, and how it gets pulled | drafted, process unstaffed |
 | [compatibility-and-versioning.md](compatibility-and-versioning.md) | what a version number promises | drafted |
 | [content-policy.md](content-policy.md) | what a cartridge and the graph may contain | drafted, needs owner review |
@@ -26,11 +26,17 @@ intentions is the failure mode this project has already named.
 | [security-and-threat-model.md](security-and-threat-model.md) | who the attacker is and what stops them | drafted, isolation staged |
 | [fairness-and-integrity.md](fairness-and-integrity.md) | why every player gets the same puzzle, and what happens when they did not | drafted |
 | [accessibility-standard.md](accessibility-standard.md) | what every game must be able to do for every player | drafted, gate enforced in code |
+| [interface-principles.md](interface-principles.md) | what the client must be, given what the engine decided | drafted, nothing built |
 | [operations-runbook.md](operations-runbook.md) | running the daily pipeline, and what to do when it breaks | drafted, no on call |
 | [release-process.md](release-process.md) | how a change reaches a player | drafted |
 | [roadmap.md](roadmap.md) | what is being built now, next, later | drafted |
 | [glossary.md](glossary.md) | every term this project invented | drafted |
-| [open-questions.md](open-questions.md) | the decisions these documents are waiting on | open |
+| [open-questions.md](open-questions.md) | the eight decisions taken, and why | answered |
+
+`docs/documentation-rule.md` says which document owns which subject, and
+`CLAUDE.md` carries the rule that a decision is not recorded until a file
+states it, says why and says where it stands. Everything in this folder follows
+that rule, which is why each document names its own gaps.
 
 ## Reading order for a newcomer
 

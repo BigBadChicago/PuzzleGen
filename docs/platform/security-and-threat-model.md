@@ -42,9 +42,11 @@ holds; the share redactor runs a leak check before any artifact leaves, which
 exists because a move ledger's lopsided shape revealed an answer here once; share
 text is restricted to the game's declared vocabulary.
 
-Open: a client caching two days ahead needs those days unreadable until their
-day key, and that design is not done. It is in `platform-requirements.md` as O6
-and in the open questions.
+Decided, not built: a day cached ahead of its date is stored encrypted, with the
+unlock keys for the whole cached window delivered on each refresh. Requirements
+O6 and O7. It raises the cost of reading tomorrow's board above curiosity and
+does not pretend to defeat a determined person with their own device, which is
+the honest limit of any client side measure.
 
 ### The player who wants a streak they did not earn
 

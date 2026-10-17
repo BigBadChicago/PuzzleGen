@@ -1668,3 +1668,232 @@ is why a single-solution contract cannot have a truncated list at all: one
 listed against a count of one is already a consistency problem. The
 intended-solution path is therefore reachable only under `EXACTLY_N` and the
 contracts that admit more than one solution, which is what the new tests use.
+
+## Platform decisions (2026-10-16): the player's side of the product
+
+Seven decisions the platform documents in `docs/platform/` were waiting on,
+answered by the owner. Each is recorded in the document it affects; this entry
+is the record of the decision itself and of what it commits the project to.
+
+**A player holds five cartridges.** A platform constant, separate from
+`DEFAULT_MAX_ACTIVE = 4`, which is the operator's generation budget. The two
+numbers serve different purposes and collapsing them would mean listing a fifth
+game forces every player to drop one. Five rather than three because a cap can
+be raised without a migration and cannot be lowered without taking something
+away from everybody.
+
+**A day cached ahead of its date is cached encrypted.** The client keeps its
+rolling five day window and a future day is unreadable until its day key. The
+keys delivered on each refresh cover the whole window rather than one day, which
+is the detail that matters: a player offline across a day boundary must still be
+able to open a day they already hold, and a per day key release would need the
+connection they do not have. This is a cost increase for early reading, not a
+defence against a determined person with their own device, and the threat model
+says so.
+
+**An account merge is the player's choice.** `MergeRequired` continues to be
+raised rather than guessed at, and the player is then shown each side's games,
+streaks and day counts and asked which history continues. The unchosen history
+is retained, not deleted, so a wrong choice is recoverable. This is the most
+expensive of the three options considered: it is a player facing flow with a
+deferrable decision and a recorded outcome, rather than a rule. It was chosen
+because the alternatives either discard somebody's real play or compute a streak
+from a union the player never agreed to.
+
+**General audience, with a strict privacy posture.** The defence against having
+child players is collecting nothing worth worrying about, rather than a
+declaration: no advertising identifier, no third party analytics, no location,
+nothing collected by a cartridge. The market by market obligations still need a
+lawyer before the first store submission.
+
+**Free, for now.** A decision with a deadline rather than a permanent answer. It
+is revisited before the first outside cartridge is certified, because an author
+who ships under free terms cannot have commercial ones applied to them
+afterwards.
+
+**A retraction shows an in-app notice on next open.** Carrying the reason and
+what changed, with no push notification. Restoring a streak silently reads to the
+player as lost data, which is the problem the notice solves; a retraction is not
+urgent enough to interrupt anybody.
+
+**Logs are kept thirty days, and milestones are promoted.** The retention number
+is safe only because of the rule beside it: a value that will matter beyond
+thirty days is promoted into a record rather than left in a log. Milestones,
+streak events, retractions and merge choices are records. When a question three
+months from now could only be answered from a log line, the fix is to write the
+record, not to extend retention.
+
+**Still open: whether a third party cartridge may ship a curated content file.**
+The owner's inclination is yes with conditions, and the conditions as stated
+describe data a cartridge accumulates rather than content it generates from. The
+distinction, the measured first party precedent (`letters.curated.json` exists
+because membership, not letter matching, was the binding constraint, at one
+WordNet category in 7,050 with six or more eligible members at medium
+frequency), and four recommended conditions are in
+`docs/platform/open-questions.md`.
+
+## Platform decision (2026-10-16): a third party cartridge may ship a curated content file
+
+The eighth and last of the open platform questions. Answered yes, with four
+conditions, and yes specifically to the condition that costs something.
+
+**The distinction the question turned on.** A curated content file is a data
+file shipped inside the cartridge listing the items its boards are built from. A
+declaration is a few lines naming a slice of the governed graph, which the
+platform rebuilds rather than trusts. The owner's initial conditions ("the data
+does not enter the engine", "erased when the game is removed") described
+accumulated data rather than generated content: content must enter the engine,
+because the generator reads it to build a board, so a file that never reached
+the engine could not produce a puzzle. The erase rule is the right rule for
+anything a cartridge would keep on a device or about a player, which today holds
+by absence because a cartridge has no storage, no player identifier and no
+device access. It is now written down so it stays held.
+
+**Why the exception is real.** Measured on the letters game: the letter matching
+is never the binding constraint, membership is, and at medium frequency one
+WordNet category in 7,050 held six or more eligible members, because a
+category's members are its hyponyms and a frequency filter cuts across that
+structure rather than along it. `letters.curated.json` exists because
+measurement forced it.
+
+**The rule.** A declaration stays the default. Where none can express the
+content, a file is permitted if it is (1) reviewed at certification as content,
+including the strings the generator can reach from it, (2) pinned to the
+cartridge version with its hash recorded in every manifest generated from it,
+(3) served by the platform and read only at runtime, with nothing a cartridge
+produces persisting on a device, and (4) logged as a missing generator with what
+the content is and why no declaration expresses it.
+
+**What condition 2 costs, accepted knowingly.** A hash in the manifest is a
+manifest change, so building it costs a `PUZZLE_FORMAT_VERSION` bump and a
+client that cannot read the new version refuses the day rather than rendering it
+partially. What it buys is traceability from a board to the exact content bytes
+behind it, so a retraction can name the content rather than the game.
+
+**What condition 4 is for.** A file serves one game; a generator serves every
+later game that wanted the same shape. The log is the input to building that
+generator, and it is the only thing standing between this exception and a
+platform with thirty corpora and a graph nobody reads.
+
+**Separation worth stating, because two earlier answers depend on it.**
+Removing a cartridge erases the cartridge's content and does not touch the
+player's play history, which re-adding restores. The cartridge owns its content;
+the platform owns the player's record.
+
+## Process decision (2026-10-16): a decision is not recorded until a file states it
+
+The rule is in `CLAUDE.md`, so every session reads it without being asked, and
+`docs/documentation-rule.md` holds the routing table it points at. README.md
+points at both.
+
+**Why it is a rule rather than a habit.** This project's named recurring
+failure is an artifact and a statement about it drifting apart: a hand copied
+threshold that drifted, a tool that recomputed a value instead of reading the
+engine's output, a table in `handoff.md` that disagreed with the artifact it
+claimed to summarise, a lexicon named for a root it does not hold. A decision
+left in a conversation is the same failure one step earlier, and it is worse in
+one way: there is no artifact to compare it against, so nothing can detect that
+it was lost.
+
+**What the rule requires.** Four parts. Written in the session it is made, not
+at the end of the phase. Written in the document that owns the subject, one
+subject to one document, by the routing table. Written with the reason and what
+it was chosen over, because an outcome with no reason is reversed by whoever
+only sees the cost. And written with its state: decided and built, decided and
+unbuilt, measured and unresolved, or specified and staged behind a named
+trigger.
+
+**The second record.** A decision that changes what the code does is recorded
+twice, in the owning document and as the check that enforces it, and where a
+test can hold the rule the test is the record while prose points at it. The
+platform already works this way: the invariant that the platform names no game,
+the assertion that identity material never comes from the deterministic
+generator, the assertion that the engine imports no token handling, and
+`WITHOUT_A_WITNESS` naming each game that supplies none with its reason.
+
+**What the rule deliberately does not claim.** It does not make a document an
+authority. A document says what was decided and why; the code and the artifacts
+say what is true. When they disagree the code is right and the document is a
+bug, which is the same ordering `handoff.md` already applies to its own numbers.
+
+**Swept into the documents in the same session**, which is the rule applied to
+itself: the product identity the owner stated (a mobile platform, cartridges
+added through the platform itself, a five slot player library against the
+operator's four active games) is now in `architecture.md` under project
+identity, where the engine decisions that assume it can be read against it; and
+`handoff.md` records that the platform documents exist, that eight product
+decisions are settled and should not be re-asked, and that every one of them is
+decided and unbuilt, with the roadmap's reading that the player facing layer is
+now the bottleneck.
+
+## Engine decision (2026-10-17): a board may have stages, and the stages are checked
+
+Asked to increase the complexity of the games the engine can create and work it
+into the same model, the choice was where to put the complexity, not whether to
+allow it. Four options, and the first three are the ones that look cheaper.
+
+**Option 1: let games hide their complexity in the payload.** Already possible.
+`Puzzle.payload` is opaque, a game may put a chain of stages in it, and
+`grade_move` already receives replayed state, so a game could run a multi stage
+board today with no protocol change at all. Benefit: nothing to build. Cost:
+every engine guarantee is written over a thing with an answer and a contract, so
+a hidden stage gets none of them. A board whose first stage has one answer and
+whose second has four satisfies a whole-board uniqueness count of one. The
+engine would publish an ambiguous stage and tell the player it was proved. That
+is the failure this project is named for, one level deeper than before.
+
+**Option 2: a second plugin kind for complex games.** A `CompositeGame`
+protocol with its own pipeline. Benefit: the simple path stays simple. Cost: two
+pipelines means two sets of gates, and the second set drifts from the first. The
+platform's doctrine is one engine between many lenses; a second engine for the
+interesting lenses is the opposite.
+
+**Option 3: a protocol major bump.** Express stages as the normal case and
+update the five games. Benefit: one model, no optional surface. Cost: the most
+expensive action in the system, invalidating every cartridge, for a capability
+no shipped game needs yet. `compatibility-and-versioning.md` sets the bar: show
+the declared-capability pattern cannot carry it. It can.
+
+**Chosen: option 4, three declared capabilities inside protocol 1.3.** Content
+rounds, stages and difficulty axes, each announced on the descriptor and called
+only where announced, as `1.2` did for the witness. All five shipped games load
+and generate unchanged, with no edits; a game declaring none of the three is
+exactly the game it was. What it costs: three more optional verbs on the
+boundary, two more rejection reasons, a `PUZZLE_FORMAT_VERSION` bump to 3 for
+the stages and axes a record now carries, and a verifier that calls a game's own
+`verify_part` twice per gated stage. The design and the measurements behind each
+piece are in `architecture.md` under phase 10.
+
+**Why the gate is measured rather than declared.** A stage could have said "I
+come after that one" and been believed. The engine instead asks the game's own
+verifier what the stage admits knowing nothing, and what it admits knowing its
+predecessors. The first count is what separates a chain from an ordering in the
+interface: one answer there means the stages are independent and the chain is
+decoration. The cost is a second verification per gated stage, which is linear
+and bounded by the eight stage ceiling. The benefit is that "solving this
+unlocks that" becomes a published number rather than a claim, in the same way
+`crossref.py` made a licensed cross-board shortcut a measured advantage rather
+than a promise.
+
+**Why the score is recomputed from the axes.** A game could report axes and band
+against whatever number it liked. The bands are read against the score, so a
+punishing stage measured honestly could still be published as EASY and the axes
+would be decoration. The engine applies the declared reduction and refuses a
+score that is not it. `MAXIMUM` is the recommended reduction for stages, because
+a player who cannot pass stage two never sees stage three.
+
+**What was deliberately not built, with the reason.** A staged board has no
+witness, and `GameDescriptor` refuses `staged` with `supplies_witness` rather
+than accepting one. A witness's costs are counted over the board's unconstrained
+space; after the first stage that space is already cut by the previous answer,
+so every later rung prices as nearly free and the ladder orders nothing. The
+honest options were a mis-costed ladder, a silent exception to the standing
+witness rule, or a refusal that names the gap. The refusal is the record, the
+per-stage witness is specified and unbuilt, and the standing rule that every
+game answers for its witness (`WITHOUT_A_WITNESS`) is answered by the refusal
+rather than evaded.
+
+**What remains open.** No shipped game is staged. The capability is proved by
+`tests/unit/test_staging.py` and the chained fixture beside it, and whether the
+first staged cartridge should be a new game or a second lens over existing
+content is undecided.

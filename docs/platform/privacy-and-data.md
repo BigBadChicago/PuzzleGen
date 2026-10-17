@@ -37,6 +37,12 @@ you. We do not sell anything and there are no advertisers.
   and a seeded generator. It has no player identifier, no session, no network and
   no storage, and the platform's invariants assert it imports nothing that would
   give it any of those.
+- Nothing a cartridge produces persists on a player's device. Where a cartridge
+  ships its own content file, that file is served by the platform and is read
+  only, and removing the cartridge erases the cartridge's content. What removal
+  never touches is the player's play history: the cartridge owns its content,
+  the platform owns the player's record, and answer L3 depends on that
+  separation.
 
 ## Two design decisions that carry the privacy properties
 
@@ -60,12 +66,17 @@ leak is which devices ever existed, and a deleted row cannot answer it.
 | session records and move ledgers | indefinitely, because they are your history and your streak depends on them |
 | revoked device keys | indefinitely, as hashes, for the reason above |
 | a retracted day's sessions | kept, marked as excused, so the streak restoration is auditable |
-| server logs | no retention policy decided; see open questions |
+| server logs | 30 days |
 
 Indefinite retention of play history is a deliberate choice and a cost: it is
 what makes a removed cartridge's history survive and come back when the
 cartridge does. It is also the thing a deletion request collides with, which is
 the next section.
+
+Thirty days for logs is safe only because of the rule beside it: anything that
+will matter in three months is promoted into a record rather than left in a log.
+A milestone, a streak event, a retraction, a merge choice. When a value will be
+needed later, writing it only to a log is the bug and promoting it is the fix.
 
 ## Deletion and export
 
@@ -86,12 +97,17 @@ earned the excuse.
 
 ## Children
 
-The platform's content is suitable for a general audience, and a daily puzzle
-app will have child players whether or not it is aimed at them. The consequences
-are not decided, and they are regulatory rather than technical: whether the app
-is declared as directed to children, what that means for provider sign in, and
-whether an age gate is required in any target market. This is the single largest
-undecided item in this document and it needs a lawyer, not an engineer.
+**The app is declared general audience**, with the privacy posture kept strict
+enough that the distinction mostly does not matter: no advertising identifier,
+no third party analytics, no location, nothing collected by a cartridge, and no
+personal data beyond what a streak needs. A daily puzzle app has child players
+whether or not it is aimed at them, and the defence against that is collecting
+nothing worth worrying about rather than a declaration.
+
+What the declaration does not settle, and what still needs a lawyer rather than
+an engineer: the market by market obligations, what they mean for provider sign
+in, and whether any target market requires an age gate regardless. That review
+happens before the first store submission, not after.
 
 ## Third parties
 

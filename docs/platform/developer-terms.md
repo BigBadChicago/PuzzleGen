@@ -95,7 +95,10 @@ updated.
 Listed rather than invented, because an invented answer here is worse than an
 admitted gap:
 
-- Revenue. There is no monetisation, so there is no revenue share to state.
+- Revenue. The platform is free for now, so there is no revenue share to state.
+  This gets decided before the first outside cartridge is certified rather than
+  after, because an author who ships under free terms and is later handed
+  commercial ones has a real grievance.
 - Exclusivity. Whether a cartridge may also ship elsewhere is undecided.
 - Trademark and naming. Whether an author may use the platform's name in
   describing their game is undecided.

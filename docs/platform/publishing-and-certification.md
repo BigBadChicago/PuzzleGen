@@ -21,8 +21,12 @@ submission:
 - a short description of what the player does, written for a player
 - a contact the platform can reach
 
-Rejected at intake without further review: a submission with no day run, a
-submission whose content arrives as an unreviewable data file, or a submission
+A submission whose content is a curated file rather than a declaration is
+accepted at intake and reviewed under the four conditions in
+`content-policy.md`, which includes a statement from the author of why no
+declaration expresses the content.
+
+Rejected at intake without further review: a submission with no day run, or one
 declaring a protocol major the engine does not speak.
 
 ### 2. Automated certification
@@ -42,6 +46,8 @@ Run by CI, and the result is pass or fail with no judgement involved.
 | share vocabulary | an artifact uses a token outside the declared set |
 | share leak check | the artifact leaks solution information |
 | import invariants | the game reaches outside its ports by any path the invariants catch |
+| content file hash | a manifest from the thirty day run does not record the hash of the content file it was built from |
+| content file writes | the cartridge writes to its content file, or persists anything on the device |
 | determinism probes | a clock, network, filesystem, environment or unseeded randomness is used on a path the probes cover |
 
 Two of those are known to be incomplete rather than sound, and saying so here
@@ -57,7 +63,10 @@ What a person reads, in this order:
 
 1. `verify.py`. Does the proof prove the declared contract?
 2. The content declaration. Is this a slice of the governed graph, or a corpus
-   smuggled in?
+   smuggled in? Where a curated file is shipped instead, the file is read as
+   content against `content-policy.md`, the author's statement of why no
+   declaration expresses it is weighed, and the file is logged as a missing
+   generator whether or not it is approved.
 3. `play.py`. Is grading plausibly correct, and is the hint derived from a
    witness rather than authored?
 4. The rest, for anything that reaches for a capability it was not given.

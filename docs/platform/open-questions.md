@@ -1,140 +1,158 @@
-# Open questions
+# Decisions, and what is still open
 
-Decisions the platform documents are waiting on. Each states what the question
-actually is, what the options cost, and the recommendation. None of them blocks
-reading the documents; all of them block finishing something.
+The eight questions the platform documents were waiting on. All eight are
+answered and recorded in the documents they affect. Nothing in this file is
+pending; it is kept as the record of what was decided and why.
 
-Updated 2026-10-16.
+Answered 2026-10-16 by the project owner.
 
-## 1. How many cartridges can a player hold at once?
+## Answered
 
-The slot cap is the player's side of the limit, and it is a different number
-from `DEFAULT_MAX_ACTIVE = 4`, which is the operator's generation budget.
+### 1. A player holds 5 cartridges
 
-Options: **3**, enough for a habit and forces real choice. **5**, matches the
-client's cached day window and leaves a spare slot. **Unlimited**, which makes
-the catalogue the only limit.
+Five slots, as a platform constant, separate from `DEFAULT_MAX_ACTIVE = 4`,
+which is the operator's generation budget. A cap can be raised without a
+migration and cannot be lowered without taking something away, so five is a
+floor on ambition rather than a ceiling on it.
 
-Costs: a small cap makes the swap feature meaningful and makes every addition a
-decision, which is the feeling the cartridge metaphor promises. It also means a
-player who likes six games is permanently annoyed. Unlimited makes the daily
-screen a chore and removes the one product mechanic that is uniquely this
-platform's.
+Recorded in `platform-requirements.md` L1.
 
-Recommendation: **5**, with the cap as a platform constant that can be raised
-without a migration. Raising a cap is painless; lowering one takes something
-away from everybody.
+### 2. A day cached ahead of its date is cached encrypted
 
-## 2. May a cached future day be readable before its day key?
+The client keeps its rolling five day window, and a day ahead of today is
+stored encrypted with the keys for the whole window delivered on each refresh.
+The offline promise survives, and reading tomorrow's board early costs more
+than curiosity.
 
-The client caches two days ahead so a player with no signal still has today's
-puzzle. A cached future day sitting decrypted on the device is tomorrow's answer
-in somebody's pocket.
+What this commits to: a key delivery path on every refresh, covering the whole
+cached window rather than one day, so a player who goes offline across a day
+boundary can still open the day they already hold.
 
-Options: **do not cache ahead**, which is simplest and loses the offline
-guarantee for a player who does not open the app daily. **Cache encrypted**,
-with the key released on the day, which keeps the guarantee and needs a key
-release path that itself needs connectivity. **Cache ahead and accept it**,
-treating early reading as a niche self spoiling act.
+Recorded in `platform-requirements.md` O6 and `release-process.md`.
 
-Costs: the second option is the only one that keeps both properties, and its
-failure mode is that a player offline across a day boundary cannot unlock the
-day they already have. Mitigation is a short lived key covering the whole cached
-window, which weakens it toward the third option.
+### 3. An account merge is the player's choice
 
-Recommendation: **cache encrypted**, with keys for the whole window delivered on
-each refresh. It keeps the offline promise, raises the cost of early reading
-above casual, and does not pretend to defeat a determined person with their own
-device.
+Not the longer streak, and not a silent union. When a provider subject is
+already bound to another player, the platform raises `MergeRequired` as it does
+today and then asks the player which history continues, showing them enough to
+decide: each side's games, streaks and day counts.
 
-## 3. What happens when two histories belong to one person?
+What this commits to, and it is more than the other two options would have
+cost: a player facing flow, which means a screen, a decision that can be
+deferred without locking either account, and a record of what was chosen. The
+upside is that nothing is ever discarded by a rule the player did not see.
 
-`MergeRequired` is raised today rather than guessing, which is correct and is
-also a dead end for the player who hit it. The usual cause is one person who
-played anonymously on two devices, and both histories are real.
+The unchosen history is retained, not deleted, so a wrong choice is recoverable.
 
-Options: **keep the longer streak and discard the other**, simple and silently
-destroys somebody's play. **Keep both, union the played days**, which is
-truthful and makes a streak calculation that has to decide what two sessions on
-one day key mean. **Let the player choose**, which is honest and is a support
-flow in a product with no support.
+Recorded in `platform-requirements.md` I7 and `roadmap.md`.
 
-Recommendation: **union the played days, and keep both sessions**, with the
-streak computed over the union and the duplicate day resolved in the player's
-favour. Nothing is discarded, and the rule is statable in one sentence to a
-player.
+### 4. General audience, with a strict privacy posture
 
-## 4. Is the app directed to children?
+The app is declared general audience, and the privacy design is kept strict
+enough that the distinction mostly does not matter: no advertising identifier,
+no third party analytics, no location, nothing collected by a cartridge, and
+no personal data beyond what a streak needs.
 
-A daily puzzle app has child players whether or not it is aimed at them. The
-answer changes what sign in may do, whether an age gate is required, and which
-regulations apply in each target market.
+Still true, and unchanged by this answer: a lawyer reviews this before the first
+store submission, not after. The declaration is the cheap half; the market by
+market obligations are not.
 
-Options: **declare general audience and collect nothing age related**, which is
-close to the current design. **Declare directed to children**, which brings
-stricter obligations and in several markets forbids the provider sign in that
-account merge assumes. **Age gate at first launch**, which is friction on the
-first screen and is the only way to behave differently per age.
+Recorded in `privacy-and-data.md`.
 
-Recommendation: **general audience, with the privacy posture kept strict enough
-that the distinction mostly does not matter**, and a lawyer consulted before the
-first store submission rather than after. This is the one question in this list
-where a wrong guess is expensive and legal, not an engineering preference.
+### 5. Free, for now
 
-## 5. Is there a business model?
+No monetisation. The consequence that matters is a deadline rather than a
+feature: an author who ships under free terms and is later handed commercial
+ones has a real grievance, so the decision gets revisited before the first
+outside cartridge is certified, not after.
 
-There is none today, which is why `developer-terms.md` has no revenue clause and
-the requirements have no purchase mechanism.
+Recorded in `developer-terms.md` and `roadmap.md`.
 
-Options: **free, no monetisation**, which is honest for a project with one
-maintainer. **Paid cartridges**, which makes the author relationship a
-commercial one and needs every undecided clause in the developer terms answered.
-**Subscription for more slots**, which turns the slot cap from a design choice
-into a paywall.
+### 6. A retraction shows an in-app notice on next open
 
-Recommendation: **free for now, and decide before the first outside cartridge is
-certified**, because an author who ships under free terms and is later asked to
-accept commercial ones has a real grievance. The documents are written so a
-decision drops in rather than requiring a rewrite.
+No push notification. The notice carries the reason and what changed, which is
+what turns a silently restored streak from an apparent data loss into a
+correction the player can read.
 
-## 6. How does a player learn their day was retracted?
+Recorded in `platform-requirements.md` D9 and `operations-runbook.md`.
 
-Retraction restores the streak correctly and tells nobody. A player who sees
-yesterday's result change and gets no explanation reasonably concludes the app
-lost their data.
+### 7. Logs are kept thirty days, and milestones are promoted
 
-Options: **in app notice on next open**, which needs no push infrastructure and
-reaches everybody who comes back. **Push notification**, which reaches people
-immediately and needs a permission the app currently does not ask for. **Say
-nothing**, which is the current behaviour.
+Thirty days for server logs. Anything worth keeping longer is promoted into a
+record rather than left in a log: a milestone, a streak event, a retraction, a
+merge choice. The rule has a consequence worth stating, because it is the one
+that makes thirty days safe: when a value will matter in three months, writing
+it to a log is the bug, and promoting it is the fix.
 
-Recommendation: **in app notice on next open**, carrying the reason, with no
-push. A retraction is not urgent to the player; it is only confusing if
-unexplained.
+Recorded in `privacy-and-data.md` and `operations-runbook.md`.
 
-## 7. How long are server logs kept?
+## 8. A curated content file is allowed, under four conditions
 
-Session records are kept indefinitely on purpose, because they are the player's
-history. Logs are a separate question with no answer written down.
+Answered yes to the four conditions below, and yes to condition 2 in
+particular, which is the one that costs something.
 
-Options: **thirty days**, long enough to debug a reported problem. **Ninety
-days**, long enough to see a seasonal pattern. **Indefinite**, which is a
-growing pile of personal data nobody decided to collect.
+The distinction that made this question worth asking, because the owner's
+initial conditions described a different kind of data:
 
-Recommendation: **thirty days**, with anything worth keeping longer promoted
-into a record rather than left in a log.
+**A curated content file** is a data file shipped inside the cartridge, listing
+the items its boards are built from. The platform has one:
+`games/letters/content/letters.curated.json`, a hand built taxonomy of thirty
+categories with six to twelve common members each.
 
-## 8. May a third party cartridge ever ship a curated content file?
+**A declaration** is the alternative, and remains the default: a few lines
+naming a slice of the governed graph, which the platform rebuilds itself.
+Nothing is trusted because nothing is shipped.
 
-The rule today is that external content arrives as a reproducible declaration,
-not a file, and the rule was chosen because it can be relaxed later without
-anything being withdrawn, which is not true in the other direction.
+**Why the exception is real rather than a convenience.** It was measured on the
+letters game. The letter matching is never the binding constraint, membership
+is, and at medium frequency one WordNet category in 7,050 held six or more
+eligible members, because a category's members are its hyponyms and a frequency
+filter cuts across that structure rather than along it. No import produces a set
+organised by what a player knows.
 
-Options: **never**, keeping the property absolute. **With review**, allowing a
-file a curator has read. **Allow it when the game cannot be expressed as a
-declaration**, which is the case that will actually arise.
+**What a file costs the platform.** The content is ungoverned, so nobody checked
+its provenance, licence, freshness or reachable strings. A board's quality
+cannot be traced back to the graph. The content cannot be regenerated, only
+trusted, which removes the one check that does not depend on a reviewer's
+attention. And a cartridge carrying its own corpus is a separate game that
+happens to run here.
 
-Recommendation: **keep the rule, and treat the first genuine exception as a
-request for a new platform generator**. The exception is evidence of a missing
-generator, and building the generator serves every later game while an approved
-file serves one.
+**Why content must enter the engine.** The generator reads the file to build a
+board, so content that never reached the engine could not produce a puzzle. The
+rule the owner stated, erased on removal and no caching of old game data without
+approval, is the right rule for a different thing: anything a cartridge would
+keep on a player's device or about a player. Today a cartridge has no storage,
+no player identifier and no device access, so it holds by absence, and it is now
+written down so it stays held.
+
+The separation that answers 1 and 3 depend on: removing a cartridge erases the
+cartridge's content and keeps the player's play history, which re-adding
+restores. The cartridge owns its content; the platform owns the player's record.
+
+### The rule
+
+1. The file is reviewed at certification as content, against
+   `content-policy.md`, including the strings the generator can reach from it.
+2. The file is pinned to the cartridge version and its hash is recorded in every
+   manifest generated from it.
+3. The file is served by the platform and read only at runtime. A cartridge
+   never writes to it, and nothing a cartridge produces persists on a device.
+4. Every approved file is logged as a missing generator, with what the content is
+   and why no declaration expresses it.
+
+**What condition 2 costs, accepted deliberately.** A hash in the manifest is a
+manifest change, so building it costs a `PUZZLE_FORMAT_VERSION` bump, and a
+client that cannot read the new version refuses the day rather than rendering it
+partially. What it buys is that a board traces to the exact content bytes behind
+it, so a retraction can name the content that caused it rather than the game
+that shipped it.
+
+Condition 4 is what keeps the doctrine intact. A file serves one game; a
+generator serves every later game that wanted the same shape. Approving files
+without recording why is how a platform ends up with thirty corpora and a graph
+nobody reads.
+
+Recorded in `content-policy.md` part three, `platform-requirements.md` C7 and
+C10 to C13 and L9, `cartridge-model.md`, `publishing-and-certification.md`,
+`game-developer-guide.md`, `privacy-and-data.md` and
+`compatibility-and-versioning.md`.

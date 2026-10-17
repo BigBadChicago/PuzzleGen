@@ -65,8 +65,10 @@ another cohort of players losing a streak to it.
    `describe()` say what moved.
 5. **Verify.** `RetractionService.verify` reports anything inconsistent.
 6. **Republish**, if a replacement day for that day key is wanted.
-7. **Tell the players.** There is no in app notice mechanism. This is a gap and
-   it is in the open questions.
+7. **Tell the players.** Every affected player sees an in-app notice on next
+   open, carrying the reason and what changed. No push notification: a
+   retraction is not urgent to the player, it is only confusing if unexplained.
+   The notice mechanism is decided and not built.
 
 `retract_many` exists for the case where a bad snapshot fact or a hostile
 cartridge affects a run of days.
@@ -81,6 +83,14 @@ every device.
 Rotate only on a suspected pepper compromise. For a single leaked device
 credential, revoke that device key instead, which is why keys are per device,
 labelled, capped at ten, and revoked rather than deleted.
+
+## Log retention
+
+Server logs are kept thirty days. The rule that makes that safe is the one
+beside it: a value that will matter beyond thirty days is promoted into a
+record, not left in a log. Milestones, streak events, retractions and merge
+choices are records. When a question three months from now can only be answered
+from a log line, the fix is to write the record, not to extend retention.
 
 ## Incident classes
 

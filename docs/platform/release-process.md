@@ -55,7 +55,9 @@ from a future day key.
 2. Tolerates unknown fields within a format version it knows.
 3. The rolling five day cache behaves: today, two past, two ahead; refresh after
    a play while connected, otherwise on next connection; a corrected day
-   overwrites a cached day with no prompt.
+   overwrites a cached day with no prompt. A day ahead of its date is encrypted
+   and unreadable, and the keys delivered on each refresh cover the whole
+   window, so a day that arrives while offline still opens.
 4. Offline play grades on reconnection, and the server's grade is the grade.
 5. Accessibility pass against the engine's rendered announcements, with a screen
    reader, on both platforms.
